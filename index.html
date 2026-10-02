@@ -1,1 +1,179 @@
-<h1>Hola</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gisella Villarreal | Marketing, E-commerce & Contenido</title>
+  
+  <!-- Importando las tipografías: Playfair para títulos y Inter para textos -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+    
+    /* Paleta de colores de tu marca */
+    :root {
+      --bg-color: #FAF9F6;    /* Blanco cálido */
+      --primary: #101827;     /* Azul marino profundo */
+      --accent: #C8A96B;      /* Dorado suave */
+      --text: #1B1B1B;        /* Casi negro para los textos */
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text);
+      padding-bottom: 80px; /* Espacio para el menú inferior */
+    }
+    
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+    
+    /* Sección Principal (Hero) */
+    header {
+      background-color: var(--primary);
+      color: var(--bg-color);
+      padding: 70px 20px 60px 20px;
+      text-align: center;
+      border-bottom: 4px solid var(--accent);
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      color: var(--bg-color);
+      line-height: 1.1;
+    }
+    
+    header p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--accent);
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--accent);
+      color: var(--primary);
+      padding: 14px 28px;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 30px;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 15px rgba(200, 169, 107, 0.3);
+    }
+    
+    /* Tarjetas de "Lo que hago" */
+    .section { padding: 50px 20px; }
+    
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 35px;
+      color: var(--primary);
+    }
+    
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    
+    .card {
+      background: white;
+      padding: 25px 15px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      border-bottom: 3px solid var(--accent);
+    }
+    
+    .card span { font-size: 2.2rem; display: block; margin-bottom: 12px; }
+    .card h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--primary); }
+    .card p { font-size: 0.85rem; color: #666; line-height: 1.4; }
+    
+    /* Menú inferior estilo App (PWA) */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 0 15px 0;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.06);
+      z-index: 1000;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+    
+    .nav-item {
+      text-decoration: none;
+      color: #888; /* Color inactivo */
+      font-size: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .nav-item.active { color: var(--primary); }
+    
+    .nav-item span { 
+      font-size: 0.65rem; 
+      margin-top: 5px; 
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado principal -->
+  <header>
+    <h1>GISELLA<br>VILLARREAL</h1>
+    <p>Marketing · Contenido · E-commerce</p>
+    <a href="#" class="btn">CONOCE MI HISTORIA</a>
+  </header>
+
+  <!-- Sección: Lo que hago -->
+  <div class="section">
+    <h2 class="section-title">Explora mi mundo</h2>
+    <div class="cards">
+      <div class="card">
+        <span>📸</span>
+        <h3>Foto & Contenido</h3>
+        <p>Estrategia visual para marcas.</p>
+      </div>
+      <div class="card">
+        <span>💻</span>
+        <h3>E-commerce</h3>
+        <p>Marketing y experiencias digitales.</p>
+      </div>
+      <div class="card">
+        <span>🛍️</span>
+        <h3>Shop Beauty</h3>
+        <p>Selección de skincare y beauty tools.</p>
+      </div>
+      <div class="card">
+        <span>🎵</span>
+        <h3>Música</h3>
+        <p>Mis covers y lado artístico.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú de navegación inferior estilo App -->
+  <nav class="bottom-nav">
+    <a href="#" class="nav-item active">⌂<span>Inicio</span></a>
+    <a href="#" class="nav-item">✨<span>Sobre mí</span></a>
+    <a href="#" class="nav-item">📸<span>Servicios</span></a>
+    <a href="#" class="nav-item">🛍️<span>Shop</span></a>
+    <a href="#" class="nav-item">🎵<span>Música</span></a>
+  </nav>
+
+</body>
+  </html>
+  
