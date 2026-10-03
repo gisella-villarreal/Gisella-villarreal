@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Gisella Villarreal</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <style>
+    :root {
+      --bg-cream: #F4F1ED;
+      --bg-dark: #151515;
+      --text-main: #1A1A1A;
+      --text-light: #666666;
+      --border-color: #E2DDD5;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      padding-bottom: 100px; 
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* CABECERA BLOG */
+    .hero { padding: 50px 20px 20px; }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      background: transparent;
+      border: 1px solid var(--border-color);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      margin-bottom: 20px;
+    }
+    .badge span {
+      background: var(--bg-dark);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-right: 8px;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -1px;
+      margin-bottom: 15px;
+      color: var(--bg-dark);
+    }
+    .hero h1 i { font-weight: 400; font-style: italic; color: var(--text-light); }
+    
+    .hero p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      max-width: 90%;
+      margin-bottom: 10px;
+    }
+
+    /* LISTA DE ARTÍCULOS */
+    .blog-list {
+      padding: 10px 20px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .blog-card {
+      background-color: white;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    /* Espacio para la foto del post */
+    .blog-image {
+      height: 180px;
+      background-color: #E8E4DD;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #C4BFB5;
+      font-size: 2.5rem;
+    }
+
+    .blog-content {
+      padding: 25px 20px;
+    }
+
+    .blog-tag {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-light);
+      margin-bottom: 10px;
+      display: block;
+      font-weight: 600;
+    }
+
+    .blog-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--bg-dark);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .blog-content p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .read-more {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--bg-dark);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* CAJA DE SUSCRIPCIÓN (NEWSLETTER) */
+    .newsletter-box {
+      background-color: var(--bg-dark);
+      color: white;
+      margin: 10px 8px 40px 8px;
+      border-radius: 16px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .newsletter-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .newsletter-box p {
+      font-size: 0.85rem;
+      color: #999;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+
+    .btn-light {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: white;
+      color: var(--bg-dark);
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* MENÚ INFERIOR APP */
+    .bottom-nav {
+      position: fixed; bottom: 0; width: 100%;
+      background: var(--bg-cream);
+      display: flex; justify-content: space-around;
+      padding: 15px 0 20px 0;
+      border-top: 1px solid var(--border-color);
+      z-index: 1000;
+    }
+    .nav-item {
+      text-decoration: none; color: #A0A0A0;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .nav-item i { font-size: 1.4rem; margin-bottom: 4px; }
+    
+    /* Aquí activamos el icono de "Blog" en negro */
+    .nav-item.active { color: var(--bg-dark); }
+    .nav-item span { font-size: 0.6rem; font-weight: 500; }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="badge">
+      <span>LEER</span> Recursos y Notas &rarr;
+    </div>
+    <h1>Mundo <br><i>digital.</i></h1>
+    <p>Reflexiones, estrategias de e-commerce y tips de creación visual para impulsar tu marca.</p>
+  </div>
+
+  <!-- LISTA DE ARTÍCULOS -->
+  <div class="blog-list">
+    
+    <!-- Artículo 1 -->
+    <article class="blog-card">
+      <div class="blog-image"><i class="ph-light ph-shopping-cart"></i></div>
+      <div class="blog-content">
+        <span class="blog-tag">E-Commerce</span>
+        <h2>5 claves para optimizar el checkout de tu tienda online</h2>
+        <p>¿Tus clientes abandonan el carrito antes de pagar? Descubre cómo mejorar la experiencia final de compra para aumentar tus conversiones.</p>
+        <a href="#" class="read-more">Leer artículo <i class="ph-bold ph-arrow-right"></i></a>
+      </div>
+    </article>
+
+    <!-- Artículo 2 -->
+    <article class="blog-card">
+      <div class="blog-image"><i class="ph-light ph-camera"></i></div>
+      <div class="blog-content">
+        <span class="blog-tag">Creación Visual</span>
+        <h2>El poder de la fotografía comercial en redes sociales</h2>
+        <p>No se trata solo de tomar fotos bonitas. Te explico cómo la dirección de arte puede comunicar los verdaderos valores de tu marca.</p>
+        <a href="#" class="read-more">Leer artículo <i class="ph-bold ph-arrow-right"></i></a>
+      </div>
+    </article>
+
+    <!-- Artículo 3 -->
+    <article class="blog-card">
+      <div class="blog-image"><i class="ph-light ph-rocket"></i></div>
+      <div class="blog-content">
+        <span class="blog-tag">Personal</span>
+        <h2>Construyendo mi agencia para 2029: Reflexiones</h2>
+        <p>Un pequeño vistazo a mis objetivos, mis aprendizajes en RocoTec y cómo me preparo todos los días para escalar mi negocio.</p>
+        <a href="#" class="read-more">Leer artículo <i class="ph-bold ph-arrow-right"></i></a>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- CAJA PROMOCIONAL NEWSLETTER -->
+  <div class="newsletter-box">
+    <h3>Únete a mi newsletter</h3>
+    <p>Recibe directo en tu correo mis mejores consejos sobre marketing, e-commerce y contenido visual para tu negocio.</p>
+    <a href="#" class="btn-light"><i class="ph-bold ph-envelope-simple"></i> Suscribirme ahora</a>
+  </div>
+
+  <!-- MENÚ INFERIOR (CON TODOS LOS ENLACES LISTOS) -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item">
+      <i class="ph-light ph-house"></i>
+      <span>Inicio</span>
+    </a>
+    <a href="sobre-mi.html" class="nav-item">
+      <i class="ph-light ph-user"></i>
+      <span>Sobre mí</span>
+    </a>
+    <a href="servicios.html" class="nav-item">
+      <i class="ph-light ph-briefcase"></i>
+      <span>Servicios</span>
+    </a>
+    <a href="shop.html" class="nav-item">
+      <i class="ph-light ph-shopping-bag"></i>
+      <span>Shop</span>
+    </a>
+    <!-- ENLACE DE BLOG ACTIVO -->
+    <a href="blog.html" class="nav-item active">
+      <i class="ph-fill ph-article"></i>
+      <span>Blog</span>
+    </a>
+  </nav>
+
+</body>
+</html>
