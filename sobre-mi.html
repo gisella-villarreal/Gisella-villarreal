@@ -44,12 +44,37 @@
     /* IMAGEN DE PERFIL */
     .about-image {
       width: 100%;
-      height: 480px; /* Aumenté la altura para que quepa más de tu cuerpo */
+      height: 480px; 
       border-radius: 16px;
       background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg'); 
       background-size: cover; 
-      background-position: top center; /* Alineado hacia arriba para que no corte los hombros */
-      margin-bottom: 30px;
+      background-position: top center; 
+      margin-bottom: 15px; /* Reduje este espacio para acercar los botones */
+    }
+
+    /* REDES SOCIALES (Nuevos Botones) */
+    .social-links {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px; /* Espacio antes de tu nombre */
+      flex-wrap: wrap;
+    }
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      border: 1px solid var(--border-color);
+      border-radius: 30px;
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.8rem;
+      font-weight: 500;
+      background: transparent;
+      transition: all 0.2s ease;
+    }
+    .social-link i {
+      font-size: 1.1rem;
     }
 
     /* TEXTO DE BIOGRAFÍA */
@@ -135,6 +160,14 @@
 
   <div class="bio-section">
     <div class="about-image"></div>
+    
+    <!-- BOTONES DE REDES SOCIALES -->
+    <div class="social-links">
+      <a href="#" class="social-link"><i class="ph-light ph-linkedin-logo"></i> LinkedIn</a>
+      <a href="#" class="social-link"><i class="ph-light ph-instagram-logo"></i> Instagram</a>
+      <a href="#" class="social-link"><i class="ph-light ph-youtube-logo"></i> YouTube</a>
+    </div>
+
     <h2>Hola, soy Gisella.</h2>
     <p>Profesional en Marketing, cuento con +6 años de experiencia en el mundo del E-commerce. Complemento mi perfil con la fotografía digital para ayudar a profesionales y pequeñas marcas a comunicar mejor sus servicios. También soy Cofundadora y Directora de Marketing de RocoTec, un proyecto digital que nació a comienzos de la pandemia y que ha sido una parte fundamental de mi crecimiento profesional, permitiéndome llevar la teoría a la práctica y entender el E-commerce desde adentro. Actualmente, además de mi trabajo en RocoTec, presto servicios de creación, gestión y optimización de E-commerce para negocios y marcas que quieren fortalecer su presencia digital, mejorar la experiencia de sus clientes y crecer en el entorno online. Mi objetivo es ayudarte a convertir tu presencia digital en una experiencia que conecte, genere confianza y contribuya al crecimiento de tu negocio.</p>
   </div>
