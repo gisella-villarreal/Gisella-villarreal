@@ -27,6 +27,7 @@
       -webkit-font-smoothing: antialiased;
     }
     
+    /* CABECERA SOBRE MÍ */
     .hero { padding: 50px 20px 20px; }
     
     .hero h1 {
@@ -40,6 +41,7 @@
     }
     .hero h1 i { font-weight: 400; font-style: italic; color: var(--text-light); }
     
+    /* IMAGEN DE PERFIL */
     .about-image {
       width: 100%;
       height: 480px; 
@@ -50,6 +52,7 @@
       margin-bottom: 15px; 
     }
 
+    /* REDES SOCIALES (Ajustado a 1 sola línea) */
     .social-links {
       display: flex;
       gap: 6px; 
@@ -74,6 +77,7 @@
     }
     .social-link i { font-size: 1rem; }
 
+    /* TEXTO DE BIOGRAFÍA */
     .bio-section { padding: 0 20px; margin-bottom: 40px; }
     
     .bio-section h2 {
@@ -90,6 +94,7 @@
       margin-bottom: 15px;
     }
 
+    /* CAJA OSCURA DE DATOS EXTRA */
     .personal-facts {
       background-color: var(--bg-dark);
       color: white;
@@ -127,6 +132,7 @@
     .fact-text h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 3px; }
     .fact-text p { font-size: 0.75rem; color: #999; line-height: 1.4; }
 
+    /* MENÚ INFERIOR APP (SIN BLOG) */
     .bottom-nav {
       position: fixed; bottom: 0; width: 100%;
       background: var(--bg-cream);
@@ -140,6 +146,8 @@
       display: flex; flex-direction: column; align-items: center;
     }
     .nav-item i { font-size: 1.4rem; margin-bottom: 4px; }
+    
+    /* Aquí activamos el icono de "Sobre mí" en negro */
     .nav-item.active { color: var(--bg-dark); }
     .nav-item span { font-size: 0.6rem; font-weight: 500; }
   </style>
@@ -153,6 +161,7 @@
   <div class="bio-section">
     <div class="about-image"></div>
     
+    <!-- BOTONES DE REDES SOCIALES -->
     <div class="social-links">
       <a href="#" class="social-link"><i class="ph-light ph-linkedin-logo"></i> LinkedIn</a>
       <a href="#" class="social-link"><i class="ph-light ph-instagram-logo"></i> Instagram</a>
@@ -191,6 +200,7 @@
     </div>
   </div>
 
+  <!-- MENÚ INFERIOR (SOLO 4 BOTONES CON ENLACES ACTIVOS) -->
   <nav class="bottom-nav">
     <a href="index.html" class="nav-item">
       <i class="ph-light ph-house"></i>
@@ -200,18 +210,13 @@
       <i class="ph-fill ph-user"></i>
       <span>Sobre mí</span>
     </a>
-    <!-- ENLACE DE SERVICIOS ACTIVO -->
     <a href="servicios.html" class="nav-item">
       <i class="ph-light ph-briefcase"></i>
       <span>Servicios</span>
     </a>
-    <a href="#" class="nav-item">
+    <a href="shop.html" class="nav-item">
       <i class="ph-light ph-shopping-bag"></i>
       <span>Shop</span>
-    </a>
-    <a href="#" class="nav-item">
-      <i class="ph-light ph-article"></i>
-      <span>Blog</span>
     </a>
   </nav>
 
