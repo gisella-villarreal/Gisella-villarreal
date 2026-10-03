@@ -3,17 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gisella Villarreal | Marketing, E-commerce & Contenido</title>
+  <title>Gisella Villarreal | Portfolio & Shop</title>
+  
+  <!-- Tipografías elegantes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Librería de Iconos Profesionales (Minimalistas) -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
-    
-    /* ¡Tu nueva paleta vibrante! */
     :root {
-      --bg-color: #FFFFFF;    /* Blanco puro */
+      --bg-color: #FAFAFA;    /* Blanco un poco más suave para el fondo */
+      --white: #FFFFFF;
       --primary: #C1297E;     /* Fuchsia Pink */
       --accent: #FF7538;      /* Orange Peel */
-      --text: #1B1B1B;        /* Casi negro para los textos */
+      --text-dark: #1A1A1A;
+      --text-light: #666666;
     }
     
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,110 +26,135 @@
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--bg-color);
-      color: var(--text);
-      padding-bottom: 80px; 
+      color: var(--text-dark);
+      padding-bottom: 90px; 
+      -webkit-font-smoothing: antialiased;
     }
     
-    h1, h2, h3 { font-family: 'Playfair Display', serif; }
-    
-    /* Sección Principal (Hero) */
+    /* Cabecera con degradado premium y bordes redondeados */
     header {
-      background-color: var(--primary);
-      color: white;
-      padding: 70px 20px 60px 20px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      padding: 80px 20px 60px 20px;
       text-align: center;
-      border-bottom: 4px solid var(--accent);
+      border-radius: 0 0 35px 35px; /* Curva moderna estilo app */
+      box-shadow: 0 10px 30px rgba(193, 41, 126, 0.2);
     }
     
     header h1 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      letter-spacing: 2px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      color: var(--white);
+      line-height: 1.15;
       margin-bottom: 15px;
-      color: white;
-      line-height: 1.1;
     }
     
     header p {
-      font-size: 0.95rem;
-      font-weight: 300;
+      font-size: 0.85rem;
+      font-weight: 400;
       color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 30px;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 35px;
     }
     
-    .btn {
+    .btn-hero {
       display: inline-block;
-      background-color: var(--accent);
-      color: white; 
-      padding: 14px 28px;
+      background-color: var(--white);
+      color: var(--primary);
+      padding: 15px 32px;
       text-decoration: none;
-      font-weight: 600;
-      border-radius: 30px;
+      font-weight: 500;
+      border-radius: 50px;
       letter-spacing: 1px;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 15px rgba(255, 117, 56, 0.4);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
     }
     
-    /* Tarjetas de "Lo que hago" */
-    .section { padding: 50px 20px; }
+    /* Sección principal */
+    .section { padding: 45px 20px 20px; }
     
     .section-title {
+      font-family: 'Playfair Display', serif;
       text-align: center;
       font-size: 1.8rem;
-      margin-bottom: 35px;
-      color: var(--primary);
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 30px;
     }
     
+    /* Tarjetas de servicios - Estilo Glass/Limpio */
     .cards {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 15px;
+      gap: 16px;
     }
     
     .card {
-      background: white;
-      padding: 25px 15px;
-      border-radius: 16px;
+      background: var(--white);
+      padding: 30px 15px;
+      border-radius: 20px;
       text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      border-bottom: 3px solid var(--accent);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.04); /* Sombra súper suave */
+      border: 1px solid rgba(0,0,0,0.02);
     }
     
-    .card span { font-size: 2.2rem; display: block; margin-bottom: 12px; }
-    .card h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--primary); }
-    .card p { font-size: 0.85rem; color: #666; line-height: 1.4; }
+    /* Iconos dentro de las tarjetas */
+    .card i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      display: block;
+    }
     
-    /* Menú inferior estilo App (PWA) */
+    .card h3 { 
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; 
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 8px; 
+    }
+    
+    .card p { 
+      font-size: 0.8rem; 
+      color: var(--text-light); 
+      line-height: 1.5; 
+      font-weight: 300;
+    }
+    
+    /* Menú Inferior (App) - Limpio y profesional */
     .bottom-nav {
       position: fixed;
       bottom: 0;
       width: 100%;
-      background: white;
+      background: var(--white);
       display: flex;
       justify-content: space-around;
-      padding: 12px 0 15px 0;
-      box-shadow: 0 -4px 20px rgba(0,0,0,0.06);
+      padding: 15px 0 20px 0;
+      box-shadow: 0 -5px 20px rgba(0,0,0,0.03);
       z-index: 1000;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
+      border-radius: 25px 25px 0 0;
     }
     
     .nav-item {
       text-decoration: none;
-      color: #bbb;
-      font-size: 1.4rem;
+      color: #A0A0A0;
       display: flex;
       flex-direction: column;
       align-items: center;
+      transition: color 0.3s ease;
     }
     
-    .nav-item.active { color: var(--primary); }
+    .nav-item i { font-size: 1.5rem; margin-bottom: 4px; }
+    
+    .nav-item.active { color: var(--accent); }
     
     .nav-item span { 
       font-size: 0.65rem; 
-      margin-top: 5px; 
-      font-weight: 600;
+      font-weight: 500;
     }
   </style>
 </head>
@@ -133,41 +163,66 @@
   <header>
     <h1>GISELLA<br>VILLARREAL</h1>
     <p>Marketing · Contenido · E-commerce</p>
-    <a href="#" class="btn">CONOCE MI HISTORIA</a>
+    <a href="#" class="btn-hero">Conoce mi historia</a>
   </header>
 
   <div class="section">
     <h2 class="section-title">Explora mi mundo</h2>
     <div class="cards">
+      
+      <!-- Tarjeta 1 -->
       <div class="card">
-        <span>📸</span>
-        <h3>Foto & Contenido</h3>
+        <i class="ph-light ph-aperture"></i>
+        <h3>Fotografía</h3>
         <p>Estrategia visual para marcas.</p>
       </div>
+      
+      <!-- Tarjeta 2 -->
       <div class="card">
-        <span>💻</span>
+        <i class="ph-light ph-laptop"></i>
         <h3>E-commerce</h3>
-        <p>Marketing y experiencias digitales.</p>
+        <p>Marketing y experiencias.</p>
       </div>
+      
+      <!-- Tarjeta 3 -->
       <div class="card">
-        <span>🛍️</span>
+        <i class="ph-light ph-sparkle"></i>
         <h3>Shop Beauty</h3>
-        <p>Selección de skincare y beauty tools.</p>
+        <p>Skincare y herramientas.</p>
       </div>
+      
+      <!-- Tarjeta 4 -->
       <div class="card">
-        <span>🎵</span>
+        <i class="ph-light ph-headphones"></i>
         <h3>Música</h3>
-        <p>Mis covers y lado artístico.</p>
+        <p>Covers y arte sonoro.</p>
       </div>
+
     </div>
   </div>
 
+  <!-- Navegación con iconos profesionales -->
   <nav class="bottom-nav">
-    <a href="#" class="nav-item active">⌂<span>Inicio</span></a>
-    <a href="#" class="nav-item">✨<span>Sobre mí</span></a>
-    <a href="#" class="nav-item">📸<span>Servicios</span></a>
-    <a href="#" class="nav-item">🛍️<span>Shop</span></a>
-    <a href="#" class="nav-item">🎵<span>Música</span></a>
+    <a href="#" class="nav-item active">
+      <i class="ph-fill ph-house"></i>
+      <span>Inicio</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="ph-light ph-user"></i>
+      <span>Sobre mí</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="ph-light ph-briefcase"></i>
+      <span>Servicios</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="ph-light ph-shopping-bag"></i>
+      <span>Shop</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="ph-light ph-music-notes"></i>
+      <span>Música</span>
+    </a>
   </nav>
 
 </body>
