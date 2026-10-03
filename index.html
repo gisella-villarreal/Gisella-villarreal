@@ -119,21 +119,31 @@
       justify-content: center;
     }
 
-    /* BLOQUE NEGRO DE ESTADÍSTICAS CORREGIDO (3 en línea) */
+    /* BLOQUE NEGRO DE ESTADÍSTICAS CORREGIDO (Centrado y con líneas) */
     .black-stats {
       background-color: var(--bg-dark);
       color: white;
       margin: 30px 8px; 
       border-radius: 16px;
-      padding: 30px 15px; 
+      padding: 30px 5px; 
       display: grid;
       grid-template-columns: 1fr 1fr 1fr; /* 3 columnas iguales */
-      gap: 10px; /* Espacio más pequeño entre las columnas */
+      align-items: center; /* Alinea todo al centro verticalmente */
     }
     
+    .stat-item {
+      text-align: center; /* Centra los números y textos */
+      padding: 0 5px; /* Espacio para que no choque con la línea */
+    }
+    
+    /* Crea la línea divisoria elegante entre los ítems */
+    .stat-item:not(:last-child) {
+      border-right: 1px solid rgba(255, 255, 255, 0.15); 
+    }
+
     .stat-item h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem; /* Letra un poco más pequeña para que quepan */
+      font-size: 1.8rem; 
       font-weight: 400;
       margin-bottom: 5px;
     }
@@ -255,7 +265,7 @@
     </div>
   </div>
 
-  <!-- BLOQUE DE ESTADÍSTICAS NEGRO (3 ítems en línea) -->
+  <!-- BLOQUE DE ESTADÍSTICAS NEGRO (3 ítems centrado y con divisorias) -->
   <div class="black-stats">
     <div class="stat-item">
       <h3>+6</h3>
@@ -292,7 +302,7 @@
         <div class="service-icon"><i class="ph-light ph-shopping-cart"></i></div>
         <div class="service-text">
           <h3>Gestión E-commerce</h3>
-          <p>Marcas con los que he colaborado.</p>
+          <p>Proyectos con los que he colaborado.</p>
         </div>
       </div>
 
@@ -331,4 +341,5 @@
   </nav>
 
 </body>
-</html>
+  </html>
+  
