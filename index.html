@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gisella Villarreal | Portfolio & Shop</title>
   
-  <!-- Tipografías elegantes de la referencia -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <!-- Tipografías de la referencia -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   
   <!-- Iconos minimalistas -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   
   <style>
     :root {
-      --bg-cream: #F7F5F0;     /* Fondo crema claro */
-      --bg-alt: #EAE6DF;       /* Crema un poco más oscuro para contrastes */
-      --primary-dark: #4A5343; /* Verde oliva oscuro */
-      --accent-gold: #B08D5B;  /* Dorado suave/tierra */
-      --text-dark: #2C3027;    /* Texto casi negro */
+      --bg-cream: #F4F1ED;     /* Fondo arena/crema de la imagen */
+      --bg-dark: #151515;      /* Negro/gris muy oscuro */
+      --text-main: #1A1A1A;    /* Texto principal oscuro */
+      --text-light: #666666;   /* Texto secundario gris */
+      --border-color: #E2DDD5; /* Bordes suaves */
     }
     
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,174 +25,191 @@
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--bg-cream);
-      color: var(--text-dark);
+      color: var(--text-main);
       padding-bottom: 90px; 
       -webkit-font-smoothing: antialiased;
     }
     
-    /* Cabecera Estilo Editorial */
-    header {
-      padding: 50px 25px 30px;
-      text-align: left; /* Alineado a la izquierda como la referencia */
+    /* SECCIÓN HERO (Principal) */
+    .hero {
+      padding: 50px 20px 30px;
     }
     
-    .greeting {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.6rem;
-      color: var(--accent-gold);
-      margin-bottom: 5px;
+    /* Etiqueta ovalada arriba del título */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      background: transparent;
+      border: 1px solid var(--border-color);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      margin-bottom: 25px;
+    }
+    .badge span {
+      background: var(--bg-dark);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-right: 8px;
+      font-weight: 500;
     }
     
-    header h1 {
+    /* Título estilo editorial mixto */
+    .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: 3.5rem;
       font-weight: 500;
-      letter-spacing: 1px;
-      color: var(--primary-dark);
-      line-height: 1;
-      margin-bottom: 15px;
+      line-height: 1.05;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      color: var(--bg-dark);
+    }
+    .hero h1 i {
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-light);
     }
     
-    header p {
-      font-size: 0.75rem;
+    .hero p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin-bottom: 30px;
+      max-width: 90%;
+    }
+    
+    /* Botones */
+    .button-group {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+    .btn-dark {
+      background-color: var(--bg-dark);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.8rem;
       font-weight: 500;
-      color: var(--primary-dark);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text-main);
+      padding: 12px 0;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     
-    /* El famoso arco para la foto */
-    .hero-image-container {
+    /* Imagen Placeholder (Para la foto estética) */
+    .hero-image {
       width: 100%;
-      height: 380px;
-      background-color: var(--bg-alt);
-      border-radius: 180px 180px 0 0; /* Forma de arco */
-      margin-bottom: 30px;
+      height: 350px;
+      background-color: #E8E4DD; /* Color para simular la foto por ahora */
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid rgba(74, 83, 67, 0.1);
-    }
-
-    .hero-image-container p {
+      color: var(--text-light);
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      color: var(--primary-dark);
-      text-transform: none;
-      letter-spacing: 0;
-    }
-    
-    .btn-hero {
-      display: inline-flex;
-      align-items: center;
-      background-color: var(--primary-dark);
-      color: var(--bg-cream);
-      padding: 14px 28px;
-      text-decoration: none;
-      font-weight: 400;
-      font-size: 0.8rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      transition: background 0.3s;
     }
 
-    .btn-hero i {
-      margin-left: 10px;
-      font-size: 1.2rem;
+    /* BLOQUE NEGRO DE ESTADÍSTICAS */
+    .black-stats {
+      background-color: var(--bg-dark);
+      color: white;
+      margin: 20px;
+      border-radius: 16px;
+      padding: 30px 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* 2 columnas en celular */
+      gap: 25px 15px;
     }
-    
-    /* Barra de Estadísticas */
-    .stats-bar {
-      background-color: var(--primary-dark);
-      color: var(--bg-cream);
-      display: flex;
-      justify-content: space-around;
-      padding: 30px 15px;
-      text-align: center;
-    }
-    
-    .stat h4 {
+    .stat-item h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 400;
-      color: var(--accent-gold);
       margin-bottom: 5px;
+    }
+    .stat-item h4 {
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .stat-item p {
+      font-size: 0.65rem;
+      color: #999;
+      line-height: 1.4;
+    }
+
+    /* SECCIÓN SERVICIOS (Lista) */
+    .services {
+      padding: 40px 20px;
+    }
+    .services-sub {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-light);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    .services h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 500;
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+    .services h2 i {
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-light);
+    }
+    
+    .service-list {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    .service-item {
+      display: flex;
+      gap: 15px;
+    }
+    .service-icon {
+      background-color: #E8E4DD;
+      width: 45px;
+      height: 45px;
+      min-width: 45px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 1.4rem;
+      color: var(--bg-dark);
     }
-    
-    .stat h4 span { font-size: 1.2rem; margin-left: 2px; color: var(--bg-cream); }
-    
-    .stat p {
-      font-size: 0.65rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      opacity: 0.8;
+    .service-text h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .service-text p {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.4;
     }
 
-    /* Sección Servicios (Lista elegante) */
-    .section { padding: 45px 25px; }
-    
-    .section-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 30px;
-    }
-    
-    .section-header h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      color: var(--primary-dark);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    .section-header .line {
-      flex-grow: 1;
-      height: 1px;
-      background-color: var(--accent-gold);
-      margin-left: 20px;
-      opacity: 0.4;
-    }
-    
-    .cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-    
-    .card {
-      background-color: var(--bg-alt);
-      padding: 25px 20px;
-      display: flex;
-      align-items: center;
-    }
-    
-    .card i {
-      font-size: 2rem;
-      color: var(--primary-dark);
-      margin-right: 20px;
-      opacity: 0.8;
-    }
-    
-    .card-text h3 { 
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem; 
-      font-weight: 500;
-      color: var(--primary-dark);
-      margin-bottom: 4px; 
-    }
-    
-    .card-text p { 
-      font-size: 0.75rem; 
-      color: var(--text-dark); 
-      opacity: 0.7;
-    }
-    
-    /* Menú Inferior Minimalista */
+    /* MENÚ INFERIOR APP */
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -201,99 +218,104 @@
       display: flex;
       justify-content: space-around;
       padding: 15px 0 20px 0;
-      border-top: 1px solid rgba(74, 83, 67, 0.15);
+      border-top: 1px solid var(--border-color);
       z-index: 1000;
     }
-    
     .nav-item {
       text-decoration: none;
-      color: rgba(44, 48, 39, 0.4);
+      color: #A0A0A0;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-    
     .nav-item i { font-size: 1.4rem; margin-bottom: 4px; }
-    
-    .nav-item.active { color: var(--primary-dark); }
-    
+    .nav-item.active { color: var(--bg-dark); }
     .nav-item span { 
       font-size: 0.6rem; 
       font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 1px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="greeting">Hola, soy</div>
-    <h1>GISELLA<br>VILLARREAL</h1>
-    <p>Marketing y&bull; Negocios Digitales</p>
+  <!-- SECCIÓN PRINCIPAL -->
+  <div class="hero">
+    <div class="badge">
+      <span>NUEVO</span> Gisella 2.0 ya está aquí &rarr;
+    </div>
     
-    <!-- Espacio en arco para tu futura foto -->
-    <div class="hero-image-container">
-      <p>Aquí irá tu foto</p>
+    <h1>Diseña<br><i>experiencias</i><br>con propósito.</h1>
+    
+    <p>Gisella Villarreal es el espacio digital para conectar marcas, planificar contenido y crear estrategias de e-commerce integrales.</p>
+    
+    <div class="button-group">
+      <a href="#" class="btn-dark">Ver Servicios <i class="ph-bold ph-arrow-up-right"></i></a>
+      <a href="#" class="btn-outline">Ver Portafolio <i class="ph-fill ph-play-circle"></i></a>
     </div>
 
-    <a href="#" class="btn-hero">Conoce mi trabajo <i class="ph-light ph-arrow-right"></i></a>
-  </header>
-
-  <!-- Bloque verde de experiencia basado en tu perfil -->
-  <div class="stats-bar">
-    <div class="stat">
-      <h4>8<span>+</span></h4>
-      <p>Años<br>Experiencia</p>
-    </div>
-    <div class="stat">
-      <h4>CX</h4>
-      <p>Operaciones<br>E-commerce</p>
-    </div>
-    <div class="stat">
-      <h4>360°</h4>
-      <p>Creación<br>Visual</p>
+    <!-- Espacio para la foto estética -->
+    <div class="hero-image">
+      [Aquí irá tu foto estética]
     </div>
   </div>
 
-  <div class="section">
-    <div class="section-header">
-      <h2>Explora</h2>
-      <div class="line"></div>
+  <!-- BLOQUE DE ESTADÍSTICAS NEGRO -->
+  <div class="black-stats">
+    <div class="stat-item">
+      <h3>8+</h3>
+      <h4>Años de Exp.</h4>
+      <p>Gestión comercial y digital.</p>
     </div>
+    <div class="stat-item">
+      <h3>98%</h3>
+      <h4>Satisfacción</h4>
+      <p>En experiencia del cliente.</p>
+    </div>
+    <div class="stat-item">
+      <h3>360°</h3>
+      <h4>Estrategia</h4>
+      <p>Foto, marketing y ventas.</p>
+    </div>
+    <div class="stat-item">
+      <h3>24/7</h3>
+      <h4>Shop Beauty</h4>
+      <p>Tu selección de skincare.</p>
+    </div>
+  </div>
+
+  <!-- SECCIÓN SERVICIOS -->
+  <div class="services">
+    <div class="services-sub">Creado para marcas</div>
+    <h2>Todo lo que necesitas,<br>en un <i>solo espacio.</i></h2>
     
-    <div class="cards">
-      <div class="card">
-        <i class="ph-light ph-aperture"></i>
-        <div class="card-text">
-          <h3>Fotografía</h3>
-          <p>Estrategia visual comercial.</p>
+    <div class="service-list">
+      <div class="service-item">
+        <div class="service-icon"><i class="ph-light ph-camera"></i></div>
+        <div class="service-text">
+          <h3>Fotografía & Contenido</h3>
+          <p>Organiza tus ideas, campañas y contenido visual con claridad y estética.</p>
         </div>
       </div>
-      <div class="card">
-        <i class="ph-light ph-laptop"></i>
-        <div class="card-text">
-          <h3>E-commerce</h3>
-          <p>Operaciones y experiencia digital.</p>
+      
+      <div class="service-item">
+        <div class="service-icon"><i class="ph-light ph-shopping-cart"></i></div>
+        <div class="service-text">
+          <h3>Gestión E-commerce</h3>
+          <p>Operaciones, experiencia del cliente (CX) y estrategias de conversión.</p>
         </div>
       </div>
-      <div class="card">
-        <i class="ph-light ph-sparkle"></i>
-        <div class="card-text">
+
+      <div class="service-item">
+        <div class="service-icon"><i class="ph-light ph-sparkle"></i></div>
+        <div class="service-text">
           <h3>Shop Beauty</h3>
-          <p>Selección curada de skincare.</p>
-        </div>
-      </div>
-      <div class="card">
-        <i class="ph-light ph-headphones"></i>
-        <div class="card-text">
-          <h3>Música</h3>
-          <p>Mis covers y lado artístico.</p>
+          <p>Una tienda curada con los mejores productos de cuidado personal.</p>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- MENÚ INFERIOR -->
   <nav class="bottom-nav">
     <a href="#" class="nav-item active">
       <i class="ph-fill ph-house"></i>
