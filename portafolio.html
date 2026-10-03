@@ -27,7 +27,6 @@
       -webkit-font-smoothing: antialiased;
     }
     
-    /* CABECERA PORTAFOLIO */
     .hero { padding: 50px 20px 20px; }
     
     .badge {
@@ -68,63 +67,77 @@
       margin-bottom: 10px;
     }
 
-    /* GALERÍA DE FOTOGRAFÍA */
-    .portfolio-gallery {
+    /* ESTILO DE PORTADAS DESTACADAS (Tipo Pixieset) */
+    .featured-container {
       padding: 10px 20px 30px;
       display: flex;
       flex-direction: column;
-      gap: 25px;
+      gap: 30px;
     }
 
-    .portfolio-item {
-      background-color: white;
-      border: 1px solid var(--border-color);
+    .featured-card {
+      position: relative;
+      width: 100%;
+      height: 450px;
       border-radius: 16px;
       overflow: hidden;
-      padding: 12px;
-    }
-
-    /* Contenedor de la foto del portafolio */
-    .portfolio-img {
-      width: 100%;
-      height: 420px; /* Altura ideal para lucir fotos verticales u horizontales con elegancia */
-      border-radius: 10px;
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      margin-bottom: 15px;
-      background-color: #E8E4DD; /* Color de fondo mientras carga */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
 
-    .portfolio-info {
-      padding: 5px 10px 10px;
+    /* Capa oscura semitransparente para que el texto resalte */
+    .featured-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to top, rgba(21,21,21,0.85) 0%, rgba(21,21,21,0.2) 60%, transparent 100%);
+      z-index: 1;
     }
 
-    .portfolio-tag {
+    .featured-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+    }
+
+    .featured-tag {
       font-size: 0.65rem;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--text-light);
-      margin-bottom: 6px;
-      display: block;
+      letter-spacing: 2px;
+      color: #D3CFC9;
+      margin-bottom: 5px;
       font-weight: 600;
     }
 
-    .portfolio-info h3 {
+    .featured-content h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 500;
+      font-size: 2.2rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .btn-view-gallery {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: white;
       color: var(--bg-dark);
-      margin-bottom: 6px;
+      padding: 10px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
     }
 
-    .portfolio-info p {
-      font-size: 0.8rem;
-      color: var(--text-light);
-      line-height: 1.4;
-    }
-
-    /* CAJA DE CONTACTO PARA SESIONES */
+    /* CAJA DE CONTACTO */
     .cta-box {
       background-color: var(--bg-dark);
       color: white;
@@ -161,7 +174,7 @@
       font-weight: 600;
     }
 
-    /* MENÚ INFERIOR APP (4 BOTONES) */
+    /* MENÚ INFERIOR */
     .bottom-nav {
       position: fixed; bottom: 0; width: 100%;
       background: var(--bg-cream);
@@ -183,55 +196,41 @@
 
   <div class="hero">
     <div class="badge">
-      <span>VISUAL</span> Portafolio Comercial &rarr;
+      <span>DESTACADOS</span> Trabajos & Clientes &rarr;
     </div>
-    <h1>Creación <br><i>& Dirección.</i></h1>
-    <p>Capturando la esencia de cada marca a través de la fotografía comercial y el diseño de contenido visual.</p>
+    <h1>Galerías <br><i>Comerciales.</i></h1>
+    <p>Explora los proyectos fotográficos y campañas desarrolladas para cada marca.</p>
   </div>
 
-  <!-- GALERÍA DE PROYECTOS FOTOGRÁFICOS -->
-  <div class="portfolio-gallery">
+  <!-- SECCIÓN DE CLIENTES DESTACADOS (Tipo Pixieset) -->
+  <div class="featured-container">
     
-    <!-- Proyecto 1 (Aquí puedes cambiar el enlace de background-image por el link de tu foto en ImgBB) -->
-    <div class="portfolio-item">
-      <div class="portfolio-img" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
-      <div class="portfolio-info">
-        <span class="portfolio-tag">Campaña Comercial</span>
-        <h3>Dirección de Arte & Estética</h3>
-        <p>Enfoque minimalista para comunicar la identidad y profesionalismo de marcas digitales.</p>
+    <!-- Cliente 1: Workstyle -->
+    <div class="featured-card" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');">
+      <div class="featured-content">
+        <span class="featured-tag">Campaña de Moda & Estilo</span>
+        <h2>Workstyle</h2>
+        <a href="cliente-workstyle.html" class="btn-view-gallery">Ver galería <i class="ph-bold ph-arrow-right"></i></a>
       </div>
     </div>
 
-    <!-- Proyecto 2 -->
-    <div class="portfolio-item">
-      <div class="portfolio-img" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');"></div>
-      <div class="portfolio-info">
-        <span class="portfolio-tag">Retrato Profesional</span>
-        <h3>Naturalidad y Confianza</h3>
-        <p>Sesiones orientadas a creadores de contenido y emprendedores que construyen marca personal.</p>
-      </div>
-    </div>
-
-    <!-- Proyecto 3 -->
-    <div class="portfolio-item">
-      <div class="portfolio-img" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
-      <div class="portfolio-info">
-        <span class="portfolio-tag">E-Commerce & Producto</span>
-        <h3>Detalles que Conectan</h3>
-        <p>Fotografía de producto optimizada para tiendas online, catálogos y redes sociales.</p>
+    <!-- Cliente 2: RocoTec -->
+    <div class="featured-card" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');">
+      <div class="featured-content">
+        <span class="featured-tag">Fotografía de Producto & Lifestyle</span>
+        <h2>RocoTec</h2>
+        <a href="#" class="btn-view-gallery">Ver galería <i class="ph-bold ph-arrow-right"></i></a>
       </div>
     </div>
 
   </div>
 
-  <!-- CAJA PARA CONTRATAR SESIÓN -->
   <div class="cta-box">
     <h3>¿Hacemos clic juntos?</h3>
-    <p>Cuéntame sobre tu marca o proyecto fotográfico y agendemos una sesión para elevar la imagen de tu negocio.</p>
+    <p>Cuéntame sobre tu proyecto y agendemos una sesión para elevar la imagen de tu negocio.</p>
     <a href="#" class="btn-light"><i class="ph-bold ph-camera"></i> Cotizar proyecto</a>
   </div>
 
-  <!-- MENÚ INFERIOR -->
   <nav class="bottom-nav">
     <a href="index.html" class="nav-item">
       <i class="ph-light ph-house"></i>
