@@ -5,203 +5,295 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gisella Villarreal | Portfolio & Shop</title>
   
-  <!-- Tipografías elegantes -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Tipografías elegantes de la referencia -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   
-  <!-- Librería de Iconos Profesionales (Minimalistas) -->
+  <!-- Iconos minimalistas -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   
   <style>
     :root {
-      --bg-color: #FAFAFA;    /* Blanco un poco más suave para el fondo */
-      --white: #FFFFFF;
-      --primary: #C1297E;     /* Fuchsia Pink */
-      --accent: #FF7538;      /* Orange Peel */
-      --text-dark: #1A1A1A;
-      --text-light: #666666;
+      --bg-cream: #F7F5F0;     /* Fondo crema claro */
+      --bg-alt: #EAE6DF;       /* Crema un poco más oscuro para contrastes */
+      --primary-dark: #4A5343; /* Verde oliva oscuro */
+      --accent-gold: #B08D5B;  /* Dorado suave/tierra */
+      --text-dark: #2C3027;    /* Texto casi negro */
     }
     
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--bg-color);
+      background-color: var(--bg-cream);
       color: var(--text-dark);
       padding-bottom: 90px; 
       -webkit-font-smoothing: antialiased;
     }
     
-    /* Cabecera con degradado premium y bordes redondeados */
+    /* Cabecera Estilo Editorial */
     header {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-      padding: 80px 20px 60px 20px;
-      text-align: center;
-      border-radius: 0 0 35px 35px; /* Curva moderna estilo app */
-      box-shadow: 0 10px 30px rgba(193, 41, 126, 0.2);
+      padding: 50px 25px 30px;
+      text-align: left; /* Alineado a la izquierda como la referencia */
+    }
+    
+    .greeting {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.6rem;
+      color: var(--accent-gold);
+      margin-bottom: 5px;
     }
     
     header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
+      font-size: 3.5rem;
       font-weight: 500;
-      letter-spacing: 3px;
-      color: var(--white);
-      line-height: 1.15;
+      letter-spacing: 1px;
+      color: var(--primary-dark);
+      line-height: 1;
       margin-bottom: 15px;
     }
     
     header p {
-      font-size: 0.85rem;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--primary-dark);
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 35px;
-    }
-    
-    .btn-hero {
-      display: inline-block;
-      background-color: var(--white);
-      color: var(--primary);
-      padding: 15px 32px;
-      text-decoration: none;
-      font-weight: 500;
-      border-radius: 50px;
-      letter-spacing: 1px;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
-    }
-    
-    /* Sección principal */
-    .section { padding: 45px 20px 20px; }
-    
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      text-align: center;
-      font-size: 1.8rem;
-      font-weight: 500;
-      color: var(--text-dark);
       margin-bottom: 30px;
     }
     
-    /* Tarjetas de servicios - Estilo Glass/Limpio */
+    /* El famoso arco para la foto */
+    .hero-image-container {
+      width: 100%;
+      height: 380px;
+      background-color: var(--bg-alt);
+      border-radius: 180px 180px 0 0; /* Forma de arco */
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(74, 83, 67, 0.1);
+    }
+
+    .hero-image-container p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--primary-dark);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    
+    .btn-hero {
+      display: inline-flex;
+      align-items: center;
+      background-color: var(--primary-dark);
+      color: var(--bg-cream);
+      padding: 14px 28px;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: background 0.3s;
+    }
+
+    .btn-hero i {
+      margin-left: 10px;
+      font-size: 1.2rem;
+    }
+    
+    /* Barra de Estadísticas */
+    .stats-bar {
+      background-color: var(--primary-dark);
+      color: var(--bg-cream);
+      display: flex;
+      justify-content: space-around;
+      padding: 30px 15px;
+      text-align: center;
+    }
+    
+    .stat h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--accent-gold);
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .stat h4 span { font-size: 1.2rem; margin-left: 2px; color: var(--bg-cream); }
+    
+    .stat p {
+      font-size: 0.65rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    /* Sección Servicios (Lista elegante) */
+    .section { padding: 45px 25px; }
+    
+    .section-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .section-header .line {
+      flex-grow: 1;
+      height: 1px;
+      background-color: var(--accent-gold);
+      margin-left: 20px;
+      opacity: 0.4;
+    }
+    
     .cards {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
     
     .card {
-      background: var(--white);
-      padding: 30px 15px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.04); /* Sombra súper suave */
-      border: 1px solid rgba(0,0,0,0.02);
+      background-color: var(--bg-alt);
+      padding: 25px 20px;
+      display: flex;
+      align-items: center;
     }
     
-    /* Iconos dentro de las tarjetas */
     .card i {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 15px;
-      display: block;
+      font-size: 2rem;
+      color: var(--primary-dark);
+      margin-right: 20px;
+      opacity: 0.8;
     }
     
-    .card h3 { 
+    .card-text h3 { 
       font-family: 'Playfair Display', serif;
-      font-size: 1.15rem; 
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 8px; 
+      font-size: 1.2rem; 
+      font-weight: 500;
+      color: var(--primary-dark);
+      margin-bottom: 4px; 
     }
     
-    .card p { 
-      font-size: 0.8rem; 
-      color: var(--text-light); 
-      line-height: 1.5; 
-      font-weight: 300;
+    .card-text p { 
+      font-size: 0.75rem; 
+      color: var(--text-dark); 
+      opacity: 0.7;
     }
     
-    /* Menú Inferior (App) - Limpio y profesional */
+    /* Menú Inferior Minimalista */
     .bottom-nav {
       position: fixed;
       bottom: 0;
       width: 100%;
-      background: var(--white);
+      background: var(--bg-cream);
       display: flex;
       justify-content: space-around;
       padding: 15px 0 20px 0;
-      box-shadow: 0 -5px 20px rgba(0,0,0,0.03);
+      border-top: 1px solid rgba(74, 83, 67, 0.15);
       z-index: 1000;
-      border-radius: 25px 25px 0 0;
     }
     
     .nav-item {
       text-decoration: none;
-      color: #A0A0A0;
+      color: rgba(44, 48, 39, 0.4);
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: color 0.3s ease;
     }
     
-    .nav-item i { font-size: 1.5rem; margin-bottom: 4px; }
+    .nav-item i { font-size: 1.4rem; margin-bottom: 4px; }
     
-    .nav-item.active { color: var(--accent); }
+    .nav-item.active { color: var(--primary-dark); }
     
     .nav-item span { 
-      font-size: 0.65rem; 
+      font-size: 0.6rem; 
       font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
   </style>
 </head>
 <body>
 
   <header>
+    <div class="greeting">Hola, soy</div>
     <h1>GISELLA<br>VILLARREAL</h1>
-    <p>Marketing · Contenido · E-commerce</p>
-    <a href="#" class="btn-hero">Conoce mi historia</a>
+    <p>Marketing &bull; Contenido &bull; E-commerce</p>
+    
+    <!-- Espacio en arco para tu futura foto -->
+    <div class="hero-image-container">
+      <p>Aquí irá tu foto</p>
+    </div>
+
+    <a href="#" class="btn-hero">Conoce mi trabajo <i class="ph-light ph-arrow-right"></i></a>
   </header>
 
-  <div class="section">
-    <h2 class="section-title">Explora mi mundo</h2>
-    <div class="cards">
-      
-      <!-- Tarjeta 1 -->
-      <div class="card">
-        <i class="ph-light ph-aperture"></i>
-        <h3>Fotografía</h3>
-        <p>Estrategia visual para marcas.</p>
-      </div>
-      
-      <!-- Tarjeta 2 -->
-      <div class="card">
-        <i class="ph-light ph-laptop"></i>
-        <h3>E-commerce</h3>
-        <p>Marketing y experiencias.</p>
-      </div>
-      
-      <!-- Tarjeta 3 -->
-      <div class="card">
-        <i class="ph-light ph-sparkle"></i>
-        <h3>Shop Beauty</h3>
-        <p>Skincare y herramientas.</p>
-      </div>
-      
-      <!-- Tarjeta 4 -->
-      <div class="card">
-        <i class="ph-light ph-headphones"></i>
-        <h3>Música</h3>
-        <p>Covers y arte sonoro.</p>
-      </div>
-
+  <!-- Bloque verde de experiencia basado en tu perfil -->
+  <div class="stats-bar">
+    <div class="stat">
+      <h4>8<span>+</span></h4>
+      <p>Años<br>Experiencia</p>
+    </div>
+    <div class="stat">
+      <h4>CX</h4>
+      <p>Operaciones<br>E-commerce</p>
+    </div>
+    <div class="stat">
+      <h4>360°</h4>
+      <p>Creación<br>Visual</p>
     </div>
   </div>
 
-  <!-- Navegación con iconos profesionales -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Explora</h2>
+      <div class="line"></div>
+    </div>
+    
+    <div class="cards">
+      <div class="card">
+        <i class="ph-light ph-aperture"></i>
+        <div class="card-text">
+          <h3>Fotografía</h3>
+          <p>Estrategia visual comercial.</p>
+        </div>
+      </div>
+      <div class="card">
+        <i class="ph-light ph-laptop"></i>
+        <div class="card-text">
+          <h3>E-commerce</h3>
+          <p>Operaciones y experiencia digital.</p>
+        </div>
+      </div>
+      <div class="card">
+        <i class="ph-light ph-sparkle"></i>
+        <div class="card-text">
+          <h3>Shop Beauty</h3>
+          <p>Selección curada de skincare.</p>
+        </div>
+      </div>
+      <div class="card">
+        <i class="ph-light ph-headphones"></i>
+        <div class="card-text">
+          <h3>Música</h3>
+          <p>Mis covers y lado artístico.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <nav class="bottom-nav">
     <a href="#" class="nav-item active">
       <i class="ph-fill ph-house"></i>
