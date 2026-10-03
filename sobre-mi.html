@@ -1,1 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Mí | Gisella Villarreal</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <style>
+    :root {
+      --bg-cream: #F4F1ED;
+      --bg-dark: #151515;
+      --text-main: #1A1A1A;
+      --text-light: #666666;
+      --border-color: #E2DDD5;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      padding-bottom: 100px; 
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* CABECERA SOBRE MÍ */
+    .hero { padding: 50px 20px 20px; }
+    
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      color: var(--bg-dark);
+    }
+    .hero h1 i { font-weight: 400; font-style: italic; color: var(--text-light); }
+    
+    /* IMAGEN DE PERFIL */
+    .about-image {
+      width: 100%;
+      height: 400px; 
+      border-radius: 16px;
+      background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg'); /* Usé tu misma foto optimizada, pero puedes cambiarla luego */
+      background-size: cover; 
+      background-position: center; 
+      margin-bottom: 30px;
+    }
+
+    /* TEXTO DE BIOGRAFÍA */
+    .bio-section { padding: 0 20px; margin-bottom: 40px; }
+    
+    .bio-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+    
+    .bio-section p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    /* CAJA OSCURA DE DATOS EXTRA */
+    .personal-facts {
+      background-color: var(--bg-dark);
+      color: white;
+      margin: 0 8px 40px 8px;
+      border-radius: 16px;
+      padding: 35px 20px;
+    }
+    
+    .personal-facts h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-style: italic;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .fact-item {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      align-items: flex-start;
+    }
+    .fact-item:last-child { margin-bottom: 0; }
+    
+    .fact-icon {
+      font-size: 1.5rem;
+      color: var(--bg-cream);
+      background: rgba(255,255,255,0.1);
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    
+    .fact-text h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 3px; }
+    .fact-text p { font-size: 0.75rem; color: #999; line-height: 1.4; }
+
+    /* MENÚ INFERIOR APP */
+    .bottom-nav {
+      position: fixed; bottom: 0; width: 100%;
+      background: var(--bg-cream);
+      display: flex; justify-content: space-around;
+      padding: 15px 0 20px 0;
+      border-top: 1px solid var(--border-color);
+      z-index: 1000;
+    }
+    .nav-item {
+      text-decoration: none; color: #A0A0A0;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .nav-item i { font-size: 1.4rem; margin-bottom: 4px; }
+    
+    /* Aquí activamos el icono de "Sobre mí" en negro */
+    .nav-item.active { color: var(--bg-dark); }
+    .nav-item span { font-size: 0.6rem; font-weight: 500; }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <h1>Detrás de<br><i>la marca.</i></h1>
+  </div>
+
+  <div class="bio-section">
+    <div class="about-image"></div>
+    <h2>Hola, soy Gisella.</h2>
+    <p>Soy Marketer y Fotógrafa Comercial con una profunda pasión por la estética y la experiencia del usuario. Mi enfoque principal es ayudar a marcas y emprendimientos a construir y fortalecer su presencia digital a través de la gestión de e-commerce y el contenido visual estratégico.</p>
+    <p>Trabajo todos los días combinando la dirección de arte con los números y las operaciones comerciales, proyectándome para que en el 2029 este proyecto se convierta en una agencia integral de marketing y contenido audiovisual.</p>
+  </div>
+
+  <div class="personal-facts">
+    <h3>Más allá del trabajo</h3>
+    
+    <div class="fact-item">
+      <div class="fact-icon"><i class="ph-light ph-guitar"></i></div>
+      <div class="fact-text">
+        <h4>Lado Artístico</h4>
+        <p>Me encanta la música, tocar el ukulele y grabar covers en mi tiempo libre.</p>
+      </div>
+    </div>
+    
+    <div class="fact-item">
+      <div class="fact-icon"><i class="ph-light ph-swimming-pool"></i></div>
+      <div class="fact-text">
+        <h4>Energía & Equilibrio</h4>
+        <p>Entrenar pesas en el gimnasio y practicar natación son mi forma de desconectar.</p>
+      </div>
+    </div>
+    
+    <div class="fact-item">
+      <div class="fact-icon"><i class="ph-light ph-books"></i></div>
+      <div class="fact-text">
+        <h4>Crecimiento Constante</h4>
+        <p>Actualmente me encuentro perfeccionando mi nivel de inglés funcional para expandir mis horizontes profesionales.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENÚ INFERIOR -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item">
+      <i class="ph-light ph-house"></i>
+      <span>Inicio</span>
+    </a>
+    <a href="sobre-mi.html" class="nav-item active">
+      <i class="ph-fill ph-user"></i>
+      <span>Sobre mí</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="ph-light ph-briefcase"></i>
+      <span>Servicios</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="ph-light ph-shopping-bag"></i>
+      <span>Shop</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="ph-light ph-music-notes"></i>
+      <span>Música</span>
+    </a>
+  </nav>
+
+</body>
+  </html>
 
