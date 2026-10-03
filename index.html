@@ -113,27 +113,24 @@
     .hero-image {
       width: 100%;
       height: 350px;
-      background-color: #E8E4DD; /* Color para simular la foto por ahora */
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--text-light);
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
     }
 
-    /* BLOQUE NEGRO DE ESTADÍSTICAS */
+    /* BLOQUE NEGRO DE ESTADÍSTICAS CORREGIDO */
     .black-stats {
       background-color: var(--bg-dark);
       color: white;
-      margin: 20px;
+      margin: 30px 8px; /* Reduje el margen a los lados para que se extienda */
       border-radius: 16px;
-      padding: 30px 20px;
+      padding: 35px 15px; /* Ajusté el espacio adentro para los textos */
       display: grid;
-      grid-template-columns: 1fr 1fr; /* 2 columnas en celular */
-      gap: 25px 15px;
+      grid-template-columns: 1fr 1fr; 
+      gap: 25px 10px; /* Reduje el hueco del medio para ganar espacio horizontal */
     }
+    
     .stat-item h3 {
       font-family: 'Playfair Display', serif;
       font-size: 2.2rem;
@@ -254,8 +251,9 @@
     </div>
 
   <!-- Espacio para la foto estética -->
-    <div class="hero-image" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg'); background-size: cover; background-position: top center; border: none; color: transparent;">
+    <div class="hero-image" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg'); background-size: cover; background-position: center 25%; border: none; color: transparent;">
     </div>
+  </div>
 
   <!-- BLOQUE DE ESTADÍSTICAS NEGRO -->
   <div class="black-stats">
@@ -338,4 +336,5 @@
   </nav>
 
 </body>
-</html>
+      </html>
+  
