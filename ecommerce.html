@@ -67,71 +67,50 @@
       margin-bottom: 10px;
     }
 
-    /* CONTENEDOR DE PROYECTOS / CASOS DE ÉXITO */
-    .projects-container {
+    /* CONTENEDOR DE RESEÑAS / TESTIMONIOS */
+    .reviews-container {
       padding: 10px 20px 20px;
       display: flex;
       flex-direction: column;
-      gap: 25px;
+      gap: 20px;
     }
 
-    .project-card {
+    .review-card {
       background-color: white;
       border: 1px solid var(--border-color);
       border-radius: 16px;
-      overflow: hidden;
-      padding: 20px;
+      padding: 25px 20px;
+      position: relative;
     }
 
-    .project-img {
-      width: 100%;
-      height: 220px;
-      border-radius: 10px;
-      background-size: cover;
-      background-position: center;
-      margin-bottom: 15px;
-      background-color: #E8E4DD;
-    }
-
-    .project-tag {
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--text-light);
-      margin-bottom: 6px;
+    .review-card i.quote-icon {
+      font-size: 1.8rem;
+      color: var(--border-color);
+      margin-bottom: 10px;
       display: block;
-      font-weight: 600;
     }
 
-    .project-card h3 {
+    .review-card p.review-text {
       font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: var(--bg-dark);
-      margin-bottom: 8px;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text-main);
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
 
-    .project-card p {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      line-height: 1.5;
-      margin-bottom: 15px;
-    }
-
-    .project-metrics {
+    .review-author {
       display: flex;
-      gap: 15px;
-      border-top: 1px solid var(--border-color);
-      padding-top: 15px;
+      flex-direction: column;
     }
 
-    .metric-item h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
+    .review-author h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
       color: var(--bg-dark);
     }
 
-    .metric-item span {
+    .review-author span {
       font-size: 0.7rem;
       color: var(--text-light);
     }
@@ -195,48 +174,42 @@
 
   <div class="hero">
     <div class="badge">
-      <span>EXPERIENCIA</span> +6 Años &rarr;
+      <span>CONFIANZA</span> Testimonios &rarr;
     </div>
-    <h1>Gestión <br><i>E-commerce.</i></h1>
-    <p>Proyectos, optimización de tiendas online y casos de éxito donde he colaborado para potenciar ventas y conversión.</p>
+    <h1>Lo que dicen <br><i>las marcas.</i></h1>
+    <p>Experiencias y opiniones de quienes han confiado en mi trabajo para potenciar y organizar sus tiendas online.</p>
   </div>
 
-  <!-- LISTA DE PROYECTOS / CASOS DE ÉXITO -->
-  <div class="projects-container">
+  <!-- SECCIÓN DE RESEÑAS -->
+  <div class="reviews-container">
     
-    <!-- Proyecto 1 -->
-    <div class="project-card">
-      <div class="project-img" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
-      <span class="project-tag">Optimización & Operación</span>
-      <h3>Tienda Online RocoTec</h3>
-      <p>Estrategia integral de e-merchandising, mejora del recorrido de compra del usuario (UX/UI) y reestructuración del catálogo de productos.</p>
-      <div class="project-metrics">
-        <div class="metric-item">
-          <h4>+35%</h4>
-          <span>Conversión</span>
-        </div>
-        <div class="metric-item">
-          <h4>Omnicanal</h4>
-          <span>Logística</span>
-        </div>
+    <!-- Reseña 1 -->
+    <div class="review-card">
+      <i class="ph-fill ph-quotes quote-icon"></i>
+      <p class="review-text">"Trabajar con Gisella transformó por completo nuestra tienda online. Su orden en el catálogo y su enfoque en la experiencia de compra hicieron que todo fluyera mucho mejor con nuestros clientes."</p>
+      <div class="review-author">
+        <h4>Equipo RocoTec</h4>
+        <span>Tienda Online & Tecnología</span>
       </div>
     </div>
 
-    <!-- Proyecto 2 -->
-    <div class="project-card">
-      <div class="project-img" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');"></div>
-      <span class="project-tag">Estrategia & Funnels</span>
-      <h3>Campañas & Embudos de Conversión</h3>
-      <p>Diseño de embudos de ventas orientados a remarketing, optimización de checkout y análisis detallado de métricas logísticas y operativas.</p>
-      <div class="project-metrics">
-        <div class="metric-item">
-          <h4>A/B Testing</h4>
-          <span>Optimización</span>
-        </div>
-        <div class="metric-item">
-          <h4>24/7</h4>
-          <span>Monitoreo</span>
-        </div>
+    <!-- Reseña 2 -->
+    <div class="review-card">
+      <i class="ph-fill ph-quotes quote-icon"></i>
+      <p class="review-text">"Su visión en e-commerce y marketing digital es impecable. Nos ayudó a estructurar nuestros procesos de venta y a proyectar una imagen mucho más profesional."</p>
+      <div class="review-author">
+        <h4>Marcela Ávila</h4>
+        <span>Fundadora de Workstyle</span>
+      </div>
+    </div>
+
+    <!-- Reseña 3 -->
+    <div class="review-card">
+      <i class="ph-fill ph-quotes quote-icon"></i>
+      <p class="review-text">"Detallista, organizada y con una gran capacidad para entender las necesidades de un e-commerce. ¡Super recomendada para cualquier marca que quiera crecer!"</p>
+      <div class="review-author">
+        <h4>Cliente Colaborador</h4>
+        <span>Emprendimiento Digital</span>
       </div>
     </div>
 
