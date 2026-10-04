@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión E-commerce | Gisella Villarreal</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <style>
+    :root {
+      --bg-cream: #F4F1ED;
+      --bg-dark: #151515;
+      --text-main: #1A1A1A;
+      --text-light: #666666;
+      --border-color: #E2DDD5;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      padding-bottom: 100px; 
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .hero { padding: 50px 20px 20px; }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      background: transparent;
+      border: 1px solid var(--border-color);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      margin-bottom: 20px;
+    }
+    .badge span {
+      background: var(--bg-dark);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-right: 8px;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -1px;
+      margin-bottom: 15px;
+      color: var(--bg-dark);
+    }
+    .hero h1 i { font-weight: 400; font-style: italic; color: var(--text-light); }
+    
+    .hero p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      max-width: 90%;
+      margin-bottom: 10px;
+    }
+
+    /* CONTENEDOR DE PROYECTOS / CASOS DE ÉXITO */
+    .projects-container {
+      padding: 10px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .project-card {
+      background-color: white;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .project-img {
+      width: 100%;
+      height: 220px;
+      border-radius: 10px;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 15px;
+      background-color: #E8E4DD;
+    }
+
+    .project-tag {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-light);
+      margin-bottom: 6px;
+      display: block;
+      font-weight: 600;
+    }
+
+    .project-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--bg-dark);
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .project-metrics {
+      display: flex;
+      gap: 15px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 15px;
+    }
+
+    .metric-item h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--bg-dark);
+    }
+
+    .metric-item span {
+      font-size: 0.7rem;
+      color: var(--text-light);
+    }
+
+    /* CAJA DE CONTACTO */
+    .cta-box {
+      background-color: var(--bg-dark);
+      color: white;
+      margin: 20px 8px 40px 8px;
+      border-radius: 16px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .cta-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .cta-box p {
+      font-size: 0.85rem;
+      color: #999;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+
+    .btn-light {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: white;
+      color: var(--bg-dark);
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* MENÚ INFERIOR */
+    .bottom-nav {
+      position: fixed; bottom: 0; width: 100%;
+      background: var(--bg-cream);
+      display: flex; justify-content: space-around;
+      padding: 15px 0 20px 0;
+      border-top: 1px solid var(--border-color);
+      z-index: 1000;
+    }
+    .nav-item {
+      text-decoration: none; color: #A0A0A0;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .nav-item i { font-size: 1.4rem; margin-bottom: 4px; }
+    .nav-item.active { color: var(--bg-dark); }
+    .nav-item span { font-size: 0.6rem; font-weight: 500; }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="badge">
+      <span>EXPERIENCIA</span> +6 Años &rarr;
+    </div>
+    <h1>Gestión <br><i>E-commerce.</i></h1>
+    <p>Proyectos, optimización de tiendas online y casos de éxito donde he colaborado para potenciar ventas y conversión.</p>
+  </div>
+
+  <!-- LISTA DE PROYECTOS / CASOS DE ÉXITO -->
+  <div class="projects-container">
+    
+    <!-- Proyecto 1 -->
+    <div class="project-card">
+      <div class="project-img" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
+      <span class="project-tag">Optimización & Operación</span>
+      <h3>Tienda Online RocoTec</h3>
+      <p>Estrategia integral de e-merchandising, mejora del recorrido de compra del usuario (UX/UI) y reestructuración del catálogo de productos.</p>
+      <div class="project-metrics">
+        <div class="metric-item">
+          <h4>+35%</h4>
+          <span>Conversión</span>
+        </div>
+        <div class="metric-item">
+          <h4>Omnicanal</h4>
+          <span>Logística</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proyecto 2 -->
+    <div class="project-card">
+      <div class="project-img" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');"></div>
+      <span class="project-tag">Estrategia & Funnels</span>
+      <h3>Campañas & Embudos de Conversión</h3>
+      <p>Diseño de embudos de ventas orientados a remarketing, optimización de checkout y análisis detallado de métricas logísticas y operativas.</p>
+      <div class="project-metrics">
+        <div class="metric-item">
+          <h4>A/B Testing</h4>
+          <span>Optimización</span>
+        </div>
+        <div class="metric-item">
+          <h4>24/7</h4>
+          <span>Monitoreo</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CAJA DE CONTACTO -->
+  <div class="cta-box">
+    <h3>¿Optimizamos tu tienda?</h3>
+    <p>Llevemos la operación y la experiencia de compra de tu e-commerce al siguiente nivel.</p>
+    <a href="#" class="btn-light"><i class="ph-bold ph-shopping-cart"></i> Cotizar gestión</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item">
+      <i class="ph-light ph-house"></i>
+      <span>Inicio</span>
+    </a>
+    <a href="sobre-mi.html" class="nav-item">
+      <i class="ph-light ph-user"></i>
+      <span>Sobre mí</span>
+    </a>
+    <a href="servicios.html" class="nav-item">
+      <i class="ph-light ph-briefcase"></i>
+      <span>Servicios</span>
+    </a>
+    <a href="shop.html" class="nav-item">
+      <i class="ph-light ph-shopping-bag"></i>
+      <span>Shop</span>
+    </a>
+  </nav>
+
+</body>
+  </html>
+  
