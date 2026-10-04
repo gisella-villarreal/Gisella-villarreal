@@ -89,40 +89,45 @@
 
     .mosaic-title {
       text-align: center;
-      padding: 40px 20px 20px;
+      padding: 30px 20px 15px;
     }
     .mosaic-title h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 400;
       color: var(--bg-dark);
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
     .mosaic-title p {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 2px;
       color: var(--text-light);
     }
 
+    /* MOSAICO TIPO PINTEREST COMPACTO */
     .photo-mosaic {
-      padding: 10px 16px 30px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      padding: 5px 6px 30px;
+      columns: 2;
+      column-gap: 4px;
     }
 
     .mosaic-item {
       width: 100%;
+      margin-bottom: 4px;
+      break-inside: avoid;
+      border-radius: 2px;
       background-size: cover;
       background-position: center;
-      border-radius: 8px;
       background-color: #E8E4DD;
     }
 
-    .item-tall { height: 280px; }
-    .item-square { height: 180px; }
-    .item-wide { grid-column: span 2; height: 240px; }
+    .img-1 { height: 260px; }
+    .img-2 { height: 180px; }
+    .img-3 { height: 220px; }
+    .img-4 { height: 290px; }
+    .img-5 { height: 200px; }
+    .img-6 { height: 240px; }
 
     .bottom-nav {
       position: fixed; bottom: 0; width: 100%;
@@ -158,11 +163,12 @@
   </div>
 
   <div class="photo-mosaic">
-    <div class="mosaic-item item-tall" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');"></div>
-    <div class="mosaic-item item-square" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
-    <div class="mosaic-item item-square" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
-    <div class="mosaic-item item-tall" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');"></div>
-    <div class="mosaic-item item-wide" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');"></div>
+    <div class="mosaic-item img-1" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');"></div>
+    <div class="mosaic-item img-2" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
+    <div class="mosaic-item img-3" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
+    <div class="mosaic-item img-4" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');"></div>
+    <div class="mosaic-item img-5" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');"></div>
+    <div class="mosaic-item img-6" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
   </div>
 
   <nav class="bottom-nav">
