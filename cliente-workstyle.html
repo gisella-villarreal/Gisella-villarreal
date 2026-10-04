@@ -27,7 +27,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* BOTÓN VOLVER FLOTANTE */
     .back-btn {
       position: absolute;
       top: 20px;
@@ -45,7 +44,6 @@
       backdrop-filter: blur(5px);
     }
     
-    /* GRAN FOTO DE PORTADA ARRIBA */
     .hero-banner {
       height: 55vh;
       width: 100%;
@@ -89,47 +87,44 @@
       color: #E2DDD5;
     }
 
-    /* TÍTULO SECCIÓN MOSAICO */
     .mosaic-title {
       text-align: center;
-      padding: 40px 20px 20px;
+      padding: 30px 20px 15px;
     }
     .mosaic-title h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 400;
       color: var(--bg-dark);
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
     .mosaic-title p {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 2px;
       color: var(--text-light);
     }
 
-    /* MOSAICO EDITORIAL DE FOTOS (Estilo revista) */
+    /* MOSAICO UNIDO (Espacio reducido a 3px y sin bordes redondeados exagerados) */
     .photo-mosaic {
-      padding: 10px 16px 30px;
+      padding: 5px 8px 30px;
       display: grid;
-      grid-template-columns: 1fr 1fr; /* Dos columnas principales */
-      gap: 10px;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px; 
     }
 
     .mosaic-item {
       width: 100%;
       background-size: cover;
       background-position: center;
-      border-radius: 8px;
+      border-radius: 2px; 
       background-color: #E8E4DD;
     }
 
-    /* Variaciones de altura para dar el toque de revista/mosaico */
-    .item-tall { height: 280px; }
-    .item-square { height: 180px; }
-    .item-wide { grid-column: span 2; height: 240px; }
+    .item-tall { height: 300px; }
+    .item-square { height: 200px; }
+    .item-wide { grid-column: span 2; height: 250px; }
 
-    /* MENÚ INFERIOR */
     .bottom-nav {
       position: fixed; bottom: 0; width: 100%;
       background: var(--bg-cream);
@@ -149,10 +144,8 @@
 </head>
 <body>
 
-  <!-- Botón para regresar -->
   <a href="portafolio.html" class="back-btn"><i class="ph-bold ph-arrow-left"></i> Volver</a>
 
-  <!-- GRAN FOTO DE PORTADA -->
   <div class="hero-banner" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');">
     <div class="hero-banner-content">
       <h1>Workstyle</h1>
@@ -165,25 +158,16 @@
     <p>Visual Stories</p>
   </div>
 
-  <!-- MOSAICO EDITORIAL DE FOTOS -->
   <div class="photo-mosaic">
-    <!-- Foto alta vertical -->
     <div class="mosaic-item item-tall" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
-    <!-- Foto cuadrada -->
     <div class="mosaic-item item-square" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');"></div>
-    <!-- Foto cuadrada -->
     <div class="mosaic-item item-square" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');"></div>
-    <!-- Foto alta vertical -->
     <div class="mosaic-item item-tall" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
-    <!-- Foto ancha horizontal que abarca toda la pantalla -->
     <div class="mosaic-item item-wide" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
-    <!-- Foto cuadrada -->
     <div class="mosaic-item item-square" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');"></div>
-    <!-- Foto cuadrada -->
-    <div class="mosaic-item item-square" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791056211701-2.jpg');"></div>
+    <div class="mosaic-item item-square" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
   </div>
 
-  <!-- MENÚ INFERIOR -->
   <nav class="bottom-nav">
     <a href="index.html" class="nav-item">
       <i class="ph-light ph-house"></i>
