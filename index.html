@@ -27,13 +27,11 @@
       -webkit-font-smoothing: antialiased;
     }
     
-    /* CONTENEDOR GENERAL PARA COMPUTADORAS (Evita que se estire de más) */
     .page-wrapper {
       max-width: 100%;
       margin: 0 auto;
     }
     
-    /* SECCIÓN HERO */
     .hero {
       padding: 50px 20px 30px;
     }
@@ -70,6 +68,11 @@
       font-weight: 400;
       font-style: italic;
       color: var(--text-light);
+    }
+    
+    /* Por defecto en móvil ocultamos el salto para que sea fluido o se adapte */
+    .desktop-break {
+      display: none;
     }
     
     .hero p {
@@ -119,7 +122,6 @@
       background-repeat: no-repeat;
     }
 
-    /* BLOQUE NEGRO DE ESTADÍSTICAS */
     .black-stats {
       background-color: var(--bg-dark);
       color: white;
@@ -157,7 +159,6 @@
       line-height: 1.3;
     }
 
-    /* SECCIÓN SERVICIOS */
     .services {
       padding: 40px 20px;
     }
@@ -229,7 +230,6 @@
       line-height: 1.3;
     }
 
-    /* MENÚ INFERIOR APP */
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -252,10 +252,10 @@
     .nav-item.active { color: var(--bg-dark); }
     .nav-item span { font-size: 0.6rem; font-weight: 500; }
 
-    /* ADAPTACIÓN PARA COMPUTADORAS Y TABLETS (Pantallas mayores a 768px) */
+    /* ADAPTACIÓN PARA COMPUTADORAS (Pantallas mayores a 768px) */
     @media (min-width: 768px) {
       body {
-        padding-bottom: 0; /* Quitamos espacio móvil */
+        padding-bottom: 0;
       }
       .page-wrapper {
         max-width: 750px;
@@ -272,10 +272,12 @@
         transform: translateX(-50%);
         border-radius: 20px 20px 0 0;
       }
-      .hero h1 { font-size: 4rem; }
-      .service-list {
-        display: grid;
-        grid-template-columns: 1fr;
+      .hero h1 { 
+        font-size: 3.2rem; /* Tamaño ideal para que entre en una sola línea en PC */
+      }
+      /* Activamos el salto exclusivo para computadora si quieres ordenar los renglones */
+      .desktop-break {
+        display: inline;
       }
     }
   </style>
@@ -289,11 +291,10 @@
         <span>NOVEDADES</span> E-commerce en mi LinkedIn &rarr;
       </div>
       
-      <h1>Impulsa<br><i>tu negocio</i><br>en digital.</h1>
+      <!-- TÍTULO CON ADAPTACIÓN PARA PC Y MÓVIL -->
+      <h1>Impulsa tu negocio <br class="desktop-break"><i>en digital.</i></h1>
       
-      <p>Gisella Villarreal soy Marketer, especialista en desarrollo de Negocios Online. 
-        Enfocada en ayudar a marcas y emprendimientos a construir y fortalecer su presencia digital 
-        a través del e-commerce y el contenido visual.
+      <p>Gisella Villarreal soy Marketer, especialista en Negocios Online. Enfocada en ayudar a marcas y emprendimientos a construir y fortalecer su presencia digital a través del e-commerce y el contenido visual.Gisella Villarreal soy Marketer, especialista en desarrollo de Negocios Online. Enfocada en ayudar a marcas y emprendimientos a construir y fortalecer su presencia digital a través del e-commerce y el contenido visual.
         
       <div class="button-group">
         <a href="servicios.html" class="btn-dark">Ver Servicios <i class="ph-bold ph-arrow-up-right"></i></a>
