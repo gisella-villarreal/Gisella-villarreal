@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gisella Villarreal | Portfolio & Shop</title>
+  <title>Gisella Villarreal | eBusiness & Shop</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -36,14 +36,20 @@
       padding: 30px 20px 30px;
     }
 
-    /* ESTILO PARA EL LOGO SUPERIOR */
+    /* ESTILO PARA EL LOGO TIPOGRÁFICO SUPERIOR */
     .site-logo-container {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
-    .site-logo {
-      height: 40px; /* Ajusta la altura de tu logo de forma sutil y elegante */
-      width: auto;
-      object-fit: contain;
+    .site-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: var(--bg-dark);
+      text-decoration: none;
+      display: inline-block;
+      border-bottom: 1px solid var(--bg-dark);
+      padding-bottom: 3px;
     }
     
     .badge {
@@ -295,15 +301,13 @@
     <!-- SECCIÓN PRINCIPAL -->
     <div class="hero">
       
-      <!-- LOGO EN LA PARTE SUPERIOR -->
+      <!-- LOGO TIPOGRÁFICO SUPERIOR -->
       <div class="site-logo-container">
-        <a href="index.html">
-          <img src="https://i.ibb.co/jk1wBcJt/1000217588-removebg-preview.png" alt="Gisella Villarreal Logo" class="site-logo">
-        </a>
+        <a href="index.html" class="site-logo-text">GISELLA VILLARREAL</a>
       </div>
 
       <div class="badge">
-        <span>NOVEDADES</span> eCommerce en mi LinkedIn &rarr;
+        <span>NOVEDADES</span> Mi mundo Online &rarr;
       </div>
       
       <h1>Impulsa tu negocio <br class="desktop-break"><i>en digital.</i></h1>
@@ -388,6 +392,13 @@
     </a>
     <a href="shop.html" class="nav-item">
       <i class="ph-light ph-shopping-bag"></i>
+      <span>Shop</span>
+    </a>
+  </nav>
+
+</body>
+</html>
+<i class="ph-light ph-shopping-bag"></i>
       <span>Shop</span>
     </a>
   </nav>
