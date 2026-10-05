@@ -26,6 +26,11 @@
       padding-bottom: 100px; 
       -webkit-font-smoothing: antialiased;
     }
+
+    .page-wrapper {
+      max-width: 100%;
+      margin: 0 auto;
+    }
     
     /* CABECERA SERVICIOS */
     .hero { padding: 50px 20px 20px; }
@@ -122,7 +127,7 @@
     .contact-box {
       background-color: var(--bg-dark);
       color: white;
-      margin: 20px 8px 40px 8px;
+      margin: 20px 16px 40px 16px;
       border-radius: 16px;
       padding: 40px 25px;
       text-align: center;
@@ -170,69 +175,90 @@
       display: flex; flex-direction: column; align-items: center;
     }
     .nav-item i { font-size: 1.4rem; margin-bottom: 4px; }
-    
     .nav-item.active { color: var(--bg-dark); }
     .nav-item span { font-size: 0.6rem; font-weight: 500; }
+
+    /* ADAPTACIÓN PARA COMPUTADORAS (Pantallas mayores a 768px) */
+    @media (min-width: 768px) {
+      body { padding-bottom: 0; }
+      .page-wrapper {
+        max-width: 750px;
+        background-color: var(--bg-cream);
+        box-shadow: 0 0 40px rgba(0,0,0,0.05);
+        min-height: 100vh;
+        border-left: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+        padding-bottom: 50px;
+      }
+      .bottom-nav {
+        max-width: 750px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 20px 20px 0 0;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <div class="hero">
-    <h1>Cómo puedo<br><i>ayudarte.</i></h1>
-    <p>Soluciones digitales diseñadas para marcas que buscan destacar y crecer.</p>
-  </div>
-
-  <div class="services-container">
-    
-    <!-- SERVICIO 1: CREACIÓN VISUAL (AHORA PRIMERO) -->
-    <div class="service-card">
-      <i class="ph-light ph-camera service-icon-large"></i>
-      <h2>Creación Visual</h2>
-      <p>Fotografía comercial y social. Transmite tu verdadera esencia a través de imágenes estéticas y funcionales.</p>
-      <ul class="service-list-items">
-        <li><i class="ph-fill ph-check-circle"></i> Fotografía de productos</li>
-        <li><i class="ph-fill ph-check-circle"></i> Fotografía workstyle</li>
-        <li><i class="ph-fill ph-check-circle"></i> Fotografía lifestyle</li>
-      </ul>
-      <a href="portafolio.html" class="btn-outline-small">Ver portafolio <i class="ph-bold ph-arrow-right"></i></a>
+  <div class="page-wrapper">
+    <div class="hero">
+      <h1>Cómo puedo<br><i>ayudarte.</i></h1>
+      <p>Soluciones digitales diseñadas para marcas que buscan destacar y crecer.</p>
     </div>
 
-    <!-- SERVICIO 2: GESTIÓN E-COMMERCE (AHORA SEGUNDO) -->
-    <div class="service-card">
-      <i class="ph-light ph-shopping-cart service-icon-large"></i>
-      <h2>Gestión E-commerce</h2>
-      <p>Optimizo la experiencia, operación y estrategia de tu tienda online para ayudarte a aumentar las conversiones.</p>
-      <ul class="service-list-items">
-        <li><i class="ph-fill ph-check-circle"></i> Optimización de tienda online</li>
-        <li><i class="ph-fill ph-check-circle"></i> Gestión de catálogo y productos</li>
-        <li><i class="ph-fill ph-check-circle"></i> E-merchandising</li>
-        <li><i class="ph-fill ph-check-circle"></i> Experiencia de compra</li>
-        <li><i class="ph-fill ph-check-circle"></i> Optimización de conversión</li>
-        <li><i class="ph-fill ph-check-circle"></i> Gestión y seguimiento E-commerce</li>
-      </ul>
-      <a href="#" class="btn-outline-small">Cotizar servicio <i class="ph-bold ph-arrow-right"></i></a>
+    <div class="services-container">
+      
+      <!-- SERVICIO 1: CREACIÓN VISUAL -->
+      <div class="service-card">
+        <i class="ph-light ph-camera service-icon-large"></i>
+        <h2>Creación Visual</h2>
+        <p>Fotografía comercial y social. Transmite tu verdadera esencia a través de imágenes estéticas y funcionales.</p>
+        <ul class="service-list-items">
+          <li><i class="ph-fill ph-check-circle"></i> Fotografía de productos</li>
+          <li><i class="ph-fill ph-check-circle"></i> Fotografía workstyle</li>
+          <li><i class="ph-fill ph-check-circle"></i> Fotografía lifestyle</li>
+        </ul>
+        <a href="portafolio.html" class="btn-outline-small">Ver portafolio <i class="ph-bold ph-arrow-right"></i></a>
+      </div>
+
+      <!-- SERVICIO 2: GESTIÓN E-COMMERCE -->
+      <div class="service-card">
+        <i class="ph-light ph-shopping-cart service-icon-large"></i>
+        <h2>Gestión E-commerce</h2>
+        <p>Optimizo la experiencia, operación y estrategia de tu tienda online para ayudarte a aumentar las conversiones.</p>
+        <ul class="service-list-items">
+          <li><i class="ph-fill ph-check-circle"></i> Optimización de tienda online</li>
+          <li><i class="ph-fill ph-check-circle"></i> Gestión de catálogo y productos</li>
+          <li><i class="ph-fill ph-check-circle"></i> E-merchandising</li>
+          <li><i class="ph-fill ph-check-circle"></i> Experiencia de compra</li>
+          <li><i class="ph-fill ph-check-circle"></i> Optimización de conversión</li>
+          <li><i class="ph-fill ph-check-circle"></i> Gestión y seguimiento E-commerce</li>
+        </ul>
+        <a href="#" class="btn-outline-small">Cotizar servicio <i class="ph-bold ph-arrow-right"></i></a>
+      </div>
+
+      <!-- SERVICIO 3: ASESORÍA DE MARCAS -->
+      <div class="service-card">
+        <i class="ph-light ph-lightbulb service-icon-large"></i>
+        <h2>Asesoría Digital</h2>
+        <p>Acompañamiento estratégico para marcas y emprendimientos. Llevamos tu idea desde el papel hasta el mundo digital con bases sólidas.</p>
+        <ul class="service-list-items">
+          <li><i class="ph-fill ph-check-circle"></i> Planificación estratégica</li>
+          <li><i class="ph-fill ph-check-circle"></i> Identidad y posicionamiento</li>
+          <li><i class="ph-fill ph-check-circle"></i> Optimización de procesos</li>
+        </ul>
+        <a href="#" class="btn-outline-small">Saber más <i class="ph-bold ph-arrow-right"></i></a>
+      </div>
+
     </div>
 
-    <!-- SERVICIO 3: ASESORÍA DE MARCAS -->
-    <div class="service-card">
-      <i class="ph-light ph-lightbulb service-icon-large"></i>
-      <h2>Asesoría Digital</h2>
-      <p>Acompañamiento estratégico para marcas y emprendimientos. Llevamos tu idea desde el papel hasta el mundo digital con bases sólidas.</p>
-      <ul class="service-list-items">
-        <li><i class="ph-fill ph-check-circle"></i> Planificación estratégica</li>
-        <li><i class="ph-fill ph-check-circle"></i> Identidad y posicionamiento</li>
-        <li><i class="ph-fill ph-check-circle"></i> Optimización de procesos</li>
-      </ul>
-      <a href="#" class="btn-outline-small">Saber más <i class="ph-bold ph-arrow-right"></i></a>
+    <!-- CAJA DE CONTACTO -->
+    <div class="contact-box">
+      <h3>¿Listo para empezar?</h3>
+      <p>Cuéntame sobre tu proyecto y descubramos cómo podemos trabajar juntos para llevarlo al siguiente nivel.</p>
+      <a href="#" class="btn-light"><i class="ph-fill ph-whatsapp-logo"></i> Hablemos por WhatsApp</a>
     </div>
-
-  </div>
-
-  <!-- CAJA DE CONTACTO -->
-  <div class="contact-box">
-    <h3>¿Listo para empezar?</h3>
-    <p>Cuéntame sobre tu proyecto y descubramos cómo podemos trabajar juntos para llevarlo al siguiente nivel.</p>
-    <a href="#" class="btn-light"><i class="ph-fill ph-whatsapp-logo"></i> Hablemos por WhatsApp</a>
   </div>
 
   <!-- MENÚ INFERIOR -->
