@@ -36,21 +36,18 @@
       padding: 30px 20px 30px;
     }
 
-    /* LOGO TIPOGRÁFICO: NEGRITA, CURSIVA, MINÚSCULA CON INICIALES MAYÚSCULAS Y CENTRADO */
-    .site-logo-container {
-      text-align: center;
+    /* BARRA SUPERIOR CON LOGO Y NOVEDADES EN EXTREMOS OPUESTOS */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 25px;
     }
-    .site-logo-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 700;       /* Negrita */
-      font-style: italic;     /* Cursiva */
-      text-transform: none;   /* Permite minúsculas */
-      letter-spacing: 0.5px;
-      color: var(--bg-dark);
-      text-decoration: none;
-      display: inline-block;
+
+    .site-logo {
+      height: 35px; /* Altura elegante para el logo */
+      width: auto;
+      object-fit: contain;
     }
     
     .badge {
@@ -61,7 +58,7 @@
       padding: 6px 12px;
       border-radius: 20px;
       font-size: 0.7rem;
-      margin-bottom: 20px;
+      margin-bottom: 0;
     }
     .badge span {
       background: var(--bg-dark);
@@ -128,11 +125,12 @@
       gap: 8px;
     }
     
+    /* FOTO PRINCIPAL CARGADA LOCALMENTE DESDE GITHUB */
     .hero-image {
       width: 100%;
       height: 480px; 
       border-radius: 12px;
-      background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');
+      background-image: url('1791056211701~2.jpg');
       background-size: cover; 
       background-position: center; 
       background-repeat: no-repeat;
@@ -302,13 +300,14 @@
     <!-- SECCIÓN PRINCIPAL -->
     <div class="hero">
       
-      <!-- LOGO CENTRADO, EN NEGRITA, CURSIVA Y MINÚSCULAS CON INICIALES MAYÚSCULAS -->
-      <div class="site-logo-container">
-        <a href="index.html" class="site-logo-text">Gisella Villarreal</a>
-      </div>
-
-      <div class="badge">
-        <span>NOVEDADES</span> Mi mundo Online &rarr;
+      <!-- BARRA SUPERIOR: LOGO Y NOVEDADES EN EXTREMOS OPUESTOS -->
+      <div class="top-bar">
+        <a href="index.html">
+          <img src="1000217588-removebg-preview.png" alt="Logo" class="site-logo">
+        </a>
+        <div class="badge">
+          <span>NOVEDADES</span> Mi mundo Online &rarr;
+        </div>
       </div>
       
       <h1>Impulsa tu negocio <br class="desktop-break"><i>en digital.</i></h1>
@@ -398,4 +397,5 @@
   </nav>
 
 </body>
-</html>
+  </html>
+  
