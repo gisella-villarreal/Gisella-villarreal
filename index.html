@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gisella Villarreal | Portfolio & Shop</title>
   
-  <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,600;1,700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,600;1,700&display=swap)" rel="stylesheet">
-  <script src="[https://unpkg.com/@phosphor-icons/web](https://unpkg.com/@phosphor-icons/web)"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,600;1,700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   
   <style>
     :root {
@@ -35,14 +35,6 @@
     .hero {
       padding: 30px 20px 30px;
     }
-
-    /* BARRA SUPERIOR: SOLO BADGE DE NOVEDADES */
-    .top-bar {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      margin-bottom: 25px;
-    }
     
     .badge {
       display: inline-flex;
@@ -52,7 +44,7 @@
       padding: 6px 12px;
       border-radius: 20px;
       font-size: 0.7rem;
-      margin-bottom: 0;
+      margin-bottom: 25px;
     }
     .badge span {
       background: var(--bg-dark);
@@ -76,10 +68,6 @@
       font-weight: 400;
       font-style: italic;
       color: var(--text-light);
-    }
-    
-    .desktop-break {
-      display: none;
     }
     
     .hero p {
@@ -280,10 +268,11 @@
         border-radius: 20px 20px 0 0;
       }
       .hero h1 { 
-        font-size: 3.2rem;
+        font-size: 4rem; 
       }
-      .desktop-break {
-        display: inline;
+      .service-list {
+        display: grid;
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -294,20 +283,19 @@
     <!-- SECCIÓN PRINCIPAL -->
     <div class="hero">
       
-      <!-- BARRA SUPERIOR: SOLO NOVEDADES -->
-      <div class="top-bar">
-        <div class="badge">
-          <span>NOVEDADES</span> eBusiness en mi LinkedIn &rarr;
-        </div>
+      <!-- ETIQUETA NOVEDADES ÚNICAMENTE -->
+      <div class="badge">
+        <span>NOVEDADES</span> eBusiness en mi LinkedIn &rarr;
       </div>
       
-      <h1>Impulsa tu negocio <br class="desktop-break"><i>en digital.</i></h1>
+      <!-- TÍTULO ORIGINAL (3 Renglones) -->
+      <h1>Impulsa<br><i>tu negocio</i><br>en digital.</h1>
       
       <p>Gisella Villarreal soy Marketer, especialista en Negocios Online. Enfocada en ayudar a marcas y emprendimientos a construir y fortalecer su presencia digital a través del e-commerce y el contenido visual.</p>
       
       <div class="button-group">
         <a href="servicios.html" class="btn-dark">Ver Servicios <i class="ph-bold ph-arrow-up-right"></i></a>
-        <!-- ENLACE AL CASO DE ESTUDIO -->
+        <!-- EL ÚNICO CAMBIO: ENLACE AL CASO DE ESTUDIO -->
         <a href="caso-estudio.html" class="btn-outline">Ver Portafolio <i class="ph-fill ph-play-circle"></i></a>
       </div>
 
