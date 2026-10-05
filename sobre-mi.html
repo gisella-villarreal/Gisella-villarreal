@@ -1,224 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre Mí | Gisella Villarreal</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
-  
-  <style>
-    :root {
-      --bg-cream: #F4F1ED;
-      --bg-dark: #151515;
-      --text-main: #1A1A1A;
-      --text-light: #666666;
-      --border-color: #E2DDD5;
-    }
-    
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-cream);
-      color: var(--text-main);
-      padding-bottom: 100px; 
-      -webkit-font-smoothing: antialiased;
-    }
-    
-    /* CABECERA SOBRE MÍ */
-    .hero { padding: 50px 20px 20px; }
-    
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.2rem;
-      font-weight: 500;
-      line-height: 1.05;
-      letter-spacing: -1px;
-      margin-bottom: 20px;
-      color: var(--bg-dark);
-    }
-    .hero h1 i { font-weight: 400; font-style: italic; color: var(--text-light); }
-    
-    /* IMAGEN DE PERFIL */
-    .about-image {
-      width: 100%;
-      height: 480px; 
-      border-radius: 16px;
-      background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg'); 
-      background-size: cover; 
-      background-position: top center; 
-      margin-bottom: 15px; 
-    }
-
-    /* REDES SOCIALES (Ajustado a 1 sola línea) */
-    .social-links {
-      display: flex;
-      gap: 6px; 
-      margin-bottom: 30px;
-      justify-content: space-between; 
-    }
-    .social-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px; 
-      padding: 10px 0; 
-      flex: 1; 
-      border: 1px solid var(--border-color);
-      border-radius: 30px;
-      text-decoration: none;
-      color: var(--text-main);
-      font-size: 0.72rem; 
-      font-weight: 500;
-      background: transparent;
-      transition: all 0.2s ease;
-    }
-    .social-link i { font-size: 1rem; }
-
-    /* TEXTO DE BIOGRAFÍA */
-    .bio-section { padding: 0 20px; margin-bottom: 40px; }
-    
-    .bio-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 500;
-      margin-bottom: 15px;
-    }
-    
-    .bio-section p {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-
-    /* CAJA OSCURA DE DATOS EXTRA */
-    .personal-facts {
-      background-color: var(--bg-dark);
-      color: white;
-      margin: 0 8px 40px 8px;
-      border-radius: 16px;
-      padding: 35px 20px;
-    }
-    
-    .personal-facts h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-style: italic;
-      margin-bottom: 25px;
-      text-align: center;
-    }
-
-    .fact-item {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 20px;
-      align-items: flex-start;
-    }
-    .fact-item:last-child { margin-bottom: 0; }
-    
-    .fact-icon {
-      font-size: 1.5rem;
-      color: var(--bg-cream);
-      background: rgba(255,255,255,0.1);
-      width: 40px; height: 40px;
-      display: flex; align-items: center; justify-content: center;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    
-    .fact-text h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 3px; }
-    .fact-text p { font-size: 0.75rem; color: #999; line-height: 1.4; }
-
-    /* MENÚ INFERIOR APP (SIN BLOG) */
-    .bottom-nav {
-      position: fixed; bottom: 0; width: 100%;
-      background: var(--bg-cream);
-      display: flex; justify-content: space-around;
-      padding: 15px 0 20px 0;
-      border-top: 1px solid var(--border-color);
-      z-index: 1000;
-    }
-    .nav-item {
-      text-decoration: none; color: #A0A0A0;
-      display: flex; flex-direction: column; align-items: center;
-    }
-    .nav-item i { font-size: 1.4rem; margin-bottom: 4px; }
-    
-    /* Aquí activamos el icono de "Sobre mí" en negro */
-    .nav-item.active { color: var(--bg-dark); }
-    .nav-item span { font-size: 0.6rem; font-weight: 500; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre Mí | Gisella Villarreal</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<style>
+:root{--bg-cream:#F4F1ED;--bg-dark:#151515;--text-main:#1A1A1A;--text-light:#666666;--card-bg:#FFFFFF;--border:#E2DDD5;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-main);padding-bottom:90px;}
+.resume-wrapper{max-width:1000px;margin:20px auto;padding:0 15px;display:grid;gap:20px;}
+.card{background:var(--card-bg);border-radius:16px;padding:25px;border:1px solid var(--border);}
+.profile-img{width:100%;height:320px;object-fit:cover;border-radius:12px;margin-bottom:15px;background-image:url('1791056211701~2.jpg');background-size:cover;background-position:center;}
+.name{font-family:'Playfair Display',serif;font-size:2.8rem;line-height:0.9;text-transform:uppercase;margin-bottom:10px;letter-spacing:-1px;}
+.title{font-size:0.75rem;letter-spacing:2px;color:var(--text-light);text-transform:uppercase;font-weight:600;margin-bottom:20px;}
+.bio{font-size:0.85rem;color:var(--text-light);line-height:1.6;margin-bottom:20px;}
+.contact-item{display:flex;gap:10px;font-size:0.8rem;margin-bottom:12px;align-items:center;color:var(--text-main);}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;text-align:center;margin-bottom:20px;}
+.stat h3{font-size:1.6rem;font-weight:600;margin-bottom:5px;font-family:'Playfair Display',serif;}
+.stat p{font-size:0.65rem;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;}
+.section-title{font-size:0.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;color:var(--text-light);border-bottom:1px solid var(--border);padding-bottom:8px;}
+.timeline-item{display:flex;gap:15px;margin-bottom:20px;}
+.year{min-width:45px;font-size:0.75rem;font-weight:600;}
+.details h4{font-size:0.9rem;margin-bottom:4px;}
+.details p{font-size:0.75rem;color:var(--text-light);line-height:1.4;}
+.details ul{padding-left:15px;font-size:0.75rem;color:var(--text-light);margin-top:5px;line-height:1.5;}
+.skills-grid{display:grid;gap:15px;}
+.skill{display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;font-weight:500;}
+.progress-bar{width:50%;height:6px;background:var(--bg-cream);border-radius:3px;overflow:hidden;}
+.progress{height:100%;background:var(--bg-dark);}
+.bottom-nav{position:fixed;bottom:0;width:100%;background:var(--bg-cream);display:flex;justify-content:space-around;padding:15px 0 20px 0;border-top:1px solid var(--border);z-index:1000;}
+.nav-item{text-decoration:none;color:#A0A0A0;display:flex;flex-direction:column;align-items:center;}
+.nav-item i{font-size:1.4rem;margin-bottom:4px;}
+.nav-item.active{color:var(--bg-dark);}
+.nav-item span{font-size:0.6rem;font-weight:500;}
+@media(min-width:768px){
+  .resume-wrapper{grid-template-columns:320px 1fr;padding:40px 20px;}
+  .stats-grid{grid-template-columns:repeat(4,1fr);}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .bottom-nav{max-width:750px;left:50%;transform:translateX(-50%);border-radius:20px 20px 0 0;}
+  body{padding-bottom:0;}
+}
+</style>
 </head>
 <body>
-
-  <div class="hero">
-    <h1>Conoce a <br><i>Gisella.</i></h1>
-  </div>
-
-  <div class="bio-section">
-    <div class="about-image"></div>
+<div class="resume-wrapper">
+  
+  <!-- COLUMNA IZQUIERDA (SIDEBAR) -->
+  <div class="card">
+    <div class="profile-img"></div>
+    <h1 class="name">Gisella<br>Villarreal</h1>
+    <div class="title">Marketer & Fotógrafa</div>
+    <p class="bio">Especialista en desarrollo de negocios online. Enfocada en ayudar a marcas y emprendimientos a construir y fortalecer su presencia digital a través de la gestión de e-commerce, estrategia visual y contenido audiovisual estético y funcional.</p>
     
-    <!-- BOTONES DE REDES SOCIALES -->
-    <div class="social-links">
-      <a href="#" class="social-link"><i class="ph-light ph-linkedin-logo"></i> LinkedIn</a>
-      <a href="#" class="social-link"><i class="ph-light ph-instagram-logo"></i> Instagram</a>
-      <a href="#" class="social-link"><i class="ph-light ph-youtube-logo"></i> YouTube</a>
-    </div>
-
-    <h2>Hola, soy Gisella.</h2>
-    <p>Profesional en Marketing, cuento con +6 años de experiencia en el mundo del E-commerce. Complemento mi perfil con la fotografía digital para ayudar a profesionales y pequeñas marcas a comunicar mejor sus servicios. También soy Cofundadora y Directora de Marketing de RocoTec, un proyecto digital que nació a comienzos de la pandemia y que ha sido una parte fundamental de mi crecimiento profesional, permitiéndome llevar la teoría a la práctica y entender el E-commerce desde adentro. Actualmente, además de mi trabajo en RocoTec, presto servicios de creación, gestión y optimización de E-commerce para negocios y marcas que quieren fortalecer su presencia digital, mejorar la experiencia de sus clientes y crecer en el entorno online. Mi objetivo es ayudarte a convertir tu presencia digital en una experiencia que conecte, genere confianza y contribuya al crecimiento de tu negocio.</p>
-  </div>
-
-  <div class="personal-facts">
-    <h3>Más allá del trabajo</h3>
-    
-    <div class="fact-item">
-      <div class="fact-icon"><i class="ph-light ph-guitar"></i></div>
-      <div class="fact-text">
-        <h4>Lado Artístico</h4>
-        <p>Me encanta la música, cantar, tocar el ukulele y grabar covers en mi tiempo libre.</p>
-      </div>
-    </div>
-    
-    <div class="fact-item">
-      <div class="fact-icon"><i class="ph-light ph-sneaker"></i></div>
-      <div class="fact-text">
-        <h4>Energía & Equilibrio</h4>
-        <p>Entrenar pesas en el gimnasio y patinar son mi forma de desconectar.</p>
-      </div>
-    </div>
-    
-    <div class="fact-item">
-      <div class="fact-icon"><i class="ph-light ph-books"></i></div>
-      <div class="fact-text">
-        <h4>Crecimiento Constante</h4>
-        <p>Actualmente me encuentro perfeccionando mi nivel de inglés funcional para expandir mis horizontes profesionales.</p>
-      </div>
+    <div class="contact-info">
+      <div class="contact-item"><i class="ph-bold ph-map-pin"></i> Colombia</div>
+      <div class="contact-item"><i class="ph-bold ph-envelope"></i> Contacto Directo</div>
+      <div class="contact-item"><i class="ph-bold ph-linkedin-logo"></i> /in/gisellavillarreal</div>
     </div>
   </div>
 
-  <!-- MENÚ INFERIOR (SOLO 4 BOTONES CON ENLACES ACTIVOS) -->
-  <nav class="bottom-nav">
-    <a href="index.html" class="nav-item">
-      <i class="ph-light ph-house"></i>
-      <span>Inicio</span>
-    </a>
-    <a href="sobre-mi.html" class="nav-item active">
-      <i class="ph-fill ph-user"></i>
-      <span>Sobre mí</span>
-    </a>
-    <a href="servicios.html" class="nav-item">
-      <i class="ph-light ph-briefcase"></i>
-      <span>Servicios</span>
-    </a>
-    <a href="shop.html" class="nav-item">
-      <i class="ph-light ph-shopping-bag"></i>
-      <span>Shop</span>
-    </a>
-  </nav>
+  <!-- COLUMNA DERECHA (CONTENIDO) -->
+  <div class="main-content">
+    
+    <!-- ESTADÍSTICAS -->
+    <div class="card stats-grid">
+      <div class="stat"><h3>+6</h3><p>Años Exp.</p></div>
+      <div class="stat"><h3>+15</h3><p>Proyectos</p></div>
+      <div class="stat"><h3>24/7</h3><p>Shop Online</p></div>
+      <div class="stat"><h3>100%</h3><p>Compromiso</p></div>
+    </div>
 
+    <div class="card" style="margin-top:20px;">
+      <div class="two-col">
+        <!-- EXPERIENCIA -->
+        <div>
+          <div class="section-title">Experiencia</div>
+          <div class="timeline-item">
+            <div class="year">2026</div>
+            <div class="details">
+              <h4>Marketing & Creación Visual</h4>
+              <p>Consultoría de Marcas (BULKCREAM, RocoTec)</p>
+              <ul>
+                <li>Diseño de identidad, contenido en redes y estrategia de marca.</li>
+                <li>Producción de fotografía comercial.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="year">2024</div>
+            <div class="details">
+              <h4>Operaciones E-commerce</h4>
+              <p>Customer Service & Logística</p>
+              <ul>
+                <li>Análisis de métricas, fulfillment y eficiencia.</li>
+                <li>Optimización del recorrido del cliente (UX).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- EDUCACIÓN & SKILLS -->
+        <div>
+          <div class="section-title">Formación</div>
+          <div class="timeline-item">
+            <div class="year">2026</div>
+            <div class="details">
+              <h4>Fotografía & Producción de Video</h4>
+              <p>Iluminación de estudio, dirección de arte, ajustes de cámara y edición audiovisual.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="year">2025</div>
+            <div class="details">
+              <h4>E-commerce Management</h4>
+              <p>Merchandising digital, modelos de negocio y funnels de conversión.</p>
+            </div>
+          </div>
+          
+          <div class="section-title" style="margin-top:30px;">Habilidades Clave</div>
+          <div class="skills-grid">
+            <div class="skill"><span>Fotografía Comercial</span> <div class="progress-bar"><div class="progress" style="width:95%"></div></div></div>
+            <div class="skill"><span>Gestión E-commerce</span> <div class="progress-bar"><div class="progress" style="width:90%"></div></div></div>
+            <div class="skill"><span>Diseño Visual (Canva)</span> <div class="progress-bar"><div class="progress" style="width:95%"></div></div></div>
+            <div class="skill"><span>Estrategia de Marca</span> <div class="progress-bar"><div class="progress" style="width:85%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MENÚ INFERIOR -->
+<nav class="bottom-nav">
+  <a href="index.html" class="nav-item"><i class="ph-light ph-house"></i><span>Inicio</span></a>
+  <a href="sobre-mi.html" class="nav-item active"><i class="ph-fill ph-user"></i><span>Sobre mí</span></a>
+  <a href="servicios.html" class="nav-item"><i class="ph-light ph-briefcase"></i><span>Servicios</span></a>
+  <a href="shop.html" class="nav-item"><i class="ph-light ph-shopping-bag"></i><span>Shop</span></a>
+</nav>
 </body>
 </html>
