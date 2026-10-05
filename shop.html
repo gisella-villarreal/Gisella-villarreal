@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop RocoGirl | Gisella Villarreal</title>
+  <title>Shop RocoGirl | Skincare & Cuidado Personal</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -15,6 +15,7 @@
       --text-main: #1A1A1A;
       --text-light: #666666;
       --border-color: #E2DDD5;
+      --accent-pink: #E8D3CE; /* Tono suave inspirador de skincare */
     }
     
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,145 +28,194 @@
       -webkit-font-smoothing: antialiased;
     }
     
-    /* CABECERA SHOP */
-    .hero { padding: 50px 20px 20px; }
-    
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      background: transparent;
-      border: 1px solid var(--border-color);
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 0.7rem;
-      margin-bottom: 20px;
+    /* 1. HERO / BANNER PRINCIPAL DE LA TIENDA */
+    .shop-hero {
+      width: 100%;
+      height: 380px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px 20px;
+      text-align: center;
     }
-    .badge span {
-      background: var(--bg-dark);
+    .shop-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to top, rgba(21,21,21,0.7) 0%, rgba(21,21,21,0.1) 60%, transparent 100%);
+      z-index: 1;
+    }
+    .shop-hero-content {
+      position: relative;
+      z-index: 2;
       color: white;
-      padding: 2px 8px;
-      border-radius: 10px;
-      margin-right: 8px;
-      font-weight: 500;
+    }
+    .shop-hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .shop-hero-content p {
+      font-size: 0.8rem;
+      color: #E2DDD5;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+    .btn-shop-hero {
+      display: inline-block;
+      background-color: white;
+      color: var(--bg-dark);
+      padding: 10px 22px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .hero h1 {
+    /* SECCIÓN TÍTULOS */
+    .section-title {
+      text-align: center;
+      padding: 35px 20px 20px;
+    }
+    .section-title h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 3.2rem;
-      font-weight: 500;
-      line-height: 1.05;
-      letter-spacing: -1px;
-      margin-bottom: 15px;
+      font-size: 1.8rem;
+      font-weight: 400;
       color: var(--bg-dark);
     }
-    .hero h1 i { font-weight: 400; font-style: italic; color: var(--text-light); }
-    
-    .hero p {
-      font-size: 0.95rem;
-      color: var(--text-light);
-      line-height: 1.5;
-      max-width: 90%;
-      margin-bottom: 10px;
-    }
 
-    /* CUADRÍCULA DE PRODUCTOS */
-    .product-grid {
+    /* 2. CUADRÍCULA DE PRODUCTOS (BESTSELLERS) */
+    .products-grid {
+      padding: 0 16px;
       display: grid;
-      grid-template-columns: 1fr 1fr; /* Dos columnas para los productos */
-      gap: 15px;
-      padding: 10px 20px 30px;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
-
     .product-card {
       background-color: white;
       border: 1px solid var(--border-color);
       border-radius: 12px;
-      padding: 10px;
-      text-align: center;
-      position: relative;
-    }
-
-    /* Espacio gris para la foto del producto */
-    .product-image {
-      background-color: #E8E4DD;
-      height: 160px;
-      border-radius: 8px;
-      margin-bottom: 15px;
+      overflow: hidden;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #C4BFB5;
-      font-size: 2rem;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 12px;
     }
-
-    .product-card h3 {
-      font-family: 'Inter', sans-serif;
+    .product-img {
+      width: 100%;
+      height: 160px;
+      background-size: cover;
+      background-position: center;
+      background-color: #E8E4DD;
+      margin-bottom: 10px;
+    }
+    .product-info {
+      padding: 0 10px;
+      margin-bottom: 10px;
+    }
+    .product-info h3 {
       font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 5px;
+      font-weight: 500;
       color: var(--text-main);
+      margin-bottom: 4px;
+      line-height: 1.2;
     }
-
-    .product-card p {
-      font-size: 0.75rem;
+    .product-price {
+      font-size: 0.8rem;
       color: var(--text-light);
-      margin-bottom: 12px;
+      font-weight: 600;
     }
-
-    /* Botón chiquito para añadir/ver producto */
-    .btn-add {
+    .btn-add-cart {
+      margin: 0 10px;
       background-color: var(--bg-dark);
       color: white;
-      width: 100%;
-      padding: 8px 0;
+      text-align: center;
+      padding: 8px;
       border-radius: 6px;
       text-decoration: none;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 500;
+    }
+
+    /* 3. BANNER PROMOCIONAL (SALE) */
+    .promo-banner {
+      background-color: var(--accent-pink);
+      margin: 30px 16px;
+      border-radius: 16px;
+      padding: 30px 20px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 5px;
+      justify-content: space-between;
+      gap: 15px;
     }
-
-    /* BLOQUE NEGRO DE PROMO */
-    .promo-box {
+    .promo-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--bg-dark);
+      margin-bottom: 5px;
+    }
+    .promo-content p {
+      font-size: 0.75rem;
+      color: var(--text-main);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .btn-promo {
+      display: inline-block;
       background-color: var(--bg-dark);
       color: white;
-      margin: 10px 8px 40px 8px;
-      border-radius: 16px;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .promo-box h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-style: italic;
-      margin-bottom: 15px;
-    }
-
-    .promo-box p {
-      font-size: 0.85rem;
-      color: #999;
-      line-height: 1.5;
-      margin-bottom: 25px;
-    }
-
-    .btn-light {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background-color: white;
-      color: var(--bg-dark);
-      padding: 12px 24px;
-      border-radius: 8px;
+      padding: 8px 16px;
+      border-radius: 6px;
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+    .promo-img {
+      width: 110px;
+      height: 110px;
+      min-width: 110px;
+      border-radius: 10px;
+      background-size: cover;
+      background-position: center;
+      background-color: #D3CFC9;
+    }
+
+    /* 4. SECCIÓN DE RESEÑAS / TESTIMONIOS */
+    .reviews-section {
+      padding: 10px 16px 30px;
+    }
+    .review-mini-card {
+      background-color: white;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 10px;
+    }
+    .review-stars {
+      color: #D4AF37; /* Dorado sutil para estrellas */
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+    }
+    .review-mini-card p {
+      font-size: 0.8rem;
+      color: var(--text-main);
+      font-style: italic;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .review-mini-card span {
+      font-size: 0.65rem;
+      color: var(--text-light);
       font-weight: 600;
     }
 
-    /* MENÚ INFERIOR APP (SIN BLOG) */
+    /* MENÚ INFERIOR APP */
     .bottom-nav {
       position: fixed; bottom: 0; width: 100%;
       background: var(--bg-cream);
@@ -179,67 +229,105 @@
       display: flex; flex-direction: column; align-items: center;
     }
     .nav-item i { font-size: 1.4rem; margin-bottom: 4px; }
-    
-    /* Aquí activamos el icono de "Shop" en negro */
     .nav-item.active { color: var(--bg-dark); }
     .nav-item span { font-size: 0.6rem; font-weight: 500; }
   </style>
 </head>
 <body>
 
-  <div class="hero">
-    <div class="badge">
-      <span>24/7</span> Cuidado Personal &rarr;
+  <!-- 1. HERO / BANNER PRINCIPAL -->
+  <div class="shop-hero" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');">
+    <div class="shop-hero-content">
+      <h1>Beauty that Begins with You</h1>
+      <p>Skincare premium diseñado para revelar tu brillo natural y cuidado personal.</p>
+      <a href="#bestsellers" class="btn-shop-hero">Shop the Collection</a>
     </div>
-    <h1>Shop <br><i>RocoGirl.</i></h1>
-    <p>Tu piel merece lo mejor. Descubre nuestra selección de skincare diseñada para resaltar tu belleza natural.</p>
   </div>
 
-  <!-- CATÁLOGO DE PRODUCTOS -->
-  <div class="product-grid">
+  <!-- TÍTULO BESTSELLERS -->
+  <div class="section-title" id="bestsellers">
+    <h2>Our Bestsellers</h2>
+  </div>
+
+  <!-- 2. CUADRÍCULA DE PRODUCTOS -->
+  <div class="products-grid">
     
     <!-- Producto 1 -->
     <div class="product-card">
-      <div class="product-image"><i class="ph-fill ph-sparkle"></i></div>
-      <h3>Serum Facial</h3>
-      <p>Hidratación profunda</p>
-      <a href="#" class="btn-add">Ver detalles</a>
+      <div class="product-img" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
+      <div class="product-info">
+        <h3>Radiance Renewal Serum</h3>
+        <span class="product-price">$45.00</span>
+      </div>
+      <a href="#" class="btn-add-cart">Add to Cart</a>
     </div>
 
     <!-- Producto 2 -->
     <div class="product-card">
-      <div class="product-image"><i class="ph-fill ph-drop"></i></div>
-      <h3>Crema Limpiadora</h3>
-      <p>Todo tipo de piel</p>
-      <a href="#" class="btn-add">Ver detalles</a>
+      <div class="product-img" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');"></div>
+      <div class="product-info">
+        <h3>Hydrasilk Moisturizer</h3>
+        <span class="product-price">$38.00</span>
+      </div>
+      <a href="#" class="btn-add-cart">Add to Cart</a>
     </div>
 
     <!-- Producto 3 -->
     <div class="product-card">
-      <div class="product-image"><i class="ph-fill ph-sun"></i></div>
-      <h3>Protector Solar</h3>
-      <p>Toque seco SPF 50</p>
-      <a href="#" class="btn-add">Ver detalles</a>
+      <div class="product-img" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');"></div>
+      <div class="product-info">
+        <h3>Velour Lip Sector</h3>
+        <span class="product-price">$22.00</span>
+      </div>
+      <a href="#" class="btn-add-cart">Add to Cart</a>
     </div>
 
     <!-- Producto 4 -->
     <div class="product-card">
-      <div class="product-image"><i class="ph-fill ph-flower-lotus"></i></div>
-      <h3>Tónico Refrescante</h3>
-      <p>Balance y frescura</p>
-      <a href="#" class="btn-add">Ver detalles</a>
+      <div class="product-img" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');</div>
+      <div class="product-info">
+        <h3>Botanic Cleanse Gel</h3>
+        <span class="product-price">$30.00</span>
+      </div>
+      <a href="#" class="btn-add-cart">Add to Cart</a>
     </div>
 
   </div>
 
-  <!-- CAJA PROMOCIONAL -->
-  <div class="promo-box">
-    <h3>Catálogo completo</h3>
-    <p>¿Buscas la rutina perfecta? Visita nuestra tienda oficial y encuentra todos nuestros productos de cuidado personal.</p>
-    <a href="#" class="btn-light"><i class="ph-bold ph-storefront"></i> Ir a la tienda</a>
+  <!-- 3. BANNER PROMOCIONAL (SALE) -->
+  <div class="promo-banner">
+    <div class="promo-content">
+      <h3>Spring Beauty Sale</h3>
+      <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 4px;">Up to 40% OFF</p>
+      <p>Fórmulas frescas y tonos suaves para el cuidado diario de tu piel.</p>
+      <a href="#" class="btn-promo">Shop Now</a>
+    </div>
+    <div class="promo-img" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
   </div>
 
-  <!-- MENÚ INFERIOR (4 BOTONES CON SHOP ACTIVO) -->
+  <!-- TÍTULO RESEÑAS -->
+  <div class="section-title">
+    <h2>Loved by Thousands</h2>
+  </div>
+
+  <!-- 4. SECCIÓN DE RESEÑAS -->
+  <div class="reviews-section">
+    
+    <div class="review-mini-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"Mi piel nunca había lucido tan luminosa y hidratada. Los productos de RocoGirl son lo máximo en mi rutina diaria."</p>
+      <span>— Sofia M.</span>
+    </div>
+
+    <div class="review-mini-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"La textura del serum es ligera y se absorbe de inmediato. ¡Se convirtió en mi favorito absoluto!"</p>
+      <span>— Camila R.</span>
+    </div>
+
+  </div>
+
+  <!-- MENÚ INFERIOR -->
   <nav class="bottom-nav">
     <a href="index.html" class="nav-item">
       <i class="ph-light ph-house"></i>
@@ -260,5 +348,4 @@
   </nav>
 
 </body>
-        </html>
-  
+</html>
