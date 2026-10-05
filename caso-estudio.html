@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caso de Estudio E-commerce | Gisella Villarreal</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,600;1,700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
-  
-  <style>
-    :root {
-      --bg-cream: #F4F1ED;     
-      --bg-dark: #151515;      
-      --text-main: #1A1A1A;    
-      --text-light: #666666;   
-      --border-color: #E2DDD5; 
-    }
-    
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-cream);
-      color: var(--text-main);
-      padding-bottom: 90px; 
-      -webkit-font-smoothing: antialiased;
-    }
-    
-    .page-wrapper {
-      max-width: 750px;
-      margin: 0 auto;
-      background-color: var(--bg-cream);
-      min-height: 100vh;
-      border-left: 1px solid var(--border-color);
-      border-right: 1px solid var(--border-color);
-      padding-bottom: 50px;
-    }
-    
-    /* CABECERA DEL CASO */
-    .case-header {
-      padding: 40px 20px 20px;
-    }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.75rem;
-      text-decoration: none;
-      color: var(--text-light);
-      margin-bottom: 20px;
-      font-weight: 500;
-    }
-
-    .case-
-    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caso de Estudio E-commerce</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,600;1,700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<style>
+:root{--bg-cream:#F4F1ED;--bg-dark:#151515;--text-main:#1A1A1A;--text-light:#666666;--border-color:#E2DDD5;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background-color:var(--bg-cream);color:var(--text-main);padding-bottom:90px;-webkit-font-smoothing:antialiased;}
+.page-wrapper{max-width:750px;margin:0 auto;background-color:var(--bg-cream);min-height:100vh;border-left:1px solid var(--border-color);border-right:1px solid var(--border-color);padding-bottom:50px;}
+.case-header{padding:40px 20px 20px;}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;text-decoration:none;color:var(--text-light);margin-bottom:20px;font-weight:500;}
+.case-header h1{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:500;line-height:1.1;margin-bottom:15px;color:var(--bg-dark);}
+.case-header h1 i{font-style:italic;color:var(--text-light);}
+.case-meta{display:flex;gap:15px;font-size:0.75rem;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-bottom:25px;font-weight:600;}
+.case-content{padding:0 20px;}
+.case-section{margin-bottom:35px;}
+.case-section h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:10px;color:var(--bg-dark);}
+.case-section p{font-size:0.9rem;color:var(--text-light);line-height:1.6;}
+.case-image-box{width:100%;height:350px;background-color:#E8E4DD;border-radius:12px;background-size:cover;background-position:center;margin:20px 0;border:1px solid var(--border-color);}
+.bottom-nav{position:fixed;bottom:0;width:100%;max-width:750px;left:50%;transform:translateX(-50%);background:var(--bg-cream);display:flex;justify-content:space-around;padding:15px 0 20px 0;border-top:1px solid var(--border-color);z-index:1000;border-radius:20px 20px 0 0;}
+.nav-item{text-decoration:none;color:#A0A0A0;display:flex;flex-direction:column;align-items:center;}
+.nav-item i{font-size:1.4rem;margin-bottom:4px;}
+.nav-item.active{color:var(--bg-dark);}
+.nav-item span{font-size:0.6rem;font-weight:500;}
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+<div class="case-header">
+<a href="index.html" class="back-link"><i class="ph-bold ph-arrow-left"></i> Volver a Inicio</a>
+<h1>Rediseño y Estructura <br><i>Tienda Online</i></h1>
+<div class="case-meta"><span>Cliente: RocoTec</span> • <span>E-merchandising & UX</span></div>
+</div>
+<div class="case-content">
+<div class="case-section">
+<h3>El Desafío</h3>
+<p>La marca necesitaba ordenar visualmente su catálogo de productos digitales y optimizar el recorrido del cliente (UX) para hacer la navegación mucho más intuitiva, limpia y atractiva desde dispositivos móviles.</p>
+</div>
+<div class="case-image-box" style="background-image: url('logo.png');"></div>
+<div class="case-section">
+<h3>La Solución Aplicada</h3>
+<p>Implementé una estructura de cuadrícula limpia, jerarquía visual en los precios y botones de acción directos que reducen la fricción en el proceso de compra. Este prospecto refleja fielmente la optimización del diseño original que realicé para elevar la conversión.</p>
+</div>
+</div>
+</div>
+<nav class="bottom-nav">
+<a href="index.html" class="nav-item"><i class="ph-light ph-house"></i><span>Inicio</span></a>
+<a href="sobre-mi.html" class="nav-item"><i class="ph-light ph-user"></i><span>Sobre mí</span></a>
+<a href="servicios.html" class="nav-item"><i class="ph-light ph-briefcase"></i><span>Servicios</span></a>
+<a href="shop.html" class="nav-item"><i class="ph-light ph-shopping-bag"></i><span>Shop</span></a>
+</nav>
+</body>
+</html>
