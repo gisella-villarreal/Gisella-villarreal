@@ -33,8 +33,9 @@
       margin: 0 auto;
     }
     
+    /* MODIFICACIÓN: Menos espacio debajo de la foto */
     .hero {
-      padding: 30px 20px 30px;
+      padding: 30px 20px 10px; 
     }
 
     /* BARRA SUPERIOR */
@@ -116,7 +117,6 @@
       gap: 8px;
     }
     
-    /* FOTO PRINCIPAL LOCAL */
     .hero-image {
       width: 100%;
       height: 480px; 
@@ -131,7 +131,7 @@
     .black-stats {
       background-color: var(--bg-dark);
       color: white;
-      margin: 30px 0; 
+      margin: 10px 0 30px 0; /* MODIFICACIÓN: Se subió el bloque */
       border-radius: 0; 
       padding: 15px 10px; 
       display: grid;
@@ -167,7 +167,7 @@
 
     /* ====== SECCIÓN PORTAFOLIO TIPO GRILLA ====== */
     .portfolio-section {
-      padding: 40px 20px 30px;
+      padding: 40px 0 30px; /* Quitamos padding lateral para el menú deslizable */
       text-align: center; 
     }
     
@@ -198,15 +198,24 @@
       font-style: italic;
     }
     
+    /* MODIFICACIÓN: Filtros en una sola línea deslizable */
     .portfolio-filters {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 15px;
-      flex-wrap: wrap;
       margin-bottom: 30px;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 0 20px 5px 20px;
+      scrollbar-width: none; /* Oculta scrollbar Firefox */
+      -webkit-overflow-scrolling: touch;
+    }
+    .portfolio-filters::-webkit-scrollbar {
+      display: none; /* Oculta scrollbar Chrome/Safari */
     }
     
     .filter-btn {
+      flex-shrink: 0; /* Evita que el texto se aplaste */
       background: transparent;
       border: none;
       font-family: 'Inter', sans-serif;
@@ -242,6 +251,7 @@
       max-width: 900px; 
       margin: 0 auto; 
       justify-content: center;
+      padding: 0 20px; /* Padding recuperado para la cuadrícula */
     }
     
     .portfolio-item {
@@ -306,6 +316,7 @@
     .nav-item.active { color: var(--bg-dark); }
     .nav-item span { font-size: 0.6rem; font-weight: 500; }
 
+    /* MEDIA QUERIES */
     @media (min-width: 768px) {
       body {
         padding-bottom: 0;
@@ -319,6 +330,9 @@
         border-right: 1px solid var(--border-color);
         padding-bottom: 50px;
       }
+      .portfolio-filters {
+        justify-content: center; /* Centrar menú en pantallas grandes */
+      }
       .bottom-nav {
         max-width: 750px;
         left: 50%;
@@ -329,6 +343,15 @@
         font-size: 4rem; 
       }
     }
+    
+    @media (max-width: 400px) {
+      .filter-btn {
+        font-size: 0.65rem; /* Letra un poquitito más pequeña en celulares muy delgados */
+      }
+      .portfolio-filters {
+        gap: 12px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -337,14 +360,12 @@
     <!-- SECCIÓN PRINCIPAL -->
     <div class="hero">
       
-      <!-- ETIQUETA NOVEDADES ÚNICAMENTE -->
       <div class="top-bar">
         <div class="badge">
           <span>NOVEDADES</span> eBusiness en mi LinkedIn &rarr;
         </div>
       </div>
       
-      <!-- TÍTULO ORIGINAL CON LETRA FINA Y ELEGANTE -->
       <h1>Impulsa tu negocio <br><i>en digital.</i></h1>
       
       <p>Gisella Villarreal soy Marketer, especialista en Negocios Online. Enfocada en ayudar a marcas y emprendimientos a construir y fortalecer su presencia digital a través del e-commerce y el contenido visual.</p>
@@ -437,5 +458,5 @@
   </nav>
 
 </body>
-  </html>
-  
+        </html>
+        
