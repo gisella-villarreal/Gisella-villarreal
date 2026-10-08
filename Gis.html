@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gisella Villarreal | Portfolio</title>
+<!-- Fuentes modernas y elegantes -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden; /* Evita el scroll para mantener el efecto de portada de revista */
+  }
+
+  /* CONTENEDOR PRINCIPAL CON IMAGEN DE FONDO */
+  .hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Reemplaza la URL de abajo con tu foto, ej: url('mifoto.jpg') */
+    background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    align-items: flex-end; /* Empuja el contenido hacia abajo */
+  }
+
+  /* DEGRADADO OSCURO PARA LEER EL TEXTO */
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 40%, transparent 100%);
+    z-index: 1;
+  }
+
+  /* CAJA DE CONTENIDO DE TEXTO */
+  .content-box {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 0 5% 5% 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* FILA SUPERIOR: NOMBRE Y PROFESIÓN */
+  .header-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .first-name {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -1px;
+  }
+
+  .profession-info {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #d1d1d1;
+    margin-bottom: 5px;
+    line-height: 1.4;
+  }
+
+  /* APELLIDO GIGANTE */
+  .last-name {
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+    margin-top: -5px;
+  }
+
+  /* BOTÓN CLARO ESTILO EDITORIAL */
+  .btn-portfolio {
+    display: block;
+    width: 100%;
+    max-width: 800px; /* Limita el ancho en pantallas gigantes */
+    background-color: #e8e4db; /* Tono crema/gris claro de la imagen original */
+    color: #111;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 40px;
+  }
+
+  .btn-portfolio:hover {
+    background-color: #ffffff;
+  }
+
+  /* DESCRIPCIÓN INFERIOR */
+  .bottom-desc {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #a0a0a0;
+    line-height: 1.6;
+    max-width: 600px;
+    letter-spacing: 0.5px;
+  }
+
+  /* RESPONSIVE PARA CELULARES */
+  @media (max-width: 768px) {
+    .header-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    
+    .profession-info {
+      margin-bottom: 10px;
+      font-size: 0.65rem;
+    }
+
+    .last-name {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .btn-portfolio {
+      padding: 15px;
+      font-size: 0.75rem;
+      margin-bottom: 30px;
+    }
+
+    .bottom-desc {
+      font-size: 0.65rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="hero-container">
+    <div class="overlay"></div>
+    
+    <div class="content-box">
+      <!-- Fila con Primer Nombre y Profesión/Ubicación -->
+      <div class="header-row">
+        <div class="first-name">GISELLA</div>
+        <div class="profession-info">
+          FOTOGRAFÍA COMERCIAL Y ESTRATEGIA DE MARCA<br>
+          BARRANQUILLA, COLOMBIA
+        </div>
+      </div>
+      
+      <!-- Apellido Grande -->
+      <div class="last-name">VILLARREAL</div>
+      
+      <!-- Botón -->
+      <a href="#" class="btn-portfolio">VER PORTAFOLIO</a>
+      
+      <!-- Descripción Inferior -->
+      <div class="bottom-desc">
+        Creación de contenido visual de alto impacto, producción de video y diseño de estrategias de marketing orientadas a conversiones. Capturando la esencia de tu negocio con iluminación de estudio y dirección precisa.
+      </div>
+    </div>
+  </div>
+
+</body>
+  </html>
+  
