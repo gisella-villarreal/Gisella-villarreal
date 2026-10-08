@@ -33,7 +33,6 @@
       margin: 0 auto;
     }
     
-    /* MODIFICACIÓN: Menos espacio debajo de la foto */
     .hero {
       padding: 30px 20px 10px; 
     }
@@ -131,7 +130,7 @@
     .black-stats {
       background-color: var(--bg-dark);
       color: white;
-      margin: 10px 0 30px 0; /* MODIFICACIÓN: Se subió el bloque */
+      margin: 10px 0 30px 0; 
       border-radius: 0; 
       padding: 15px 10px; 
       display: grid;
@@ -167,7 +166,7 @@
 
     /* ====== SECCIÓN PORTAFOLIO TIPO GRILLA ====== */
     .portfolio-section {
-      padding: 40px 0 30px; /* Quitamos padding lateral para el menú deslizable */
+      padding: 40px 0 30px; 
       text-align: center; 
     }
     
@@ -198,24 +197,20 @@
       font-style: italic;
     }
     
-    /* MODIFICACIÓN: Filtros en una sola línea deslizable */
+    /* MODIFICACIÓN: Filtros en una sola línea centrada forzada */
     .portfolio-filters {
       display: flex;
-      justify-content: flex-start;
-      gap: 15px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap; /* Fuerza a una sola línea */
+      gap: 12px;
       margin-bottom: 30px;
-      overflow-x: auto;
-      white-space: nowrap;
-      padding: 0 20px 5px 20px;
-      scrollbar-width: none; /* Oculta scrollbar Firefox */
-      -webkit-overflow-scrolling: touch;
-    }
-    .portfolio-filters::-webkit-scrollbar {
-      display: none; /* Oculta scrollbar Chrome/Safari */
+      width: 100%;
+      padding: 0 10px;
     }
     
     .filter-btn {
-      flex-shrink: 0; /* Evita que el texto se aplaste */
+      flex-shrink: 0; 
       background: transparent;
       border: none;
       font-family: 'Inter', sans-serif;
@@ -251,7 +246,7 @@
       max-width: 900px; 
       margin: 0 auto; 
       justify-content: center;
-      padding: 0 20px; /* Padding recuperado para la cuadrícula */
+      padding: 0 20px; 
     }
     
     .portfolio-item {
@@ -293,6 +288,79 @@
       padding: 0 5px;
     }
 
+    /* ====== NUEVA SECCIÓN SERVICIOS (TARJETAS CON RECORTE) ====== */
+    .services-section {
+      padding: 30px 20px 60px;
+      text-align: center;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      max-width: 900px;
+      margin: 40px auto 0;
+    }
+
+    .service-card {
+      background-color: var(--bg-dark);
+      border-radius: 6px;
+      padding: 40px 10px 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* El círculo "recortado" del mismo color del fondo de la página */
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: -25px; /* Mitad de la altura para que parezca un bocado */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      background-color: var(--bg-cream); 
+      border-radius: 50%;
+    }
+
+    /* Ícono flotando sobre el recorte */
+    .service-icon {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.6rem;
+      color: var(--bg-dark);
+      z-index: 2;
+    }
+
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .service-desc {
+      font-size: 0.6rem;
+      color: var(--silver-accent);
+      line-height: 1.4;
+      margin-bottom: 15px;
+      flex-grow: 1; 
+    }
+
+    .service-more {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
     /* MENÚ INFERIOR */
     .bottom-nav {
       position: fixed;
@@ -317,6 +385,33 @@
     .nav-item span { font-size: 0.6rem; font-weight: 500; }
 
     /* MEDIA QUERIES */
+    @media (max-width: 768px) {
+      .portfolio-filters {
+        gap: 8px;
+      }
+      .filter-btn {
+        font-size: 0.6rem; /* Reducción para que quepa todo en una sola línea centrada */
+      }
+      .service-card {
+        padding: 35px 8px 15px;
+      }
+      .service-title {
+        font-size: 0.95rem;
+      }
+      .service-desc {
+        font-size: 0.55rem;
+      }
+    }
+    
+    @media (max-width: 380px) {
+      .portfolio-filters {
+        gap: 6px;
+      }
+      .filter-btn {
+        font-size: 0.5rem; /* Ajuste extremo para celulares muy pequeños */
+      }
+    }
+
     @media (min-width: 768px) {
       body {
         padding-bottom: 0;
@@ -330,9 +425,6 @@
         border-right: 1px solid var(--border-color);
         padding-bottom: 50px;
       }
-      .portfolio-filters {
-        justify-content: center; /* Centrar menú en pantallas grandes */
-      }
       .bottom-nav {
         max-width: 750px;
         left: 50%;
@@ -343,15 +435,6 @@
         font-size: 4rem; 
       }
     }
-    
-    @media (max-width: 400px) {
-      .filter-btn {
-        font-size: 0.65rem; /* Letra un poquitito más pequeña en celulares muy delgados */
-      }
-      .portfolio-filters {
-        gap: 12px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -359,7 +442,6 @@
   <div class="page-wrapper">
     <!-- SECCIÓN PRINCIPAL -->
     <div class="hero">
-      
       <div class="top-bar">
         <div class="badge">
           <span>NOVEDADES</span> eBusiness en mi LinkedIn &rarr;
@@ -397,13 +479,14 @@
       </div>
     </div>
 
-    <!-- ====== SECCIÓN PORTAFOLIO TIPO GRILLA ====== -->
+    <!-- ====== SECCIÓN PORTAFOLIO ====== -->
     <div class="portfolio-section">
       <div class="portfolio-header">
         <h2 class="portfolio-title">Portafolio</h2>
         <span class="portfolio-subtitle">Algunos Proyectos</span>
       </div>
       
+      <!-- Filtros forzados a una sola línea centrada -->
       <div class="portfolio-filters">
         <button class="filter-btn active">All</button>
         <button class="filter-btn">Tiendas Online</button>
@@ -435,6 +518,49 @@
         <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=400&auto=format&fit=crop');"></div>
       </div>
     </div>
+
+    <!-- ====== NUEVA SECCIÓN SERVICIOS ====== -->
+    <div class="services-section">
+      <div class="portfolio-header" style="margin-bottom: 20px;">
+        <h2 class="portfolio-title">Servicios</h2>
+        <span class="portfolio-subtitle">lo que puedo hacer por ti</span>
+      </div>
+
+      <div class="services-grid">
+        <!-- Tarjeta 1 -->
+        <div class="service-card">
+          <i class="ph-fill ph-camera service-icon"></i>
+          <h3 class="service-title">Fotografía</h3>
+          <p class="service-desc">Creación de contenido visual de producto con dirección de arte.</p>
+          <a href="servicios.html" class="service-more">VER MÁS</a>
+        </div>
+        
+        <!-- Tarjeta 2 -->
+        <div class="service-card">
+          <i class="ph-fill ph-shopping-cart service-icon"></i>
+          <h3 class="service-title">E-commerce</h3>
+          <p class="service-desc">Gestión integral y optimización de tiendas online.</p>
+          <a href="servicios.html" class="service-more">VER MÁS</a>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="service-card">
+          <i class="ph-fill ph-pen-nib service-icon"></i>
+          <h3 class="service-title">Branding</h3>
+          <p class="service-desc">Construcción de identidad y manual de marca profesional.</p>
+          <a href="servicios.html" class="service-more">VER MÁS</a>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="service-card">
+          <i class="ph-fill ph-chart-line-up service-icon"></i>
+          <h3 class="service-title">Marketing</h3>
+          <p class="service-desc">Estrategias y diseño de embudos para impulsar tus ventas.</p>
+          <a href="servicios.html" class="service-more">VER MÁS</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- MENÚ INFERIOR -->
@@ -458,5 +584,4 @@
   </nav>
 
 </body>
-        </html>
-        
+</html>
