@@ -20,6 +20,10 @@
     
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
+    html {
+      scroll-behavior: smooth; /* Efecto de desplazamiento suave */
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--bg-cream);
@@ -30,6 +34,9 @@
     .page-wrapper {
       max-width: 100%;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
     
     .hero {
@@ -131,9 +138,10 @@
       background-repeat: no-repeat;
     }
 
-    /* REDES SOCIALES DEBAJO DE LA FOTO */
+    /* ====== SECCIÓN SÍGUEME CENTRADA ====== */
     .hero-social {
       display: flex;
+      justify-content: center; /* Centrado */
       align-items: center;
       gap: 15px;
       margin-top: 20px;
@@ -141,12 +149,14 @@
       font-size: 0.85rem;
     }
     .hero-social span {
+      font-style: italic; /* Cursiva */
       font-weight: 600;
       letter-spacing: 0.5px;
     }
     .hero-social a {
       color: var(--bg-dark);
       font-size: 1.5rem;
+      text-decoration: none !important; /* Sin rayita */
       transition: color 0.2s ease;
       display: flex;
       align-items: center;
@@ -193,7 +203,7 @@
       line-height: 1.3;
     }
 
-    /* ====== SECCIÓN SERVICIOS (TARJETAS CON RECORTE) ====== */
+    /* ====== SECCIÓN SERVICIOS ====== */
     .services-section {
       padding: 10px 20px 40px;
       text-align: center;
@@ -389,39 +399,41 @@
 
     /* ====== SECCIÓN CTA: ¿LISTO PARA EMPEZAR? ====== */
     .cta-container {
-      padding: 10px 20px 50px;
+      /* Quitado todo el padding lateral para ocupar el 100% */
+      padding: 0;
+      margin-top: 20px;
     }
     .cta-box {
       background-color: var(--bg-dark);
-      border-radius: 16px;
-      padding: 50px 25px;
+      border-radius: 0; /* Sin bordes curvos, de lado a lado */
+      padding: 40px 20px; /* Más pequeño a lo alto */
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      max-width: 900px;
-      margin: 0 auto;
+      width: 100%;
     }
     .cta-title {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: 500;
       color: white;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       line-height: 1.1;
     }
     .cta-desc {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: #b0b0b0;
-      max-width: 400px;
-      line-height: 1.6;
-      margin-bottom: 35px;
+      line-height: 1.5;
+      margin-bottom: 25px;
+      /* Forzar dos líneas */
+      max-width: 500px;
     }
     .btn-white {
       background-color: white;
       color: var(--bg-dark);
-      padding: 14px 28px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       font-size: 0.85rem;
@@ -436,6 +448,54 @@
     }
     .btn-white i {
       font-size: 1.2rem;
+    }
+
+    /* ====== PIE DE PÁGINA (FOOTER NEGRO) ====== */
+    footer {
+      background-color: var(--bg-dark);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: auto; /* Empuja el footer al final de la página */
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: var(--silver-accent);
+    }
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+    .footer-social span {
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--silver-accent);
+    }
+    .footer-social a {
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none !important;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover {
+      color: var(--silver-accent);
     }
 
     /* ====== OVERLAY MENÚ EMERGENTE ====== */
@@ -501,7 +561,10 @@
         font-size: 0.55rem;
       }
       .cta-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
+      }
+      .cta-desc {
+        font-size: 0.75rem;
       }
     }
     
@@ -510,7 +573,7 @@
         gap: 6px;
       }
       .filter-btn {
-        font-size: 0.5rem; 
+        font-size: 0.55rem; 
       }
     }
 
@@ -519,10 +582,8 @@
         max-width: 750px;
         background-color: var(--bg-cream);
         box-shadow: 0 0 40px rgba(0,0,0,0.05);
-        min-height: 100vh;
         border-left: 1px solid var(--border-color);
         border-right: 1px solid var(--border-color);
-        padding-bottom: 50px;
       }
       .hero h1 { 
         font-size: 4rem; 
@@ -538,10 +599,10 @@
       <i class="ph-bold ph-x"></i>
     </div>
     <div class="overlay-content">
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="caso-estudio.html">Portafolio</a>
-      <a href="shop.html">Shop</a>
+      <a href="index.html" onclick="toggleMenu()">Inicio</a>
+      <a href="servicios.html" onclick="toggleMenu()">Servicios</a>
+      <a href="#portafolio" onclick="toggleMenu()">Portafolio</a>
+      <a href="shop.html" onclick="toggleMenu()">Shop</a>
     </div>
   </div>
 
@@ -563,13 +624,15 @@
       <p>Gisella Villarreal soy Marketer, enfocada en Negocios Online. Ayudo a marcas y emprendimientos a construir y fortalecer su presencia digital a través del e-commerce y el contenido visual.</p>
       
       <div class="button-group">
-        <a href="servicios.html" class="btn-dark">Ver RocoGirl <i class="ph-bold ph-arrow-up-right"></i></a>
-        <a href="caso-estudio.html" class="btn-outline">Ver Portafolio <i class="ph-fill ph-play-circle"></i></a>
+        <!-- DIRIGE A SHOP -->
+        <a href="shop.html" class="btn-dark">Ver RocoGirl <i class="ph-bold ph-arrow-up-right"></i></a>
+        <!-- DIRIGE AL ID #portafolio ABAJO -->
+        <a href="#portafolio" class="btn-outline">Ver Portafolio <i class="ph-fill ph-play-circle"></i></a>
       </div>
 
       <div class="hero-image"></div>
       
-      <!-- NUEVA SECCIÓN SÍGUEME DEBAJO DE LA FOTO -->
+      <!-- SÍGUEME CENTRADO, EN CURSIVA Y SIN SUBRAYADO -->
       <div class="hero-social">
         <span>Sígueme:</span>
         <a href="#"><i class="ph-fill ph-linkedin-logo"></i></a>
@@ -639,18 +702,17 @@
       </div>
     </div>
 
-    <!-- ====== SECCIÓN PORTAFOLIO ====== -->
-    <div class="portfolio-section">
+    <!-- ====== SECCIÓN PORTAFOLIO (CON ID PARA EL SCROLL) ====== -->
+    <div class="portfolio-section" id="portafolio">
       <div class="section-header">
         <h2 class="section-title">Portafolio</h2>
         <span class="section-subtitle">Algunos Proyectos</span>
       </div>
       
-      <!-- Filtros -->
+      <!-- Filtros modificados -->
       <div class="portfolio-filters">
-        <button class="filter-btn active">All</button>
-        <button class="filter-btn">Tiendas Online</button>
-        <button class="filter-btn">Landing Pages</button>
+        <button class="filter-btn active">e-shop</button>
+        <button class="filter-btn">Landing</button>
         <button class="filter-btn">Web Personal</button>
         <button class="filter-btn">Fotografía</button>
       </div>
@@ -680,26 +742,4 @@
     </div>
 
     <!-- ====== SECCIÓN CTA: ¿LISTO PARA EMPEZAR? ====== -->
-    <div class="cta-container">
-      <div class="cta-box">
-        <h2 class="cta-title">¿Listo para<br>empezar?</h2>
-        <p class="cta-desc">Cuéntame sobre tu proyecto y descubramos cómo podemos trabajar juntos para llevarlo al siguiente nivel.</p>
-        <!-- Cambia el número de WhatsApp aquí abajo si lo necesitas -->
-        <a href="https://wa.me/573001234567" target="_blank" class="btn-white">
-          <i class="ph-fill ph-whatsapp-logo"></i> Hablemos por WhatsApp
-        </a>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- SCRIPT PARA ABRIR Y CERRAR EL MENÚ EMERGENTE -->
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('overlayMenu');
-      menu.classList.toggle('active');
-    }
-  </script>
-
-</body>
-</html>
+    <div class
