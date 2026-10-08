@@ -164,19 +164,19 @@
       line-height: 1.3;
     }
 
-    /* ====== SECCIÓN PORTAFOLIO TIPO GRILLA ====== */
-    .portfolio-section {
-      padding: 40px 0 30px; 
-      text-align: center; 
+    /* ====== SECCIÓN SERVICIOS (TARJETAS CON RECORTE) ====== */
+    .services-section {
+      padding: 10px 20px 40px;
+      text-align: center;
     }
-    
-    .portfolio-header {
+
+    .section-header {
       position: relative;
       display: inline-block;
       margin-bottom: 30px;
     }
-    
-    .portfolio-title {
+
+    .section-title {
       font-family: 'Playfair Display', serif; 
       font-size: 2.8rem;
       font-weight: 600;
@@ -186,7 +186,7 @@
       letter-spacing: -1px;
     }
     
-    .portfolio-subtitle {
+    .section-subtitle {
       font-family: 'Inter', sans-serif;
       font-size: 0.85rem;
       font-weight: 500;
@@ -196,13 +196,85 @@
       padding: 0 4px;
       font-style: italic;
     }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      max-width: 900px;
+      margin: 20px auto 0;
+    }
+
+    .service-card {
+      background-color: var(--bg-dark);
+      border-radius: 6px;
+      padding: 40px 10px 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* El círculo "recortado" del mismo color del fondo de la página */
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: -25px; 
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      background-color: var(--bg-cream); 
+      border-radius: 50%;
+    }
+
+    /* Ícono flotando sobre el recorte */
+    .service-icon {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.6rem;
+      color: var(--bg-dark);
+      z-index: 2;
+    }
+
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .service-desc {
+      font-size: 0.6rem;
+      color: var(--silver-accent);
+      line-height: 1.4;
+      margin-bottom: 15px;
+      flex-grow: 1; 
+    }
+
+    .service-more {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ====== SECCIÓN PORTAFOLIO ====== */
+    .portfolio-section {
+      padding: 20px 0 40px; 
+      text-align: center; 
+    }
     
-    /* MODIFICACIÓN: Filtros en una sola línea centrada forzada */
     .portfolio-filters {
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-wrap: nowrap; /* Fuerza a una sola línea */
+      flex-wrap: nowrap; 
       gap: 12px;
       margin-bottom: 30px;
       width: 100%;
@@ -288,77 +360,55 @@
       padding: 0 5px;
     }
 
-    /* ====== NUEVA SECCIÓN SERVICIOS (TARJETAS CON RECORTE) ====== */
-    .services-section {
-      padding: 30px 20px 60px;
-      text-align: center;
+    /* ====== NUEVA SECCIÓN CTA: ¿LISTO PARA EMPEZAR? ====== */
+    .cta-container {
+      padding: 10px 20px 50px;
     }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      max-width: 900px;
-      margin: 40px auto 0;
-    }
-
-    .service-card {
+    .cta-box {
       background-color: var(--bg-dark);
-      border-radius: 6px;
-      padding: 40px 10px 20px;
-      position: relative;
+      border-radius: 16px;
+      padding: 50px 25px;
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
     }
-
-    /* El círculo "recortado" del mismo color del fondo de la página */
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: -25px; /* Mitad de la altura para que parezca un bocado */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 50px;
-      height: 50px;
-      background-color: var(--bg-cream); 
-      border-radius: 50%;
-    }
-
-    /* Ícono flotando sobre el recorte */
-    .service-icon {
-      position: absolute;
-      top: -18px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1.6rem;
-      color: var(--bg-dark);
-      z-index: 2;
-    }
-
-    .service-title {
+    .cta-title {
       font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: white;
-      margin-bottom: 8px;
+      font-style: italic;
+      font-size: 2.5rem;
       font-weight: 500;
-    }
-
-    .service-desc {
-      font-size: 0.6rem;
-      color: var(--silver-accent);
-      line-height: 1.4;
-      margin-bottom: 15px;
-      flex-grow: 1; 
-    }
-
-    .service-more {
-      font-size: 0.65rem;
-      font-weight: 600;
       color: white;
+      margin-bottom: 15px;
+      line-height: 1.1;
+    }
+    .cta-desc {
+      font-size: 0.8rem;
+      color: #b0b0b0;
+      max-width: 400px;
+      line-height: 1.6;
+      margin-bottom: 35px;
+    }
+    .btn-white {
+      background-color: white;
+      color: var(--bg-dark);
+      padding: 14px 28px;
+      border-radius: 8px;
       text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.2s;
+    }
+    .btn-white:hover {
+      background-color: #E2DDD5;
+    }
+    .btn-white i {
+      font-size: 1.2rem;
     }
 
     /* MENÚ INFERIOR */
@@ -390,7 +440,7 @@
         gap: 8px;
       }
       .filter-btn {
-        font-size: 0.6rem; /* Reducción para que quepa todo en una sola línea centrada */
+        font-size: 0.6rem; 
       }
       .service-card {
         padding: 35px 8px 15px;
@@ -401,6 +451,9 @@
       .service-desc {
         font-size: 0.55rem;
       }
+      .cta-title {
+        font-size: 2.2rem;
+      }
     }
     
     @media (max-width: 380px) {
@@ -408,7 +461,7 @@
         gap: 6px;
       }
       .filter-btn {
-        font-size: 0.5rem; /* Ajuste extremo para celulares muy pequeños */
+        font-size: 0.5rem; 
       }
     }
 
@@ -479,51 +532,11 @@
       </div>
     </div>
 
-    <!-- ====== SECCIÓN PORTAFOLIO ====== -->
-    <div class="portfolio-section">
-      <div class="portfolio-header">
-        <h2 class="portfolio-title">Portafolio</h2>
-        <span class="portfolio-subtitle">Algunos Proyectos</span>
-      </div>
-      
-      <!-- Filtros forzados a una sola línea centrada -->
-      <div class="portfolio-filters">
-        <button class="filter-btn active">All</button>
-        <button class="filter-btn">Tiendas Online</button>
-        <button class="filter-btn">Landing Pages</button>
-        <button class="filter-btn">Web Personal</button>
-        <button class="filter-btn">Fotografía</button>
-      </div>
-
-      <div class="portfolio-grid">
-        <!-- Fila 1 -->
-        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=400&auto=format&fit=crop');"></div>
-        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400&auto=format&fit=crop');"></div>
-        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1428366890462-dd4baecf492b?q=80&w=400&auto=format&fit=crop');"></div>
-        
-        <!-- Fila 2 -->
-        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=400&auto=format&fit=crop');"></div>
-        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=400&auto=format&fit=crop');"></div>
-        
-        <!-- Caja Oscura -->
-        <div class="portfolio-item dark-box">
-          <i class="ph-bold ph-magnifying-glass"></i>
-          <h4>DESIGN PROJECT</h4>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots.</p>
-        </div>
-        
-        <!-- Fila 3 -->
-        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1473220464584-633b00684ff3?q=80&w=400&auto=format&fit=crop');"></div>
-        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1506744626753-1fa28f6f5d27?q=80&w=400&auto=format&fit=crop');"></div>
-        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=400&auto=format&fit=crop');"></div>
-      </div>
-    </div>
-
-    <!-- ====== NUEVA SECCIÓN SERVICIOS ====== -->
+    <!-- ====== SECCIÓN SERVICIOS ====== -->
     <div class="services-section">
-      <div class="portfolio-header" style="margin-bottom: 20px;">
-        <h2 class="portfolio-title">Servicios</h2>
-        <span class="portfolio-subtitle">lo que puedo hacer por ti</span>
+      <div class="section-header" style="margin-bottom: 20px;">
+        <h2 class="section-title">Servicios</h2>
+        <span class="section-subtitle">lo que puedo hacer por ti</span>
       </div>
 
       <div class="services-grid">
@@ -561,16 +574,60 @@
       </div>
     </div>
 
+    <!-- ====== SECCIÓN PORTAFOLIO ====== -->
+    <div class="portfolio-section">
+      <div class="section-header">
+        <h2 class="section-title">Portafolio</h2>
+        <span class="section-subtitle">Algunos Proyectos</span>
+      </div>
+      
+      <!-- Filtros -->
+      <div class="portfolio-filters">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Tiendas Online</button>
+        <button class="filter-btn">Landing Pages</button>
+        <button class="filter-btn">Web Personal</button>
+        <button class="filter-btn">Fotografía</button>
+      </div>
+
+      <div class="portfolio-grid">
+        <!-- Fila 1 -->
+        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=400&auto=format&fit=crop');"></div>
+        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400&auto=format&fit=crop');"></div>
+        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1428366890462-dd4baecf492b?q=80&w=400&auto=format&fit=crop');"></div>
+        
+        <!-- Fila 2 -->
+        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=400&auto=format&fit=crop');"></div>
+        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=400&auto=format&fit=crop');"></div>
+        
+        <!-- Caja Oscura -->
+        <div class="portfolio-item dark-box">
+          <i class="ph-bold ph-magnifying-glass"></i>
+          <h4>DESIGN PROJECT</h4>
+          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots.</p>
+        </div>
+        
+        <!-- Fila 3 -->
+        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1473220464584-633b00684ff3?q=80&w=400&auto=format&fit=crop');"></div>
+        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1506744626753-1fa28f6f5d27?q=80&w=400&auto=format&fit=crop');"></div>
+        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=400&auto=format&fit=crop');"></div>
+      </div>
+    </div>
+
+    <!-- ====== NUEVA SECCIÓN CTA: ¿LISTO PARA EMPEZAR? ====== -->
+    <div class="cta-container">
+      <div class="cta-box">
+        <h2 class="cta-title">¿Listo para<br>empezar?</h2>
+        <p class="cta-desc">Cuéntame sobre tu proyecto y descubramos cómo podemos trabajar juntos para llevarlo al siguiente nivel.</p>
+        <!-- Cambia el número de WhatsApp aquí abajo si lo necesitas -->
+        <a href="https://wa.me/573001234567" target="_blank" class="btn-white">
+          <i class="ph-fill ph-whatsapp-logo"></i> Hablemos por WhatsApp
+        </a>
+      </div>
+    </div>
+
   </div>
 
-<!-- CAJA DE CONTACTO -->
-    <div class="contact-box">
-      <h3>¿Listo para empezar?</h3>
-      <p>Cuéntame sobre tu proyecto y descubramos cómo podemos trabajar juntos para llevarlo al siguiente nivel.</p>
-      <a href="#" class="btn-light"><i class="ph-fill ph-whatsapp-logo"></i> Hablemos por WhatsApp</a>
-    </div>
-</div>
-  
   <!-- MENÚ INFERIOR -->
   <nav class="bottom-nav">
     <a href="index.html" class="nav-item active">
@@ -592,4 +649,5 @@
   </nav>
 
 </body>
-</html>
+  </html>
+  
