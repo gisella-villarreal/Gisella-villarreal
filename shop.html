@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop RocoGirl | Skincare & Cuidado Personal</title>
+  <title>RocoGirl Skincare | Shop</title>
   
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   
   <style>
     :root {
-      --bg-cream: #F4F1ED;
-      --bg-dark: #151515;
-      --text-main: #1A1A1A;
-      --text-light: #666666;
-      --border-color: #E2DDD5;
-      --accent-pink: #E8D3CE; /* Tono suave inspirador de skincare */
+      --bg-cream: #F8F7F3;     /* Fondo claro principal */
+      --bg-features: #EAE6DB;  /* Fondo un poco más oscuro para los iconos de abajo */
+      --text-main: #1A1A1A;    
+      --text-light: #5A5A5A;   
+      --text-accent: #9A8068;  /* Color café suave para el "You" */
     }
     
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,328 +23,312 @@
       font-family: 'Inter', sans-serif;
       background-color: var(--bg-cream);
       color: var(--text-main);
-      padding-bottom: 100px; 
       -webkit-font-smoothing: antialiased;
     }
     
-    /* 1. HERO / BANNER PRINCIPAL DE LA TIENDA */
-    .shop-hero {
-      width: 100%;
-      height: 380px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
+    .page-wrapper {
+      max-width: 100%;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 30px 20px;
-      text-align: center;
+      min-height: 100vh;
     }
-    .shop-hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: linear-gradient(to top, rgba(21,21,21,0.7) 0%, rgba(21,21,21,0.1) 60%, transparent 100%);
-      z-index: 1;
-    }
-    .shop-hero-content {
-      position: relative;
-      z-index: 2;
-      color: white;
-    }
-    .shop-hero-content h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 400;
-      margin-bottom: 8px;
-    }
-    .shop-hero-content p {
-      font-size: 0.8rem;
-      color: #E2DDD5;
-      margin-bottom: 15px;
-      line-height: 1.4;
-    }
-    .btn-shop-hero {
-      display: inline-block;
-      background-color: white;
-      color: var(--bg-dark);
-      padding: 10px 22px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* SECCIÓN TÍTULOS */
-    .section-title {
-      text-align: center;
-      padding: 35px 20px 20px;
-    }
-    .section-title h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 400;
-      color: var(--bg-dark);
-    }
-
-    /* 2. CUADRÍCULA DE PRODUCTOS (BESTSELLERS) */
-    .products-grid {
-      padding: 0 16px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .product-card {
-      background-color: white;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      overflow: hidden;
+    
+    /* ====== BARRA SUPERIOR ====== */
+    .top-bar {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
-      padding-bottom: 12px;
-    }
-    .product-img {
-      width: 100%;
-      height: 160px;
-      background-size: cover;
-      background-position: center;
-      background-color: #E8E4DD;
-      margin-bottom: 10px;
-    }
-    .product-info {
-      padding: 0 10px;
-      margin-bottom: 10px;
-    }
-    .product-info h3 {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text-main);
-      margin-bottom: 4px;
-      line-height: 1.2;
-    }
-    .product-price {
-      font-size: 0.8rem;
-      color: var(--text-light);
-      font-weight: 600;
-    }
-    .btn-add-cart {
-      margin: 0 10px;
-      background-color: var(--bg-dark);
-      color: white;
-      text-align: center;
-      padding: 8px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.7rem;
-      font-weight: 500;
+      align-items: center;
+      padding: 25px 20px 10px;
     }
 
-    /* 3. BANNER PROMOCIONAL (SALE) */
-    .promo-banner {
-      background-color: var(--accent-pink);
-      margin: 30px 16px;
-      border-radius: 16px;
-      padding: 30px 20px;
+    .menu-icon, .cart-icon {
+      font-size: 1.6rem;
+      color: var(--text-main);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .logo {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+      color: var(--text-main);
+    }
+
+    .logo span {
+      font-size: 0.5rem;
+      font-weight: 500;
+      letter-spacing: 4px;
+      color: var(--text-light);
+      text-transform: uppercase;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: var(--text-main);
+      color: white;
+      font-size: 0.55rem;
+      font-weight: 700;
+      width: 16px;
+      height: 16px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 15px;
+      justify-content: center;
+      border-radius: 50%;
+      border: 2px solid var(--bg-cream);
     }
-    .promo-content h3 {
+
+    /* ====== HERO TEXT ====== */
+    .hero-content {
+      padding: 20px 20px 0;
+    }
+
+    .hero-content h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      color: var(--bg-dark);
-      margin-bottom: 5px;
-    }
-    .promo-content p {
-      font-size: 0.75rem;
+      font-size: 3.2rem;
+      font-weight: 500;
+      line-height: 1.1;
       color: var(--text-main);
-      line-height: 1.4;
-      margin-bottom: 12px;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
     }
-    .btn-promo {
-      display: inline-block;
-      background-color: var(--bg-dark);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.7rem;
+
+    .hero-content h1 i {
+      color: var(--text-accent);
       font-weight: 600;
     }
-    .promo-img {
-      width: 110px;
-      height: 110px;
-      min-width: 110px;
-      border-radius: 10px;
+
+    .hero-content p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 30px;
+      max-width: 320px;
+      font-weight: 400;
+    }
+
+    .shop-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--text-main);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px; /* Botón tipo píldora */
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+
+    .shop-btn:hover {
+      background-color: #333;
+    }
+
+    .shop-btn i {
+      font-size: 1rem;
+    }
+
+    /* ====== IMAGEN DEL PRODUCTO ====== */
+    .product-image-container {
+      width: 100%;
+      height: 45vh; /* Se adapta a la pantalla */
+      min-height: 350px;
+      margin-top: 20px;
+      /* AQUÍ PUEDES PONER LA URL DE TU FOTO DE PRODUCTOS ROCOGIRL */
+      background-image: url('https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop');
       background-size: cover;
       background-position: center;
-      background-color: #D3CFC9;
+      background-repeat: no-repeat;
+      /* Un pequeño degradado para que se funda con el fondo si es necesario */
+      mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
     }
 
-    /* 4. SECCIÓN DE RESEÑAS / TESTIMONIOS */
-    .reviews-section {
-      padding: 10px 16px 30px;
+    /* ====== CARACTERÍSTICAS (FEATURES) ====== */
+    .features-section {
+      background-color: var(--bg-features);
+      border-radius: 24px 24px 0 0; /* Bordes curvos solo arriba */
+      padding: 30px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: -20px; /* Sube un poco para superponerse a la imagen */
+      position: relative;
+      z-index: 2;
+      flex-grow: 1;
     }
-    .review-mini-card {
-      background-color: white;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 15px;
-      margin-bottom: 10px;
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      flex: 1;
+      padding: 0 5px;
     }
-    .review-stars {
-      color: #D4AF37; /* Dorado sutil para estrellas */
-      font-size: 0.8rem;
-      margin-bottom: 6px;
-    }
-    .review-mini-card p {
-      font-size: 0.8rem;
+
+    .feature-item i {
+      font-size: 1.8rem;
       color: var(--text-main);
-      font-style: italic;
-      margin-bottom: 6px;
-      line-height: 1.4;
-    }
-    .review-mini-card span {
-      font-size: 0.65rem;
-      color: var(--text-light);
-      font-weight: 600;
+      margin-bottom: 12px;
+      font-weight: 300;
     }
 
-    /* MENÚ INFERIOR APP */
-    .bottom-nav {
-      position: fixed; bottom: 0; width: 100%;
-      background: var(--bg-cream);
-      display: flex; justify-content: space-around;
-      padding: 15px 0 20px 0;
-      border-top: 1px solid var(--border-color);
-      z-index: 1000;
+    .feature-item p {
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.3;
     }
-    .nav-item {
-      text-decoration: none; color: #A0A0A0;
-      display: flex; flex-direction: column; align-items: center;
+
+    /* ====== OVERLAY MENÚ EMERGENTE ====== */
+    .overlay-menu {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: var(--bg-cream);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
     }
-    .nav-item i { font-size: 1.4rem; margin-bottom: 4px; }
-    .nav-item.active { color: var(--bg-dark); }
-    .nav-item span { font-size: 0.6rem; font-weight: 500; }
+    .overlay-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .close-btn {
+      position: absolute;
+      top: 30px; right: 30px;
+      font-size: 2rem;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+    .overlay-content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      text-align: center;
+    }
+    .overlay-content a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-style: italic;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .overlay-content a:hover {
+      color: var(--text-light);
+    }
+
+    /* MEDIA QUERIES PARA COMPUTADORA */
+    @media (min-width: 768px) {
+      .page-wrapper {
+        max-width: 480px; /* Mantiene la proporción de celular en computadoras */
+        background-color: var(--bg-cream);
+        box-shadow: 0 0 40px rgba(0,0,0,0.1);
+      }
+      .product-image-container {
+        height: 400px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- 1. HERO / BANNER PRINCIPAL -->
-  <div class="shop-hero" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');">
-    <div class="shop-hero-content">
-      <h1>Beauty that Begins with You</h1>
-      <p>Skincare premium diseñado para revelar tu brillo natural y cuidado personal.</p>
-      <a href="#bestsellers" class="btn-shop-hero">Shop the Collection</a>
+  <!-- MENÚ EMERGENTE (Igual al de inicio) -->
+  <div class="overlay-menu" id="overlayMenu">
+    <div class="close-btn" onclick="toggleMenu()">
+      <i class="ph-bold ph-x"></i>
+    </div>
+    <div class="overlay-content">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <!-- Te dirije al portafolio de la pág de inicio -->
+      <a href="index.html#portafolio">Portafolio</a>
+      <a href="shop.html">Shop</a>
     </div>
   </div>
 
-  <!-- TÍTULO BESTSELLERS -->
-  <div class="section-title" id="bestsellers">
-    <h2>Our Bestsellers</h2>
-  </div>
-
-  <!-- 2. CUADRÍCULA DE PRODUCTOS -->
-  <div class="products-grid">
+  <div class="page-wrapper">
     
-    <!-- Producto 1 -->
-    <div class="product-card">
-      <div class="product-img" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
-      <div class="product-info">
-        <h3>Radiance Renewal Serum</h3>
-        <span class="product-price">$45.00</span>
+    <!-- BARRA SUPERIOR -->
+    <header class="top-bar">
+      <i class="ph ph-list menu-icon" onclick="toggleMenu()"></i>
+      
+      <div class="logo">
+        <h2>ROCOGIRL</h2>
+        <span>SKINCARE</span>
       </div>
-      <a href="#" class="btn-add-cart">Add to Cart</a>
-    </div>
+      
+      <div class="cart-icon">
+        <i class="ph ph-shopping-bag"></i>
+        <span class="cart-badge">2</span> <!-- Número de artículos en el carrito -->
+      </div>
+    </header>
 
-    <!-- Producto 2 -->
-    <div class="product-card">
-      <div class="product-img" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');"></div>
-      <div class="product-info">
-        <h3>Hydrasilk Moisturizer</h3>
-        <span class="product-price">$38.00</span>
-      </div>
-      <a href="#" class="btn-add-cart">Add to Cart</a>
-    </div>
+    <!-- TEXTO PRINCIPAL -->
+    <section class="hero-content">
+      <h1>Healthy Skin.<br>Confident <i>You.</i></h1>
+      <p>Science-backed skincare solutions<br>for every skin type and every you.</p>
+      
+      <a href="#productos" class="shop-btn">
+        Shop Now <i class="ph ph-arrow-right"></i>
+      </a>
+    </section>
 
-    <!-- Producto 3 -->
-    <div class="product-card">
-      <div class="product-img" style="background-image: url('https://i.ibb.co/0RJH9dTJ/1791049708095-2.jpg');"></div>
-      <div class="product-info">
-        <h3>Velour Lip Sector</h3>
-        <span class="product-price">$22.00</span>
-      </div>
-      <a href="#" class="btn-add-cart">Add to Cart</a>
-    </div>
+    <!-- IMAGEN DEL PRODUCTO (Reemplaza la URL en el CSS por la de tus productos) -->
+    <div class="product-image-container"></div>
 
-    <!-- Producto 4 -->
-    <div class="product-card">
-      <div class="product-img" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');</div>
-      <div class="product-info">
-        <h3>Botanic Cleanse Gel</h3>
-        <span class="product-price">$30.00</span>
+    <!-- SECCIÓN DE CARACTERÍSTICAS (FEATURES) -->
+    <section class="features-section">
+      <div class="feature-item">
+        <i class="ph-light ph-leaf"></i>
+        <p>Clean<br>ingredients</p>
       </div>
-      <a href="#" class="btn-add-cart">Add to Cart</a>
-    </div>
+      <div class="feature-item">
+        <i class="ph-light ph-flask"></i>
+        <p>Dermatologist<br>Tested</p>
+      </div>
+      <div class="feature-item">
+        <i class="ph-light ph-drop"></i>
+        <p>For All<br>Skin Types</p>
+      </div>
+      <div class="feature-item">
+        <i class="ph-light ph-rabbit"></i> <!-- Icono de conejo cruelty free -->
+        <p>Cruelty<br>Free</p>
+      </div>
+    </section>
 
   </div>
 
-  <!-- 3. BANNER PROMOCIONAL (SALE) -->
-  <div class="promo-banner">
-    <div class="promo-content">
-      <h3>Spring Beauty Sale</h3>
-      <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 4px;">Up to 40% OFF</p>
-      <p>Fórmulas frescas y tonos suaves para el cuidado diario de tu piel.</p>
-      <a href="#" class="btn-promo">Shop Now</a>
-    </div>
-    <div class="promo-img" style="background-image: url('https://i.ibb.co/TMg4G9ZH/1791056211701-2.jpg');"></div>
-  </div>
-
-  <!-- TÍTULO RESEÑAS -->
-  <div class="section-title">
-    <h2>Loved by Thousands</h2>
-  </div>
-
-  <!-- 4. SECCIÓN DE RESEÑAS -->
-  <div class="reviews-section">
-    
-    <div class="review-mini-card">
-      <div class="review-stars">★★★★★</div>
-      <p>"Mi piel nunca había lucido tan luminosa y hidratada. Los productos de RocoGirl son lo máximo en mi rutina diaria."</p>
-      <span>— Sofia M.</span>
-    </div>
-
-    <div class="review-mini-card">
-      <div class="review-stars">★★★★★</div>
-      <p>"La textura del serum es ligera y se absorbe de inmediato. ¡Se convirtió en mi favorito absoluto!"</p>
-      <span>— Camila R.</span>
-    </div>
-
-  </div>
-
-  <!-- MENÚ INFERIOR -->
-  <nav class="bottom-nav">
-    <a href="index.html" class="nav-item">
-      <i class="ph-light ph-house"></i>
-      <span>Inicio</span>
-    </a>
-    <a href="sobre-mi.html" class="nav-item">
-      <i class="ph-light ph-user"></i>
-      <span>Sobre mí</span>
-    </a>
-    <a href="servicios.html" class="nav-item">
-      <i class="ph-light ph-briefcase"></i>
-      <span>Servicios</span>
-    </a>
-    <a href="shop.html" class="nav-item active">
-      <i class="ph-fill ph-shopping-bag"></i>
-      <span>Shop</span>
-    </a>
-  </nav>
+  <!-- SCRIPT PARA ABRIR Y CERRAR EL MENÚ EMERGENTE -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('overlayMenu');
+      menu.classList.toggle('active');
+    }
+  </script>
 
 </body>
-</html>
+  </html>
+  
