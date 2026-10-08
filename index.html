@@ -99,12 +99,6 @@
       max-width: 90%;
     }
     
-    /* Para resaltar el nombre en el párrafo */
-    .hero p strong i {
-      color: var(--text-main);
-      font-weight: 700;
-    }
-    
     .button-group {
       display: flex;
       gap: 15px;
@@ -403,7 +397,7 @@
       padding: 0 5px;
     }
 
-    /* ====== SECCIÓN CTA: ¿LISTO PARA EMPEZAR? ====== */
+    /* ====== SECCIÓN CTA ====== */
     .cta-container {
       padding: 0;
       margin-top: 20px;
@@ -458,9 +452,19 @@
     footer {
       background-color: var(--bg-dark);
       color: white;
-      padding: 50px 20px 40px;
+      padding: 10px 20px 40px; /* Padding superior reducido para acomodar la línea divisora */
       text-align: center;
       margin-top: auto; 
+    }
+    
+    /* Línea divisora gris plateada */
+    .footer-divider {
+      border: none;
+      border-top: 1px solid var(--silver-accent);
+      opacity: 0.3;
+      width: 70%;
+      max-width: 400px;
+      margin: 10px auto 30px auto;
     }
     
     /* Nombre en el Footer */
@@ -636,8 +640,8 @@
       
       <h1>Impulsa tu negocio <br><i>en digital.</i></h1>
       
-      <!-- PÁRRAFO CON NOMBRE EN NEGRITA Y CURSIVA -->
-      <p><strong><i>Gisella Villarreal</i></strong> soy Marketer, enfocada en Negocios Online. Ayudo a marcas y emprendimientos a construir y fortalecer su presencia digital a través del e-commerce y el contenido visual.</p>
+      <!-- PÁRRAFO CON EL NOMBRE SÓLO EN CURSIVA (Y DEL MISMO COLOR DEL TEXTO) -->
+      <p><i>Gisella Villarreal</i> soy Marketer, enfocada en Negocios Online. Ayudo a marcas y emprendimientos a construir y fortalecer su presencia digital a través del e-commerce y el contenido visual.</p>
       
       <div class="button-group">
         <a href="shop.html" class="btn-dark">Ver RocoGirl <i class="ph-bold ph-arrow-up-right"></i></a>
@@ -761,7 +765,9 @@
 
     <!-- ====== FOOTER NEGRO ====== -->
     <footer>
-      <!-- TU NOMBRE EN CURSIVA Y CENTRADO -->
+      <!-- LÍNEA DIVISORA SUTIL -->
+      <hr class="footer-divider">
+      
       <div class="footer-name">Gisella Villarreal</div>
       
       <div class="footer-links">
