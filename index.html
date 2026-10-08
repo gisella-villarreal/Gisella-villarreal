@@ -21,7 +21,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     html {
-      scroll-behavior: smooth; /* Efecto de desplazamiento suave */
+      scroll-behavior: smooth; 
     }
 
     body {
@@ -99,6 +99,12 @@
       max-width: 90%;
     }
     
+    /* Para resaltar el nombre en el párrafo */
+    .hero p strong i {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+    
     .button-group {
       display: flex;
       gap: 15px;
@@ -141,7 +147,7 @@
     /* ====== SECCIÓN SÍGUEME CENTRADA ====== */
     .hero-social {
       display: flex;
-      justify-content: center; /* Centrado */
+      justify-content: center; 
       align-items: center;
       gap: 15px;
       margin-top: 20px;
@@ -149,14 +155,14 @@
       font-size: 0.85rem;
     }
     .hero-social span {
-      font-style: italic; /* Cursiva */
+      font-style: italic; 
       font-weight: 600;
       letter-spacing: 0.5px;
     }
     .hero-social a {
       color: var(--bg-dark);
       font-size: 1.5rem;
-      text-decoration: none !important; /* Sin rayita */
+      text-decoration: none !important; 
       transition: color 0.2s ease;
       display: flex;
       align-items: center;
@@ -399,14 +405,13 @@
 
     /* ====== SECCIÓN CTA: ¿LISTO PARA EMPEZAR? ====== */
     .cta-container {
-      /* Quitado todo el padding lateral para ocupar el 100% */
       padding: 0;
       margin-top: 20px;
     }
     .cta-box {
       background-color: var(--bg-dark);
-      border-radius: 0; /* Sin bordes curvos, de lado a lado */
-      padding: 40px 20px; /* Más pequeño a lo alto */
+      border-radius: 0; 
+      padding: 40px 20px; 
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -427,7 +432,6 @@
       color: #b0b0b0;
       line-height: 1.5;
       margin-bottom: 25px;
-      /* Forzar dos líneas */
       max-width: 500px;
     }
     .btn-white {
@@ -450,14 +454,26 @@
       font-size: 1.2rem;
     }
 
-    /* ====== PIE DE PÁGINA (FOOTER NEGRO) ====== */
+    /* ====== FOOTER NEGRO ====== */
     footer {
       background-color: var(--bg-dark);
       color: white;
-      padding: 40px 20px;
+      padding: 50px 20px 40px;
       text-align: center;
-      margin-top: auto; /* Empuja el footer al final de la página */
+      margin-top: auto; 
     }
+    
+    /* Nombre en el Footer */
+    .footer-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-style: italic;
+      font-weight: 500;
+      color: white;
+      margin-bottom: 25px;
+      letter-spacing: 0.5px;
+    }
+
     .footer-links {
       display: flex;
       justify-content: center;
@@ -561,7 +577,7 @@
         font-size: 0.55rem;
       }
       .cta-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
       .cta-desc {
         font-size: 0.75rem;
@@ -613,7 +629,6 @@
         <div class="badge">
           <span>CURRÍCULUM</span> En mi LinkedIn &rarr;
         </div>
-        <!-- HAMBURGUESA QUE ABRE EL MENÚ -->
         <div class="menu-icon" onclick="toggleMenu()">
           <i class="ph-bold ph-list"></i>
         </div>
@@ -621,18 +636,16 @@
       
       <h1>Impulsa tu negocio <br><i>en digital.</i></h1>
       
-      <p>Gisella Villarreal soy Marketer, enfocada en Negocios Online. Ayudo a marcas y emprendimientos a construir y fortalecer su presencia digital a través del e-commerce y el contenido visual.</p>
+      <!-- PÁRRAFO CON NOMBRE EN NEGRITA Y CURSIVA -->
+      <p><strong><i>Gisella Villarreal</i></strong> soy Marketer, enfocada en Negocios Online. Ayudo a marcas y emprendimientos a construir y fortalecer su presencia digital a través del e-commerce y el contenido visual.</p>
       
       <div class="button-group">
-        <!-- DIRIGE A SHOP -->
         <a href="shop.html" class="btn-dark">Ver RocoGirl <i class="ph-bold ph-arrow-up-right"></i></a>
-        <!-- DIRIGE AL ID #portafolio ABAJO -->
         <a href="#portafolio" class="btn-outline">Ver Portafolio <i class="ph-fill ph-play-circle"></i></a>
       </div>
 
       <div class="hero-image"></div>
       
-      <!-- SÍGUEME CENTRADO, EN CURSIVA Y SIN SUBRAYADO -->
       <div class="hero-social">
         <span>Sígueme:</span>
         <a href="#"><i class="ph-fill ph-linkedin-logo"></i></a>
@@ -702,14 +715,13 @@
       </div>
     </div>
 
-    <!-- ====== SECCIÓN PORTAFOLIO (CON ID PARA EL SCROLL) ====== -->
+    <!-- ====== SECCIÓN PORTAFOLIO ====== -->
     <div class="portfolio-section" id="portafolio">
       <div class="section-header">
         <h2 class="section-title">Portafolio</h2>
         <span class="section-subtitle">Algunos Proyectos</span>
       </div>
       
-      <!-- Filtros modificados -->
       <div class="portfolio-filters">
         <button class="filter-btn active">e-shop</button>
         <button class="filter-btn">Landing</button>
@@ -718,35 +730,28 @@
       </div>
 
       <div class="portfolio-grid">
-        <!-- Fila 1 -->
         <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=400&auto=format&fit=crop');"></div>
         <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400&auto=format&fit=crop');"></div>
         <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1428366890462-dd4baecf492b?q=80&w=400&auto=format&fit=crop');"></div>
-        
-        <!-- Fila 2 -->
         <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=400&auto=format&fit=crop');"></div>
         <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=400&auto=format&fit=crop');"></div>
         
-        <!-- Caja Oscura -->
         <div class="portfolio-item dark-box">
           <i class="ph-bold ph-magnifying-glass"></i>
           <h4>DESIGN PROJECT</h4>
           <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots.</p>
         </div>
         
-        <!-- Fila 3 -->
         <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1473220464584-633b00684ff3?q=80&w=400&auto=format&fit=crop');"></div>
         <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1506744626753-1fa28f6f5d27?q=80&w=400&auto=format&fit=crop');"></div>
         <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=400&auto=format&fit=crop');"></div>
       </div>
     </div>
 
-    
-    <!-- ====== SECCIÓN CTA: ¿LISTO PARA EMPEZAR? ====== -->
+    <!-- ====== SECCIÓN CTA ====== -->
     <div class="cta-container">
       <div class="cta-box">
         <h2 class="cta-title">¿Listo para empezar?</h2>
-        <!-- Texto forzado en dos líneas -->
         <p class="cta-desc">Cuéntame sobre tu proyecto y descubramos<br>cómo podemos trabajar juntos para llevarlo al siguiente nivel.</p>
         <a href="https://wa.me/573001234567" target="_blank" class="btn-white">
           <i class="ph-fill ph-whatsapp-logo"></i> Hablemos por WhatsApp
@@ -756,12 +761,16 @@
 
     <!-- ====== FOOTER NEGRO ====== -->
     <footer>
+      <!-- TU NOMBRE EN CURSIVA Y CENTRADO -->
+      <div class="footer-name">Gisella Villarreal</div>
+      
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="servicios.html">Servicios</a>
         <a href="#portafolio">Portafolio</a>
         <a href="shop.html">RocoGirl</a>
       </div>
+      
       <div class="footer-social">
         <span>Sígueme:</span>
         <a href="#"><i class="ph-fill ph-linkedin-logo"></i></a>
@@ -772,7 +781,6 @@
 
   </div>
 
-  <!-- SCRIPT PARA ABRIR Y CERRAR EL MENÚ EMERGENTE -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('overlayMenu');
@@ -781,4 +789,4 @@
   </script>
 
 </body>
-  </html>
+</html>
