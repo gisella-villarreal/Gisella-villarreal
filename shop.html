@@ -10,11 +10,13 @@
   
   <style>
     :root {
-      --bg-cream: #F8F7F3;     /* Fondo claro principal */
-      --bg-features: #EAE6DB;  /* Fondo un poco más oscuro para los iconos de abajo */
+      --bg-cream: #F8F7F3;     
+      --bg-features: #EAE6DB;  
       --text-main: #1A1A1A;    
-      --text-light: #5A5A5A;   
-      --text-accent: #9A8068;  /* Color café suave para el "You" */
+      --text-light: #666666;   
+      --text-accent: #9A8068;  
+      --star-color: #FFB800;
+      --fire-color: #FF5E00;
     }
     
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -127,7 +129,7 @@
       background-color: var(--text-main);
       color: white;
       padding: 12px 28px;
-      border-radius: 30px; /* Botón tipo píldora */
+      border-radius: 30px; 
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -138,38 +140,31 @@
       background-color: #333;
     }
 
-    .shop-btn i {
-      font-size: 1rem;
-    }
-
     /* ====== IMAGEN DEL PRODUCTO ====== */
     .product-image-container {
       width: 100%;
-      height: 45vh; /* Se adapta a la pantalla */
-      min-height: 350px;
-      margin-top: 20px;
-      /* AQUÍ PUEDES PONER LA URL DE TU FOTO DE PRODUCTOS ROCOGIRL */
+      height: 40vh;
+      min-height: 320px;
+      margin-top: 10px;
       background-image: url('https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      /* Un pequeño degradado para que se funda con el fondo si es necesario */
       mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
       -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
     }
 
-    /* ====== CARACTERÍSTICAS (FEATURES) ====== */
+    /* ====== CARACTERÍSTICAS ====== */
     .features-section {
       background-color: var(--bg-features);
-      border-radius: 24px 24px 0 0; /* Bordes curvos solo arriba */
-      padding: 30px 15px;
+      border-radius: 24px 24px 0 0; 
+      padding: 30px 15px 50px; /* Padding extra abajo para montar el dashboard */
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-top: -20px; /* Sube un poco para superponerse a la imagen */
+      margin-top: -20px; 
       position: relative;
       z-index: 2;
-      flex-grow: 1;
     }
 
     .feature-item {
@@ -193,6 +188,319 @@
       font-weight: 600;
       color: var(--text-main);
       line-height: 1.3;
+    }
+
+    /* ====== APP DASHBOARD UI ====== */
+    .shop-dashboard {
+      background-color: #ffffff;
+      border-radius: 30px 30px 0 0;
+      padding: 30px 20px 40px;
+      margin-top: -30px; /* Sube para superponerse a los features */
+      position: relative;
+      z-index: 3;
+      box-shadow: 0 -5px 20px rgba(0,0,0,0.03);
+      flex-grow: 1;
+    }
+
+    /* Saludo y Menú */
+    .dash-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+    
+    .dash-header h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+    
+    .dash-header p {
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+    
+    .dash-menu-icon {
+      font-size: 1.6rem;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+
+    /* Buscador */
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background-color: #F6F6F6;
+      border-radius: 30px;
+      padding: 12px 20px;
+      margin-bottom: 30px;
+    }
+    
+    .search-bar i.ph-magnifying-glass {
+      font-size: 1.2rem;
+      color: #999;
+      margin-right: 12px;
+    }
+    
+    .search-bar input {
+      flex-grow: 1;
+      border: none;
+      background: transparent;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-main);
+      outline: none;
+    }
+    
+    .search-bar input::placeholder {
+      color: #A0A0A0;
+    }
+    
+    .search-bar i.ph-sliders-horizontal {
+      font-size: 1.2rem;
+      color: var(--text-main);
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    /* Categorías Circulares */
+    .categories-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 40px;
+      overflow-x: auto;
+      padding-bottom: 5px;
+      scrollbar-width: none;
+    }
+    .categories-row::-webkit-scrollbar { display: none; }
+    
+    .cat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    
+    .cat-img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background-color: var(--bg-cream);
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .cat-item span {
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    /* Best Sellers Header */
+    .section-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .section-title-row h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    
+    .section-title-row a {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Grid de Productos */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    
+    .product-card {
+      background-color: var(--bg-cream);
+      border-radius: 16px;
+      padding: 15px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    
+    .badge-fire {
+      background-color: #ffffff;
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 0.55rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    
+    .badge-fire i {
+      color: var(--fire-color);
+      font-size: 0.7rem;
+    }
+    
+    .heart-btn {
+      font-size: 1.2rem;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+    
+    .prod-img {
+      height: 110px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-bottom: 15px;
+    }
+    
+    .prod-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 2px;
+    }
+    
+    .prod-sub {
+      font-size: 0.6rem;
+      color: #A0A0A0;
+      margin-bottom: 8px;
+    }
+    
+    .stars {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      margin-bottom: 12px;
+    }
+    
+    .stars i {
+      color: var(--star-color);
+      font-size: 0.65rem;
+    }
+    
+    .stars span {
+      font-size: 0.6rem;
+      color: #A0A0A0;
+      margin-left: 4px;
+    }
+    
+    .prod-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+    }
+    
+    .price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    
+    .add-btn {
+      background-color: var(--text-main);
+      color: white;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+    .add-btn i {
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    /* Promo Banner */
+    .promo-banner {
+      background-color: var(--bg-features);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .promo-content {
+      flex: 1;
+    }
+    
+    .promo-label {
+      font-size: 0.55rem;
+      font-weight: 600;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 8px;
+    }
+    
+    .promo-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      line-height: 1.2;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+    
+    .promo-content p {
+      font-size: 0.65rem;
+      color: var(--text-light);
+      margin-bottom: 15px;
+    }
+    
+    .btn-dark-small {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--text-main);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.65rem;
+      font-weight: 500;
+    }
+    
+    .promo-img {
+      width: 90px;
+      height: 90px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      margin-left: 10px;
     }
 
     /* ====== OVERLAY MENÚ EMERGENTE ====== */
@@ -240,22 +548,21 @@
       color: var(--text-light);
     }
 
-    /* MEDIA QUERIES PARA COMPUTADORA */
     @media (min-width: 768px) {
       .page-wrapper {
-        max-width: 480px; /* Mantiene la proporción de celular en computadoras */
+        max-width: 480px; 
         background-color: var(--bg-cream);
         box-shadow: 0 0 40px rgba(0,0,0,0.1);
       }
       .product-image-container {
-        height: 400px;
+        height: 380px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- MENÚ EMERGENTE (Igual al de inicio) -->
+  <!-- MENÚ EMERGENTE -->
   <div class="overlay-menu" id="overlayMenu">
     <div class="close-btn" onclick="toggleMenu()">
       <i class="ph-bold ph-x"></i>
@@ -263,15 +570,14 @@
     <div class="overlay-content">
       <a href="index.html">Inicio</a>
       <a href="servicios.html">Servicios</a>
-      <!-- Te dirije al portafolio de la pág de inicio -->
       <a href="index.html#portafolio">Portafolio</a>
-      <a href="shop.html">Shop</a>
+      <a href="shop.html" onclick="toggleMenu()">Shop</a>
     </div>
   </div>
 
   <div class="page-wrapper">
     
-    <!-- BARRA SUPERIOR -->
+    <!-- BARRA SUPERIOR ORIGINAL -->
     <header class="top-bar">
       <i class="ph ph-list menu-icon" onclick="toggleMenu()"></i>
       
@@ -282,7 +588,7 @@
       
       <div class="cart-icon">
         <i class="ph ph-shopping-bag"></i>
-        <span class="cart-badge">2</span> <!-- Número de artículos en el carrito -->
+        <span class="cart-badge">2</span>
       </div>
     </header>
 
@@ -291,15 +597,15 @@
       <h1>Healthy Skin.<br>Confident <i>You.</i></h1>
       <p>Science-backed skincare solutions<br>for every skin type and every you.</p>
       
-      <a href="#productos" class="shop-btn">
+      <a href="#dashboard" class="shop-btn">
         Shop Now <i class="ph ph-arrow-right"></i>
       </a>
     </section>
 
-    <!-- IMAGEN DEL PRODUCTO (Reemplaza la URL en el CSS por la de tus productos) -->
+    <!-- IMAGEN DEL PRODUCTO -->
     <div class="product-image-container"></div>
 
-    <!-- SECCIÓN DE CARACTERÍSTICAS (FEATURES) -->
+    <!-- CARACTERÍSTICAS (FEATURES) -->
     <section class="features-section">
       <div class="feature-item">
         <i class="ph-light ph-leaf"></i>
@@ -314,14 +620,116 @@
         <p>For All<br>Skin Types</p>
       </div>
       <div class="feature-item">
-        <i class="ph-light ph-rabbit"></i> <!-- Icono de conejo cruelty free -->
+        <i class="ph-light ph-rabbit"></i>
         <p>Cruelty<br>Free</p>
       </div>
     </section>
 
+    <!-- ====== NUEVO: APP DASHBOARD UI ====== -->
+    <section class="shop-dashboard" id="dashboard">
+      
+      <!-- Saludo y menú (en vez de campana) -->
+      <div class="dash-header">
+        <div>
+          <h2>Hello, Gisella 👋</h2>
+          <p>Let's find the perfect skincare for you</p>
+        </div>
+        <!-- Menú como solicitaste -->
+        <i class="ph ph-list dash-menu-icon" onclick="toggleMenu()"></i>
+      </div>
+
+      <!-- Buscador -->
+      <div class="search-bar">
+        <i class="ph-bold ph-magnifying-glass"></i>
+        <input type="text" placeholder="Search for products, ingredients...">
+        <i class="ph-bold ph-sliders-horizontal"></i>
+      </div>
+
+      <!-- Categorías (Circulares) -->
+      <div class="categories-row">
+        <div class="cat-item">
+          <div class="cat-img" style="background-image: url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=200&auto=format&fit=crop');"></div>
+          <span>Cleanser</span>
+        </div>
+        <div class="cat-item">
+          <div class="cat-img" style="background-image: url('https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=200&auto=format&fit=crop');"></div>
+          <span>Serum</span>
+        </div>
+        <div class="cat-item">
+          <div class="cat-img" style="background-image: url('https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=200&auto=format&fit=crop');"></div>
+          <span>Moisturizer</span>
+        </div>
+        <div class="cat-item">
+          <div class="cat-img" style="background-image: url('https://images.unsplash.com/photo-1556228720-192a6af6e8ce?q=80&w=200&auto=format&fit=crop');"></div>
+          <span>Sunscreen</span>
+        </div>
+        <div class="cat-item">
+          <div class="cat-img" style="background-image: url('https://images.unsplash.com/photo-1599305090598-fe179d501227?q=80&w=200&auto=format&fit=crop');"></div>
+          <span>Mask</span>
+        </div>
+      </div>
+
+      <!-- Best Sellers -->
+      <div class="section-title-row">
+        <h3>Best Sellers</h3>
+        <a href="#">View All <i class="ph-bold ph-arrow-right"></i></a>
+      </div>
+
+      <div class="products-grid">
+        <!-- Producto 1 -->
+        <div class="product-card">
+          <div class="card-top">
+            <span class="badge-fire"><i class="ph-fill ph-fire"></i> Bestseller</span>
+            <i class="ph-light ph-heart heart-btn"></i>
+          </div>
+          <div class="prod-img" style="background-image: url('https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=400&auto=format&fit=crop');"></div>
+          <h4 class="prod-title">Glow Serum</h4>
+          <p class="prod-sub">Vitamin C + Niacinamide</p>
+          <div class="stars">
+            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            <span>(1.2k)</span>
+          </div>
+          <div class="prod-bottom">
+            <span class="price">$32.00</span>
+            <button class="add-btn"><i class="ph-bold ph-plus"></i></button>
+          </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product-card">
+          <div class="card-top">
+            <span class="badge-fire"><i class="ph-fill ph-fire"></i> Bestseller</span>
+            <i class="ph-light ph-heart heart-btn"></i>
+          </div>
+          <div class="prod-img" style="background-image: url('https://images.unsplash.com/photo-1556228720-192a6af6e8ce?q=80&w=400&auto=format&fit=crop');"></div>
+          <h4 class="prod-title">Daily Sunscreen</h4>
+          <p class="prod-sub">SPF 50+ PA++++</p>
+          <div class="stars">
+            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            <span>(880)</span>
+          </div>
+          <div class="prod-bottom">
+            <span class="price">$24.00</span>
+            <button class="add-btn"><i class="ph-bold ph-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Banner de Lanzamiento -->
+      <div class="promo-banner">
+        <div class="promo-content">
+          <span class="promo-label">NEW LAUNCH</span>
+          <h3>Hydra +<br>Hyaluronic Collection</h3>
+          <p>Deep hydration for radiant skin</p>
+          <a href="#" class="btn-dark-small">Shop Collection <i class="ph-bold ph-arrow-right"></i></a>
+        </div>
+        <div class="promo-img" style="background-image: url('https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=400&auto=format&fit=crop');"></div>
+      </div>
+
+    </section>
+
   </div>
 
-  <!-- SCRIPT PARA ABRIR Y CERRAR EL MENÚ EMERGENTE -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('overlayMenu');
@@ -331,4 +739,4 @@
 
 </body>
   </html>
-  
+                                                                                                 
