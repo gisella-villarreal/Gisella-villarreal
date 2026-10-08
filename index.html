@@ -24,7 +24,6 @@
       font-family: 'Inter', sans-serif;
       background-color: var(--bg-cream);
       color: var(--text-main);
-      padding-bottom: 90px; 
       -webkit-font-smoothing: antialiased;
     }
     
@@ -37,10 +36,10 @@
       padding: 30px 20px 10px; 
     }
 
-    /* BARRA SUPERIOR */
+    /* BARRA SUPERIOR CON HAMBURGUESA */
     .top-bar {
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
       margin-bottom: 25px;
     }
@@ -62,6 +61,12 @@
       border-radius: 10px;
       margin-right: 8px;
       font-weight: 500;
+    }
+
+    .menu-icon {
+      font-size: 1.8rem;
+      color: var(--bg-dark);
+      cursor: pointer;
     }
     
     .hero h1 {
@@ -124,6 +129,30 @@
       background-size: cover; 
       background-position: center; 
       background-repeat: no-repeat;
+    }
+
+    /* REDES SOCIALES DEBAJO DE LA FOTO */
+    .hero-social {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 20px;
+      color: var(--text-light);
+      font-size: 0.85rem;
+    }
+    .hero-social span {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .hero-social a {
+      color: var(--bg-dark);
+      font-size: 1.5rem;
+      transition: color 0.2s ease;
+      display: flex;
+      align-items: center;
+    }
+    .hero-social a:hover {
+      color: var(--text-light);
     }
 
     /* ====== BLOQUE DE ESTADÍSTICAS ====== */
@@ -215,7 +244,6 @@
       align-items: center;
     }
 
-    /* El círculo "recortado" del mismo color del fondo de la página */
     .service-card::before {
       content: '';
       position: absolute;
@@ -228,7 +256,6 @@
       border-radius: 50%;
     }
 
-    /* Ícono flotando sobre el recorte */
     .service-icon {
       position: absolute;
       top: -18px;
@@ -360,7 +387,7 @@
       padding: 0 5px;
     }
 
-    /* ====== NUEVA SECCIÓN CTA: ¿LISTO PARA EMPEZAR? ====== */
+    /* ====== SECCIÓN CTA: ¿LISTO PARA EMPEZAR? ====== */
     .cta-container {
       padding: 10px 20px 50px;
     }
@@ -411,28 +438,50 @@
       font-size: 1.2rem;
     }
 
-    /* MENÚ INFERIOR */
-    .bottom-nav {
+    /* ====== OVERLAY MENÚ EMERGENTE ====== */
+    .overlay-menu {
       position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: var(--bg-cream);
-      display: flex;
-      justify-content: space-around;
-      padding: 15px 0 20px 0;
-      border-top: 1px solid var(--border-color);
-      z-index: 1000;
-    }
-    .nav-item {
-      text-decoration: none;
-      color: #A0A0A0;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: var(--bg-cream);
+      z-index: 9999;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
     }
-    .nav-item i { font-size: 1.4rem; margin-bottom: 4px; }
-    .nav-item.active { color: var(--bg-dark); }
-    .nav-item span { font-size: 0.6rem; font-weight: 500; }
+    .overlay-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .close-btn {
+      position: absolute;
+      top: 30px; right: 30px;
+      font-size: 2rem;
+      color: var(--bg-dark);
+      cursor: pointer;
+    }
+    .overlay-content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      text-align: center;
+    }
+    .overlay-content a {
+      text-decoration: none;
+      color: var(--bg-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-style: italic;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .overlay-content a:hover {
+      color: var(--text-light);
+    }
 
     /* MEDIA QUERIES */
     @media (max-width: 768px) {
@@ -466,9 +515,6 @@
     }
 
     @media (min-width: 768px) {
-      body {
-        padding-bottom: 0;
-      }
       .page-wrapper {
         max-width: 750px;
         background-color: var(--bg-cream);
@@ -478,12 +524,6 @@
         border-right: 1px solid var(--border-color);
         padding-bottom: 50px;
       }
-      .bottom-nav {
-        max-width: 750px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 20px 20px 0 0;
-      }
       .hero h1 { 
         font-size: 4rem; 
       }
@@ -492,12 +532,29 @@
 </head>
 <body>
 
+  <!-- MENÚ EMERGENTE -->
+  <div class="overlay-menu" id="overlayMenu">
+    <div class="close-btn" onclick="toggleMenu()">
+      <i class="ph-bold ph-x"></i>
+    </div>
+    <div class="overlay-content">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="caso-estudio.html">Portafolio</a>
+      <a href="shop.html">Shop</a>
+    </div>
+  </div>
+
   <div class="page-wrapper">
     <!-- SECCIÓN PRINCIPAL -->
     <div class="hero">
       <div class="top-bar">
         <div class="badge">
           <span>CURRÍCULUM</span> En mi LinkedIn &rarr;
+        </div>
+        <!-- HAMBURGUESA QUE ABRE EL MENÚ -->
+        <div class="menu-icon" onclick="toggleMenu()">
+          <i class="ph-bold ph-list"></i>
         </div>
       </div>
       
@@ -511,6 +568,14 @@
       </div>
 
       <div class="hero-image"></div>
+      
+      <!-- NUEVA SECCIÓN SÍGUEME DEBAJO DE LA FOTO -->
+      <div class="hero-social">
+        <span>Sígueme:</span>
+        <a href="#"><i class="ph-fill ph-linkedin-logo"></i></a>
+        <a href="#"><i class="ph-fill ph-instagram-logo"></i></a>
+        <a href="#"><i class="ph-fill ph-tiktok-logo"></i></a>
+      </div>
     </div>
 
     <!-- BLOQUE DE ESTADÍSTICAS NEGRO -->
@@ -614,7 +679,7 @@
       </div>
     </div>
 
-    <!-- ====== NUEVA SECCIÓN CTA: ¿LISTO PARA EMPEZAR? ====== -->
+    <!-- ====== SECCIÓN CTA: ¿LISTO PARA EMPEZAR? ====== -->
     <div class="cta-container">
       <div class="cta-box">
         <h2 class="cta-title">¿Listo para<br>empezar?</h2>
@@ -628,26 +693,13 @@
 
   </div>
 
-  <!-- MENÚ INFERIOR -->
-  <nav class="bottom-nav">
-    <a href="index.html" class="nav-item active">
-      <i class="ph-fill ph-house"></i>
-      <span>Inicio</span>
-    </a>
-    <a href="sobre-mi.html" class="nav-item">
-      <i class="ph-light ph-user"></i>
-      <span>Sobre mí</span>
-    </a>
-    <a href="servicios.html" class="nav-item">
-      <i class="ph-light ph-briefcase"></i>
-      <span>Servicios</span>
-    </a>
-    <a href="shop.html" class="nav-item">
-      <i class="ph-light ph-shopping-bag"></i>
-      <span>Shop</span>
-    </a>
-  </nav>
+  <!-- SCRIPT PARA ABRIR Y CERRAR EL MENÚ EMERGENTE -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('overlayMenu');
+      menu.classList.toggle('active');
+    }
+  </script>
 
 </body>
-  </html>
-  
+</html>
