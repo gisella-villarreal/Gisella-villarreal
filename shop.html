@@ -17,6 +17,7 @@
       --text-accent: #9A8068;  
       --star-color: #FFB800;
       --fire-color: #FF5E00;
+      --bg-dark: #151515;
     }
     
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -158,7 +159,7 @@
     .features-section {
       background-color: var(--bg-features);
       border-radius: 24px 24px 0 0; 
-      padding: 30px 15px 50px; /* Padding extra abajo para montar el dashboard */
+      padding: 30px 15px 50px; 
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
@@ -195,14 +196,13 @@
       background-color: #ffffff;
       border-radius: 30px 30px 0 0;
       padding: 30px 20px 40px;
-      margin-top: -30px; /* Sube para superponerse a los features */
+      margin-top: -30px; 
       position: relative;
       z-index: 3;
       box-shadow: 0 -5px 20px rgba(0,0,0,0.03);
-      flex-grow: 1;
     }
 
-    /* Saludo y Menú */
+    /* Saludo y Menú (Campanita) */
     .dash-header {
       display: flex;
       justify-content: space-between;
@@ -451,6 +451,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin-bottom: 15px;
     }
     
     .promo-content {
@@ -501,6 +502,120 @@
       background-position: center;
       border-radius: 12px;
       margin-left: 10px;
+    }
+
+    /* ====== BOTÓN ASESOR WHATSAPP ====== */
+    .advisor-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--text-main);
+      color: white;
+      padding: 16px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      width: 100%;
+      margin-bottom: 20px;
+      transition: background-color 0.2s;
+    }
+    
+    .advisor-btn:hover {
+      background-color: #333;
+    }
+    
+    .advisor-btn i {
+      font-size: 1.4rem;
+    }
+
+    /* ====== FOOTER ROCOGIRL ====== */
+    .shop-footer {
+      background-color: var(--bg-dark); 
+      color: white;
+      padding: 40px 20px 20px;
+      margin-top: auto; 
+    }
+    
+    .footer-logo {
+      margin-bottom: 30px;
+    }
+    
+    .footer-logo h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: white;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    
+    .footer-desc {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: #A0A0A0;
+    }
+    
+    .footer-section {
+      margin-bottom: 30px;
+    }
+    
+    .footer-section h4 {
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-section ul li a, .footer-section ul li span {
+      color: #A0A0A0;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    
+    .footer-section ul li a:hover {
+      color: white;
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 25px;
+      text-align: center;
+    }
+    
+    .footer-copy {
+      font-size: 0.75rem;
+      color: #A0A0A0;
+      margin-bottom: 15px;
+    }
+    
+    .footer-legal {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .footer-legal a {
+      color: #A0A0A0;
+      text-decoration: none;
+      font-size: 0.75rem;
+      transition: color 0.2s;
+    }
+    
+    .footer-legal a:hover {
+      color: white;
     }
 
     /* ====== OVERLAY MENÚ EMERGENTE ====== */
@@ -577,8 +692,9 @@
 
   <div class="page-wrapper">
     
-    <!-- BARRA SUPERIOR ORIGINAL -->
+    <!-- BARRA SUPERIOR -->
     <header class="top-bar">
+      <!-- Icono de Menú Hamburguesa -->
       <i class="ph ph-list menu-icon" onclick="toggleMenu()"></i>
       
       <div class="logo">
@@ -605,7 +721,7 @@
     <!-- IMAGEN DEL PRODUCTO -->
     <div class="product-image-container"></div>
 
-    <!-- CARACTERÍSTICAS (FEATURES) -->
+    <!-- CARACTERÍSTICAS -->
     <section class="features-section">
       <div class="feature-item">
         <i class="ph-light ph-leaf"></i>
@@ -625,17 +741,16 @@
       </div>
     </section>
 
-    <!-- ====== NUEVO: APP DASHBOARD UI ====== -->
+    <!-- APP DASHBOARD UI -->
     <section class="shop-dashboard" id="dashboard">
       
-      <!-- Saludo y menú (en vez de campana) -->
+      <!-- Saludo y Campanita Restaurada -->
       <div class="dash-header">
         <div>
           <h2>Hello, Gisella 👋</h2>
           <p>Let's find the perfect skincare for you</p>
         </div>
-        <!-- Menú como solicitaste -->
-        <i class="ph ph-list dash-menu-icon" onclick="toggleMenu()"></i>
+        <i class="ph-light ph-bell dash-menu-icon"></i>
       </div>
 
       <!-- Buscador -->
@@ -645,7 +760,7 @@
         <i class="ph-bold ph-sliders-horizontal"></i>
       </div>
 
-      <!-- Categorías (Circulares) -->
+      <!-- Categorías -->
       <div class="categories-row">
         <div class="cat-item">
           <div class="cat-img" style="background-image: url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=200&auto=format&fit=crop');"></div>
@@ -726,7 +841,53 @@
         <div class="promo-img" style="background-image: url('https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=400&auto=format&fit=crop');"></div>
       </div>
 
+      <!-- BOTÓN HABLAR CON UN ASESOR -->
+      <!-- Puedes cambiar el número de teléfono en el enlace href -->
+      <a href="https://wa.me/573001234567" target="_blank" class="advisor-btn">
+        <i class="ph-fill ph-whatsapp-logo"></i> Hablar con un asesor
+      </a>
+
     </section>
+
+    <!-- ====== FOOTER TIPO ROCO TEC ====== -->
+    <footer class="shop-footer">
+      <div class="footer-logo">
+        <h2>ROCOGIRL</h2>
+        <div class="footer-desc">
+          RocoGirl - La mejor tienda de skincare para cuidar y resaltar tu belleza natural. Envío gratis y pago contra entrega en toda Colombia.
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="shop.html">Productos</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="index.html#portafolio">Portafolio</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Contacto</h4>
+        <ul>
+          <li><span>Email: hola@rocogirl.com</span></li>
+          <li><span>Horario: 24/7</span></li>
+          <li><span>Soporte Técnico: 24/7 vía WhatsApp</span></li>
+        </ul>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 RocoGirl. Todos los derechos reservados.
+        </div>
+        <div class="footer-legal">
+          <a href="#">Términos y condiciones</a>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Eliminación de datos</a>
+        </div>
+      </div>
+    </footer>
 
   </div>
 
@@ -738,5 +899,4 @@
   </script>
 
 </body>
-  </html>
-                                                                                                 
+</html>
