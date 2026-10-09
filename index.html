@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,900 +5,708 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gisella Villarreal | Diseño Web & Experiencias Digitales</title>
   
-  <!-- Tipografías de alta gama -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
-  
-  <!-- Iconografía Phosphor Icons -->
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap)" rel="stylesheet">
+  <script src="[https://unpkg.com/@phosphor-icons/web](https://unpkg.com/@phosphor-icons/web)"></script>
   
   <style>
     :root {
-      --bg-cream: #F7F4EE;
-      --bg-card: #FFFFFF;
-      --bg-secondary: #EFECE4;
-      --bg-dark: #141414;
-      --text-main: #141414;
-      --text-muted: #6B6760;
-      --text-light: #9C978F;
-      --border-color: #E4E0D6;
-      --border-dark: #2A2A2A;
-      --accent-silver: #D4D0C7;
-      --transition-smooth: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      --bg-cream: #F4F1ED;     
+      --bg-dark: #151515;      
+      --text-main: #1A1A1A;    
+      --text-light: #666666;   
+      --border-color: #E2DDD5; 
+      --silver-accent: #D3D3D3; 
     }
     
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: smooth; 
     }
-    
+
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: var(--bg-cream);
       color: var(--text-main);
-      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
+      line-height: 1.6;
     }
-
-    .container {
-      width: 100%;
-      max-width: 960px;
+    
+    .page-wrapper {
+      max-width: 100%;
       margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* ENCABEZADO FIJO */
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(247, 244, 238, 0.94);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-color);
-      z-index: 1000;
-      height: 70px;
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
-    .header-inner {
+    /* ====== ENCABEZADO FIJO ====== */
+    .fixed-header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(244, 241, 237, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .brand-name {
       font-family: 'Playfair Display', serif;
+      font-style: italic;
       font-size: 1.4rem;
-      font-style: italic;
-      font-weight: 500;
-      color: var(--text-main);
-      text-decoration: none;
-      letter-spacing: -0.3px;
-    }
-
-    .menu-toggle-btn {
-      background: transparent;
-      border: none;
-      font-size: 1.7rem;
-      color: var(--text-main);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6px;
-      border-radius: 8px;
-      transition: var(--transition-smooth);
-    }
-
-    .menu-toggle-btn:hover {
-      background-color: var(--bg-secondary);
-    }
-
-    /* MENÚ OVERLAY MODAL */
-    .overlay-menu {
-      position: fixed;
-      inset: 0;
-      background-color: var(--bg-cream);
-      z-index: 2000;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 30px 25px 40px;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-10px);
-      transition: var(--transition-smooth);
-    }
-
-    .overlay-menu.active {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .overlay-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .close-menu-btn {
-      background: transparent;
-      border: none;
-      font-size: 2rem;
-      color: var(--text-main);
-      cursor: pointer;
-    }
-
-    .overlay-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      margin: auto 0;
-      text-align: left;
-    }
-
-    .overlay-nav a {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-style: italic;
-      color: var(--text-main);
-      text-decoration: none;
-      transition: var(--transition-smooth);
-      display: inline-block;
-      letter-spacing: -0.5px;
-    }
-
-    .overlay-nav a:hover {
-      color: var(--text-muted);
-      transform: translateX(8px);
-    }
-
-    .overlay-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid var(--border-color);
-      padding-top: 20px;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    /* HERO */
-    .hero-section {
-      padding-top: 110px;
-      padding-bottom: 40px;
-    }
-
-    .hero-badge-wrap {
-      margin-bottom: 25px;
-    }
-
-    .badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      border: 1px solid var(--border-color);
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--text-main);
-    }
-
-    .badge-pill span {
-      background: var(--bg-dark);
-      color: white;
-      padding: 2px 8px;
-      border-radius: 999px;
-      font-size: 0.65rem;
       font-weight: 600;
+      color: var(--text-main);
+      text-decoration: none;
       letter-spacing: 0.5px;
     }
 
-    .hero-title {
+    .menu-icon {
+      font-size: 1.8rem;
+      color: var(--bg-dark);
+      cursor: pointer;
+    }
+    
+    /* ====== HERO SECTION ====== */
+    .hero {
+      padding: 40px 20px 20px; 
+    }
+    
+    .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3.4rem;
+      font-size: 3.5rem;
       font-weight: 500;
       line-height: 1.05;
-      letter-spacing: -1.2px;
-      margin-bottom: 22px;
-      color: var(--text-main);
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      color: var(--bg-dark);
     }
-
-    .hero-title i {
+    .hero h1 i {
       font-weight: 400;
       font-style: italic;
-      color: var(--text-muted);
+      color: var(--text-light);
     }
-
-    .hero-lead {
+    
+    .hero p {
       font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.65;
+      color: var(--text-main);
       margin-bottom: 30px;
-      max-width: 580px;
+      max-width: 90%;
     }
-
-    .hero-lead i {
-      color: var(--text-main);
-      font-weight: 500;
-    }
-
-    .hero-buttons {
+    
+    .button-group {
       display: flex;
-      gap: 16px;
-      margin-bottom: 35px;
-      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 40px;
     }
-
-    .btn-solid-dark {
-      background: var(--bg-dark);
-      color: #FFFFFF;
-      padding: 13px 26px;
+    .btn-dark {
+      background-color: var(--bg-dark);
+      color: white;
+      padding: 14px 28px;
       border-radius: 8px;
-      font-size: 0.82rem;
-      font-weight: 600;
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: var(--transition-smooth);
-    }
-
-    .btn-solid-dark:hover {
-      background-color: #262626;
-      transform: translateY(-2px);
-    }
-
-    .btn-link-action {
-      background: transparent;
-      color: var(--text-main);
-      padding: 13px 4px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: var(--transition-smooth);
-    }
-
-    .btn-link-action:hover {
-      color: var(--text-muted);
-    }
-
-    .hero-photo-wrapper {
-      width: 100%;
-      height: 480px;
-      border-radius: 14px;
-      overflow: hidden;
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      position: relative;
-    }
-
-    .hero-photo-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 25%;
-    }
-
-    .hero-social-block {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 16px;
-      padding: 22px 0 10px;
-    }
-
-    .hero-social-block span {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--text-muted);
-    }
-
-    .social-icon-link {
-      color: var(--text-main);
-      font-size: 1.45rem;
-      text-decoration: none !important;
+      font-size: 0.85rem;
+      font-weight: 500;
       display: flex;
       align-items: center;
-      transition: var(--transition-smooth);
+      gap: 8px;
+      transition: background-color 0.2s;
+    }
+    .btn-dark:hover { background-color: #333; }
+    
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text-main);
+      padding: 14px 0;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .social-icon-link:hover {
-      color: var(--text-muted);
-      transform: scale(1.15);
-    }
-
-    /* FRANJA DE CONFIANZA */
-    .trust-strip {
-      background-color: var(--bg-secondary);
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-      padding: 30px 20px;
-      margin: 30px 0 50px;
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    .trust-card {
-      background: var(--bg-cream);
-      border: 1px solid var(--border-color);
+    .hero-image {
+      width: 100%;
+      height: 480px; 
       border-radius: 12px;
-      padding: 22px 20px;
+      background-image: url('1791056211701~2.jpg');
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat;
+    }
+
+    /* ====== FRANJA DE CONFIANZA ====== */
+    .trust-banner {
+      background-color: var(--bg-dark);
+      color: white;
+      padding: 30px 20px;
       display: flex;
-      align-items: center;
-      gap: 16px;
-      transition: var(--transition-smooth);
+      flex-direction: column;
+      gap: 25px;
+      margin-top: 20px;
     }
-
-    .trust-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    }
-
-    .trust-emoji {
-      font-size: 1.8rem;
-      line-height: 1;
-      flex-shrink: 0;
-      width: 48px;
-      height: 48px;
-      background: var(--bg-card);
-      border-radius: 50%;
+    .trust-item {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      border: 1px solid var(--border-color);
-    }
-
-    .trust-info h3 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 3px;
-    }
-
-    .trust-info p {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    /* SECCIÓN DE SERVICIOS */
-    .section-spacing {
-      padding: 50px 0;
-    }
-
-    .section-head {
-      margin-bottom: 35px;
       text-align: center;
     }
-
-    .section-eyebrow {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      color: var(--text-light);
-      display: block;
-      margin-bottom: 6px;
+    .trust-emoji {
+      font-size: 2rem;
+      margin-bottom: 10px;
     }
-
-    .section-headline {
+    .trust-title {
       font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
+      font-size: 1.2rem;
       font-weight: 500;
-      line-height: 1.1;
-      letter-spacing: -0.8px;
-      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+    .trust-desc {
+      font-size: 0.75rem;
+      color: #b0b0b0;
     }
 
-    .section-headline i {
+    @media (min-width: 768px) {
+      .trust-banner {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
+
+    /* ====== TÍTULOS DE SECCIÓN ====== */
+    .section-padding { padding: 60px 20px; }
+    
+    .section-header { margin-bottom: 40px; }
+    .section-title {
+      font-family: 'Playfair Display', serif; 
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--bg-dark);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -1px;
+    }
+    .section-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-light); 
       font-style: italic;
-      color: var(--text-muted);
     }
 
-    .services-stack {
+    /* ====== SERVICIOS (TARJETAS VERTICALES) ====== */
+    .services-list {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 40px;
     }
-
-    .service-row-card {
-      background: var(--bg-card);
+    
+    .service-card {
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
       border: 1px solid var(--border-color);
-      border-radius: 14px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: var(--transition-smooth);
     }
-
-    .service-row-card:hover {
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
-      border-color: #D6D0C2;
-    }
-
-    .service-img-wrapper {
+    
+    .service-img {
       width: 100%;
-      height: 240px;
-      overflow: hidden;
-      background-color: var(--bg-secondary);
-      position: relative;
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+      background-color: var(--border-color);
     }
-
-    .service-img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: var(--transition-smooth);
-    }
-
-    .service-row-card:hover .service-img-wrapper img {
-      transform: scale(1.04);
-    }
-
-    .service-content {
-      padding: 26px 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex-grow: 1;
-    }
-
+    
+    .service-content { padding: 30px 20px; }
     .service-tag {
       font-size: 0.65rem;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
       color: var(--text-light);
-      margin-bottom: 8px;
+      margin-bottom: 15px;
+      display: block;
     }
-
-    .service-name {
+    .service-title {
       font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       font-weight: 600;
+      margin-bottom: 15px;
       line-height: 1.2;
-      margin-bottom: 12px;
-      color: var(--text-main);
     }
-
     .service-desc {
       font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
-
-    .service-ideal {
-      font-size: 0.78rem;
       color: var(--text-light);
-      font-style: italic;
-      margin-bottom: 22px;
-      line-height: 1.45;
+      margin-bottom: 10px;
     }
-
-    .service-cta-link {
-      align-self: flex-start;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--text-main);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding-bottom: 3px;
-      border-bottom: 1.5px solid var(--text-main);
-      transition: var(--transition-smooth);
-    }
-
-    .service-cta-link:hover {
-      color: var(--text-muted);
-      border-color: var(--text-muted);
-      gap: 10px;
-    }
-
-    /* PORTAFOLIO */
-    .portfolio-tabs {
-      display: flex;
-      justify-content: flex-start;
-      gap: 8px;
-      margin-bottom: 30px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      padding-bottom: 6px;
-    }
-    .portfolio-tabs::-webkit-scrollbar { display: none; }
-
-    .tab-btn {
-      background: transparent;
-      border: 1px solid var(--border-color);
-      padding: 9px 18px;
-      border-radius: 999px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      white-space: nowrap;
-      cursor: pointer;
-      transition: var(--transition-smooth);
-    }
-
-    .tab-btn.active {
-      background: var(--bg-dark);
-      color: #FFFFFF;
-      border-color: var(--bg-dark);
-    }
-
-    .portfolio-gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .project-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      transition: var(--transition-smooth);
-    }
-
-    .project-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    }
-
-    .project-thumbnail {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      background-color: var(--bg-secondary);
-      position: relative;
-    }
-
-    .project-thumbnail img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: var(--transition-smooth);
-    }
-
-    .project-card:hover .project-thumbnail img {
-      transform: scale(1.06);
-    }
-
-    .project-meta {
-      padding: 14px 12px;
-    }
-
-    .project-cat-badge {
-      font-size: 0.65rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: var(--text-light);
-      display: block;
-      margin-bottom: 3px;
-    }
-
-    .project-heading {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      font-weight: 600;
-      line-height: 1.25;
-      color: var(--text-main);
-    }
-
-    /* ASÍ TRABAJO CONTIGO (2 CUADROS / 2 COLUMNAS) */
-    .how-we-work-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    .work-step-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      padding: 26px 22px;
-      position: relative;
-      transition: var(--transition-smooth);
-    }
-
-    .work-step-card:hover {
-      border-color: #CDC7B9;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.03);
-    }
-
-    .step-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-style: italic;
-      color: var(--text-light);
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-
-    .step-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--text-main);
-    }
-
-    .step-desc {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-
-    /* SOBRE MÍ */
-    .about-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      overflow: hidden;
-      padding: 26px 22px;
-    }
-
-    .about-image-frame {
-      width: 100%;
-      height: 380px;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 25px;
-      border: 1px solid var(--border-color);
-    }
-
-    .about-image-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 20%;
-    }
-
-    .about-greeting {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 600;
-      line-height: 1.15;
-      margin-bottom: 18px;
-    }
-
-    .about-paragraphs p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-
-    .about-paragraphs p:last-child {
-      margin-bottom: 0;
+    .service-target {
+      font-size: 0.8rem;
       font-weight: 500;
       color: var(--text-main);
+      margin-bottom: 20px;
       font-style: italic;
     }
-
-    /* TESTIMONIOS */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
-
-    .testimonial-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      padding: 26px 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .quote-icon {
-      font-size: 1.6rem;
-      color: var(--text-light);
-      margin-bottom: 12px;
-    }
-
-    .testimonial-quote {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      font-style: italic;
+    .service-link {
+      font-size: 0.8rem;
+      font-weight: 600;
       color: var(--text-main);
-      line-height: 1.55;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .service-link:hover { text-decoration: underline; }
+
+    /* ====== PORTAFOLIO ====== */
+    .portfolio-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 8px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-light); 
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn.active {
+      background-color: var(--bg-dark);
+      color: white;
+      border-color: var(--bg-dark);
+    }
+    
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .portfolio-item {
+      aspect-ratio: 1 / 1;
+      background-color: #E2DDD5;
+      background-size: cover;
+      background-position: center; 
+      border-radius: 8px;
+    }
+    .portfolio-item.large {
+      grid-column: span 2;
+      aspect-ratio: 2 / 1;
+    }
+
+    /* ====== ASÍ TRABAJO CONTIGO ====== */
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Dos columnas */
+      gap: 20px;
+    }
+    
+    .process-box {
+      background-color: white;
+      padding: 25px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+    .process-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--text-light);
+      opacity: 0.5;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .process-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .process-desc {
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    @media (max-width: 480px) {
+      .process-grid { grid-template-columns: 1fr; } /* Una columna en celulares pequeños */
+    }
+
+    /* ====== SOBRE MÍ ====== */
+    .about-section {
+      background-color: white;
+    }
+    .about-img {
+      width: 100%;
+      height: 350px;
+      background-image: url('1791056211701~2.jpg'); /* Reemplazar por tu foto */
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      margin-bottom: 30px;
+    }
+    .about-text p {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-bottom: 15px;
+    }
+    .about-text p.greeting {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
       margin-bottom: 20px;
     }
 
-    .client-info {
+    /* ====== TESTIMONIOS ====== */
+    .testimonials-grid {
       display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .testimonial-card {
+      background-color: var(--bg-dark);
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+    }
+    .quote-icon {
+      font-size: 2rem;
+      color: var(--text-light);
+      margin-bottom: 15px;
+    }
+    .testimonial-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .testimonial-author {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ====== PREGUNTAS FRECUENTES (FAQ) ====== */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .faq-item {
+      background-color: white;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background-color 0.2s;
     }
-
-    .client-avatar {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: var(--bg-secondary);
-      object-fit: cover;
+    .faq-question:hover { background-color: #fafafa; }
+    .faq-question i {
+      transition: transform 0.3s ease;
+      color: var(--text-light);
     }
-
-    .client-details h4 {
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
       font-size: 0.85rem;
+      color: var(--text-light);
+    }
+    .faq-item.active .faq-answer {
+      padding: 0 20px 20px;
+      max-height: 300px; /* Suficiente para el texto */
+    }
+
+    /* ====== CTA: ¿TIENES UNA IDEA? ====== */
+    .cta-section {
+      background-color: var(--bg-dark);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .cta-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+    .cta-desc {
+      font-size: 0.9rem;
+      color: #b0b0b0;
+      margin-bottom: 30px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-white {
+      background-color: white;
+      color: var(--bg-dark);
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .cta-whatsapp {
+      font-size: 0.8rem;
+      color: #b0b0b0;
+    }
+    .cta-whatsapp a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* ====== PIE DE PÁGINA (FOOTER) ====== */
+    footer {
+      background-color: white;
+      padding: 50px 20px 30px;
+      border-top: 1px solid var(--border-color);
+    }
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    .footer-brand-desc {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 30px;
+      max-width: 300px;
+    }
+    .footer-links-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      font-size: 0.75rem;
       font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
       color: var(--text-main);
     }
-
-    .client-details span {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-    }
-
-    /* PREGUNTAS FRECUENTES (ACCORDION) */
-    .faq-accordion-wrap {
+    .footer-col ul {
+      list-style: none;
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
-
-    .faq-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: var(--transition-smooth);
+    .footer-col ul li a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.85rem;
     }
-
-    .faq-item:hover {
-      border-color: #CDC7B9;
-    }
-
-    .faq-question-bar {
-      width: 100%;
-      padding: 18px 20px;
+    .footer-col ul li a:hover { color: var(--text-main); }
+    
+    .footer-social {
       display: flex;
-      justify-content: space-between;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .footer-social a {
+      color: var(--text-main);
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-align: center;
+    }
+    .footer-legal a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    /* ====== OVERLAY MENÚ ====== */
+    .overlay-menu {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: var(--bg-cream);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      background: transparent;
-      border: none;
-      text-align: left;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.92rem;
-      font-weight: 600;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .overlay-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .close-btn {
+      position: absolute;
+      top: 20px; right: 20px;
+      font-size: 2rem;
       color: var(--text-main);
       cursor: pointer;
-      gap: 12px;
     }
-
-    .faq-icon-arrow {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      transition: transform 0.3s ease;
-      flex-shrink: 0;
-    }
-
-    .faq-item.active .faq-icon-arrow {
-      transform: rotate(180deg);
-      color: var(--text-main);
-    }
-
-    .faq-answer-panel {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
-      padding: 0 20px;
-    }
-
-    .faq-item.active .faq-answer-panel {
-      max-height: 400px;
-      transition: max-height 0.4s ease-in-out;
-      padding-bottom: 20px;
-    }
-
-    .faq-answer-panel p {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      border-top: 1px dashed var(--border-color);
-      padding-top: 14px;
-    }
-
-    /* CTA FINAL */
-    .cta-banner-box {
-      background-color: var(--bg-dark);
-      color: white;
-      border-radius: 16px;
-      padding: 55px 25px;
+    .overlay-content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
       text-align: center;
-      margin: 40px 0;
     }
-
-    .cta-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 500;
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
-
-    .cta-title i {
-      font-style: italic;
-      color: var(--accent-silver);
-    }
-
-    .cta-description {
-      font-size: 0.88rem;
-      color: #BDB9B0;
-      line-height: 1.6;
-      max-width: 520px;
-      margin: 0 auto 30px;
-    }
-
-    .cta-btn-white {
-      background: #FFFFFF;
-      color: var(--bg-dark);
-      padding: 14px 32px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 700;
+    .overlay-content a {
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: var(--transition-smooth);
+      color: var(--text-main);
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-style: italic;
+      font-weight: 500;
     }
 
-    .cta-btn-white:hover {
-      background: var(--bg-cream);
-      transform: translateY(-2px);
+    /* ====== MEDIA QUERIES PARA PC ====== */
+    @media (min-width: 768px) {
+      .page-wrapper {
+        max-width: 750px;
+        background-color: var(--bg-cream);
+        box-shadow: 0 0 40px rgba(0,0,0,0.05);
+        border-left: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+      }
+      .hero h1 { font-size: 4.5rem; }
+      .about-section .section-padding { display: flex; gap: 40px; align-items: center; }
+      .about-img { margin-bottom: 0; flex: 1; height: 450px; }
+      .about-text { flex: 1; }
+      .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
     }
+  </style>
+</head>
+<body>
 
-    .cta-whatsapp-sub {
-      margin-top: 20px;
-      font-size: 0.8rem;
-      color: #9C978F;
-    }
+  <!-- MENÚ EMERGENTE -->
+  <div class="overlay-menu" id="overlayMenu">
+    <div class="close-btn" onclick="toggleMenu()">
+      <i class="ph-bold ph-x"></i>
+    </div>
+    <div class="overlay-content">
+      <a href="#inicio" onclick="toggleMenu()">Inicio</a>
+      <a href="#servicios" onclick="toggleMenu()">Servicios</a>
+      <a href="#portafolio" onclick="toggleMenu()">Portafolio</a>
+      <a href="#sobre-mi" onclick="toggleMenu()">Sobre mí</a>
+      <a href="#faq" onclick="toggleMenu()">FAQ</a>
+    </div>
+  </div>
 
-    .cta-whatsapp-sub a {
-      color: #FFFFFF;
-      font-weight: 600;
-      text-decoration: underline;
-    }
+  <div class="page-wrapper" id="inicio">
+    
+    <!-- ENCABEZADO FIJO -->
+    <header class="fixed-header">
+      <a href="#" class="brand-name">Gisella Villarreal</a>
+      <i class="ph-bold ph-list menu-icon" onclick="toggleMenu()"></i>
+    </header>
 
-    /* FOOTER */
-    .site-footer {
-      background-color: #0E0E0E;
-      color: #A39E94;
-      padding: 60px 0 35px;
-      border-top: 1px solid var(--border-dark);
-    }
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <h1>Impulsa tu negocio <br><i>en digital.</i></h1>
+      <p>Diseño web y experiencias digitales. Ayudo a marcas y profesionales a construir su presencia en internet con claridad y propósito.</p>
+      
+      <div class="button-group">
+        <a href="#servicios" class="btn-dark">Ver Servicios <i class="ph-bold ph-arrow-down"></i></a>
+        <a href="#portafolio" class="btn-outline">Portafolio <i class="ph-fill ph-play-circle"></i></a>
+      </div>
 
-  
+      <div class="hero-image"></div>
+    </section>
+
+    <!-- FRANJA DE CONFIANZA -->
+    <section class="trust-banner">
+      <div class="trust-item">
+        <div class="trust-emoji">📱</div>
+        <div class="trust-title">Diseño adaptable</div>
+        <div class="trust-desc">Mobile-first</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-emoji">✨</div>
+        <div class="trust-title">Diseño personalizado</div>
+        <div class="trust-desc">Cada proyecto tiene su estilo</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-emoji">💬</div>
+        <div class="trust-title">Contacto sencillo</div>
+        <div class="trust-desc">Comunicación directa</div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="section-padding" id="servicios">
+      <div class="section-header">
+        <h2 class="section-title">Servicios</h2>
+        <span class="section-subtitle">lo que puedo crear para ti</span>
+      </div>
+
+      <div class="services-list">
+        
+        <!-- Servicio 1 -->
+        <div class="service-card">
+          <div class="service-img" style="background-image: url('[https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop](https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop)');"></div>
+          <div class="service-content">
+            <span class="service-tag">01 · PROFESIONALES</span>
+            <h3 class="service-title">Páginas web profesionales</h3>
+            <p class="service-desc">Un espacio digital para presentar tus servicios, experiencia, proyectos y formas de contacto.</p>
+            <p class="service-target">Ideal para entrenadores, asesores, nutricionistas y marcas personales.</p>
+            <a href="[https://wa.me/573001234567](https://wa.me/573001234567)" target="_blank" class="service-link">Conocer el servicio <i class="ph-bold ph-arrow-up-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="service-card">
+          <div class="service-img" style="background-image: url('[https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop](https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop)');"></div>
+          <div class="service-content">
+            <span class="service-tag">02 · CELEBRACIONES</span>
+            <h3 class="service-title">Invitaciones digitales web</h3>
+            <p class="service-desc">Invitaciones interactivas con ubicación, cuenta regresiva, galería y confirmación de asistencia.</p>
+            <p class="service-target">Para quinceañeras, bodas, cumpleaños y aniversarios.</p>
+            <a href="[https://wa.me/573001234567](https://wa.me/573001234567)" target="_blank" class="service-link">Ver opciones <i class="ph-bold ph-arrow-up-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="service-card">
+          <div class="service-img" style="background-image: url('[https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600&auto=format&fit=crop](https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600&auto=format&fit=crop)');"></div>
+          <div class="service-content">
+            <span class="service-tag">03 · NEGOCIOS</span>
+            <h3 class="service-title">Catálogos digitales</h3>
+            <p class="service-desc">Organización visual de productos, categorías, fotografías y botones para consultar o pedir por WhatsApp.</p>
+            <p class="service-target">Para emprendimientos y negocios qu
