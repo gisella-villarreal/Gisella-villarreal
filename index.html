@@ -64,9 +64,11 @@
       cursor: pointer;
     }
     
-    /* ====== HERO ====== */
-    /* Reducción de espacio entre el header y el inicio */
-    .hero { padding: 10px 20px 10px; }
+    /* ====== HERO (CENTRADO) ====== */
+    .hero { 
+      padding: 10px 20px 10px; 
+      text-align: center;
+    }
     
     .hero h1 {
       font-family: 'Playfair Display', serif;
@@ -87,13 +89,14 @@
       font-size: 0.9rem;
       color: var(--text-light);
       line-height: 1.5;
-      margin-bottom: 25px;
+      margin: 0 auto 25px;
       max-width: 90%;
     }
     .hero p i { color: var(--text-main); font-weight: 600; }
     
     .button-group {
       display: flex;
+      justify-content: center;
       gap: 15px;
       margin-bottom: 30px;
     }
@@ -171,9 +174,8 @@
     .section-header {
       padding: 0 20px;
       margin-bottom: 30px;
-      text-align: center; /* Títulos siempre centrados */
+      text-align: center; 
     }
-    /* Estilo del menú: Playfair en cursiva */
     .section-title {
       font-family: 'Playfair Display', serif; 
       font-style: italic;
@@ -184,6 +186,12 @@
       margin-bottom: 5px;
       letter-spacing: -0.5px;
     }
+    /* Clase para forzar textos a una sola línea dinámicamente */
+    .single-line-title {
+      white-space: nowrap;
+      font-size: clamp(1.8rem, 7vw, 2.5rem);
+    }
+    
     .section-subtitle {
       font-family: 'Inter', sans-serif;
       font-size: 0.85rem;
@@ -267,7 +275,7 @@
       padding-bottom: 3px;
     }
 
-    /* ====== WEBFOLIO ====== */
+    /* ====== PORTAFOLIO ====== */
     .portfolio-section {
       padding: 20px 0 40px; 
     }
@@ -328,7 +336,7 @@
     }
     .process-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* Dos por línea forzado */
+      grid-template-columns: repeat(2, 1fr); 
       gap: 10px;
     }
     .process-box {
@@ -381,7 +389,6 @@
       margin-bottom: 15px;
     }
     
-    /* Iconos sociales bajo la foto */
     .about-socials {
       display: flex;
       justify-content: center;
@@ -415,19 +422,24 @@
       margin-bottom: 15px;
     }
 
-    /* ====== TESTIMONIOS ====== */
+    /* ====== TESTIMONIOS (FONDO NEGRO) ====== */
     .testimonials-section {
-      padding: 0 20px 50px;
+      background-color: var(--bg-dark);
+      padding: 40px 20px 50px;
     }
     
+    .testimonials-section .section-title {
+      color: white; /* Título en blanco por el fondo negro */
+    }
+
     .testimonials-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 en pantalla */
+      grid-template-columns: repeat(2, 1fr); 
       gap: 10px;
     }
     
     .testimonial-box {
-      border: 1px solid var(--bg-dark);
+      border: 1px solid rgba(255, 255, 255, 0.2); /* Línea fina y elegante */
       padding: 20px 15px;
       border-radius: 8px;
       display: flex;
@@ -438,7 +450,7 @@
       font-family: 'Playfair Display', serif;
       font-style: italic;
       font-size: 0.85rem;
-      color: var(--bg-dark);
+      color: white; /* Texto en blanco */
       line-height: 1.4;
       margin-bottom: 15px;
     }
@@ -447,12 +459,12 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: var(--text-light);
+      color: var(--silver-accent);
     }
 
     /* ====== PREGUNTAS FRECUENTES ====== */
     .faq-section {
-      padding: 0 20px 50px;
+      padding: 40px 20px 50px;
     }
     .faq-item {
       border-bottom: 1px solid var(--border-color);
@@ -490,7 +502,6 @@
     /* ====== CTA: ¿TIENES UNA IDEA EN MENTE? ====== */
     .cta-container {
       padding: 0;
-      margin-top: 10px;
     }
     .cta-box {
       background-color: var(--bg-dark);
@@ -510,6 +521,13 @@
       margin-bottom: 15px;
       line-height: 1.1;
     }
+    .cta-desc {
+      font-size: 0.85rem;
+      color: #b0b0b0;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      max-width: 400px;
+    }
     .btn-white {
       background-color: white;
       color: var(--bg-dark);
@@ -526,7 +544,7 @@
     /* ====== FOOTER ====== */
     footer {
       padding: 50px 20px 30px;
-      text-align: center;
+      text-align: left; /* TODO ALINEADO A LA IZQUIERDA */
       background-color: var(--bg-cream);
     }
     .footer-name {
@@ -542,8 +560,6 @@
       color: var(--text-light);
       margin-bottom: 30px;
       max-width: 300px;
-      margin-left: auto;
-      margin-right: auto;
     }
     
     .footer-nav-title {
@@ -555,11 +571,11 @@
       color: var(--bg-dark);
     }
     
-    /* Enlaces horizontales */
+    /* Enlaces horizontales alineados a la izquierda */
     .footer-horizontal-links {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: flex-start;
       flex-wrap: wrap;
       gap: 15px;
       margin-bottom: 25px;
@@ -575,7 +591,7 @@
 
     .footer-social {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 15px;
       margin-bottom: 40px;
     }
@@ -599,7 +615,7 @@
       color: var(--text-light);
       text-decoration: none;
       font-size: 0.7rem;
-      margin: 0 5px;
+      margin-right: 10px;
     }
 
     /* ====== OVERLAY MENÚ EMERGENTE ====== */
@@ -666,7 +682,7 @@
     <div class="overlay-content">
       <a href="#inicio" onclick="toggleMenu()">Inicio</a>
       <a href="#servicios" onclick="toggleMenu()">Servicios</a>
-      <a href="#webfolio" onclick="toggleMenu()">Webfolio</a>
+      <a href="#portafolio" onclick="toggleMenu()">Portafolio</a>
       <a href="#sobre-mi" onclick="toggleMenu()">Sobre mí</a>
       <a href="#faq" onclick="toggleMenu()">FAQ</a>
     </div>
@@ -682,12 +698,12 @@
 
     <!-- HERO -->
     <section class="hero">
-      <h1>Impulsa tu negocio <br><i>en digital.</i></h1>
-      <p><i>Gisella Villarreal</i> soy Marketer, enfocada en Negocios Online. Ayudo a marcas y emprendimientos a construir y fortalecer su presencia digital a través del e-commerce y el contenido visual.</p>
+      <h1>Creemos tu presencia <br><i>en digital.</i></h1>
+      <p>Creo espacios digitales que cuentan historias, presentan tu trabajo y hacen que tus ideas cobren vida.</p>
       
       <div class="button-group">
         <a href="#servicios" class="btn-dark">Ver Servicios <i class="ph-bold ph-arrow-down"></i></a>
-        <a href="#webfolio" class="btn-outline">Webfolio <i class="ph-fill ph-play-circle"></i></a>
+        <a href="#portafolio" class="btn-outline">Ver Portafolio <i class="ph-fill ph-play-circle"></i></a>
       </div>
 
       <div class="hero-image"></div>
@@ -703,7 +719,7 @@
       <div class="stat-item">
         <i class="ph-light ph-sparkle"></i>
         <h4>Diseño personalizado</h4>
-        <p>Cada proyecto tiene su estilo</p>
+        <p>Cada proyecto es único.</p>
       </div>
       <div class="stat-item">
         <i class="ph-light ph-chat-circle-text"></i>
@@ -742,29 +758,28 @@
         </div>
       </div>
 
-      <!-- Servicio 3 -->
+      <!-- Servicio 3 (CATÁLOGOS) -->
       <div class="service-row">
-        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop');"></div>
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600&auto=format&fit=crop');"></div>
         <div class="service-info">
-          <span class="service-num">03 · FOTOGRAFÍA</span>
-          <h3 class="service-name">Fotografía</h3>
-          <p class="service-desc">Creación de contenido visual de alta calidad, enfocado en destacar el valor de tu marca o inmortalizar momentos especiales.</p>
-          <p class="service-target">Para lanzamientos, servicios, eventos o campañas puntuales.</p>
-          <a href="#" class="service-link">Crear una landing page <i class="ph-bold ph-arrow-up-right"></i></a>
+          <span class="service-num">03 · CATÁLOGOS</span>
+          <h3 class="service-name">Catálogos digitales</h3>
+          <p class="service-desc">Organización visual de productos, categorías, fotografías y botones para consultar o pedir por WhatsApp.</p>
+          <p class="service-target">Para emprendimientos y negocios que quieren presentar mejor su oferta.</p>
+          <a href="#" class="service-link">Mejorar mi catálogo <i class="ph-bold ph-arrow-up-right"></i></a>
         </div>
       </div>
-    </section>
+     </section>
 
-     <!-- WEBFOLIO -->
-    <section class="portfolio-section" id="webfolio">
+    <!-- PORTAFOLIO -->
+    <section class="portfolio-section" id="portafolio">
       <div class="section-header">
-        <h2 class="section-title">Webfolio</h2>
+        <h2 class="section-title">Portafolio</h2>
       </div>
       
       <div class="portfolio-filters">
-        <button class="filter-btn active">Web Branding</button>
-        <button class="filter-btn">Web Eventos</button>
-        <button class="filter-btn">Fotografía</button>
+        <button class="filter-btn active">Fotografía de productos</button>
+        <button class="filter-btn">Fotografía Social</button>
       </div>
 
       <div class="portfolio-grid">
@@ -778,7 +793,8 @@
     <!-- ASÍ TRABAJO CONTIGO -->
     <section class="process-section">
       <div class="section-header">
-        <h2 class="section-title">Así trabajo contigo</h2>
+        <!-- Título forzado en una línea -->
+        <h2 class="section-title single-line-title">Así trabajo contigo</h2>
       </div>
 
       <div class="process-grid">
@@ -821,7 +837,6 @@
     <section class="about-section" id="sobre-mi">
       <div class="about-img"></div>
       
-      <!-- Iconos Sociales bajo la foto -->
       <div class="about-socials">
         <a href="https://wa.me/573001234567" target="_blank"><i class="ph-fill ph-whatsapp-logo"></i></a>
         <a href="#" target="_blank"><i class="ph-fill ph-linkedin-logo"></i></a>
@@ -838,7 +853,7 @@
       </div>
     </section>
 
-    <!-- TESTIMONIOS -->
+    <!-- TESTIMONIOS (FONDO NEGRO) -->
     <section class="testimonials-section">
       <div class="section-header">
         <h2 class="section-title">Testimonios</h2>
@@ -859,7 +874,7 @@
     <!-- PREGUNTAS FRECUENTES (FAQ) -->
     <section class="faq-section" id="faq">
       <div class="section-header">
-        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <h2 class="section-title single-line-title">Preguntas Frecuentes</h2>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
@@ -895,7 +910,8 @@
     <!-- CTA -->
     <div class="cta-container">
       <div class="cta-box">
-        <h2 class="cta-title">¿Tienes una idea en mente?</h2>
+        <h2 class="cta-title">¿tienes una idea en mente?</h2>
+        <p class="cta-desc">Cuéntame qué quieres crear y encontremos una forma<br>de darle vida con un diseño pensado para ti.</p>
         
         <a href="https://wa.me/573001234567" target="_blank" class="btn-white">
           <i class="ph-fill ph-whatsapp-logo"></i> Hablemos de tu proyecto
@@ -903,7 +919,7 @@
       </div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- FOOTER ALINEADO A LA IZQUIERDA -->
     <footer>
       <div class="footer-name">Gisella Villarreal</div>
       <p class="footer-desc">Diseño web y experiencias digitales para profesionales, marcas y momentos especiales.</p>
@@ -912,7 +928,7 @@
       <div class="footer-horizontal-links">
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
-        <a href="#webfolio">Webfolio</a>
+        <a href="#portafolio">Portafolio</a>
         <a href="#sobre-mi">Sobre mí</a>
       </div>
 
@@ -934,7 +950,8 @@
       
       <div class="footer-bottom-text">© 2026 Gisella Villarreal. Todos los derechos reservados.</div>
       <div class="footer-legal">
-        <a href="#">Política de privacidad</a> · <a href="#">Términos del servicio</a>
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos del servicio</a>
       </div>
     </footer>
 
