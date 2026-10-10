@@ -36,19 +36,28 @@
 
     /* ====== ENCABEZADO FIJO ====== */
     .top-bar {
-      position: sticky;
-      top: 0;
-      background-color: rgba(244, 241, 237, 0.95);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      position: fixed; /* Fixed para que flote sobre la imagen desde el inicio */
+      top: 0; left: 0; right: 0;
+      background-color: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 20px;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid transparent;
       z-index: 1000;
+      transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-bottom 0.4s ease;
     }
     
+    /* Clase que se activa con JS al hacer scroll */
+    .top-bar.scrolled {
+      background-color: rgba(244, 241, 237, 0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
     .brand-name {
       font-family: 'Playfair Display', serif;
       font-size: 1.4rem;
@@ -64,7 +73,7 @@
       cursor: pointer;
     }
     
-    /* ====== HERO (TEXTO SOBRE IMAGEN Y DIFUMINADO NEGRO) ====== */
+    /* ====== HERO (TEXTO SOBRE IMAGEN Y DIFUMINADO) ====== */
     .hero { 
       position: relative;
       width: 100%;
@@ -75,22 +84,30 @@
       background-position: center top; 
       display: flex;
       flex-direction: column;
-      justify-content: flex-end; /* Texto empujado hacia abajo, sobre lo negro */
-      padding: 20px 20px 60px 20px; 
+      /* Ajuste para que el texto suba al nivel del pecho */
+      justify-content: flex-start; 
+      padding: 140px 20px 30px; /* Aumentamos el padding-top */
       text-align: left;
     }
     
-    /* Difuminado negro desde la base hasta la mitad de la foto */
     .hero-overlay {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to top, var(--bg-dark) 0%, rgba(21, 21, 21, 0.85) 30%, transparent 65%);
+      background: linear-gradient(to right, rgba(244, 241, 237, 0.92) 0%, rgba(244, 241, 237, 0.3) 100%);
+      z-index: 1;
+    }
+
+    .hero-fade {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--bg-dark));
       z-index: 1;
     }
 
     .hero-content {
       position: relative;
-      z-index: 2; /* Mantiene el texto por encima del difuminado */
+      z-index: 2; 
     }
     
     .hero h1 {
@@ -100,17 +117,17 @@
       line-height: 1.05;
       letter-spacing: -1px;
       margin-bottom: 15px;
-      color: white; /* Texto blanco para contrastar con el fondo negro */
+      color: var(--bg-dark);
     }
     .hero h1 i {
       font-weight: 400;
       font-style: italic;
-      color: var(--silver-accent);
+      color: var(--text-light);
     }
     
     .hero p {
       font-size: 0.9rem;
-      color: #E2DDD5; /* Blanco crema */
+      color: var(--text-light);
       line-height: 1.5;
       margin: 0 0 25px 0;
       max-width: 90%;
@@ -121,23 +138,21 @@
       justify-content: flex-start;
       gap: 15px;
     }
-    
-    /* Botones adaptados para fondo oscuro */
-    .hero .btn-dark {
-      background-color: white;
-      color: var(--bg-dark);
+    .btn-dark {
+      background-color: var(--bg-dark);
+      color: white;
       padding: 12px 24px;
       border-radius: 8px;
       text-decoration: none;
       font-size: 0.8rem;
-      font-weight: 600;
+      font-weight: 500;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    .hero .btn-outline {
+    .btn-outline {
       background-color: transparent;
-      color: white;
+      color: var(--bg-dark);
       padding: 12px 0;
       text-decoration: none;
       font-size: 0.8rem;
@@ -205,12 +220,12 @@
       font-size: clamp(1.8rem, 7vw, 2.5rem);
     }
 
-    /* ====== SERVICIOS ====== */
+    /* ====== SERVICIOS (2 EN PANTALLA) ====== */
     .services-wrapper {
       padding: 0 20px 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 Columnas */
+      gap: 12px;
     }
     
     .service-row {
@@ -223,52 +238,55 @@
     
     .service-img {
       width: 100%;
-      height: 280px;
+      height: 150px; /* Altura ajustada para 2 columnas */
       background-size: cover;
       background-position: center;
       background-color: #333;
     }
 
     .service-info {
-      padding: 30px 20px;
+      padding: 15px; /* Reducido para que quepa bien en celular */
       color: white;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     .service-num {
-      font-size: 0.6rem;
+      font-size: 0.55rem;
       font-weight: 600;
       color: var(--silver-accent);
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       display: block;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       text-transform: uppercase;
     }
 
     .service-name {
       font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
+      font-size: 1.15rem; /* Letra ajustada */
       font-weight: 500;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       line-height: 1.1;
     }
 
     .service-desc {
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       color: #D3D3D3;
-      line-height: 1.5;
-      margin-bottom: 12px;
+      line-height: 1.4;
+      margin-bottom: 10px;
     }
 
     .service-target {
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       font-weight: 500;
       color: white;
       font-style: italic;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .service-link {
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       font-weight: 600;
       color: white;
       text-decoration: none;
@@ -279,6 +297,7 @@
       gap: 5px;
       border-bottom: 1px solid rgba(255,255,255,0.3);
       padding-bottom: 3px;
+      margin-top: auto; /* Empuja el botón al fondo si la tarjeta es alta */
     }
 
     /* ====== PORTAFOLIO ====== */
@@ -442,7 +461,7 @@
       margin-bottom: 15px;
     }
 
-    /* ====== RESEÑAS (CARRUSEL) ====== */
+    /* ====== RESEÑAS (CARRUSEL CREMA) ====== */
     .testimonials-section {
       background-color: var(--bg-dark); 
       padding: 40px 0 50px;
@@ -471,7 +490,7 @@
     }
     
     .testimonial-box {
-      background-color: white; 
+      background-color: var(--bg-cream); /* Modificado a color de fondo de la pág */
       border: 1px solid var(--border-color); 
       padding: 25px 20px;
       border-radius: 8px;
@@ -747,6 +766,7 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-overlay"></div>
+      <div class="hero-fade"></div>
       
       <div class="hero-content">
         <h1>Impulsa tu presencia <br><i>digital.</i></h1>
@@ -784,7 +804,7 @@
         <h2 class="section-title">Servicios</h2>
       </div>
 
-      <div class="service-row">
+            <div class="service-row">
         <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop');"></div>
         <div class="service-info">
           <span class="service-num">01 · WEB BRANDING</span>
@@ -795,7 +815,7 @@
         </div>
       </div>
 
-            <div class="service-row">
+      <div class="service-row">
         <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop');"></div>
         <div class="service-info">
           <span class="service-num">02 · WEB EVENTOS</span>
@@ -870,7 +890,7 @@
             <span class="process-num">04.</span>
             <i class="ph-light ph-check-circle"></i>
           </div>
-          <h4 class="process-title">Revisamos y entregamos</h4>
+          <h4 class="process-title" style="white-space: nowrap;">Revisamos y entregamos</h4>
           <p class="process-desc">Comprobamos enlaces, botones y formularios acordados y te explico cómo acceder.</p>
         </div>
       </div>
@@ -1002,6 +1022,16 @@
   </div>
 
   <script>
+    // Hacer que el encabezado cambie de transparente a color crema al hacer scroll
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.top-bar');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
     function toggleMenu() {
       const menu = document.getElementById('overlayMenu');
       menu.classList.toggle('active');
@@ -1017,11 +1047,5 @@
       element.classList.toggle('active');
     }
   </script>
-  <style>
-    /* Ocultar barra de scroll para el carrusel de reseñas */
-    .testimonials-carousel::-webkit-scrollbar {
-      display: none; 
-    }
-  </style>
 </body>
-</html>
+            </html>
