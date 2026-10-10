@@ -64,7 +64,7 @@
       cursor: pointer;
     }
     
-    /* ====== HERO (TEXTO SOBRE IMAGEN Y DIFUMINADO) ====== */
+    /* ====== HERO (TEXTO SOBRE IMAGEN Y DIFUMINADO NEGRO) ====== */
     .hero { 
       position: relative;
       width: 100%;
@@ -75,31 +75,22 @@
       background-position: center top; 
       display: flex;
       flex-direction: column;
-      justify-content: center; 
-      padding: 20px; 
+      justify-content: flex-end; /* Texto empujado hacia abajo, sobre lo negro */
+      padding: 20px 20px 60px 20px; 
       text-align: left;
     }
     
-    /* Capa semi-transparente para que el texto oscuro se lea perfecto sin perder su color */
+    /* Difuminado negro desde la base hasta la mitad de la foto */
     .hero-overlay {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to right, rgba(244, 241, 237, 0.92) 0%, rgba(244, 241, 237, 0.3) 100%);
-      z-index: 1;
-    }
-
-    /* Difuminado negro en la parte inferior para fusionarse con la franja de confianza */
-    .hero-fade {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 120px;
-      background: linear-gradient(to bottom, transparent, var(--bg-dark));
+      background: linear-gradient(to top, var(--bg-dark) 0%, rgba(21, 21, 21, 0.85) 30%, transparent 65%);
       z-index: 1;
     }
 
     .hero-content {
       position: relative;
-      z-index: 2; /* Por encima de los difuminados */
+      z-index: 2; /* Mantiene el texto por encima del difuminado */
     }
     
     .hero h1 {
@@ -109,17 +100,17 @@
       line-height: 1.05;
       letter-spacing: -1px;
       margin-bottom: 15px;
-      color: var(--bg-dark);
+      color: white; /* Texto blanco para contrastar con el fondo negro */
     }
     .hero h1 i {
       font-weight: 400;
       font-style: italic;
-      color: var(--text-light);
+      color: var(--silver-accent);
     }
     
     .hero p {
       font-size: 0.9rem;
-      color: var(--text-light);
+      color: #E2DDD5; /* Blanco crema */
       line-height: 1.5;
       margin: 0 0 25px 0;
       max-width: 90%;
@@ -130,21 +121,23 @@
       justify-content: flex-start;
       gap: 15px;
     }
-    .btn-dark {
-      background-color: var(--bg-dark);
-      color: white;
+    
+    /* Botones adaptados para fondo oscuro */
+    .hero .btn-dark {
+      background-color: white;
+      color: var(--bg-dark);
       padding: 12px 24px;
       border-radius: 8px;
       text-decoration: none;
       font-size: 0.8rem;
-      font-weight: 500;
+      font-weight: 600;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    .btn-outline {
+    .hero .btn-outline {
       background-color: transparent;
-      color: var(--bg-dark);
+      color: white;
       padding: 12px 0;
       text-decoration: none;
       font-size: 0.8rem;
@@ -478,7 +471,7 @@
     }
     
     .testimonial-box {
-      background-color: white; /* Reseñas blancas */
+      background-color: white; 
       border: 1px solid var(--border-color); 
       padding: 25px 20px;
       border-radius: 8px;
@@ -492,7 +485,7 @@
     .quote-text {
       font-family: 'Inter', sans-serif;
       font-size: 0.85rem;
-      color: var(--text-main); /* Texto oscuro para la tarjeta blanca */
+      color: var(--text-main); 
       line-height: 1.5;
       margin-bottom: 15px;
     }
@@ -502,7 +495,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      color: var(--text-light); /* Autor en gris medio */
+      color: var(--text-light); 
     }
 
     /* ====== PREGUNTAS FRECUENTES ====== */
@@ -610,7 +603,7 @@
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 10px; 
       color: var(--bg-dark);
     }
     
@@ -751,10 +744,9 @@
       <i class="ph-bold ph-list menu-icon" onclick="toggleMenu()"></i>
     </header>
 
-    <!-- HERO (TEXTO SOBRE IMAGEN Y DIFUMINADO) -->
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-overlay"></div>
-      <div class="hero-fade"></div>
       
       <div class="hero-content">
         <h1>Impulsa tu presencia <br><i>digital.</i></h1>
@@ -803,8 +795,7 @@
         </div>
       </div>
 
-      
-      <div class="service-row">
+            <div class="service-row">
         <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop');"></div>
         <div class="service-info">
           <span class="service-num">02 · WEB EVENTOS</span>
