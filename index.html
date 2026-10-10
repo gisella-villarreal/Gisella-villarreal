@@ -388,51 +388,6 @@
       border-radius: 4px;
     }
 
-    /* ====== ASÍ TRABAJO CONTIGO ====== */
-    .process-section {
-      padding: 20px 20px 40px;
-    }
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); 
-      gap: 10px;
-    }
-    .process-box {
-      background-color: var(--bg-dark);
-      color: white;
-      padding: 20px 15px;
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-    }
-    .process-header-box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-    .process-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      color: var(--silver-accent);
-      font-style: italic;
-    }
-    .process-header-box i {
-      font-size: 1.5rem;
-      color: var(--silver-accent);
-    }
-    .process-title {
-      font-size: 0.75rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-      line-height: 1.2;
-    }
-    .process-desc {
-      font-size: 0.65rem;
-      color: #b0b0b0;
-      line-height: 1.4;
-    }
-
     /* ====== SOBRE MÍ ====== */
     .about-section {
       padding: 20px 20px 50px;
@@ -492,62 +447,6 @@
       color: var(--text-light);
       line-height: 1.6;
       margin-bottom: 15px;
-    }
-
-    /* ====== RESEÑAS (CARRUSEL) ====== */
-    .testimonials-section {
-      background-color: var(--bg-dark); 
-      padding: 40px 0 50px;
-    }
-    
-    .testimonials-section .section-header {
-      padding: 0 20px;
-    }
-
-    .testimonials-section .section-title {
-      color: white; 
-    }
-
-    .testimonials-carousel {
-      display: flex;
-      gap: 15px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding: 0 20px 20px 20px;
-      scrollbar-width: none; 
-      -ms-overflow-style: none;  
-    }
-    
-    .testimonials-carousel::-webkit-scrollbar {
-      display: none; 
-    }
-    
-    .testimonial-box {
-      background-color: var(--bg-cream); 
-      border: 1px solid var(--border-color); 
-      padding: 25px 20px;
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-width: 85%; 
-      scroll-snap-align: center; 
-    }
-
-    .quote-text {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      color: var(--text-main); 
-      line-height: 1.5;
-      margin-bottom: 15px;
-    }
-    .quote-author {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--text-light); 
     }
 
     /* ====== PREGUNTAS FRECUENTES ====== */
@@ -811,7 +710,7 @@
       </div>
     </section>
 
-        <!-- FRANJA DE CONFIANZA -->
+    <!-- FRANJA DE CONFIANZA -->
     <section class="black-stats">
       <div class="stat-item">
         <i class="ph-light ph-device-mobile"></i>
@@ -885,8 +784,9 @@
         <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=400&auto=format&fit=crop');"></div>
         <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400&auto=format&fit=crop');"></div>
         <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=400&auto=format&fit=crop');"></div>
-        <div>
-        </div>
+        <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=400&auto=format&fit=crop');"></div>
+      </div>
+    </section>
 
     <!-- SOBRE MÍ -->
     <section class="about-section" id="sobre-mi">
@@ -1018,11 +918,5 @@
       element.classList.toggle('active');
     }
   </script>
-  <style>
-    /* Ocultar barra de scroll para el carrusel de reseñas */
-    .testimonials-carousel::-webkit-scrollbar {
-      display: none; 
-    }
-  </style>
 </body>
-  </html>
+</html>
