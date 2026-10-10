@@ -10,12 +10,10 @@
   
   <style>
     :root {
-      /* Color de fondo beige elegante */
-      --bg-cream: #c9bb9e;     
       --bg-dark: #151515;      
-      --text-main: #1A1A1A;    
-      --text-light: #444444;   
-      --border-color: rgba(0, 0, 0, 0.1); 
+      --text-main: #FFFFFF;    
+      --text-light: #b0b0b0;   
+      --border-color: rgba(255, 255, 255, 0.1); 
       --silver-accent: #D3D3D3; 
     }
     
@@ -25,7 +23,8 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--bg-cream);
+      /* Fondo negro para toda la página */
+      background-color: var(--bg-dark);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
     }
@@ -51,9 +50,9 @@
       transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-bottom 0.4s ease;
     }
     
-    /* Fondo del encabezado al hacer scroll (#c9bb9e con opacidad) */
+    /* Fondo del encabezado al hacer scroll (Negro difuminado) */
     .top-bar.scrolled {
-      background-color: rgba(201, 187, 158, 0.95);
+      background-color: rgba(21, 21, 21, 0.95);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border-color);
@@ -64,13 +63,13 @@
       font-size: 1.4rem;
       font-style: italic;
       font-weight: 500;
-      color: var(--bg-dark);
+      color: white; /* Texto blanco en modo oscuro */
       text-decoration: none;
     }
 
     .menu-icon {
       font-size: 1.8rem;
-      color: var(--bg-dark);
+      color: white; /* Ícono blanco en modo oscuro */
       cursor: pointer;
     }
     
@@ -82,7 +81,6 @@
       min-height: 550px;
       background-image: url('1791056211701~3.jpg'); 
       background-size: cover; 
-      /* Forzamos a que la imagen se vea desde arriba */
       background-position: top center; 
       display: flex;
       flex-direction: column;
@@ -91,7 +89,7 @@
       text-align: left;
     }
 
-    /* Difuminado negro solo hasta la mitad de la foto */
+    /* Difuminado negro solo hasta la mitad de la foto, conectando con el resto de la pág */
     .hero-fade {
       position: absolute;
       bottom: 0; left: 0; right: 0;
@@ -161,7 +159,6 @@
     .black-stats {
       background-color: var(--bg-dark);
       color: white;
-      /* Margen en 0 para unirlo con la sección de servicios negra */
       margin: 0; 
       padding: 0 10px 30px; 
       display: grid;
@@ -206,7 +203,7 @@
       font-style: italic;
       font-size: 2.5rem;
       font-weight: 500;
-      color: var(--bg-dark);
+      color: white; /* Títulos en blanco para modo oscuro */
       line-height: 1;
       margin-bottom: 5px;
       letter-spacing: -0.5px;
@@ -216,18 +213,13 @@
       font-size: clamp(1.8rem, 7vw, 2.5rem);
     }
 
-    /* ====== SECCIÓN DE SERVICIOS (FONDO NEGRO COMPLETO) ====== */
+    /* ====== SECCIÓN DE SERVICIOS ====== */
     .services-section {
-      background-color: var(--bg-dark); /* El fondo de toda la zona es negro */
+      background-color: var(--bg-dark); 
       padding-top: 20px;
       padding-bottom: 50px;
     }
 
-    .services-section .section-title {
-      color: white; /* El título se vuelve blanco para contrastar */
-    }
-
-    /* ====== SERVICIOS (ESTILO TARJETAS HORIZONTALES EDITORIALES) ====== */
     .services-wrapper {
       padding: 0 20px;
       display: flex;
@@ -238,14 +230,13 @@
     .service-row {
       position: relative;
       background-color: var(--bg-dark);
-      border-radius: 24px; /* Bordes bien redondeados */
+      border-radius: 24px; 
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
       min-height: 230px;
-      /* Sombra ajustada para resaltar sobre el fondo negro */
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4); 
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6); /* Sombra más fuerte para modo oscuro */
     }
     
     .service-img {
@@ -256,7 +247,6 @@
       z-index: 1;
     }
 
-    /* Degradado interno para que el texto sea legible */
     .service-row::after {
       content: '';
       position: absolute;
@@ -276,7 +266,6 @@
       align-items: flex-start;
     }
 
-    /* Flecha superior derecha */
     .service-arrow {
       position: absolute;
       top: 20px;
@@ -314,7 +303,7 @@
       color: #E2DDD5;
       line-height: 1.4;
       margin-bottom: 20px;
-      max-width: 65%; /* Deja espacio para ver la imagen a la derecha */
+      max-width: 65%; 
     }
 
     .service-link {
@@ -323,7 +312,7 @@
       color: white;
       background-color: rgba(0, 0, 0, 0.4);
       padding: 10px 22px;
-      border-radius: 30px; /* Forma de píldora */
+      border-radius: 30px; 
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -335,7 +324,7 @@
 
     /* ====== PORTAFOLIO ====== */
     .portfolio-section {
-      padding: 40px 0 40px; 
+      padding: 20px 0 40px; 
     }
     
     .portfolio-filters {
@@ -361,7 +350,7 @@
     }
     
     .filter-btn.active {
-      color: var(--bg-dark); 
+      color: white; /* Blanco activo en modo oscuro */
       font-weight: 700;
     }
     
@@ -370,7 +359,7 @@
       position: absolute;
       bottom: 0; left: 0;
       width: 100%; height: 2px;
-      background-color: var(--bg-dark); 
+      background-color: white; /* Línea blanca en modo oscuro */
     }
     
     .portfolio-grid {
@@ -382,7 +371,7 @@
     
     .portfolio-item {
       aspect-ratio: 1 / 1;
-      background-color: rgba(0,0,0,0.05); 
+      background-color: rgba(255,255,255,0.05); /* Marcador suave */
       background-size: cover;
       background-position: center; 
       border-radius: 4px;
@@ -422,7 +411,7 @@
       font-style: italic;
       font-weight: 500;
       margin-bottom: 12px;
-      color: var(--bg-dark);
+      color: white; /* Título blanco */
       text-align: left; 
     }
     
@@ -433,18 +422,18 @@
       gap: 15px;
     }
     .about-socials a {
-      color: var(--bg-dark);
+      color: white; /* Íconos blancos */
       font-size: 1.5rem;
       text-decoration: none;
       transition: color 0.2s;
     }
     .about-socials a:hover {
-      color: var(--text-light);
+      color: var(--silver-accent);
     }
 
     .about-text p {
       font-size: 0.85rem;
-      color: var(--text-light);
+      color: var(--text-light); /* Letras claras */
       line-height: 1.6;
       margin-bottom: 15px;
     }
@@ -454,7 +443,7 @@
       padding: 40px 20px 50px;
     }
     .faq-item {
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color); /* Línea gris translúcida */
     }
     .faq-question {
       padding: 20px 0;
@@ -464,7 +453,7 @@
       cursor: pointer;
       font-size: 0.85rem;
       font-weight: 600;
-      color: var(--bg-dark);
+      color: white; /* Pregunta blanca */
     }
     .faq-question i {
       transition: transform 0.3s ease;
@@ -478,7 +467,7 @@
       overflow: hidden;
       transition: max-height 0.3s ease;
       font-size: 0.8rem;
-      color: var(--text-light);
+      color: var(--text-light); /* Respuesta gris claro */
       line-height: 1.5;
     }
     .faq-item.active .faq-answer {
@@ -510,7 +499,7 @@
     }
     .cta-desc {
       font-size: 0.85rem;
-      color: #b0b0b0;
+      color: var(--text-light);
       line-height: 1.6;
       margin-bottom: 30px;
       max-width: 400px;
@@ -528,18 +517,18 @@
       gap: 8px;
     }
 
-    /* ====== FOOTER ALINEADO A LA IZQUIERDA ====== */
+    /* ====== FOOTER ====== */
     footer {
       padding: 50px 20px 30px;
       text-align: left; 
-      background-color: var(--bg-cream);
+      background-color: var(--bg-dark); /* Fondo negro */
     }
     .footer-name {
       font-family: 'Playfair Display', serif;
       font-size: 1.6rem;
       font-style: italic;
       font-weight: 500;
-      color: var(--bg-dark);
+      color: white; /* Nombre blanco */
       margin-bottom: 10px;
     }
     .footer-desc {
@@ -555,7 +544,7 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       margin-bottom: 10px; 
-      color: var(--bg-dark);
+      color: white; /* Títulos menú blancos */
     }
     
     .footer-vertical-links {
@@ -570,7 +559,7 @@
       font-size: 0.8rem;
     }
     .footer-vertical-links a:hover {
-      color: var(--text-main);
+      color: white;
     }
 
     .footer-horizontal-links {
@@ -586,7 +575,7 @@
       font-size: 0.8rem;
     }
     .footer-horizontal-links a:hover {
-      color: var(--text-main);
+      color: white;
     }
 
     .footer-social {
@@ -596,7 +585,7 @@
       margin-bottom: 25px; 
     }
     .footer-social a {
-      color: var(--bg-dark);
+      color: white; /* Redes blancas */
       font-size: 1.5rem;
       text-decoration: none;
     }
@@ -623,7 +612,7 @@
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-color: var(--bg-cream);
+      background-color: var(--bg-dark); /* Menú negro */
       z-index: 9999;
       display: flex;
       flex-direction: column;
@@ -641,7 +630,7 @@
       position: absolute;
       top: 20px; right: 20px;
       font-size: 2rem;
-      color: var(--bg-dark);
+      color: white; /* Equis blanca */
       cursor: pointer;
     }
     .overlay-content {
@@ -652,7 +641,7 @@
     }
     .overlay-content a {
       text-decoration: none;
-      color: var(--bg-dark);
+      color: white; /* Enlaces blancos */
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       font-style: italic;
@@ -662,8 +651,8 @@
     @media (min-width: 768px) {
       .page-wrapper {
         max-width: 750px;
-        background-color: var(--bg-cream);
-        box-shadow: 0 0 40px rgba(0,0,0,0.05);
+        background-color: var(--bg-dark);
+        box-shadow: 0 0 40px rgba(0,0,0,0.5);
         border-left: 1px solid var(--border-color);
         border-right: 1px solid var(--border-color);
       }
@@ -729,7 +718,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN DE SERVICIOS CON FONDO NEGRO Y DISEÑO REVISTA -->
+    <!-- SECCIÓN DE SERVICIOS -->
     <section class="services-section" id="servicios">
       <div class="section-header">
         <h2 class="section-title">Servicios</h2>
@@ -758,7 +747,7 @@
           </div>
         </div>
 
-        <!-- Servicio 3 -->
+                <!-- Servicio 3 -->
         <div class="service-row">
           <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop');"></div>
           <a href="#portafolio" class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></a>
@@ -893,7 +882,7 @@
   </div>
 
   <script>
-    // Hacer que el encabezado cambie de transparente a color crema al hacer scroll
+    // Hacer que el encabezado cambie de transparente a negro translúcido al hacer scroll
     window.addEventListener('scroll', function() {
       const header = document.querySelector('.top-bar');
       if (window.scrollY > 50) {
