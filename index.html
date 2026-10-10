@@ -10,11 +10,13 @@
   
   <style>
     :root {
-      --bg-cream: #F4F1ED;     
+      /* Nuevo color de fondo */
+      --bg-cream: #c9bb9e;     
       --bg-dark: #151515;      
       --text-main: #1A1A1A;    
-      --text-light: #666666;   
-      --border-color: #E2DDD5; 
+      /* Ajuste de grises y bordes para que contrasten mejor con el nuevo fondo */
+      --text-light: #444444;   
+      --border-color: rgba(0, 0, 0, 0.1); 
       --silver-accent: #D3D3D3; 
     }
     
@@ -50,8 +52,9 @@
       transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-bottom 0.4s ease;
     }
     
+    /* Fondo del encabezado al hacer scroll (#c9bb9e con opacidad) */
     .top-bar.scrolled {
-      background-color: rgba(244, 241, 237, 0.95);
+      background-color: rgba(201, 187, 158, 0.95);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border-color);
@@ -72,19 +75,21 @@
       cursor: pointer;
     }
     
-    /* ====== HERO (TEXTO SOBRE IMAGEN Y DIFUMINADO MITAD) ====== */
+    /* ====== HERO ====== */
     .hero { 
       position: relative;
       width: 100%;
       height: 85vh;
       min-height: 550px;
-      background-image: url('1791056211701~2.jpg'); 
+      /* Nueva foto */
+      background-image: url('179105621170~3.jpg'); 
       background-size: cover; 
-      background-position: center top; 
+      /* Forzamos a que la imagen se vea desde arriba */
+      background-position: top center; 
       display: flex;
       flex-direction: column;
-      justify-content: flex-end; /* Lo anclamos hacia la parte baja */
-      padding: 20px 20px 90px 20px; /* Un poco más abajo que antes, cayendo en lo negro */
+      justify-content: flex-end; 
+      padding: 20px 20px 90px 20px; 
       text-align: left;
     }
 
@@ -92,7 +97,7 @@
     .hero-fade {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 55%; /* Ocupa solo la mitad inferior, la parte superior queda intacta */
+      height: 55%; 
       background: linear-gradient(to top, var(--bg-dark) 0%, rgba(21, 21, 21, 0.8) 35%, transparent 100%);
       z-index: 1;
     }
@@ -109,7 +114,7 @@
       line-height: 1.05;
       letter-spacing: -1px;
       margin-bottom: 15px;
-      color: white; /* Letras blancas para destacar sobre el difuminado */
+      color: white; 
     }
     .hero h1 i {
       font-weight: 400;
@@ -313,7 +318,7 @@
       font-family: 'Inter', sans-serif;
       font-size: 0.75rem;
       font-weight: 600;
-      color: #999; 
+      color: var(--text-light); 
       cursor: pointer;
       padding-bottom: 5px;
       position: relative;
@@ -341,7 +346,7 @@
     
     .portfolio-item {
       aspect-ratio: 1 / 1;
-      background-color: #E2DDD5;
+      background-color: rgba(0,0,0,0.05); /* Marcador oscuro suave */
       background-size: cover;
       background-position: center; 
       border-radius: 4px;
@@ -407,7 +412,7 @@
     .about-img {
       width: 130px; 
       height: 130px;
-      background-image: url('1791049708095~3.jpg'); 
+      background-image: url('1791049708095~2.jpg'); 
       background-size: cover;
       background-position: center;
       border-radius: 50%; 
@@ -482,8 +487,8 @@
     }
     
     .testimonial-box {
-      background-color: var(--bg-cream); /* Modificado al color de la pág */
-      border: 1px solid var(--border-color); 
+      background-color: var(--bg-cream); /* Ahora las reseñas son del color de fondo de la pág */
+      border: 1px solid rgba(0,0,0,0.1); 
       padding: 25px 20px;
       border-radius: 8px;
       display: flex;
@@ -789,13 +794,13 @@
       </div>
     </section>
 
-        <!-- SERVICIOS -->
+    <!-- SERVICIOS -->
     <section class="services-wrapper" id="servicios">
       <div class="section-header">
         <h2 class="section-title">Servicios</h2>
       </div>
 
-      <div class="service-row">
+            <div class="service-row">
         <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop');"></div>
         <div class="service-info">
           <span class="service-num">01 · WEB BRANDING</span>
@@ -1045,4 +1050,4 @@
     }
   </style>
 </body>
-  </html>
+</html>
