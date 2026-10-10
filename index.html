@@ -10,11 +10,10 @@
   
   <style>
     :root {
-      /* Nuevo color de fondo */
+      /* Color de fondo beige elegante */
       --bg-cream: #c9bb9e;     
       --bg-dark: #151515;      
       --text-main: #1A1A1A;    
-      /* Ajuste de grises y bordes para que contrasten mejor con el nuevo fondo */
       --text-light: #444444;   
       --border-color: rgba(0, 0, 0, 0.1); 
       --silver-accent: #D3D3D3; 
@@ -81,8 +80,7 @@
       width: 100%;
       height: 85vh;
       min-height: 550px;
-      /* Nueva foto */
-      background-image: url('1791056211701~3.jpg'); 
+      background-image: url('179105621170~3.jpg'); 
       background-size: cover; 
       /* Forzamos a que la imagen se vea desde arriba */
       background-position: top center; 
@@ -163,7 +161,7 @@
     .black-stats {
       background-color: var(--bg-dark);
       color: white;
-      margin: 0 0 40px 0; 
+      margin: 0; 
       padding: 0 10px 30px; 
       display: grid;
       grid-template-columns: 1fr 1fr 1fr; 
@@ -196,6 +194,14 @@
       line-height: 1.3;
     }
 
+    /* ====== TRANSICIÓN / DIFUMINADO HACIA SERVICIOS ====== */
+    .services-transition {
+      width: 100%;
+      height: 90px;
+      background: linear-gradient(to bottom, var(--bg-dark) 0%, transparent 100%);
+      margin-bottom: 10px;
+    }
+
     /* ====== TÍTULOS DE SECCIÓN ====== */
     .section-header {
       padding: 0 20px;
@@ -217,84 +223,109 @@
       font-size: clamp(1.8rem, 7vw, 2.5rem);
     }
 
-    /* ====== SERVICIOS (2 EN PANTALLA) ====== */
+    /* ====== SERVICIOS (ESTILO TARJETAS HORIZONTALES EDITORIALES) ====== */
     .services-wrapper {
       padding: 0 20px 40px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); 
-      gap: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px; 
     }
     
     .service-row {
+      position: relative;
       background-color: var(--bg-dark);
-      border-radius: 8px;
+      border-radius: 24px; /* Bordes bien redondeados */
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      min-height: 230px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     
     .service-img {
-      width: 100%;
-      height: 150px; 
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
       background-size: cover;
-      background-position: center;
-      background-color: #333;
+      background-position: center right; 
+      z-index: 1;
+    }
+
+    /* Degradado interno para que el texto sea legible */
+    .service-row::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to right, rgba(21,21,21,0.92) 0%, rgba(21,21,21,0.7) 45%, rgba(21,21,21,0.1) 100%);
+      z-index: 2;
     }
 
     .service-info {
-      padding: 15px; 
-      color: white;
+      position: relative;
+      z-index: 3;
+      padding: 30px 25px;
+      width: 100%;
       display: flex;
       flex-direction: column;
-      flex-grow: 1;
+      justify-content: center;
+      align-items: flex-start;
     }
 
-    .service-num {
-      font-size: 0.55rem;
-      font-weight: 600;
-      color: var(--silver-accent);
-      letter-spacing: 1px;
-      display: block;
-      margin-bottom: 8px;
-      text-transform: uppercase;
+    /* Flecha superior derecha */
+    .service-arrow {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 35px;
+      height: 35px;
+      background-color: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      z-index: 4;
+      font-size: 1.1rem;
+      text-decoration: none;
     }
 
     .service-name {
       font-family: 'Playfair Display', serif;
-      font-size: 1.15rem; 
-      font-weight: 500;
-      margin-bottom: 8px;
-      line-height: 1.1;
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: white;
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+
+    .service-name i {
+      font-style: italic;
     }
 
     .service-desc {
-      font-size: 0.65rem;
-      color: #D3D3D3;
+      font-size: 0.7rem;
+      color: #E2DDD5;
       line-height: 1.4;
-      margin-bottom: 10px;
-    }
-
-    .service-target {
-      font-size: 0.65rem;
-      font-weight: 500;
-      color: white;
-      font-style: italic;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      max-width: 65%; /* Deja espacio para ver la imagen a la derecha */
     }
 
     .service-link {
       font-size: 0.6rem;
-      font-weight: 600;
+      font-weight: 700;
       color: white;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 10px 22px;
+      border-radius: 30px; /* Forma de píldora */
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 1px;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      border-bottom: 1px solid rgba(255,255,255,0.3);
-      padding-bottom: 3px;
-      margin-top: auto; 
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: inline-block;
     }
 
     /* ====== PORTAFOLIO ====== */
@@ -346,7 +377,7 @@
     
     .portfolio-item {
       aspect-ratio: 1 / 1;
-      background-color: rgba(0,0,0,0.05); /* Marcador oscuro suave */
+      background-color: rgba(0,0,0,0.05); 
       background-size: cover;
       background-position: center; 
       border-radius: 4px;
@@ -487,8 +518,8 @@
     }
     
     .testimonial-box {
-      background-color: var(--bg-cream); /* Ahora las reseñas son del color de fondo de la pág */
-      border: 1px solid rgba(0,0,0,0.1); 
+      background-color: var(--bg-cream); 
+      border: 1px solid var(--border-color); 
       padding: 25px 20px;
       border-radius: 8px;
       display: flex;
@@ -775,7 +806,7 @@
       </div>
     </section>
 
-    <!-- FRANJA DE CONFIANZA -->
+        <!-- FRANJA DE CONFIANZA -->
     <section class="black-stats">
       <div class="stat-item">
         <i class="ph-light ph-device-mobile"></i>
@@ -794,42 +825,45 @@
       </div>
     </section>
 
-    <!-- SERVICIOS -->
+    <!-- TRANSICIÓN / DIFUMINADO HACIA SERVICIOS -->
+    <div class="services-transition"></div>
+
+    <!-- SERVICIOS ESTILO REVISTA -->
     <section class="services-wrapper" id="servicios">
       <div class="section-header">
         <h2 class="section-title">Servicios</h2>
       </div>
 
-            <div class="service-row">
+      <!-- Servicio 1 -->
+      <div class="service-row">
         <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop');"></div>
+        <a href="#portafolio" class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></a>
         <div class="service-info">
-          <span class="service-num">01 · WEB BRANDING</span>
-          <h3 class="service-name">Web Branding</h3>
-          <p class="service-desc">Un espacio digital para presentar tus servicios, experiencia, proyectos y formas de contacto.</p>
-          <p class="service-target">Ideal para entrenadores, asesores, nutricionistas y marcas personales.</p>
-          <a href="#portafolio" class="service-link">Ver Webfolio <i class="ph-bold ph-arrow-up-right"></i></a>
+          <h3 class="service-name"><i>Web</i><br>Branding</h3>
+          <p class="service-desc">Un espacio digital para presentar tus servicios, experiencia y formas de contacto. Ideal para marcas personales.</p>
+          <a href="#portafolio" class="service-link">Ver Webfolio</a>
         </div>
       </div>
 
+      <!-- Servicio 2 -->
       <div class="service-row">
         <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop');"></div>
+        <a href="#portafolio" class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></a>
         <div class="service-info">
-          <span class="service-num">02 · WEB EVENTOS</span>
-          <h3 class="service-name">Web Eventos</h3>
-          <p class="service-desc">Invitaciones interactivas con ubicación, cuenta regresiva, galería y confirmación de asistencia.</p>
-          <p class="service-target">Para quinceañeras, bodas, cumpleaños y aniversarios.</p>
-          <a href="#portafolio" class="service-link">Ver Webfolio <i class="ph-bold ph-arrow-up-right"></i></a>
+          <h3 class="service-name"><i>Web</i><br>Eventos</h3>
+          <p class="service-desc">Invitaciones interactivas con ubicación, galería y confirmación de asistencia. Para bodas y aniversarios.</p>
+          <a href="#portafolio" class="service-link">Ver Webfolio</a>
         </div>
       </div>
 
+      <!-- Servicio 3 -->
       <div class="service-row">
         <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop');"></div>
+        <a href="#portafolio" class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></a>
         <div class="service-info">
-          <span class="service-num">03 · FOTOGRAFÍA</span>
-          <h3 class="service-name">Fotografía</h3>
-          <p class="service-desc">Creación de contenido visual de alta calidad, enfocado en destacar el valor de tu marca o inmortalizar momentos especiales.</p>
-          <p class="service-target">Para lanzamientos, servicios, eventos o campañas puntuales.</p>
-          <a href="#portafolio" class="service-link">Ver Webfolio <i class="ph-bold ph-arrow-up-right"></i></a>
+          <h3 class="service-name"><i>Fotu</i><br>grafía</h3>
+          <p class="service-desc">Creación de contenido visual de alta calidad para destacar el valor de tu marca o eventos puntuales.</p>
+          <a href="#portafolio" class="service-link">Ver Webfolio</a>
         </div>
       </div>
     </section>
@@ -1043,11 +1077,5 @@
       element.classList.toggle('active');
     }
   </script>
-  <style>
-    /* Ocultar barra de scroll para el carrusel de reseñas */
-    .testimonials-carousel::-webkit-scrollbar {
-      display: none; 
-    }
-  </style>
 </body>
-</html>
+  </html>
