@@ -386,7 +386,6 @@
       padding: 20px 20px 50px;
     }
     
-    /* Contenedor Flex para la foto circular y el texto/íconos */
     .about-header {
       display: flex;
       align-items: center;
@@ -395,12 +394,12 @@
     }
     
     .about-img {
-      width: 130px; /* Tamaño mediano */
+      width: 130px; 
       height: 130px;
       background-image: url('1791049708095~2.jpg'); 
       background-size: cover;
       background-position: center;
-      border-radius: 50%; /* Círculo perfecto */
+      border-radius: 50%; 
       flex-shrink: 0;
     }
     
@@ -443,20 +442,32 @@
       margin-bottom: 15px;
     }
 
-    /* ====== RESEÑAS ====== */
+    /* ====== RESEÑAS (CARRUSEL) ====== */
     .testimonials-section {
       background-color: var(--bg-dark); 
-      padding: 40px 20px 50px;
+      padding: 40px 0 50px;
     }
     
+    .testimonials-section .section-header {
+      padding: 0 20px;
+    }
+
     .testimonials-section .section-title {
       color: white; 
     }
 
-    .testimonials-grid {
+    .testimonials-carousel {
       display: flex;
-      flex-direction: column;
       gap: 15px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 0 20px 20px 20px;
+      scrollbar-width: none; 
+      -ms-overflow-style: none;  
+    }
+    
+    .testimonials-carousel::-webkit-scrollbar {
+      display: none; 
     }
     
     .testimonial-box {
@@ -466,7 +477,11 @@
       border-radius: 8px;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      min-width: 85%; 
+      scroll-snap-align: center; 
     }
+
     .quote-text {
       font-family: 'Inter', sans-serif;
       font-size: 0.85rem;
@@ -693,7 +708,6 @@
       font-weight: 500;
     }
 
-    /* MEDIA QUERIES PARA PC */
     @media (min-width: 768px) {
       .page-wrapper {
         max-width: 750px;
@@ -708,7 +722,6 @@
 </head>
 <body>
 
-  <!-- MENÚ EMERGENTE -->
   <div class="overlay-menu" id="overlayMenu">
     <div class="close-btn" onclick="toggleMenu()">
       <i class="ph-bold ph-x"></i>
@@ -724,30 +737,25 @@
 
   <div class="page-wrapper" id="inicio">
     
-    <!-- ENCABEZADO FIJO -->
     <header class="top-bar">
       <a href="#" class="brand-name">Gisella Villarreal</a>
       <i class="ph-bold ph-list menu-icon" onclick="toggleMenu()"></i>
     </header>
 
-    <!-- HERO -->
     <section class="hero">
       <h1>Impulsa tu presencia <br><i>digital.</i></h1>
-      <p>Creo tu espacio digital para que cuentes tu historia, presentes tu trabajo y hacer que tus ideas cobren vida.</p>
-      
+      <p>Creo espacios digitales que cuentan historias, presentan tu trabajo y hacen que tus ideas cobren vida.</p>
       <div class="button-group">
         <a href="#servicios" class="btn-dark">Ver Servicios <i class="ph-bold ph-arrow-down"></i></a>
         <a href="#portafolio" class="btn-outline">Ver Portafolio <i class="ph-fill ph-play-circle"></i></a>
       </div>
     </section>
 
-    <!-- IMAGEN HERO FULL WIDTH CON DIFUMINADO NEGRO -->
     <div class="hero-image-wrapper">
       <div class="hero-image"></div>
       <div class="hero-fade"></div>
     </div>
 
-    <!-- FRANJA DE CONFIANZA -->
     <section class="black-stats">
       <div class="stat-item">
         <i class="ph-light ph-device-mobile"></i>
@@ -766,13 +774,11 @@
       </div>
     </section>
 
-    <!-- SERVICIOS -->
     <section class="services-wrapper" id="servicios">
       <div class="section-header">
         <h2 class="section-title">Servicios</h2>
       </div>
 
-      <!-- Servicio 1 -->
       <div class="service-row">
         <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop');"></div>
         <div class="service-info">
@@ -784,7 +790,6 @@
         </div>
       </div>
 
-      <!-- Servicio 2 -->
       <div class="service-row">
         <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop');"></div>
         <div class="service-info">
@@ -796,7 +801,7 @@
         </div>
       </div>
 
-     <!-- Servicio 3 (FOTOGRAFÍA) -->
+      
       <div class="service-row">
         <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop');"></div>
         <div class="service-info">
@@ -809,17 +814,14 @@
       </div>
     </section>
 
-    <!-- PORTAFOLIO -->
     <section class="portfolio-section" id="portafolio">
       <div class="section-header">
         <h2 class="section-title">Portafolio</h2>
       </div>
-      
       <div class="portfolio-filters">
         <button class="filter-btn active">Fotografía de productos</button>
         <button class="filter-btn">Fotografía Social</button>
       </div>
-
       <div class="portfolio-grid">
         <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=400&auto=format&fit=crop');"></div>
         <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400&auto=format&fit=crop');"></div>
@@ -828,12 +830,10 @@
       </div>
     </section>
 
-    <!-- ASÍ TRABAJO CONTIGO -->
     <section class="process-section">
       <div class="section-header">
         <h2 class="section-title single-line-title">Así trabajo contigo</h2>
       </div>
-
       <div class="process-grid">
         <div class="process-box">
           <div class="process-header-box">
@@ -864,13 +864,12 @@
             <span class="process-num">04.</span>
             <i class="ph-light ph-check-circle"></i>
           </div>
-          <h4 class="process-title">Revisamos y entregamos</h4>
-          <p class="process-desc">Comprobamos enlaces, botones y formularios acordados y te explico cómo acceder.</p>
+          <h4 class="process-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Revisamos y entregamos</h4>
+          <p class="process-desc" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Comprobamos enlaces, botones y formularios acordados y te explico cómo acceder.</p>
         </div>
       </div>
     </section>
 
-    <!-- SOBRE MÍ -->
     <section class="about-section" id="sobre-mi">
       <div class="about-header">
         <div class="about-img"></div>
@@ -884,22 +883,20 @@
           </div>
         </div>
       </div>
-
       <div class="about-text">
         <p>Me apasiona transformar ideas en experiencias digitales que conectan, comunican y destacan.</p>
-        <p>Combino mi experiencia en marketing y fotografía con mi lado creativo para desarrollar páginas web, invitaciones web y contenido visual que le dan vida a las ideas de profesionales, marcas y emprendedores.</p>
+        <p>Combino mi experiencia en marketing y e-commerce con mi lado creativo para desarrollar páginas web, catálogos digitales, invitaciones y contenido visual que le dan vida a las ideas de profesionales, marcas y emprendedores.</p>
         <p>Creo que cada proyecto tiene algo especial que contar. Mi trabajo es ayudarte a comunicarlo de forma auténtica, atractiva y con intención.</p>
         <p>¿Creamos algo increíble?</p>
       </div>
     </section>
 
-    <!-- RESEÑAS -->
+    <!-- RESEÑAS EN CARRUSEL -->
     <section class="testimonials-section">
       <div class="section-header">
         <h2 class="section-title">Reseñas</h2>
       </div>
-      
-      <div class="testimonials-grid">
+      <div class="testimonials-carousel">
         <div class="testimonial-box">
           <p class="quote-text">"Gisella capturó exactamente la esencia de mi marca personal. La página quedó profesional y súper fácil de navegar en el celular."</p>
           <span class="quote-author">— LAURA GÓMEZ (ASESORA DE IMAGEN)</span>
@@ -915,12 +912,10 @@
       </div>
     </section>
 
-    <!-- PREGUNTAS FRECUENTES -->
     <section class="faq-section" id="faq">
       <div class="section-header">
         <h2 class="section-title single-line-title">Preguntas Frecuentes</h2>
       </div>
-
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">¿Cuánto tiempo tarda el desarrollo de una web? <i class="ph-bold ph-caret-down"></i></div>
         <div class="faq-answer"><br>Depende del tipo de proyecto. Las invitaciones digitales y proyectos sencillos suelen tomar de 3 a 5 días. Las páginas web profesionales entre 1 y 2 semanas, siempre y cuando tengamos todo el contenido e imágenes listas.</div>
@@ -951,19 +946,16 @@
       </div>
     </section>
 
-    <!-- CTA -->
     <div class="cta-container">
       <div class="cta-box">
         <h2 class="cta-title">¿tienes una idea en mente?</h2>
         <p class="cta-desc">Cuéntame qué quieres crear y encontremos una forma<br>de darle vida con un diseño pensado para ti.</p>
-        
         <a href="https://wa.me/573001234567" target="_blank" class="btn-white">
           <i class="ph-fill ph-whatsapp-logo"></i> Hablemos de tu proyecto
         </a>
       </div>
     </div>
 
-    <!-- FOOTER ALINEADO A LA IZQUIERDA -->
     <footer>
       <div class="footer-name">Gisella Villarreal</div>
       <p class="footer-desc">Diseño web y experiencias digitales para profesionales, marcas y momentos especiales.</p>
@@ -997,7 +989,6 @@
         <a href="#">Términos del servicio</a>
       </div>
     </footer>
-
   </div>
 
   <script>
@@ -1016,6 +1007,5 @@
       element.classList.toggle('active');
     }
   </script>
-
 </body>
-          </html>
+</html>
