@@ -34,9 +34,9 @@
       margin: 0 auto;
     }
 
-    /* ====== ENCABEZADO FIJO ====== */
+    /* ====== ENCABEZADO FIJO TRANSPARENTE ====== */
     .top-bar {
-      position: fixed; /* Fixed para que flote sobre la imagen desde el inicio */
+      position: fixed; 
       top: 0; left: 0; right: 0;
       background-color: transparent;
       backdrop-filter: none;
@@ -50,7 +50,6 @@
       transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-bottom 0.4s ease;
     }
     
-    /* Clase que se activa con JS al hacer scroll */
     .top-bar.scrolled {
       background-color: rgba(244, 241, 237, 0.95);
       backdrop-filter: blur(8px);
@@ -73,35 +72,28 @@
       cursor: pointer;
     }
     
-    /* ====== HERO (TEXTO SOBRE IMAGEN Y DIFUMINADO) ====== */
+    /* ====== HERO (TEXTO SOBRE IMAGEN Y DIFUMINADO MITAD) ====== */
     .hero { 
       position: relative;
       width: 100%;
       height: 85vh;
       min-height: 550px;
-      background-image: url('1791056211701~3.jpg'); 
+      background-image: url('1791056211701~2.jpg'); 
       background-size: cover; 
       background-position: center top; 
       display: flex;
       flex-direction: column;
-      /* Ajuste para que el texto suba al nivel del pecho */
-      justify-content: flex-start; 
-      padding: 140px 20px 30px; /* Aumentamos el padding-top */
+      justify-content: flex-end; /* Lo anclamos hacia la parte baja */
+      padding: 20px 20px 90px 20px; /* Un poco más abajo que antes, cayendo en lo negro */
       text-align: left;
     }
-    
-    .hero-overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to right, rgba(244, 241, 237, 0.92) 0%, rgba(244, 241, 237, 0.3) 100%);
-      z-index: 1;
-    }
 
+    /* Difuminado negro solo hasta la mitad de la foto */
     .hero-fade {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 120px;
-      background: linear-gradient(to bottom, transparent, var(--bg-dark));
+      height: 55%; /* Ocupa solo la mitad inferior, la parte superior queda intacta */
+      background: linear-gradient(to top, var(--bg-dark) 0%, rgba(21, 21, 21, 0.8) 35%, transparent 100%);
       z-index: 1;
     }
 
@@ -117,17 +109,17 @@
       line-height: 1.05;
       letter-spacing: -1px;
       margin-bottom: 15px;
-      color: var(--bg-dark);
+      color: white; /* Letras blancas para destacar sobre el difuminado */
     }
     .hero h1 i {
       font-weight: 400;
       font-style: italic;
-      color: var(--text-light);
+      color: var(--silver-accent);
     }
     
     .hero p {
       font-size: 0.9rem;
-      color: var(--text-light);
+      color: #E2DDD5;
       line-height: 1.5;
       margin: 0 0 25px 0;
       max-width: 90%;
@@ -138,21 +130,21 @@
       justify-content: flex-start;
       gap: 15px;
     }
-    .btn-dark {
-      background-color: var(--bg-dark);
-      color: white;
+    .hero .btn-dark {
+      background-color: white;
+      color: var(--bg-dark);
       padding: 12px 24px;
       border-radius: 8px;
       text-decoration: none;
       font-size: 0.8rem;
-      font-weight: 500;
+      font-weight: 600;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    .btn-outline {
+    .hero .btn-outline {
       background-color: transparent;
-      color: var(--bg-dark);
+      color: white;
       padding: 12px 0;
       text-decoration: none;
       font-size: 0.8rem;
@@ -224,7 +216,7 @@
     .services-wrapper {
       padding: 0 20px 40px;
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 Columnas */
+      grid-template-columns: repeat(2, 1fr); 
       gap: 12px;
     }
     
@@ -238,14 +230,14 @@
     
     .service-img {
       width: 100%;
-      height: 150px; /* Altura ajustada para 2 columnas */
+      height: 150px; 
       background-size: cover;
       background-position: center;
       background-color: #333;
     }
 
     .service-info {
-      padding: 15px; /* Reducido para que quepa bien en celular */
+      padding: 15px; 
       color: white;
       display: flex;
       flex-direction: column;
@@ -264,7 +256,7 @@
 
     .service-name {
       font-family: 'Playfair Display', serif;
-      font-size: 1.15rem; /* Letra ajustada */
+      font-size: 1.15rem; 
       font-weight: 500;
       margin-bottom: 8px;
       line-height: 1.1;
@@ -297,7 +289,7 @@
       gap: 5px;
       border-bottom: 1px solid rgba(255,255,255,0.3);
       padding-bottom: 3px;
-      margin-top: auto; /* Empuja el botón al fondo si la tarjeta es alta */
+      margin-top: auto; 
     }
 
     /* ====== PORTAFOLIO ====== */
@@ -415,7 +407,7 @@
     .about-img {
       width: 130px; 
       height: 130px;
-      background-image: url('1791049708095~2.jpg'); 
+      background-image: url('1791049708095~3.jpg'); 
       background-size: cover;
       background-position: center;
       border-radius: 50%; 
@@ -461,7 +453,7 @@
       margin-bottom: 15px;
     }
 
-    /* ====== RESEÑAS (CARRUSEL CREMA) ====== */
+    /* ====== RESEÑAS (CARRUSEL) ====== */
     .testimonials-section {
       background-color: var(--bg-dark); 
       padding: 40px 0 50px;
@@ -490,7 +482,7 @@
     }
     
     .testimonial-box {
-      background-color: var(--bg-cream); /* Modificado a color de fondo de la pág */
+      background-color: var(--bg-cream); /* Modificado al color de la pág */
       border: 1px solid var(--border-color); 
       padding: 25px 20px;
       border-radius: 8px;
@@ -765,7 +757,6 @@
 
     <!-- HERO -->
     <section class="hero">
-      <div class="hero-overlay"></div>
       <div class="hero-fade"></div>
       
       <div class="hero-content">
@@ -798,13 +789,13 @@
       </div>
     </section>
 
-    <!-- SERVICIOS -->
+        <!-- SERVICIOS -->
     <section class="services-wrapper" id="servicios">
       <div class="section-header">
         <h2 class="section-title">Servicios</h2>
       </div>
 
-            <div class="service-row">
+      <div class="service-row">
         <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop');"></div>
         <div class="service-info">
           <span class="service-num">01 · WEB BRANDING</span>
@@ -1047,5 +1038,11 @@
       element.classList.toggle('active');
     }
   </script>
+  <style>
+    /* Ocultar barra de scroll para el carrusel de reseñas */
+    .testimonials-carousel::-webkit-scrollbar {
+      display: none; 
+    }
+  </style>
 </body>
-            </html>
+  </html>
