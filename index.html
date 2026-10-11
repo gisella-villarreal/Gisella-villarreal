@@ -268,6 +268,7 @@
       gap: 20px; 
     }
     
+    /* El contenedor ahora es un tag <a> completo */
     .service-row {
       position: relative;
       background-color: var(--bg-dark);
@@ -278,6 +279,7 @@
       justify-content: center;
       min-height: 230px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.6); 
+      text-decoration: none; /* Elimina el subrayado de enlace general */
     }
     
     .service-img {
@@ -307,6 +309,7 @@
       align-items: flex-start;
     }
 
+    /* Convertido a span porque el contenedor principal ya es <a> */
     .service-arrow {
       position: absolute;
       top: 20px;
@@ -323,7 +326,6 @@
       color: white;
       z-index: 4;
       font-size: 1.1rem;
-      text-decoration: none;
     }
 
     .service-name {
@@ -346,6 +348,7 @@
       max-width: 65%; 
     }
 
+    /* Convertido a span y ajustado para que se ilumine al hacer hover en toda la tarjeta */
     .service-link {
       font-size: 0.6rem;
       font-weight: 700;
@@ -353,7 +356,6 @@
       background-color: rgba(0, 0, 0, 0.4);
       padding: 10px 22px;
       border-radius: 30px; 
-      text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 1px;
       backdrop-filter: blur(4px);
@@ -362,7 +364,7 @@
       display: inline-block;
       transition: color 0.3s ease;
     }
-    .service-link:hover {
+    .service-row:hover .service-link {
       color: white;
     }
 
@@ -675,7 +677,7 @@
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-color: var(--bg-cream); /* Fondo Beige */
+      background-color: var(--bg-cream); 
       z-index: 9999;
       display: flex;
       flex-direction: column;
@@ -693,7 +695,7 @@
       position: absolute;
       top: 20px; right: 20px;
       font-size: 2rem;
-      color: var(--bg-dark); /* Icono X negro */
+      color: var(--bg-dark); 
       cursor: pointer;
     }
     .overlay-content {
@@ -704,7 +706,7 @@
     }
     .overlay-content a {
       text-decoration: none;
-      color: var(--bg-dark); /* Texto enlaces negros */
+      color: var(--bg-dark); 
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       font-style: italic;
@@ -744,16 +746,15 @@
         gap: 20px;
       }
       
-      /* Ajustes para portafolio en PC */
       .selected-work-section { padding: 80px 5%; }
       .work-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+        grid-template-columns: repeat(3, 1fr); 
         gap: 25px;
         overflow-x: visible;
         padding: 0;
       }
       .work-card { min-width: auto; }
-      .carousel-controls { display: none; } /* Se ocultan las flechitas en PC */
+      .carousel-controls { display: none; } 
       
       .about-section { 
         padding: 60px 5%; 
@@ -798,9 +799,8 @@
     <div class="overlay-content">
       <a href="#inicio" onclick="toggleMenu()">Inicio</a>
       <a href="#servicios" onclick="toggleMenu()">Servicios</a>
-      <a href="#portafolio" onclick="toggleMenu()">Trabajos Destacados</a>
+      <a href="#portafolio" onclick="toggleMenu()">Trabajos</a>
       <a href="#sobre-mi" onclick="toggleMenu()">Sobre mí</a>
-      <!-- Enlace para Contacto directo (reemplazó FAQ) -->
       <a href="https://wa.me/573001234567" target="_blank">Contacto</a>
     </div>
   </div>
@@ -864,38 +864,38 @@
       </div>
 
       <div class="services-wrapper">
-        <!-- Servicio 1 -->
-        <div class="service-row">
+        <!-- Servicio 1: WEB BRANDING (Todo el bloque es un enlace) -->
+        <a href="web-branding.html" class="service-row">
           <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop');"></div>
-          <a href="web-branding.html" class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></a>
+          <span class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></span>
           <div class="service-info">
             <h3 class="service-name"><i>Web</i><br>Branding</h3>
             <p class="service-desc">Un espacio digital para presentar tus servicios, experiencia y formas de contacto. Ideal para marcas personales.</p>
-            <a href="web-branding.html" class="service-link">Conocer más</a>
+            <span class="service-link">Conocer más</span>
           </div>
-        </div>
+        </a>
 
-        <!-- Servicio 2 -->
-        <div class="service-row">
+        <!-- Servicio 2: WEB EVENTOS -->
+        <a href="#portafolio" class="service-row">
           <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop');"></div>
-          <a href="#portafolio" class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></a>
+          <span class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></span>
           <div class="service-info">
             <h3 class="service-name"><i>Web</i><br>Eventos</h3>
             <p class="service-desc">Invitaciones interactivas con ubicación, galería y confirmación de asistencia. Para bodas y aniversarios.</p>
-            <a href="#portafolio" class="service-link">Conocer más</a>
+            <span class="service-link">Conocer más</span>
           </div>
-        </div>
+        </a>
 
-        <!-- Servicio 3 -->
-        <div class="service-row">
+        <!-- Servicio 3: FOTOGRAFÍA -->
+        <a href="#portafolio" class="service-row">
           <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop');"></div>
-          <a href="#portafolio" class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></a>
+          <span class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></span>
           <div class="service-info">
-            <h3 class="service-name"><i>Fotu</i><br>grafía</h3>
+            <h3 class="service-name"><i>Social</i><br>Fotografía</h3>
             <p class="service-desc">Creación de contenido visual de alta calidad para destacar el valor de tu marca o eventos puntuales.</p>
-            <a href="#portafolio" class="service-link">Conocer más</a>
+            <span class="service-link">Conocer más</span>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
@@ -916,7 +916,7 @@
         </div>
       </div>
 
-      <!-- Contenedor deslizable -->
+      <!-- Contenedor deslizable con 6 cajas -->
       <div class="work-grid" id="workCarousel">
         
         <!-- Tarjeta 01 -->
@@ -1041,7 +1041,7 @@
         <a href="#servicios">Servicios</a>
         <a href="#portafolio">Portafolio</a>
         <a href="#sobre-mi">Sobre mí</a>
-        <!-- Placeholder para enlace de Preguntas (Si creas una pág de preguntas, cambia el href) -->
+        <!-- Placeholder para enlace de Preguntas -->
         <a href="#">Preguntas</a>
         <a href="https://wa.me/573001234567" target="_blank">Contacto</a>
       </div>
@@ -1093,4 +1093,4 @@
     }
   </script>
 </body>
-            </html>
+</html>
