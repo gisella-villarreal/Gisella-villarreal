@@ -256,7 +256,6 @@
       margin-bottom: 35px;
     }
 
-    /* Forzamos a que esté en una sola línea */
     .pricing-title {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
@@ -395,7 +394,7 @@
       font-size: 0.9rem;
     }
 
-    /* ====== PREGUNTAS FRECUENTES (CAJITAS BLANCAS) ====== */
+    /* ====== PREGUNTAS FRECUENTES (SIN RELLENO, LETRAS BLANCAS) ====== */
     .faq-section {
       padding: 0 20px 60px;
       display: flex;
@@ -420,9 +419,9 @@
     }
     
     .faq-item {
-      background-color: white; 
+      background-color: transparent; /* Caja sin relleno */
       border-radius: 12px; 
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
+      border: 1px solid var(--border-color); /* Borde elegante */
       overflow: hidden;
     }
     
@@ -434,12 +433,12 @@
       cursor: pointer;
       font-size: 0.9rem;
       font-weight: 700;
-      color: var(--bg-dark); 
+      color: white; /* Pregunta en blanco */
     }
     
     .faq-question i {
       transition: transform 0.3s ease;
-      color: var(--bg-dark); 
+      color: white; /* Flecha en blanco */
     }
     
     .faq-item.active .faq-question i {
@@ -451,7 +450,7 @@
       overflow: hidden;
       transition: max-height 0.3s ease;
       font-size: 0.85rem;
-      color: #444; 
+      color: var(--text-light); /* Respuesta en gris claro para leerse bien en fondo negro */
       line-height: 1.6;
       padding: 0 25px; 
     }
@@ -540,7 +539,7 @@
       margin-right: 10px;
     }
 
-    /* ====== OVERLAY MENÚ EMERGENTE (FONDO BEIGE, LETRAS NEGRAS) ====== */
+    /* ====== OVERLAY MENÚ EMERGENTE ====== */
     .overlay-menu {
       position: fixed;
       top: 0; left: 0;
@@ -587,6 +586,13 @@
 
     /* ====== MEDIA QUERIES PARA PC Y TABLETS ====== */
     @media (min-width: 768px) {
+      .page-wrapper {
+        max-width: 100%;
+        background-color: var(--bg-dark);
+        box-shadow: none;
+        border: none;
+      }
+      
       .top-bar { padding: 15px 5%; }
       .page-hero { padding: 180px 5% 100px; }
       .page-hero h1 { font-size: 4.5rem; }
@@ -660,7 +666,7 @@
 </head>
 <body>
 
-  <!-- MENÚ EMERGENTE (ACTUALIZADO IGUAL QUE INICIO) -->
+  <!-- MENÚ EMERGENTE -->
   <div class="overlay-menu" id="overlayMenu">
     <div class="close-btn" onclick="toggleMenu()">
       <i class="ph-bold ph-x"></i>
@@ -795,7 +801,7 @@
       </div>
     </section>
 
-    <!-- PREGUNTAS FRECUENTES (FAQ) -->
+    <!-- PREGUNTAS FRECUENTES (FAQ SIN RELLENO, TEXTO BLANCO) -->
     <section class="faq-section" id="faq">
       <div class="section-header">
         <h2 class="section-title">Preguntas Frecuentes</h2>
@@ -838,13 +844,13 @@
       
       <div class="footer-nav-title">EXPLORA</div>
       
-      <!-- CUADRÍCULA DE ENLACES 2 COLUMNAS (IGUAL A INICIO) -->
+      <!-- CUADRÍCULA DE ENLACES 2 COLUMNAS -->
       <div class="footer-links-grid">
         <a href="index.html#inicio">Inicio</a>
         <a href="index.html#servicios">Servicios</a>
         <a href="index.html#portafolio">Portafolio</a>
         <a href="index.html#sobre-mi">Sobre mí</a>
-        <a href="#">Preguntas</a>
+        <a href="#faq">Preguntas</a>
         <a href="https://wa.me/573001234567" target="_blank">Contacto</a>
       </div>
 
@@ -901,4 +907,4 @@
     }
   </script>
 </body>
-</html> 
+                                                                              </html>
