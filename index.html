@@ -11,6 +11,7 @@
   <style>
     :root {
       --bg-dark: #151515;      
+      --bg-cream: #c9bb9e;     
       --text-main: #FFFFFF;    
       --text-light: #b0b0b0;   
       --border-color: rgba(255, 255, 255, 0.1); 
@@ -23,9 +24,10 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--bg-dark);
+      background-color: var(--bg-dark); /* Fondo negro para toda la página */
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
     
     .page-wrapper {
@@ -50,11 +52,12 @@
       transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-bottom 0.4s ease;
     }
     
+    /* Fondo del encabezado al hacer scroll (Beige difuminado) */
     .top-bar.scrolled {
       background-color: rgba(201, 187, 158, 0.95);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
 
     .brand-name {
@@ -78,7 +81,7 @@
       width: 100%;
       height: 85vh;
       min-height: 550px;
-      background-image: url('1791056211701~3.jpg'); 
+      background-image: url('179105621170~3.jpg'); 
       background-size: cover; 
       background-position: top center; 
       display: flex;
@@ -124,33 +127,50 @@
       max-width: 90%;
     }
     
+    /* BOTONES ESTILO PÍLDORA (NUEVO DISEÑO) */
     .button-group {
       display: flex;
+      flex-wrap: wrap;
       justify-content: flex-start;
-      gap: 15px;
+      gap: 12px;
     }
-    .hero .btn-dark {
-      background-color: white;
+
+    .pill-btn {
+      background-color: var(--bg-cream);
       color: var(--bg-dark);
-      padding: 12px 24px;
-      border-radius: 8px;
+      padding: 6px 6px 6px 18px; 
+      border-radius: 40px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
       text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
-      display: flex;
+      display: inline-flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 8px;
+      transition: background-color 0.3s ease;
+      gap: 12px;
     }
-    .hero .btn-outline {
-      background-color: transparent;
-      color: white;
-      padding: 12px 0;
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
+
+    .pill-btn:hover {
+      background-color: white;
+    }
+
+    .btn-icon {
+      background-color: var(--bg-dark);
+      color: var(--bg-cream);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .btn-icon i {
+      font-size: 1rem;
     }
 
     /* ====== FRANJA DE CONFIANZA ====== */
@@ -201,7 +221,7 @@
       font-style: italic;
       font-size: 2.5rem;
       font-weight: 500;
-      color: white; 
+      color: var(--bg-cream); /* Títulos en color Beige */
       line-height: 1;
       margin-bottom: 5px;
       letter-spacing: -0.5px;
@@ -322,7 +342,7 @@
 
     /* ====== PORTAFOLIO ====== */
     .portfolio-section {
-      padding: 20px 0 40px; 
+      padding: 20px 0 60px; 
     }
     
     .portfolio-filters {
@@ -348,7 +368,7 @@
     }
     
     .filter-btn.active {
-      color: white; 
+      color: var(--bg-cream); /* Activo en beige */
       font-weight: 700;
     }
     
@@ -357,7 +377,7 @@
       position: absolute;
       bottom: 0; left: 0;
       width: 100%; height: 2px;
-      background-color: white; 
+      background-color: var(--bg-cream); 
     }
     
     .portfolio-grid {
@@ -375,9 +395,13 @@
       border-radius: 4px;
     }
 
-    /* ====== SOBRE MÍ ====== */
+    /* ====== SOBRE MÍ (CAJA BEIGE CON BORDES REDONDEADOS) ====== */
     .about-section {
-      padding: 20px 20px 50px;
+      background-color: var(--bg-cream);
+      border-radius: 30px; /* Bordes bien redondeados */
+      padding: 40px 25px 45px;
+      margin: 0 20px 60px; /* Separado de los lados para que se note la forma */
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
     
     .about-header {
@@ -388,8 +412,8 @@
     }
     
     .about-img {
-      width: 130px; 
-      height: 130px;
+      width: 110px; 
+      height: 110px;
       background-image: url('1791049708095~2.jpg'); 
       background-size: cover;
       background-position: center;
@@ -407,9 +431,9 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.8rem;
       font-style: italic;
-      font-weight: 500;
+      font-weight: 600;
       margin-bottom: 12px;
-      color: white; 
+      color: var(--bg-dark); /* Título oscuro para contrastar con beige */
       text-align: left; 
     }
     
@@ -420,34 +444,34 @@
       gap: 15px;
     }
     .about-socials a {
-      color: white; 
+      color: var(--bg-dark); /* Iconos oscuros */
       font-size: 1.5rem;
       text-decoration: none;
-      transition: color 0.2s;
+      transition: opacity 0.2s;
     }
     .about-socials a:hover {
-      color: var(--silver-accent);
+      opacity: 0.7;
     }
 
     .about-text p {
       font-size: 0.85rem;
-      color: var(--text-light); 
+      color: #333333; /* Texto oscuro para buena lectura */
       line-height: 1.6;
       margin-bottom: 15px;
     }
 
     /* ====== PREGUNTAS FRECUENTES (CAJITAS BLANCAS) ====== */
     .faq-section {
-      padding: 40px 20px 50px;
+      padding: 0 20px 60px;
       display: flex;
       flex-direction: column;
-      gap: 15px; /* Espaciado entre cajitas */
+      gap: 15px; 
     }
     
     .faq-item {
-      background-color: white; /* Cajita blanca */
-      border-radius: 12px; /* Bordes suaves */
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* Sombra elegante */
+      background-color: white; 
+      border-radius: 12px; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
       overflow: hidden;
     }
     
@@ -459,12 +483,12 @@
       cursor: pointer;
       font-size: 0.9rem;
       font-weight: 700;
-      color: var(--bg-dark); /* Letra negra */
+      color: var(--bg-dark); 
     }
     
     .faq-question i {
       transition: transform 0.3s ease;
-      color: var(--bg-dark); /* Icono negro */
+      color: var(--bg-dark); 
     }
     
     .faq-item.active .faq-question i {
@@ -476,9 +500,9 @@
       overflow: hidden;
       transition: max-height 0.3s ease;
       font-size: 0.85rem;
-      color: #444; /* Gris oscuro para el texto de respuesta */
+      color: #444; 
       line-height: 1.6;
-      padding: 0 25px; /* Relleno lateral */
+      padding: 0 25px; 
     }
     
     .faq-item.active .faq-answer {
@@ -504,7 +528,7 @@
       font-style: italic;
       font-size: 2.2rem;
       font-weight: 500;
-      color: white;
+      color: var(--bg-cream); /* Título en Beige */
       margin-bottom: 15px;
       line-height: 1.1;
     }
@@ -512,20 +536,8 @@
       font-size: 0.85rem;
       color: var(--text-light);
       line-height: 1.6;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
       max-width: 400px;
-    }
-    .btn-white {
-      background-color: white;
-      color: var(--bg-dark);
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
     /* ====== FOOTER ====== */
@@ -568,9 +580,10 @@
       color: var(--text-light);
       text-decoration: none;
       font-size: 0.8rem;
+      transition: color 0.2s;
     }
     .footer-vertical-links a:hover {
-      color: white;
+      color: var(--bg-cream);
     }
 
     .footer-horizontal-links {
@@ -584,9 +597,10 @@
       color: var(--text-light);
       text-decoration: none;
       font-size: 0.8rem;
+      transition: color 0.2s;
     }
     .footer-horizontal-links a:hover {
-      color: white;
+      color: var(--bg-cream);
     }
 
     .footer-social {
@@ -599,6 +613,10 @@
       color: white; 
       font-size: 1.5rem;
       text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover {
+      color: var(--bg-cream);
     }
     
     .footer-divider {
@@ -658,10 +676,12 @@
       font-style: italic;
       font-weight: 500;
     }
+    .overlay-content a:hover {
+      color: var(--bg-cream);
+    }
 
-    /* ====== MEDIA QUERIES PARA PANTALLA COMPLETA EN PC ====== */
+    /* ====== MEDIA QUERIES PARA PC Y TABLETS ====== */
     @media (min-width: 768px) {
-      /* Quitar la restricción de ancho para que sea pantalla completa */
       .page-wrapper {
         max-width: 100%;
         background-color: var(--bg-dark);
@@ -669,32 +689,38 @@
         border: none;
       }
       
-      /* Ajustes de espaciado general para escritorio */
       .top-bar { padding: 15px 5%; }
       .hero { padding: 40px 5% 120px 5%; }
       .hero h1 { font-size: 5rem; }
       .hero p { font-size: 1.1rem; max-width: 600px; }
       
-      .black-stats { padding: 0 5% 50px; }
+      /* Ajuste de botones en PC */
+      .pill-btn { padding: 10px 10px 10px 25px; font-size: 0.8rem; gap: 20px; }
+      .btn-icon { width: 40px; height: 40px; }
+      .btn-icon i { font-size: 1.3rem; }
       
+      .black-stats { padding: 0 5% 50px; }
       .section-header { margin-bottom: 50px; }
       
       .services-wrapper { 
         padding: 0 5% 60px; 
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 servicios en fila */
+        grid-template-columns: repeat(3, 1fr); 
         gap: 20px;
       }
       
       .portfolio-section { padding: 40px 5% 60px; }
       .portfolio-grid { 
         padding: 0 5%; 
-        grid-template-columns: repeat(4, 1fr); /* 4 fotos en fila */
+        grid-template-columns: repeat(4, 1fr); 
         gap: 15px;
       }
       
+      /* Ajuste de caja "Sobre mí" en PC */
       .about-section { 
-        padding: 40px 5% 80px; 
+        padding: 60px 5%; 
+        margin: 0 5% 80px; /* Separado de los bordes con esquinas redondeadas */
+        border-radius: 40px;
         display: flex;
         align-items: center;
         gap: 60px;
@@ -705,19 +731,12 @@
         margin-bottom: 0;
         min-width: 250px;
       }
-      .about-img {
-        width: 250px;
-        height: 250px;
-      }
-      .about-text {
-        flex: 1;
-      }
-      .about-header-text .greeting {
-        font-size: 2.5rem;
-      }
+      .about-img { width: 250px; height: 250px; }
+      .about-text { flex: 1; }
+      .about-header-text .greeting { font-size: 2.5rem; }
 
       .faq-section { 
-        padding: 60px 15% 80px; /* Centrado más angosto en PC para mejor lectura */
+        padding: 60px 15% 80px; 
       } 
 
       .cta-box { padding: 80px 5%; }
@@ -730,20 +749,10 @@
         gap: 40px;
       }
       .footer-desc { max-width: 100%; margin-bottom: 0; }
-      .footer-horizontal-links, .footer-vertical-links, .footer-social {
-        margin-bottom: 0;
-      }
-      .footer-divider {
-        grid-column: 1 / -1;
-        margin-top: 30px;
-      }
-      .footer-bottom-text {
-        grid-column: 1 / 3;
-      }
-      .footer-legal {
-        grid-column: 3 / 5;
-        text-align: right;
-      }
+      .footer-horizontal-links, .footer-vertical-links, .footer-social { margin-bottom: 0; }
+      .footer-divider { grid-column: 1 / -1; margin-top: 30px; }
+      .footer-bottom-text { grid-column: 1 / 3; }
+      .footer-legal { grid-column: 3 / 5; text-align: right; }
     }
   </style>
 </head>
@@ -780,8 +789,15 @@
         <p>Creo espacios digitales que cuentan historias, presentan tu trabajo y hacen que tus ideas cobren vida.</p>
         
         <div class="button-group">
-          <a href="#servicios" class="btn-dark">Ver Servicios <i class="ph-bold ph-arrow-down"></i></a>
-          <a href="#portafolio" class="btn-outline">Ver Portafolio <i class="ph-fill ph-play-circle"></i></a>
+          <!-- Botones actualizados al estilo Píldora -->
+          <a href="#servicios" class="pill-btn">
+            Ver Servicios 
+            <span class="btn-icon"><i class="ph-bold ph-arrow-down"></i></span>
+          </a>
+          <a href="#portafolio" class="pill-btn">
+            Ver Portafolio 
+            <span class="btn-icon"><i class="ph-bold ph-arrow-right"></i></span>
+          </a>
         </div>
       </div>
     </section>
@@ -805,7 +821,7 @@
       </div>
     </section>
 
-        <!-- SECCIÓN DE SERVICIOS -->
+    <!-- SECCIÓN DE SERVICIOS -->
     <section class="services-section" id="servicios">
       <div class="section-header">
         <h2 class="section-title">Servicios</h2>
@@ -815,11 +831,12 @@
         <!-- Servicio 1 -->
         <div class="service-row">
           <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop');"></div>
-          <a href="#portafolio" class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></a>
+          <!-- Ahora el link lleva a la página web-branding.html -->
+          <a href="web-branding.html" class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></a>
           <div class="service-info">
             <h3 class="service-name"><i>Web</i><br>Branding</h3>
             <p class="service-desc">Un espacio digital para presentar tus servicios, experiencia y formas de contacto. Ideal para marcas personales.</p>
-            <a href="#portafolio" class="service-link">Ver Webfolio</a>
+            <a href="web-branding.html" class="service-link">Ver Webfolio</a>
           </div>
         </div>
 
@@ -864,7 +881,7 @@
       </div>
     </section>
 
-    <!-- SOBRE MÍ -->
+    <!-- SOBRE MÍ (NUEVA VERSIÓN CAJA BEIGE REDONDEADA) -->
     <section class="about-section" id="sobre-mi">
       <div class="about-header">
         <div class="about-img"></div>
@@ -892,7 +909,6 @@
         <h2 class="section-title single-line-title">Preguntas Frecuentes</h2>
       </div>
       
-      <!-- CAJITAS BLANCAS -->
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">¿Cuánto tiempo tarda el desarrollo de una web? <i class="ph-bold ph-caret-down"></i></div>
         <div class="faq-answer">Depende del tipo de proyecto. Las invitaciones digitales y proyectos sencillos suelen tomar de 3 a 5 días. Las páginas web profesionales entre 1 y 2 semanas, siempre y cuando tengamos todo el contenido e imágenes listas.</div>
@@ -928,8 +944,10 @@
       <div class="cta-box">
         <h2 class="cta-title">¿Tienes una idea en mente?</h2>
         <p class="cta-desc">Cuéntame qué quieres crear y encontremos una forma<br>de darle vida con un diseño pensado para ti.</p>
-        <a href="https://wa.me/573001234567" target="_blank" class="btn-white">
-          <i class="ph-fill ph-whatsapp-logo"></i> Hablemos de tu proyecto
+        <!-- Botón actualizado al estilo Píldora -->
+        <a href="https://wa.me/573001234567" target="_blank" class="pill-btn">
+          Hablemos de tu proyecto
+          <span class="btn-icon"><i class="ph-bold ph-whatsapp-logo"></i></span>
         </a>
       </div>
     </div>
@@ -996,4 +1014,4 @@
     }
   </script>
 </body>
-  </html>
+            </html>
