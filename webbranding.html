@@ -24,13 +24,15 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--bg-dark); /* Fondo de la página negro */
+      background-color: var(--bg-dark); 
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden; /* Evita cualquier desbordamiento horizontal global */
     }
     
     .page-wrapper {
-      max-width: 100%;
+      width: 100%;
+      max-width: 100vw;
       margin: 0 auto;
       overflow-x: hidden;
     }
@@ -52,7 +54,7 @@
     }
     
     .top-bar.scrolled {
-      background-color: rgba(201, 187, 158, 0.95); /* Color beige #c9bb9e translúcido */
+      background-color: rgba(201, 187, 158, 0.95); 
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -77,13 +79,13 @@
     .page-hero {
       background-color: var(--bg-cream);
       color: var(--bg-dark);
-      padding: 150px 20px 80px;
+      padding: 140px 20px 70px;
       text-align: center;
     }
 
     .page-hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
+      font-size: 3rem;
       font-style: italic;
       font-weight: 500;
       margin-bottom: 15px;
@@ -91,25 +93,31 @@
     }
 
     .page-hero p {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #444;
       max-width: 500px;
       margin: 0 auto;
       line-height: 1.6;
     }
 
-    /* ====== SECCIÓN DE PROYECTOS TIPO EDITORIAL ====== */
+    /* ====== SECCIÓN DE PROYECTOS (CARRUSEL MÓVIL) ====== */
     .selected-work-section {
-      padding: 60px 20px;
+      padding: 50px 0 60px 0; /* Padding lateral 0 para que el carrusel toque los bordes */
       background-color: var(--bg-dark);
+      position: relative;
+    }
+
+    .work-header-container {
+      padding: 0 20px; /* Mantiene el título alineado */
     }
 
     .work-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 40px;
+      gap: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
     }
 
     .work-title {
@@ -126,41 +134,61 @@
       flex-grow: 1;
       height: 1px;
       background-color: var(--border-color); 
+      min-width: 50px;
     }
 
-    .work-link {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 600;
-      color: var(--text-light);
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    /* Controles del carrusel */
+    .carousel-controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .carousel-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: white;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-      transition: color 0.3s ease;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    .work-link:hover {
-      color: white;
+    .carousel-btn:hover {
+      background: var(--bg-cream);
+      color: var(--bg-dark);
+      border-color: var(--bg-cream);
     }
 
+    /* Contenedor del Carrusel */
     .work-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 0 20px 20px 20px;
+      scrollbar-width: none; /* Oculta scroll en Firefox */
+      -ms-overflow-style: none; /* Oculta scroll en IE */
+    }
+    
+    .work-grid::-webkit-scrollbar {
+      display: none; /* Oculta scroll en Chrome/Safari */
     }
 
     .work-card {
+      min-width: 85%; /* Ocupa casi toda la pantalla en móvil */
+      scroll-snap-align: center;
       border: 1px solid var(--border-color);
-      padding: 25px;
+      padding: 20px;
       border-radius: 4px;
       display: flex;
       flex-direction: column;
-      transition: border-color 0.3s ease;
       text-decoration: none;
+      flex-shrink: 0;
+      transition: border-color 0.3s ease;
     }
 
     .work-card:hover {
@@ -168,20 +196,20 @@
     }
 
     .work-info {
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .work-num {
       font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: var(--text-light);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       display: block;
     }
 
     .work-name {
       font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 500;
       color: white;
       text-transform: uppercase;
@@ -191,13 +219,13 @@
 
     .work-category {
       font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: var(--text-light);
     }
 
     .work-img-wrapper {
       width: 100%;
-      height: 250px;
+      height: 220px;
       overflow: hidden;
       border-radius: 4px;
     }
@@ -215,22 +243,22 @@
       transform: scale(1.03); 
     }
 
-    /* ====== PLANES DE PRECIOS (NUEVA SECCIÓN) ====== */
+    /* ====== PLANES DE PRECIOS (2 EN LÍNEA EN MÓVIL) ====== */
     .pricing-section {
-      padding: 20px 20px 80px; /* Reducido arriba para conectar mejor */
+      padding: 20px 20px 80px; 
       background-color: var(--bg-dark);
     }
 
     .pricing-header {
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      margin-bottom: 40px;
+      gap: 10px;
+      margin-bottom: 35px;
     }
 
     .pricing-title {
       font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 500;
       color: white;
       text-transform: uppercase;
@@ -239,21 +267,22 @@
     }
 
     .pricing-desc {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--text-light);
       line-height: 1.5;
       max-width: 400px;
     }
 
+    /* Ajuste clave para tener los dos planes lado a lado en móvil */
     .pricing-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px; /* Gap muy pequeño para que quepan */
     }
 
     .pricing-card {
       border: 1px solid var(--border-color);
-      padding: 40px 30px;
+      padding: 20px 12px; /* Relleno compacto */
       border-radius: 4px;
       display: flex;
       flex-direction: column;
@@ -261,7 +290,7 @@
 
     .plan-name {
       font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       font-weight: 700;
       color: white;
       text-transform: uppercase;
@@ -271,73 +300,78 @@
 
     .plan-sub {
       font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       color: var(--text-light);
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+      min-height: 30px; /* Alinea los precios si un subtitulo es más largo */
     }
 
     .plan-price-wrapper {
       display: flex;
-      align-items: baseline;
-      gap: 5px;
-      margin-bottom: 30px;
+      flex-direction: column; /* Apilamos precio y moneda para ahorrar espacio a lo ancho */
+      align-items: flex-start;
+      margin-bottom: 20px;
       border-bottom: 1px solid var(--border-color);
-      padding-bottom: 30px;
+      padding-bottom: 20px;
     }
 
     .plan-price {
       font-family: 'Inter', sans-serif;
-      font-size: 3.5rem;
+      font-size: 2.2rem; /* Tamaño reducido para móvil */
       color: white;
       font-weight: 600;
       letter-spacing: -1px;
       line-height: 1;
+      margin-bottom: 5px;
     }
 
     .plan-currency {
       font-family: 'Inter', sans-serif;
-      font-size: 1rem;
+      font-size: 0.7rem;
       color: var(--text-light);
       font-weight: 500;
     }
 
     .plan-features {
       list-style: none;
-      margin-bottom: 40px;
-      flex-grow: 1; /* Empuja el botón hacia abajo */
+      margin-bottom: 25px;
+      flex-grow: 1; 
     }
 
     .plan-feature-item {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
+      gap: 6px;
       font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.65rem; /* Texto pequeño para que no se desborde */
       color: var(--text-light);
-      margin-bottom: 15px;
-      line-height: 1.4;
+      margin-bottom: 12px;
+      line-height: 1.3;
     }
 
     .plan-feature-item i {
-      color: var(--bg-cream); /* El chulito en tu color beige */
-      font-size: 1.1rem;
+      color: var(--bg-cream); 
+      font-size: 0.9rem;
+      flex-shrink: 0; /* Evita que el chulito se aplaste */
+      margin-top: 1px;
     }
 
     .plan-btn {
       background-color: var(--bg-cream);
       color: var(--bg-dark);
-      padding: 8px 8px 8px 25px; /* Forma de píldora asimétrica para encajar el círculo */
+      padding: 6px 6px 6px 12px; 
       border-radius: 40px;
       font-family: 'Inter', sans-serif;
       font-weight: 700;
-      font-size: 0.75rem;
+      font-size: 0.6rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       text-decoration: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
       transition: background-color 0.3s ease;
+      white-space: nowrap; /* Evita que el texto del botón se parta */
     }
 
     .plan-btn:hover {
@@ -347,16 +381,17 @@
     .btn-icon {
       background-color: var(--bg-dark);
       color: var(--bg-cream);
-      width: 35px;
-      height: 35px;
+      width: 25px;
+      height: 25px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
     
     .btn-icon i {
-      font-size: 1.2rem;
+      font-size: 0.9rem;
     }
 
     /* ====== FOOTER ====== */
@@ -490,16 +525,28 @@
       font-weight: 500;
     }
 
-    /* ====== MEDIA QUERIES PARA PC ====== */
+    /* ====== MEDIA QUERIES PARA PC Y TABLETS ====== */
     @media (min-width: 768px) {
       .top-bar { padding: 15px 5%; }
       .page-hero { padding: 180px 5% 100px; }
       .page-hero h1 { font-size: 4.5rem; }
       
       .selected-work-section { padding: 80px 5%; }
+      .work-header-container { padding: 0; }
+      
+      /* En PC el carrusel se convierte en un grid estático de 3 columnas */
       .work-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 25px;
+        overflow-x: visible;
+        padding: 0;
+      }
+      .work-card {
+        min-width: auto;
+      }
+      /* Ocultar flechas del carrusel en PC */
+      .carousel-controls {
+        display: none;
       }
 
       /* Ajustes PC para la sección de precios */
@@ -512,10 +559,29 @@
       }
       .pricing-title { font-size: 3rem; }
       .pricing-desc { margin-bottom: 10px; text-align: right; }
+      
       .pricing-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 cajas como pediste */
-        gap: 30px;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 40px; /* Mayor separación en PC */
       }
+      .pricing-card {
+        padding: 40px 40px; /* Restauramos tamaño grande */
+      }
+      .plan-name { font-size: 0.8rem; }
+      .plan-sub { font-size: 0.8rem; min-height: auto; }
+      .plan-price-wrapper {
+        flex-direction: row;
+        align-items: baseline;
+        gap: 8px;
+        padding-bottom: 30px;
+      }
+      .plan-price { font-size: 4.5rem; }
+      .plan-currency { font-size: 1rem; }
+      .plan-feature-item { font-size: 0.9rem; margin-bottom: 18px; gap: 12px; }
+      .plan-feature-item i { font-size: 1.2rem; }
+      .plan-btn { padding: 10px 10px 10px 25px; font-size: 0.8rem; }
+      .btn-icon { width: 40px; height: 40px; }
+      .btn-icon i { font-size: 1.3rem; }
       
       footer {
         padding: 80px 5% 40px;
@@ -561,15 +627,26 @@
       <p>Un espacio digital pensado estratégicamente para destacar la esencia de tu marca y conectar con tu audiencia ideal.</p>
     </section>
 
-    <!-- GALERÍA DE PROYECTOS -->
+    <!-- GALERÍA DE PROYECTOS (CARRUSEL MÓVIL) -->
     <section class="selected-work-section">
-      <div class="work-header">
-        <h2 class="work-title">Trabajos Destacados</h2>
-        <div class="work-line"></div>
-        <a href="#" class="work-link">Ver Todos Los Proyectos <i class="ph ph-arrow-right"></i></a>
+      <div class="work-header-container">
+        <div class="work-header">
+          <h2 class="work-title">Trabajos Destacados</h2>
+          <div class="work-line"></div>
+          <!-- Controles del Carrusel (Solo visibles en móvil) -->
+          <div class="carousel-controls">
+            <button class="carousel-btn" onclick="scrollCarousel(-1)" aria-label="Anterior">
+              <i class="ph-bold ph-caret-left"></i>
+            </button>
+            <button class="carousel-btn" onclick="scrollCarousel(1)" aria-label="Siguiente">
+              <i class="ph-bold ph-caret-right"></i>
+            </button>
+          </div>
+        </div>
       </div>
 
-      <div class="work-grid">
+      <!-- Contenedor deslizable -->
+      <div class="work-grid" id="workCarousel">
         
         <!-- Tarjeta 01 -->
         <a href="#" class="work-card">
@@ -610,7 +687,7 @@
       </div>
     </section>
 
-    <!-- PLANES DE PRECIOS -->
+    <!-- PLANES DE PRECIOS (2 EN LÍNEA EN MÓVIL) -->
     <section class="pricing-section">
       <div class="pricing-header">
         <h2 class="pricing-title">Elige tu<br>Plan</h2>
@@ -624,15 +701,14 @@
           <span class="plan-name">Plan Básico</span>
           <span class="plan-sub">Inicia tu viaje digital</span>
           <div class="plan-price-wrapper">
-            <!-- Coloca el precio real aquí -->
             <span class="plan-price">$250</span>
             <span class="plan-currency">USD / mes</span>
           </div>
           <ul class="plan-features">
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Diseño web personalizado (One Page)</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Adaptable a dispositivos móviles</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> 1 revisión del diseño inicial</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Botón flotante de WhatsApp</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Diseño personalizado</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Adaptable a móviles</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> 1 revisión inicial</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Botón de WhatsApp</li>
           </ul>
           <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
             Contáctame
@@ -640,20 +716,19 @@
           </a>
         </div>
 
-        <!-- Plan Premium -->
+                <!-- Plan Premium -->
         <div class="pricing-card">
           <span class="plan-name">Plan Premium</span>
           <span class="plan-sub">Eleva tu marca al máximo</span>
           <div class="plan-price-wrapper">
-            <!-- Coloca el precio real aquí -->
             <span class="plan-price">$450</span>
             <span class="plan-currency">USD / mes</span>
           </div>
           <ul class="plan-features">
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Diseño de identidad visual completa</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Hasta 5 secciones interiores</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Revisiones ilimitadas del diseño</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Soporte y asesoría prioritaria</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Identidad visual</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Hasta 5 secciones</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Revisiones ilimitadas</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Soporte prioritario</li>
           </ul>
           <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
             Contáctame
@@ -700,7 +775,8 @@
     </footer>
   </div>
 
-    <script>
+  <script>
+    // Cambio de transparente a Beige al hacer scroll
     window.addEventListener('scroll', function() {
       const header = document.querySelector('.top-bar');
       if (window.scrollY > 50) {
@@ -713,6 +789,17 @@
     function toggleMenu() {
       const menu = document.getElementById('overlayMenu');
       menu.classList.toggle('active');
+    }
+
+    // Función para deslizar el carrusel de proyectos con las flechitas
+    function scrollCarousel(direction) {
+      const carousel = document.getElementById('workCarousel');
+      // Calcula cuánto debe moverse basándose en el ancho visible
+      const scrollAmount = window.innerWidth * 0.85; 
+      carousel.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
     }
   </script>
 </body>
