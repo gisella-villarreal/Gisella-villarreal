@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- Configuración clave para permitir hacer zoom (pinch-to-zoom) en móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Álbum Cliente | Gisella Villarreal Fotografía</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <style>
+    :root {
+      --bg-white: #ffffff;
+      --bg-dark: #151515;
+      --text-dark: #222222;
+      --text-light: #777777;
+      --brand-beige: #c9bb9e; /* Tu color de marca para detalles sutiles */
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ====== PORTADA (HERO ESTILO PIXIESET) ====== */
+    .hero-cover {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      /* Reemplaza esta URL con la foto principal de la sesión de tu cliente */
+      background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    /* Gradiente oscuro inferior para que los textos blancos resalten siempre */
+    .hero-gradient {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 100%;
+    }
+
+    .client-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      max-width: 60%;
+    }
+
+    .view-gallery-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.6);
+      padding: 12px 24px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .view-gallery-btn:hover {
+      background-color: #ffffff;
+      color: var(--text-dark);
+    }
+
+    /* ====== BARRA DE NAVEGACIÓN (STICKY MENU) ====== */
+    .gallery-nav {
+      position: sticky;
+      top: 0;
+      background-color: var(--bg-white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      z-index: 100;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .nav-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-client-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-photographer {
+      font-size: 0.6rem;
+      color: var(--text-light);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .nav-center {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-tab {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-tab.active {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .nav-tab:hover {
+      color: var(--brand-beige);
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 20px;
+      color: var(--text-light);
+      font-size: 1.2rem;
+    }
+
+    .nav-icon {
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .nav-icon:hover {
+      color: var(--brand-beige);
+    }
+
+    /* ====== GALERÍA MASONRY ====== */
+    .gallery-container {
+      padding: 40px;
+      background-color: var(--bg-white);
+    }
+
+    .masonry-grid {
+      /* Estructura para acomodar fotos horizontales y verticales tipo ladrillo */
+      column-count: 3;
+      column-gap: 15px;
+    }
+
+    .photo-item {
+      break-inside: avoid;
+      margin-bottom: 15px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.4s ease, filter 0.4s ease;
+      background-color: #f5f5f5; /* Color de carga */
+    }
+
+    /* Efecto elegante al pasar el mouse por encima */
+    .photo-item:hover img {
+      transform: scale(1.02);
+      filter: brightness(0.9);
+    }
+
+    /* ====== VISOR DE IMÁGENES (LIGHTBOX FULLSCREEN) ====== */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(15, 15, 15, 0.98);
+      z-index: 2000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      touch-action: pan-x pan-y pinch-zoom; /* Permite zoom táctil */
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Contenedor central para mantener la foto en máxima calidad sin estirarse */
+    .lightbox-image-container {
+      position: relative;
+      width: 90%;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      /* object-fit contain garantiza que la foto no pierda su forma original */
+      object-fit: contain;
+      box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+    }
+
+    /* Botones del Visor */
+    .lightbox-btn {
+      position: absolute;
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      font-size: 2.5rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      z-index: 2010;
+      padding: 20px;
+    }
+
+    .lightbox-btn:hover {
+      color: white;
+    }
+
+    .close-btn { top: 10px; right: 20px; font-size: 2rem; }
+    .prev-btn { left: 20px; top: 50%; transform: translateY(-50%); }
+    .next-btn { right: 20px; top: 50%; transform: translateY(-50%); }
+
+    /* Contador de foto ej. "1 / 45" */
+    .photo-counter {
+      position: absolute;
+      bottom: 30px;
+      color: rgba(255,255,255,0.7);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    /* ====== RESPONSIVE PARA MÓVILES ====== */
+    @media (max-width: 768px) {
+      .hero-content {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .client-title {
+        max-width: 100%;
+      }
+      .gallery-nav {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+      .nav-center {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        padding-top: 10px;
+        border-top: 1px solid #f0f0f0;
+      }
+      .gallery-container {
+        padding: 15px; /* Menos espacio a los lados en móvil para fotos más grandes */
+      }
+      .masonry-grid {
+        column-count: 2; /* 2 columnas en celular como en Pixieset */
+        column-gap: 8px; /* Espaciado mínimo elegante */
+      }
+      .photo-item {
+        margin-bottom: 8px;
+      }
+      .lightbox-btn {
+        padding: 10px;
+      }
+      .prev-btn { left: 0; }
+      .next-btn { right: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PORTADA HERO -->
+  <section class="hero-cover">
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      <!-- Título adaptado de la referencia visual -->
+      <h1 class="client-title">María Eduarda &<br>Gustavo</h1>
+      <a href="#galeria" class="view-gallery-btn">View Gallery</a>
+    </div>
+  </section>
+
+  <!-- BARRA DE NAVEGACIÓN STICKY -->
+  <nav class="gallery-nav" id="galeria">
+    <div class="nav-left">
+      <div class="nav-client-name">María Eduarda & Gustavo</div>
+      <div class="nav-photographer">Gisella Villarreal Fotografía</div>
+    </div>
+    
+    <div class="nav-center">
+      <a href="#" class="nav-tab active">Highlights</a>
+      <a href="#" class="nav-tab">Originales</a>
+    </div>
+
+    <div class="nav-right">
+      <i class="ph ph-heart nav-icon"></i>
+      <i class="ph ph-download-simple nav-icon"></i>
+      <i class="ph ph-dots-three-vertical nav-icon"></i>
+    </div>
+  </nav>
+
+  <!-- GALERÍA DE FOTOS -->
+  <div class="gallery-container">
+    <div class="masonry-grid" id="photoGallery">
+      <!-- Las fotos se cargarán dinámicamente aquí a través del script -->
+    </div>
+  </div>
+
+  <!-- LIGHTBOX / VISOR DE IMÁGENES -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-btn close-btn" onclick="closeLightbox()"><i class="ph ph-x"></i></button>
+    <button class="lightbox-btn prev-btn" onclick="changeImage(-1)"><i class="ph ph-caret-left"></i></button>
+    
+    <div class="lightbox-image-container">
+      <img id="lightboxImage" src="" alt="Foto en alta calidad">
+    </div>
+    
+    <button class="lightbox-btn next-btn" onclick="changeImage(1)"><i class="ph ph-caret-right"></i></button>
+    
+    <div class="photo-counter" id="photoCounter">1 / 10</div>
+  </div>
+
+  <script>
+    // ==========================================
+    // SISTEMA DE GALERÍA Y VISOR (LIGHTBOX)
+    // ==========================================
+
+    // 1. Aquí colocas las URLs de las fotos en alta calidad de tu cliente.
+    // Sugerencia: Asegúrate de optimizarlas para web, pero dejándolas en buena resolución (ej. 2000px lado largo)
+    const clientPhotos = [
+      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop", // Vertical
+      "https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=1200&auto=format&fit=crop", // Horizontal
+      "https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200&auto=format&fit=crop", // Vertical
+      "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=1200&auto=format&fit=crop", // Vertical
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1200&auto=format&fit=crop", // Horizontal
+      "https://images.unsplash.com/photo-1543854589-94b633f8fb25?q=80&w=1200&auto=format&fit=crop", // Vertical
+      "https://images.unsplash.com/photo-1606800052445-56b9c9fcd8a2?q=80&w=1200&auto=format&fit=crop", // Detalles
+      "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=1200&auto=format&fit=crop"  // Detalles
+    ];
+
+    const galleryContainer = document.getElementById('photoGallery');
+    let currentImageIndex = 0;
+
+    // 2. Renderizar las fotos en la cuadrícula Masonry
+    function loadGallery() {
+      clientPhotos.forEach((photoUrl, index) => {
+        const photoDiv = document.createElement('div');
+        photoDiv.className = 'photo-item';
+        
+        // Creamos la imagen con carga lazy para optimizar la página
+        const img = document.createElement('img');
+        img.src = photoUrl;
+        img.loading = "lazy"; 
+        img.alt = `Fotografía de cliente ${index + 1}`;
+        
+        // Al hacer clic, abrimos el visor pasando el número de foto
+        photoDiv.onclick = () => openLightbox(index);
+        
+        photoDiv.appendChild(img);
+        galleryContainer.appendChild(photoDiv);
+      });
+    }
+
+    // 3. Funciones del Visor (Lightbox)
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImage');
+    const photoCounter = document.getElementById('photoCounter');
+
+    function openLightbox(index) {
+      currentImageIndex = index;
+      updateLightboxContent();
+      lightbox.classList.add('active');
+      // Prevenir el scroll de la página de fondo
+      document.body.style.overflow = 'hidden'; 
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      // Restaurar el scroll
+      document.body.style.overflow = 'auto'; 
+    }
+
+    function changeImage(step) {
+      currentImageIndex += step;
+      
+      // Lógica de bucle infinito (si llega a la última, pasa a la primera)
+      if (currentImageIndex >= clientPhotos.length) {
+        currentImageIndex = 0;
+      } else if (currentImageIndex < 0) {
+        currentImageIndex = clientPhotos.length - 1;
+      }
+      
+      updateLightboxContent();
+    }
+
+    function updateLightboxContent() {
+      // Reemplaza la imagen del visor garantizando alta calidad
+      lightboxImg.src = clientPhotos[currentImageIndex];
+      photoCounter.innerText = `${currentImageIndex + 1} / ${clientPhotos.length}`;
+    }
+
+    // 4. Navegación con teclado (Flechas y Escape)
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      
+      if (e.key === 'ArrowRight') {
+        changeImage(1);
+      } else if (e.key === 'ArrowLeft') {
+        changeImage(-1);
+      } else if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+
+    // Iniciar galería al cargar
+    loadGallery();
+
+  </script>
+</body>
+</html>
