@@ -27,7 +27,7 @@
       background-color: var(--bg-dark); 
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden; /* Evita cualquier desbordamiento horizontal global */
+      overflow-x: hidden;
     }
     
     .page-wrapper {
@@ -102,13 +102,13 @@
 
     /* ====== SECCIÓN DE PROYECTOS (CARRUSEL MÓVIL) ====== */
     .selected-work-section {
-      padding: 50px 0 60px 0; /* Padding lateral 0 para que el carrusel toque los bordes */
+      padding: 50px 0 60px 0; 
       background-color: var(--bg-dark);
       position: relative;
     }
 
     .work-header-container {
-      padding: 0 20px; /* Mantiene el título alineado */
+      padding: 0 20px; 
     }
 
     .work-header {
@@ -170,16 +170,16 @@
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       padding: 0 20px 20px 20px;
-      scrollbar-width: none; /* Oculta scroll en Firefox */
-      -ms-overflow-style: none; /* Oculta scroll en IE */
+      scrollbar-width: none; 
+      -ms-overflow-style: none; 
     }
     
     .work-grid::-webkit-scrollbar {
-      display: none; /* Oculta scroll en Chrome/Safari */
+      display: none; 
     }
 
     .work-card {
-      min-width: 85%; /* Ocupa casi toda la pantalla en móvil */
+      min-width: 85%; 
       scroll-snap-align: center;
       border: 1px solid var(--border-color);
       padding: 20px;
@@ -243,7 +243,7 @@
       transform: scale(1.03); 
     }
 
-    /* ====== PLANES DE PRECIOS (2 EN LÍNEA EN MÓVIL) ====== */
+    /* ====== PLANES DE PRECIOS ====== */
     .pricing-section {
       padding: 20px 20px 80px; 
       background-color: var(--bg-dark);
@@ -256,6 +256,7 @@
       margin-bottom: 35px;
     }
 
+    /* Forzamos a que esté en una sola línea */
     .pricing-title {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
@@ -264,6 +265,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       line-height: 1.1;
+      white-space: nowrap; 
     }
 
     .pricing-desc {
@@ -273,16 +275,15 @@
       max-width: 400px;
     }
 
-    /* Ajuste clave para tener los dos planes lado a lado en móvil */
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 10px; /* Gap muy pequeño para que quepan */
+      gap: 10px; 
     }
 
     .pricing-card {
       border: 1px solid var(--border-color);
-      padding: 20px 12px; /* Relleno compacto */
+      padding: 20px 12px; 
       border-radius: 4px;
       display: flex;
       flex-direction: column;
@@ -303,12 +304,12 @@
       font-size: 0.65rem;
       color: var(--text-light);
       margin-bottom: 20px;
-      min-height: 30px; /* Alinea los precios si un subtitulo es más largo */
+      min-height: 30px; 
     }
 
     .plan-price-wrapper {
       display: flex;
-      flex-direction: column; /* Apilamos precio y moneda para ahorrar espacio a lo ancho */
+      flex-direction: column; 
       align-items: flex-start;
       margin-bottom: 20px;
       border-bottom: 1px solid var(--border-color);
@@ -317,7 +318,7 @@
 
     .plan-price {
       font-family: 'Inter', sans-serif;
-      font-size: 2.2rem; /* Tamaño reducido para móvil */
+      font-size: 2.2rem; 
       color: white;
       font-weight: 600;
       letter-spacing: -1px;
@@ -343,7 +344,7 @@
       align-items: flex-start;
       gap: 6px;
       font-family: 'Inter', sans-serif;
-      font-size: 0.65rem; /* Texto pequeño para que no se desborde */
+      font-size: 0.65rem; 
       color: var(--text-light);
       margin-bottom: 12px;
       line-height: 1.3;
@@ -352,7 +353,7 @@
     .plan-feature-item i {
       color: var(--bg-cream); 
       font-size: 0.9rem;
-      flex-shrink: 0; /* Evita que el chulito se aplaste */
+      flex-shrink: 0; 
       margin-top: 1px;
     }
 
@@ -371,7 +372,7 @@
       justify-content: space-between;
       align-items: center;
       transition: background-color 0.3s ease;
-      white-space: nowrap; /* Evita que el texto del botón se parta */
+      white-space: nowrap; 
     }
 
     .plan-btn:hover {
@@ -394,7 +395,73 @@
       font-size: 0.9rem;
     }
 
-    /* ====== FOOTER ====== */
+    /* ====== PREGUNTAS FRECUENTES (CAJITAS BLANCAS) ====== */
+    .faq-section {
+      padding: 0 20px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px; 
+      background-color: var(--bg-dark);
+    }
+
+    .section-header {
+      margin-bottom: 30px;
+      text-align: center; 
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif; 
+      font-style: italic;
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: var(--bg-cream); 
+      line-height: 1;
+      margin-bottom: 5px;
+      letter-spacing: -0.5px;
+    }
+    
+    .faq-item {
+      background-color: white; 
+      border-radius: 12px; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
+      overflow: hidden;
+    }
+    
+    .faq-question {
+      padding: 20px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--bg-dark); 
+    }
+    
+    .faq-question i {
+      transition: transform 0.3s ease;
+      color: var(--bg-dark); 
+    }
+    
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      font-size: 0.85rem;
+      color: #444; 
+      line-height: 1.6;
+      padding: 0 25px; 
+    }
+    
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding-bottom: 25px;
+    }
+
+    /* ====== FOOTER (IGUAL A INICIO) ====== */
     footer {
       padding: 50px 20px 30px;
       text-align: left; 
@@ -420,39 +487,24 @@
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 10px; 
+      margin-bottom: 15px; 
       color: white; 
     }
     
-    .footer-vertical-links {
-      display: flex;
-      flex-direction: column;
-      gap: 8px; 
-      margin-bottom: 20px; 
+    .footer-links-grid {
+      display: grid;
+      grid-template-columns: auto auto; 
+      gap: 12px 20px;
+      margin-bottom: 35px;
     }
-    .footer-vertical-links a {
+    .footer-links-grid a {
       color: var(--text-light);
       text-decoration: none;
       font-size: 0.8rem;
+      transition: color 0.2s;
     }
-    .footer-vertical-links a:hover {
-      color: white;
-    }
-
-    .footer-horizontal-links {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px; 
-      margin-bottom: 25px; 
-    }
-    .footer-horizontal-links a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 0.8rem;
-    }
-    .footer-horizontal-links a:hover {
-      color: white;
+    .footer-links-grid a:hover {
+      color: var(--bg-cream);
     }
 
     .footer-social {
@@ -465,6 +517,10 @@
       color: white; 
       font-size: 1.5rem;
       text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover {
+      color: var(--bg-cream);
     }
     
     .footer-divider {
@@ -484,12 +540,12 @@
       margin-right: 10px;
     }
 
-    /* ====== OVERLAY MENÚ EMERGENTE ====== */
+    /* ====== OVERLAY MENÚ EMERGENTE (FONDO BEIGE, LETRAS NEGRAS) ====== */
     .overlay-menu {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-color: var(--bg-dark); 
+      background-color: var(--bg-cream); 
       z-index: 9999;
       display: flex;
       flex-direction: column;
@@ -507,7 +563,7 @@
       position: absolute;
       top: 20px; right: 20px;
       font-size: 2rem;
-      color: white; 
+      color: var(--bg-dark); 
       cursor: pointer;
     }
     .overlay-content {
@@ -518,11 +574,15 @@
     }
     .overlay-content a {
       text-decoration: none;
-      color: white; 
+      color: var(--bg-dark); 
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       font-style: italic;
       font-weight: 500;
+      transition: opacity 0.3s ease;
+    }
+    .overlay-content a:hover {
+      opacity: 0.7;
     }
 
     /* ====== MEDIA QUERIES PARA PC Y TABLETS ====== */
@@ -534,7 +594,6 @@
       .selected-work-section { padding: 80px 5%; }
       .work-header-container { padding: 0; }
       
-      /* En PC el carrusel se convierte en un grid estático de 3 columnas */
       .work-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 25px;
@@ -544,12 +603,10 @@
       .work-card {
         min-width: auto;
       }
-      /* Ocultar flechas del carrusel en PC */
       .carousel-controls {
         display: none;
       }
 
-      /* Ajustes PC para la sección de precios */
       .pricing-section { padding: 40px 5% 80px; }
       .pricing-header {
         flex-direction: row;
@@ -562,10 +619,10 @@
       
       .pricing-grid {
         grid-template-columns: repeat(2, 1fr); 
-        gap: 40px; /* Mayor separación en PC */
+        gap: 40px; 
       }
       .pricing-card {
-        padding: 40px 40px; /* Restauramos tamaño grande */
+        padding: 40px 40px; 
       }
       .plan-name { font-size: 0.8rem; }
       .plan-sub { font-size: 0.8rem; min-height: auto; }
@@ -582,24 +639,28 @@
       .plan-btn { padding: 10px 10px 10px 25px; font-size: 0.8rem; }
       .btn-icon { width: 40px; height: 40px; }
       .btn-icon i { font-size: 1.3rem; }
+
+      .faq-section { 
+        padding: 60px 15% 80px; 
+      } 
       
       footer {
         padding: 80px 5% 40px;
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
         gap: 40px;
       }
       .footer-desc { max-width: 100%; margin-bottom: 0; }
-      .footer-horizontal-links, .footer-vertical-links, .footer-social { margin-bottom: 0; }
+      .footer-links-grid, .footer-social { margin-bottom: 0; }
       .footer-divider { grid-column: 1 / -1; margin-top: 30px; }
-      .footer-bottom-text { grid-column: 1 / 3; }
-      .footer-legal { grid-column: 3 / 5; text-align: right; }
+      .footer-bottom-text { grid-column: 1 / 2; }
+      .footer-legal { grid-column: 2 / -1; text-align: right; }
     }
   </style>
 </head>
 <body>
 
-  <!-- MENÚ EMERGENTE -->
+  <!-- MENÚ EMERGENTE (ACTUALIZADO IGUAL QUE INICIO) -->
   <div class="overlay-menu" id="overlayMenu">
     <div class="close-btn" onclick="toggleMenu()">
       <i class="ph-bold ph-x"></i>
@@ -607,9 +668,9 @@
     <div class="overlay-content">
       <a href="index.html#inicio">Inicio</a>
       <a href="index.html#servicios">Servicios</a>
-      <a href="index.html#portafolio">Portafolio</a>
+      <a href="index.html#portafolio">Trabajos</a>
       <a href="index.html#sobre-mi">Sobre mí</a>
-      <a href="index.html#faq">FAQ</a>
+      <a href="https://wa.me/573001234567" target="_blank">Contacto</a>
     </div>
   </div>
 
@@ -633,7 +694,7 @@
         <div class="work-header">
           <h2 class="work-title">Trabajos Destacados</h2>
           <div class="work-line"></div>
-          <!-- Controles del Carrusel (Solo visibles en móvil) -->
+          <!-- Controles del Carrusel -->
           <div class="carousel-controls">
             <button class="carousel-btn" onclick="scrollCarousel(-1)" aria-label="Anterior">
               <i class="ph-bold ph-caret-left"></i>
@@ -648,7 +709,6 @@
       <!-- Contenedor deslizable -->
       <div class="work-grid" id="workCarousel">
         
-        <!-- Tarjeta 01 -->
         <a href="#" class="work-card">
           <div class="work-info">
             <span class="work-num">01</span>
@@ -660,7 +720,6 @@
           </div>
         </a>
 
-        <!-- Tarjeta 02 -->
         <a href="#" class="work-card">
           <div class="work-info">
             <span class="work-num">02</span>
@@ -672,7 +731,6 @@
           </div>
         </a>
 
-        <!-- Tarjeta 03 -->
         <a href="#" class="work-card">
           <div class="work-info">
             <span class="work-num">03</span>
@@ -687,16 +745,15 @@
       </div>
     </section>
 
-    <!-- PLANES DE PRECIOS (2 EN LÍNEA EN MÓVIL) -->
+        <!-- PLANES DE PRECIOS -->
     <section class="pricing-section">
       <div class="pricing-header">
-        <h2 class="pricing-title">Elige tu<br>Plan</h2>
+        <h2 class="pricing-title">Elige tu Plan</h2>
         <p class="pricing-desc">Explora los planes y descubre cuál es la solución perfecta para construir la presencia digital de tu marca.</p>
       </div>
 
       <div class="pricing-grid">
         
-        <!-- Plan Básico -->
         <div class="pricing-card">
           <span class="plan-name">Plan Básico</span>
           <span class="plan-sub">Inicia tu viaje digital</span>
@@ -716,7 +773,6 @@
           </a>
         </div>
 
-                <!-- Plan Premium -->
         <div class="pricing-card">
           <span class="plan-name">Plan Premium</span>
           <span class="plan-sub">Eleva tu marca al máximo</span>
@@ -739,22 +795,57 @@
       </div>
     </section>
 
+    <!-- PREGUNTAS FRECUENTES (FAQ) -->
+    <section class="faq-section" id="faq">
+      <div class="section-header">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+      </div>
+      
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Cuánto tiempo tarda el desarrollo de una web? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Depende del tipo de proyecto. Las invitaciones digitales y proyectos sencillos suelen tomar de 3 a 5 días. Las páginas web profesionales entre 1 y 2 semanas, siempre y cuando tengamos todo el contenido e imágenes listas.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Necesito pagar hosting y dominio? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Te ofrezco soluciones que se adaptan a tu presupuesto. Podemos usar opciones de alojamiento gratuito o configurar un dominio propio (.com) según lo que necesite tu marca.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Qué pasa si no tengo fotos para mi página? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">¡No hay problema! Ofrezco servicios de fotografía comercial para crear imágenes de calidad de tus productos o espacio de trabajo, ideales para fortalecer la imagen de tu marca.<br><br>También podemos explorar otras alternativas creativas, como generar imágenes con IA utilizando tu rostro o trabajar con imágenes de archivo premium, según el estilo y las necesidades de tu proyecto.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Cómo funciona el servicio de fotografía? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Nos reunimos para entender la esencia de tu marca, definimos un estilo visual y realizamos la sesión. Luego selecciono y edito las mejores tomas para entregarte un paquete de imágenes listas para tu web y redes sociales.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Cómo funcionan las invitaciones digitales? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Son páginas web interactivas que envías por WhatsApp. Tienen botones para conectar con Google Maps, añadir el evento a Calendar y un botón que te envía la confirmación de asistencia a tu chat.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Haces tiendas online completas con carrito? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Me enfoco en páginas tipo vitrina, landing pages y catálogos con redirección a WhatsApp para cerrar la venta, ya que es el modelo más efectivo y económico para la mayoría de los emprendedores.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Cuáles son las formas de pago? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Trabajamos con un anticipo del 50% para separar tu cupo e iniciar el diseño, y el 50% restante al momento de entregarte la página 100% funcional.</div>
+      </div>
+    </section>
+
     <!-- FOOTER -->
     <footer>
       <div class="footer-name">Gisella Villarreal</div>
       <p class="footer-desc">Diseño web y experiencias digitales para profesionales, marcas y momentos especiales.</p>
       
       <div class="footer-nav-title">EXPLORA</div>
-      <div class="footer-vertical-links">
+      
+      <!-- CUADRÍCULA DE ENLACES 2 COLUMNAS (IGUAL A INICIO) -->
+      <div class="footer-links-grid">
         <a href="index.html#inicio">Inicio</a>
         <a href="index.html#servicios">Servicios</a>
         <a href="index.html#portafolio">Portafolio</a>
         <a href="index.html#sobre-mi">Sobre mí</a>
-      </div>
-
-      <div class="footer-horizontal-links">
-        <a href="index.html#faq">Preguntas</a>
-        <a href="https://wa.me/573001234567">Contacto</a>
+        <a href="#">Preguntas</a>
+        <a href="https://wa.me/573001234567" target="_blank">Contacto</a>
       </div>
 
       <div class="footer-nav-title">SÍGUEME</div>
@@ -776,7 +867,6 @@
   </div>
 
   <script>
-    // Cambio de transparente a Beige al hacer scroll
     window.addEventListener('scroll', function() {
       const header = document.querySelector('.top-bar');
       if (window.scrollY > 50) {
@@ -791,16 +881,24 @@
       menu.classList.toggle('active');
     }
 
-    // Función para deslizar el carrusel de proyectos con las flechitas
     function scrollCarousel(direction) {
       const carousel = document.getElementById('workCarousel');
-      // Calcula cuánto debe moverse basándose en el ancho visible
       const scrollAmount = window.innerWidth * 0.85; 
       carousel.scrollBy({
         left: direction * scrollAmount,
         behavior: 'smooth'
       });
     }
+
+    function toggleFaq(element) {
+      const allFaqs = document.querySelectorAll('.faq-item');
+      allFaqs.forEach(faq => {
+        if (faq !== element) {
+          faq.classList.remove('active');
+        }
+      });
+      element.classList.toggle('active');
+    }
   </script>
 </body>
-</html>
+</html> 
