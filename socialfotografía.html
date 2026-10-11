@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Fotografía| Gisella Villarreal</title>
+  <title>Fotografía Social | Gisella Villarreal</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -137,7 +137,6 @@
       min-width: 50px;
     }
 
-    /* Controles del carrusel */
     .carousel-controls {
       display: flex;
       gap: 8px;
@@ -163,7 +162,6 @@
       border-color: var(--bg-cream);
     }
 
-    /* Contenedor del Carrusel */
     .work-grid {
       display: flex;
       gap: 15px;
@@ -197,6 +195,9 @@
 
     .work-info {
       margin-bottom: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     .work-num {
@@ -222,12 +223,31 @@
       font-size: 0.7rem;
       color: var(--text-light);
     }
+    
+    .work-btn {
+      margin-top: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--bg-cream);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    .work-card:hover .work-btn {
+      color: white; 
+    }
 
     .work-img-wrapper {
       width: 100%;
       height: 220px;
       overflow: hidden;
       border-radius: 4px;
+      margin-top: auto;
     }
 
     .work-img {
@@ -245,7 +265,7 @@
 
     /* ====== PLANES DE PRECIOS ====== */
     .pricing-section {
-      padding: 20px 20px 80px; 
+      padding: 20px 20px 60px; 
       background-color: var(--bg-dark);
     }
 
@@ -315,26 +335,26 @@
       padding-bottom: 20px;
     }
 
-    .plan-price {
-      font-family: 'Inter', sans-serif;
-      font-size: 2.2rem; 
-      color: white;
-      font-weight: 600;
-      letter-spacing: -1px;
-      line-height: 1;
-      margin-bottom: 5px;
-    }
-
     .plan-currency {
       font-family: 'Inter', sans-serif;
       font-size: 0.7rem;
       color: var(--text-light);
       font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .plan-price {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.8rem; 
+      color: white;
+      font-weight: 600;
+      letter-spacing: -1px;
+      line-height: 1;
     }
 
     .plan-features {
       list-style: none;
-      margin-bottom: 25px;
+      margin-bottom: 15px;
       flex-grow: 1; 
     }
 
@@ -354,6 +374,14 @@
       font-size: 0.9rem;
       flex-shrink: 0; 
       margin-top: 1px;
+    }
+
+    .plan-eta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem;
+      color: var(--bg-cream);
+      margin-bottom: 20px;
+      font-style: italic;
     }
 
     .plan-btn {
@@ -394,7 +422,7 @@
       font-size: 0.9rem;
     }
 
-    /* ====== PREGUNTAS FRECUENTES (SIN RELLENO, LETRAS BLANCAS) ====== */
+    /* ====== PREGUNTAS FRECUENTES (FAQ SIN RELLENO) ====== */
     .faq-section {
       padding: 0 20px 60px;
       display: flex;
@@ -419,9 +447,9 @@
     }
     
     .faq-item {
-      background-color: transparent; /* Caja sin relleno */
+      background-color: transparent; 
       border-radius: 12px; 
-      border: 1px solid var(--border-color); /* Borde elegante */
+      border: 1px solid var(--border-color); 
       overflow: hidden;
     }
     
@@ -433,12 +461,12 @@
       cursor: pointer;
       font-size: 0.9rem;
       font-weight: 700;
-      color: white; /* Pregunta en blanco */
+      color: white; 
     }
     
     .faq-question i {
       transition: transform 0.3s ease;
-      color: white; /* Flecha en blanco */
+      color: white; 
     }
     
     .faq-item.active .faq-question i {
@@ -450,7 +478,7 @@
       overflow: hidden;
       transition: max-height 0.3s ease;
       font-size: 0.85rem;
-      color: var(--text-light); /* Respuesta en gris claro para leerse bien en fondo negro */
+      color: var(--text-light); 
       line-height: 1.6;
       padding: 0 25px; 
     }
@@ -460,7 +488,7 @@
       padding-bottom: 25px;
     }
 
-    /* ====== FOOTER (IGUAL A INICIO) ====== */
+    /* ====== FOOTER ====== */
     footer {
       padding: 50px 20px 30px;
       text-align: left; 
@@ -613,7 +641,7 @@
         display: none;
       }
 
-      .pricing-section { padding: 40px 5% 80px; }
+      .pricing-section { padding: 40px 5% 60px; }
       .pricing-header {
         flex-direction: row;
         justify-content: space-between;
@@ -633,15 +661,16 @@
       .plan-name { font-size: 0.8rem; }
       .plan-sub { font-size: 0.8rem; min-height: auto; }
       .plan-price-wrapper {
-        flex-direction: row;
-        align-items: baseline;
-        gap: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
         padding-bottom: 30px;
       }
-      .plan-price { font-size: 4.5rem; }
+      .plan-price { font-size: 3.5rem; }
       .plan-currency { font-size: 1rem; }
       .plan-feature-item { font-size: 0.9rem; margin-bottom: 18px; gap: 12px; }
       .plan-feature-item i { font-size: 1.2rem; }
+      .plan-eta { font-size: 0.8rem; margin-bottom: 30px; }
       .plan-btn { padding: 10px 10px 10px 25px; font-size: 0.8rem; }
       .btn-icon { width: 40px; height: 40px; }
       .btn-icon i { font-size: 1.3rem; }
@@ -690,11 +719,11 @@
 
     <!-- CABECERA DE LA PÁGINA -->
     <section class="page-hero">
-      <h1>Social Fotografía</h1>
-      <p>Creación de contenido visual de alta calidad para destacar el valor de tu marca o eventos puntuales.</p>
+      <h1>Fotografía Social</h1>
+      <p>Creación de contenido visual de alta calidad para destacar el valor de tu marca, tu perfil profesional o documentar tus momentos más especiales.</p>
     </section>
 
-    <!-- GALERÍA DE PROYECTOS (CARRUSEL MÓVIL) -->
+    <!-- TRABAJOS DESTACADOS (CARRUSEL MÓVIL) -->
     <section class="selected-work-section">
       <div class="work-header-container">
         <div class="work-header">
@@ -715,33 +744,39 @@
       <!-- Contenedor deslizable -->
       <div class="work-grid" id="workCarousel">
         
+        <!-- Tarjeta 01 -->
         <a href="#" class="work-card">
           <div class="work-info">
             <span class="work-num">01</span>
-            <h3 class="work-name">Elevate Studio</h3>
-            <span class="work-category">Branding & Website</span>
+            <h3 class="work-name">Sesión Branding</h3>
+            <span class="work-category">Fotos Workstyle</span>
+            <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
           </div>
           <div class="work-img-wrapper">
             <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop');"></div>
           </div>
         </a>
 
+        <!-- Tarjeta 02 -->
         <a href="#" class="work-card">
           <div class="work-info">
             <span class="work-num">02</span>
-            <h3 class="work-name">Aura Shop</h3>
-            <span class="work-category">E-Commerce UI UX</span>
+            <h3 class="work-name">Cumpleaños 30</h3>
+            <span class="work-category">Momentos Especiales</span>
+            <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
           </div>
           <div class="work-img-wrapper">
             <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop');"></div>
           </div>
         </a>
 
+                <!-- Tarjeta 03 -->
         <a href="#" class="work-card">
           <div class="work-info">
             <span class="work-num">03</span>
-            <h3 class="work-name">Nexus App</h3>
-            <span class="work-category">Mobile App Design</span>
+            <h3 class="work-name">Retrato Profesional</h3>
+            <span class="work-category">Fotos Workstyle</span>
+            <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
           </div>
           <div class="work-img-wrapper">
             <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop');"></div>
@@ -751,47 +786,52 @@
       </div>
     </section>
 
-                <!-- PLANES DE PRECIOS -->
+    <!-- PLANES DE PRECIOS -->
     <section class="pricing-section">
       <div class="pricing-header">
         <h2 class="pricing-title">Elige tu Plan</h2>
-        <p class="pricing-desc">Explora los planes y descubre cuál es la solución perfecta para construir la presencia digital de tu marca.</p>
+        <p class="pricing-desc">Explora los paquetes fotográficos y elige la opción que mejor se adapte a tus necesidades y objetivos.</p>
       </div>
 
       <div class="pricing-grid">
         
+        <!-- Plan Fotos Workstyle -->
         <div class="pricing-card">
-          <span class="plan-name">Plan Básico</span>
-          <span class="plan-sub">Inicia tu viaje digital</span>
+          <span class="plan-name">Fotos workstyle</span>
+          <span class="plan-sub">Ideal para emprendedores, profesionales.</span>
           <div class="plan-price-wrapper">
-            <span class="plan-price">$250</span>
-            <span class="plan-currency">USD / mes</span>
+            <span class="plan-currency">Desde</span>
+            <span class="plan-price">$100.000</span>
           </div>
           <ul class="plan-features">
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Diseño personalizado</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Adaptable a móviles</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> 1 revisión inicial</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Botón de WhatsApp</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Hasta 1 hora de sesión.</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> 25 fotografías editadas.</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Retratos profesionales y escenas de trabajo.</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Imágenes para web, LinkedIn e Instagram.</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Orientación para seleccionar las imágenes según tus objetivos de comunicación.</li>
           </ul>
+          <p class="plan-eta">Entrega digital organizada</p>
           <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
             Contáctame
             <span class="btn-icon"><i class="ph-bold ph-arrow-right"></i></span>
           </a>
         </div>
 
+        <!-- Plan Momentos Especiales -->
         <div class="pricing-card">
-          <span class="plan-name">Plan Premium</span>
-          <span class="plan-sub">Eleva tu marca al máximo</span>
+          <span class="plan-name">Momentos especiales</span>
+          <span class="plan-sub">Ideal para cumpleaños, aniversarios y reuniones familiares íntimas.</span>
           <div class="plan-price-wrapper">
-            <span class="plan-price">$450</span>
-            <span class="plan-currency">USD / mes</span>
+            <span class="plan-currency">Desde</span>
+            <span class="plan-price">$280.000</span>
           </div>
           <ul class="plan-features">
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Identidad visual</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Hasta 5 secciones</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Revisiones ilimitadas</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Soporte prioritario</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Hasta 2 horas de cobertura.</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> 40 fotografías editadas.</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Registro de momentos destacados.</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Retratos familiares y fotografías de detalles.</li>
           </ul>
+          <p class="plan-eta">Entrega digital organizada</p>
           <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
             Contáctame
             <span class="btn-icon"><i class="ph-bold ph-arrow-right"></i></span>
@@ -801,16 +841,12 @@
       </div>
     </section>
 
-    <!-- PREGUNTAS FRECUENTES (FAQ SIN RELLENO, TEXTO BLANCO) -->
+    <!-- PREGUNTAS FRECUENTES (FAQ SIN RELLENO) -->
     <section class="faq-section" id="faq">
       <div class="section-header">
         <h2 class="section-title">Preguntas Frecuentes</h2>
       </div>
       
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">¿Cuánto tiempo tarda el desarrollo de una web? <i class="ph-bold ph-caret-down"></i></div>
-        <div class="faq-answer">Depende del tipo de proyecto. Las invitaciones digitales y proyectos sencillos suelen tomar de 3 a 5 días. Las páginas web profesionales entre 1 y 2 semanas, siempre y cuando tengamos todo el contenido e imágenes listas.</div>
-      </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">¿Necesito pagar hosting y dominio? <i class="ph-bold ph-caret-down"></i></div>
         <div class="faq-answer">Te ofrezco soluciones que se adaptan a tu presupuesto. Podemos usar opciones de alojamiento gratuito o configurar un dominio propio (.com) según lo que necesite tu marca.</div>
@@ -821,15 +857,11 @@
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">¿Cómo funciona el servicio de fotografía? <i class="ph-bold ph-caret-down"></i></div>
-        <div class="faq-answer">Nos reunimos para entender la esencia de tu marca, definimos un estilo visual y realizamos la sesión. Luego selecciono y edito las mejores tomas para entregarte un paquete de imágenes listas para tu web y redes sociales.</div>
+        <div class="faq-answer">Nos reunimos para entender la esencia de tu marca, definimos un estilo visual y realizamos la sesión si estás en la ciudad de BAQ-COL. Luego selecciono y edito las mejores tomas para entregarte un paquete de imágenes listas para tu web y redes sociales.</div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">¿Cómo funcionan las invitaciones digitales? <i class="ph-bold ph-caret-down"></i></div>
-        <div class="faq-answer">Son páginas web interactivas que envías por WhatsApp. Tienen botones para conectar con Google Maps, añadir el evento a Calendar y un botón que te envía la confirmación de asistencia a tu chat.</div>
-      </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">¿Haces tiendas online completas con carrito? <i class="ph-bold ph-caret-down"></i></div>
-        <div class="faq-answer">Me enfoco en páginas tipo vitrina, landing pages y catálogos con redirección a WhatsApp para cerrar la venta, ya que es el modelo más efectivo y económico para la mayoría de los emprendedores.</div>
+        <div class="faq-question">¿Incluye tienda virtual, pasarela de pagos o funcionalidades a medida? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">No lo incluye a salvo de una cotización adicional.</div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">¿Cuáles son las formas de pago? <i class="ph-bold ph-caret-down"></i></div>
@@ -844,7 +876,7 @@
       
       <div class="footer-nav-title">EXPLORA</div>
       
-      <!-- CUADRÍCULA DE ENLACES 2 COLUMNAS -->
+      <!-- CUADRÍCULA DE ENLACES -->
       <div class="footer-links-grid">
         <a href="index.html#inicio">Inicio</a>
         <a href="index.html#servicios">Servicios</a>
@@ -907,3 +939,4 @@
     }
   </script>
 </body>
+          </html>
