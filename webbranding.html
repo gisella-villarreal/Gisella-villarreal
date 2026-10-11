@@ -197,6 +197,9 @@
 
     .work-info {
       margin-bottom: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     .work-num {
@@ -222,12 +225,32 @@
       font-size: 0.7rem;
       color: var(--text-light);
     }
+    
+    /* Botón Ver Proyecto */
+    .work-btn {
+      margin-top: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--bg-cream);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    .work-card:hover .work-btn {
+      color: white; 
+    }
 
     .work-img-wrapper {
       width: 100%;
       height: 220px;
       overflow: hidden;
       border-radius: 4px;
+      margin-top: auto;
     }
 
     .work-img {
@@ -785,6 +808,7 @@
             <span class="work-num">01</span>
             <h3 class="work-name">Juls Salas</h3>
             <span class="work-category">Branding & Website</span>
+            <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
           </div>
           <div class="work-img-wrapper">
             <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop');"></div>
@@ -796,6 +820,7 @@
             <span class="work-num">02</span>
             <h3 class="work-name">Ely Arte</h3>
             <span class="work-category">Branding & Website</span>
+            <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
           </div>
           <div class="work-img-wrapper">
             <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop');"></div>
@@ -807,6 +832,7 @@
             <span class="work-num">03</span>
             <h3 class="work-name">Lion Natural Store</h3>
             <span class="work-category">Web Ecommerce</span>
+            <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
           </div>
           <div class="work-img-wrapper">
             <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop');"></div>
@@ -838,6 +864,7 @@
             <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Identidad visual aplicada a la web.</li>
             <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Dos rondas de ajustes.</li>
             <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Contacto y enlaces a redes.</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> SEO Básico</li>
           </ul>
           <p class="plan-eta">Entrega estimada: 5–8 días hábiles.</p>
           <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
@@ -857,10 +884,10 @@
           <ul class="plan-features">
             <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Hasta 4 páginas principales.</li>
             <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Identidad visual aplicada a la web.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Servicios, perfil y recursos o blog básico.</li>
             <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Integración sencilla con una herramienta externa de reservas.</li>
             <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Tres rondas de ajustes.</li>
             <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Contacto y enlaces a redes.</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> SEO Básico</li>
           </ul>
           <p class="plan-eta">Entrega estimada: 12–15 días hábiles.</p>
           <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
@@ -1005,4 +1032,4 @@
     }
   </script>
 </body>
-              </html>
+  </html>
