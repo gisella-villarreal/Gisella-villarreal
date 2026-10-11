@@ -751,7 +751,7 @@
       </div>
     </section>
 
-        <!-- PLANES DE PRECIOS -->
+                <!-- PLANES DE PRECIOS -->
     <section class="pricing-section">
       <div class="pricing-header">
         <h2 class="pricing-title">Elige tu Plan</h2>
@@ -769,4 +769,141 @@
           </div>
           <ul class="plan-features">
             <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Diseño personalizado</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> 
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Adaptable a móviles</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> 1 revisión inicial</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Botón de WhatsApp</li>
+          </ul>
+          <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
+            Contáctame
+            <span class="btn-icon"><i class="ph-bold ph-arrow-right"></i></span>
+          </a>
+        </div>
+
+        <div class="pricing-card">
+          <span class="plan-name">Plan Premium</span>
+          <span class="plan-sub">Eleva tu marca al máximo</span>
+          <div class="plan-price-wrapper">
+            <span class="plan-price">$450</span>
+            <span class="plan-currency">USD / mes</span>
+          </div>
+          <ul class="plan-features">
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Identidad visual</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Hasta 5 secciones</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Revisiones ilimitadas</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Soporte prioritario</li>
+          </ul>
+          <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
+            Contáctame
+            <span class="btn-icon"><i class="ph-bold ph-arrow-right"></i></span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES (FAQ SIN RELLENO, TEXTO BLANCO) -->
+    <section class="faq-section" id="faq">
+      <div class="section-header">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+      </div>
+      
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Cuánto tiempo tarda el desarrollo de una web? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Depende del tipo de proyecto. Las invitaciones digitales y proyectos sencillos suelen tomar de 3 a 5 días. Las páginas web profesionales entre 1 y 2 semanas, siempre y cuando tengamos todo el contenido e imágenes listas.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Necesito pagar hosting y dominio? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Te ofrezco soluciones que se adaptan a tu presupuesto. Podemos usar opciones de alojamiento gratuito o configurar un dominio propio (.com) según lo que necesite tu marca.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Qué pasa si no tengo fotos para mi página? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">¡No hay problema! Ofrezco servicios de fotografía comercial para crear imágenes de calidad de tus productos o espacio de trabajo, ideales para fortalecer la imagen de tu marca.<br><br>También podemos explorar otras alternativas creativas, como generar imágenes con IA utilizando tu rostro o trabajar con imágenes de archivo premium, según el estilo y las necesidades de tu proyecto.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Cómo funciona el servicio de fotografía? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Nos reunimos para entender la esencia de tu marca, definimos un estilo visual y realizamos la sesión. Luego selecciono y edito las mejores tomas para entregarte un paquete de imágenes listas para tu web y redes sociales.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Cómo funcionan las invitaciones digitales? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Son páginas web interactivas que envías por WhatsApp. Tienen botones para conectar con Google Maps, añadir el evento a Calendar y un botón que te envía la confirmación de asistencia a tu chat.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Haces tiendas online completas con carrito? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Me enfoco en páginas tipo vitrina, landing pages y catálogos con redirección a WhatsApp para cerrar la venta, ya que es el modelo más efectivo y económico para la mayoría de los emprendedores.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Cuáles son las formas de pago? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Trabajamos con un anticipo del 50% para separar tu cupo e iniciar el diseño, y el 50% restante al momento de entregarte la página 100% funcional.</div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-name">Gisella Villarreal</div>
+      <p class="footer-desc">Diseño web y experiencias digitales para profesionales, marcas y momentos especiales.</p>
+      
+      <div class="footer-nav-title">EXPLORA</div>
+      
+      <!-- CUADRÍCULA DE ENLACES 2 COLUMNAS -->
+      <div class="footer-links-grid">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#portafolio">Portafolio</a>
+        <a href="index.html#sobre-mi">Sobre mí</a>
+        <a href="#faq">Preguntas</a>
+        <a href="https://wa.me/573001234567" target="_blank">Contacto</a>
+      </div>
+
+      <div class="footer-nav-title">SÍGUEME</div>
+      <div class="footer-social">
+        <a href="https://wa.me/573001234567" target="_blank"><i class="ph-fill ph-whatsapp-logo"></i></a>
+        <a href="#" target="_blank"><i class="ph-fill ph-linkedin-logo"></i></a>
+        <a href="#" target="_blank"><i class="ph-fill ph-instagram-logo"></i></a>
+        <a href="mailto:correo@gmail.com"><i class="ph-fill ph-envelope-simple"></i></a>
+      </div>
+
+      <hr class="footer-divider">
+      
+      <div class="footer-bottom-text">© 2026 Gisella Villarreal. Todos los derechos reservados.</div>
+      <div class="footer-legal">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos del servicio</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.top-bar');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    function toggleMenu() {
+      const menu = document.getElementById('overlayMenu');
+      menu.classList.toggle('active');
+    }
+
+    function scrollCarousel(direction) {
+      const carousel = document.getElementById('workCarousel');
+      const scrollAmount = window.innerWidth * 0.85; 
+      carousel.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+
+    function toggleFaq(element) {
+      const allFaqs = document.querySelectorAll('.faq-item');
+      allFaqs.forEach(faq => {
+        if (faq !== element) {
+          faq.classList.remove('active');
+        }
+      });
+      element.classList.toggle('active');
+    }
+  </script>
+</body>
