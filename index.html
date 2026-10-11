@@ -268,7 +268,6 @@
       gap: 20px; 
     }
     
-    /* El contenedor ahora es un tag <a> completo */
     .service-row {
       position: relative;
       background-color: var(--bg-dark);
@@ -279,7 +278,7 @@
       justify-content: center;
       min-height: 230px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.6); 
-      text-decoration: none; /* Elimina el subrayado de enlace general */
+      text-decoration: none; 
     }
     
     .service-img {
@@ -309,7 +308,6 @@
       align-items: flex-start;
     }
 
-    /* Convertido a span porque el contenedor principal ya es <a> */
     .service-arrow {
       position: absolute;
       top: 20px;
@@ -348,7 +346,6 @@
       max-width: 65%; 
     }
 
-    /* Convertido a span y ajustado para que se ilumine al hacer hover en toda la tarjeta */
     .service-link {
       font-size: 0.6rem;
       font-weight: 700;
@@ -368,7 +365,7 @@
       color: white;
     }
 
-    /* ====== PORTAFOLIO EDITORIAL (CARRUSEL MÓVIL) ====== */
+    /* ====== TRABAJOS DESTACADOS EDITORIAL (CARRUSEL MÓVIL) ====== */
     .selected-work-section {
       padding: 40px 0 60px;
       background-color: var(--bg-dark);
@@ -813,7 +810,7 @@
       <i class="ph-bold ph-list menu-icon" onclick="toggleMenu()"></i>
     </header>
 
-        <!-- HERO -->
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-fade"></div>
       
@@ -822,6 +819,7 @@
         <p>Creo espacios digitales que cuentan historias, presentan tu trabajo y hacen que tus ideas cobren vida.</p>
         
         <div class="button-group">
+                  <div class="button-group">
           <!-- Botón Relleno -->
           <a href="#servicios" class="pill-btn">
             Ver Servicios 
@@ -864,8 +862,8 @@
       </div>
 
       <div class="services-wrapper">
-        <!-- Servicio 1: WEB BRANDING (Todo el bloque es un enlace) -->
-        <a href="web-branding.html" class="service-row">
+        <!-- Servicio 1: WEB BRANDING -->
+        <a href="https://gisella-villarreal.pages.dev/webbranding" class="service-row">
           <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop');"></div>
           <span class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></span>
           <div class="service-info">
@@ -876,7 +874,7 @@
         </a>
 
         <!-- Servicio 2: WEB EVENTOS -->
-        <a href="#portafolio" class="service-row">
+        <a href="https://gisella-villarreal.pages.dev/webeventos" class="service-row">
           <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop');"></div>
           <span class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></span>
           <div class="service-info">
@@ -886,8 +884,8 @@
           </div>
         </a>
 
-        <!-- Servicio 3: FOTOGRAFÍA -->
-        <a href="#portafolio" class="service-row">
+        <!-- Servicio 3: SOCIAL FOTOGRAFÍA -->
+        <a href="https://gisella-villarreal.pages.dev/socialfotografía" class="service-row">
           <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop');"></div>
           <span class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></span>
           <div class="service-info">
@@ -1041,7 +1039,7 @@
         <a href="#servicios">Servicios</a>
         <a href="#portafolio">Portafolio</a>
         <a href="#sobre-mi">Sobre mí</a>
-        <!-- Placeholder para enlace de Preguntas -->
+        <!-- Placeholder para enlace de Preguntas (Si creas una pág de preguntas, cambia el href) -->
         <a href="#">Preguntas</a>
         <a href="https://wa.me/573001234567" target="_blank">Contacto</a>
       </div>
@@ -1093,4 +1091,4 @@
     }
   </script>
 </body>
-</html>
+          </html>
