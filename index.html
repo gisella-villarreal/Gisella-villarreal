@@ -80,7 +80,6 @@
       width: 100%;
       height: 85vh;
       min-height: 550px;
-      /* Link actualizado */
       background-image: url('1791056211701~3.jpg'); 
       background-size: cover; 
       background-position: top center; 
@@ -136,7 +135,6 @@
       gap: 15px;
     }
 
-    /* Botón Relleno */
     .pill-btn {
       background-color: var(--bg-cream);
       color: var(--bg-dark);
@@ -172,7 +170,6 @@
       font-size: 1rem;
     }
 
-    /* Botón Transparente (NUEVO) */
     .pill-btn-outline {
       background-color: transparent;
       color: var(--bg-cream);
@@ -239,8 +236,10 @@
     }
 
     /* ====== TÍTULOS DE SECCIÓN ====== */
-    .section-header {
+    .section-header-container {
       padding: 0 20px;
+    }
+    .section-header {
       margin-bottom: 30px;
       text-align: center; 
     }
@@ -253,10 +252,6 @@
       line-height: 1;
       margin-bottom: 5px;
       letter-spacing: -0.5px;
-    }
-    .single-line-title {
-      white-space: nowrap;
-      font-size: clamp(1.8rem, 7vw, 2.5rem);
     }
 
     /* ====== SECCIÓN DE SERVICIOS ====== */
@@ -339,7 +334,6 @@
       line-height: 1.05;
       margin-bottom: 12px;
     }
-
     .service-name i {
       font-style: italic;
     }
@@ -355,7 +349,7 @@
     .service-link {
       font-size: 0.6rem;
       font-weight: 700;
-      color: var(--bg-cream); /* Modificado a color beige */
+      color: var(--bg-cream); 
       background-color: rgba(0, 0, 0, 0.4);
       padding: 10px 22px;
       border-radius: 30px; 
@@ -372,69 +366,84 @@
       color: white;
     }
 
-    /* ====== PORTAFOLIO EDITORIAL (COMO WEB BRANDING) ====== */
+    /* ====== PORTAFOLIO EDITORIAL (CARRUSEL MÓVIL) ====== */
     .selected-work-section {
-      padding: 40px 20px 60px;
+      padding: 40px 0 60px;
       background-color: var(--bg-dark);
+      position: relative;
     }
 
     .work-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 40px;
+      gap: 15px;
+      margin-bottom: 30px;
     }
 
     .work-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 2px;
+      font-family: 'Playfair Display', serif; 
+      font-style: italic;
+      font-size: 2.5rem;
+      font-weight: 500;
       color: var(--bg-cream); 
-      text-transform: uppercase;
-      white-space: nowrap;
+      line-height: 1;
+      margin: 0;
+      letter-spacing: -0.5px;
     }
 
-    .work-line {
-      flex-grow: 1;
-      height: 1px;
-      background-color: var(--border-color); 
+    /* Controles del carrusel */
+    .carousel-controls {
+      display: flex;
+      gap: 8px;
     }
 
-    .work-link {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 600;
-      color: var(--text-light);
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    .carousel-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: white;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-      transition: color 0.3s ease;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    .work-link:hover {
-      color: white;
+    .carousel-btn:hover {
+      background: var(--bg-cream);
+      color: var(--bg-dark);
+      border-color: var(--bg-cream);
     }
 
+    /* Contenedor del Carrusel */
     .work-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 0 20px 20px 20px;
+      scrollbar-width: none; 
+      -ms-overflow-style: none; 
+    }
+    
+    .work-grid::-webkit-scrollbar {
+      display: none; 
     }
 
     .work-card {
+      min-width: 85%; 
+      scroll-snap-align: center;
       border: 1px solid var(--border-color);
-      padding: 25px;
+      padding: 20px;
       border-radius: 4px;
       display: flex;
       flex-direction: column;
-      transition: border-color 0.3s ease;
       text-decoration: none;
+      flex-shrink: 0;
+      transition: border-color 0.3s ease;
     }
 
     .work-card:hover {
@@ -442,20 +451,20 @@
     }
 
     .work-info {
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .work-num {
       font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: var(--text-light);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       display: block;
     }
 
     .work-name {
       font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 500;
       color: white;
       text-transform: uppercase;
@@ -465,13 +474,13 @@
 
     .work-category {
       font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: var(--text-light);
     }
 
     .work-img-wrapper {
       width: 100%;
-      height: 250px;
+      height: 220px;
       overflow: hidden;
       border-radius: 4px;
     }
@@ -491,7 +500,7 @@
 
     /* ====== SOBRE MÍ (FONDO NEGRO) ====== */
     .about-section {
-      background-color: var(--bg-dark); /* Restaurado a fondo oscuro */
+      background-color: var(--bg-dark); 
       padding: 20px 20px 60px;
     }
     
@@ -524,7 +533,7 @@
       font-style: italic;
       font-weight: 600;
       margin-bottom: 12px;
-      color: white; /* Letras blancas para destacar en negro */
+      color: white; 
       text-align: left; 
     }
     
@@ -535,7 +544,7 @@
       gap: 15px;
     }
     .about-socials a {
-      color: white; /* Iconos blancos */
+      color: white; 
       font-size: 1.5rem;
       text-decoration: none;
       transition: opacity 0.2s;
@@ -547,7 +556,7 @@
 
     .about-text p {
       font-size: 0.85rem;
-      color: var(--text-light); /* Texto en gris claro para buena lectura */
+      color: var(--text-light); 
       line-height: 1.6;
       margin-bottom: 15px;
     }
@@ -612,10 +621,9 @@
       color: white; 
     }
     
-    /* Nueva estructura de Links 2x3 para "Explora" */
     .footer-links-grid {
       display: grid;
-      grid-template-columns: auto auto; /* Dos columnas */
+      grid-template-columns: auto auto; 
       gap: 12px 20px;
       margin-bottom: 35px;
     }
@@ -667,7 +675,7 @@
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-color: var(--bg-dark); 
+      background-color: var(--bg-cream); /* Fondo Beige */
       z-index: 9999;
       display: flex;
       flex-direction: column;
@@ -685,7 +693,7 @@
       position: absolute;
       top: 20px; right: 20px;
       font-size: 2rem;
-      color: white; 
+      color: var(--bg-dark); /* Icono X negro */
       cursor: pointer;
     }
     .overlay-content {
@@ -696,15 +704,15 @@
     }
     .overlay-content a {
       text-decoration: none;
-      color: white; 
+      color: var(--bg-dark); /* Texto enlaces negros */
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       font-style: italic;
       font-weight: 500;
-      transition: color 0.3s ease;
+      transition: opacity 0.3s ease;
     }
     .overlay-content a:hover {
-      color: var(--bg-cream);
+      opacity: 0.7;
     }
 
     /* ====== MEDIA QUERIES PARA PC ====== */
@@ -727,6 +735,7 @@
       .btn-icon i { font-size: 1.3rem; }
       
       .black-stats { padding: 0 5% 50px; }
+      .section-header-container { padding: 0 5%; }
       
       .services-wrapper { 
         padding: 0 5% 60px; 
@@ -735,11 +744,16 @@
         gap: 20px;
       }
       
+      /* Ajustes para portafolio en PC */
       .selected-work-section { padding: 80px 5%; }
       .work-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas */
         gap: 25px;
+        overflow-x: visible;
+        padding: 0;
       }
+      .work-card { min-width: auto; }
+      .carousel-controls { display: none; } /* Se ocultan las flechitas en PC */
       
       .about-section { 
         padding: 60px 5%; 
@@ -784,10 +798,10 @@
     <div class="overlay-content">
       <a href="#inicio" onclick="toggleMenu()">Inicio</a>
       <a href="#servicios" onclick="toggleMenu()">Servicios</a>
-      <a href="#portafolio" onclick="toggleMenu()">Portafolio</a>
+      <a href="#portafolio" onclick="toggleMenu()">Trabajos Destacados</a>
       <a href="#sobre-mi" onclick="toggleMenu()">Sobre mí</a>
-      <!-- Enlace temporal si el usuario tiene una pág separada de FAQ -->
-      <a href="#">FAQ</a>
+      <!-- Enlace para Contacto directo (reemplazó FAQ) -->
+      <a href="https://wa.me/573001234567" target="_blank">Contacto</a>
     </div>
   </div>
 
@@ -799,7 +813,7 @@
       <i class="ph-bold ph-list menu-icon" onclick="toggleMenu()"></i>
     </header>
 
-    <!-- HERO -->
+        <!-- HERO -->
     <section class="hero">
       <div class="hero-fade"></div>
       
@@ -843,8 +857,10 @@
 
     <!-- SECCIÓN DE SERVICIOS -->
     <section class="services-section" id="servicios">
-      <div class="section-header">
-        <h2 class="section-title">Servicios</h2>
+      <div class="section-header-container">
+        <div class="section-header">
+          <h2 class="section-title">Servicios</h2>
+        </div>
       </div>
 
       <div class="services-wrapper">
@@ -855,7 +871,7 @@
           <div class="service-info">
             <h3 class="service-name"><i>Web</i><br>Branding</h3>
             <p class="service-desc">Un espacio digital para presentar tus servicios, experiencia y formas de contacto. Ideal para marcas personales.</p>
-            <a href="web-branding.html" class="service-link">Ver Webfolio</a>
+            <a href="web-branding.html" class="service-link">Conocer más</a>
           </div>
         </div>
 
@@ -866,7 +882,7 @@
           <div class="service-info">
             <h3 class="service-name"><i>Web</i><br>Eventos</h3>
             <p class="service-desc">Invitaciones interactivas con ubicación, galería y confirmación de asistencia. Para bodas y aniversarios.</p>
-            <a href="#portafolio" class="service-link">Ver Webfolio</a>
+            <a href="#portafolio" class="service-link">Conocer más</a>
           </div>
         </div>
 
@@ -877,19 +893,32 @@
           <div class="service-info">
             <h3 class="service-name"><i>Fotu</i><br>grafía</h3>
             <p class="service-desc">Creación de contenido visual de alta calidad para destacar el valor de tu marca o eventos puntuales.</p>
-            <a href="#portafolio" class="service-link">Ver Webfolio</a>
+            <a href="#portafolio" class="service-link">Conocer más</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PORTAFOLIO EDITORIAL -->
+    <!-- TRABAJOS DESTACADOS EDITORIAL (CARRUSEL MÓVIL) -->
     <section class="selected-work-section" id="portafolio">
-      <div class="section-header">
-        <h2 class="section-title">Portafolio</h2>
+      <div class="section-header-container">
+        <div class="work-header">
+          <h2 class="section-title" style="margin:0;">Trabajos Destacados</h2>
+          <!-- Controles del Carrusel (Solo visibles en móvil) -->
+          <div class="carousel-controls">
+            <button class="carousel-btn" onclick="scrollCarousel(-1)" aria-label="Anterior">
+              <i class="ph-bold ph-caret-left"></i>
+            </button>
+            <button class="carousel-btn" onclick="scrollCarousel(1)" aria-label="Siguiente">
+              <i class="ph-bold ph-caret-right"></i>
+            </button>
+          </div>
+        </div>
       </div>
 
-      <div class="work-grid">
+      <!-- Contenedor deslizable -->
+      <div class="work-grid" id="workCarousel">
+        
         <!-- Tarjeta 01 -->
         <a href="#" class="work-card">
           <div class="work-info">
@@ -898,7 +927,7 @@
             <span class="work-category">Branding & Website</span>
           </div>
           <div class="work-img-wrapper">
-            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=400&auto=format&fit=crop');"></div>
+            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop');"></div>
           </div>
         </a>
 
@@ -910,7 +939,7 @@
             <span class="work-category">E-Commerce UI UX</span>
           </div>
           <div class="work-img-wrapper">
-            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400&auto=format&fit=crop');"></div>
+            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop');"></div>
           </div>
         </a>
 
@@ -922,9 +951,46 @@
             <span class="work-category">Mobile App Design</span>
           </div>
           <div class="work-img-wrapper">
-            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=400&auto=format&fit=crop');"></div>
+            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop');"></div>
           </div>
         </a>
+
+        <!-- Tarjeta 04 -->
+        <a href="#" class="work-card">
+          <div class="work-info">
+            <span class="work-num">04</span>
+            <h3 class="work-name">Lumina Beauty</h3>
+            <span class="work-category">Social Media Kit</span>
+          </div>
+          <div class="work-img-wrapper">
+            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1522337360788-8b13fee7a3f0?q=80&w=600&auto=format&fit=crop');"></div>
+          </div>
+        </a>
+
+        <!-- Tarjeta 05 -->
+        <a href="#" class="work-card">
+          <div class="work-info">
+            <span class="work-num">05</span>
+            <h3 class="work-name">Casa Nova</h3>
+            <span class="work-category">Real Estate Website</span>
+          </div>
+          <div class="work-img-wrapper">
+            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=600&auto=format&fit=crop');"></div>
+          </div>
+        </a>
+
+        <!-- Tarjeta 06 -->
+        <a href="#" class="work-card">
+          <div class="work-info">
+            <span class="work-num">06</span>
+            <h3 class="work-name">Urban Fit</h3>
+            <span class="work-category">Brand Identity</span>
+          </div>
+          <div class="work-img-wrapper">
+            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=600&auto=format&fit=crop');"></div>
+          </div>
+        </a>
+
       </div>
     </section>
 
@@ -975,8 +1041,9 @@
         <a href="#servicios">Servicios</a>
         <a href="#portafolio">Portafolio</a>
         <a href="#sobre-mi">Sobre mí</a>
+        <!-- Placeholder para enlace de Preguntas (Si creas una pág de preguntas, cambia el href) -->
         <a href="#">Preguntas</a>
-        <a href="https://wa.me/573001234567">Contacto</a>
+        <a href="https://wa.me/573001234567" target="_blank">Contacto</a>
       </div>
 
       <div class="footer-nav-title">SÍGUEME</div>
@@ -998,6 +1065,7 @@
   </div>
 
   <script>
+    // Cambio de transparente a Beige al hacer scroll
     window.addEventListener('scroll', function() {
       const header = document.querySelector('.top-bar');
       if (window.scrollY > 50) {
@@ -1007,10 +1075,22 @@
       }
     });
 
+    // Menú Overlay
     function toggleMenu() {
       const menu = document.getElementById('overlayMenu');
       menu.classList.toggle('active');
     }
+
+    // Función para deslizar el carrusel de proyectos con las flechitas
+    function scrollCarousel(direction) {
+      const carousel = document.getElementById('workCarousel');
+      // Calcula cuánto debe moverse basándose en el ancho visible
+      const scrollAmount = window.innerWidth * 0.85; 
+      carousel.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
   </script>
 </body>
-</html>
+            </html>
