@@ -387,6 +387,7 @@
       font-style: italic;
     }
 
+    /* BOTONES */
     .plan-btn {
       background-color: var(--bg-cream);
       color: var(--bg-dark);
@@ -409,6 +410,26 @@
       background-color: white;
     }
 
+    .pill-btn-outline {
+      background-color: transparent;
+      color: var(--bg-cream);
+      padding: 6px 10px 6px 0; 
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.3s ease;
+    }
+
+    .pill-btn-outline:hover {
+      opacity: 0.7;
+    }
+
     .btn-icon {
       background-color: var(--bg-dark);
       color: var(--bg-cream);
@@ -423,6 +444,71 @@
     
     .btn-icon i {
       font-size: 0.9rem;
+    }
+
+    /* ====== NUEVO SERVICIO EXPRESS (BIOLINK) ====== */
+    .express-service-section {
+      padding: 0 20px 60px;
+      background-color: var(--bg-dark);
+    }
+
+    .express-card {
+      border: 1px solid var(--bg-cream);
+      border-radius: 8px;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      position: relative;
+    }
+
+    .express-badge {
+      background-color: var(--bg-cream);
+      color: var(--bg-dark);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      align-self: flex-start;
+      margin-bottom: 5px;
+    }
+
+    .express-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      line-height: 1.1;
+    }
+
+    .express-desc {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .express-price {
+      font-family: 'Inter', sans-serif;
+      font-size: 2rem;
+      color: var(--bg-cream);
+      font-weight: 600;
+      letter-spacing: -1px;
+      margin-bottom: 25px;
+      display: block;
+    }
+
+    .express-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
     }
 
     /* ====== SERVICIOS ADICIONALES (TABLA) ====== */
@@ -729,6 +815,16 @@
       .btn-icon { width: 40px; height: 40px; }
       .btn-icon i { font-size: 1.3rem; }
 
+      .express-service-section { padding: 0 5% 60px; }
+      .express-card {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px;
+      }
+      .express-title { font-size: 2.5rem; }
+      .express-price { font-size: 3.5rem; }
+
       .addons-section { padding: 0 5% 80px; }
       .addons-title { font-size: 2rem; margin-bottom: 30px; }
       .addons-table th { font-size: 0.9rem; }
@@ -749,7 +845,7 @@
       .footer-divider { grid-column: 1 / -1; margin-top: 30px; }
       .footer-bottom-text { grid-column: 1 / 2; }
       .footer-legal { grid-column: 2 / -1; text-align: right; }
-    }
+        }
   </style>
 </head>
 <body>
@@ -800,7 +896,7 @@
         </div>
       </div>
 
-            <!-- Contenedor deslizable -->
+      <!-- Contenedor deslizable -->
       <div class="work-grid" id="workCarousel">
         
         <a href="#" class="work-card">
@@ -896,6 +992,31 @@
           </a>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ====== NUEVO SERVICIO EXPRESS (BIOLINK) ====== -->
+    <section class="express-service-section">
+      <div class="express-card">
+        <div class="express-content" style="flex: 1;">
+          <div class="express-badge">Nuevo Servicio Express</div>
+          <h3 class="express-title">Biolink Magnético</h3>
+          <p class="express-desc">Una mini página web personalizada para presentar tus servicios, mostrar tu portafolio y conectar con tus clientes desde Instagram.</p>
+          <span class="express-price">$50.000</span>
+          
+          <div class="express-actions">
+            <!-- Botón Transparente -->
+            <a href="#" class="pill-btn-outline">
+              Ver Proyecto 
+              <span class="btn-icon-transparent"><i class="ph-bold ph-arrow-right"></i></span>
+            </a>
+            <!-- Botón Relleno -->
+            <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
+              Quiero el mío
+              <span class="btn-icon"><i class="ph-bold ph-whatsapp-logo"></i></span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1032,4 +1153,4 @@
     }
   </script>
 </body>
-  </html>
+        </html>
