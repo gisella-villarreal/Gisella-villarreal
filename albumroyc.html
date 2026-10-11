@@ -2,9 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <!-- Configuración clave para permitir hacer zoom (pinch-to-zoom) en móviles -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <title>Álbum Cliente | Gisella Villarreal Fotografía</title>
+  <title>Álbum Cliente | Gisella Villarreal</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -34,28 +33,29 @@
       position: relative;
       width: 100%;
       height: 100vh;
-      /* Reemplaza esta URL con la foto principal de la sesión de tu cliente */
       background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop');
       background-size: cover;
       background-position: center;
       display: flex;
       flex-direction: column;
+      /* Lo mantenemos al final, pero lo empujaremos hacia arriba con el padding */
       justify-content: flex-end;
     }
 
-    /* Gradiente oscuro inferior para que los textos blancos resalten siempre */
+    /* Gradiente oscuro inferior modificado para cubrir más área y que se lea bien el texto arriba */
     .hero-gradient {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 40%;
-      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+      height: 50%;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
       z-index: 1;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      padding: 40px;
+      /* Ajuste clave: padding bottom de 15vh (15% de la pantalla) para subir los textos */
+      padding: 40px 40px 15vh 40px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -106,7 +106,6 @@
       border-bottom: 1px solid #eeeeee;
     }
 
-    /* Flex 1 asegura que los elementos de los extremos no empujen el centro */
     .nav-left {
       display: flex;
       flex-direction: column;
@@ -128,7 +127,6 @@
       letter-spacing: 1.5px;
       text-transform: uppercase;
       margin-top: 4px;
-      line-height: 1.4;
     }
 
     .nav-center {
@@ -156,7 +154,6 @@
       color: var(--brand-beige);
     }
 
-    /* Espacio vacío para mantener "Destacados" centrado perfectamente */
     .nav-right {
       flex: 1;
     }
@@ -260,7 +257,8 @@
     /* ====== RESPONSIVE PARA MÓVILES ====== */
     @media (max-width: 768px) {
       .hero-content {
-        padding: 20px;
+        /* En celulares subimos aún más el texto (18vh) para evitar la barra de navegación del móvil */
+        padding: 20px 20px 18vh 20px;
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
@@ -322,12 +320,11 @@
   <nav class="gallery-nav" id="galeria">
     <div class="nav-left">
       <div class="nav-client-name">María Eduarda & Gustavo</div>
-      <!-- Nombre en dos líneas -->
-      <div class="nav-photographer">Gisella Villarreal<br>Fotografía Social</div>
+      <div class="nav-photographer">Gisella Villarreal</div>
     </div>
     
     <div class="nav-center">
-      <a href="#" class="nav-tab active">Destacados</a>
+      <a href="#" class="nav-tab active">Galeria</a>
     </div>
 
     <!-- Contenedor vacío para mantener el centro equilibrado -->
@@ -445,4 +442,5 @@
 
   </script>
 </body>
-</html>
+  </html>
+  
