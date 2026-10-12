@@ -30,22 +30,6 @@
             }
         }
     </script>
-    
-    <style>
-        .faq-content {
-            display: grid;
-            grid-template-rows: 0fr;
-            transition: grid-template-rows 0.3s ease-out, opacity 0.3s ease-out;
-            opacity: 0;
-        }
-        .faq-content.open {
-            grid-template-rows: 1fr;
-            opacity: 1;
-        }
-        .faq-inner {
-            overflow: hidden;
-        }
-    </style>
 </head>
 <body class="bg-gray-100 antialiased text-dark-green selection:bg-golden-sand selection:text-dark-green">
 
@@ -165,68 +149,6 @@
             </p>
         </section>
 
-        <section class="px-6 py-6 relative z-10">
-            <h2 class="font-serif text-3xl mb-6 text-dark-green text-center">Preguntas frecuentes</h2>
-            <div class="flex flex-col gap-0">
-                <!-- FAQ Item 1 -->
-                <div class="border-b border-dark-green/15">
-                    <!-- Tight padding and whitespace-nowrap for single line -->
-                    <button class="faq-btn w-full flex justify-between items-center py-3 text-left hover:text-sage transition-colors overflow-hidden">
-                        <span class="font-sans text-sm font-medium pr-2 whitespace-nowrap text-ellipsis overflow-hidden">¿Cómo funciona la consultoría?</span>
-                        <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 text-dark-green/60 shrink-0"></i>
-                    </button>
-                    <div class="faq-content">
-                        <div class="faq-inner font-sans text-sm font-light leading-relaxed pb-4 pt-1 text-dark-green/80">
-                            Evaluamos la situación actual de tu organización o perfil profesional mediante herramientas de diagnóstico, para luego diseñar e implementar una estrategia a medida enfocada en resultados y bienestar.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="border-b border-dark-green/15">
-                    <button class="faq-btn w-full flex justify-between items-center py-3 text-left hover:text-sage transition-colors overflow-hidden">
-                        <span class="font-sans text-sm font-medium pr-2 whitespace-nowrap text-ellipsis overflow-hidden">¿Cómo sé qué servicio necesita mi empresa?</span>
-                        <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 text-dark-green/60 shrink-0"></i>
-                    </button>
-                    <div class="faq-content">
-                        <div class="faq-inner font-sans text-sm font-light leading-relaxed pb-4 pt-1 text-dark-green/80">
-                            Podemos iniciar con una conversación para conocer tus objetivos, identificar tus necesidades y definir una propuesta de trabajo acorde con ellos.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="border-b border-dark-green/15">
-                    <button class="faq-btn w-full flex justify-between items-center py-3 text-left hover:text-sage transition-colors overflow-hidden">
-                        <span class="font-sans text-sm font-medium pr-2 whitespace-nowrap text-ellipsis overflow-hidden">¿Cuánto tiempo dura la mentoría?</span>
-                        <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 text-dark-green/60 shrink-0"></i>
-                    </button>
-                    <div class="faq-content">
-                        <div class="faq-inner font-sans text-sm font-light leading-relaxed pb-4 pt-1 text-dark-green/80">
-                            La duración varía según los objetivos planteados. Puede ser desde intervenciones puntuales de algunas semanas, hasta acompañamientos estratégicos de varios meses.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="relative w-full py-14 px-8 mt-4 flex items-center justify-center text-center overflow-hidden">
-            <!-- Blurred Background Image -->
-            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800')] bg-cover bg-center filter blur-[6px] scale-110"></div>
-            <!-- Dark Overlay for contrast -->
-            <div class="absolute inset-0 bg-dark-green/75"></div>
-            
-            <!-- Content -->
-            <div class="relative z-10 flex flex-col items-center">
-                <h3 class="font-serif text-2xl font-medium leading-snug text-peach mb-4 drop-shadow-md">
-                    "Detrás de cada gran equipo, hay personas que merecen crecer."
-                </h3>
-                <p class="font-sans text-[11px] uppercase tracking-[0.2em] font-semibold text-golden-sand drop-shadow-sm">
-                    Talento, propósito y desarrollo humano.
-                </p>
-            </div>
-        </section>
-
         <footer class="bg-dark-green text-peach px-8 pt-16 pb-12 text-center relative z-10 flex-grow flex flex-col justify-between">
             
             <div class="mb-10 text-center">
@@ -256,35 +178,5 @@
 
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const faqButtons = document.querySelectorAll('.faq-btn');
-
-            faqButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const content = button.nextElementSibling;
-                    const icon = button.querySelector('i');
-                    
-                    // Toggle current
-                    content.classList.toggle('open');
-                    
-                    // Rotate Icon
-                    if (content.classList.contains('open')) {
-                        icon.style.transform = 'rotate(-180deg)';
-                    } else {
-                        icon.style.transform = 'rotate(0deg)';
-                    }
-
-                    // Accordion behavior: Close others
-                    faqButtons.forEach(otherBtn => {
-                        if (otherBtn !== button) {
-                            otherBtn.nextElementSibling.classList.remove('open');
-                            otherBtn.querySelector('i').style.transform = 'rotate(0deg)';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
