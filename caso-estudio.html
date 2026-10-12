@@ -1,57 +1,237 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Caso de Estudio E-commerce</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,600;1,700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-<style>
-:root{--bg-cream:#F4F1ED;--bg-dark:#151515;--text-main:#1A1A1A;--text-light:#666666;--border-color:#E2DDD5;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Inter',sans-serif;background-color:var(--bg-cream);color:var(--text-main);padding-bottom:90px;-webkit-font-smoothing:antialiased;}
-.page-wrapper{max-width:750px;margin:0 auto;background-color:var(--bg-cream);min-height:100vh;border-left:1px solid var(--border-color);border-right:1px solid var(--border-color);padding-bottom:50px;}
-.case-header{padding:40px 20px 20px;}
-.back-link{display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;text-decoration:none;color:var(--text-light);margin-bottom:20px;font-weight:500;}
-.case-header h1{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:500;line-height:1.1;margin-bottom:15px;color:var(--bg-dark);}
-.case-header h1 i{font-style:italic;color:var(--text-light);}
-.case-meta{display:flex;gap:15px;font-size:0.75rem;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-bottom:25px;font-weight:600;}
-.case-content{padding:0 20px;}
-.case-section{margin-bottom:35px;}
-.case-section h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:10px;color:var(--bg-dark);}
-.case-section p{font-size:0.9rem;color:var(--text-light);line-height:1.6;}
-.case-image-box{width:100%;height:350px;background-color:#E8E4DD;border-radius:12px;background-size:cover;background-position:center;margin:20px 0;border:1px solid var(--border-color);}
-.bottom-nav{position:fixed;bottom:0;width:100%;max-width:750px;left:50%;transform:translateX(-50%);background:var(--bg-cream);display:flex;justify-content:space-around;padding:15px 0 20px 0;border-top:1px solid var(--border-color);z-index:1000;border-radius:20px 20px 0 0;}
-.nav-item{text-decoration:none;color:#A0A0A0;display:flex;flex-direction:column;align-items:center;}
-.nav-item i{font-size:1.4rem;margin-bottom:4px;}
-.nav-item.active{color:var(--bg-dark);}
-.nav-item span{font-size:0.6rem;font-weight:500;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alina & Daniel - Boda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fcfbfa;
+            --card-bg: #f5f1ea;
+            --text-dark: #2c2c2c;
+            --text-gray: #555;
+            --btn-color: #6a735c;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Montserrat', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            font-family: var(--font-sans);
+            text-align: center;
+        }
+
+        /* Navegación */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        nav .logo { font-family: var(--font-serif); font-size: 1.2rem; }
+        nav ul { list-style: none; display: flex; gap: 30px; }
+        nav ul li a { text-decoration: none; color: var(--text-dark); }
+
+        /* Sección Hero (Principal) */
+        .hero {
+            background-color: var(--card-bg);
+            margin: 20px auto;
+            width: 80%;
+            max-width: 1000px;
+            border-radius: 40px 40px 0 0;
+            padding: 60px 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            font-weight: 400;
+            margin: 10px 0;
+        }
+        .hero .date, .hero .location {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: var(--btn-color);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+        .hero-image {
+            width: 100%;
+            height: 300px;
+            background: url('https://via.placeholder.com/1000x400?text=Imagen+del+Lago+de+Como') center/cover;
+            border-radius: 40px 40px 0 0;
+        }
+
+        /* Iconos y Detalles */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .grid-item { font-size: 0.8rem; letter-spacing: 1px; }
+        .grid-item img { width: 40px; margin-bottom: 15px; }
+
+        /* Títulos de sección */
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            margin: 60px 0 20px;
+            text-transform: uppercase;
+        }
+        .section-subtitle {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+
+        /* Tarjetas (Dress Code y RSVP) */
+        .card {
+            background-color: var(--card-bg);
+            margin: 20px auto;
+            width: 80%;
+            max-width: 900px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px;
+            text-align: left;
+        }
+        .card-content { flex: 1; }
+        .card-content h2 { font-family: var(--font-serif); font-size: 1.5rem; letter-spacing: 2px; margin-top:0;}
+        .card-image {
+            flex: 1;
+            height: 200px;
+            background: url('https://via.placeholder.com/400x200?text=Imagen+Acuarela') center/cover;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            margin: 60px 0;
+            padding-bottom: 40px;
+        }
+        footer p { letter-spacing: 3px; font-size: 0.9rem; }
+        footer h3 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; margin-top: 20px;}
+    </style>
 </head>
 <body>
-<div class="page-wrapper">
-<div class="case-header">
-<a href="index.html" class="back-link"><i class="ph-bold ph-arrow-left"></i> Volver a Inicio</a>
-<h1>Rediseño y Estructura <br><i>Tienda Online</i></h1>
-<div class="case-meta"><span>Cliente: RocoTec</span> • <span>E-merchandising & UX</span></div>
-</div>
-<div class="case-content">
-<div class="case-section">
-<h3>El Desafío</h3>
-<p>La marca necesitaba ordenar visualmente su catálogo de productos digitales y optimizar el recorrido del cliente (UX) para hacer la navegación mucho más intuitiva, limpia y atractiva desde dispositivos móviles.</p>
-</div>
-<div class="case-image-box" style="background-image: url('logo.png');"></div>
-<div class="case-section">
-<h3>La Solución Aplicada</h3>
-<p>Implementé una estructura de cuadrícula limpia, jerarquía visual en los precios y botones de acción directos que reducen la fricción en el proceso de compra. Este prospecto refleja fielmente la optimización del diseño original que realicé para elevar la conversión.</p>
-</div>
-</div>
-</div>
-<nav class="bottom-nav">
-<a href="index.html" class="nav-item"><i class="ph-light ph-house"></i><span>Inicio</span></a>
-<a href="sobre-mi.html" class="nav-item"><i class="ph-light ph-user"></i><span>Sobre mí</span></a>
-<a href="servicios.html" class="nav-item"><i class="ph-light ph-briefcase"></i><span>Servicios</span></a>
-<a href="shop.html" class="nav-item"><i class="ph-light ph-shopping-bag"></i><span>Shop</span></a>
-</nav>
+
+    <!-- Navegación -->
+    <nav>
+        <div class="logo">A & D</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Details</a></li>
+            <li><a href="#">RSVP</a></li>
+        </ul>
+        <div class="tagline">A More Beautiful Tomorrow</div>
+    </nav>
+
+    <!-- Sección Principal -->
+    <header class="hero">
+        <p class="date">Together with great joy<br>we invite you to the wedding of</p>
+        <h1>Alina & Daniel</h1>
+        <p class="date">12 September 2026</p>
+        <p class="location">Lake Como, Italy</p>
+        <a href="#" class="btn">You're Invited ></a>
+        <!-- Aquí debes reemplazar el placeholder con tu imagen del lago -->
+        <div class="hero-image"></div>
+    </header>
+
+    <!-- Resumen -->
+    <section class="grid-4">
+        <div class="grid-item">
+            <p><strong>THE DATE</strong><br>12 September 2026</p>
+        </div>
+        <div class="grid-item">
+            <p><strong>THE VENUE</strong><br>Lake Como, Italy</p>
+        </div>
+        <div class="grid-item">
+            <p><strong>GOOD COMPANY</strong><br>Family & Friends</p>
+        </div>
+        <div class="grid-item">
+            <p><strong>A BRIGHTER</strong><br>Tomorrow</p>
+        </div>
+    </section>
+
+    <!-- El Día -->
+    <h2 class="section-title">The Day</h2>
+    <p class="section-subtitle">A CELEBRATION FILLED WITH LOVE</p>
+    <section class="grid-4">
+        <div class="grid-item">
+            <p><strong>4:00 PM</strong><br>Ceremony<br><i>Villa del Balbianello</i></p>
+        </div>
+        <div class="grid-item">
+            <p><strong>5:00 PM</strong><br>Cocktail Hour<br><i>On the Terrace</i></p>
+        </div>
+        <div class="grid-item">
+            <p><strong>7:00 PM</strong><br>Dinner<br><i>By the Lake</i></p>
+        </div>
+        <div class="grid-item">
+            <p><strong>9:00 PM</strong><br>Dancing<br><i>Under the Stars</i></p>
+        </div>
+    </section>
+
+    <!-- Dress Code -->
+    <section class="card">
+        <div class="card-content">
+            <h2>DRESS CODE</h2>
+            <p><strong>GARDEN ELEGANCE</strong></p>
+            <p style="font-style: italic; color: var(--text-gray);">Soft tones, natural textures, and a touch of Italian romance.</p>
+            <br>
+            <a href="#" class="btn">See Guidelines ></a>
+        </div>
+        <!-- Aquí va la imagen de la ropa -->
+        <div class="card-image" style="background: url('https://via.placeholder.com/300x200?text=Traje+y+Vestido') center/contain no-repeat;"></div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="card">
+        <div class="card-content">
+            <h2>RSVP</h2>
+            <p>KINDLY REPLY BY 1 JULY 2026</p>
+            <p style="font-style: italic; color: var(--text-gray);">We can't wait to celebrate with you.</p>
+            <br>
+            <a href="#" class="btn">Send Your RSVP ></a>
+        </div>
+        <!-- Aquí va la imagen del balcón -->
+        <div class="card-image" style="background: url('https://via.placeholder.com/300x200?text=Paisaje+Balcon') center/cover;"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>A MORE BEAUTIFUL TOMORROW TOGETHER</p>
+        <h3>Alina & Daniel</h3>
+        <p style="font-size: 0.8rem; letter-spacing: 5px;">12 . 09 . 2026</p>
+    </footer>
+
 </body>
 </html>
