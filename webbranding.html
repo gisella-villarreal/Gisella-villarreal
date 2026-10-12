@@ -303,6 +303,11 @@
       gap: 10px; 
     }
 
+    /* El tercer plan ocupará todo el ancho en móvil para que se vea balanceado */
+    .pricing-card:nth-child(3) {
+      grid-column: 1 / -1;
+    }
+
     .pricing-card {
       border: 1px solid var(--border-color);
       padding: 20px 12px; 
@@ -410,26 +415,6 @@
       background-color: white;
     }
 
-    .pill-btn-outline {
-      background-color: transparent;
-      color: var(--bg-cream);
-      padding: 6px 10px 6px 0; 
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: opacity 0.3s ease;
-    }
-
-    .pill-btn-outline:hover {
-      opacity: 0.7;
-    }
-
     .btn-icon {
       background-color: var(--bg-dark);
       color: var(--bg-cream);
@@ -444,71 +429,6 @@
     
     .btn-icon i {
       font-size: 0.9rem;
-    }
-
-    /* ====== NUEVO SERVICIO EXPRESS (BIOLINK) ====== */
-    .express-service-section {
-      padding: 0 20px 60px;
-      background-color: var(--bg-dark);
-    }
-
-    .express-card {
-      border: 1px solid var(--bg-cream);
-      border-radius: 8px;
-      padding: 30px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      position: relative;
-    }
-
-    .express-badge {
-      background-color: var(--bg-cream);
-      color: var(--bg-dark);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 5px 12px;
-      border-radius: 20px;
-      align-self: flex-start;
-      margin-bottom: 5px;
-    }
-
-    .express-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 500;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-      line-height: 1.1;
-    }
-
-    .express-desc {
-      font-size: 0.8rem;
-      color: var(--text-light);
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-
-    .express-price {
-      font-family: 'Inter', sans-serif;
-      font-size: 2rem;
-      color: var(--bg-cream);
-      font-weight: 600;
-      letter-spacing: -1px;
-      margin-bottom: 25px;
-      display: block;
-    }
-
-    .express-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      align-items: center;
     }
 
     /* ====== SERVICIOS ADICIONALES (TABLA) ====== */
@@ -792,11 +712,14 @@
       .pricing-desc { margin-bottom: 10px; text-align: right; }
       
       .pricing-grid {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 40px; 
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en PC */
+        gap: 30px; 
+      }
+      .pricing-card:nth-child(3) {
+        grid-column: auto; /* Restablecemos en PC */
       }
       .pricing-card {
-        padding: 40px 40px; 
+        padding: 40px 30px; 
       }
       .plan-name { font-size: 0.8rem; }
       .plan-sub { font-size: 0.8rem; min-height: auto; }
@@ -806,24 +729,14 @@
         gap: 5px;
         padding-bottom: 30px;
       }
-      .plan-price { font-size: 3.5rem; }
+      .plan-price { font-size: 3rem; }
       .plan-currency { font-size: 1rem; }
-      .plan-feature-item { font-size: 0.9rem; margin-bottom: 18px; gap: 12px; }
+      .plan-feature-item { font-size: 0.85rem; margin-bottom: 18px; gap: 12px; }
       .plan-feature-item i { font-size: 1.2rem; }
       .plan-eta { font-size: 0.8rem; margin-bottom: 30px; }
       .plan-btn { padding: 10px 10px 10px 25px; font-size: 0.8rem; }
       .btn-icon { width: 40px; height: 40px; }
       .btn-icon i { font-size: 1.3rem; }
-
-      .express-service-section { padding: 0 5% 60px; }
-      .express-card {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 50px;
-      }
-      .express-title { font-size: 2.5rem; }
-      .express-price { font-size: 3.5rem; }
 
       .addons-section { padding: 0 5% 80px; }
       .addons-title { font-size: 2rem; margin-bottom: 30px; }
@@ -845,7 +758,7 @@
       .footer-divider { grid-column: 1 / -1; margin-top: 30px; }
       .footer-bottom-text { grid-column: 1 / 2; }
       .footer-legal { grid-column: 2 / -1; text-align: right; }
-        }
+    }
   </style>
 </head>
 <body>
@@ -896,14 +809,14 @@
         </div>
       </div>
 
-      <!-- Contenedor deslizable -->
+           <!-- Contenedor deslizable -->
       <div class="work-grid" id="workCarousel">
         
         <a href="#" class="work-card">
           <div class="work-info">
             <span class="work-num">01</span>
-            <h3 class="work-name">Juls Salas</h3>
-            <span class="work-category">Branding & Website</span>
+            <h3 class="work-name">PSICÓLOGA</h3>
+            <span class="work-category">BioLink Magnético</span>
             <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
           </div>
           <div class="work-img-wrapper">
@@ -926,8 +839,8 @@
         <a href="#" class="work-card">
           <div class="work-info">
             <span class="work-num">03</span>
-            <h3 class="work-name">Lion Natural Store</h3>
-            <span class="work-category">Web Ecommerce</span>
+            <h3 class="work-name">FÍSICOCULTURISTA</h3>
+            <span class="work-category">Branding & Website</span>
             <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
           </div>
           <div class="work-img-wrapper">
@@ -946,6 +859,27 @@
       </div>
 
       <div class="pricing-grid">
+
+        <!-- Plan BioLink Magnético -->
+        <div class="pricing-card">
+          <span class="plan-name">BioLink Magnético</span>
+          <span class="plan-sub">Una mini página web personalizada optimizada para Instagram.</span>
+          <div class="plan-price-wrapper">
+            <span class="plan-currency">Desde</span>
+            <span class="plan-price">$50.000</span>
+          </div>
+          <ul class="plan-features">
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> One-page de hasta 3 secciones.</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Diseño Mobile first.</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Una ronda de ajustes al final.</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Contacto a WhatsApp.</li>
+          </ul>
+          <p class="plan-eta">Entrega: 1 a 2 días hábiles</p>
+          <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
+            Contáctame
+            <span class="btn-icon"><i class="ph-bold ph-arrow-right"></i></span>
+          </a>
+        </div>
         
         <!-- Plan Esencial -->
         <div class="pricing-card">
@@ -960,7 +894,7 @@
             <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Identidad visual aplicada a la web.</li>
             <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Dos rondas de ajustes.</li>
             <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Contacto y enlaces a redes.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> SEO Básico</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> SEO Básico.</li>
           </ul>
           <p class="plan-eta">Entrega estimada: 5–8 días hábiles.</p>
           <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
@@ -983,7 +917,7 @@
             <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Integración sencilla con una herramienta externa de reservas.</li>
             <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Tres rondas de ajustes.</li>
             <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Contacto y enlaces a redes.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> SEO Básico</li>
+            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> SEO Básico.</li>
           </ul>
           <p class="plan-eta">Entrega estimada: 12–15 días hábiles.</p>
           <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
@@ -992,31 +926,6 @@
           </a>
         </div>
 
-      </div>
-    </section>
-
-    <!-- ====== NUEVO SERVICIO EXPRESS (BIOLINK) ====== -->
-    <section class="express-service-section">
-      <div class="express-card">
-        <div class="express-content" style="flex: 1;">
-          <div class="express-badge">Nuevo Servicio Express</div>
-          <h3 class="express-title">Biolink Magnético</h3>
-          <p class="express-desc">Una mini página web personalizada para presentar tus servicios, mostrar tu portafolio y conectar con tus clientes desde Instagram.</p>
-          <span class="express-price">$50.000</span>
-          
-          <div class="express-actions">
-            <!-- Botón Transparente -->
-            <a href="#" class="pill-btn-outline">
-              Ver Proyecto 
-              <span class="btn-icon-transparent"><i class="ph-bold ph-arrow-right"></i></span>
-            </a>
-            <!-- Botón Relleno -->
-            <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
-              Quiero el mío
-              <span class="btn-icon"><i class="ph-bold ph-whatsapp-logo"></i></span>
-            </a>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1153,4 +1062,4 @@
     }
   </script>
 </body>
-        </html>
+</html>
