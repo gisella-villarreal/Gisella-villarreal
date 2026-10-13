@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Artista</title>
+    <!-- Fuentes de Google: 'Caveat' para el estilo manuscrito y 'Jost' para el texto general -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent-color: #ff008c; /* El color juvenil solicitado */
+            --bg-color: #faf9f5;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+        }
+
+        /* --- NAVEGACIÓN --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 4rem;
+            background-color: var(--bg-color);
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color); /* Toque juvenil en hover */
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            position: relative;
+            height: 80vh;
+            /* Reemplaza esta URL con la imagen de tu arte */
+            background-image: url('https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.2); /* Oscurece un poco la imagen para que el texto resalte */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: var(--text-light);
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 6rem;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            border-color: var(--accent-color);
+        }
+
+        /* --- SECCIÓN COLECCIONES --- */
+        .collections-section {
+            padding: 5rem 4rem;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title span {
+            font-family: 'Caveat', cursive;
+            font-size: 4rem;
+            text-transform: none;
+            letter-spacing: normal;
+            color: var(--accent-color); /* Título en fucsia */
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 250px;
+            background-color: #eaeaea;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-img {
+            transform: scale(1.02);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .btn-outline {
+            align-self: flex-start;
+            padding: 0.8rem 1.5rem;
+            background: transparent;
+            border: 1px solid #ccc;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado / Navegación -->
+    <header>
+        <a href="#" class="logo">Tu Nombre</a>
+        <nav>
+            <a href="#" class="active">Colecciones</a>
+            <a href="#">Archivos</a>
+            <a href="#">Tienda</a>
+            <a href="#">Sobre Mí</a>
+        </nav>
+    </header>
+
+    <!-- Sección Principal con Imagen -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>La Arquitectura<br>de la Luz</h1>
+            <p>Transformando espacios simples en lugares llenos de color. Entra en la vibrante arquitectura de la luz.</p>
+            <a href="#" class="btn">Últimos Trabajos</a>
+        </div>
+    </section>
+
+    <!-- Galería de Colecciones -->
+    <section class="collections-section">
+        <h2 class="section-title">Todas las <span>Colecciones</span></h2>
+        
+        <div class="gallery">
+            <!-- Tarjeta 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Obra 1" class="card-img">
+                <h3>Vibras Urbanas</h3>
+                <a href="#" class="btn-outline">Ver Colección</a>
+            </div>
+            <!-- Tarjeta 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Obra 2" class="card-img">
+                <h3>El Ruido Silencioso</h3>
+                <a href="#" class="btn-outline">Ver Colección</a>
+            </div>
+            <!-- Tarjeta 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Obra 3" class="card-img">
+                <h3>Atardecer de la Vida</h3>
+                <a href="#" class="btn-outline">Ver Colección</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+  </html>
+  
