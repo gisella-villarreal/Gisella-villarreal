@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ElyArte - Portafolio</title>
-    <!-- Fuentes de Google: 'Caveat' para el estilo manuscrito y 'Jost' para el texto general -->
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Frida Kahlo - Portfolio Concept</title>
+    <!-- Fuentes de Google: Playfair Display para títulos elegantes y Montserrat para textos legibles -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fdcae1; /* Fondo rosa pastel */
-            --text-color: #333333; /* Texto oscuro para contrastar */
-            --accent-color: #ff008c; /* Fucsia para el logo y acentos */
+            --bg-dark: #37304b; /* Púrpura oscuro del hero */
+            --bg-light: #f2f2f4; /* Gris claro del cuerpo */
+            --accent-color: #ff5263; /* Cuadrado rojo/coral de acento */
+            --text-dark: #2a2a2a;
+            --text-light: #ffffff;
         }
-        
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -20,157 +22,286 @@
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Jost', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             overflow-x: hidden;
         }
 
-        a { 
-            color: var(--text-color); 
-            text-decoration: none; 
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--accent-color);
-        }
-
-        /* --- ENCABEZADO --- */
+        /* --- NAVEGACIÓN SUPERIOR --- */
         header {
+            position: absolute;
+            top: 0; left: 0; right: 0;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 1rem 3rem;
-            background-color: var(--bg-color);
+            padding: 2rem 4rem;
+            color: var(--text-light);
+            z-index: 10;
         }
 
         .logo {
-            font-family: 'Caveat', cursive;
-            font-size: 3.5rem;
-            color: var(--accent-color);
-            line-height: 1;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
         }
 
-        .menu-icon {
+        .menu-btn {
+            font-size: 1.5rem;
             cursor: pointer;
-            color: var(--text-color);
         }
 
-        .menu-icon:hover {
-            color: var(--accent-color);
-        }
-
-        /* --- HERO BANNER (VIDEO A TODO LO ANCHO) --- */
-        .hero-banner {
-            width: 100%;
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            position: relative;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 6rem 4rem 2rem 4rem;
         }
 
-        .hero-banner video {
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
             width: 100%;
-            max-height: 75vh;
-            object-fit: cover;
+        }
+
+        @media (min-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr auto 1fr;
+            }
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(4rem, 8vw, 7rem);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text .dates {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            opacity: 0.7;
+            margin-bottom: 1rem;
             display: block;
         }
 
-        /* --- SECCIONES DIVIDIDAS (50/50) --- */
-        .split-section {
-            display: flex;
-            flex-direction: column;
-            max-width: 1400px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-            gap: 3rem;
+        .hero-image {
+            text-align: center;
+            position: relative;
+        }
+
+        /* Círculo de fondo detrás del retrato */
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            background-color: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-nav {
+            display: none;
+        }
+
+        @media (min-width: 992px) {
+            .hero-nav {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: right;
+                border-left: 1px solid rgba(255,255,255,0.2);
+                padding-left: 2rem;
+                margin-left: auto;
+            }
+            .hero-nav a {
+                color: var(--text-light);
+                text-decoration: none;
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+                opacity: 0.6;
+                transition: opacity 0.3s;
+            }
+            .hero-nav a:hover {
+                opacity: 1;
+            }
+        }
+
+        /* --- SECCIONES DE CONTENIDO (Biografía / Creatividad) --- */
+        .content-section {
+            position: relative;
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
             align-items: center;
         }
 
-        @media (min-width: 768px) {
-            .split-section {
-                flex-direction: row;
+        @media (min-width: 992px) {
+            .content-section {
+                grid-template-columns: 1fr 1fr;
+                padding: 10rem 4rem;
             }
-            .split-section > div {
-                flex: 1;
+            .content-section.reverse {
+                grid-template-columns: 1fr 1fr;
+            }
+            .content-section.reverse .section-text {
+                grid-column: 1;
+                grid-row: 1;
+            }
+            .content-section.reverse .image-container {
+                grid-column: 2;
+                grid-row: 1;
             }
         }
 
-        .split-image img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        /* Marca de agua tipográfica de fondo */
+        .watermark {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(6rem, 15vw, 12rem);
+            color: rgba(0,0,0,0.03);
+            z-index: 0;
+            pointer-events: none;
+            white-space: nowrap;
         }
 
-        .split-text {
-            padding: 2rem 0;
+        .section-text {
+            position: relative;
+            z-index: 2;
+            padding: 0 2rem;
         }
 
-        .split-text h2 {
-            font-size: 1.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
+        .section-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            color: var(--bg-dark);
         }
 
-        .split-text p {
+        .section-text p {
             font-size: 1rem;
             line-height: 1.8;
+            color: #555;
             margin-bottom: 2rem;
-            font-weight: 300;
         }
 
-        .btn {
+        .btn-read {
             display: inline-block;
             padding: 0.8rem 2rem;
-            border: 1px solid var(--text-color);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+            border: 1px solid #ccc;
+            text-decoration: none;
+            color: var(--text-dark);
             font-size: 0.8rem;
-            background: transparent;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background: var(--accent-color);
-            color: #ffffff;
-            border-color: var(--accent-color);
-        }
-
-        .link-text {
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 1.5px;
-            font-weight: 500;
-            border-bottom: 1px solid var(--text-color);
-            padding-bottom: 2px;
-        }
-
-        .link-text:hover {
-            border-color: var(--accent-color);
-        }
-
-        /* --- GALERÍA DE PRODUCTOS --- */
-        .gallery-section {
-            max-width: 1400px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .gallery-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            font-size: 0.9rem;
             letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .btn-read:hover {
+            border-color: var(--bg-dark);
+            background: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        /* Contenedor de imagen con bloque de fondo y acento */
+        .image-container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+        }
+
+        .img-wrapper {
+            position: relative;
+        }
+
+        /* Bloque púrpura oscuro detrás de las imágenes */
+        .img-bg-block {
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-dark);
+            z-index: -1;
+        }
+
+        .reverse .img-bg-block {
+            left: auto;
+            right: -40px;
+        }
+
+        .img-wrapper img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            filter: grayscale(100%); /* Imágenes en blanco y negro según referencia */
+        }
+
+        /* Cuadrado rojo/coral de acento */
+        .accent-square {
+            position: absolute;
+            bottom: -20px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color);
+            z-index: 3;
+        }
+
+        /* Posición del cuadrado en Biografía (izquierda) */
+        .img-wrapper .accent-square.left {
+            left: 20px;
+        }
+
+        /* Posición del cuadrado en Creatividad (derecha) */
+        .img-wrapper .accent-square.right {
+            right: 20px;
+        }
+
+
+        /* --- SECCIÓN GALERÍA --- */
+        .gallery-section {
+            padding: 6rem 0 0 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .gallery-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--bg-dark);
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            gap: 0; /* Sin espacio entre imágenes según referencia */
         }
 
         @media (min-width: 768px) {
@@ -181,96 +312,92 @@
 
         .gallery-grid img {
             width: 100%;
-            aspect-ratio: 4/3;
+            height: 100%;
             object-fit: cover;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-grid img:hover {
-            transform: scale(1.02);
-        }
-
-        /* --- IMAGEN INFERIOR --- */
-        .bottom-banner {
-            width: 100%;
-            margin-top: 4rem;
-        }
-        
-        .bottom-banner img {
-            width: 100%;
-            max-height: 50vh;
-            object-fit: cover;
+            aspect-ratio: 1/1;
             display: block;
         }
-
     </style>
 </head>
 <body>
 
     <!-- Encabezado -->
     <header>
-        <div class="logo">ElyArte</div>
-        <div class="menu-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        </div>
+        <div class="logo">Frida •</div>
+        <div class="menu-btn">≡</div>
     </header>
 
-    <!-- Hero Banner (Video sin repetición) -->
-    <div class="hero-banner">
-        <video autoplay muted playsinline>
-            <source src="862330343_1791854633232035.mp4" type="video/mp4">
-            Tu navegador no soporta el formato de video.
-        </video>
-    </div>
-
-    <!-- Sección: Bienvenidos -->
-    <section class="split-section">
-        <div class="split-image">
-            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ElyArte en su estudio">
-        </div>
-        <div class="split-text">
-            <h2>Bienvenido a ElyArte</h2>
-            <p>Descubre el trabajo de ElyArte, capturando la belleza de la luz y el color fucsia. Explora pinturas originales, impresiones de edición limitada o sumérgete en la creatividad con comisiones personalizadas que transformarán tu espacio.</p>
-            <a href="#" class="btn">Comprar Arte</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="dates">1907-1954</span>
+                <h1>Frida<br>Kahlo</h1>
+            </div>
+            <div class="hero-image">
+                <!-- Reemplazar src por la imagen principal sin fondo -->
+                <img src="https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Retrato">
+            </div>
+            <div class="hero-nav">
+                <a href="#biography">Biography</a>
+                <a href="#creativity">Creativity</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#">Museum</a>
+                <a href="#">Style</a>
+            </div>
         </div>
     </section>
 
-    <!-- Sección: Galería de Arte Original -->
-    <section class="gallery-section">
-        <div class="gallery-header">
-            <span>Comprar Arte Original</span>
-            <a href="#">Ver todo</a>
+    <!-- Sección Biografía -->
+    <section id="biography" class="content-section">
+        <div class="watermark">Biography</div>
+        <div class="image-container">
+            <div class="img-wrapper">
+                <div class="img-bg-block"></div>
+                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Biografía">
+                <div class="accent-square left"></div>
+            </div>
         </div>
+        <div class="section-text">
+            <h2>Biography</h2>
+            <p>Frida Kahlo is one of the most striking figures in the art of the twentieth century. Despite the terrible accident that changed her whole life, Frida managed to find herself, become one of the best artists in the world and maintain her fortitude until the last days.</p>
+            <a href="#" class="btn-read">Read more →</a>
+        </div>
+    </section>
+
+    <!-- Sección Creatividad (Invertida) -->
+    <section id="creativity" class="content-section reverse">
+        <div class="watermark" style="left: -10%;">Creativity</div>
+        <div class="section-text">
+            <h2>Creativity</h2>
+            <p>Lying in bed, recovering from a serious accident, Frida began to paint the first pictures. Since then, themes of death and the fragility of the human body have often appeared in her paintings. And the hospital bed became a certain symbol of her creativity.</p>
+            <a href="#" class="btn-read">Read more →</a>
+        </div>
+        <div class="image-container">
+            <div class="img-wrapper">
+                <div class="img-bg-block"></div>
+                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Creatividad">
+                <div class="accent-square right"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería -->
+    <section id="gallery" class="gallery-section">
+        <div class="watermark" style="top: -50px; left: 50%; transform: translateX(-50%);">Gallery</div>
+        <h2>Gallery</h2>
         <div class="gallery-grid">
-            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Arte 1">
-            <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Arte 2">
-            <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Arte 3">
-            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Arte 4">
+            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Obra 1">
+            <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Obra 2">
+            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Obra 3">
+            <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Obra 4">
+            <img src="https://images.unsplash.com/photo-1518998053401-878c735c0011?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Obra 5">
+            <img src="https://images.unsplash.com/photo-1501349800519-48093d60bde0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Obra 6">
+            <img src="https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Obra 7">
+            <img src="https://images.unsplash.com/photo-1505909182942-e2f09aee3e89?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Obra 8">
         </div>
     </section>
-
-    <!-- Sección: Ferias de Arte -->
-    <section class="split-section">
-        <div class="split-image">
-            <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Exposición de Arte">
-        </div>
-        <div class="split-text">
-            <h2>Ferias de Arte</h2>
-            <p>Ven a saludar. Me encanta conocer a coleccionistas y amantes del arte en las ferias. Es la oportunidad perfecta para ver el trabajo en persona y charlar sobre lo que podría funcionar en tu hogar.</p>
-            <p>Estaré exhibiendo en varias ferias de arte a lo largo del 2026.</p>
-            <a href="#" class="link-text">Ver próximas ferias</a>
-        </div>
-    </section>
-
-    <!-- Imagen de cierre a todo lo ancho -->
-    <div class="bottom-banner">
-        <img src="https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Textura de arte floral">
-    </div>
 
 </body>
-</html>
+    </html>
+                
