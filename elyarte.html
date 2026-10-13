@@ -138,7 +138,7 @@
     </header>
 
     <!-- Main Hero Section -->
-    <main class="flex-grow relative w-full max-w-[1400px] mx-auto px-4 sm:px-8 py-10 md:py-16 flex flex-col md:flex-row items-center justify-center overflow-visible">
+    <main class="flex-grow relative w-full max-w-[1400px] mx-auto px-4 sm:px-8 py-10 md:py-16 flex flex-col md:flex-row items-center justify-center overflow-visible" style="background-image: url('7afcc7655dce0d8d61ca42c553e5697e~2.jpg'); background-size: cover; background-position: center;">
         
         <!-- Decorative Background Elements -->
         <!-- Top Left Rainbow -->
@@ -205,11 +205,15 @@
                 <!-- White Wavy Border Base -->
                 <use href="#wavy-blob" fill="#FFFFFF" />
                 
-                <!-- The specific requested image, masked by the wavy blob -->
-                <image href="1000223853.png" 
-                       width="200" height="200" 
-                       preserveAspectRatio="xMidYMid slice" 
-                       class="scalloped-mask" />
+                <!-- Pink Background and Image masked by the wavy blob -->
+                <g class="scalloped-mask">
+                    <!-- Pink background for the transparent image -->
+                    <rect width="200" height="200" fill="#ffb6c1" />
+                    <!-- The image, aligned top-center (xMidYMin slice) to show hair/face -->
+                    <image href="1000223853.png" 
+                           width="200" height="200" 
+                           preserveAspectRatio="xMidYMin slice" />
+                </g>
                        
                 <!-- Accessibility Alternative: Since SVG <image> alt tags are tricky, we include a standard img hidden from view but available to screen readers, plus title for tooltip -->
                 <title>1000223853.png</title>
