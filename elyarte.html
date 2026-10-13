@@ -3,249 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Artista</title>
-    <!-- Fuentes de Google: 'Caveat' para el estilo manuscrito y 'Jost' para el texto general -->
+    <title>ElyArte - Portafolio</title>
+    <!-- Fuentes de Google: 'Caveat' para el estilo manuscrito (firma) y 'Jost' para el texto -->
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --accent-color: #ff008c; /* El color juvenil solicitado */
-            --bg-color: #faf9f5;
-            --text-dark: #333333;
-            --text-light: #ffffff;
+            --bg-color: #ff008c; /* Fondo fucsia solicitado */
+            --text-color: #ffffff; /* Letras blancas solicitadas */
         }
-
+        
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
 
         body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             font-family: 'Jost', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-dark);
+            overflow-x: hidden;
         }
 
-        /* --- NAVEGACIÓN --- */
-        header {
+        a { 
+            color: var(--text-color); 
+            text-decoration: none; 
+        }
+
+        .cursive { 
+            font-family: 'Caveat', cursive; 
+        }
+        
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Secciones */
+        section {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column; /* Mobile por defecto */
             align-items: center;
-            padding: 1.5rem 4rem;
-            background-color: var(--bg-color);
-        }
-
-        .logo {
-            font-size: 1.1rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--text-dark);
-            text-decoration: none;
-        }
-
-        nav {
-            display: flex;
+            margin-bottom: 6rem;
             gap: 2rem;
         }
 
-        nav a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
+        /* Diseño alternado para escritorio */
+        @media (min-width: 768px) {
+            section {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            section.reverse {
+                flex-direction: row-reverse;
+            }
+            .text-content, .image-content {
+                flex: 1;
+                padding: 2rem;
+            }
+            .image-content {
+                display: flex;
+                justify-content: center;
+            }
         }
 
-        nav a:hover, nav a.active {
-            color: var(--accent-color); /* Toque juvenil en hover */
+        /* Tipografía */
+        h1, h2, h3 { 
+            font-weight: normal; 
+            margin-bottom: 1rem; 
         }
-
-        /* --- SECCIÓN HERO --- */
-        .hero {
-            position: relative;
-            height: 80vh;
-            /* Reemplaza esta URL con la imagen de tu arte */
-            background-image: url('https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+        h1 { 
+            font-size: clamp(4rem, 8vw, 6rem); 
+            line-height: 1; 
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.2); /* Oscurece un poco la imagen para que el texto resalte */
+        h2 { 
+            font-size: clamp(3rem, 6vw, 4.5rem); 
+            line-height: 1; 
         }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            color: var(--text-light);
-            max-width: 600px;
+        p { 
+            font-size: 1.1rem; 
+            line-height: 1.6; 
+            margin-bottom: 1.5rem; 
+            font-weight: 300; 
         }
-
-        .hero h1 {
-            font-family: 'Caveat', cursive;
-            font-size: 6rem;
-            font-weight: 400;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 1rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-            margin-bottom: 2rem;
-        }
-
+        
+        /* Botones */
         .btn {
             display: inline-block;
-            padding: 1rem 2rem;
-            background-color: var(--bg-color);
-            color: var(--text-dark);
-            text-decoration: none;
+            padding: 0.8rem 2rem;
+            border: 1px solid var(--text-color);
             text-transform: uppercase;
+            letter-spacing: 2px;
             font-size: 0.8rem;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+            transition: all 0.3s;
+            background: transparent;
+            color: var(--text-color);
+            cursor: pointer;
+            margin-top: 1rem;
         }
-
         .btn:hover {
-            background-color: var(--accent-color);
-            color: var(--text-light);
-            border-color: var(--accent-color);
+            background: var(--text-color);
+            color: var(--bg-color);
         }
 
-        /* --- SECCIÓN COLECCIONES --- */
-        .collections-section {
-            padding: 5rem 4rem;
-        }
-
-        .section-title {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 3rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .section-title span {
-            font-family: 'Caveat', cursive;
-            font-size: 4rem;
-            text-transform: none;
-            letter-spacing: normal;
-            color: var(--accent-color); /* Título en fucsia */
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-img {
-            width: 100%;
-            height: 250px;
-            background-color: #eaeaea;
-            object-fit: cover;
-            margin-bottom: 1.5rem;
+        /* Flechas para indicar enlaces o deslizar */
+        .arrow {
+            font-size: 2rem;
+            margin-top: 1rem;
+            display: inline-block;
             transition: transform 0.3s ease;
         }
-
-        .card:hover .card-img {
-            transform: scale(1.02);
+        .arrow:hover {
+            transform: translateX(10px);
         }
 
-        .card h3 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-bottom: 1rem;
+        /* Imágenes */
+        img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Sombra suave para destacar sobre el fondo */
+        }
+        
+        /* Contenedores de collage */
+        .collage { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px; 
+            align-items: center;
+        }
+        .collage img { 
+            width: 100%; 
+            object-fit: cover; 
+            aspect-ratio: 4/5;
+        }
+        /* Desfase para dar el efecto de collage del diseño original */
+        .collage img:nth-child(2) {
+            margin-top: 40px;
         }
 
-        .btn-outline {
-            align-self: flex-start;
-            padding: 0.8rem 1.5rem;
-            background: transparent;
-            border: 1px solid #ccc;
-            color: var(--text-dark);
-            text-decoration: none;
-            font-size: 0.75rem;
+        /* Intro section (centrada) */
+        .intro-section {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 6rem auto;
+            padding: 0 2rem;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            gap: 2rem;
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            footer { 
+                flex-direction: row; 
+                text-align: left;
+            }
+        }
+        .footer-links {
+            display: flex;
+            gap: 3rem;
             text-transform: uppercase;
+            font-size: 0.8rem;
             letter-spacing: 1px;
-            transition: all 0.3s ease;
         }
-
-        .btn-outline:hover {
-            border-color: var(--accent-color);
-            color: var(--accent-color);
+        .footer-links div { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 0.8rem; 
         }
     </style>
 </head>
 <body>
-
-    <!-- Encabezado / Navegación -->
-    <header>
-        <a href="#" class="logo">Tu Nombre</a>
-        <nav>
-            <a href="#" class="active">Colecciones</a>
-            <a href="#">Archivos</a>
-            <a href="#">Tienda</a>
-            <a href="#">Sobre Mí</a>
-        </nav>
-    </header>
-
-    <!-- Sección Principal con Imagen -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>La Arquitectura<br>de la Luz</h1>
-            <p>Transformando espacios simples en lugares llenos de color. Entra en la vibrante arquitectura de la luz.</p>
-            <a href="#" class="btn">Últimos Trabajos</a>
-        </div>
-    </section>
-
-    <!-- Galería de Colecciones -->
-    <section class="collections-section">
-        <h2 class="section-title">Todas las <span>Colecciones</span></h2>
+    <div class="container">
         
-        <div class="gallery">
-            <!-- Tarjeta 1 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Obra 1" class="card-img">
-                <h3>Vibras Urbanas</h3>
-                <a href="#" class="btn-outline">Ver Colección</a>
+        <!-- Hero / Latest Collection -->
+        <section>
+            <div class="image-content">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ElyArte Obra Principal" style="width: 85%;">
             </div>
-            <!-- Tarjeta 2 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Obra 2" class="card-img">
-                <h3>El Ruido Silencioso</h3>
-                <a href="#" class="btn-outline">Ver Colección</a>
+            <div class="text-content">
+                <h1 class="cursive">ElyArte</h1>
+                <p style="text-transform: uppercase; letter-spacing: 2px; font-weight: 500; font-size: 0.9rem; margin-top: -10px;">Última Colección</p>
+                <p>Adéntrate en un mundo de luz y color con las obras más recientes. Descubre la magia de cada trazo donde el vibrante estilo se encuentra con la mirada profunda.</p>
+                <a href="#" class="btn">Ver Todas las Obras</a>
             </div>
-            <!-- Tarjeta 3 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Obra 3" class="card-img">
-                <h3>Atardecer de la Vida</h3>
-                <a href="#" class="btn-outline">Ver Colección</a>
+        </section>
+
+        <!-- Intro -->
+        <div class="intro-section">
+            <h2 class="cursive" style="font-size: 4rem;">ElyArte</h2>
+            <p>Soy una artista apasionada por plasmar la luz, la figura humana y la belleza de lo cotidiano. En mis obras, el color fucsia y la energía se encuentran para crear experiencias visuales únicas y llenas de vida para compartir contigo.</p>
+            <a href="#" class="btn">Sobre la Artista</a>
+        </div>
+
+        <!-- Collections -->
+        <section>
+            <div class="image-content collage">
+                <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Colección 1">
+                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Colección 2">
+            </div>
+            <div class="text-content">
+                <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Las</p>
+                <h2 class="cursive">Colecciones</h2>
+                <p>Explora mis colecciones inspiradas en la luz del sol, los interiores vibrantes y la vida misma. Cada obra de arte es un reflejo de una observación cuidadosa, donde el color y el silencio se encuentran de manera poética.</p>
+                <a href="#" class="arrow">→</a>
+            </div>
+        </section>
+
+        <!-- Archives -->
+        <section class="reverse">
+            <div class="image-content collage">
+                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Archivo 1">
+                <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Archivo 2">
+            </div>
+            <div class="text-content">
+                <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Los</p>
+                <h2 class="cursive">Archivos</h2>
+                <p>Este archivo reúne pinturas tempranas de diferentes años, trazando el recorrido de mi vida artística. Una ventana a los temas familiares que permanecen constantes, demostrando mi devoción a este arte.</p>
+                <a href="#" class="arrow">→</a>
+            </div>
+        </section>
+
+        <!-- Shop -->
+        <section>
+            <div class="image-content">
+                <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tienda ElyArte" style="width: 80%;">
+            </div>
+            <div class="text-content">
+                <h2 class="cursive">Tienda</h2>
+                <p>Aquí encontrarás impresiones y libros provenientes de mis obras. Estos trabajos se ofrecen para que el color y la alegría puedan vivir contigo en tu propio espacio, o al menos compartir un momento de magia visual.</p>
+                <p style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px; margin-top: 2rem;">Ediciones limitadas disponibles</p>
+                <a href="#" class="arrow">→</a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <h3 class="cursive" style="font-size: 2.5rem; margin-bottom: 0.5rem;">Mantente al Día</h3>
+            <p style="font-size: 0.9rem;">Suscríbete con tu correo para recibir noticias.</p>
+        </div>
+        
+        <h2 class="cursive" style="font-size: 3.5rem; margin: 0;">ElyArte</h2>
+        
+        <div class="footer-links">
+            <div>
+                <strong>Navegar</strong>
+                <a href="#">Colecciones</a>
+                <a href="#">Archivos</a>
+                <a href="#">Tienda</a>
+            </div>
+            <div>
+                <strong>Seguir</strong>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
             </div>
         </div>
-    </section>
-
+    </footer>
 </body>
-  </html>
-  
+    </html>
+    
