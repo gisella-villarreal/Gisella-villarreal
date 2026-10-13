@@ -268,31 +268,83 @@
 
     <!-- Categories Section -->
     <section class="w-full max-w-[1400px] mx-auto px-2 sm:px-8 py-10 md:py-16 relative z-10 overflow-hidden">
-        <div class="flex flex-row flex-nowrap justify-between items-start gap-2 sm:gap-6 lg:gap-10 w-full">
+        <div class="flex flex-row flex-nowrap justify-center items-start gap-4 sm:gap-8 lg:gap-16 w-full">
             
-            <!-- Category 1: Cuadros propios -->
-            <div class="flex flex-col items-center group cursor-pointer w-1/4 max-w-[224px]">
+                        <!-- Category 1: Cuadros propios -->
+            <div class="flex flex-col items-center group cursor-pointer w-[30%] max-w-[280px]">
                 <div class="w-full aspect-square rounded-full bg-[#ffb4cc] flex items-center justify-center relative transition-transform duration-300 group-hover:scale-105 shadow-sm">
-                    <span class="font-vintage text-white text-[clamp(0.6rem,2.5vw,2.25rem)] font-bold text-center leading-[1.1] lowercase px-1 sm:px-4 tracking-tight drop-shadow-sm">cuadros<br>propios</span>
+                    <span class="font-vintage text-white text-[clamp(0.7rem,2.8vw,2.5rem)] font-bold text-center leading-[1.1] lowercase px-1 sm:px-4 tracking-tight drop-shadow-sm">cuadros<br>propios</span>
                     
                     <!-- Flower Top Left -->
-                    <svg viewBox="0 0 100 100" class="absolute top-[8%] left-[0%] w-[18%] h-[18%] opacity-90 animate-spin-slow">
+                    <svg viewBox="0 0 100 100" class="absolute -top-[5%] -left-[5%] w-[25%] h-[25%] opacity-90 animate-spin-slow">
                         <g fill="#bce3c5">
+                            <circle cx="50" cy="20" r="15" /><circle cx="80" cy="50" r="15" /><circle cx="50" cy="80" r="15" /><circle cx="20" cy="50" r="15" />
+                            <circle cx="28" cy="28" r="15" /><circle cx="72" cy="28" r="15" /><circle cx="72" cy="72" r="15" /><circle cx="28" cy="72" r="15" />
+                        </g>
+                        <circle cx="50" cy="50" r="12" fill="#fdf0b4" />
+                    </svg>
+                    <svg viewBox="0 0 100 100" class="absolute top-[15%] -left-[8%] w-[18%] h-[18%] opacity-90 animate-spin-slow" style="animation-direction: reverse;">
+                        <g fill="#e2cfff">
+                            <circle cx="50" cy="20" r="15" /><circle cx="80" cy="50" r="15" /><circle cx="50" cy="80" r="15" /><circle cx="20" cy="50" r="15" />
+                            <circle cx="28" cy="28" r="15" /><circle cx="72" cy="28" r="15" /><circle cx="72" cy="72" r="15" /><circle cx="28" cy="72" r="15" />
+                        </g>
+                        <circle cx="50" cy="50" r="12" fill="#fdf0b4" />
+                    </svg>
+                </div>
+                <a href="#" class="mt-3 sm:mt-6 text-[clamp(0.65rem,1.5vw,1rem)] sm:text-base font-semibold text-gray-800 group-hover:text-[#ffb4cc] transition-colors flex flex-row items-center justify-center w-full text-center">
+                    Cuadros propios <span class="ml-0.5 sm:ml-1 text-sm sm:text-lg leading-none">→</span>
+                </a>
+            </div>
+
+            <!-- Category 2: Gift ideas -->
+            <div class="flex flex-col items-center group cursor-pointer w-[30%] max-w-[280px]">
+                <div class="w-full aspect-square rounded-full bg-[#e2cfff] flex items-center justify-center relative transition-transform duration-300 group-hover:scale-105 shadow-sm">
+                    <span class="font-vintage text-white text-[clamp(0.8rem,3vw,2.5rem)] font-bold text-center leading-[1.1] lowercase px-1 sm:px-4 tracking-tight drop-shadow-sm">gift<br>ideas</span>
+                    
+                    <!-- Flower Bottom Center -->
+                    <svg viewBox="0 0 100 100" class="absolute bottom-[10%] right-[20%] w-[18%] h-[18%] opacity-90 animate-spin-slow">
+                        <g fill="#fdf0b4">
                             <circle cx="50" cy="20" r="15" /><circle cx="80" cy="50" r="15" /><circle cx="50" cy="80" r="15" /><circle cx="20" cy="50" r="15" />
                             <circle cx="28" cy="28" r="15" /><circle cx="72" cy="28" r="15" /><circle cx="72" cy="72" r="15" /><circle cx="28" cy="72" r="15" />
                         </g>
                         <circle cx="50" cy="50" r="12" fill="#ffb4cc" />
                     </svg>
-                    <svg viewBox="0 0 100 100" class="absolute top-[18%] -left-[6%] w-[12%] h-[12%] opacity-90 animate-spin-slow" style="animation-direction: reverse;">
-                        <g fill="#e2cfff">
+                    <svg viewBox="0 0 100 100" class="absolute bottom-[5%] right-[8%] w-[12%] h-[12%] opacity-90 animate-spin-slow" style="animation-direction: reverse;">
+                        <g fill="#fdf0b4">
                             <circle cx="50" cy="20" r="15" /><circle cx="80" cy="50" r="15" /><circle cx="50" cy="80" r="15" /><circle cx="20" cy="50" r="15" />
                             <circle cx="28" cy="28" r="15" /><circle cx="72" cy="28" r="15" /><circle cx="72" cy="72" r="15" /><circle cx="28" cy="72" r="15" />
                         </g>
                         <circle cx="50" cy="50" r="12" fill="#ffb4cc" />
                     </svg>
                 </div>
-                <a href="#" class="mt-3 sm:mt-6 text-[clamp(0.55rem,1.5vw,0.875rem)] sm:text-sm font-semibold text-gray-800 group-hover:text-[#fdf0b4] transition-colors flex flex-row items-center justify-center w-full text-center">
-                    Hot sale <span class="ml-0.5 sm:ml-1 text-sm sm:text-lg leading-none">→</span>
+                <a href="#" class="mt-3 sm:mt-6 text-[clamp(0.65rem,1.5vw,1rem)] sm:text-base font-semibold text-gray-800 group-hover:text-[#e2cfff] transition-colors flex flex-row items-center justify-center w-full text-center">
+                    Gift ideas <span class="ml-0.5 sm:ml-1 text-sm sm:text-lg leading-none">→</span>
+                </a>
+            </div>
+
+            <!-- Category 3: Best seller -->
+            <div class="flex flex-col items-center group cursor-pointer w-[30%] max-w-[280px]">
+                <div class="w-full aspect-square rounded-full bg-[#bce3c5] flex items-center justify-center relative transition-transform duration-300 group-hover:scale-105 shadow-sm">
+                    <span class="font-vintage text-white text-[clamp(0.8rem,3vw,2.5rem)] font-bold text-center leading-[1.1] lowercase px-1 sm:px-4 tracking-tight drop-shadow-sm">best<br>seller</span>
+                    
+                    <!-- Flower Bottom Right -->
+                    <svg viewBox="0 0 100 100" class="absolute bottom-[8%] -right-[5%] w-[22%] h-[22%] opacity-90 animate-spin-slow">
+                        <g fill="#fdf0b4">
+                            <circle cx="50" cy="20" r="15" /><circle cx="80" cy="50" r="15" /><circle cx="50" cy="80" r="15" /><circle cx="20" cy="50" r="15" />
+                            <circle cx="28" cy="28" r="15" /><circle cx="72" cy="28" r="15" /><circle cx="72" cy="72" r="15" /><circle cx="28" cy="72" r="15" />
+                        </g>
+                        <circle cx="50" cy="50" r="12" fill="#ffb4cc" />
+                    </svg>
+                    <svg viewBox="0 0 100 100" class="absolute bottom-[0%] right-[10%] w-[12%] h-[12%] opacity-90 animate-spin-slow" style="animation-direction: reverse;">
+                        <g fill="#ffb4cc">
+                            <circle cx="50" cy="20" r="15" /><circle cx="80" cy="50" r="15" /><circle cx="50" cy="80" r="15" /><circle cx="20" cy="50" r="15" />
+                            <circle cx="28" cy="28" r="15" /><circle cx="72" cy="28" r="15" /><circle cx="72" cy="72" r="15" /><circle cx="28" cy="72" r="15" />
+                        </g>
+                        <circle cx="50" cy="50" r="12" fill="#fdf0b4" />
+                    </svg>
+                </div>
+                <a href="#" class="mt-3 sm:mt-6 text-[clamp(0.65rem,1.5vw,1rem)] sm:text-base font-semibold text-gray-800 group-hover:text-[#bce3c5] transition-colors flex flex-row items-center justify-center w-full text-center">
+                    Best seller <span class="ml-0.5 sm:ml-1 text-sm sm:text-lg leading-none">→</span>
                 </a>
             </div>
             
