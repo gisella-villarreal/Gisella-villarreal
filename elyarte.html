@@ -3,401 +3,510 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frida Kahlo - Portfolio Concept</title>
-    <!-- Fuentes de Google: Playfair Display para títulos elegantes y Montserrat para textos legibles -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Ely Arte</title>
     <style>
+        /* Variables de colores basadas en la imagen */
         :root {
-            --bg-dark: #37304b; /* Púrpura oscuro del hero */
-            --bg-light: #f2f2f4; /* Gris claro del cuerpo */
-            --accent-color: #ff5263; /* Cuadrado rojo/coral de acento */
-            --text-dark: #2a2a2a;
-            --text-light: #ffffff;
+            --color-bg-primary: #F9F6ED; /* Color de fondo principal claro */
+            --color-bg-outer: #EADDCD; /* Color de fondo exterior (amarillento) */
+            --color-pink-header: #F1BBE7; /* Rosa claro del encabezado top */
+            --color-yellow-nav: #F4E8B0; /* Amarillo de la navegación */
+            --color-pink-banner: #F1A7BB; /* Rosa del banner/secciones */
+            --color-purple-bg: #9C8BE5; /* Morado del hero banner */
+            --color-green-bar: #B2C224; /* Barra verde separadora */
+            --color-orange-bar: #F37D3D; /* Barra naranja separadora */
+            --color-text-dark: #333;
+            --color-text-light: #fff;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-heading: 'Georgia', serif; /* Para simular fuente con serifas */
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        /* --- NAVEGACIÓN SUPERIOR --- */
-        header {
-            position: absolute;
-            top: 0; left: 0; right: 0;
+            font-family: var(--font-main);
+            background-color: var(--color-bg-outer);
+            color: var(--color-text-dark);
             display: flex;
-            justify-content: space-between;
-            padding: 2rem 4rem;
-            color: var(--text-light);
-            z-index: 10;
+            justify-content: center;
+            padding: 20px 0; /* Espaciado exterior para simular la imagen */
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 2px;
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            background-color: var(--color-bg-primary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
 
-        .menu-btn {
-            font-size: 1.5rem;
+        /* --- Header Top Bar --- */
+        .top-bar {
+            background-color: var(--color-pink-header);
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8rem;
+            position: relative;
+        }
+        .top-bar .close-btn {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
             cursor: pointer;
         }
 
-        /* --- SECCIÓN HERO --- */
+        /* --- Main Header --- */
+        header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            border-bottom: 2px solid var(--color-yellow-nav); /* Simulando el borde festoneado de manera sencilla */
+        }
+
+        .logo h1 {
+            font-family: var(--font-heading);
+            color: #EBB02A; /* Color amarillo texto logo */
+            letter-spacing: 2px;
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+        .header-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            background-color: var(--color-yellow-nav);
+            padding: 15px 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--color-text-dark);
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* --- Hero Section --- */
         .hero {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            min-height: 100vh;
+            display: flex;
+            height: 400px;
+        }
+        .hero-left {
+            flex: 1;
+            background-color: var(--color-purple-bg);
+            background-image: url('https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800'); /* Foto libros/papeleria */
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-right {
+            flex: 1;
+            background-color: var(--color-pink-banner);
+             background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800'); /* Foto detalles decorativos */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
+        }
+        .hero-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            text-align: center;
+            max-width: 80%;
+            z-index: 10;
+        }
+        .hero-box h2 {
+            font-family: var(--font-heading);
+            margin-bottom: 15px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #A3B92E; /* Verde del botón */
+            color: #fff;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* --- Scrolling Text Bars --- */
+        .scrolling-bar {
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            color: #fff;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        .scrolling-bar.green { background-color: var(--color-green-bar); }
+        .scrolling-bar.orange { background-color: var(--color-orange-bar); }
+        
+        /* Animación básica para la barra */
+        .marquee {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* --- Shop by Category --- */
+        .category-section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: var(--color-bg-primary);
+        }
+        .category-section h2 {
+            font-family: var(--font-heading);
+            color: #666;
+            margin-bottom: 40px;
+            font-weight: normal;
+        }
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .category-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .circle-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #eee;
+            margin-bottom: 15px;
+            background-size: cover;
+            background-position: center;
+        }
+        .cat-1 { background-image: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=400'); border: 5px solid #D5E1F2; }
+        .cat-2 { background-image: url('https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400'); border: 5px solid #F1A7BB; }
+        .cat-3 { background-image: url('https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&q=80&w=400'); border: 5px solid #F37D3D; }
+        .cat-4 { background-image: url('https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&q=80&w=400'); border: 5px solid #B7D9E3; }
+        .cat-5 { background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&q=80&w=400'); border: 5px solid #EBB02A; }
+        
+        .category-item span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* --- Split Section (Travel Posters) --- */
+        .split-section {
+            display: flex;
+            background-color: #fff;
+        }
+        .split-left {
+            flex: 1;
+            min-height: 400px;
+             background-image: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=800'); /* Imagen de poster/arte */
+            background-size: cover;
+            background-position: center;
+        }
+        .split-right {
+            flex: 1;
+            background-color: var(--color-pink-banner);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 6rem 4rem 2rem 4rem;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr;
             align-items: center;
-            gap: 3rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        @media (min-width: 992px) {
-            .hero-content {
-                grid-template-columns: 1fr auto 1fr;
-            }
-        }
-
-        .hero-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(4rem, 8vw, 7rem);
-            line-height: 1.1;
-            margin-bottom: 1rem;
-        }
-
-        .hero-text .dates {
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            opacity: 0.7;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .hero-image {
             text-align: center;
-            position: relative;
+            padding: 40px;
+            color: #333;
         }
-
-        /* Círculo de fondo detrás del retrato */
-        .hero-image::before {
-            content: '';
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 400px;
-            height: 400px;
-            background-color: rgba(255,255,255,0.05);
-            border-radius: 50%;
-            z-index: 0;
+        .split-right h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
-
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-nav {
-            display: none;
-        }
-
-        @media (min-width: 992px) {
-            .hero-nav {
-                display: flex;
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: right;
-                border-left: 1px solid rgba(255,255,255,0.2);
-                padding-left: 2rem;
-                margin-left: auto;
-            }
-            .hero-nav a {
-                color: var(--text-light);
-                text-decoration: none;
-                font-size: 0.9rem;
-                letter-spacing: 1px;
-                opacity: 0.6;
-                transition: opacity 0.3s;
-            }
-            .hero-nav a:hover {
-                opacity: 1;
-            }
-        }
-
-        /* --- SECCIONES DE CONTENIDO (Biografía / Creatividad) --- */
-        .content-section {
-            position: relative;
-            padding: 8rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        @media (min-width: 992px) {
-            .content-section {
-                grid-template-columns: 1fr 1fr;
-                padding: 10rem 4rem;
-            }
-            .content-section.reverse {
-                grid-template-columns: 1fr 1fr;
-            }
-            .content-section.reverse .section-text {
-                grid-column: 1;
-                grid-row: 1;
-            }
-            .content-section.reverse .image-container {
-                grid-column: 2;
-                grid-row: 1;
-            }
-        }
-
-        /* Marca de agua tipográfica de fondo */
-        .watermark {
-            position: absolute;
-            top: 10%;
-            left: 10%;
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(6rem, 15vw, 12rem);
-            color: rgba(0,0,0,0.03);
-            z-index: 0;
-            pointer-events: none;
-            white-space: nowrap;
-        }
-
-        .section-text {
-            position: relative;
-            z-index: 2;
-            padding: 0 2rem;
-        }
-
-        .section-text h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            margin-bottom: 2rem;
-            color: var(--bg-dark);
-        }
-
-        .section-text p {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 2rem;
-        }
-
-        .btn-read {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            border: 1px solid #ccc;
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #fff;
+            background-color: #fff;
+            color: var(--color-orange-bar);
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: 20px;
             text-decoration: none;
-            color: var(--text-dark);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            transition: all 0.3s;
+            box-shadow: 3px 3px 0px var(--color-orange-bar);
         }
 
-        .btn-read:hover {
-            border-color: var(--bg-dark);
-            background: var(--bg-dark);
-            color: var(--text-light);
-        }
-
-        /* Contenedor de imagen con bloque de fondo y acento */
-        .image-container {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            justify-content: center;
-        }
-
-        .img-wrapper {
-            position: relative;
-        }
-
-        /* Bloque púrpura oscuro detrás de las imágenes */
-        .img-bg-block {
-            position: absolute;
-            top: -40px;
-            left: -40px;
-            width: 100%;
-            height: 100%;
-            background-color: var(--bg-dark);
-            z-index: -1;
-        }
-
-        .reverse .img-bg-block {
-            left: auto;
-            right: -40px;
-        }
-
-        .img-wrapper img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            filter: grayscale(100%); /* Imágenes en blanco y negro según referencia */
-        }
-
-        /* Cuadrado rojo/coral de acento */
-        .accent-square {
-            position: absolute;
-            bottom: -20px;
-            width: 40px;
-            height: 40px;
-            background-color: var(--accent-color);
-            z-index: 3;
-        }
-
-        /* Posición del cuadrado en Biografía (izquierda) */
-        .img-wrapper .accent-square.left {
-            left: 20px;
-        }
-
-        /* Posición del cuadrado en Creatividad (derecha) */
-        .img-wrapper .accent-square.right {
-            right: 20px;
-        }
-
-
-        /* --- SECCIÓN GALERÍA --- */
-        .gallery-section {
-            padding: 6rem 0 0 0;
+        /* --- Product Grid --- */
+        .product-section {
+            padding: 50px 20px;
             text-align: center;
-            position: relative;
+            background-color: var(--color-bg-primary);
         }
-
-        .gallery-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            color: var(--bg-dark);
-            margin-bottom: 3rem;
-            position: relative;
-            z-index: 2;
+        .product-tabs {
+            margin-bottom: 40px;
         }
-
-        .gallery-grid {
+        .product-tabs button {
+            background: none;
+            border: none;
+            margin: 0 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            color: #777;
+        }
+        .product-tabs button.active {
+            color: #333;
+            font-weight: bold;
+            border-bottom: 3px solid var(--color-pink-banner);
+        }
+        
+        .product-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0; /* Sin espacio entre imágenes según referencia */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 0 40px;
         }
-
-        @media (min-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
+        .product-card {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-
-        .gallery-grid img {
+        .product-card.bg-pink { background-color: #F8C8CE; } /* Fondo rosa para la primera carta */
+        
+        .product-image {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            aspect-ratio: 1/1;
-            display: block;
+            height: 300px;
+            background-color: #eee;
+            margin-bottom: 15px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: white; /* Para que la imagen contenida se vea bien */
+        }
+        
+        .prod-1 { background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&q=80&w=400'); }
+        .prod-2 { background-image: url('https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400'); }
+        .prod-3 { background-image: url('https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&q=80&w=400'); }
+
+        .product-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .product-link {
+            text-decoration: none;
+            color: var(--color-orange-bar);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-bottom: 2px solid var(--color-orange-bar);
+            padding-bottom: 2px;
+        }
+
+        /* --- Bottom Banner --- */
+        .bottom-banner {
+            background-color: #E2BEE8; /* Morado claro similar al fondo inferior */
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .bottom-banner h2 {
+            font-family: var(--font-heading);
+            color: #555;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .bottom-banner p {
+            color: #666;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .hero, .split-section {
+                flex-direction: column;
+            }
+            .hero-left, .hero-right, .split-left, .split-right {
+                min-height: 300px;
+            }
+            .hero-box {
+                max-width: 90%;
+                padding: 20px;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Encabezado -->
-    <header>
-        <div class="logo">Frida •</div>
-        <div class="menu-btn">≡</div>
-    </header>
+    <div class="container">
+        
+        <!-- Top Banner -->
+        <div class="top-bar">
+            New here? Sign up to our newsletter for 15% off your first order
+            <span class="close-btn">x</span>
+        </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <span class="dates">1907-1954</span>
-                <h1>Frida<br>Kahlo</h1>
+        <!-- Header -->
+        <header>
+            <div class="header-icons">
+                <!-- Iconos de redes sociales simulados -->
+                <span>[FB]</span> <span>[IG]</span> <span>[YT]</span> <span>[TT]</span>
             </div>
-            <div class="hero-image">
-                <!-- Reemplazar src por la imagen principal sin fondo -->
-                <img src="https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Retrato">
+            
+            <div class="logo">
+                <h1>ELY ARTE</h1>
             </div>
-            <div class="hero-nav">
-                <a href="#biography">Biography</a>
-                <a href="#creativity">Creativity</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#">Museum</a>
-                <a href="#">Style</a>
+            
+            <div class="header-icons right">
+                 <span>[Buscar]</span> <span>[Usuario]</span> <span>[Carrito]</span>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- Sección Biografía -->
-    <section id="biography" class="content-section">
-        <div class="watermark">Biography</div>
-        <div class="image-container">
-            <div class="img-wrapper">
-                <div class="img-bg-block"></div>
-                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Biografía">
-                <div class="accent-square left"></div>
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="#">Prints v</a></li>
+                <li><a href="#">Greeting Cards v</a></li>
+                <li><a href="#">Homeware & Accessories v</a></li>
+                <li><a href="#">Gifts & Stationery v</a></li>
+                <li><a href="#">About v</a></li>
+                <li><a href="#">Contact v</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-left"></div>
+            <div class="hero-right">
+                <div class="hero-box">
+                    <h2>GIFTS AND STATIONERY</h2>
+                    <p>Stylish, thoughtful, and beautifully illustrated gifts and stationery.</p>
+                    <a href="#" class="btn">SHOP NOW</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scrolling Bar Green -->
+        <div class="scrolling-bar green">
+            <div class="marquee">
+                BRING COLOUR, JOY AND CONNECTION INTO YOUR HOME  ❁  INSPIRED BY THE PLACES YOU LOVE  ❁  CAPTURING MEMORIES, FUELLED BY ADVENTURE  ❁  BRING COLOUR, JOY AND CONNECTION INTO YOUR HOME
             </div>
         </div>
-        <div class="section-text">
-            <h2>Biography</h2>
-            <p>Frida Kahlo is one of the most striking figures in the art of the twentieth century. Despite the terrible accident that changed her whole life, Frida managed to find herself, become one of the best artists in the world and maintain her fortitude until the last days.</p>
-            <a href="#" class="btn-read">Read more →</a>
-        </div>
-    </section>
 
-    <!-- Sección Creatividad (Invertida) -->
-    <section id="creativity" class="content-section reverse">
-        <div class="watermark" style="left: -10%;">Creativity</div>
-        <div class="section-text">
-            <h2>Creativity</h2>
-            <p>Lying in bed, recovering from a serious accident, Frida began to paint the first pictures. Since then, themes of death and the fragility of the human body have often appeared in her paintings. And the hospital bed became a certain symbol of her creativity.</p>
-            <a href="#" class="btn-read">Read more →</a>
-        </div>
-        <div class="image-container">
-            <div class="img-wrapper">
-                <div class="img-bg-block"></div>
-                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Creatividad">
-                <div class="accent-square right"></div>
+        <!-- Shop by Category -->
+        <section class="category-section">
+            <h2>Shop by category</h2>
+            <div class="categories">
+                <div class="category-item">
+                    <div class="circle-img cat-1"></div>
+                    <span>Prints</span>
+                </div>
+                <div class="category-item">
+                    <div class="circle-img cat-2"></div>
+                    <span>Tea Towels</span>
+                </div>
+                <div class="category-item">
+                    <div class="circle-img cat-3"></div>
+                    <span>Stationery</span>
+                </div>
+                <div class="category-item">
+                    <div class="circle-img cat-4"></div>
+                    <span>Cards</span>
+                </div>
+                <div class="category-item">
+                    <div class="circle-img cat-5"></div>
+                    <span>Calendars</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Split Section -->
+        <section class="split-section">
+            <div class="split-left"></div>
+            <div class="split-right">
+                <h2>Travel posters</h2>
+                <p>Our illustrated travel posters are designed to celebrate travel, remind us of where we've been and the places that feel like home.</p>
+                <a href="#" class="btn-outline">SHOP TRAVEL POSTERS</a>
+            </div>
+        </section>
+
+        <!-- Scrolling Bar Orange -->
+        <div class="scrolling-bar orange">
+            <div class="marquee">
+                CAPTURING THOSE SPECIAL MEMORIES  ❁  ART THAT TELLS YOUR STORY  ❁  CELEBRATING YOUR FAVOURITE PLACES  ❁  CAPTURING THOSE SPECIAL MEMORIES
             </div>
         </div>
-    </section>
 
-    <!-- Sección Galería -->
-    <section id="gallery" class="gallery-section">
-        <div class="watermark" style="top: -50px; left: 50%; transform: translateX(-50%);">Gallery</div>
-        <h2>Gallery</h2>
-        <div class="gallery-grid">
-            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Obra 1">
-            <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Obra 2">
-            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Obra 3">
-            <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Obra 4">
-            <img src="https://images.unsplash.com/photo-1518998053401-878c735c0011?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Obra 5">
-            <img src="https://images.unsplash.com/photo-1501349800519-48093d60bde0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Obra 6">
-            <img src="https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Obra 7">
-            <img src="https://images.unsplash.com/photo-1505909182942-e2f09aee3e89?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Obra 8">
-        </div>
-    </section>
+        <!-- Product Grid Section -->
+        <section class="product-section">
+            <p style="margin-bottom: 20px; font-size: 0.9rem; color: #666;">From mugs to prints, tea towels to cards, every piece is thoughtfully designed with colour, character, and fun.</p>
+            
+            <div class="product-tabs">
+                <button class="active">LOCATION ART</button>
+                <button>HOMEWARE</button>
+                <button>GREETING CARDS</button>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card bg-pink">
+                    <div class="product-image prod-1"></div>
+                    <h3>L'ETACQ</h3>
+                    <p style="font-size: 0.8rem; margin-bottom: 15px;">JERSEY</p>
+                    <a href="#" class="product-link">CHANNEL ISLANDS</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-image prod-2"></div>
+                    <h3>MANCHESTER</h3>
+                    <br>
+                    <a href="#" class="product-link">UK CITIES</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-image prod-3"></div>
+                    <h3>CHRYSLER BUILDING</h3>
+                    <p style="font-size: 0.8rem; margin-bottom: 15px;">NEW YORK</p>
+                    <a href="#" class="product-link">REST OF WORLD</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Banner -->
+        <section class="bottom-banner">
+            <h2>Dive right in!</h2>
+            <p>Our collection of colourful typographic art prints celebrating the love of sea swimming, summer, and the beach!</p>
+        </section>
+
+    </div>
 
 </body>
-    </html>
-                
+</html>
