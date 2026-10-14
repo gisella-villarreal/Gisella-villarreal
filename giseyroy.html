@@ -153,7 +153,6 @@
         /* --- SECCIÓN 2: HISTORIA DE AMOR --- */
         .love-story {
             background-color: #ffffff;
-            /* Se redujo dramáticamente el padding superior e inferior */
             padding: 30px 20px 40px 20px; 
             display: flex;
             justify-content: center;
@@ -161,47 +160,60 @@
         }
 
         .story-container {
-            max-width: 550px; /* Un poco más estrecho */
+            max-width: 550px; 
             width: 100%;
+        }
+
+        /* Contenedor del audio para centrarlo y darle espacio */
+        .audio-player-container {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        /* Personalización ligera del audio para que no sea tan ancho en móviles */
+        audio {
+            max-width: 100%;
+            height: 40px;
         }
 
         .story-subtitle {
             display: block;
-            font-size: 0.75rem; /* Más pequeño */
+            font-size: 0.75rem; 
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #a38758; 
-            margin-bottom: 10px; /* Menos espacio abajo */
+            margin-bottom: 10px; 
             font-weight: 600;
         }
 
         .story-title {
-            font-size: 2.2rem; /* Título más pequeño */
+            font-size: 2.2rem; 
             color: #4a4a4a; 
-            margin: 0 0 15px 0; /* Menos margen */
+            margin: 0 0 15px 0; 
             font-weight: 600;
             letter-spacing: 1px;
         }
 
         .story-text {
-            font-size: 0.95rem; /* Texto más pequeño */
-            line-height: 1.5; /* Menor interlineado */
+            font-size: 0.95rem; 
+            line-height: 1.5; 
             color: #666666; 
-            margin: 0 0 15px 0; /* Menos espacio entre párrafos */
+            margin: 0 0 15px 0; 
         }
 
         .story-divider {
             border: none;
             border-top: 1px solid #d4c4a8; 
-            margin: 15px 0; /* Margen reducido a la mitad */
+            margin: 15px 0; 
             width: 100%; 
         }
 
         .initials {
             font-family: 'Great Vibes', cursive;
-            font-size: 2.5rem; /* Iniciales más pequeñas */
+            font-size: 2.5rem; 
             color: #a38758; 
-            margin-top: 5px; /* Menos margen arriba */
+            margin-top: 5px; 
         }
 
         /* Responsividad para móviles */
@@ -211,8 +223,8 @@
             .date { font-size: 1rem; margin-top: 25px; }
             .rsvp-btn { padding: 8px 25px; font-size: 0.8rem; margin-top: 20px;}
             
-            /* Ajustes súper compactos para móviles en la sección 2 */
             .love-story { padding: 25px 15px 30px 15px; }
+            .audio-player-container { margin-bottom: 20px; }
             .story-subtitle { font-size: 0.7rem; margin-bottom: 8px; }
             .story-title { font-size: 1.8rem; margin-bottom: 12px; }
             .story-text { font-size: 0.85rem; line-height: 1.4; margin-bottom: 12px; }
@@ -235,7 +247,6 @@
             
             <div class="date">17.07.2027</div>
             
-            <!-- Botón RSVP -->
             <a href="#" class="rsvp-btn">RSVP NOW</a>
         </div>
         
@@ -247,6 +258,15 @@
     <!-- SECCIÓN 2: Historia de Amor -->
     <section class="love-story">
         <div class="story-container">
+            
+            <!-- REPRODUCTOR DE AUDIO -->
+            <div class="audio-player-container">
+                <audio controls>
+                    <!-- Cambia 'nuestra-cancion.mp3' por el nombre de tu archivo de música -->
+                    <source src="nuestra-cancion.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
             
             <span class="story-subtitle">Con la bendición de Dios</span>
             
@@ -269,4 +289,4 @@
 
 </body>
 </html>
-                
+            
