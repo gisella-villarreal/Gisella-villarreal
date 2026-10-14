@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda - Gis & Roy</title>
+    <style>
+        /* Importamos fuentes elegantes de Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Lora', serif;
+            background-color: #f8f5f2;
+        }
+
+        /* Sección principal (Hero) */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            /* Aquí cargamos tu imagen de fondo */
+            background-image: url('dd0cc7469e7b88a430a5e39423e48c3f~2.jpg'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Capa semitransparente para oscurecer un poco el fondo y que el texto resalte */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.35); 
+            z-index: 1;
+        }
+
+        /* Contenedor del contenido para que quede por encima de la capa oscura */
+        .content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 80px; /* Espacio para el encaje inferior */
+        }
+
+        .subtitle {
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5rem;
+            font-weight: normal;
+            margin: 0 0 40px 0;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+        }
+
+        /* Contenedor del marco ovalado estilo encaje */
+        .frame-container {
+            position: relative;
+            width: 260px;
+            height: 360px;
+            border-radius: 50%; /* Crea la forma ovalada */
+            padding: 8px;
+            /* Borde punteado exterior para simular el encaje */
+            border: 3px dotted rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        /* Borde interior decorativo */
+        .frame-container::before {
+            content: '';
+            position: absolute;
+            top: -12px; left: -12px; right: -12px; bottom: -12px;
+            border-radius: 50%;
+            border: 1px dashed rgba(255, 255, 255, 0.6);
+        }
+
+        /* La foto de los novios */
+        .photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            /* FOTO DE LOS NOVIOS: Cambia esta URL por la ruta de la foto de ustedes */
+            background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80'); 
+            background-size: cover;
+            background-position: center;
+            border: 6px solid #fdfdfd; /* Borde sólido blanco interno */
+            box-sizing: border-box;
+        }
+
+        .date {
+            margin-top: 40px;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+        }
+
+        /* Decoración de encaje en la parte inferior simulada con CSS */
+        .lace-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            z-index: 2;
+            background-image: 
+                radial-gradient(circle at 20px 0, transparent 20px, #ffffff 21px);
+            background-size: 40px 100%;
+            background-repeat: repeat-x;
+            background-position: bottom;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Relleno blanco debajo del encaje */
+        .lace-bottom::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 80px;
+            background-color: #ffffff;
+        }
+        
+        /* Detalle central del encaje inferior */
+        .lace-center-detail {
+            position: absolute;
+            top: -30px;
+            width: 80px;
+            height: 80px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            z-index: 3;
+            /* Patrón interno del detalle central */
+            background-image: radial-gradient(transparent 40%, rgba(200,200,200,0.3) 45%, transparent 50%);
+            background-size: 10px 10px;
+        }
+
+        /* Responsividad para pantallas de celular */
+        @media (max-width: 600px) {
+            .title { font-size: 3.5rem; }
+            .frame-container { width: 220px; height: 310px; }
+            .date { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="content">
+            <div class="subtitle">The Wedding Day</div>
+            <h1 class="title">Gis & Roy</h1>
+            
+            <!-- Marco con la foto -->
+            <div class="frame-container">
+                <div class="photo"></div>
+            </div>
+            
+            <!-- Puedes modificar la fecha aquí -->
+            <div class="date">17.07.2027</div>
+        </div>
+        
+        <!-- Borde inferior de encaje simulado -->
+        <div class="lace-bottom">
+            <div class="lace-center-detail"></div>
+        </div>
+    </section>
+
+</body>
+</html>
