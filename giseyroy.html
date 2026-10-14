@@ -11,12 +11,11 @@
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
             font-family: 'Lora', serif;
-            background-color: #f8f5f2;
+            background-color: #ffffff; /* El fondo general ahora es blanco */
         }
 
-        /* Sección principal (Hero) */
+        /* --- SECCIÓN 1: HERO (Inicio) --- */
         .hero {
             position: relative;
             width: 100%;
@@ -34,7 +33,6 @@
             overflow: hidden;
         }
 
-        /* Capa semitransparente para oscurecer un poco el fondo y que el texto resalte */
         .hero::before {
             content: '';
             position: absolute;
@@ -43,14 +41,13 @@
             z-index: 1;
         }
 
-        /* Contenedor del contenido para que quede por encima de la capa oscura */
         .content {
             position: relative;
             z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-bottom: 80px; /* Espacio para el encaje inferior */
+            padding-bottom: 100px;
         }
 
         .subtitle {
@@ -69,14 +66,12 @@
             text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
         }
 
-        /* Contenedor del marco ovalado estilo encaje */
         .frame-container {
             position: relative;
             width: 260px;
             height: 360px;
-            border-radius: 50%; /* Crea la forma ovalada */
+            border-radius: 50%;
             padding: 8px;
-            /* Borde punteado exterior para simular el encaje */
             border: 3px dotted rgba(255, 255, 255, 0.8);
             display: flex;
             align-items: center;
@@ -84,7 +79,6 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
-        /* Borde interior decorativo */
         .frame-container::before {
             content: '';
             position: absolute;
@@ -93,16 +87,15 @@
             border: 1px dashed rgba(255, 255, 255, 0.6);
         }
 
-        /* La foto de los novios */
         .photo {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            /* FOTO DE LOS NOVIOS: Cambia esta URL por la ruta de la foto de ustedes */
-            background-image: url('Simple Minimalist Save the Date Wedding Invitation_20261014_092408_0000.png'); 
+            /* FOTO DE LOS NOVIOS */
+            background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80'); 
             background-size: cover;
             background-position: center;
-            border: 6px solid #fdfdfd; /* Borde sólido blanco interno */
+            border: 6px solid #fdfdfd; 
             box-sizing: border-box;
         }
 
@@ -112,16 +105,15 @@
             letter-spacing: 3px;
         }
 
-        /* Decoración de encaje en la parte inferior simulada con CSS */
+        /* Encaje inferior de la imagen */
         .lace-bottom {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 120px;
+            height: 60px;
             z-index: 2;
-            background-image: 
-                radial-gradient(circle at 20px 0, transparent 20px, #ffffff 21px);
+            background-image: radial-gradient(circle at 20px 0, transparent 20px, #ffffff 21px);
             background-size: 40px 100%;
             background-repeat: repeat-x;
             background-position: bottom;
@@ -129,17 +121,6 @@
             justify-content: center;
         }
 
-        /* Relleno blanco debajo del encaje */
-        .lace-bottom::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 80px;
-            background-color: #ffffff;
-        }
-        
-        /* Detalle central del encaje inferior */
         .lace-center-detail {
             position: absolute;
             top: -30px;
@@ -148,38 +129,108 @@
             background-color: #ffffff;
             border-radius: 50%;
             z-index: 3;
-            /* Patrón interno del detalle central */
             background-image: radial-gradient(transparent 40%, rgba(200,200,200,0.3) 45%, transparent 50%);
             background-size: 10px 10px;
         }
 
-        /* Responsividad para pantallas de celular */
+        /* --- SECCIÓN 2: HISTORIA DE AMOR --- */
+        .love-story {
+            background-color: #ffffff;
+            padding: 80px 20px 100px 20px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .story-container {
+            max-width: 700px; /* Limita el ancho para que el texto no sea difícil de leer */
+        }
+
+        .main-quote {
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: #4a4a4a;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        .bible-verse {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #666666;
+            margin-bottom: 50px;
+        }
+
+        .verse-ref {
+            display: block;
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #a38758; /* Un tono dorado/arena elegante */
+        }
+
+        .initials {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #a38758; /* Mismo tono dorado */
+            margin-top: 20px;
+        }
+
+        /* Decoración sutil antes de las iniciales */
+        .divider {
+            width: 50px;
+            height: 1px;
+            background-color: #d4c4a8;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Responsividad para móviles */
         @media (max-width: 600px) {
             .title { font-size: 3.5rem; }
             .frame-container { width: 220px; height: 310px; }
             .date { font-size: 1rem; }
+            .main-quote { font-size: 1.1rem; padding: 0 15px; }
+            .bible-verse { font-size: 0.95rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- SECCIÓN 1: Hero -->
     <section class="hero">
         <div class="content">
             <div class="subtitle">The Wedding Day</div>
             <h1 class="title">Gis & Roy</h1>
             
-            <!-- Marco con la foto -->
             <div class="frame-container">
                 <div class="photo"></div>
             </div>
             
-            <!-- Puedes modificar la fecha aquí -->
             <div class="date">17.07.2027</div>
         </div>
         
-        <!-- Borde inferior de encaje simulado -->
         <div class="lace-bottom">
             <div class="lace-center-detail"></div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: Historia de Amor -->
+    <section class="love-story">
+        <div class="story-container">
+            <p class="main-quote">
+                "Nuestra historia de amor fue escrita en el corazón de Dios, guiada por su propósito y bendecida por su gracia. Hoy elegimos caminar juntos, tomados de la mano y de la mano de Aquel que hizo posible nuestro encuentro, confiando en que su amor será siempre el fundamento de nuestro para siempre."
+            </p>
+            
+            <p class="bible-verse">
+                “Y sobre todas estas cosas vestíos de amor, que es el vínculo perfecto.”
+                <span class="verse-ref">— Colosenses 3:14</span>
+            </p>
+
+            <div class="divider"></div>
+            
+            <div class="initials">G+R</div>
         </div>
     </section>
 
