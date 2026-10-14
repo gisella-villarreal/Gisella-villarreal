@@ -221,7 +221,8 @@
             position: relative;
             background-color: #292c1b; 
             color: #ffffff;
-            padding: 130px 20px 110px 20px; /* Padding inferior aumentado para el encaje */
+            /* Se aumentó el padding inferior de 110px a 160px para dar más espacio */
+            padding: 130px 20px 160px 20px; 
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -306,7 +307,7 @@
             font-weight: 600;
             transition: all 0.3s ease;
             position: relative;
-            z-index: 5;
+            z-index: 5; /* Asegura que esté por encima de cualquier otro elemento */
         }
 
         .calendar-btn:hover {
@@ -361,11 +362,11 @@
         .heart-divider .line {
             flex: 1;
             height: 1px;
-            background-color: #d4c4a8; /* Dorado */
+            background-color: #d4c4a8; 
         }
 
         .heart-divider .heart {
-            color: #8c2a2a; /* Rojo oscuro sutil */
+            color: #8c2a2a; 
             margin: 0 15px;
             font-size: 0.9rem;
         }
@@ -392,13 +393,13 @@
             justify-content: center;
             padding: 12px 35px;
             background-color: transparent; 
-            border: 1px solid #292c1b; /* Borde oscuro */
-            color: #292c1b; /* Texto oscuro */
+            border: 1px solid #292c1b; 
+            color: #292c1b; 
             text-decoration: none;
             font-size: 0.85rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            border-radius: 25px; /* Bordes redondeados tipo píldora */
+            border-radius: 25px; 
             font-weight: 600;
             transition: all 0.3s ease;
         }
@@ -423,7 +424,8 @@
             .story-divider { margin: 12px 0; }
             .initials { font-size: 2.2rem; }
 
-            .countdown-section { padding: 110px 10px 80px 10px; }
+            /* Se aumentó el padding inferior para celulares de 80px a 150px */
+            .countdown-section { padding: 110px 10px 150px 10px; }
             .countdown-title { font-size: 2rem; margin-bottom: 25px; }
             .timer-container { gap: 10px; } 
             .time-box { padding: 12px 10px; }
@@ -431,7 +433,6 @@
             .time-box span.label { font-size: 0.65rem; letter-spacing: 1px; }
             .calendar-btn { font-size: 0.75rem; padding: 10px 20px; margin-top: 35px; }
 
-            /* Ajustes móviles para la nueva sección de Ubicación */
             .location-section { padding: 40px 15px 60px 15px; }
             .event-time { font-size: 0.8rem; }
             .event-title { font-size: 1.8rem; }
@@ -519,7 +520,6 @@
         </div>
 
         <!-- Botón Calendar -->
-        <!-- Ajusté la fecha a las 17:00 HRS (En formato UTC para Google es 22:00) -->
         <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Ceremonia+y+Recepción+de+Gis+y+Roy&dates=20271212T220000Z/20271213T040000Z&details=¡Acompáñanos+a+celebrar+el+comienzo+de+nuestro+para+siempre!&location=Casandrea+Country+Club,+Puerto+Colombia" target="_blank" class="calendar-btn">
             <svg viewBox="0 0 24 24">
                 <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/>
@@ -556,7 +556,6 @@
         </p>
 
         <!-- Botón de Google Maps -->
-        <!-- La URL abre Maps automáticamente con la búsqueda del lugar -->
         <a href="https://www.google.com/maps/search/?api=1&query=Casandrea+Country+Club+Puerto+Colombia" target="_blank" class="maps-btn">
             Cómo llegar
         </a>
@@ -565,7 +564,6 @@
 
     <!-- SCRIPT PARA EL CONTADOR DINÁMICO -->
     <script>
-        // Fecha ajustada al 12 de Dic a las 17:00 Hrs
         const weddingDate = new Date("Dec 12, 2027 17:00:00").getTime();
 
         const countdownFunction = setInterval(function() {
@@ -588,4 +586,5 @@
     </script>
 
 </body>
-</html>
+    </html>
+    
