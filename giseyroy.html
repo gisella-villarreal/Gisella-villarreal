@@ -189,7 +189,7 @@
 
         .story-title {
             font-size: 2.2rem; 
-            color: #4a4a4a; 
+            color: #656a4c; /* NUEVO COLOR VERDE/GRIS OLIVA */
             margin: 0 0 15px 0; 
             font-weight: 600;
             letter-spacing: 1px;
@@ -219,19 +219,18 @@
         /* --- SECCIÓN 3: CUENTA REGRESIVA --- */
         .countdown-section {
             position: relative;
-            background-color: #4a4a4a; /* Mismo color de ¡NOS CASAMOS! */
+            background-color: #656a4c; /* NUEVO COLOR DE FONDO VERDE/GRIS OLIVA */
             color: #ffffff;
-            padding: 110px 20px 80px 20px; /* Padding superior alto para el encaje */
+            padding: 130px 20px 80px 20px; /* Aumenté el padding superior a 130px para bajar el texto */
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Encaje (Nubes) invertido usando transform scaleY */
         .lace-top-inverted {
             position: absolute;
-            top: -1px; /* Evita cualquier línea milimétrica de separación */
+            top: -1px; 
             left: 0;
             width: 100%;
             height: 60px;
@@ -242,14 +241,15 @@
             background-position: bottom;
             display: flex;
             justify-content: center;
-            transform: scaleY(-1); /* Esto voltea la figura hacia abajo */
+            transform: scaleY(-1); 
         }
 
         .countdown-title {
             font-family: 'Great Vibes', cursive;
             font-size: 3rem;
-            color: #d4c4a8; /* Tono dorado para resaltar */
-            margin: 0 0 40px 0;
+            color: #d4c4a8; 
+            /* Agregamos un poco de margen superior extra por si acaso */
+            margin: 20px 0 40px 0; 
             font-weight: normal;
         }
 
@@ -257,7 +257,10 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            flex-wrap: wrap;
+            /* SE GARANTIZA QUE ESTÉ EN UNA SOLA LÍNEA */
+            flex-wrap: nowrap; 
+            width: 100%;
+            max-width: 600px;
         }
 
         .time-box {
@@ -265,11 +268,11 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.08); /* Fondo semitransparente blanco */
+            background: rgba(255, 255, 255, 0.08); 
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 10px;
-            padding: 15px 20px;
-            min-width: 70px;
+            padding: 15px 15px;
+            flex: 1; /* Para que todas las cajas ocupen el mismo ancho */
         }
 
         .time-box span.number {
@@ -284,6 +287,35 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #d4c4a8;
+        }
+
+        /* Botón Guardar Fecha */
+        .calendar-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 45px;
+            padding: 12px 25px;
+            background-color: #d4c4a8; /* Tono arena/dorado */
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .calendar-btn:hover {
+            background-color: #c0b094; /* Un tono un poco más oscuro al pasar el mouse */
+        }
+
+        .calendar-btn svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            fill: currentColor;
         }
 
         /* Responsividad para móviles */
@@ -301,13 +333,15 @@
             .story-divider { margin: 12px 0; }
             .initials { font-size: 2.2rem; }
 
-            /* Ajustes móviles para cuenta regresiva */
-            .countdown-section { padding: 90px 15px 60px 15px; }
-            .countdown-title { font-size: 2.2rem; margin-bottom: 30px; }
-            .time-box { padding: 12px 15px; min-width: 60px; }
-            .time-box span.number { font-size: 1.6rem; }
-            .time-box span.label { font-size: 0.65rem; }
-            .timer-container { gap: 10px; }
+            /* Ajustes móviles para cuenta regresiva (una sola línea) */
+            .countdown-section { padding: 110px 10px 60px 10px; }
+            .countdown-title { font-size: 2rem; margin-bottom: 25px; }
+            .timer-container { gap: 6px; } /* Reducido para que quepan todos */
+            .time-box { padding: 10px 5px; }
+            .time-box span.number { font-size: 1.3rem; }
+            .time-box span.label { font-size: 0.55rem; letter-spacing: 1px; }
+            
+            .calendar-btn { font-size: 0.75rem; padding: 10px 20px; margin-top: 35px; }
         }
     </style>
 </head>
@@ -323,7 +357,6 @@
                 <div class="photo"></div>
             </div>
             
-            <!-- FECHA ACTUALIZADA -->
             <div class="date">12.12.2027</div>
             
             <a href="#" class="rsvp-btn">RSVP NOW</a>
@@ -347,6 +380,7 @@
             
             <span class="story-subtitle">Con la bendición de Dios</span>
             
+            <!-- ¡NOS CASAMOS! con nuevo color -->
             <h2 class="story-title">¡NOS CASAMOS!</h2>
             
             <p class="story-text">
@@ -367,7 +401,6 @@
     <!-- SECCIÓN 3: CUENTA REGRESIVA -->
     <section class="countdown-section">
         
-        <!-- Encaje Invertido (Conecta visualmente con la sección blanca) -->
         <div class="lace-top-inverted">
             <div class="lace-center-detail"></div>
         </div>
@@ -393,35 +426,41 @@
             </div>
         </div>
 
+        <!-- BOTÓN GOOGLE CALENDAR -->
+        <!-- NOTA PARA TI: Puedes editar la URL de abajo.
+             "text=" -> Título del evento (Reemplaza los espacios con "+")
+             "location=" -> Lugar del evento (Ej: Iglesia+Principal)
+             "details=" -> Descripción del evento
+             "dates=" -> Fecha y hora. Formato: YYYYMMDDTHHMMSSZ (En el ejemplo está para el 12 de Dic a las 4:00 PM hora local asumiendo zona horaria UTC-5)
+        -->
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Gis+y+Roy&dates=20271212T210000Z/20271213T020000Z&details=¡Acompáñanos+a+celebrar+el+comienzo+de+nuestro+para+siempre!&location=Ubicación+por+confirmar" target="_blank" class="calendar-btn">
+            <!-- Icono SVG de calendario -->
+            <svg viewBox="0 0 24 24">
+                <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/>
+            </svg>
+            Guardar Fecha
+        </a>
+
     </section>
 
     <!-- SCRIPT PARA EL CONTADOR DINÁMICO -->
     <script>
-        // Fecha y hora del matrimonio (Mes Día, Año Horas:Minutos:Segundos)
         const weddingDate = new Date("Dec 12, 2027 00:00:00").getTime();
 
-        // Actualiza el contador cada 1 segundo (1000 milisegundos)
         const countdownFunction = setInterval(function() {
-
-            // Obtiene la fecha y hora actual
             const now = new Date().getTime();
-                
-            // Calcula la distancia entre la fecha actual y la fecha de la boda
             const distance = weddingDate - now;
                 
-            // Cálculos matemáticos para días, horas, minutos y segundos
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
                 
-            // Pinta los resultados en los elementos de HTML
             document.getElementById("days").innerText = days;
             document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
             document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
             document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
                 
-            // Si la cuenta regresiva termina (llegó la fecha)
             if (distance < 0) {
                 clearInterval(countdownFunction);
                 document.getElementById("countdown-timer").innerHTML = "<h2 class='story-title' style='color:#ffffff;'>¡Llegó el gran día!</h2>";
@@ -430,5 +469,5 @@
     </script>
 
 </body>
-    </html>
-                    
+</html>
+    
