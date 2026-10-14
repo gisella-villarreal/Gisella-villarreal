@@ -13,6 +13,7 @@
             padding: 0;
             font-family: 'Lora', serif;
             background-color: #ffffff;
+            overflow-x: hidden;
         }
 
         /* --- SECCIÓN 1: HERO (Inicio) --- */
@@ -123,7 +124,6 @@
             color: #333333;
         }
 
-        /* Encaje inferior blanco normal */
         .lace-bottom {
             position: absolute;
             bottom: 0;
@@ -221,7 +221,6 @@
             position: relative;
             background-color: #292c1b; 
             color: #ffffff;
-            /* Se aumentó el padding inferior de 110px a 160px para dar más espacio */
             padding: 130px 20px 160px 20px; 
             text-align: center;
             display: flex;
@@ -229,7 +228,6 @@
             align-items: center;
         }
 
-        /* Encaje invertido en la parte superior */
         .lace-top-inverted {
             position: absolute;
             top: -1px; 
@@ -289,7 +287,6 @@
             color: #d4c4a8;
         }
 
-        /* Botón Calendar (Fondo oscuro) */
         .calendar-btn {
             display: inline-flex;
             align-items: center;
@@ -307,7 +304,7 @@
             font-weight: 600;
             transition: all 0.3s ease;
             position: relative;
-            z-index: 5; /* Asegura que esté por encima de cualquier otro elemento */
+            z-index: 5;
         }
 
         .calendar-btn:hover {
@@ -322,7 +319,7 @@
             fill: currentColor;
         }
 
-        /* --- SECCIÓN 4: UBICACIÓN / RECEPCIÓN --- */
+        /* --- SECCIÓN 4: UBICACIÓN --- */
         .location-section {
             background-color: #ffffff;
             padding: 60px 20px 80px 20px;
@@ -349,7 +346,6 @@
             letter-spacing: 3px;
         }
 
-        /* Divisor con corazón estilo Pinterest */
         .heart-divider {
             display: flex;
             align-items: center;
@@ -386,7 +382,6 @@
             max-width: 400px;
         }
 
-        /* Botón de Google Maps para fondo blanco */
         .maps-btn {
             display: inline-flex;
             align-items: center;
@@ -409,6 +404,119 @@
             color: #ffffff; 
         }
 
+        /* --- SECCIÓN 5: GALERÍA DE FOTOS --- */
+        .gallery-section {
+            background-color: #faf9f6; /* Fondo crema muy claro para diferenciar */
+            padding: 80px 0;
+            text-align: center;
+            overflow: hidden; /* Evita que el scroll lateral deforme la página */
+        }
+
+        .gallery-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            color: #292c1b;
+            margin: 0 0 40px 0;
+            font-weight: normal;
+        }
+
+        /* Contenedor del carrusel */
+        .carousel-container {
+            width: 100%;
+            padding: 20px 0;
+            /* Permite scroll horizontal suave en móviles */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Oculta la barra en Firefox */
+            -ms-overflow-style: none;  /* Oculta la barra en IE y Edge */
+        }
+        
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Oculta la barra en Chrome/Safari/Opera */
+        }
+
+        .carousel-track {
+            display: inline-flex;
+            gap: 20px;
+            padding: 0 20px; /* Margen a los lados */
+        }
+
+        .carousel-track img {
+            width: 280px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            scroll-snap-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer; /* Cambia el cursor para indicar que es clicable */
+        }
+
+        .carousel-track img:hover {
+            transform: scale(1.02); /* Pequeño efecto al pasar el mouse */
+        }
+
+        /* Indicador sutil para móviles */
+        .swipe-hint {
+            display: block;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #888;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* --- LIGHTBOX (VISOR DE IMÁGENES PANTALLA COMPLETA) --- */
+        .lightbox {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            z-index: 9999;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(20, 20, 20, 0.95); /* Fondo muy oscuro pero con ligera transparencia */
+            backdrop-filter: blur(5px); /* Efecto borroso elegante al fondo */
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 8px;
+            object-fit: contain;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.5);
+            animation-name: zoom;
+            animation-duration: 0.3s;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0.8); opacity: 0;} 
+            to {transform: scale(1); opacity: 1;}
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: 300;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        .close-lightbox:hover,
+        .close-lightbox:focus {
+            color: #d4c4a8; /* Hover dorado */
+            text-decoration: none;
+            cursor: pointer;
+        }
+
         /* Responsividad para móviles */
         @media (max-width: 600px) {
             .title { font-size: 3.5rem; }
@@ -424,7 +532,6 @@
             .story-divider { margin: 12px 0; }
             .initials { font-size: 2.2rem; }
 
-            /* Se aumentó el padding inferior para celulares de 80px a 150px */
             .countdown-section { padding: 110px 10px 150px 10px; }
             .countdown-title { font-size: 2rem; margin-bottom: 25px; }
             .timer-container { gap: 10px; } 
@@ -440,6 +547,12 @@
             .event-place { font-size: 1.15rem; }
             .event-address { font-size: 0.85rem; margin-bottom: 25px; }
             .maps-btn { padding: 10px 25px; font-size: 0.75rem; }
+
+            /* Ajustes galería */
+            .gallery-section { padding: 50px 0; }
+            .gallery-title { font-size: 3.2rem; margin-bottom: 30px; }
+            .carousel-track img { width: 240px; height: 340px; }
+            .close-lightbox { top: 15px; right: 20px; font-size: 35px; }
         }
     </style>
 </head>
@@ -497,7 +610,6 @@
     <!-- SECCIÓN 3: CUENTA REGRESIVA -->
     <section class="countdown-section">
         
-        <!-- Encaje Superior Invertido -->
         <div class="lace-top-inverted">
             <div class="lace-center-detail"></div>
         </div>
@@ -519,7 +631,6 @@
             </div>
         </div>
 
-        <!-- Botón Calendar -->
         <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Ceremonia+y+Recepción+de+Gis+y+Roy&dates=20271212T220000Z/20271213T040000Z&details=¡Acompáñanos+a+celebrar+el+comienzo+de+nuestro+para+siempre!&location=Casandrea+Country+Club,+Puerto+Colombia" target="_blank" class="calendar-btn">
             <svg viewBox="0 0 24 24">
                 <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/>
@@ -527,21 +638,19 @@
             Guardar Fecha
         </a>
         
-        <!-- Encaje Inferior para transicionar a la sección blanca -->
         <div class="lace-bottom">
             <div class="lace-center-detail"></div>
         </div>
 
     </section>
 
-    <!-- SECCIÓN 4: UBICACIÓN -->
+        <!-- SECCIÓN 4: UBICACIÓN -->
     <section class="location-section">
         
         <p class="event-time">12.12.2027 a las 17:00 HRS</p>
         
         <h2 class="event-title">CEREMONIA Y RECEPCIÓN</h2>
         
-        <!-- Divisor con corazón -->
         <div class="heart-divider">
             <span class="line"></span>
             <span class="heart">♥</span>
@@ -555,15 +664,47 @@
             Puerto Colombia (cerca de Barranquilla)
         </p>
 
-        <!-- Botón de Google Maps -->
         <a href="https://www.google.com/maps/search/?api=1&query=Casandrea+Country+Club+Puerto+Colombia" target="_blank" class="maps-btn">
             Cómo llegar
         </a>
         
     </section>
 
-    <!-- SCRIPT PARA EL CONTADOR DINÁMICO -->
+    <!-- SECCIÓN 5: GALERÍA DE FOTOS -->
+    <section class="gallery-section">
+        <h2 class="gallery-title">Nuestros momentos</h2>
+        
+        <!-- Carrusel de imágenes -->
+        <!-- Se agregó el evento onclick para abrir el visor de imágenes (Lightbox) -->
+        <!-- Las imágenes incluyen parámetros &w=1200 para garantizar alta calidad al hacer zoom -->
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80" alt="Foto pareja 1" onclick="abrirLightbox(this.src)">
+                
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" alt="Foto pareja 2" onclick="abrirLightbox(this.src)">
+                
+                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80" alt="Foto pareja 3" onclick="abrirLightbox(this.src)">
+                
+                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80" alt="Foto pareja 4" onclick="abrirLightbox(this.src)">
+                
+                <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=80" alt="Foto pareja 5" onclick="abrirLightbox(this.src)">
+                
+                <img src="https://images.unsplash.com/photo-1543883656-11b43343fc0a?auto=format&fit=crop&w=1200&q=80" alt="Foto pareja 6" onclick="abrirLightbox(this.src)">
+            </div>
+        </div>
+        
+        <span class="swipe-hint">Desliza para ver más →</span>
+    </section>
+
+    <!-- VISOR DE IMÁGENES A PANTALLA COMPLETA (LIGHTBOX) -->
+    <div id="miLightbox" class="lightbox" onclick="cerrarLightbox()">
+        <span class="close-lightbox" onclick="cerrarLightbox()">&times;</span>
+        <img class="lightbox-content" id="imgLightbox">
+    </div>
+
+    <!-- SCRIPTS -->
     <script>
+        // --- 1. SCRIPT DE LA CUENTA REGRESIVA ---
         const weddingDate = new Date("Dec 12, 2027 17:00:00").getTime();
 
         const countdownFunction = setInterval(function() {
@@ -583,8 +724,24 @@
                 document.getElementById("countdown-timer").innerHTML = "<h2 class='countdown-title' style='color:#ffffff;'>¡Llegó el gran día!</h2>";
             }
         }, 1000); 
+
+        // --- 2. SCRIPT DEL VISOR DE IMÁGENES (LIGHTBOX) ---
+        function abrirLightbox(srcImagen) {
+            // Mostrar el div del lightbox
+            document.getElementById('miLightbox').style.display = "block";
+            // Asignar la fuente de la imagen en alta calidad
+            document.getElementById('imgLightbox').src = srcImagen;
+            // Bloquear el scroll de la página de fondo
+            document.body.style.overflow = "hidden";
+        }
+
+        function cerrarLightbox() {
+            // Ocultar el div
+            document.getElementById('miLightbox').style.display = "none";
+            // Restaurar el scroll de la página
+            document.body.style.overflow = "auto";
+        }
     </script>
 
 </body>
-    </html>
-    
+</html>
