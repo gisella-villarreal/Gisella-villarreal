@@ -406,10 +406,11 @@
 
         /* --- SECCIÓN 5: GALERÍA DE FOTOS --- */
         .gallery-section {
-            background-color: #faf9f6; /* Fondo crema muy claro para diferenciar */
+            background-color: #faf9f6; 
             padding: 80px 0;
             text-align: center;
-            overflow: hidden; /* Evita que el scroll lateral deforme la página */
+            overflow: hidden; 
+            position: relative;
         }
 
         .gallery-title {
@@ -420,25 +421,62 @@
             font-weight: normal;
         }
 
-        /* Contenedor del carrusel */
+        /* NUEVO: Envoltorio para flechas y carrusel */
+        .carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Botones de flechas del carrusel */
+        .carousel-arrow {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #d4c4a8;
+            color: #292c1b;
+            font-size: 1.5rem;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: absolute;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .carousel-arrow:hover {
+            background-color: #292c1b;
+            color: #ffffff;
+            border-color: #292c1b;
+        }
+
+        .left-arrow { left: 15px; }
+        .right-arrow { right: 15px; }
+
         .carousel-container {
             width: 100%;
             padding: 20px 0;
-            /* Permite scroll horizontal suave en móviles */
             overflow-x: auto;
             scroll-snap-type: x mandatory;
-            scrollbar-width: none; /* Oculta la barra en Firefox */
-            -ms-overflow-style: none;  /* Oculta la barra en IE y Edge */
+            scrollbar-width: none; 
+            -ms-overflow-style: none;  
+            scroll-behavior: smooth; /* Movimiento suave al dar clic en flechas */
         }
         
         .carousel-container::-webkit-scrollbar {
-            display: none; /* Oculta la barra en Chrome/Safari/Opera */
+            display: none; 
         }
 
         .carousel-track {
             display: inline-flex;
             gap: 20px;
-            padding: 0 20px; /* Margen a los lados */
+            padding: 0 80px; /* Más padding para que las flechas no tapen la primera/última foto */
         }
 
         .carousel-track img {
@@ -449,14 +487,13 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
             scroll-snap-align: center;
             transition: transform 0.3s ease;
-            cursor: pointer; /* Cambia el cursor para indicar que es clicable */
+            cursor: pointer; 
         }
 
         .carousel-track img:hover {
-            transform: scale(1.02); /* Pequeño efecto al pasar el mouse */
+            transform: scale(1.02); 
         }
 
-        /* Indicador sutil para móviles */
         .swipe-hint {
             display: block;
             margin-top: 20px;
@@ -466,9 +503,9 @@
             text-transform: uppercase;
         }
 
-        /* --- LIGHTBOX (VISOR DE IMÁGENES PANTALLA COMPLETA) --- */
+        /* LIGHTBOX */
         .lightbox {
-            display: none; /* Oculto por defecto */
+            display: none; 
             position: fixed;
             z-index: 9999;
             padding-top: 60px;
@@ -477,8 +514,8 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(20, 20, 20, 0.95); /* Fondo muy oscuro pero con ligera transparencia */
-            backdrop-filter: blur(5px); /* Efecto borroso elegante al fondo */
+            background-color: rgba(20, 20, 20, 0.95); 
+            backdrop-filter: blur(5px); 
         }
 
         .lightbox-content {
@@ -510,14 +547,146 @@
             z-index: 10000;
         }
 
-        .close-lightbox:hover,
-        .close-lightbox:focus {
-            color: #d4c4a8; /* Hover dorado */
-            text-decoration: none;
-            cursor: pointer;
+        .close-lightbox:hover { color: #d4c4a8; }
+
+
+        /* --- SECCIÓN 6: CÓDIGO DE VESTIMENTA --- */
+        .dresscode-section {
+            background-color: #ffffff;
+            padding: 80px 20px;
+            text-align: center;
         }
 
-        /* Responsividad para móviles */
+        .dc-title-cursive {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            color: #a38758;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .dc-title-main {
+            font-size: 1.8rem;
+            color: #292c1b;
+            letter-spacing: 5px;
+            margin: 10px 0 20px 0;
+            font-weight: 400;
+        }
+
+        .dc-level {
+            font-size: 1.1rem;
+            color: #666666;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+        }
+
+        .dc-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .dc-col {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+
+        .dc-col h3 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: #292c1b;
+            text-align: center;
+            margin: 0 0 20px 0;
+            border-bottom: 1px solid #d4c4a8;
+            padding-bottom: 10px;
+        }
+
+        .dc-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: #4a4a4a;
+            line-height: 1.5;
+        }
+
+        .dc-bullet {
+            color: #a38758;
+            margin-right: 12px;
+            font-size: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .dc-highlight {
+            font-weight: 600;
+            color: #8c2a2a; /* Rojo oscuro para los "evitar" */
+        }
+
+        /* Imagen central de la pareja en vestimenta */
+        .dc-image-col {
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            justify-content: center;
+            order: 2; /* Por defecto en el centro */
+        }
+
+        .dc-image-col img {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Paleta de colores */
+        .palette-container {
+            margin-top: 60px;
+            border-top: 1px solid #eeeeee;
+            padding-top: 40px;
+        }
+
+        .palette-title {
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            color: #666666;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .colors-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .color-circle {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+
+        .dc-footer {
+            font-size: 1.1rem;
+            color: #4a4a4a;
+            font-style: italic;
+        }
+
+                /* Responsividad para móviles */
+        @media (max-width: 768px) {
+            .dc-col { order: 2; }
+            .dc-col:last-child { order: 3; }
+            .dc-image-col { order: 1; margin-bottom: 30px; } /* En celulares, la foto va arriba */
+        }
+
         @media (max-width: 600px) {
             .title { font-size: 3.5rem; }
             .frame-container { width: 220px; height: 310px; }
@@ -548,11 +717,20 @@
             .event-address { font-size: 0.85rem; margin-bottom: 25px; }
             .maps-btn { padding: 10px 25px; font-size: 0.75rem; }
 
-            /* Ajustes galería */
             .gallery-section { padding: 50px 0; }
             .gallery-title { font-size: 3.2rem; margin-bottom: 30px; }
             .carousel-track img { width: 240px; height: 340px; }
+            .carousel-arrow { width: 35px; height: 35px; font-size: 1.2rem; }
             .close-lightbox { top: 15px; right: 20px; font-size: 35px; }
+
+            /* Ajustes móviles Vestimenta */
+            .dresscode-section { padding: 60px 15px; }
+            .dc-title-cursive { font-size: 3.2rem; }
+            .dc-title-main { font-size: 1.4rem; }
+            .dc-col h3 { font-size: 2.5rem; }
+            .dc-item { font-size: 0.9rem; }
+            .colors-row { gap: 8px; }
+            .color-circle { width: 30px; height: 30px; }
         }
     </style>
 </head>
@@ -609,7 +787,6 @@
 
     <!-- SECCIÓN 3: CUENTA REGRESIVA -->
     <section class="countdown-section">
-        
         <div class="lace-top-inverted">
             <div class="lace-center-detail"></div>
         </div>
@@ -641,14 +818,11 @@
         <div class="lace-bottom">
             <div class="lace-center-detail"></div>
         </div>
-
     </section>
 
-        <!-- SECCIÓN 4: UBICACIÓN -->
+    <!-- SECCIÓN 4: UBICACIÓN -->
     <section class="location-section">
-        
         <p class="event-time">12.12.2027 a las 17:00 HRS</p>
-        
         <h2 class="event-title">CEREMONIA Y RECEPCIÓN</h2>
         
         <div class="heart-divider">
@@ -658,7 +832,6 @@
         </div>
         
         <p class="event-place">Casandrea Country Club</p>
-        
         <p class="event-address">
             Vía Sabanilla, Kilómetro 7 - 15,<br>
             Puerto Colombia (cerca de Barranquilla)
@@ -667,33 +840,121 @@
         <a href="https://www.google.com/maps/search/?api=1&query=Casandrea+Country+Club+Puerto+Colombia" target="_blank" class="maps-btn">
             Cómo llegar
         </a>
-        
     </section>
 
     <!-- SECCIÓN 5: GALERÍA DE FOTOS -->
     <section class="gallery-section">
         <h2 class="gallery-title">Nuestros momentos</h2>
         
-        <!-- Carrusel de imágenes -->
-        <!-- Se agregó el evento onclick para abrir el visor de imágenes (Lightbox) -->
-        <!-- Las imágenes incluyen parámetros &w=1200 para garantizar alta calidad al hacer zoom -->
-        <div class="carousel-container">
-            <div class="carousel-track">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80" alt="Foto pareja 1" onclick="abrirLightbox(this.src)">
-                
-                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" alt="Foto pareja 2" onclick="abrirLightbox(this.src)">
-                
-                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80" alt="Foto pareja 3" onclick="abrirLightbox(this.src)">
-                
-                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80" alt="Foto pareja 4" onclick="abrirLightbox(this.src)">
-                
-                <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=80" alt="Foto pareja 5" onclick="abrirLightbox(this.src)">
-                
-                <img src="https://images.unsplash.com/photo-1543883656-11b43343fc0a?auto=format&fit=crop&w=1200&q=80" alt="Foto pareja 6" onclick="abrirLightbox(this.src)">
+        <!-- Envoltorio con flechas -->
+        <div class="carousel-wrapper">
+            <!-- Flecha Izquierda -->
+            <button class="carousel-arrow left-arrow" onclick="moverCarrusel(-1)">&#10094;</button>
+            
+            <div class="carousel-container" id="galeria">
+                <div class="carousel-track">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80" alt="Foto 1" onclick="abrirLightbox(this.src)">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" alt="Foto 2" onclick="abrirLightbox(this.src)">
+                    <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80" alt="Foto 3" onclick="abrirLightbox(this.src)">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80" alt="Foto 4" onclick="abrirLightbox(this.src)">
+                    <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=80" alt="Foto 5" onclick="abrirLightbox(this.src)">
+                    <img src="https://images.unsplash.com/photo-1543883656-11b43343fc0a?auto=format&fit=crop&w=1200&q=80" alt="Foto 6" onclick="abrirLightbox(this.src)">
+                </div>
             </div>
+
+            <!-- Flecha Derecha -->
+            <button class="carousel-arrow right-arrow" onclick="moverCarrusel(1)">&#10095;</button>
         </div>
         
         <span class="swipe-hint">Desliza para ver más →</span>
+    </section>
+
+    <!-- SECCIÓN 6: CÓDIGO DE VESTIMENTA -->
+    <section class="dresscode-section">
+        
+        <h2 class="dc-title-cursive">Código de</h2>
+        <h3 class="dc-title-main">VESTIMENTA</h3>
+        
+        <div class="heart-divider" style="margin: 0 auto 15px auto;">
+            <span class="line"></span>
+            <span class="heart">♥</span>
+            <span class="line"></span>
+        </div>
+        
+        <p class="dc-level">SEMI FORMAL</p>
+
+        <div class="dc-grid">
+            
+            <!-- Columna Hombres -->
+            <div class="dc-col">
+                <h3>Hombres</h3>
+                <div class="dc-item">
+                    <span class="dc-bullet">♦</span>
+                    <div>Camisa manga larga</div>
+                </div>
+                <div class="dc-item">
+                    <span class="dc-bullet">♦</span>
+                    <div>Pantalón de lino o dril<br><span class="dc-highlight">(evitar color beige en el pantalón)</span></div>
+                </div>
+                <div class="dc-item">
+                    <span class="dc-bullet">♦</span>
+                    <div>Zapatos formales</div>
+                </div>
+                <div class="dc-item">
+                    <span class="dc-bullet">♦</span>
+                    <div>Sin corbata</div>
+                </div>
+            </div>
+
+            <!-- Columna Central (Imagen referencial) -->
+            <!-- Aquí puedes cambiar el src por la imagen ilustrativa que prefieras -->
+            <div class="dc-image-col">
+                <img src="https://images.unsplash.com/photo-1621876801859-9975764d7cba?auto=format&fit=crop&w=600&q=80" alt="Ejemplo de Vestimenta">
+            </div>
+
+            <!-- Columna Mujeres -->
+            <div class="dc-col">
+                <h3>Mujeres</h3>
+                <div class="dc-item">
+                    <span class="dc-bullet">♦</span>
+                    <div>Vestido largo</div>
+                </div>
+                <div class="dc-item">
+                    <span class="dc-bullet">♦</span>
+                    <div>Sandalias o tacones con tacón ancho<br><span>(ideal para césped o suelo irregular)</span></div>
+                </div>
+                <div class="dc-item">
+                    <span class="dc-bullet">♦</span>
+                    <div class="dc-highlight">Evitar el color blanco<br><span style="font-weight:400; color:#4a4a4a;">(reservado para la novia)</span></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Paleta de Colores -->
+        <div class="palette-container">
+            <p class="palette-title">Te sugerimos esta paleta de colores</p>
+            <div class="colors-row">
+                <!-- Colores extraídos de tu imagen de referencia -->
+                <div class="color-circle" style="background-color: #4C5E39;"></div> <!-- Verde oscuro -->
+                <div class="color-circle" style="background-color: #777543;"></div> <!-- Verde oliva -->
+                <div class="color-circle" style="background-color: #809088;"></div> <!-- Verde grisáceo -->
+                <div class="color-circle" style="background-color: #57788C;"></div> <!-- Azul apagado -->
+                <div class="color-circle" style="background-color: #162C46;"></div> <!-- Azul marino -->
+                <div class="color-circle" style="background-color: #976274;"></div> <!-- Malva / Morado apagado -->
+                <div class="color-circle" style="background-color: #C1686D;"></div> <!-- Rosa viejo -->
+                <div class="color-circle" style="background-color: #B85B43;"></div> <!-- Terracota -->
+                <div class="color-circle" style="background-color: #C79133;"></div> <!-- Mostaza -->
+                <div class="color-circle" style="background-color: #6C4223;"></div> <!-- Café -->
+            </div>
+            
+            <div class="heart-divider" style="margin: 0 auto 15px auto; max-width: 150px;">
+                <span class="heart" style="margin:0;">♥</span>
+            </div>
+            
+            <p class="dc-footer">Gracias por ser parte de este día tan especial.</p>
+        </div>
+
     </section>
 
     <!-- VISOR DE IMÁGENES A PANTALLA COMPLETA (LIGHTBOX) -->
@@ -704,9 +965,8 @@
 
     <!-- SCRIPTS -->
     <script>
-        // --- 1. SCRIPT DE LA CUENTA REGRESIVA ---
+        // 1. CUENTA REGRESIVA
         const weddingDate = new Date("Dec 12, 2027 17:00:00").getTime();
-
         const countdownFunction = setInterval(function() {
             const now = new Date().getTime();
             const distance = weddingDate - now;
@@ -725,20 +985,23 @@
             }
         }, 1000); 
 
-        // --- 2. SCRIPT DEL VISOR DE IMÁGENES (LIGHTBOX) ---
+        // 2. FLECHAS DEL CARRUSEL
+        function moverCarrusel(direccion) {
+            const contenedor = document.getElementById('galeria');
+            // Ancho aproximado de una foto + el gap
+            const anchoDesplazamiento = 300; 
+            contenedor.scrollBy({ left: direccion * anchoDesplazamiento, behavior: 'smooth' });
+        }
+
+        // 3. VISOR DE IMÁGENES (LIGHTBOX)
         function abrirLightbox(srcImagen) {
-            // Mostrar el div del lightbox
             document.getElementById('miLightbox').style.display = "block";
-            // Asignar la fuente de la imagen en alta calidad
             document.getElementById('imgLightbox').src = srcImagen;
-            // Bloquear el scroll de la página de fondo
             document.body.style.overflow = "hidden";
         }
 
         function cerrarLightbox() {
-            // Ocultar el div
             document.getElementById('miLightbox').style.display = "none";
-            // Restaurar el scroll de la página
             document.body.style.overflow = "auto";
         }
     </script>
