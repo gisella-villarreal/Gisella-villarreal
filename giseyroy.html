@@ -482,12 +482,11 @@
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden; /* Sin scroll para el lightbox */
+            overflow: hidden; 
             background-color: rgba(20, 20, 20, 0.95); 
             backdrop-filter: blur(5px); 
         }
 
-        /* Contenedor interno del lightbox para centrar contenido vertical y horizontalmente */
         .lightbox-inner {
             display: flex;
             align-items: center;
@@ -498,14 +497,14 @@
         }
 
         .lightbox-content {
-            max-width: 85vw; /* Ocupa hasta el 85% del ancho */
-            max-height: 85vh; /* Ocupa hasta el 85% del alto */
+            max-width: 85vw; 
+            max-height: 85vh; 
             border-radius: 8px;
             object-fit: contain;
             box-shadow: 0 4px 25px rgba(0,0,0,0.5);
             animation-name: zoom;
             animation-duration: 0.3s;
-            user-select: none; /* Evita que la foto se seleccione por accidente */
+            user-select: none; 
         }
 
         @keyframes zoom {
@@ -527,7 +526,6 @@
 
         .close-lightbox:hover { color: #d4c4a8; }
 
-        /* Flechas del Lightbox */
         .lb-arrow {
             position: absolute;
             top: 50%;
@@ -549,19 +547,17 @@
         .lb-arrow-prev { left: 20px; }
         .lb-arrow-next { right: 20px; }
 
-        /* --- SECCIÓN 6: CÓDIGO DE VESTIMENTA (Actualizada) --- */
+        /* --- SECCIÓN 6: CÓDIGO DE VESTIMENTA --- */
         .dresscode-section {
-            background-color: #292c1b; /* Fondo oscuro opcional, ajustado al diseño original blanco, lo mantendremos blanco para contraste */
             background-color: #ffffff;
             padding: 80px 20px;
             text-align: center;
         }
 
-        /* 3. TIPOGRAFÍA Y COLOR DEL TÍTULO IGUAL A LA CUENTA REGRESIVA */
         .dc-title-main {
             font-family: 'Great Vibes', cursive;
             font-size: 3rem;
-            color: #d4c4a8; /* Mismo dorado/arena de la cuenta regresiva */
+            color: #d4c4a8; 
             margin: 0 0 15px 0; 
             font-weight: normal;
         }
@@ -571,96 +567,54 @@
             color: #666666;
             letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
-        .dc-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start; /* Alineado arriba para que el texto de las listas quede parejo */
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .dc-col {
-            flex: 1;
-            min-width: 250px;
-            text-align: left;
-        }
-
-        .dc-col h3 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
-            color: #292c1b;
-            text-align: center;
-            margin: 0 0 20px 0;
-            border-bottom: 1px solid #d4c4a8;
-            padding-bottom: 10px;
-        }
-
-        .dc-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-            color: #4a4a4a;
-            line-height: 1.5;
-        }
-
-        .dc-bullet {
-            color: #a38758;
-            margin-right: 12px;
-            font-size: 1.2rem;
-            line-height: 1.2;
-        }
-
-        .dc-highlight {
-            font-weight: 600;
-            color: #8c2a2a; 
-        }
-
-        /* 1. NUEVA IMAGEN CENTRAL */
-        .dc-image-col {
-            flex: 1;
-            min-width: 250px;
+        /* Contenedor de la imagen centrada */
+        .dc-image-centered {
             display: flex;
             justify-content: center;
-            order: 2; 
+            margin-bottom: 40px;
+            padding: 0 20px;
         }
 
-        .dc-image-col img {
+        .dc-image-centered img {
             width: 100%;
-            max-width: 280px;
+            max-width: 400px;
+            height: auto;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        /* --- 2. COLORES RESERVADOS (Estructura en una sola línea) --- */
+        /* --- COLORES RESERVADOS (Forzados en una línea) --- */
         .reserved-colors-container {
-            margin-top: 60px;
+            margin: 30px auto 0 auto;
             border-top: 1px solid #eeeeee;
-            padding-top: 50px;
+            padding-top: 40px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: stretch;
             flex-wrap: nowrap; /* Fuerza a mantenerse en una línea */
-            gap: 40px;
+            gap: 30px;
+            width: 100%;
             max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        /* Líneas horizontales a los lados del texto */
+        .rc-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1; /* Distribuye el espacio equitativamente */
+        }
+
         .rc-group-title {
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.3rem;
-            color: #1a2a40; /* Azul oscuro elegante de tu imagen */
+            color: #1a2a40; 
             letter-spacing: 2px;
             margin-bottom: 5px;
+            white-space: nowrap; /* Evita que el título se corte */
         }
 
         .rc-group-title::before,
@@ -679,18 +633,14 @@
             text-transform: uppercase;
             margin-bottom: 25px;
             display: block;
-        }
-
-        .rc-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            text-align: center;
         }
 
         .rc-circles {
             display: flex;
             gap: 25px;
             justify-content: center;
+            flex-wrap: nowrap; /* Círculos en una línea */
         }
 
         .rc-circle-item {
@@ -704,14 +654,13 @@
             width: 65px;
             height: 65px;
             border-radius: 50%;
-            border: 1px solid #1a2a40; /* Borde oscuro para todos */
+            border: 1px solid #1a2a40; 
         }
 
-                /* Colores específicos de la imagen adjunta */
         .c-blanco { background-color: #ffffff; }
-        .c-celeste { background-color: #aed6f1; } /* Tono celeste aproximado */
-        .c-rojo { background-color: #d82b3a; } /* Tono rojo aproximado */
-        .c-gris { background-color: #cccccc; } /* Tono gris aproximado */
+        .c-celeste { background-color: #aed6f1; } 
+        .c-rojo { background-color: #d82b3a; } 
+        .c-gris { background-color: #cccccc; } 
 
         .rc-label {
             font-size: 0.75rem;
@@ -719,54 +668,33 @@
             color: #1a2a40;
             text-transform: uppercase;
             letter-spacing: 1px;
+            white-space: nowrap;
         }
 
-        /* Divisor central con diamante */
+        /* Divisor central vertical */
         .rc-divider {
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: 120px;
-            margin-top: 20px;
-        }
-
-        .rc-divider::before {
-            content: '';
+            justify-content: center;
+            position: relative;
             width: 1px;
-            height: 100%;
             background-color: #cccccc;
         }
 
         .rc-diamond {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
             font-size: 1.5rem;
             color: #1a2a40;
-            line-height: 0;
-            margin: -60px 0 0 0; /* Lo centra sobre la línea */
-            background-color: #fff; /* Tapa la línea por debajo */
+            background-color: #fff; 
             padding: 5px 0;
+            line-height: 0;
         }
-
 
         /* Responsividad para móviles */
-        @media (max-width: 900px) {
-            /* Si la pantalla es menor a 900px, los colores reservados podrían necesitar bajar de línea */
-            .reserved-colors-container {
-                flex-wrap: wrap; /* Permite que baje a dos líneas en pantallas pequeñas */
-                gap: 20px;
-                padding-top: 40px;
-            }
-            .rc-divider {
-                display: none; /* Ocultamos la línea vertical divisora en móviles */
-            }
-            .rc-group { margin-bottom: 20px; width: 100%; }
-        }
-
         @media (max-width: 768px) {
-            .dc-col { order: 2; }
-            .dc-col:last-child { order: 3; }
-            .dc-image-col { order: 1; margin-bottom: 30px; }
-            
-            /* Ajuste del tamaño de flechas del Lightbox en tablet/móvil */
             .lb-arrow { font-size: 2.5rem; padding: 10px; }
             .lb-arrow-prev { left: 5px; }
             .lb-arrow-next { right: 5px; }
@@ -787,6 +715,7 @@
             .initials { font-size: 2.2rem; }
 
             .countdown-section { padding: 110px 10px 150px 10px; }
+                        /* Texto actualizado de cuenta regresiva */
             .countdown-title { font-size: 2rem; margin-bottom: 25px; }
             .timer-container { gap: 10px; } 
             .time-box { padding: 12px 10px; }
@@ -807,17 +736,22 @@
             .carousel-track img { width: 240px; height: 340px; }
             .close-lightbox { top: 15px; right: 20px; font-size: 35px; }
 
-            .dresscode-section { padding: 60px 15px; }
+            .dresscode-section { padding: 60px 10px; }
             .dc-title-main { font-size: 2.4rem; }
-            .dc-col h3 { font-size: 2.5rem; }
-            .dc-item { font-size: 0.9rem; }
             
-            /* Ajustes Colores Reservados Móvil */
-            .rc-group-title { font-size: 1.1rem; }
-            .rc-group-title::before, .rc-group-title::after { width: 20px; }
-            .rc-circles { gap: 15px; }
-            .rc-circle { width: 50px; height: 50px; }
-            .rc-label { font-size: 0.65rem; }
+            /* Ajustes estrictos para que los colores reservados quepan en 1 sola línea en móvil */
+            .reserved-colors-container { 
+                gap: 5px; 
+                padding-top: 25px;
+            }
+            .rc-group-title { font-size: 0.8rem; }
+            .rc-group-title::before, .rc-group-title::after { width: 10px; margin: 0 5px; }
+            .rc-subtitle { font-size: 0.55rem; margin-bottom: 15px; letter-spacing: 1px; }
+            .rc-circles { gap: 5px; }
+            .rc-circle { width: 35px; height: 35px; }
+            .rc-label { font-size: 0.45rem; letter-spacing: 0px; }
+            .rc-divider { display: flex; /* Mantiene la línea vertical en móvil */ }
+            .rc-diamond { font-size: 1rem; }
         }
     </style>
 </head>
@@ -878,7 +812,8 @@
             <div class="lace-center-detail"></div>
         </div>
 
-        <h2 class="countdown-title">La cuenta regresiva ¡Que emoción!</h2>
+        <!-- 1. TEXTO DE CUENTA REGRESIVA ACTUALIZADO -->
+        <h2 class="countdown-title">la cuenta regresiva¡Que emoción!</h2>
 
         <div class="timer-container" id="countdown-timer">
             <div class="time-box">
@@ -934,10 +869,8 @@
         <h2 class="gallery-title">Nuestros momentos</h2>
         
         <div class="carousel-wrapper">
-            <!-- 4. ELIMINADAS FLECHAS EXTERNAS. Carrusel puro de deslizar. -->
             <div class="carousel-container" id="galeria">
                 <div class="carousel-track">
-                    <!-- Se pasa a la función abrirLightbox el índice (0, 1, 2...) de la imagen -->
                     <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80" alt="Foto 1" onclick="abrirLightbox(0)">
                     <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" alt="Foto 2" onclick="abrirLightbox(1)">
                     <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80" alt="Foto 3" onclick="abrirLightbox(2)">
@@ -951,19 +884,13 @@
         <span class="swipe-hint">Desliza para ver más →</span>
     </section>
 
-    <!-- VISOR DE IMÁGENES (LIGHTBOX) CON FLECHAS INTEGRADAS -->
-    <!-- Se quitó el onclick del fondo para que los clics en flechas no lo cierren, 
-         ahora solo la 'X' o dar clic a la imagen en sí lo cerrará (opcional) -->
+    <!-- VISOR DE IMÁGENES (LIGHTBOX) -->
     <div id="miLightbox" class="lightbox">
         <span class="close-lightbox" onclick="cerrarLightbox()">&times;</span>
         
         <div class="lightbox-inner">
-            <!-- Flecha Izquierda -->
             <button class="lb-arrow lb-arrow-prev" onclick="cambiarFoto(-1)">&#10094;</button>
-            
             <img class="lightbox-content" id="imgLightbox" src="" alt="Imagen Ampliada">
-            
-            <!-- Flecha Derecha -->
             <button class="lb-arrow lb-arrow-next" onclick="cambiarFoto(1)">&#10095;</button>
         </div>
     </div>
@@ -971,7 +898,6 @@
     <!-- SECCIÓN 6: CÓDIGO DE VESTIMENTA -->
     <section class="dresscode-section">
         
-        <!-- 3. TÍTULO CON LA FUENTE Y COLOR DE LA CUENTA REGRESIVA -->
         <h2 class="dc-title-main">Código de Vestimenta</h2>
         
         <div class="heart-divider" style="margin: 0 auto 15px auto;">
@@ -982,13 +908,12 @@
         
         <p class="dc-level">FORMAL</p>
 
-        <div class="dc-grid">
-        
-                <!-- 1. IMAGEN ACTUALIZADA -->
-                <img src="1000224141.png" alt="Vestimenta Formal">
-            </div>
+        <!-- 2 y 3. IMAGEN CENTRADA Y LISTAS DE TEXTO ELIMINADAS -->
+        <div class="dc-image-centered">
+            <img src="1000224141.png" alt="Vestimenta Formal">
+        </div>
 
-        <!-- 2. COLORES RESERVADOS (Diseño calcado de la imagen) -->
+        <!-- 4. COLORES RESERVADOS (Forzados en una línea) -->
         <div class="reserved-colors-container">
             
             <!-- Bloque Mujeres -->
@@ -1054,12 +979,10 @@
             }
         }, 1000); 
 
-
-        // 4. LÓGICA DEL LIGHTBOX CON GALERÍA NAVEGABLE
+        // 2. LÓGICA DEL LIGHTBOX CON GALERÍA NAVEGABLE
         let indiceActual = 0;
         let listaImagenes = [];
 
-        // Extraer todas las imágenes del carrusel al cargar la página
         window.onload = function() {
             const imagenesGaleria = document.querySelectorAll('.carousel-track img');
             imagenesGaleria.forEach(img => {
@@ -1082,7 +1005,6 @@
         function cambiarFoto(direccion) {
             indiceActual += direccion;
             
-            // Lógica para que el carrusel sea infinito (si llega a la última pasa a la primera y viceversa)
             if (indiceActual >= listaImagenes.length) {
                 indiceActual = 0;
             } else if (indiceActual < 0) {
@@ -1094,11 +1016,9 @@
 
         function actualizarImagenLightbox() {
             const imgElement = document.getElementById('imgLightbox');
-            // Quitamos la animación momentáneamente para reiniciarla
             imgElement.style.animation = 'none';
-            imgElement.offsetHeight; /* trigger reflow */
+            imgElement.offsetHeight; 
             imgElement.style.animation = null; 
-            
             imgElement.src = listaImagenes[indiceActual];
         }
     </script>
