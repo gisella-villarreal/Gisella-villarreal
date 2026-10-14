@@ -123,6 +123,7 @@
             color: #333333;
         }
 
+        /* Encaje inferior (Nubes) normal */
         .lace-bottom {
             position: absolute;
             bottom: 0;
@@ -157,6 +158,7 @@
             display: flex;
             justify-content: center;
             text-align: center;
+            position: relative;
         }
 
         .story-container {
@@ -164,9 +166,8 @@
             width: 100%;
         }
 
-        /* Contenedor del audio: SE AUMENTÓ EL MARGEN INFERIOR */
         .audio-player-container {
-            margin-bottom: 45px; /* Antes estaba en 25px, ahora tiene más espacio */
+            margin-bottom: 45px; 
             display: flex;
             justify-content: center;
         }
@@ -215,6 +216,76 @@
             margin-top: 5px; 
         }
 
+        /* --- SECCIÓN 3: CUENTA REGRESIVA --- */
+        .countdown-section {
+            position: relative;
+            background-color: #4a4a4a; /* Mismo color de ¡NOS CASAMOS! */
+            color: #ffffff;
+            padding: 110px 20px 80px 20px; /* Padding superior alto para el encaje */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Encaje (Nubes) invertido usando transform scaleY */
+        .lace-top-inverted {
+            position: absolute;
+            top: -1px; /* Evita cualquier línea milimétrica de separación */
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 2;
+            background-image: radial-gradient(circle at 20px 0, transparent 20px, #ffffff 21px);
+            background-size: 40px 100%;
+            background-repeat: repeat-x;
+            background-position: bottom;
+            display: flex;
+            justify-content: center;
+            transform: scaleY(-1); /* Esto voltea la figura hacia abajo */
+        }
+
+        .countdown-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: #d4c4a8; /* Tono dorado para resaltar */
+            margin: 0 0 40px 0;
+            font-weight: normal;
+        }
+
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.08); /* Fondo semitransparente blanco */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 15px 20px;
+            min-width: 70px;
+        }
+
+        .time-box span.number {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-family: 'Lora', serif;
+        }
+
+        .time-box span.label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #d4c4a8;
+        }
+
         /* Responsividad para móviles */
         @media (max-width: 600px) {
             .title { font-size: 3.5rem; }
@@ -223,13 +294,20 @@
             .rsvp-btn { padding: 8px 25px; font-size: 0.8rem; margin-top: 20px;}
             
             .love-story { padding: 25px 15px 30px 15px; }
-            /* Se aumentó también el espacio para la vista en celulares */
             .audio-player-container { margin-bottom: 40px; } 
             .story-subtitle { font-size: 0.7rem; margin-bottom: 8px; }
             .story-title { font-size: 1.8rem; margin-bottom: 12px; }
             .story-text { font-size: 0.85rem; line-height: 1.4; margin-bottom: 12px; }
             .story-divider { margin: 12px 0; }
             .initials { font-size: 2.2rem; }
+
+            /* Ajustes móviles para cuenta regresiva */
+            .countdown-section { padding: 90px 15px 60px 15px; }
+            .countdown-title { font-size: 2.2rem; margin-bottom: 30px; }
+            .time-box { padding: 12px 15px; min-width: 60px; }
+            .time-box span.number { font-size: 1.6rem; }
+            .time-box span.label { font-size: 0.65rem; }
+            .timer-container { gap: 10px; }
         }
     </style>
 </head>
@@ -245,7 +323,8 @@
                 <div class="photo"></div>
             </div>
             
-            <div class="date">17.07.2027</div>
+            <!-- FECHA ACTUALIZADA -->
+            <div class="date">12.12.2027</div>
             
             <a href="#" class="rsvp-btn">RSVP NOW</a>
         </div>
@@ -259,7 +338,6 @@
     <section class="love-story">
         <div class="story-container">
             
-            <!-- REPRODUCTOR DE AUDIO -->
             <div class="audio-player-container">
                 <audio controls>
                     <source src="nuestra-cancion.mp3" type="audio/mpeg">
@@ -286,5 +364,71 @@
         </div>
     </section>
 
+    <!-- SECCIÓN 3: CUENTA REGRESIVA -->
+    <section class="countdown-section">
+        
+        <!-- Encaje Invertido (Conecta visualmente con la sección blanca) -->
+        <div class="lace-top-inverted">
+            <div class="lace-center-detail"></div>
+        </div>
+
+        <h2 class="countdown-title">La cuenta regresiva para nuestro para siempre.</h2>
+
+        <div class="timer-container" id="countdown-timer">
+            <div class="time-box">
+                <span class="number" id="days">00</span>
+                <span class="label">Días</span>
+            </div>
+            <div class="time-box">
+                <span class="number" id="hours">00</span>
+                <span class="label">Horas</span>
+            </div>
+            <div class="time-box">
+                <span class="number" id="minutes">00</span>
+                <span class="label">Minutos</span>
+            </div>
+            <div class="time-box">
+                <span class="number" id="seconds">00</span>
+                <span class="label">Segundos</span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- SCRIPT PARA EL CONTADOR DINÁMICO -->
+    <script>
+        // Fecha y hora del matrimonio (Mes Día, Año Horas:Minutos:Segundos)
+        const weddingDate = new Date("Dec 12, 2027 00:00:00").getTime();
+
+        // Actualiza el contador cada 1 segundo (1000 milisegundos)
+        const countdownFunction = setInterval(function() {
+
+            // Obtiene la fecha y hora actual
+            const now = new Date().getTime();
+                
+            // Calcula la distancia entre la fecha actual y la fecha de la boda
+            const distance = weddingDate - now;
+                
+            // Cálculos matemáticos para días, horas, minutos y segundos
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+            // Pinta los resultados en los elementos de HTML
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+                
+            // Si la cuenta regresiva termina (llegó la fecha)
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown-timer").innerHTML = "<h2 class='story-title' style='color:#ffffff;'>¡Llegó el gran día!</h2>";
+            }
+        }, 1000);
+    </script>
+
 </body>
-</html>
+    </html>
+                    
