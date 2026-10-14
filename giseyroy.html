@@ -584,7 +584,7 @@
             border-radius: 10px;
         }
 
-        /* --- COLORES RESERVADOS --- */
+        /* --- COLORES RESERVADOS / A EVITAR --- */
         .reserved-colors-container {
             margin: 30px auto 0 auto;
             border-top: 1px solid #eeeeee;
@@ -656,8 +656,9 @@
             border: 1px solid #1a2a40; 
         }
 
+        /* 5. COLOR ROSADO AÑADIDO */
         .c-blanco { background-color: #ffffff; }
-        .c-celeste { background-color: #aed6f1; } 
+        .c-rosado { background-color: #f4a3b5; } /* Tono rosado elegante */
         .c-rojo { background-color: #d82b3a; } 
         .c-gris { background-color: #cccccc; } 
 
@@ -693,7 +694,7 @@
 
         /* --- SECCIÓN 7: DETALLES FINALES --- */
         .details-section {
-            background-color: #faf9f6; /* Fondo crema para contrastar con la sección anterior blanca */
+            background-color: #faf9f6; 
             padding: 80px 20px;
             display: flex;
             flex-direction: column;
@@ -716,13 +717,22 @@
             gap: 25px;
         }
 
-        /* Estilo de los íconos de esta sección */
-        .detail-icon {
+        /* Iconos con Stroke */
+        .detail-icon-stroke {
             width: 45px;
             height: 45px;
-            stroke: #292c1b; /* Color principal oscuro */
+            stroke: #292c1b; 
             fill: none;
-            stroke-width: 1.5;
+            stroke-width: 2;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        /* Iconos con Fill (WhatsApp) */
+        .detail-icon-fill {
+            width: 45px;
+            height: 45px;
+            fill: #292c1b; 
             flex-shrink: 0;
             margin-top: 5px;
         }
@@ -785,26 +795,25 @@
             fill: none;
         }
 
-        /* Botón Enviar Mensaje (WhatsApp) */
         .whatsapp-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             margin-top: 20px;
             padding: 12px 30px;
-            background-color: #292c1b; /* Fondo oscuro */
-            color: #ffffff; /* Letras blancas */
+            background-color: #292c1b; 
+            color: #ffffff; 
             text-decoration: none;
             font-size: 0.85rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            border-radius: 25px; /* Bordes redondeados */
+            border-radius: 25px; 
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
         .whatsapp-btn:hover {
-            background-color: #d4c4a8; /* Hover color dorado */
+            background-color: #d4c4a8; 
             color: #292c1b;
         }
 
@@ -821,7 +830,6 @@
             text-align: center;
             font-weight: normal;
         }
-
 
         /* Responsividad para móviles */
         @media (max-width: 768px) {
@@ -877,10 +885,9 @@
             .rc-divider { display: flex; }
             .rc-diamond { font-size: 1rem; }
 
-            /* Ajustes Móviles Detalles Finales */
             .details-section { padding: 60px 15px; }
             .detail-row { gap: 15px; flex-direction: column; align-items: center; text-align: center; }
-            .detail-icon { margin-bottom: 10px; width: 40px; height: 40px; }
+            .detail-icon-stroke, .detail-icon-fill { margin-bottom: 10px; width: 40px; height: 40px; }
             .detail-title { font-size: 0.95rem; }
             .detail-text { font-size: 0.9rem; }
             .envelope-box, .seats-box { justify-content: center; }
@@ -890,7 +897,6 @@
     </style>
 </head>
 <body>
-
     <!-- SECCIÓN 1: Hero -->
     <section class="hero">
         <div class="content">
@@ -946,7 +952,8 @@
             <div class="lace-center-detail"></div>
         </div>
 
-        <h2 class="countdown-title">la cuenta regresiva¡Que emoción!</h2>
+        <!-- 1. TÍTULO CORREGIDO -->
+        <h2 class="countdown-title">La cuenta regresiva ¡Que emoción!</h2>
 
         <div class="timer-container" id="countdown-timer">
             <div class="time-box">
@@ -1049,15 +1056,17 @@
             <!-- Bloque Mujeres -->
             <div class="rc-group">
                 <span class="rc-group-title">MUJERES</span>
-                <span class="rc-subtitle">COLORES RESERVADOS</span>
+                <!-- 5. TITULO ACTUALIZADO A EVITAR -->
+                <span class="rc-subtitle">COLORES A EVITAR</span>
                 <div class="rc-circles">
                     <div class="rc-circle-item">
                         <div class="rc-circle c-blanco"></div>
                         <span class="rc-label">BLANCO</span>
                     </div>
                     <div class="rc-circle-item">
-                        <div class="rc-circle c-celeste"></div>
-                        <span class="rc-label">AZUL CELESTE</span>
+                        <!-- 5. COLOR CAMBIADO A ROSADO -->
+                        <div class="rc-circle c-rosado"></div>
+                        <span class="rc-label">ROSADO</span>
                     </div>
                     <div class="rc-circle-item">
                         <div class="rc-circle c-rojo"></div>
@@ -1084,22 +1093,24 @@
         </div>
     </section>
 
-    <!-- --- SECCIÓN 7: DETALLES FINALES --- -->
+    <!-- SECCIÓN 7: DETALLES FINALES -->
     <section class="details-section">
         <div class="details-container">
             
-            <!-- Bloque Asientos -->
+            <!-- Bloque Cupos -->
             <div class="detail-row">
-                <svg class="detail-icon" viewBox="0 0 24 24">
-                    <!-- Icono Silla minimalista -->
-                    <path d="M7 13V5c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2v8M6 13h12a1 1 0 011 1v8M5 13a1 1 0 00-1 1v8M10 13v4M14 13v4" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- 2. NUEVO ICONO DE SILLA DE MEDIO LADO -->
+                <svg class="detail-icon-stroke" viewBox="0 0 24 24">
+                    <path d="M8 22v-9a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v9" />
+                    <path d="M8 11V4a2 2 0 0 1 2-2h2" />
+                    <path d="M6 13h12" />
                 </svg>
                 <div class="detail-content">
-                    <h3 class="detail-title">Asientos reservados para ti</h3>
+                    <!-- 3. TEXTOS ACTUALIZADOS -->
+                    <h3 class="detail-title">Cupos reservados para ti</h3>
                     <div class="seats-box">
-                        <!-- El número es ilustrativo, puedes cambiar el "2" si lo deseas -->
                         <span class="seats-number">2</span>
-                        <span class="seats-label">Asientos</span>
+                        <span class="seats-label">Cupos</span>
                     </div>
                 </div>
             </div>
@@ -1108,13 +1119,17 @@
 
             <!-- Bloque Regalos -->
             <div class="detail-row">
-                <svg class="detail-icon" viewBox="0 0 24 24">
-                    <!-- Icono Regalo -->
+                <svg class="detail-icon-stroke" viewBox="0 0 24 24">
                     <path d="M20 12v10H4V12M22 7H2v5h20V7zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <div class="detail-content">
                     <h3 class="detail-title">Sugerencia de regalo</h3>
-                    <p class="detail-text">Su presencia es nuestro mayor regalo. Sin embargo, si desean tener un detalle con nosotros, una contribución monetaria será muy apreciada.</p>
+                    <!-- 3. TEXTO DIVIDIDO CON SALTOS DE LÍNEA EXACTOS -->
+                    <p class="detail-text">
+                        Su presencia es nuestro mayor regalo.<br>
+                        Sin embargo, si desean tener un detalle con nosotros,<br>
+                        una contribución monetaria será muy apreciada.
+                    </p>
                     <div class="envelope-box">
                         <span class="seats-label">Lluvia de sobres</span>
                         <svg class="envelope-icon" viewBox="0 0 24 24">
@@ -1129,24 +1144,21 @@
 
             <!-- Bloque Confirmación -->
             <div class="detail-row">
-                <svg class="detail-icon" viewBox="0 0 24 24">
-                    <!-- Icono WhatsApp -->
-                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M16.5 16c-1.4.9-3.2.1-4.7-1s-2.8-2.5-3.5-4c-.7-1.4-.3-3.1.6-4 .3-.3.8-.5 1.2-.5.3 0 .6.1.8.4l1.4 2.2c.2.3.2.7 0 1l-.8 1c.5 1.2 1.6 2.3 2.8 2.8l1-.8c.3-.2.7-.2 1 0l2.2 1.4c.3.2.4.5.4.8-.1.4-.3.9-.6 1.2z" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- 4. NUEVO LOGO SÓLIDO DE WHATSAPP PERFECTO -->
+                <svg class="detail-icon-fill" viewBox="0 0 24 24">
+                    <path d="M17.47 6.52A7.95 7.95 0 0 0 12 4.19c-4.4 0-8 3.59-8 8.01 0 1.41.37 2.78 1.07 3.99L4 20.35l4.3-1.13A7.96 7.96 0 0 0 12 20.2c4.4 0 8-3.59 8-8s-3.6-8-8-8zm-5.47 11.23c-1.2 0-2.37-.32-3.4-.93l-.24-.14-2.53.66.67-2.47-.16-.25a6.6 6.6 0 0 1-1-3.52c0-3.66 2.98-6.63 6.64-6.63 1.77 0 3.44.7 4.69 1.95A6.62 6.62 0 0 1 18.63 12c0 3.66-2.98 6.64-6.63 6.64zm3.64-4.97c-.2-.1-.18-.1-.44-.22s-1.18-.58-1.36-.65-.32-.1-.45.1-.53.65-.65.78-.24.15-.44.05a5.45 5.45 0 0 1-2.61-2.29c-.12-.22 0-.21.11-.32.09-.1.2-.23.3-.34.1-.12.13-.2.2-.33.06-.13.03-.25-.02-.35-.05-.1-.45-1.08-.62-1.48-.16-.39-.32-.34-.44-.34h-.38c-.13 0-.34.05-.52.25s-.68.67-.68 1.63c0 .97.7 1.91.8 2.04.1.14 1.38 2.11 3.35 2.96.47.2.83.33 1.12.42.47.15.9.13 1.24.08.38-.06 1.18-.48 1.35-.95.17-.46.17-.86.12-.95-.06-.09-.2-.14-.4-.24z"/>
                 </svg>
                 <div class="detail-content">
                     <h3 class="detail-title">Confirmación de Asistencia</h3>
-                    <p class="detail-text">Por favor confirma tu asistencia antes del 1 de noviembre de 2027.</p>
+                    <!-- 4. SALTO DE LÍNEA EN CONFIRMACIÓN -->
+                    <p class="detail-text">Por favor confirma tu asistencia antes del<br>1 de noviembre de 2027.</p>
                     
-                    <!-- REEMPLAZA EL NÚMERO POR EL TUYO REAL (Incluye el código de país sin el símbolo +) -->
-                    <!-- Ejemplo para Colombia: 573001234567 -->
                     <a href="https://wa.me/573000000000" target="_blank" class="whatsapp-btn">Enviar Mensaje</a>
                 </div>
             </div>
 
         </div>
 
-        <!-- Solo Adultos -->
         <div class="adults-only">
             <h3 class="detail-title" style="letter-spacing: 3px;">Recepción solo para adultos</h3>
             <p class="detail-text" style="max-width: 450px; margin: 0 auto;">Esperamos que comprendan que nuestro gran día será una celebración exclusiva para adultos.</p>
@@ -1154,7 +1166,6 @@
         
         <div class="heart-divider" style="margin: 30px auto;"><span class="line"></span><span class="heart" style="font-size:1.5rem; color:#a38758;">❦</span><span class="line"></span></div>
 
-        <!-- Cierre -->
         <p class="detail-title" style="letter-spacing: 4px; margin-top:20px;">Esperamos celebrar este día contigo</p>
         <p class="closing-text">Gis & Roy</p>
 
@@ -1162,7 +1173,6 @@
 
     <!-- SCRIPTS -->
     <script>
-                // 1. CUENTA REGRESIVA
         const weddingDate = new Date("Dec 12, 2027 17:00:00").getTime();
         const countdownFunction = setInterval(function() {
             const now = new Date().getTime();
@@ -1182,7 +1192,6 @@
             }
         }, 1000); 
 
-        // 2. LÓGICA DEL LIGHTBOX CON GALERÍA NAVEGABLE
         let indiceActual = 0;
         let listaImagenes = [];
 
