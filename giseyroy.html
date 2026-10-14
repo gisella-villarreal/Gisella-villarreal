@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Lora', serif;
-            background-color: #ffffff; /* El fondo general ahora es blanco */
+            background-color: #ffffff;
         }
 
         /* --- SECCIÓN 1: HERO (Inicio) --- */
@@ -103,7 +103,6 @@
             letter-spacing: 3px;
         }
 
-        /* Botón RSVP transparente con borde blanco */
         .rsvp-btn {
             display: inline-block;
             margin-top: 25px;
@@ -124,7 +123,6 @@
             color: #333333;
         }
 
-        /* Encaje inferior de la imagen */
         .lace-bottom {
             position: absolute;
             bottom: 0;
@@ -155,54 +153,55 @@
         /* --- SECCIÓN 2: HISTORIA DE AMOR --- */
         .love-story {
             background-color: #ffffff;
-            padding: 50px 20px 60px 20px; 
+            /* Se redujo dramáticamente el padding superior e inferior */
+            padding: 30px 20px 40px 20px; 
             display: flex;
             justify-content: center;
             text-align: center;
         }
 
         .story-container {
-            max-width: 600px; /* Un poco más estrecho para mantener la lectura limpia */
+            max-width: 550px; /* Un poco más estrecho */
             width: 100%;
         }
 
         .story-subtitle {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.75rem; /* Más pequeño */
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #a38758; /* Tono dorado */
-            margin-bottom: 15px;
+            color: #a38758; 
+            margin-bottom: 10px; /* Menos espacio abajo */
             font-weight: 600;
         }
 
         .story-title {
-            font-size: 2.8rem;
-            color: #4a4a4a; /* Gris oscuro elegante */
-            margin: 0 0 25px 0;
+            font-size: 2.2rem; /* Título más pequeño */
+            color: #4a4a4a; 
+            margin: 0 0 15px 0; /* Menos margen */
             font-weight: 600;
             letter-spacing: 1px;
         }
 
         .story-text {
-            font-size: 1.05rem; 
-            line-height: 1.7;
-            color: #666666; /* Gris medio */
-            margin: 0 0 25px 0;
+            font-size: 0.95rem; /* Texto más pequeño */
+            line-height: 1.5; /* Menor interlineado */
+            color: #666666; 
+            margin: 0 0 15px 0; /* Menos espacio entre párrafos */
         }
 
         .story-divider {
             border: none;
-            border-top: 1px solid #d4c4a8; /* Línea dorada suave */
-            margin: 30px 0;
-            width: 100%; /* Línea de lado a lado del contenedor */
+            border-top: 1px solid #d4c4a8; 
+            margin: 15px 0; /* Margen reducido a la mitad */
+            width: 100%; 
         }
 
         .initials {
             font-family: 'Great Vibes', cursive;
-            font-size: 3rem; 
+            font-size: 2.5rem; /* Iniciales más pequeñas */
             color: #a38758; 
-            margin-top: 15px;
+            margin-top: 5px; /* Menos margen arriba */
         }
 
         /* Responsividad para móviles */
@@ -211,13 +210,14 @@
             .frame-container { width: 220px; height: 310px; }
             .date { font-size: 1rem; margin-top: 25px; }
             .rsvp-btn { padding: 8px 25px; font-size: 0.8rem; margin-top: 20px;}
-            .love-story { padding: 40px 20px 50px 20px; }
             
-            /* Ajustes para la nueva estructura en móviles */
-            .story-subtitle { font-size: 0.75rem; }
-            .story-title { font-size: 2.2rem; margin-bottom: 20px; }
-            .story-text { font-size: 0.95rem; }
-            .story-divider { margin: 25px 0; }
+            /* Ajustes súper compactos para móviles en la sección 2 */
+            .love-story { padding: 25px 15px 30px 15px; }
+            .story-subtitle { font-size: 0.7rem; margin-bottom: 8px; }
+            .story-title { font-size: 1.8rem; margin-bottom: 12px; }
+            .story-text { font-size: 0.85rem; line-height: 1.4; margin-bottom: 12px; }
+            .story-divider { margin: 12px 0; }
+            .initials { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -269,3 +269,4 @@
 
 </body>
 </html>
+                
