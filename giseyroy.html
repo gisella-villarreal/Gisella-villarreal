@@ -421,7 +421,6 @@
             font-weight: normal;
         }
 
-        /* NUEVO: Envoltorio para flechas y carrusel */
         .carousel-wrapper {
             position: relative;
             display: flex;
@@ -431,34 +430,6 @@
             margin: 0 auto;
         }
 
-        /* Botones de flechas del carrusel */
-        .carousel-arrow {
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid #d4c4a8;
-            color: #292c1b;
-            font-size: 1.5rem;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            position: absolute;
-            z-index: 10;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .carousel-arrow:hover {
-            background-color: #292c1b;
-            color: #ffffff;
-            border-color: #292c1b;
-        }
-
-        .left-arrow { left: 15px; }
-        .right-arrow { right: 15px; }
-
         .carousel-container {
             width: 100%;
             padding: 20px 0;
@@ -466,7 +437,6 @@
             scroll-snap-type: x mandatory;
             scrollbar-width: none; 
             -ms-overflow-style: none;  
-            scroll-behavior: smooth; /* Movimiento suave al dar clic en flechas */
         }
         
         .carousel-container::-webkit-scrollbar {
@@ -476,7 +446,7 @@
         .carousel-track {
             display: inline-flex;
             gap: 20px;
-            padding: 0 80px; /* Más padding para que las flechas no tapen la primera/última foto */
+            padding: 0 20px; 
         }
 
         .carousel-track img {
@@ -503,35 +473,43 @@
             text-transform: uppercase;
         }
 
-        /* LIGHTBOX */
+        /* LIGHTBOX CON FLECHAS Y CONTROLES */
         .lightbox {
             display: none; 
             position: fixed;
             z-index: 9999;
-            padding-top: 60px;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
+            overflow: hidden; /* Sin scroll para el lightbox */
             background-color: rgba(20, 20, 20, 0.95); 
             backdrop-filter: blur(5px); 
         }
 
+        /* Contenedor interno del lightbox para centrar contenido vertical y horizontalmente */
+        .lightbox-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
         .lightbox-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 80vh;
+            max-width: 85vw; /* Ocupa hasta el 85% del ancho */
+            max-height: 85vh; /* Ocupa hasta el 85% del alto */
             border-radius: 8px;
             object-fit: contain;
             box-shadow: 0 4px 25px rgba(0,0,0,0.5);
             animation-name: zoom;
             animation-duration: 0.3s;
+            user-select: none; /* Evita que la foto se seleccione por accidente */
         }
 
         @keyframes zoom {
-            from {transform: scale(0.8); opacity: 0;} 
+            from {transform: scale(0.9); opacity: 0;} 
             to {transform: scale(1); opacity: 1;}
         }
 
@@ -549,28 +527,43 @@
 
         .close-lightbox:hover { color: #d4c4a8; }
 
+        /* Flechas del Lightbox */
+        .lb-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 3rem;
+            font-weight: 300;
+            cursor: pointer;
+            user-select: none;
+            padding: 20px;
+            background: transparent;
+            border: none;
+            transition: 0.3s;
+            z-index: 10001;
+            outline: none;
+        }
 
-        /* --- SECCIÓN 6: CÓDIGO DE VESTIMENTA --- */
+        .lb-arrow:hover { color: #d4c4a8; }
+        .lb-arrow-prev { left: 20px; }
+        .lb-arrow-next { right: 20px; }
+
+        /* --- SECCIÓN 6: CÓDIGO DE VESTIMENTA (Actualizada) --- */
         .dresscode-section {
+            background-color: #292c1b; /* Fondo oscuro opcional, ajustado al diseño original blanco, lo mantendremos blanco para contraste */
             background-color: #ffffff;
             padding: 80px 20px;
             text-align: center;
         }
 
-        .dc-title-cursive {
-            font-family: 'Great Vibes', cursive;
-            font-size: 4rem;
-            color: #a38758;
-            margin: 0;
-            line-height: 1;
-        }
-
+        /* 3. TIPOGRAFÍA Y COLOR DEL TÍTULO IGUAL A LA CUENTA REGRESIVA */
         .dc-title-main {
-            font-size: 1.8rem;
-            color: #292c1b;
-            letter-spacing: 5px;
-            margin: 10px 0 20px 0;
-            font-weight: 400;
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: #d4c4a8; /* Mismo dorado/arena de la cuenta regresiva */
+            margin: 0 0 15px 0; 
+            font-weight: normal;
         }
 
         .dc-level {
@@ -585,7 +578,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Alineado arriba para que el texto de las listas quede parejo */
             gap: 40px;
             max-width: 1000px;
             margin: 0 auto;
@@ -625,16 +618,16 @@
 
         .dc-highlight {
             font-weight: 600;
-            color: #8c2a2a; /* Rojo oscuro para los "evitar" */
+            color: #8c2a2a; 
         }
 
-        /* Imagen central de la pareja en vestimenta */
+        /* 1. NUEVA IMAGEN CENTRAL */
         .dc-image-col {
             flex: 1;
             min-width: 250px;
             display: flex;
             justify-content: center;
-            order: 2; /* Por defecto en el centro */
+            order: 2; 
         }
 
         .dc-image-col img {
@@ -644,47 +637,139 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        /* Paleta de colores */
-        .palette-container {
+        /* --- 2. COLORES RESERVADOS (Estructura en una sola línea) --- */
+        .reserved-colors-container {
             margin-top: 60px;
             border-top: 1px solid #eeeeee;
-            padding-top: 40px;
-        }
-
-        .palette-title {
-            font-size: 0.85rem;
-            letter-spacing: 3px;
-            color: #666666;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-        }
-
-        .colors-row {
+            padding-top: 50px;
             display: flex;
             justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
+            align-items: center;
+            flex-wrap: nowrap; /* Fuerza a mantenerse en una línea */
+            gap: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .color-circle {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        /* Líneas horizontales a los lados del texto */
+        .rc-group-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #1a2a40; /* Azul oscuro elegante de tu imagen */
+            letter-spacing: 2px;
+            margin-bottom: 5px;
         }
 
-        .dc-footer {
-            font-size: 1.1rem;
+        .rc-group-title::before,
+        .rc-group-title::after {
+            content: '';
+            height: 1px;
+            width: 40px;
+            background-color: #1a2a40;
+            margin: 0 15px;
+        }
+
+        .rc-subtitle {
+            font-size: 0.75rem;
             color: #4a4a4a;
-            font-style: italic;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            display: block;
         }
 
-                /* Responsividad para móviles */
+        .rc-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rc-circles {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .rc-circle-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .rc-circle {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: 1px solid #1a2a40; /* Borde oscuro para todos */
+        }
+
+                /* Colores específicos de la imagen adjunta */
+        .c-blanco { background-color: #ffffff; }
+        .c-celeste { background-color: #aed6f1; } /* Tono celeste aproximado */
+        .c-rojo { background-color: #d82b3a; } /* Tono rojo aproximado */
+        .c-gris { background-color: #cccccc; } /* Tono gris aproximado */
+
+        .rc-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #1a2a40;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Divisor central con diamante */
+        .rc-divider {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 120px;
+            margin-top: 20px;
+        }
+
+        .rc-divider::before {
+            content: '';
+            width: 1px;
+            height: 100%;
+            background-color: #cccccc;
+        }
+
+        .rc-diamond {
+            font-size: 1.5rem;
+            color: #1a2a40;
+            line-height: 0;
+            margin: -60px 0 0 0; /* Lo centra sobre la línea */
+            background-color: #fff; /* Tapa la línea por debajo */
+            padding: 5px 0;
+        }
+
+
+        /* Responsividad para móviles */
+        @media (max-width: 900px) {
+            /* Si la pantalla es menor a 900px, los colores reservados podrían necesitar bajar de línea */
+            .reserved-colors-container {
+                flex-wrap: wrap; /* Permite que baje a dos líneas en pantallas pequeñas */
+                gap: 20px;
+                padding-top: 40px;
+            }
+            .rc-divider {
+                display: none; /* Ocultamos la línea vertical divisora en móviles */
+            }
+            .rc-group { margin-bottom: 20px; width: 100%; }
+        }
+
         @media (max-width: 768px) {
             .dc-col { order: 2; }
             .dc-col:last-child { order: 3; }
-            .dc-image-col { order: 1; margin-bottom: 30px; } /* En celulares, la foto va arriba */
+            .dc-image-col { order: 1; margin-bottom: 30px; }
+            
+            /* Ajuste del tamaño de flechas del Lightbox en tablet/móvil */
+            .lb-arrow { font-size: 2.5rem; padding: 10px; }
+            .lb-arrow-prev { left: 5px; }
+            .lb-arrow-next { right: 5px; }
         }
 
         @media (max-width: 600px) {
@@ -720,17 +805,19 @@
             .gallery-section { padding: 50px 0; }
             .gallery-title { font-size: 3.2rem; margin-bottom: 30px; }
             .carousel-track img { width: 240px; height: 340px; }
-            .carousel-arrow { width: 35px; height: 35px; font-size: 1.2rem; }
             .close-lightbox { top: 15px; right: 20px; font-size: 35px; }
 
-            /* Ajustes móviles Vestimenta */
             .dresscode-section { padding: 60px 15px; }
-            .dc-title-cursive { font-size: 3.2rem; }
-            .dc-title-main { font-size: 1.4rem; }
+            .dc-title-main { font-size: 2.4rem; }
             .dc-col h3 { font-size: 2.5rem; }
             .dc-item { font-size: 0.9rem; }
-            .colors-row { gap: 8px; }
-            .color-circle { width: 30px; height: 30px; }
+            
+            /* Ajustes Colores Reservados Móvil */
+            .rc-group-title { font-size: 1.1rem; }
+            .rc-group-title::before, .rc-group-title::after { width: 20px; }
+            .rc-circles { gap: 15px; }
+            .rc-circle { width: 50px; height: 50px; }
+            .rc-label { font-size: 0.65rem; }
         }
     </style>
 </head>
@@ -846,34 +933,46 @@
     <section class="gallery-section">
         <h2 class="gallery-title">Nuestros momentos</h2>
         
-        <!-- Envoltorio con flechas -->
         <div class="carousel-wrapper">
-            <!-- Flecha Izquierda -->
-            <button class="carousel-arrow left-arrow" onclick="moverCarrusel(-1)">&#10094;</button>
-            
+            <!-- 4. ELIMINADAS FLECHAS EXTERNAS. Carrusel puro de deslizar. -->
             <div class="carousel-container" id="galeria">
                 <div class="carousel-track">
-                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80" alt="Foto 1" onclick="abrirLightbox(this.src)">
-                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" alt="Foto 2" onclick="abrirLightbox(this.src)">
-                    <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80" alt="Foto 3" onclick="abrirLightbox(this.src)">
-                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80" alt="Foto 4" onclick="abrirLightbox(this.src)">
-                    <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=80" alt="Foto 5" onclick="abrirLightbox(this.src)">
-                    <img src="https://images.unsplash.com/photo-1543883656-11b43343fc0a?auto=format&fit=crop&w=1200&q=80" alt="Foto 6" onclick="abrirLightbox(this.src)">
+                    <!-- Se pasa a la función abrirLightbox el índice (0, 1, 2...) de la imagen -->
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80" alt="Foto 1" onclick="abrirLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" alt="Foto 2" onclick="abrirLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80" alt="Foto 3" onclick="abrirLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80" alt="Foto 4" onclick="abrirLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=80" alt="Foto 5" onclick="abrirLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1543883656-11b43343fc0a?auto=format&fit=crop&w=1200&q=80" alt="Foto 6" onclick="abrirLightbox(5)">
                 </div>
             </div>
-
-            <!-- Flecha Derecha -->
-            <button class="carousel-arrow right-arrow" onclick="moverCarrusel(1)">&#10095;</button>
         </div>
         
         <span class="swipe-hint">Desliza para ver más →</span>
     </section>
 
+    <!-- VISOR DE IMÁGENES (LIGHTBOX) CON FLECHAS INTEGRADAS -->
+    <!-- Se quitó el onclick del fondo para que los clics en flechas no lo cierren, 
+         ahora solo la 'X' o dar clic a la imagen en sí lo cerrará (opcional) -->
+    <div id="miLightbox" class="lightbox">
+        <span class="close-lightbox" onclick="cerrarLightbox()">&times;</span>
+        
+        <div class="lightbox-inner">
+            <!-- Flecha Izquierda -->
+            <button class="lb-arrow lb-arrow-prev" onclick="cambiarFoto(-1)">&#10094;</button>
+            
+            <img class="lightbox-content" id="imgLightbox" src="" alt="Imagen Ampliada">
+            
+            <!-- Flecha Derecha -->
+            <button class="lb-arrow lb-arrow-next" onclick="cambiarFoto(1)">&#10095;</button>
+        </div>
+    </div>
+
     <!-- SECCIÓN 6: CÓDIGO DE VESTIMENTA -->
     <section class="dresscode-section">
         
-        <h2 class="dc-title-cursive">Código de</h2>
-        <h3 class="dc-title-main">VESTIMENTA</h3>
+        <!-- 3. TÍTULO CON LA FUENTE Y COLOR DE LA CUENTA REGRESIVA -->
+        <h2 class="dc-title-main">Código de Vestimenta</h2>
         
         <div class="heart-divider" style="margin: 0 auto 15px auto;">
             <span class="line"></span>
@@ -881,11 +980,10 @@
             <span class="line"></span>
         </div>
         
-        <p class="dc-level">SEMI FORMAL</p>
+        <p class="dc-level">FORMAL</p>
 
         <div class="dc-grid">
             
-            <!-- Columna Hombres -->
             <div class="dc-col">
                 <h3>Hombres</h3>
                 <div class="dc-item">
@@ -906,13 +1004,11 @@
                 </div>
             </div>
 
-            <!-- Columna Central (Imagen referencial) -->
-            <!-- Aquí puedes cambiar el src por la imagen ilustrativa que prefieras -->
             <div class="dc-image-col">
-                <img src="https://images.unsplash.com/photo-1621876801859-9975764d7cba?auto=format&fit=crop&w=600&q=80" alt="Ejemplo de Vestimenta">
+                <!-- 1. IMAGEN ACTUALIZADA -->
+                <img src="5bc336b3db99def71c89c2638f405e45~2.jpg" alt="Vestimenta Formal">
             </div>
 
-            <!-- Columna Mujeres -->
             <div class="dc-col">
                 <h3>Mujeres</h3>
                 <div class="dc-item">
@@ -931,37 +1027,49 @@
 
         </div>
 
-        <!-- Paleta de Colores -->
-        <div class="palette-container">
-            <p class="palette-title">Te sugerimos esta paleta de colores</p>
-            <div class="colors-row">
-                <!-- Colores extraídos de tu imagen de referencia -->
-                <div class="color-circle" style="background-color: #4C5E39;"></div> <!-- Verde oscuro -->
-                <div class="color-circle" style="background-color: #777543;"></div> <!-- Verde oliva -->
-                <div class="color-circle" style="background-color: #809088;"></div> <!-- Verde grisáceo -->
-                <div class="color-circle" style="background-color: #57788C;"></div> <!-- Azul apagado -->
-                <div class="color-circle" style="background-color: #162C46;"></div> <!-- Azul marino -->
-                <div class="color-circle" style="background-color: #976274;"></div> <!-- Malva / Morado apagado -->
-                <div class="color-circle" style="background-color: #C1686D;"></div> <!-- Rosa viejo -->
-                <div class="color-circle" style="background-color: #B85B43;"></div> <!-- Terracota -->
-                <div class="color-circle" style="background-color: #C79133;"></div> <!-- Mostaza -->
-                <div class="color-circle" style="background-color: #6C4223;"></div> <!-- Café -->
-            </div>
+        <!-- 2. COLORES RESERVADOS (Diseño calcado de la imagen) -->
+        <div class="reserved-colors-container">
             
-            <div class="heart-divider" style="margin: 0 auto 15px auto; max-width: 150px;">
-                <span class="heart" style="margin:0;">♥</span>
+            <!-- Bloque Mujeres -->
+            <div class="rc-group">
+                <span class="rc-group-title">MUJERES</span>
+                <span class="rc-subtitle">COLORES RESERVADOS</span>
+                <div class="rc-circles">
+                    <div class="rc-circle-item">
+                        <div class="rc-circle c-blanco"></div>
+                        <span class="rc-label">BLANCO</span>
+                    </div>
+                    <div class="rc-circle-item">
+                        <div class="rc-circle c-celeste"></div>
+                        <span class="rc-label">AZUL CELESTE</span>
+                    </div>
+                    <div class="rc-circle-item">
+                        <div class="rc-circle c-rojo"></div>
+                        <span class="rc-label">ROJO</span>
+                    </div>
+                </div>
             </div>
-            
-            <p class="dc-footer">Gracias por ser parte de este día tan especial.</p>
+
+            <!-- Divisor central con diamante -->
+            <div class="rc-divider">
+                <span class="rc-diamond">✧</span>
+            </div>
+
+            <!-- Bloque Hombres -->
+            <div class="rc-group">
+                <span class="rc-group-title">HOMBRES</span>
+                <span class="rc-subtitle">COLOR RESERVADO</span>
+                <div class="rc-circles">
+                    <div class="rc-circle-item">
+                        <div class="rc-circle c-gris"></div>
+                        <span class="rc-label">GRIS</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </section>
-
-    <!-- VISOR DE IMÁGENES A PANTALLA COMPLETA (LIGHTBOX) -->
-    <div id="miLightbox" class="lightbox" onclick="cerrarLightbox()">
-        <span class="close-lightbox" onclick="cerrarLightbox()">&times;</span>
-        <img class="lightbox-content" id="imgLightbox">
-    </div>
 
     <!-- SCRIPTS -->
     <script>
@@ -985,24 +1093,52 @@
             }
         }, 1000); 
 
-        // 2. FLECHAS DEL CARRUSEL
-        function moverCarrusel(direccion) {
-            const contenedor = document.getElementById('galeria');
-            // Ancho aproximado de una foto + el gap
-            const anchoDesplazamiento = 300; 
-            contenedor.scrollBy({ left: direccion * anchoDesplazamiento, behavior: 'smooth' });
-        }
 
-        // 3. VISOR DE IMÁGENES (LIGHTBOX)
-        function abrirLightbox(srcImagen) {
+        // 4. LÓGICA DEL LIGHTBOX CON GALERÍA NAVEGABLE
+        let indiceActual = 0;
+        let listaImagenes = [];
+
+        // Extraer todas las imágenes del carrusel al cargar la página
+        window.onload = function() {
+            const imagenesGaleria = document.querySelectorAll('.carousel-track img');
+            imagenesGaleria.forEach(img => {
+                listaImagenes.push(img.src);
+            });
+        };
+
+        function abrirLightbox(index) {
+            indiceActual = index;
             document.getElementById('miLightbox').style.display = "block";
-            document.getElementById('imgLightbox').src = srcImagen;
+            actualizarImagenLightbox();
             document.body.style.overflow = "hidden";
         }
 
         function cerrarLightbox() {
             document.getElementById('miLightbox').style.display = "none";
             document.body.style.overflow = "auto";
+        }
+
+        function cambiarFoto(direccion) {
+            indiceActual += direccion;
+            
+            // Lógica para que el carrusel sea infinito (si llega a la última pasa a la primera y viceversa)
+            if (indiceActual >= listaImagenes.length) {
+                indiceActual = 0;
+            } else if (indiceActual < 0) {
+                indiceActual = listaImagenes.length - 1;
+            }
+            
+            actualizarImagenLightbox();
+        }
+
+        function actualizarImagenLightbox() {
+            const imgElement = document.getElementById('imgLightbox');
+            // Quitamos la animación momentáneamente para reiniciarla
+            imgElement.style.animation = 'none';
+            imgElement.offsetHeight; /* trigger reflow */
+            imgElement.style.animation = null; 
+            
+            imgElement.src = listaImagenes[indiceActual];
         }
     </script>
 
