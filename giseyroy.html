@@ -20,7 +20,6 @@
             position: relative;
             width: 100%;
             min-height: 100vh;
-            /* Aquí cargamos tu imagen de fondo */
             background-image: url('dd0cc7469e7b88a430a5e39423e48c3f~2.jpg'); 
             background-size: cover;
             background-position: center;
@@ -91,7 +90,6 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            /* FOTO DE LOS NOVIOS */
             background-image: url('Simple Minimalist Save the Date Wedding Invitation_20261014_092408_0000.png'); 
             background-size: cover;
             background-position: center;
@@ -157,7 +155,6 @@
         /* --- SECCIÓN 2: HISTORIA DE AMOR --- */
         .love-story {
             background-color: #ffffff;
-            /* Se redujo el padding para que la sección ocupe menos espacio */
             padding: 50px 20px 60px 20px; 
             display: flex;
             justify-content: center;
@@ -165,48 +162,47 @@
         }
 
         .story-container {
-            max-width: 700px; 
+            max-width: 600px; /* Un poco más estrecho para mantener la lectura limpia */
+            width: 100%;
         }
 
-        .main-quote {
-            /* Letra más pequeña y menor interlineado */
-            font-size: 0.95rem; 
-            line-height: 1.6;
-            color: #4a4a4a;
-            font-style: italic;
-            margin-bottom: 25px; /* Menor margen inferior */
-        }
-
-        .bible-verse {
-            /* Letra más pequeña */
-            font-size: 0.9rem;
-            line-height: 1.5;
-            color: #666666;
-            margin-bottom: 35px;
-        }
-
-        .verse-ref {
+        .story-subtitle {
             display: block;
-            margin-top: 8px;
-            font-weight: 600;
-            font-size: 0.8rem;
-            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            color: #a38758; 
+            color: #a38758; /* Tono dorado */
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .story-title {
+            font-size: 2.8rem;
+            color: #4a4a4a; /* Gris oscuro elegante */
+            margin: 0 0 25px 0;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .story-text {
+            font-size: 1.05rem; 
+            line-height: 1.7;
+            color: #666666; /* Gris medio */
+            margin: 0 0 25px 0;
+        }
+
+        .story-divider {
+            border: none;
+            border-top: 1px solid #d4c4a8; /* Línea dorada suave */
+            margin: 30px 0;
+            width: 100%; /* Línea de lado a lado del contenedor */
         }
 
         .initials {
             font-family: 'Great Vibes', cursive;
-            font-size: 3rem; /* Iniciales un poco más pequeñas */
+            font-size: 3rem; 
             color: #a38758; 
             margin-top: 15px;
-        }
-
-        .divider {
-            width: 40px;
-            height: 1px;
-            background-color: #d4c4a8;
-            margin: 0 auto 20px auto;
         }
 
         /* Responsividad para móviles */
@@ -215,9 +211,13 @@
             .frame-container { width: 220px; height: 310px; }
             .date { font-size: 1rem; margin-top: 25px; }
             .rsvp-btn { padding: 8px 25px; font-size: 0.8rem; margin-top: 20px;}
-            .love-story { padding: 40px 15px 50px 15px; }
-            .main-quote { font-size: 0.9rem; padding: 0 10px; }
-            .bible-verse { font-size: 0.85rem; }
+            .love-story { padding: 40px 20px 50px 20px; }
+            
+            /* Ajustes para la nueva estructura en móviles */
+            .story-subtitle { font-size: 0.75rem; }
+            .story-title { font-size: 2.2rem; margin-bottom: 20px; }
+            .story-text { font-size: 0.95rem; }
+            .story-divider { margin: 25px 0; }
         }
     </style>
 </head>
@@ -235,7 +235,7 @@
             
             <div class="date">17.07.2027</div>
             
-            <!-- Nuevo botón RSVP -->
+            <!-- Botón RSVP -->
             <a href="#" class="rsvp-btn">RSVP NOW</a>
         </div>
         
@@ -247,21 +247,25 @@
     <!-- SECCIÓN 2: Historia de Amor -->
     <section class="love-story">
         <div class="story-container">
-            <p class="main-quote">
-                "Nuestra historia de amor fue escrita en el corazón de Dios, guiada por su propósito y bendecida por su gracia. Hoy elegimos caminar juntos, tomados de la mano y de la mano de Aquel que hizo posible nuestro encuentro, confiando en que su amor será siempre el fundamento de nuestro para siempre."
+            
+            <span class="story-subtitle">Con la bendición de Dios</span>
+            
+            <h2 class="story-title">¡NOS CASAMOS!</h2>
+            
+            <p class="story-text">
+                Nuestra historia de amor fue escrita en el corazón de Dios, guiada por su propósito y bendecida por su gracia.
             </p>
             
-            <p class="bible-verse">
-                “Y sobre todas estas cosas vestíos de amor, que es el vínculo perfecto.”
-                <span class="verse-ref">— Colosenses 3:14</span>
+            <hr class="story-divider">
+            
+            <p class="story-text">
+                Acompáñanos a celebrar el comienzo de nuestro para siempre.
             </p>
-
-            <div class="divider"></div>
             
             <div class="initials">G+R</div>
+            
         </div>
     </section>
 
 </body>
-    </html>
-    
+</html>
