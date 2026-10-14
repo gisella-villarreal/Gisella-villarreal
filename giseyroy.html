@@ -352,7 +352,7 @@
             justify-content: center;
             width: 100%;
             max-width: 250px;
-            margin: 25px 0;
+            margin: 25px auto;
         }
 
         .heart-divider .line {
@@ -570,7 +570,6 @@
             margin-bottom: 40px;
         }
 
-        /* Contenedor de la imagen centrada */
         .dc-image-centered {
             display: flex;
             justify-content: center;
@@ -585,7 +584,7 @@
             border-radius: 10px;
         }
 
-        /* --- COLORES RESERVADOS (Forzados en una línea) --- */
+        /* --- COLORES RESERVADOS --- */
         .reserved-colors-container {
             margin: 30px auto 0 auto;
             border-top: 1px solid #eeeeee;
@@ -593,7 +592,7 @@
             display: flex;
             justify-content: center;
             align-items: stretch;
-            flex-wrap: nowrap; /* Fuerza a mantenerse en una línea */
+            flex-wrap: nowrap; 
             gap: 30px;
             width: 100%;
             max-width: 900px;
@@ -603,7 +602,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex: 1; /* Distribuye el espacio equitativamente */
+            flex: 1; 
         }
 
         .rc-group-title {
@@ -614,7 +613,7 @@
             color: #1a2a40; 
             letter-spacing: 2px;
             margin-bottom: 5px;
-            white-space: nowrap; /* Evita que el título se corte */
+            white-space: nowrap; 
         }
 
         .rc-group-title::before,
@@ -640,7 +639,7 @@
             display: flex;
             gap: 25px;
             justify-content: center;
-            flex-wrap: nowrap; /* Círculos en una línea */
+            flex-wrap: nowrap; 
         }
 
         .rc-circle-item {
@@ -671,7 +670,6 @@
             white-space: nowrap;
         }
 
-        /* Divisor central vertical */
         .rc-divider {
             display: flex;
             flex-direction: column;
@@ -692,6 +690,138 @@
             padding: 5px 0;
             line-height: 0;
         }
+
+        /* --- SECCIÓN 7: DETALLES FINALES --- */
+        .details-section {
+            background-color: #faf9f6; /* Fondo crema para contrastar con la sección anterior blanca */
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .details-container {
+            max-width: 550px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .detail-row {
+            display: flex;
+            align-items: flex-start;
+            text-align: left;
+            gap: 25px;
+        }
+
+        /* Estilo de los íconos de esta sección */
+        .detail-icon {
+            width: 45px;
+            height: 45px;
+            stroke: #292c1b; /* Color principal oscuro */
+            fill: none;
+            stroke-width: 1.5;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        .detail-content {
+            flex: 1;
+        }
+
+        .detail-title {
+            font-size: 1.05rem;
+            letter-spacing: 2px;
+            color: #292c1b;
+            text-transform: uppercase;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .detail-text {
+            font-size: 0.95rem;
+            color: #666666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .seats-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .seats-number {
+            border: 1px solid #292c1b;
+            padding: 8px 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #292c1b;
+            border-radius: 4px;
+        }
+
+        .seats-label {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: #292c1b;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .envelope-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .envelope-icon {
+            width: 28px;
+            height: 28px;
+            stroke: #292c1b;
+            fill: none;
+        }
+
+        /* Botón Enviar Mensaje (WhatsApp) */
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: #292c1b; /* Fondo oscuro */
+            color: #ffffff; /* Letras blancas */
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 25px; /* Bordes redondeados */
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #d4c4a8; /* Hover color dorado */
+            color: #292c1b;
+        }
+
+        .adults-only {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .closing-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: #a38758;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: normal;
+        }
+
 
         /* Responsividad para móviles */
         @media (max-width: 768px) {
@@ -715,7 +845,6 @@
             .initials { font-size: 2.2rem; }
 
             .countdown-section { padding: 110px 10px 150px 10px; }
-                        /* Texto actualizado de cuenta regresiva */
             .countdown-title { font-size: 2rem; margin-bottom: 25px; }
             .timer-container { gap: 10px; } 
             .time-box { padding: 12px 10px; }
@@ -726,7 +855,7 @@
             .location-section { padding: 40px 15px 60px 15px; }
             .event-time { font-size: 0.8rem; }
             .event-title { font-size: 1.8rem; }
-            .heart-divider { margin: 20px 0; }
+            .heart-divider { margin: 20px auto; }
             .event-place { font-size: 1.15rem; }
             .event-address { font-size: 0.85rem; margin-bottom: 25px; }
             .maps-btn { padding: 10px 25px; font-size: 0.75rem; }
@@ -738,20 +867,25 @@
 
             .dresscode-section { padding: 60px 10px; }
             .dc-title-main { font-size: 2.4rem; }
-            
-            /* Ajustes estrictos para que los colores reservados quepan en 1 sola línea en móvil */
-            .reserved-colors-container { 
-                gap: 5px; 
-                padding-top: 25px;
-            }
+            .reserved-colors-container { gap: 5px; padding-top: 25px; }
             .rc-group-title { font-size: 0.8rem; }
             .rc-group-title::before, .rc-group-title::after { width: 10px; margin: 0 5px; }
             .rc-subtitle { font-size: 0.55rem; margin-bottom: 15px; letter-spacing: 1px; }
             .rc-circles { gap: 5px; }
             .rc-circle { width: 35px; height: 35px; }
             .rc-label { font-size: 0.45rem; letter-spacing: 0px; }
-            .rc-divider { display: flex; /* Mantiene la línea vertical en móvil */ }
+            .rc-divider { display: flex; }
             .rc-diamond { font-size: 1rem; }
+
+            /* Ajustes Móviles Detalles Finales */
+            .details-section { padding: 60px 15px; }
+            .detail-row { gap: 15px; flex-direction: column; align-items: center; text-align: center; }
+            .detail-icon { margin-bottom: 10px; width: 40px; height: 40px; }
+            .detail-title { font-size: 0.95rem; }
+            .detail-text { font-size: 0.9rem; }
+            .envelope-box, .seats-box { justify-content: center; }
+            .whatsapp-btn { padding: 10px 25px; font-size: 0.75rem; }
+            .closing-text { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -812,7 +946,6 @@
             <div class="lace-center-detail"></div>
         </div>
 
-        <!-- 1. TEXTO DE CUENTA REGRESIVA ACTUALIZADO -->
         <h2 class="countdown-title">la cuenta regresiva¡Que emoción!</h2>
 
         <div class="timer-container" id="countdown-timer">
@@ -908,14 +1041,11 @@
         
         <p class="dc-level">FORMAL</p>
 
-        <!-- 2 y 3. IMAGEN CENTRADA Y LISTAS DE TEXTO ELIMINADAS -->
         <div class="dc-image-centered">
             <img src="1000224141.png" alt="Vestimenta Formal">
         </div>
 
-        <!-- 4. COLORES RESERVADOS (Forzados en una línea) -->
         <div class="reserved-colors-container">
-            
             <!-- Bloque Mujeres -->
             <div class="rc-group">
                 <span class="rc-group-title">MUJERES</span>
@@ -936,7 +1066,6 @@
                 </div>
             </div>
 
-            <!-- Divisor central con diamante -->
             <div class="rc-divider">
                 <span class="rc-diamond">✧</span>
             </div>
@@ -952,14 +1081,88 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- --- SECCIÓN 7: DETALLES FINALES --- -->
+    <section class="details-section">
+        <div class="details-container">
+            
+            <!-- Bloque Asientos -->
+            <div class="detail-row">
+                <svg class="detail-icon" viewBox="0 0 24 24">
+                    <!-- Icono Silla minimalista -->
+                    <path d="M7 13V5c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2v8M6 13h12a1 1 0 011 1v8M5 13a1 1 0 00-1 1v8M10 13v4M14 13v4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="detail-content">
+                    <h3 class="detail-title">Asientos reservados para ti</h3>
+                    <div class="seats-box">
+                        <!-- El número es ilustrativo, puedes cambiar el "2" si lo deseas -->
+                        <span class="seats-number">2</span>
+                        <span class="seats-label">Asientos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="heart-divider"><span class="line"></span><span class="heart">♥</span><span class="line"></span></div>
+
+            <!-- Bloque Regalos -->
+            <div class="detail-row">
+                <svg class="detail-icon" viewBox="0 0 24 24">
+                    <!-- Icono Regalo -->
+                    <path d="M20 12v10H4V12M22 7H2v5h20V7zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="detail-content">
+                    <h3 class="detail-title">Sugerencia de regalo</h3>
+                    <p class="detail-text">Su presencia es nuestro mayor regalo. Sin embargo, si desean tener un detalle con nosotros, una contribución monetaria será muy apreciada.</p>
+                    <div class="envelope-box">
+                        <span class="seats-label">Lluvia de sobres</span>
+                        <svg class="envelope-icon" viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 6l-10 7L2 6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="heart-divider"><span class="line"></span><span class="heart">♥</span><span class="line"></span></div>
+
+            <!-- Bloque Confirmación -->
+            <div class="detail-row">
+                <svg class="detail-icon" viewBox="0 0 24 24">
+                    <!-- Icono WhatsApp -->
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16.5 16c-1.4.9-3.2.1-4.7-1s-2.8-2.5-3.5-4c-.7-1.4-.3-3.1.6-4 .3-.3.8-.5 1.2-.5.3 0 .6.1.8.4l1.4 2.2c.2.3.2.7 0 1l-.8 1c.5 1.2 1.6 2.3 2.8 2.8l1-.8c.3-.2.7-.2 1 0l2.2 1.4c.3.2.4.5.4.8-.1.4-.3.9-.6 1.2z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="detail-content">
+                    <h3 class="detail-title">Confirmación de Asistencia</h3>
+                    <p class="detail-text">Por favor confirma tu asistencia antes del 1 de noviembre de 2027.</p>
+                    
+                    <!-- REEMPLAZA EL NÚMERO POR EL TUYO REAL (Incluye el código de país sin el símbolo +) -->
+                    <!-- Ejemplo para Colombia: 573001234567 -->
+                    <a href="https://wa.me/573000000000" target="_blank" class="whatsapp-btn">Enviar Mensaje</a>
+                </div>
+            </div>
 
         </div>
+
+        <!-- Solo Adultos -->
+        <div class="adults-only">
+            <h3 class="detail-title" style="letter-spacing: 3px;">Recepción solo para adultos</h3>
+            <p class="detail-text" style="max-width: 450px; margin: 0 auto;">Esperamos que comprendan que nuestro gran día será una celebración exclusiva para adultos.</p>
+        </div>
+        
+        <div class="heart-divider" style="margin: 30px auto;"><span class="line"></span><span class="heart" style="font-size:1.5rem; color:#a38758;">❦</span><span class="line"></span></div>
+
+        <!-- Cierre -->
+        <p class="detail-title" style="letter-spacing: 4px; margin-top:20px;">Esperamos celebrar este día contigo</p>
+        <p class="closing-text">Gis & Roy</p>
 
     </section>
 
     <!-- SCRIPTS -->
     <script>
-        // 1. CUENTA REGRESIVA
+                // 1. CUENTA REGRESIVA
         const weddingDate = new Date("Dec 12, 2027 17:00:00").getTime();
         const countdownFunction = setInterval(function() {
             const now = new Date().getTime();
