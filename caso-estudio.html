@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gis & Roy - Boda</title>
+    <title>Alina & Daniel - Boda</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -27,7 +27,7 @@
             color: var(--text-dark);
             font-family: var(--font-sans);
             text-align: center;
-            overflow-x: hidden; /* Evita que la pantalla se mueva de lado a lado en el celular */
+            overflow-x: hidden;
         }
 
         /* --- NAVEGACIÓN --- */
@@ -56,7 +56,6 @@
         nav .tagline { display: none; }
 
         /* --- SECCIÓN PRINCIPAL --- */
-        /* Nuevo contenedor que mantiene juntas las flores y la tarjeta */
         .hero-wrapper {
             position: relative;
             width: 90%;
@@ -65,16 +64,14 @@
         }
 
         /* --- SISTEMA DE ORQUÍDEAS --- */
-        /* Divide la imagen 1000223770.png en 4 partes exactas */
         .orchid-sprite {
             background-image: url('1000223770.png');
             background-size: 200% 200%;
             background-repeat: no-repeat;
-            aspect-ratio: 3 / 4; /* Mantiene la flor con la altura correcta */
+            aspect-ratio: 3 / 4;
             pointer-events: none;
         }
 
-        /* Flor Superior Izquierda */
         .orchid-tl {
             position: absolute;
             top: -30px;
@@ -84,7 +81,6 @@
             z-index: 10;
         }
 
-        /* Flor Superior Derecha */
         .orchid-tr {
             position: absolute;
             top: -30px;
@@ -94,19 +90,15 @@
             z-index: 10;
         }
 
-        /* Flores Inferiores (Footer) */
         .orchid-bl { background-position: left bottom; width: clamp(100px, 20vw, 180px); }
         .orchid-br { background-position: right bottom; width: clamp(100px, 20vw, 180px); }
 
         /* Tarjeta Principal */
         .hero {
-            /* Se ha añadido 1000223770.png con una sutil capa semi-transparente para asegurar la legibilidad del texto */
-            background-image: linear-gradient(rgba(245, 241, 234, 0.82), rgba(245, 241, 234, 0.82)), url('1000223770.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            /* Capa semitransparente suave (0.3) para que la imagen se vea claramente */
+            background: linear-gradient(rgba(245, 241, 234, 0.3), rgba(245, 241, 234, 0.3)), url('1000223770.png') center/cover no-repeat;
             border-radius: 40px 40px 0 0;
-            padding: 80px 20px 0; /* Padding amplio para dar espacio a las flores */
+            padding: 80px 20px 0;
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -218,9 +210,7 @@
         footer p { letter-spacing: 3px; font-size: clamp(0.7rem, 1.5vw, 0.85rem); line-height: 1.5;}
         footer h3 { font-family: var(--font-serif); font-size: clamp(1.2rem, 3vw, 1.5rem); font-weight: 400; margin-top: 10px;}
 
-        /* =======================================================
-           AJUSTES ESPECÍFICOS PARA MÓVILES (SMARTPHONES)
-           ======================================================= */
+        /* --- MEDIA QUERIES --- */
         @media (min-width: 768px) {
             nav { padding: 20px 50px; }
             nav .tagline { display: block; }
@@ -231,11 +221,9 @@
             nav { flex-direction: column; text-align: center; }
             nav ul { margin-top: 15px; }
             
-            /* Ajusta las flores exactamente en los bordes para que no se corten ni tapen el centro */
             .orchid-tl { top: -10px; left: -10px; width: 120px; opacity: 0.9; }
             .orchid-tr { top: -10px; right: -10px; width: 120px; opacity: 0.9; }
 
-            /* Baja el texto para que las flores no caigan encima */
             .hero { padding-top: 100px; border-radius: 30px 30px 0 0; }
             
             .card { flex-direction: column; text-align: center; padding: 25px; }
@@ -243,7 +231,6 @@
         }
 
         @media (max-width: 480px) {
-            /* Pantallas súper pequeñas (iPhone SE, etc) */
             .orchid-tl { top: -10px; left: -5px; width: 100px; }
             .orchid-tr { top: -10px; right: -5px; width: 100px; }
             .hero { padding-top: 90px; }
@@ -265,7 +252,7 @@
         <div class="tagline">A More Beautiful Tomorrow</div>
     </nav>
 
-    <!-- ENVOLTORIO PRINCIPAL (Mantiene unidas las flores y la tarjeta) -->
+    <!-- ENVOLTORIO PRINCIPAL -->
     <div class="hero-wrapper">
         
         <!-- Orquídeas superiores -->
@@ -340,7 +327,7 @@
         <div class="card-image" style="background: url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=400&q=80') center/cover; border-radius: 10px;"></div>
     </section>
 
-    <!-- Flores del pie de página recortadas desde la misma imagen -->
+    <!-- Flores del pie de página -->
     <div class="footer-decor">
         <div class="orchid-sprite orchid-bl"></div>
         <div class="orchid-sprite orchid-br"></div>
