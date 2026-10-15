@@ -254,115 +254,88 @@
       letter-spacing: -0.5px;
     }
 
-    /* ====== SECCIÓN DE SERVICIOS ====== */
+    /* ====== SECCIÓN DE SERVICIOS (NUEVO DISEÑO 2 COLUMNAS) ====== */
     .services-section {
       background-color: var(--bg-dark); 
       padding-top: 20px;
       padding-bottom: 50px;
     }
 
-    .services-wrapper {
+    .services-grid-new {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
       padding: 0 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px; 
     }
-    
-    .service-row {
-      position: relative;
-      background-color: var(--bg-dark);
-      border-radius: 24px; 
+
+    .srv-card {
+      background-color: #080808;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      min-height: 230px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6); 
-      text-decoration: none; 
-    }
-    
-    .service-img {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-size: cover;
-      background-position: center right; 
-      z-index: 1;
     }
 
-    .service-row::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to right, rgba(21,21,21,0.92) 0%, rgba(21,21,21,0.7) 45%, rgba(21,21,21,0.1) 100%);
-      z-index: 2;
-    }
-
-    .service-info {
-      position: relative;
-      z-index: 3;
-      padding: 30px 25px;
+    .srv-card-img {
       width: 100%;
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .srv-card-body {
+      padding: 30px 20px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
     }
 
-    .service-arrow {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 35px;
-      height: 35px;
-      background-color: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      z-index: 4;
-      font-size: 1.1rem;
-    }
-
-    .service-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 400;
-      color: white;
-      line-height: 1.05;
-      margin-bottom: 12px;
-    }
-    .service-name i {
-      font-style: italic;
-    }
-
-    .service-desc {
-      font-size: 0.7rem;
-      color: #E2DDD5;
-      line-height: 1.4;
-      margin-bottom: 20px;
-      max-width: 65%; 
-    }
-
-    .service-link {
-      font-size: 0.6rem;
+    .srv-card-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.3rem;
       font-weight: 700;
-      color: var(--bg-cream); 
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 10px 22px;
-      border-radius: 30px; 
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,0.1);
-      display: inline-block;
-      transition: color 0.3s ease;
-    }
-    .service-row:hover .service-link {
       color: white;
+      margin-bottom: 10px;
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+    }
+
+    .srv-card-desc {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .srv-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    .srv-feature:last-child {
+      margin-bottom: 0;
+    }
+
+    .srv-feature-icon {
+      color: white;
+      font-size: 1.4rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .srv-feature-text h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 5px;
+    }
+
+    .srv-feature-text p {
+      font-size: 0.75rem;
+      color: #999;
+      line-height: 1.5;
     }
 
     /* ====== TRABAJOS DESTACADOS EDITORIAL (CARRUSEL MÓVIL) ====== */
@@ -480,7 +453,6 @@
       color: var(--text-light);
     }
     
-    /* Botón Ver Proyecto (Agregado para unificar diseño) */
     .work-btn {
       margin-top: 15px;
       display: inline-flex;
@@ -770,11 +742,10 @@
       .black-stats { padding: 0 5% 50px; }
       .section-header-container { padding: 0 5%; }
       
-      .services-wrapper { 
-        padding: 0 5% 60px; 
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 20px;
+      .services-grid-new { 
+        padding: 0 5%; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 30px;
       }
       
       .selected-work-section { padding: 80px 5%; }
@@ -822,7 +793,7 @@
 </head>
 <body>
 
-    <!-- MENÚ EMERGENTE -->
+  <!-- MENÚ EMERGENTE -->
   <div class="overlay-menu" id="overlayMenu">
     <div class="close-btn" onclick="toggleMenu()">
       <i class="ph-bold ph-x"></i>
@@ -858,7 +829,7 @@
         <h1>Impulsa tu presencia <br><i>digital.</i></h1>
         <p>Creo espacios digitales que cuentan historias, presentan tu trabajo y hacen que tus ideas cobren vida.</p>
         
-        <div class="button-group">
+  <div class="button-group">
           <!-- Botón Relleno -->
           <a href="#servicios" class="pill-btn">
             Ver Servicios 
@@ -892,7 +863,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN DE SERVICIOS -->
+    <!-- ====== SECCIÓN DE SERVICIOS (NUEVO DISEÑO 2 COLUMNAS) ====== -->
     <section class="services-section" id="servicios">
       <div class="section-header-container">
         <div class="section-header">
@@ -900,39 +871,74 @@
         </div>
       </div>
 
-      <div class="services-wrapper">
-        <!-- Servicio 1: WEB BRANDING -->
-        <a href="https://gisella-villarreal.pages.dev/webbranding" class="service-row">
-          <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop');"></div>
-          <span class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></span>
-          <div class="service-info">
-            <h3 class="service-name"><i>Web</i><br>Branding</h3>
-            <p class="service-desc">Un espacio digital para presentar tus servicios, experiencia y formas de contacto. Ideal para marcas personales.</p>
-            <span class="service-link">Conocer más</span>
+      <div class="services-grid-new">
+        
+        <!-- CARD 1: Branding & Contenido Profesional -->
+        <div class="srv-card">
+          <div class="srv-card-img" style="background-image: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=800&auto=format&fit=crop');"></div>
+          <div class="srv-card-body">
+            <h3 class="srv-card-title">1. Branding & Contenido Profesional</h3>
+            <p class="srv-card-desc">Para profesionales, emprendedores, marcas personales y negocios que quieren proyectar una imagen profesional.</p>
+            
+            <div class="srv-feature">
+              <i class="ph-bold ph-camera srv-feature-icon"></i>
+              <div class="srv-feature-text">
+                <h4>Fotografía de marca personal</h4>
+                <p>Retratos profesionales, fotografía workstyle, imágenes para redes sociales y fotografías que muestran al profesional en su entorno de trabajo.</p>
+              </div>
+            </div>
+            
+            <div class="srv-feature">
+              <i class="ph-bold ph-desktop srv-feature-icon"></i>
+              <div class="srv-feature-text">
+                <h4>Web de marca personal</h4>
+                <p>Páginas para presentar servicios, experiencia, portafolio, especialidad y medios de contacto.</p>
+              </div>
+            </div>
+            
+            <div class="srv-feature">
+              <i class="ph-bold ph-video-camera srv-feature-icon"></i>
+              <div class="srv-feature-text">
+                <h4>Video contenido profesional</h4>
+                <p>Reels educativos, tips, recomendaciones, presentación de servicios y videos para redes sociales.</p>
+              </div>
+            </div>
           </div>
-        </a>
+        </div>
 
-        <!-- Servicio 2: WEB EVENTOS -->
-        <a href="https://gisella-villarreal.pages.dev/webeventos" class="service-row">
-          <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop');"></div>
-          <span class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></span>
-          <div class="service-info">
-            <h3 class="service-name"><i>Web</i><br>Eventos</h3>
-            <p class="service-desc">Invitaciones interactivas con ubicación, galería y confirmación de asistencia. Para bodas y cumpleaños.</p>
-            <span class="service-link">Conocer más</span>
+        <!-- CARD 2: Eventos & Momentos Especiales -->
+        <div class="srv-card">
+          <div class="srv-card-img" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop');"></div>
+          <div class="srv-card-body">
+            <h3 class="srv-card-title">2. Eventos & Momentos Especiales</h3>
+            <p class="srv-card-desc">Para parejas, familias y personas que quieren conservar recuerdos o compartir sus celebraciones de una forma especial.</p>
+            
+            <div class="srv-feature">
+              <i class="ph-bold ph-camera srv-feature-icon"></i>
+              <div class="srv-feature-text">
+                <h4>Fotografía de parejas y celebraciones</h4>
+                <p>Sesiones de compromiso, pedida de mano, preboda, cumpleaños y retratos femeninos. No necesitas ofrecer fotografía de la boda completa.</p>
+              </div>
+            </div>
+            
+            <div class="srv-feature">
+              <i class="ph-bold ph-envelope-simple srv-feature-icon"></i>
+              <div class="srv-feature-text">
+                <h4>Invitaciones web</h4>
+                <p>Sitios digitales para bodas, quinceañeros y cumpleaños, con cuenta regresiva, ubicación, confirmación de asistencia y otros detalles.</p>
+              </div>
+            </div>
+            
+            <div class="srv-feature">
+              <i class="ph-bold ph-clapperboard srv-feature-icon"></i>
+              <div class="srv-feature-text">
+                <h4>Event Content Creation</h4>
+                <p>Contenido vertical, Getting Ready & Bridal Transformation, momentos espontáneos y Reels para compartir durante o después del evento.</p>
+              </div>
+            </div>
           </div>
-        </a>
+        </div>
 
-        <!-- Servicio 3: SOCIAL FOTOGRAFÍA -->
-        <a href="https://gisella-villarreal.pages.dev/socialfotografía" class="service-row">
-          <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop');"></div>
-          <span class="service-arrow"><i class="ph-bold ph-arrow-up-right"></i></span>
-          <div class="service-info">
-            <h3 class="service-name"><i>Social</i><br>Fotografía</h3>
-            <p class="service-desc">Creación de contenido visual de alta calidad para destacar el valor de tu marca o eventos puntuales.</p>
-            <span class="service-link">Conocer más</span>
-          </div>
-        </a>
       </div>
     </section>
 
@@ -973,12 +979,12 @@
         <a href="#" class="work-card">
           <div class="work-info">
             <span class="work-num">02</span>
-            <h3 class="work-name">ElyArte</h3>
-            <span class="work-category">Web Premium con E-Commerce</span>
+            <h3 class="work-name">Aura Shop</h3>
+            <span class="work-category">E-Commerce UI UX</span>
             <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
           </div>
           <div class="work-img-wrapper">
-            <div class="work-img" style="background-image: url('1791933089558.jpg');"></div>
+            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop');"></div>
           </div>
         </a>
 
@@ -1035,9 +1041,8 @@
         </a>
 
       </div>
-    </section>
-
-    <!-- SOBRE MÍ (FONDO NEGRO) -->
+      </section>
+      <!-- SOBRE MÍ (FONDO NEGRO) -->
     <section class="about-section" id="sobre-mi">
       <div class="about-header">
         <div class="about-img"></div>
@@ -1135,4 +1140,4 @@
     }
   </script>
 </body>
-</html>
+</html>        
