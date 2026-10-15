@@ -100,9 +100,45 @@
       line-height: 1.6;
     }
 
+    /* BOTONES GLOBALES */
+    .pill-btn {
+      background-color: var(--bg-cream);
+      color: var(--bg-dark);
+      padding: 6px 6px 6px 18px; 
+      border-radius: 40px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      gap: 12px;
+    }
+    .pill-btn:hover {
+      background-color: white;
+    }
+    .btn-icon {
+      background-color: var(--bg-dark);
+      color: var(--bg-cream);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .btn-icon i {
+      font-size: 1rem;
+    }
+
     /* ====== SECCIÓN DE PROYECTOS (CARRUSEL MÓVIL) ====== */
     .selected-work-section {
-      padding: 50px 0 60px 0; 
+      padding: 50px 0 30px 0; 
       background-color: var(--bg-dark);
       position: relative;
     }
@@ -178,7 +214,7 @@
       display: none; 
     }
 
-    /* Optimización de las tarjetas: Más reducidas a lo ancho y espacios ajustados */
+    /* Optimización de las tarjetas */
     .work-card {
       min-width: 75%; 
       max-width: 290px;
@@ -296,7 +332,7 @@
 
     .work-img-wrapper {
       width: 100%;
-      height: 170px; /* Reducido para ahorrar espacio vertical en móviles */
+      height: 170px; 
       overflow: hidden;
       border-radius: 4px;
       margin-top: auto;
@@ -313,171 +349,6 @@
 
     .work-card:hover .work-img {
       transform: scale(1.03); 
-    }
-
-    /* ====== PLANES DE PRECIOS ====== */
-    .pricing-section {
-      padding: 20px 20px 40px; 
-      background-color: var(--bg-dark);
-    }
-
-    .pricing-header {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 35px;
-    }
-
-    .pricing-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 500;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      line-height: 1.1;
-      white-space: nowrap; 
-    }
-
-    .pricing-desc {
-      font-size: 0.8rem;
-      color: var(--text-light);
-      line-height: 1.5;
-      max-width: 400px;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px; 
-    }
-
-    /* El tercer plan ocupará todo el ancho en móvil para que se vea balanceado */
-    .pricing-card:nth-child(3) {
-      grid-column: 1 / -1;
-    }
-
-    .pricing-card {
-      border: 1px solid var(--border-color);
-      padding: 20px 12px; 
-      border-radius: 4px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .plan-name {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
-    }
-
-    .plan-sub {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
-      color: var(--text-light);
-      margin-bottom: 20px;
-      min-height: 30px; 
-    }
-
-    .plan-price-wrapper {
-      display: flex;
-      flex-direction: column; 
-      align-items: flex-start;
-      margin-bottom: 20px;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 20px;
-    }
-
-    .plan-currency {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
-      color: var(--text-light);
-      font-weight: 500;
-      margin-bottom: 2px;
-    }
-
-    .plan-price {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.8rem; 
-      color: white;
-      font-weight: 600;
-      letter-spacing: -1px;
-      line-height: 1;
-    }
-
-    .plan-features {
-      list-style: none;
-      margin-bottom: 15px;
-      flex-grow: 1; 
-    }
-
-    .plan-feature-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 6px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.65rem; 
-      color: var(--text-light);
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
-
-    .plan-feature-item i {
-      color: var(--bg-cream); 
-      font-size: 0.9rem;
-      flex-shrink: 0; 
-      margin-top: 1px;
-    }
-
-    .plan-eta {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.6rem;
-      color: var(--bg-cream);
-      margin-bottom: 20px;
-      font-style: italic;
-    }
-
-    /* BOTONES */
-    .plan-btn {
-      background-color: var(--bg-cream);
-      color: var(--bg-dark);
-      padding: 6px 6px 6px 12px; 
-      border-radius: 40px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background-color 0.3s ease;
-      white-space: nowrap; 
-    }
-
-    .plan-btn:hover {
-      background-color: white;
-    }
-
-    .btn-icon {
-      background-color: var(--bg-dark);
-      color: var(--bg-cream);
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    
-    .btn-icon i {
-      font-size: 0.9rem;
     }
 
     /* ====== MÁS SERVICIOS ====== */
@@ -545,56 +416,13 @@
       color: white;
       line-height: 1.4;
     }
-
-    /* ====== SERVICIOS ADICIONALES (TABLA) ====== */
-    .addons-section {
-      padding: 0 20px 80px;
-      background-color: var(--bg-dark);
-    }
     
-    .addons-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: var(--bg-cream);
-      margin-bottom: 20px;
-      letter-spacing: 0.5px;
-    }
-
-    .addons-table {
-      width: 100%;
-      border-collapse: collapse;
+    .more-service-price {
       font-family: 'Inter', sans-serif;
-    }
-
-    .addons-table th {
-      text-align: left;
-      font-size: 0.7rem;
-      color: var(--text-light);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border-color);
-      font-weight: 600;
-    }
-
-    .addons-table td {
-      padding: 15px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      font-size: 0.8rem;
-    }
-
-    .addons-table td.addon-name {
-      color: white;
-      padding-right: 15px;
-      line-height: 1.4;
-    }
-
-    .addons-table td.addon-price {
+      font-size: 0.85rem;
       color: var(--bg-cream);
-      font-weight: 600;
-      text-align: right;
-      white-space: nowrap;
+      font-weight: 700;
+      margin-top: 8px;
     }
 
     /* ====== PREGUNTAS FRECUENTES (FAQ SIN RELLENO) ====== */
@@ -832,43 +660,6 @@
         display: none;
       }
 
-      .pricing-section { padding: 40px 5% 40px; }
-      .pricing-header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin-bottom: 60px;
-      }
-      .pricing-title { font-size: 3rem; }
-      .pricing-desc { margin-bottom: 10px; text-align: right; }
-      
-      .pricing-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columnas en PC */
-        gap: 30px; 
-      }
-      .pricing-card:nth-child(3) {
-        grid-column: auto; /* Restablecemos en PC */
-      }
-      .pricing-card {
-        padding: 40px 30px; 
-      }
-      .plan-name { font-size: 0.8rem; }
-      .plan-sub { font-size: 0.8rem; min-height: auto; }
-      .plan-price-wrapper {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-        padding-bottom: 30px;
-      }
-      .plan-price { font-size: 3rem; }
-      .plan-currency { font-size: 1rem; }
-      .plan-feature-item { font-size: 0.85rem; margin-bottom: 18px; gap: 12px; }
-      .plan-feature-item i { font-size: 1.2rem; }
-      .plan-eta { font-size: 0.8rem; margin-bottom: 30px; }
-      .plan-btn { padding: 10px 10px 10px 25px; font-size: 0.8rem; }
-      .btn-icon { width: 40px; height: 40px; }
-      .btn-icon i { font-size: 1.3rem; }
-
       .more-services-section { padding: 0 5% 80px; }
       .more-services-title { font-size: 2rem; margin-bottom: 30px; }
       .more-service-card { padding: 25px; gap: 25px; max-width: 600px; }
@@ -876,11 +667,7 @@
       .more-service-content h3 { font-size: 1.3rem; }
       .more-service-badge { font-size: 0.7rem; margin-bottom: 12px; }
       .more-service-content p { font-size: 0.9rem; }
-
-      .addons-section { padding: 0 5% 80px; }
-      .addons-title { font-size: 2rem; margin-bottom: 30px; }
-      .addons-table th { font-size: 0.9rem; }
-      .addons-table td { font-size: 1rem; padding: 20px 0; }
+      .more-service-price { font-size: 0.95rem; }
 
       .faq-section { 
         padding: 60px 15% 80px; 
@@ -1016,139 +803,28 @@
       </div>
     </section>
 
-    <!-- PLANES DE PRECIOS -->
-    <section class="pricing-section">
-      <div class="pricing-header">
-        <h2 class="pricing-title">Elige tu Plan</h2>
-        <p class="pricing-desc">Explora los planes y descubre cuál es la solución perfecta para construir la presencia digital de tu marca.</p>
-      </div>
+    <!-- ====== BOTÓN DE CONTACTO ====== -->
+    <div style="background-color: var(--bg-dark); text-align: center; padding: 20px 20px 40px;">
+      <a href="https://wa.me/573001234567" target="_blank" class="pill-btn" style="display: inline-flex;">
+        Contáctame
+        <span class="btn-icon"><i class="ph-bold ph-whatsapp-logo"></i></span>
+      </a>
+    </div>
 
-      <div class="pricing-grid">
-
-        <!-- Plan BioLink Magnético -->
-        <div class="pricing-card">
-          <span class="plan-name">BioLink Magnético</span>
-          <span class="plan-sub">Una mini web optimizada para Instagram.</span>
-          <div class="plan-price-wrapper">
-            <span class="plan-currency">Desde</span>
-            <span class="plan-price">$50.000</span>
-          </div>
-          <ul class="plan-features">
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> One-page de hasta 3 secciones.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Diseño Mobile first.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Una ronda de ajustes al final.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Contacto y enlaces a redes.</li>
-          </ul>
-          <p class="plan-eta">Entrega: 1 a 2 días hábiles</p>
-          <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
-            Contáctame
-            <span class="btn-icon"><i class="ph-bold ph-arrow-right"></i></span>
-          </a>
-        </div>
-        
-        <!-- Plan Esencial -->
-        <div class="pricing-card">
-          <span class="plan-name">Web Esencial</span>
-          <span class="plan-sub">Inicia tu viaje digital</span>
-          <div class="plan-price-wrapper">
-            <span class="plan-currency">Desde</span>
-            <span class="plan-price">$320.000</span>
-          </div>
-          <ul class="plan-features">
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> One-page de hasta 5 secciones.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Identidad visual Responsive.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Dos rondas de ajustes.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Hasta 5 fotos/videos.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Un formulario básico.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Contacto y enlaces a redes.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> SEO Básico.</li>
-          </ul>
-          <p class="plan-eta">Entrega estimada: 5–8 días hábiles.</p>
-          <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
-            Contáctame
-            <span class="btn-icon"><i class="ph-bold ph-arrow-right"></i></span>
-          </a>
-        </div>
-
-        <!-- Plan Premium -->
-        <div class="pricing-card">
-          <span class="plan-name">Web Premium</span>
-          <span class="plan-sub">Eleva tu marca al máximo</span>
-          <div class="plan-price-wrapper">
-            <span class="plan-currency">Desde</span>
-            <span class="plan-price">$850.000</span>
-          </div>
-          <ul class="plan-features">
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Hasta 4 páginas principales.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Identidad visual responsive.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Opción de E-commerce con hasta 5 productos.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Tres rondas de ajustes.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Un formulario básico.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Integración sencilla a herramienta externa de reservas.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Contacto y enlaces a redes.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> SEO Básico.</li>
-          </ul>
-          <p class="plan-eta">Entrega estimada: 15–20 días hábiles.</p>
-          <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
-            Contáctame
-            <span class="btn-icon"><i class="ph-bold ph-arrow-right"></i></span>
-          </a>
-        </div>
-
-      </div>
-    </section>
     <!-- ====== MÁS SERVICIOS (NUEVA SECCIÓN) ====== -->
     <section class="more-services-section">
       <h2 class="more-services-title">Más servicios</h2>
       
       <div class="more-service-card">
-        <!-- Puedes cambiar el enlace de esta foto si tienes una propia -->
+        <!-- Imagen por defecto -->
         <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=300&auto=format&fit=crop" alt="Retratos profesionales" class="more-service-img">
         <div class="more-service-content">
           <h3>Retratos profesionales</h3>
           <span class="more-service-badge">Branding & Contenido Profesional</span>
           <p>Fotos para LinkedIn, hojas de vida, perfiles profesionales, páginas web y perfiles corporativos.</p>
+          <span class="more-service-price">Desde $150.000</span>
         </div>
       </div>
-    </section>
-
-    <!-- SERVICIOS ADICIONALES (TABLA) -->
-    <section class="addons-section">
-      <h3 class="addons-title">Servicios adicionales</h3>
-      <table class="addons-table">
-        <thead>
-          <tr>
-            <th>Servicio</th>
-            <th style="text-align: right;">Precio</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="addon-name">Agregar página adicional</td>
-            <td class="addon-price">$80.000</td>
-          </tr>
-          <tr>
-            <td class="addon-name">Sesión adicional</td>
-            <td class="addon-price">$60.000</td>
-          </tr>
-          <tr>
-            <td class="addon-name">Redacción de textos web</td>
-            <td class="addon-price">$100.000</td>
-          </tr>
-          <tr>
-            <td class="addon-name">Carga inicial de artículos para blog</td>
-            <td class="addon-price">$90.000</td>
-          </tr>
-          <tr>
-            <td class="addon-name">Carga extra de fotos</td>
-            <td class="addon-price">$90.000</td>
-          </tr>
-          <tr>
-            <td class="addon-name">Mantenimiento y cambios menores</td>
-            <td class="addon-price">$90.000/mes</td>
-          </tr>
-        </tbody>
-      </table>
     </section>
 
     <!-- PREGUNTAS FRECUENTES (FAQ) -->
