@@ -178,11 +178,13 @@
       display: none; 
     }
 
+    /* Optimización de las tarjetas: Más reducidas a lo ancho y espacios ajustados */
     .work-card {
-      min-width: 85%; 
+      min-width: 75%; 
+      max-width: 290px;
       scroll-snap-align: center;
       border: 1px solid var(--border-color);
-      padding: 20px;
+      padding: 16px; 
       border-radius: 4px;
       display: flex;
       flex-direction: column;
@@ -196,7 +198,7 @@
     }
 
     .work-info {
-      margin-bottom: 20px;
+      margin-bottom: 12px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -206,43 +208,43 @@
       font-family: 'Inter', sans-serif;
       font-size: 0.75rem;
       color: var(--text-light);
-      margin-bottom: 8px;
+      margin-bottom: 5px;
       display: block;
     }
 
     .work-name {
       font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 500;
       color: white;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 5px;
+      margin-bottom: 3px;
     }
 
     .work-category {
       font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       color: var(--text-light);
     }
 
-    /* Estilos añadidos para los detalles de Caso de Estudio */
+    /* Detalles del Caso de Estudio (Súper optimizados) */
     .case-study-details {
-      margin-top: 10px;
+      margin-top: 8px;
       width: 100%;
     }
     .case-title {
       font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 700;
       color: white;
       margin-bottom: 2px;
     }
     .case-subtitle {
       font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: var(--text-light);
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
     .case-list {
       list-style: none;
@@ -253,10 +255,10 @@
       font-family: 'Inter', sans-serif;
       font-size: 0.65rem;
       color: var(--silver-accent);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       position: relative;
       padding-left: 10px;
-      line-height: 1.4;
+      line-height: 1.3;
     }
     .case-list li::before {
       content: '•';
@@ -266,16 +268,16 @@
     }
     .case-footer-note {
       font-family: 'Inter', sans-serif;
-      font-size: 0.55rem;
+      font-size: 0.5rem;
       color: #777;
-      margin-top: 15px;
+      margin-top: 10px;
       line-height: 1.3;
       text-align: left;
     }
     
     /* Botón Ver Proyecto */
     .work-btn {
-      margin-top: 15px;
+      margin-top: 12px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -294,7 +296,7 @@
 
     .work-img-wrapper {
       width: 100%;
-      height: 220px;
+      height: 170px; /* Reducido para ahorrar espacio vertical en móviles */
       overflow: hidden;
       border-radius: 4px;
       margin-top: auto;
@@ -730,7 +732,7 @@
       color: var(--bg-dark);
     }
 
-    /* ====== MEDIA QUERIES PARA PC Y TABLETS ====== */
+    /* ====== MEDIA QUERIES PARA PC ====== */
     @media (min-width: 768px) {
       .page-wrapper {
         max-width: 100%;
@@ -754,6 +756,11 @@
       }
       .work-card {
         min-width: auto;
+        max-width: none;
+        padding: 20px;
+      }
+      .work-img-wrapper {
+        height: 220px;
       }
       .carousel-controls {
         display: none;
@@ -770,11 +777,11 @@
       .pricing-desc { margin-bottom: 10px; text-align: right; }
       
       .pricing-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columnas en PC */
+        grid-template-columns: repeat(3, 1fr); 
         gap: 30px; 
       }
       .pricing-card:nth-child(3) {
-        grid-column: auto; /* Restablecemos en PC */
+        grid-column: auto; 
       }
       .pricing-card {
         padding: 40px 30px; 
