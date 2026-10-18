@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gisella Villarreal | Creadora de Contenido </title>
+  <title>Gisella Villarreal | Diseño Web & Experiencias Digitales</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -126,7 +126,7 @@
       max-width: 90%;
     }
     
-    /* BOTONES HERO */
+    /* BOTONES GLOBALES */
     .button-group {
       display: flex;
       flex-wrap: wrap;
@@ -338,14 +338,14 @@
       line-height: 1.5;
     }
 
-    /* ====== TRABAJOS DESTACADOS EDITORIAL (CARRUSEL MÓVIL) ====== */
-    .selected-work-section {
-      padding: 40px 0 60px;
+    /* ====== TRABAJOS DESTACADOS & MÁS SERVICIOS (CARRUSELES) ====== */
+    .carousel-section {
+      padding: 40px 0 30px 0; 
       background-color: var(--bg-dark);
       position: relative;
     }
 
-    .work-header {
+    .carousel-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -353,7 +353,7 @@
       margin-bottom: 30px;
     }
 
-    .work-title {
+    .carousel-title {
       font-family: 'Playfair Display', serif; 
       font-style: italic;
       font-size: 2.5rem;
@@ -364,7 +364,6 @@
       letter-spacing: -0.5px;
     }
 
-    /* Controles del carrusel */
     .carousel-controls {
       display: flex;
       gap: 8px;
@@ -390,8 +389,7 @@
       border-color: var(--bg-cream);
     }
 
-    /* Contenedor del Carrusel */
-    .work-grid {
+    .carousel-grid {
       display: flex;
       gap: 15px;
       overflow-x: auto;
@@ -401,15 +399,17 @@
       -ms-overflow-style: none; 
     }
     
-    .work-grid::-webkit-scrollbar {
+    .carousel-grid::-webkit-scrollbar {
       display: none; 
     }
 
+    /* Tarjetas de Trabajos Destacados */
     .work-card {
-      min-width: 85%; 
+      min-width: 75%; 
+      max-width: 290px;
       scroll-snap-align: center;
       border: 1px solid var(--border-color);
-      padding: 20px;
+      padding: 16px; 
       border-radius: 4px;
       display: flex;
       flex-direction: column;
@@ -417,79 +417,147 @@
       flex-shrink: 0;
       transition: border-color 0.3s ease;
     }
+    .work-card:hover { border-color: var(--bg-cream); }
 
-    .work-card:hover {
-      border-color: var(--bg-cream); 
-    }
+    .work-info { margin-bottom: 12px; display: flex; flex-direction: column; align-items: flex-start; }
+    .work-num { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: var(--text-light); margin-bottom: 5px; display: block; }
+    .work-name { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 500; color: white; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+    .work-category { font-family: 'Inter', sans-serif; font-size: 0.65rem; color: var(--text-light); }
 
-    .work-info {
-      margin-bottom: 25px;
+    /* Detalles del Caso de Estudio */
+    .case-study-details { margin-top: 8px; width: 100%; }
+    .case-title { font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 700; color: white; margin-bottom: 2px; }
+    .case-subtitle { font-family: 'Inter', sans-serif; font-size: 0.7rem; color: var(--text-light); margin-bottom: 8px; }
+    .case-list { list-style: none; padding-left: 0; margin-bottom: 0; }
+    .case-list li { font-family: 'Inter', sans-serif; font-size: 0.65rem; color: var(--silver-accent); margin-bottom: 4px; position: relative; padding-left: 10px; line-height: 1.3; }
+    .case-list li::before { content: '•'; position: absolute; left: 0; color: var(--bg-cream); }
+    .case-footer-note { font-family: 'Inter', sans-serif; font-size: 0.5rem; color: #777; margin-top: 10px; line-height: 1.3; text-align: left; }
+    
+    .work-btn { margin-top: 12px; display: inline-flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 700; color: var(--bg-cream); text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease; }
+    .work-card:hover .work-btn { color: white; }
+
+    .work-img-wrapper { width: 100%; height: 170px; overflow: hidden; border-radius: 4px; margin-top: auto; }
+    .work-img { width: 100%; height: 100%; background-size: cover; background-position: top center; background-color: #222; transition: transform 0.5s ease; }
+    .work-card:hover .work-img { transform: scale(1.03); }
+
+    /* Tarjetas de Más Servicios (Carrusel) */
+    .more-service-card {
+      min-width: 85%;
+      max-width: 320px;
+      scroll-snap-align: center;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-    }
-
-    .work-num {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      color: var(--text-light);
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .work-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
-    }
-
-    .work-category {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
-      color: var(--text-light);
+      gap: 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 15px;
+      background-color: transparent;
+      flex-shrink: 0;
     }
     
-    .work-btn {
-      margin-top: 15px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      color: var(--bg-cream);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: color 0.3s ease;
+    .more-service-card:hover {
+      border-color: var(--bg-cream);
     }
 
-    .work-card:hover .work-btn {
+    .more-service-img {
+      width: 100%;
+      height: 140px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .more-service-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .more-service-content h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .more-service-badge {
+      background-color: rgba(255,255,255,0.1);
+      color: var(--text-light);
+      font-size: 0.6rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    .more-service-content p {
+      font-size: 0.8rem;
+      color: var(--silver-accent);
+      line-height: 1.4;
+    }
+    
+    .more-service-price {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: var(--bg-cream);
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    /* ====== PREGUNTAS FRECUENTES (FAQ SIN RELLENO) ====== */
+    .faq-section {
+      padding: 30px 20px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px; 
+      background-color: var(--bg-dark);
+    }
+
+    .faq-item {
+      background-color: transparent; 
+      border-radius: 0; 
+      border: none;
+      border-bottom: 1px solid var(--border-color); 
+      overflow: hidden;
+    }
+    
+    .faq-question {
+      padding: 20px 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 700;
       color: white; 
     }
-
-    .work-img-wrapper {
-      width: 100%;
-      height: 220px;
+    
+    .faq-question i {
+      transition: transform 0.3s ease;
+      color: white; 
+    }
+    
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      max-height: 0;
       overflow: hidden;
-      border-radius: 4px;
-      margin-top: auto;
+      transition: max-height 0.3s ease;
+      font-size: 0.85rem;
+      color: var(--text-light); 
+      line-height: 1.6;
+      padding: 0 5px; 
     }
-
-    .work-img {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: top center;
-      background-color: #222;
-      transition: transform 0.5s ease;
-    }
-
-    .work-card:hover .work-img {
-      transform: scale(1.03); 
+    
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding-bottom: 25px;
     }
 
     /* ====== SOBRE MÍ (FONDO NEGRO) ====== */
@@ -555,7 +623,7 @@
       margin-bottom: 15px;
     }
 
-    /* ====== CTA: ¿TIENES UNA IDEA EN MENTE? ====== */
+    /* ====== CTA ====== */
     .cta-container {
       padding: 0;
     }
@@ -708,7 +776,6 @@
     .overlay-content a:hover {
       opacity: 0.7;
     }
-    /* Estilos extra para iconos del menú */
     .overlay-socials {
       display: flex;
       justify-content: center;
@@ -748,16 +815,18 @@
         gap: 30px;
       }
       
-      .selected-work-section { padding: 80px 5%; }
-      .work-grid {
+      .carousel-section { padding: 80px 5%; }
+      .carousel-grid {
         grid-template-columns: repeat(3, 1fr); 
         gap: 25px;
         overflow-x: visible;
         padding: 0;
       }
-      .work-card { min-width: auto; }
+      .work-card, .more-service-card { min-width: auto; max-width: none; }
       .carousel-controls { display: none; } 
       
+      .faq-section { padding: 60px 15% 80px; } 
+
       .about-section { 
         padding: 60px 5%; 
         display: flex;
@@ -830,12 +899,10 @@
         <p>Transformo ideas, personas y momentos especiales en experiencias visuales y digitales que conectan, inspiran y perduran.</p>
         
         <div class="button-group">
-          <!-- Botón Relleno -->
           <a href="#servicios" class="pill-btn">
             Ver Servicios 
             <span class="btn-icon"><i class="ph-bold ph-arrow-down"></i></span>
           </a>
-          <!-- Botón Transparente -->
           <a href="#portafolio" class="pill-btn-outline">
             Ver Portafolio 
             <span class="btn-icon-transparent"><i class="ph-bold ph-arrow-right"></i></span>
@@ -863,11 +930,11 @@
       </div>
     </section>
 
-    <!-- ====== SECCIÓN DE SERVICIOS (NUEVO DISEÑO 2 COLUMNAS) ====== -->
+    <!-- ====== SECCIÓN DE SERVICIOS ====== -->
     <section class="services-section" id="servicios">
       <div class="section-header-container">
         <div class="section-header">
-          <h2 class="section-title">Servicios</h2>
+          <h2 class="section-title">Servicios Principales</h2>
         </div>
       </div>
 
@@ -942,104 +1009,232 @@
       </div>
     </section>
 
-    <!-- TRABAJOS DESTACADOS EDITORIAL (CARRUSEL MÓVIL) -->
-    <section class="selected-work-section" id="portafolio">
+    <!-- ====== TRABAJOS DESTACADOS (CARRUSEL MÓVIL) ====== -->
+    <section class="carousel-section" id="portafolio">
       <div class="section-header-container">
-        <div class="work-header">
-          <h2 class="section-title" style="margin:0;">Trabajos Destacados</h2>
-          <!-- Controles del Carrusel (Solo visibles en móvil) -->
+        <div class="carousel-header">
+          <h2 class="carousel-title">Trabajos Destacados</h2>
+          <!-- Controles del Carrusel -->
           <div class="carousel-controls">
-            <button class="carousel-btn" onclick="scrollCarousel(-1)" aria-label="Anterior">
+            <button class="carousel-btn" onclick="scrollCarousel(-1, 'workCarousel')" aria-label="Anterior">
               <i class="ph-bold ph-caret-left"></i>
             </button>
-            <button class="carousel-btn" onclick="scrollCarousel(1)" aria-label="Siguiente">
+            <button class="carousel-btn" onclick="scrollCarousel(1, 'workCarousel')" aria-label="Siguiente">
               <i class="ph-bold ph-caret-right"></i>
             </button>
           </div>
         </div>
       </div>
 
-      <!-- Contenedor deslizable con 6 cajas -->
-      <div class="work-grid" id="workCarousel">
+      <!-- Contenedor deslizable -->
+      <div class="carousel-grid" id="workCarousel">
         
-        <!-- Tarjeta 01 -->
-        <a href="https://gisella-villarreal.pages.dev/biolinkmagnetico" class="work-card">
+        <!-- Tarjeta 01: Físicoculturista -->
+        <a href="#" class="work-card">
           <div class="work-info">
             <span class="work-num">01</span>
-            <h3 class="work-name">PSICÓLOGA</h3>
-            <span class="work-category">BioLink Magnético</span>
-            <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
-          </div>
-          <div class="work-img-wrapper">
-            <div class="work-img" style="background-image: url('1791841438304.jpg');"></div>
-          </div>
-        </a>
-
-        <!-- Tarjeta 02 -->
-        <a href="#" class="work-card">
-          <div class="work-info">
-            <span class="work-num">02</span>
-            <h3 class="work-name">Aura Shop</h3>
-            <span class="work-category">E-Commerce UI UX</span>
-            <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
-          </div>
-          <div class="work-img-wrapper">
-            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop');"></div>
-          </div>
-        </a>
-
-        <!-- Tarjeta 03 -->
-        <a href="#" class="work-card">
-          <div class="work-info">
-            <span class="work-num">03</span>
             <h3 class="work-name">FÍSICOCULTURISTA</h3>
-            <span class="work-category">Web Esencial</span>
-            <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
+            <div class="case-study-details">
+              <h4 class="case-title">Caso 1. Juls Salas</h4>
+              <p class="case-subtitle">Solución: Marca personal profesional</p>
+              <ul class="case-list">
+                <li>Sesión fotográfica workstyle en el gimnasio.</li>
+                <li>Página web profesional con sus servicios y trayectoria.</li>
+                <li>Videos educativos de ejercicios, consejos y recomendaciones.</li>
+                <li>Clips verticales para sus redes sociales.</li>
+              </ul>
+              <p style="font-family: 'Inter', sans-serif; font-size: 0.75rem; color: white; font-weight: 700; margin-top: 8px;">Desde $800.000</p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 12px;">
+              <span class="work-btn" style="margin-top: 0;">VER WEB <i class="ph-bold ph-arrow-right"></i></span>
+              <span class="work-btn" style="margin-top: 0;">VER GALERÍA <i class="ph-bold ph-arrow-right"></i></span>
+            </div>
           </div>
           <div class="work-img-wrapper">
             <div class="work-img" style="background-image: url('1791841175048.jpg');"></div>
           </div>
+          <div class="case-footer-note">
+            * Puede contratar Servicios por separado o como una experiencia integral de marca personal.
+          </div>
         </a>
 
-        <!-- Tarjeta 04 -->
+        <!-- Tarjeta 02: Psicóloga -->
+        <a href="https://gisella-villarreal.pages.dev/biolinkmagnetico" class="work-card">
+          <div class="work-info">
+            <span class="work-num">02</span>
+            <h3 class="work-name">PSICÓLOGA</h3>
+            <div class="case-study-details">
+              <h4 class="case-title">Caso 2. Maricela Ávila</h4>
+              <p class="case-subtitle">Solución: BioLink magnético</p>
+              <ul class="case-list">
+                <li>Foto IA, generada con su rostro.</li>
+                <li>BioLink profesional para redes sociales con sus servicios, sobre mi y contacto.</li>
+              </ul>
+              <p style="font-family: 'Inter', sans-serif; font-size: 0.75rem; color: white; font-weight: 700; margin-top: 8px;">Desde $50.000</p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 12px;">
+              <span class="work-btn" style="margin-top: 0;">VER BIOLINK <i class="ph-bold ph-arrow-right"></i></span>
+            </div>
+          </div>
+          <div class="work-img-wrapper">
+            <div class="work-img" style="background-image: url('1791841438304.jpg');"></div>
+          </div>
+          <div class="case-footer-note">
+            * Puede contratar Servicios por separado o como una experiencia integral de marca personal.
+          </div>
+        </a>
+
+        <!-- Tarjeta 03: Artista -->
+        <a href="#" class="work-card">
+          <div class="work-info">
+            <span class="work-num">03</span>
+            <h3 class="work-name">ARTISTA</h3>
+            <span class="work-category">Web Premium con E-Commerce</span>
+            <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
+          </div>
+          <div class="work-img-wrapper">
+            <div class="work-img" style="background-image: url('1791933089558.jpg');"></div>
+          </div>
+        </a>
+
+        <!-- Tarjeta 04: Boda -->
         <a href="#" class="work-card">
           <div class="work-info">
             <span class="work-num">04</span>
-            <h3 class="work-name">Lumina Beauty</h3>
-            <span class="work-category">Social Media Kit</span>
-            <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
+            <h3 class="work-name">BODA</h3>
+            <span class="work-category">Cin & Jul</span>
+            <div class="case-study-details">
+              <ul class="case-list" style="margin-top: 10px;">
+                <li>Sesión fotográfica Preboda</li>
+                <li>Invitación web con cuenta regresiva, ubicación, confirmación de asistencia, galería, foro, canción de los novios, entre otros detalles.</li>
+                <li>Contenido de Getting Ready & Bridal Transformation y momentos espontáneos.</li>
+                <li>Reels verticales para sus redes sociales.</li>
+              </ul>
+              <p style="font-family: 'Inter', sans-serif; font-size: 0.75rem; color: white; font-weight: 700; margin-top: 12px;">Desde $600.000</p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 15px;">
+              <span class="work-btn" style="margin-top: 0;">VER INVITACIÓN WEB <i class="ph-bold ph-arrow-right"></i></span>
+              <span class="work-btn" style="margin-top: 0;">VER GALERÍA <i class="ph-bold ph-arrow-right"></i></span>
+            </div>
           </div>
           <div class="work-img-wrapper">
-            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1522337360788-8b13fee7a3f0?q=80&w=600&auto=format&fit=crop');"></div>
+            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop');"></div>
+          </div>
+          <div class="case-footer-note">
+            * Puede contratar Servicios por separado o como una experiencia integral de evento.
           </div>
         </a>
 
-        <!-- Tarjeta 05 -->
-        <a href="#" class="work-card">
-          <div class="work-info">
-            <span class="work-num">05</span>
-            <h3 class="work-name">Casa Nova</h3>
-            <span class="work-category">Real Estate Website</span>
-            <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
-          </div>
-          <div class="work-img-wrapper">
-            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=600&auto=format&fit=crop');"></div>
-          </div>
-        </a>
+      </div>
+    </section>
 
-        <!-- Tarjeta 06 -->
-        <a href="#" class="work-card">
-          <div class="work-info">
-            <span class="work-num">06</span>
-            <h3 class="work-name">Urban Fit</h3>
-            <span class="work-category">Brand Identity</span>
-            <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
+    <!-- ====== MÁS SERVICIOS (CARRUSEL MÓVIL) ====== -->
+    <section class="carousel-section">
+      <div class="section-header-container">
+        <div class="carousel-header">
+          <h2 class="carousel-title">Más servicios</h2>
+          <!-- Controles del Carrusel -->
+          <div class="carousel-controls">
+            <button class="carousel-btn" onclick="scrollCarousel(-1, 'servicesCarousel')" aria-label="Anterior">
+              <i class="ph-bold ph-caret-left"></i>
+            </button>
+            <button class="carousel-btn" onclick="scrollCarousel(1, 'servicesCarousel')" aria-label="Siguiente">
+              <i class="ph-bold ph-caret-right"></i>
+            </button>
           </div>
-          <div class="work-img-wrapper">
-            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=600&auto=format&fit=crop');"></div>
-          </div>
-        </a>
+        </div>
+      </div>
 
+      <!-- Contenedor deslizable de Más Servicios -->
+      <div class="carousel-grid" id="servicesCarousel">
+        
+        <!-- Servicio 1 -->
+        <div class="more-service-card">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=300&auto=format&fit=crop" alt="Retratos profesionales" class="more-service-img">
+          <div class="more-service-content">
+            <h3>Retratos profesionales</h3>
+            <span class="more-service-badge">Branding & Contenido Profesional</span>
+            <p>Fotos para LinkedIn, hojas de vida, perfiles profesionales, páginas web y perfiles corporativos.</p>
+            <span class="more-service-price">Desde $150.000</span>
+          </div>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="more-service-card">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop" alt="Fotografía femenina" class="more-service-img">
+          <div class="more-service-content">
+            <h3>Fotografía femenina</h3>
+            <span class="more-service-badge">Eventos y momentos especiales</span>
+            <p>Sesiones individuales, cumpleaños, autorretratos dirigidos y celebraciones personales.</p>
+            <span class="more-service-price">Desde $200.000</span>
+          </div>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="more-service-card">
+          <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=300&auto=format&fit=crop" alt="Fotografía de parejas" class="more-service-img">
+          <div class="more-service-content">
+            <h3>Fotografía de parejas</h3>
+            <span class="more-service-badge">Eventos y momentos especiales</span>
+            <p>Sesiones de compromiso, pedidas de mano y preboda. No es cobertura del matrimonio.</p>
+            <span class="more-service-price">Desde $200.000</span>
+          </div>
+        </div>
+
+        <!-- Servicio 4 -->
+        <div class="more-service-card">
+          <img src="https://images.unsplash.com/photo-1530103862676-de8892b07b10?q=80&w=300&auto=format&fit=crop" alt="Fotografía de cumpleaños" class="more-service-img">
+          <div class="more-service-content">
+            <h3>Fotografía de cumpleaños</h3>
+            <span class="more-service-badge">Eventos y momentos especiales</span>
+            <p>Retratos de cumpleaños y pequeñas sesiones para celebrar una fecha especial.</p>
+            <span class="more-service-price">Desde $200.000</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====== PREGUNTAS FRECUENTES (FAQ) ====== -->
+    <section class="faq-section" id="faq">
+      <div class="section-header">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+      </div>
+      
+      <!-- Pregunta 1 -->
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Necesito pagar hosting y dominio? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Te ofrezco soluciones que se adaptan a tu presupuesto. Podemos usar opciones de alojamiento gratuito o configurar un dominio propio (.com) según lo que necesite tu marca.</div>
+      </div>
+      
+      <!-- Pregunta 2 -->
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Incluye tienda virtual, pasarela de pagos o funcionalidades a medida? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">No lo incluye a salvo de una cotización adicional. Mi enfoque principal es en diseño web esencial, branding y contenido visual de alta calidad.</div>
+      </div>
+
+      <!-- Pregunta 3 -->
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Qué es Wedding Content Creation? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Es la creación de fotos y videos verticales, espontáneos y creativos para redes sociales. Captura los preparativos, los detalles y los momentos especiales de tu boda desde una perspectiva cercana, ideal para compartir rápidamente.</div>
+      </div>
+      
+      <!-- Pregunta 4 -->
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Cuáles son tus servicios de fotografía? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Ofrezco fotografía de marca personal (retratos, fotografía workstyle) y cobertura de sesiones especiales (fotografía femenina, de parejas, prebodas y cumpleaños). Mi enfoque son las sesiones privadas y dirigidas, por lo que *no cubro fotografía de bodas ni cumpleaños completos*.</div>
+      </div>
+
+      <!-- Pregunta 5 -->
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Qué plazos de entrega tienes? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Los tiempos varían según el proyecto. Las páginas web ligeras como BioLink toman de 1 a 2 días hábiles, mientras que webs esenciales o premium pueden tomar entre 5 y 20 días hábiles. Las invitaciones web y el contenido visual se estructuran según la fecha de tu evento o sesión.</div>
+      </div>
+
+      <!-- Pregunta 6 -->
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">¿Cuáles son las formas de pago? <i class="ph-bold ph-caret-down"></i></div>
+        <div class="faq-answer">Trabajamos con un anticipo del 50% para separar tu cupo e iniciar el diseño o planificación, y el 50% restante al momento de entregarte el proyecto o archivo final.</div>
       </div>
     </section>
 
@@ -1057,8 +1252,6 @@
           </div>
         </div>
       </div>
-      
-      <!-- Textos Actualizados -->
       <div class="about-text">
         <p>Detrás de cada idea, hay una historia que merece ser contada.</p>
         <p>Soy Gisella, una creativa apasionada por la fotografía, el diseño y el mundo digital.</p>
@@ -1093,7 +1286,7 @@
         <a href="#servicios">Servicios</a>
         <a href="#portafolio">Portafolio</a>
         <a href="#sobre-mi">Sobre mí</a>
-        <a href="#">Preguntas</a>
+        <a href="#faq">Preguntas</a>
         <a href="https://wa.me/573001234567" target="_blank">Contacto</a>
       </div>
 
@@ -1132,15 +1325,26 @@
       menu.classList.toggle('active');
     }
 
-    // Función para deslizar el carrusel de proyectos con las flechitas
-    function scrollCarousel(direction) {
-      const carousel = document.getElementById('workCarousel');
+    // Función unificada para deslizar los carruseles
+    function scrollCarousel(direction, carouselId) {
+      const carousel = document.getElementById(carouselId);
       // Calcula cuánto debe moverse basándose en el ancho visible
       const scrollAmount = window.innerWidth * 0.85; 
       carousel.scrollBy({
         left: direction * scrollAmount,
         behavior: 'smooth'
       });
+    }
+
+    // Acordeón de FAQ
+    function toggleFaq(element) {
+      const allFaqs = document.querySelectorAll('.faq-item');
+      allFaqs.forEach(faq => {
+        if (faq !== element) {
+          faq.classList.remove('active');
+        }
+      });
+      element.classList.toggle('active');
     }
   </script>
 </body>
