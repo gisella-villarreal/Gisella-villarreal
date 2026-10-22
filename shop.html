@@ -42,7 +42,7 @@
             position: relative;
             z-index: 2;
             width: 100%;
-            max-width: 600px;
+            max-width: 550px; /* Tamaño máximo en PC */
         }
 
         .card {
@@ -53,7 +53,7 @@
             background-position: center;
             background-repeat: no-repeat;
             
-            padding: 65px 45px; /* Espaciado interno para que el óvalo encaje en el marco */
+            padding: 12% 10%; /* Usamos porcentajes para que el margen interior se adapte al tamaño de la pantalla */
             position: relative;
             display: flex;
             justify-content: center;
@@ -91,7 +91,7 @@
             align-items: center;
             text-align: center;
             color: #ffffff;
-            padding: 20px;
+            padding: 15px;
             background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
         }
 
@@ -99,31 +99,31 @@
             font-size: 0.8rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 5%;
             text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
         }
 
         .title {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.2rem;
+            font-size: 3rem;
             line-height: 0.95;
-            margin-bottom: 20px;
+            margin-bottom: 5%;
             font-weight: 400;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         }
 
         .swans-icon {
-            width: 75px;
-            margin-bottom: 20px;
+            width: 60px; /* Tamaño ajustado para armonizar */
+            margin-bottom: 5%;
             filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.6));
         }
 
         .description {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 1px;
-            line-height: 1.4;
+            line-height: 1.3;
             text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-            max-width: 90%;
+            max-width: 95%;
         }
 
         .poster-footer {
@@ -140,9 +140,16 @@
         .footer-right { text-align: right; }
         .footer-light { font-weight: 300; font-style: italic; }
 
-        @media (max-width: 500px) {
-            .title { font-size: 2.5rem; }
-            .card { padding: 45px 30px; }
+        /* Ajustes específicos para teléfonos móviles (efecto alejado) */
+        @media (max-width: 600px) {
+            .poster-container {
+                width: 75%; /* Esto hace que el marco se vea más pequeño y alejado, mostrando más fondo */
+            }
+            .title { font-size: 2.2rem; }
+            .subtitle { font-size: 0.65rem; }
+            .description { font-size: 0.7rem; }
+            .swans-icon { width: 45px; }
+            .poster-footer { font-size: 0.7rem; }
         }
     </style>
 </head>
@@ -159,8 +166,8 @@
                     <p class="subtitle">Disfruta de una</p>
                     <h1 class="title">Wedding Content<br>Creator</h1>
                     
-                    <!-- Icono de los cisnes habilitado -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Swan_icon_white.svg" alt="Cisnes" class="swans-icon">
+                    <!-- Icono de los cisnes actualizado -->
+                    <img src="1000225180.png" alt="Cisnes" class="swans-icon">
                     
                     <p class="description">Documentando tu gran<br>día en tiempo real</p>
                 </div>
