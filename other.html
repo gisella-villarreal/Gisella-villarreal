@@ -40,14 +40,14 @@
             
             <!-- Botón Superior Derecho (Letras y delineado oscuros) -->
             <div class="absolute top-6 right-5 z-30">
-                <a href="#" class="px-4 py-2 rounded-full border border-brand-dark text-brand-dark text-[11px] font-bold tracking-wider hover:bg-brand-dark hover:text-brand-cream transition-all uppercase bg-brand-cream">
+                <a href="#" class="px-4 py-2 rounded-full border border-brand-dark text-brand-dark text-[11px] font-bold tracking-wider hover:bg-brand-dark hover:text-brand-cream transition-all uppercase bg-brand-cream shadow-md">
                     Hablemos de tu marca
                 </a>
             </div>
 
             <!-- Imagen de Fondo Principal -->
             <div class="absolute inset-0 z-0 overflow-hidden bg-brand-dark">
-                <img src="1792874026013~2.jpg" 
+                <img src="1792874026013.jpg" 
                      alt="Gisella Villarreal" 
                      class="w-full h-full object-cover object-[center_15%] scale-[1.05]">
             </div>
@@ -70,7 +70,7 @@
         </header>
 
         <!-- SECCIÓN DE SERVICIOS -->
-        <section id="servicios" class="relative z-10 px-5 py-8 flex flex-col gap-5">
+        <section id="servicios" class="relative z-10 px-5 pt-8 pb-4 flex flex-col gap-5">
             
             <!-- Título Servicios -->
             <h2 class="font-serif text-3xl italic text-brand-cream mb-1 text-center">Servicios</h2>
@@ -136,8 +136,74 @@
             </a>
         </section>
 
+        <!-- SECCIÓN: BRANDING CON TU CEL (Membresía) -->
+        <section class="px-5 py-6 relative z-10">
+            <div class="w-full rounded-3xl border border-border-color bg-brand-dark/50 overflow-hidden shadow-lg p-7 relative backdrop-blur-sm">
+                <!-- Resplandor sutil decorativo en la esquina -->
+                <div class="absolute top-0 right-0 w-40 h-40 bg-brand-cream/5 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
+                
+                <div class="relative z-10">
+                    <h2 class="font-serif text-3xl italic text-brand-cream mb-3">Branding con tu Cel</h2>
+                    <p class="font-sans text-[13px] text-text-light leading-relaxed mb-6 font-light">
+                        Aprende a crear fotografías de branding con tu celular y construye una identidad visual que refleje la esencia de tu marca.
+                    </p>
+                    
+                    <!-- Precio -->
+                    <div class="mb-8 border-b border-border-color pb-6">
+                        <div class="flex items-baseline gap-1 mb-1">
+                            <span class="font-serif text-4xl text-text-main font-medium">$19.900</span>
+                            <span class="font-sans text-[14px] text-text-light">/ mes</span>
+                        </div>
+                        <p class="font-sans text-[10px] text-brand-cream uppercase tracking-widest font-medium">COP · Membresía mensual</p>
+                    </div>
+                    
+                    <!-- Lista de beneficios -->
+                    <h3 class="font-serif text-xl text-text-main mb-5">¿Qué encontrarás?</h3>
+                    <ul class="flex flex-col gap-4 font-sans text-[13px] text-text-light font-light mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-cream mt-[3px] text-[12px]"></i>
+                            <span>Clases y tutoriales prácticos.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-cream mt-[3px] text-[12px]"></i>
+                            <span>Técnicas de fotografía con celular.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-cream mt-[3px] text-[12px]"></i>
+                            <span>Ideas y ejercicios de branding fotográfico.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-cream mt-[3px] text-[12px]"></i>
+                            <span>Recursos y materiales de apoyo.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-cream mt-[3px] text-[12px]"></i>
+                            <span>Acompañamiento y aprendizaje en comunidad.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-cream mt-[3px] text-[12px]"></i>
+                            <span>Nuevas actividades y contenidos periódicos.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-cream mt-[3px] text-[12px]"></i>
+                            <span>Únete cuando quieras.</span>
+                        </li>
+                    </ul>
+                    
+                    <p class="font-sans text-[12px] text-brand-cream/80 font-light italic mb-8 text-center px-2">
+                        "Accede a la comunidad y comienza a desarrollar tus habilidades fotográficas a tu propio ritmo."
+                    </p>
+                    
+                    <!-- Botón CTA -->
+                    <a href="#" class="block w-full py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase text-center">
+                        Quiero unirme a la comunidad
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- SECCIÓN: CÓMO TRABAJAREMOS JUNTAS -->
-        <section class="px-8 py-12">
+        <section class="px-8 py-10">
             <h2 class="font-serif text-3xl italic text-text-main mb-10 text-center">¿Cómo trabajaremos juntas?</h2>
             
             <div class="flex flex-col gap-8 relative before:absolute before:inset-y-0 before:left-[11px] before:w-[1px] before:bg-border-color">
@@ -233,5 +299,4 @@
     </main>
 
 </body>
-    </html>
-    
+</html>
