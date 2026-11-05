@@ -16,11 +16,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'linen': '#F5F1EA',
-                        'khaki': '#D7C9B8',
-                        'camel': '#B2967D',
-                        'cocoa': '#7D5A44',
-                        'espresso': '#4A342A',
+                        'riviera': '#183451',
+                        'terracotta': '#A9501C',
+                        'ivory': '#F3ECDE',
+                        'sand': '#D4AF83',
                     },
                     fontFamily: {
                         'serif': ['"Playfair Display"', 'serif'],
@@ -31,13 +30,20 @@
         }
     </script>
 </head>
-<body class="bg-espresso antialiased text-linen selection:bg-camel selection:text-espresso">
+<body class="bg-riviera antialiased text-ivory selection:bg-terracotta selection:text-ivory">
 
-    <main class="max-w-[430px] mx-auto bg-espresso min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
+    <main class="max-w-[430px] mx-auto bg-riviera min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
         
         <!-- HEADER / HERO -->
-        <header class="relative w-full h-[85vh] min-h-[600px] flex flex-col pb-10">
+        <header class="relative w-full h-[85vh] min-h-[600px] flex flex-col">
             
+            <!-- Botón Superior Derecho -->
+            <div class="absolute top-6 right-5 z-30">
+                <a href="#" class="px-4 py-2 rounded-full border border-ivory/60 text-ivory text-[11px] font-medium tracking-wider hover:bg-ivory hover:text-riviera transition-all bg-riviera/30 backdrop-blur-md uppercase shadow-sm">
+                    Hablemos de tu marca
+                </a>
+            </div>
+
             <!-- Imagen de Fondo Principal -->
             <div class="absolute inset-0 z-0 overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
@@ -45,177 +51,170 @@
                      class="w-full h-full object-cover object-[center_15%] scale-[1.05]">
             </div>
             
-            <!-- Difuminado (Gradient Blend Overlay) al fondo Espresso -->
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-espresso via-espresso/90 to-transparent z-10 h-[70%]"></div>
+            <!-- Difuminado (Gradient Blend Overlay) al fondo Riviera -->
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-riviera via-riviera/90 to-transparent z-10 h-[70%]"></div>
 
-            <!-- Contenido Inferior -->
-            <div class="relative z-20 px-6 mt-auto flex flex-col items-center text-center w-full pb-4">
-                
-                <!-- Nombre y Especialidad -->
-                <h1 class="font-serif text-[3.5rem] md:text-6xl italic font-medium leading-[1.05] mb-2 text-linen tracking-wide">
+            <!-- Contenido Inferior (Solo Nombre y Especialidad) -->
+            <div class="relative z-20 px-6 mt-auto flex flex-col items-center text-center w-full pb-10">
+                <h1 class="font-serif text-[3.5rem] md:text-6xl italic font-medium leading-[1.05] mb-2 text-ivory tracking-wide drop-shadow-md">
                     Gisella<br>Villarreal
                 </h1>
-                <p class="font-sans text-[13px] tracking-[0.2em] uppercase text-khaki mb-6 font-medium">
+                <p class="font-sans text-[13px] tracking-[0.2em] uppercase text-sand mb-2 font-medium">
                     Branding Social Media
                 </p>
-
-                <!-- Botón pequeño transparente delineado -->
-                <a href="#" class="px-6 py-2.5 rounded-full bg-transparent hover:bg-linen hover:text-espresso transition-colors text-linen border border-linen/60 text-[13px] font-light tracking-wide shadow-sm">
-                    Hablemos de tu marca
-                </a>
             </div>
         </header>
 
-        <!-- SECCIÓN DE SERVICIOS (Estilo Tarjetas Horizontales Elegantes) -->
-        <section id="servicios" class="relative z-10 px-5 py-8 flex flex-col gap-5">
+        <!-- SECCIÓN DE SERVICIOS -->
+        <section id="servicios" class="relative z-10 px-5 py-6 flex flex-col gap-5">
             
-            <!-- Tarjeta 1 -->
-            <a href="#" class="group relative w-full h-[140px] rounded-3xl overflow-hidden shadow-md block bg-cocoa hover:bg-[#8A634B] transition-colors">
-                <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-[url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-cocoa via-cocoa/90 to-transparent"></div>
-                <div class="relative h-full px-6 py-5 flex flex-col justify-between">
+            <!-- Tarjeta 1 (Sand Linen) -->
+            <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-lg block bg-sand hover:bg-[#c9a376] transition-colors">
+                <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-[url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-sand via-sand/90 to-transparent"></div>
+                <div class="relative h-full p-6 flex flex-col justify-between">
                     <div>
-                        <h3 class="font-serif text-3xl italic text-linen leading-tight mb-1">Esencia<br>Digital</h3>
-                        <p class="font-sans text-[11px] text-khaki max-w-[70%] leading-snug">Identidad y estrategia de marca.</p>
+                        <h3 class="font-serif text-3xl italic text-riviera leading-tight mb-2">Esencia<br>Digital</h3>
+                        <p class="font-sans text-[12px] text-riviera/80 max-w-[75%] leading-snug">Identidad y estrategia de marca.</p>
                     </div>
-                    <div class="inline-block mt-2">
-                        <span class="text-[9px] uppercase tracking-wider border border-khaki/40 px-3 py-1 rounded-full text-khaki bg-espresso/20 backdrop-blur-sm">Conocer más</span>
+                    <div class="mt-5">
+                        <span class="inline-block text-[9px] uppercase tracking-wider border border-riviera/30 px-4 py-1.5 rounded-full text-riviera bg-ivory/30 backdrop-blur-sm">Conocer más</span>
                     </div>
                 </div>
             </a>
 
-            <!-- Tarjeta 2 -->
-            <a href="#" class="group relative w-full h-[140px] rounded-3xl overflow-hidden shadow-md block bg-[#5C4131] hover:bg-[#6B4B38] transition-colors">
+            <!-- Tarjeta 2 (Terracotta) -->
+            <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-lg block bg-terracotta hover:bg-[#964718] transition-colors">
                 <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-[url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-[#5C4131] via-[#5C4131]/90 to-transparent"></div>
-                <div class="relative h-full px-6 py-5 flex flex-col justify-between">
+                <div class="absolute inset-0 bg-gradient-to-r from-terracotta via-terracotta/90 to-transparent"></div>
+                <div class="relative h-full p-6 flex flex-col justify-between">
                     <div>
-                        <h3 class="font-serif text-3xl italic text-linen leading-tight mb-1">Presencia<br>Estratégica</h3>
-                        <p class="font-sans text-[11px] text-khaki max-w-[70%] leading-snug">Estrategia y contenido para redes.</p>
+                        <h3 class="font-serif text-3xl italic text-ivory leading-tight mb-2">Presencia<br>Estratégica</h3>
+                        <p class="font-sans text-[12px] text-ivory/80 max-w-[75%] leading-snug">Estrategia y contenido para redes.</p>
                     </div>
-                    <div class="inline-block mt-2">
-                        <span class="text-[9px] uppercase tracking-wider border border-khaki/40 px-3 py-1 rounded-full text-khaki bg-espresso/20 backdrop-blur-sm">Conocer más</span>
+                    <div class="mt-5">
+                        <span class="inline-block text-[9px] uppercase tracking-wider border border-ivory/40 px-4 py-1.5 rounded-full text-ivory bg-riviera/20 backdrop-blur-sm">Conocer más</span>
                     </div>
                 </div>
             </a>
 
-            <!-- Tarjeta 3 -->
-            <a href="#" class="group relative w-full h-[140px] rounded-3xl overflow-hidden shadow-md block bg-camel hover:bg-[#C2A58C] transition-colors">
-                <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-[url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-overlay"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-camel via-camel/90 to-transparent"></div>
-                <div class="relative h-full px-6 py-5 flex flex-col justify-between">
+            <!-- Tarjeta 3 (Riviera Claro / Combinación) -->
+            <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-lg block bg-[#204263] hover:bg-[#1A3855] transition-colors border border-sand/20">
+                <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-[url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#204263] via-[#204263]/90 to-transparent"></div>
+                <div class="relative h-full p-6 flex flex-col justify-between">
                     <div>
-                        <h3 class="font-serif text-3xl italic text-espresso leading-tight mb-1">Marca<br>Integral</h3>
-                        <p class="font-sans text-[11px] text-espresso/80 max-w-[70%] leading-snug">Un ecosistema digital para tu marca personal.</p>
+                        <h3 class="font-serif text-3xl italic text-sand leading-tight mb-2">Marca<br>Integral</h3>
+                        <p class="font-sans text-[12px] text-ivory/80 max-w-[75%] leading-snug">Un ecosistema digital para tu marca personal.</p>
                     </div>
-                    <div class="inline-block mt-2">
-                        <span class="text-[9px] uppercase tracking-wider border border-espresso/30 px-3 py-1 rounded-full text-espresso bg-linen/30 backdrop-blur-sm">Conocer más</span>
+                    <div class="mt-5">
+                        <span class="inline-block text-[9px] uppercase tracking-wider border border-sand/40 px-4 py-1.5 rounded-full text-sand bg-riviera/40 backdrop-blur-sm">Conocer más</span>
                     </div>
                 </div>
             </a>
 
-            <!-- Tarjeta 4 -->
-            <a href="#" class="group relative w-full h-[140px] rounded-3xl overflow-hidden shadow-md block bg-[#6A4D3B] hover:bg-[#7D5A44] transition-colors">
-                <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-[url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-[#6A4D3B] via-[#6A4D3B]/90 to-transparent"></div>
-                <div class="relative h-full px-6 py-5 flex flex-col justify-between">
+            <!-- Tarjeta 4 (Sand Linen) -->
+            <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-lg block bg-sand hover:bg-[#c9a376] transition-colors">
+                <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-[url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-sand via-sand/90 to-transparent"></div>
+                <div class="relative h-full p-6 flex flex-col justify-between">
                     <div>
-                        <h3 class="font-serif text-3xl italic text-linen leading-tight mb-1">Fotografía</h3>
-                        <p class="font-sans text-[11px] text-khaki max-w-[70%] leading-snug">Tu esencia en cada detalle.</p>
+                        <h3 class="font-serif text-3xl italic text-riviera leading-tight mb-2">Fotografía</h3>
+                        <p class="font-sans text-[12px] text-riviera/80 max-w-[75%] leading-snug">Tu esencia en cada detalle.</p>
                     </div>
-                    <div class="inline-block mt-2">
-                        <span class="text-[9px] uppercase tracking-wider border border-khaki/40 px-3 py-1 rounded-full text-khaki bg-espresso/20 backdrop-blur-sm">Conocer más</span>
+                    <div class="mt-5">
+                        <span class="inline-block text-[9px] uppercase tracking-wider border border-riviera/30 px-4 py-1.5 rounded-full text-riviera bg-ivory/30 backdrop-blur-sm">Conocer más</span>
                     </div>
                 </div>
             </a>
         </section>
 
         <!-- SECCIÓN: CÓMO TRABAJAREMOS JUNTAS -->
-        <section class="px-8 py-10">
-            <h2 class="font-serif text-3xl italic text-linen mb-8 text-center">¿Cómo trabajaremos juntas?</h2>
+        <section class="px-8 py-12">
+            <h2 class="font-serif text-3xl italic text-ivory mb-10 text-center">¿Cómo trabajaremos juntas?</h2>
             
-            <div class="flex flex-col gap-6 relative before:absolute before:inset-y-0 before:left-[11px] before:w-[1px] before:bg-khaki/30">
+            <div class="flex flex-col gap-8 relative before:absolute before:inset-y-0 before:left-[11px] before:w-[1px] before:bg-sand/30">
                 
                 <!-- Paso 1 -->
-                <div class="relative pl-8">
-                    <div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-espresso border border-camel flex items-center justify-center z-10">
-                        <span class="text-[10px] font-sans text-camel">1</span>
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-riviera border border-terracotta flex items-center justify-center z-10">
+                        <span class="text-[10px] font-sans text-terracotta font-medium">1</span>
                     </div>
-                    <h4 class="font-serif text-lg text-linen mb-1">Conocemos tu marca.</h4>
-                    <p class="font-sans text-sm text-khaki/80 font-light">Brief y diagnóstico inicial.</p>
+                    <h4 class="font-serif text-xl text-sand mb-1">Conocemos tu marca.</h4>
+                    <p class="font-sans text-sm text-ivory/70 font-light">Brief y diagnóstico inicial.</p>
                 </div>
                 
                 <!-- Paso 2 -->
-                <div class="relative pl-8">
-                    <div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-espresso border border-camel flex items-center justify-center z-10">
-                        <span class="text-[10px] font-sans text-camel">2</span>
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-riviera border border-terracotta flex items-center justify-center z-10">
+                        <span class="text-[10px] font-sans text-terracotta font-medium">2</span>
                     </div>
-                    <h4 class="font-serif text-lg text-linen mb-1">Definimos la estrategia.</h4>
-                    <p class="font-sans text-sm text-khaki/80 font-light">Identidad, objetivos y dirección.</p>
+                    <h4 class="font-serif text-xl text-sand mb-1">Definimos la estrategia.</h4>
+                    <p class="font-sans text-sm text-ivory/70 font-light">Identidad, objetivos y dirección.</p>
                 </div>
                 
                 <!-- Paso 3 -->
-                <div class="relative pl-8">
-                    <div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-espresso border border-camel flex items-center justify-center z-10">
-                        <span class="text-[10px] font-sans text-camel">3</span>
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-riviera border border-terracotta flex items-center justify-center z-10">
+                        <span class="text-[10px] font-sans text-terracotta font-medium">3</span>
                     </div>
-                    <h4 class="font-serif text-lg text-linen mb-1">Desarrollamos tu proyecto.</h4>
-                    <p class="font-sans text-sm text-khaki/80 font-light">Diseño y creación de entregables.</p>
+                    <h4 class="font-serif text-xl text-sand mb-1">Desarrollamos tu proyecto.</h4>
+                    <p class="font-sans text-sm text-ivory/70 font-light">Diseño y creación de entregables.</p>
                 </div>
                 
                 <!-- Paso 4 -->
-                <div class="relative pl-8">
-                    <div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-espresso border border-camel flex items-center justify-center z-10">
-                        <span class="text-[10px] font-sans text-camel">4</span>
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-riviera border border-terracotta flex items-center justify-center z-10">
+                        <span class="text-[10px] font-sans text-terracotta font-medium">4</span>
                     </div>
-                    <h4 class="font-serif text-lg text-linen mb-1">Entregamos tu marca.</h4>
-                    <p class="font-sans text-sm text-khaki/80 font-light">Recursos finales y recomendaciones.</p>
+                    <h4 class="font-serif text-xl text-sand mb-1">Entregamos tu marca.</h4>
+                    <p class="font-sans text-sm text-ivory/70 font-light">Recursos finales y recomendaciones.</p>
                 </div>
 
             </div>
         </section>
 
         <!-- SECCIÓN: SOBRE MÍ -->
-        <section class="px-6 py-10 bg-cocoa/20 mx-4 rounded-3xl mb-8 border border-khaki/10 text-center">
-            <h2 class="font-serif text-3xl italic text-linen mb-4">Sobre mí</h2>
-            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-5 border-2 border-camel/50">
+        <section class="px-6 py-12 bg-ivory mx-5 rounded-3xl mb-10 text-center shadow-lg">
+            <h2 class="font-serif text-3xl italic text-riviera mb-6">Sobre mí</h2>
+            <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-6 border-4 border-sand shadow-sm">
                 <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop" alt="Perfil" class="w-full h-full object-cover">
             </div>
-            <p class="font-sans text-[14px] text-khaki font-light leading-relaxed mb-8 px-2">
+            <p class="font-sans text-[14px] text-riviera/80 font-light leading-relaxed mb-8 px-2">
                 Soy Gisella, estratega y creadora de contenido. Mi propósito es materializar la esencia de tu marca a través del diseño estratégico y la dirección visual, conectando con tu audiencia desde la autenticidad y el profesionalismo.
             </p>
-            <a href="#" class="inline-block w-full py-3.5 rounded-full bg-camel hover:bg-khaki transition-colors text-espresso text-[14px] font-medium tracking-wide shadow-lg">
+            <a href="#" class="inline-block w-full py-4 rounded-full bg-terracotta hover:bg-[#8e4215] transition-colors text-ivory text-[13px] font-medium tracking-wide shadow-md uppercase">
                 Haz parte de nuestra comunidad
             </a>
         </section>
 
         <!-- SECCIÓN DE CONTACTO Y FOOTER -->
-        <footer class="px-8 pt-4 pb-10 text-center relative z-10 flex flex-col justify-between">
+        <footer class="px-8 pt-4 pb-12 text-center relative z-10 flex flex-col justify-between">
             
             <div class="mb-10 text-center">
-                <h2 class="font-serif text-2xl italic text-linen mb-6">Contacto</h2>
+                <h2 class="font-serif text-2xl italic text-sand mb-6">Contacto</h2>
                 
                 <!-- Íconos de Redes Sociales -->
-                <div class="flex justify-center gap-4">
-                    <a href="#" class="w-12 h-12 rounded-full border border-khaki/30 flex items-center justify-center text-khaki hover:bg-camel hover:border-camel hover:text-espresso transition-all shadow-sm">
+                <div class="flex justify-center gap-5">
+                    <a href="#" class="w-12 h-12 rounded-full border border-sand/40 flex items-center justify-center text-ivory hover:bg-terracotta hover:border-terracotta transition-all shadow-sm">
                         <i class="fa-brands fa-whatsapp text-xl"></i>
                     </a>
-                    <a href="#" class="w-12 h-12 rounded-full border border-khaki/30 flex items-center justify-center text-khaki hover:bg-camel hover:border-camel hover:text-espresso transition-all shadow-sm">
+                    <a href="#" class="w-12 h-12 rounded-full border border-sand/40 flex items-center justify-center text-ivory hover:bg-terracotta hover:border-terracotta transition-all shadow-sm">
                         <i class="fa-brands fa-instagram text-xl"></i>
                     </a>
-                    <a href="#" class="w-12 h-12 rounded-full border border-khaki/30 flex items-center justify-center text-khaki hover:bg-camel hover:border-camel hover:text-espresso transition-all shadow-sm">
+                    <a href="#" class="w-12 h-12 rounded-full border border-sand/40 flex items-center justify-center text-ivory hover:bg-terracotta hover:border-terracotta transition-all shadow-sm">
                         <i class="fa-brands fa-linkedin-in text-xl"></i>
                     </a>
-                    <a href="mailto:correo@tudominio.com" class="w-12 h-12 rounded-full border border-khaki/30 flex items-center justify-center text-khaki hover:bg-camel hover:border-camel hover:text-espresso transition-all shadow-sm">
+                    <a href="mailto:correo@tudominio.com" class="w-12 h-12 rounded-full border border-sand/40 flex items-center justify-center text-ivory hover:bg-terracotta hover:border-terracotta transition-all shadow-sm">
                         <i class="fa-regular fa-envelope text-xl"></i>
                     </a>
                 </div>
             </div>
 
             <!-- Copyright -->
-            <div class="pt-6 relative border-t border-khaki/20">
-                <h4 class="font-serif text-[1.2rem] italic mb-1 text-linen">Gisella Villarreal</h4>
-                <p class="text-[9px] font-sans font-medium text-khaki/60 tracking-widest uppercase leading-relaxed">
+            <div class="pt-6 relative border-t border-sand/20">
+                <h4 class="font-serif text-[1.2rem] italic mb-1 text-ivory">Gisella Villarreal</h4>
+                <p class="text-[9px] font-sans font-medium text-ivory/50 tracking-widest uppercase leading-relaxed">
                     © 2026 | Todos los derechos reservados
                 </p>
             </div>
@@ -224,5 +223,5 @@
     </main>
 
 </body>
-                    </html>
-                    
+            </html>
+            
