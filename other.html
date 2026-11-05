@@ -7,8 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Se mantiene Playfair Display para títulos e Inter para textos legibles -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,122 +16,135 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-mint': '#A2c2be',
-                        'brand-orange': '#eb4600',
-                        'brand-cream': '#ffffeb',
-                        'brand-dark': '#2c332f', // Tono oscuro necesario para el contraste del texto
+                        'mint': '#A2c2be',       // Fondo dominante
+                        'orange': '#eb4600',     // Acento sutil y CTA
+                        'cream': '#ffffeb',      // Textos claros e iluminación
+                        'dark': '#2c332f',       // Tono oscuro para legibilidad (mantiene el estilo original)
                     },
                     fontFamily: {
                         'serif': ['"Playfair Display"', 'serif'],
                         'sans': ['"Inter"', 'sans-serif'],
+                        'cursive': ['"Great Vibes"', 'cursive'],
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-gray-100 antialiased text-brand-dark selection:bg-brand-orange selection:text-white">
+<body class="bg-gray-100 antialiased text-dark selection:bg-orange selection:text-cream">
 
-    <!-- Contenedor estilo BioLink -->
-    <main class="max-w-[430px] mx-auto bg-brand-cream min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
+    <main class="max-w-[430px] mx-auto bg-mint min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
         
-        <!-- HEADER COMPLETO -->
-        <header class="w-full flex flex-col items-center text-center pt-16 pb-8 px-6 relative">
+        <header class="relative w-full h-[520px] md:h-[550px] flex flex-col justify-end text-center pb-6">
             
-            <!-- Detalle decorativo de fondo suave -->
-            <div class="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-brand-mint/30 to-transparent pointer-events-none"></div>
-
-            <!-- Foto de Perfil (Opcional, puedes cambiar la URL) -->
-            <div class="relative z-10 w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-lg mb-5">
-                <img src="https://images.unsplash.com/photo-1605405747447-758c0c451556?q=80&w=400&auto=format&fit=crop" 
+            <!-- Hero Background Image -->
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
                      alt="Gisella Villarreal" 
-                     class="w-full h-full object-cover">
+                     class="w-full h-full object-cover object-[center_15%] scale-[1.15]">
             </div>
             
-            <!-- Título y Subtítulo -->
-            <div class="relative z-10 w-full">
-                <h1 class="font-serif text-4xl font-semibold mb-1 text-brand-dark tracking-wide">
+            <!-- Gradient Blend Overlay (Se funde con el color dominante Menta) -->
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-mint via-mint/80 to-transparent z-10 h-[55%]"></div>
+
+            <!-- Hero Text Content -->
+            <div class="relative z-20 px-4 mt-auto flex flex-col items-center">
+                <h1 class="font-serif text-4xl md:text-5xl font-medium leading-tight mb-1 text-dark tracking-wide drop-shadow-sm">
                     Gisella Villarreal
                 </h1>
-                <p class="font-sans text-[11px] sm:text-xs font-semibold text-brand-orange uppercase tracking-widest mb-4">
+                
+                <p class="font-sans text-[12px] sm:text-[13px] tracking-widest font-bold text-orange uppercase mb-3">
                     Branding Social Media
                 </p>
-                <p class="font-sans text-sm font-light leading-relaxed text-brand-dark/80 mb-8 px-2">
-                    Amo acompañar a marcas personales en la construcción y fortalecimiento de su presencia digital.
+                
+                <p class="font-sans text-[13px] md:text-[14px] leading-relaxed text-dark/80 font-medium max-w-[90%] mb-6">
+                    Amo acompañar a marcas personales en la construcción y fortalecimiento de su presencia digital
                 </p>
-            </div>
 
-            <!-- Botón CTA Principal -->
-            <a href="#" class="relative z-10 flex items-center justify-center gap-2 bg-brand-orange text-white px-8 py-4 rounded-full font-medium text-[15px] hover:bg-opacity-90 hover:-translate-y-0.5 transition-all shadow-lg shadow-brand-orange/30 w-full max-w-[280px] mb-8">
-                <i class="fa-brands fa-whatsapp text-xl"></i>
-                Hablemos de tu Marca
-            </a>
-
-            <!-- Redes Sociales / Botones de Contacto -->
-            <div class="relative z-10 flex justify-center gap-5">
-                <a href="#" aria-label="WhatsApp" class="w-12 h-12 rounded-full border border-brand-mint/50 bg-white flex items-center justify-center text-brand-dark hover:bg-brand-mint hover:text-white hover:border-brand-mint transition-all shadow-sm">
-                    <i class="fa-brands fa-whatsapp text-xl"></i>
-                </a>
-                <a href="#" aria-label="Instagram" class="w-12 h-12 rounded-full border border-brand-mint/50 bg-white flex items-center justify-center text-brand-dark hover:bg-brand-mint hover:text-white hover:border-brand-mint transition-all shadow-sm">
-                    <i class="fa-brands fa-instagram text-xl"></i>
-                </a>
-                <a href="#" aria-label="LinkedIn" class="w-12 h-12 rounded-full border border-brand-mint/50 bg-white flex items-center justify-center text-brand-dark hover:bg-brand-mint hover:text-white hover:border-brand-mint transition-all shadow-sm">
-                    <i class="fa-brands fa-linkedin-in text-xl"></i>
-                </a>
-                <a href="#" aria-label="Correo" class="w-12 h-12 rounded-full border border-brand-mint/50 bg-white flex items-center justify-center text-brand-dark hover:bg-brand-mint hover:text-white hover:border-brand-mint transition-all shadow-sm">
-                    <i class="fa-regular fa-envelope text-xl"></i>
+                <!-- Botón CTA en el Hero -->
+                <a href="#" class="inline-flex justify-center items-center gap-2 px-8 py-3.5 rounded-full bg-orange hover:bg-[#d13e00] transition-colors text-cream text-sm font-semibold tracking-wide shadow-lg shadow-orange/20">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Hablemos de tu Marca
                 </a>
             </div>
         </header>
 
-        <!-- SECCIÓN DE ENLACES (Menú) -->
-        <section class="relative z-10 px-6 py-2 flex flex-col gap-4 mb-10 flex-grow">
+        <section class="relative z-10 px-6 py-4 flex flex-col gap-3">
             
-            <!-- Botón 1: Servicios -->
-            <a href="#" class="group relative w-full h-[4.5rem] rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-brand-orange transition-all hover:-translate-y-0.5 flex items-center justify-between px-6 border border-brand-mint/30">
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-full flex items-center justify-center bg-brand-cream text-brand-orange">
-                        <i class="fa-solid fa-layer-group text-lg"></i>
+            <!-- Service 1: Servicios -->
+            <a href="#" class="group relative w-full min-h-[6.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-dark/10">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600')] bg-cover bg-center"></div>
+                <!-- Overlay oscuro estilo original -->
+                <div class="absolute inset-0 bg-dark/85 group-hover:bg-dark/75 transition-colors"></div>
+                <div class="relative h-full px-5 py-4 flex items-center justify-between text-cream">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 shrink-0 rounded-full flex items-center justify-center bg-mint/10 text-mint backdrop-blur-sm border border-mint/20">
+                            <i class="fa-solid fa-layer-group text-lg"></i>
+                        </div>
+                        <span class="font-serif text-[1.2rem] leading-tight font-medium tracking-wide pr-2">Servicios</span>
                     </div>
-                    <span class="font-serif text-[1.1rem] font-medium tracking-wide text-brand-dark group-hover:text-brand-orange transition-colors">Servicios</span>
+                    <i class="fa-solid fa-arrow-right text-mint/50 group-hover:text-orange transition-colors text-sm shrink-0"></i>
                 </div>
-                <i class="fa-solid fa-arrow-right text-brand-mint group-hover:text-brand-orange transition-colors text-sm"></i>
             </a>
 
-            <!-- Botón 2: Trabajos destacados -->
-            <a href="#" class="group relative w-full h-[4.5rem] rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-brand-orange transition-all hover:-translate-y-0.5 flex items-center justify-between px-6 border border-brand-mint/30">
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-full flex items-center justify-center bg-brand-cream text-brand-orange">
-                        <i class="fa-regular fa-star text-lg"></i>
+            <!-- Service 2: Trabajos destacados -->
+            <a href="#" class="group relative w-full min-h-[6.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-dark/10">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600')] bg-cover bg-center"></div>
+                <div class="absolute inset-0 bg-dark/85 group-hover:bg-dark/75 transition-colors"></div>
+                <div class="relative h-full px-5 py-4 flex items-center justify-between text-cream">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 shrink-0 rounded-full flex items-center justify-center bg-mint/10 text-mint backdrop-blur-sm border border-mint/20">
+                            <i class="fa-regular fa-star text-lg"></i>
+                        </div>
+                        <span class="font-serif text-[1.2rem] leading-tight font-medium tracking-wide pr-2">Trabajos destacados</span>
                     </div>
-                    <span class="font-serif text-[1.1rem] font-medium tracking-wide text-brand-dark group-hover:text-brand-orange transition-colors">Trabajos destacados</span>
+                    <i class="fa-solid fa-arrow-right text-mint/50 group-hover:text-orange transition-colors text-sm shrink-0"></i>
                 </div>
-                <i class="fa-solid fa-arrow-right text-brand-mint group-hover:text-brand-orange transition-colors text-sm"></i>
             </a>
 
-            <!-- Botón 3: Curso de fotografía -->
-            <a href="#" class="group relative w-full h-[4.5rem] rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-brand-orange transition-all hover:-translate-y-0.5 flex items-center justify-between px-6 border border-brand-mint/30">
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-full flex items-center justify-center bg-brand-cream text-brand-orange">
-                        <i class="fa-solid fa-mobile-screen-button text-lg"></i>
+            <!-- Service 3: Curso de fotografía -->
+            <a href="#" class="group relative w-full min-h-[6.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-dark/10">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=600')] bg-cover bg-center"></div>
+                <div class="absolute inset-0 bg-dark/85 group-hover:bg-dark/75 transition-colors"></div>
+                <div class="relative h-full px-5 py-4 flex items-center justify-between text-cream">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 shrink-0 rounded-full flex items-center justify-center bg-mint/10 text-mint backdrop-blur-sm border border-mint/20">
+                            <i class="fa-solid fa-mobile-screen-button text-lg"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-serif text-[1.1rem] leading-tight font-medium tracking-wide">Curso de fotografía</span>
+                            <span class="font-sans text-[10px] font-medium text-mint mt-1 uppercase tracking-widest">Con el celular</span>
+                        </div>
                     </div>
-                    <span class="font-serif text-[1.1rem] font-medium tracking-wide text-brand-dark group-hover:text-brand-orange transition-colors leading-tight">Curso de fotografía<br><span class="font-sans text-[10px] text-brand-mint uppercase tracking-widest font-bold">Con el celular</span></span>
+                    <i class="fa-solid fa-arrow-right text-mint/50 group-hover:text-orange transition-colors text-sm shrink-0"></i>
                 </div>
-                <i class="fa-solid fa-arrow-right text-brand-mint group-hover:text-brand-orange transition-colors text-sm"></i>
             </a>
+            
+            <!-- Redes Sociales / Contacto (Centradas bajo el último botón) -->
+            <div class="flex justify-center gap-5 mt-6 mb-2">
+                <a href="#" aria-label="WhatsApp" class="w-12 h-12 rounded-full border border-dark/20 flex items-center justify-center hover:bg-orange hover:border-orange hover:text-cream transition-all shadow-sm bg-cream/40">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                </a>
+                <a href="#" aria-label="Instagram" class="w-12 h-12 rounded-full border border-dark/20 flex items-center justify-center hover:bg-orange hover:border-orange hover:text-cream transition-all shadow-sm bg-cream/40">
+                    <i class="fa-brands fa-instagram text-xl"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn" class="w-12 h-12 rounded-full border border-dark/20 flex items-center justify-center hover:bg-orange hover:border-orange hover:text-cream transition-all shadow-sm bg-cream/40">
+                    <i class="fa-brands fa-linkedin-in text-xl"></i>
+                </a>
+            </div>
 
         </section>
 
-        <!-- FOOTER SIMPLE -->
-        <footer class="text-center py-8 border-t border-brand-mint/20 relative z-10">
-            <h4 class="font-serif text-2xl font-medium mb-2 text-brand-dark">Gisella Villarreal</h4>
-            <p class="text-[10px] font-sans font-semibold text-brand-mint uppercase tracking-widest">
-                © 2026 | Todos los derechos reservados
-            </p>
+        <!-- Footer Minimalista -->
+        <footer class="text-dark px-8 pt-6 pb-10 text-center relative z-10 flex-grow flex flex-col justify-end">
+            <div class="pt-6 relative border-t border-dark/10">
+                <h4 class="font-serif text-2xl font-medium mb-2 text-dark">Gisella Villarreal</h4>
+                <p class="text-[10px] font-sans font-medium text-dark/60 tracking-widest uppercase leading-relaxed">
+                    © 2026 | Todos los derechos reservados
+                </p>
+            </div>
         </footer>
 
     </main>
 
 </body>
-  </html>
-  
+</html>
