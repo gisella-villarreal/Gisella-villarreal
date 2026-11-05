@@ -16,10 +16,11 @@
             theme: {
                 extend: {
                     colors: {
-                        'mint': '#A2c2be',       // Fondo dominante
-                        'orange': '#eb4600',     // Acento sutil y CTA
-                        'cream': '#ffffeb',      // Textos claros e iluminación
-                        'dark': '#2c332f',       // Tono oscuro para legibilidad (mantiene el estilo original)
+                        'peach': '#F0E0D0',       // Fondo original
+                        'sage': '#A9B7A0',        // Salvia original (acentos sutiles)
+                        'dark-green': '#343B35',  // Texto oscuro original para contraste
+                        'golden-sand': '#C9AD8A', // Arena dorada original
+                        'terracotta': '#C15C3D',  // NUEVO COLOR para los botones (Terracota)
                     },
                     fontFamily: {
                         'serif': ['"Playfair Display"', 'serif'],
@@ -31,11 +32,12 @@
         }
     </script>
 </head>
-<body class="bg-gray-100 antialiased text-dark selection:bg-orange selection:text-cream">
+<body class="bg-gray-100 antialiased text-dark-green selection:bg-golden-sand selection:text-dark-green">
 
-    <main class="max-w-[430px] mx-auto bg-mint min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
+    <main class="max-w-[430px] mx-auto bg-peach min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
         
-        <header class="relative w-full h-[520px] md:h-[550px] flex flex-col justify-end text-center pb-6">
+        <!-- HEADER / HERO -->
+        <header class="relative w-full h-[500px] md:h-[550px] flex flex-col justify-end text-center pb-8">
             
             <!-- Hero Background Image -->
             <div class="absolute inset-0 z-0 overflow-hidden">
@@ -44,101 +46,112 @@
                      class="w-full h-full object-cover object-[center_15%] scale-[1.15]">
             </div>
             
-            <!-- Gradient Blend Overlay (Se funde con el color dominante Menta) -->
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-mint via-mint/80 to-transparent z-10 h-[55%]"></div>
+            <!-- Gradient Blend Overlay (Se funde con el fondo peach) -->
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-peach via-peach/80 to-transparent z-10 h-[55%]"></div>
 
             <!-- Hero Text Content -->
             <div class="relative z-20 px-4 mt-auto flex flex-col items-center">
-                <h1 class="font-serif text-4xl md:text-5xl font-medium leading-tight mb-1 text-dark tracking-wide drop-shadow-sm">
+                <h1 class="font-serif text-4xl md:text-5xl font-medium leading-tight mb-1 text-dark-green tracking-wide drop-shadow-sm">
                     Gisella Villarreal
                 </h1>
                 
-                <p class="font-sans text-[12px] sm:text-[13px] tracking-widest font-bold text-orange uppercase mb-3">
+                <p class="font-sans text-[12px] sm:text-[13px] tracking-widest font-bold text-terracotta uppercase mb-3">
                     Branding Social Media
                 </p>
                 
-                <p class="font-sans text-[13px] md:text-[14px] leading-relaxed text-dark/80 font-medium max-w-[90%] mb-6">
-                    Amo acompañar a marcas personales en la construcción y fortalecimiento de su presencia digital
+                <p class="font-sans text-[13px] md:text-[14px] leading-relaxed text-dark-green/80 font-medium max-w-[90%] mb-6">
+                    Amo acompañar a marcas personales en la construcción y fortalecimiento de su presencia digital.
                 </p>
 
-                <!-- Botón CTA en el Hero -->
-                <a href="#" class="inline-flex justify-center items-center gap-2 px-8 py-3.5 rounded-full bg-orange hover:bg-[#d13e00] transition-colors text-cream text-sm font-semibold tracking-wide shadow-lg shadow-orange/20">
+                <!-- Botón CTA Principal -->
+                <a href="#" class="inline-flex justify-center items-center gap-2 px-8 py-3.5 rounded-full bg-terracotta hover:bg-[#a64e32] transition-colors text-peach text-sm font-semibold tracking-wide shadow-lg shadow-terracotta/30">
                     <i class="fa-brands fa-whatsapp text-lg"></i> Hablemos de tu Marca
                 </a>
             </div>
         </header>
 
-        <section class="relative z-10 px-6 py-4 flex flex-col gap-3">
+        <!-- SECCIÓN DE BOTONES -->
+        <section class="relative z-10 px-6 py-4 flex flex-col gap-3 flex-grow">
             
-            <!-- Service 1: Servicios -->
-            <a href="#" class="group relative w-full min-h-[6.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-dark/10">
+            <!-- Botón 1: Así puedo ayudarte -->
+            <a href="#" class="group relative w-full min-h-[6.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-terracotta/20">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600')] bg-cover bg-center"></div>
-                <!-- Overlay oscuro estilo original -->
-                <div class="absolute inset-0 bg-dark/85 group-hover:bg-dark/75 transition-colors"></div>
-                <div class="relative h-full px-5 py-4 flex items-center justify-between text-cream">
+                <!-- Aquí se aplica el nuevo color Terracota para el fondo del botón -->
+                <div class="absolute inset-0 bg-terracotta/90 group-hover:bg-terracotta/80 transition-colors"></div>
+                <div class="relative h-full px-5 py-4 flex items-center justify-between text-peach">
                     <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 shrink-0 rounded-full flex items-center justify-center bg-mint/10 text-mint backdrop-blur-sm border border-mint/20">
+                        <div class="w-10 h-10 shrink-0 rounded-full flex items-center justify-center bg-peach/10 text-golden-sand backdrop-blur-sm border border-peach/20">
                             <i class="fa-solid fa-layer-group text-lg"></i>
                         </div>
-                        <span class="font-serif text-[1.2rem] leading-tight font-medium tracking-wide pr-2">Servicios</span>
+                        <span class="font-serif text-[1.2rem] leading-tight font-medium tracking-wide pr-2">Así puedo ayudarte</span>
                     </div>
-                    <i class="fa-solid fa-arrow-right text-mint/50 group-hover:text-orange transition-colors text-sm shrink-0"></i>
+                    <i class="fa-solid fa-arrow-right text-peach/50 group-hover:text-golden-sand transition-colors text-sm shrink-0"></i>
                 </div>
             </a>
 
-            <!-- Service 2: Trabajos destacados -->
-            <a href="#" class="group relative w-full min-h-[6.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-dark/10">
+            <!-- Botón 2: Portafolio -->
+            <a href="#" class="group relative w-full min-h-[6.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-terracotta/20">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600')] bg-cover bg-center"></div>
-                <div class="absolute inset-0 bg-dark/85 group-hover:bg-dark/75 transition-colors"></div>
-                <div class="relative h-full px-5 py-4 flex items-center justify-between text-cream">
+                <div class="absolute inset-0 bg-terracotta/90 group-hover:bg-terracotta/80 transition-colors"></div>
+                <div class="relative h-full px-5 py-4 flex items-center justify-between text-peach">
                     <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 shrink-0 rounded-full flex items-center justify-center bg-mint/10 text-mint backdrop-blur-sm border border-mint/20">
+                        <div class="w-10 h-10 shrink-0 rounded-full flex items-center justify-center bg-peach/10 text-golden-sand backdrop-blur-sm border border-peach/20">
                             <i class="fa-regular fa-star text-lg"></i>
                         </div>
-                        <span class="font-serif text-[1.2rem] leading-tight font-medium tracking-wide pr-2">Trabajos destacados</span>
+                        <span class="font-serif text-[1.2rem] leading-tight font-medium tracking-wide pr-2">Portafolio</span>
                     </div>
-                    <i class="fa-solid fa-arrow-right text-mint/50 group-hover:text-orange transition-colors text-sm shrink-0"></i>
+                    <i class="fa-solid fa-arrow-right text-peach/50 group-hover:text-golden-sand transition-colors text-sm shrink-0"></i>
                 </div>
             </a>
 
-            <!-- Service 3: Curso de fotografía -->
-            <a href="#" class="group relative w-full min-h-[6.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-dark/10">
+            <!-- Botón 3: Curso de fotografía -->
+            <a href="#" class="group relative w-full min-h-[6.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-terracotta/20">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=600')] bg-cover bg-center"></div>
-                <div class="absolute inset-0 bg-dark/85 group-hover:bg-dark/75 transition-colors"></div>
-                <div class="relative h-full px-5 py-4 flex items-center justify-between text-cream">
+                <div class="absolute inset-0 bg-terracotta/90 group-hover:bg-terracotta/80 transition-colors"></div>
+                <div class="relative h-full px-5 py-4 flex items-center justify-between text-peach">
                     <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 shrink-0 rounded-full flex items-center justify-center bg-mint/10 text-mint backdrop-blur-sm border border-mint/20">
+                        <div class="w-10 h-10 shrink-0 rounded-full flex items-center justify-center bg-peach/10 text-golden-sand backdrop-blur-sm border border-peach/20">
                             <i class="fa-solid fa-mobile-screen-button text-lg"></i>
                         </div>
                         <div class="flex flex-col">
                             <span class="font-serif text-[1.1rem] leading-tight font-medium tracking-wide">Curso de fotografía</span>
-                            <span class="font-sans text-[10px] font-medium text-mint mt-1 uppercase tracking-widest">Con el celular</span>
+                            <span class="font-sans text-[10px] font-medium text-peach/70 mt-1 uppercase tracking-widest">Con el celular</span>
                         </div>
                     </div>
-                    <i class="fa-solid fa-arrow-right text-mint/50 group-hover:text-orange transition-colors text-sm shrink-0"></i>
+                    <i class="fa-solid fa-arrow-right text-peach/50 group-hover:text-golden-sand transition-colors text-sm shrink-0"></i>
                 </div>
             </a>
-            
-            <!-- Redes Sociales / Contacto (Centradas bajo el último botón) -->
-            <div class="flex justify-center gap-5 mt-6 mb-2">
-                <a href="#" aria-label="WhatsApp" class="w-12 h-12 rounded-full border border-dark/20 flex items-center justify-center hover:bg-orange hover:border-orange hover:text-cream transition-all shadow-sm bg-cream/40">
-                    <i class="fa-brands fa-whatsapp text-xl"></i>
-                </a>
-                <a href="#" aria-label="Instagram" class="w-12 h-12 rounded-full border border-dark/20 flex items-center justify-center hover:bg-orange hover:border-orange hover:text-cream transition-all shadow-sm bg-cream/40">
-                    <i class="fa-brands fa-instagram text-xl"></i>
-                </a>
-                <a href="#" aria-label="LinkedIn" class="w-12 h-12 rounded-full border border-dark/20 flex items-center justify-center hover:bg-orange hover:border-orange hover:text-cream transition-all shadow-sm bg-cream/40">
-                    <i class="fa-brands fa-linkedin-in text-xl"></i>
-                </a>
-            </div>
-
         </section>
 
-        <!-- Footer Minimalista -->
-        <footer class="text-dark px-8 pt-6 pb-10 text-center relative z-10 flex-grow flex flex-col justify-end">
-            <div class="pt-6 relative border-t border-dark/10">
-                <h4 class="font-serif text-2xl font-medium mb-2 text-dark">Gisella Villarreal</h4>
-                <p class="text-[10px] font-sans font-medium text-dark/60 tracking-widest uppercase leading-relaxed">
+        <!-- SECCIÓN DE CONTACTO Y FOOTER -->
+        <footer class="px-8 pt-8 pb-10 text-center relative z-10 flex flex-col justify-between">
+            
+            <div class="mb-10 text-center">
+                <!-- Título "Contacto" agregado arriba de los íconos -->
+                <h2 class="font-serif text-3xl text-dark-green mb-6">Contacto</h2>
+                
+                <!-- Íconos de Redes Sociales (Incluyendo Correo) -->
+                <div class="flex justify-center gap-4">
+                    <a href="#" aria-label="WhatsApp" class="w-12 h-12 rounded-full border border-dark-green/20 flex items-center justify-center text-dark-green hover:bg-terracotta hover:border-terracotta hover:text-peach transition-all shadow-sm">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="w-12 h-12 rounded-full border border-dark-green/20 flex items-center justify-center text-dark-green hover:bg-terracotta hover:border-terracotta hover:text-peach transition-all shadow-sm">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn" class="w-12 h-12 rounded-full border border-dark-green/20 flex items-center justify-center text-dark-green hover:bg-terracotta hover:border-terracotta hover:text-peach transition-all shadow-sm">
+                        <i class="fa-brands fa-linkedin-in text-xl"></i>
+                    </a>
+                    <!-- Nuevo ícono de Correo -->
+                    <a href="#" aria-label="Correo Electrónico" class="w-12 h-12 rounded-full border border-dark-green/20 flex items-center justify-center text-dark-green hover:bg-terracotta hover:border-terracotta hover:text-peach transition-all shadow-sm">
+                        <i class="fa-regular fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer / Copyright -->
+            <div class="pt-6 relative border-t border-dark-green/10">
+                <h4 class="font-serif text-2xl font-medium mb-2 text-dark-green">Gisella Villarreal</h4>
+                <p class="text-[10px] font-sans font-medium text-dark-green/50 tracking-widest uppercase leading-relaxed">
                     © 2026 | Todos los derechos reservados
                 </p>
             </div>
