@@ -1,142 +1,137 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hello, I'm Natasha</title>
-<style>
-  /* Importamos fuentes para replicar la tipografía elegante (Serif) y la secundaria (Sans-Serif) */
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400&display=swap');
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    background-color: #f6f5f3; /* Color de fondo claro similar a la imagen */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-
-  .poster-container {
-    position: relative;
-    width: 100%;
-    max-width: 550px;
-    height: 750px;
-    background-color: #f6f5f3;
-    overflow: hidden;
-    font-family: 'Playfair Display', serif;
-    color: #3b3530; /* Tono marrón/gris muy oscuro */
-  }
-
-  /* Imagen central */
-  .hero-image {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 85%;
-    z-index: 1;
-    object-fit: cover;
-  }
-
-  /* Bloque superior */
-  .text-top {
-    position: absolute;
-    top: 8%;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    z-index: 2;
-  }
-
-  .text-top .greeting {
-    font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: -15px;
-    margin-left: -120px; /* Desplazado ligeramente a la izquierda */
-  }
-
-  .text-top .name {
-    font-size: 7rem;
-    font-weight: 500;
-    letter-spacing: -2px;
-    line-height: 1;
-  }
-
-  /* Bloque lateral derecho */
-  .text-side {
-    position: absolute;
-    top: 29%;
-    right: 12%;
-    text-align: right;
-    font-family: 'Lato', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 400;
-    line-height: 1.4;
-    color: #4a4541;
-    z-index: 2;
-  }
-
-  /* Bloque inferior */
-  .text-bottom {
-    position: absolute;
-    bottom: 8%;
-    width: 100%;
-    text-align: center;
-    z-index: 2;
-  }
-
-  .text-bottom .intro-text {
-    font-size: 1.8rem;
-    margin-left: -50px;
-    margin-bottom: -15px;
-    letter-spacing: -0.5px;
-  }
-
-  .text-bottom .reintroduce {
-    font-size: 5rem;
-    font-style: italic;
-    font-weight: 400;
-    margin-left: 20px;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-
-  .text-bottom .myself {
-    font-size: 2.2rem;
-    font-style: italic;
-    text-align: right;
-    margin-right: 15%;
-    margin-top: -15px;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gisella Villarreal - Branding Social Media</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Se mantiene Playfair Display para títulos e Inter para textos legibles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-mint': '#A2c2be',
+                        'brand-orange': '#eb4600',
+                        'brand-cream': '#ffffeb',
+                        'brand-dark': '#2c332f', // Tono oscuro necesario para el contraste del texto
+                    },
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'sans': ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-gray-100 antialiased text-brand-dark selection:bg-brand-orange selection:text-white">
 
-<div class="poster-container">
-  <!-- Reemplaza "ruta-de-tu-imagen.png" por la imagen de tu repositorio -->
-  <img src="1792874026013~2.jpg" alt="Natasha" class="hero-image">
-  
-  <div class="text-top">
-    <p class="greeting">Hello, I'm</p>
-    <h1 class="name">Natasha</h1>
-  </div>
+    <!-- Contenedor estilo BioLink -->
+    <main class="max-w-[430px] mx-auto bg-brand-cream min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
+        
+        <!-- HEADER COMPLETO -->
+        <header class="w-full flex flex-col items-center text-center pt-16 pb-8 px-6 relative">
+            
+            <!-- Detalle decorativo de fondo suave -->
+            <div class="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-brand-mint/30 to-transparent pointer-events-none"></div>
 
-  <div class="text-side">
-    <p>your business<br>coach for getting<br>consistent clients</p>
-  </div>
+            <!-- Foto de Perfil (Opcional, puedes cambiar la URL) -->
+            <div class="relative z-10 w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-lg mb-5">
+                <img src="https://images.unsplash.com/photo-1605405747447-758c0c451556?q=80&w=400&auto=format&fit=crop" 
+                     alt="Gisella Villarreal" 
+                     class="w-full h-full object-cover">
+            </div>
+            
+            <!-- Título y Subtítulo -->
+            <div class="relative z-10 w-full">
+                <h1 class="font-serif text-4xl font-semibold mb-1 text-brand-dark tracking-wide">
+                    Gisella Villarreal
+                </h1>
+                <p class="font-sans text-[11px] sm:text-xs font-semibold text-brand-orange uppercase tracking-widest mb-4">
+                    Branding Social Media
+                </p>
+                <p class="font-sans text-sm font-light leading-relaxed text-brand-dark/80 mb-8 px-2">
+                    Amo acompañar a marcas personales en la construcción y fortalecimiento de su presencia digital.
+                </p>
+            </div>
 
-  <div class="text-bottom">
-    <p class="intro-text">If you're new here, let me</p>
-    <h2 class="reintroduce">reintroduce</h2>
-    <p class="myself">myself</p>
-  </div>
-</div>
+            <!-- Botón CTA Principal -->
+            <a href="#" class="relative z-10 flex items-center justify-center gap-2 bg-brand-orange text-white px-8 py-4 rounded-full font-medium text-[15px] hover:bg-opacity-90 hover:-translate-y-0.5 transition-all shadow-lg shadow-brand-orange/30 w-full max-w-[280px] mb-8">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                Hablemos de tu Marca
+            </a>
+
+            <!-- Redes Sociales / Botones de Contacto -->
+            <div class="relative z-10 flex justify-center gap-5">
+                <a href="#" aria-label="WhatsApp" class="w-12 h-12 rounded-full border border-brand-mint/50 bg-white flex items-center justify-center text-brand-dark hover:bg-brand-mint hover:text-white hover:border-brand-mint transition-all shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                </a>
+                <a href="#" aria-label="Instagram" class="w-12 h-12 rounded-full border border-brand-mint/50 bg-white flex items-center justify-center text-brand-dark hover:bg-brand-mint hover:text-white hover:border-brand-mint transition-all shadow-sm">
+                    <i class="fa-brands fa-instagram text-xl"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn" class="w-12 h-12 rounded-full border border-brand-mint/50 bg-white flex items-center justify-center text-brand-dark hover:bg-brand-mint hover:text-white hover:border-brand-mint transition-all shadow-sm">
+                    <i class="fa-brands fa-linkedin-in text-xl"></i>
+                </a>
+                <a href="#" aria-label="Correo" class="w-12 h-12 rounded-full border border-brand-mint/50 bg-white flex items-center justify-center text-brand-dark hover:bg-brand-mint hover:text-white hover:border-brand-mint transition-all shadow-sm">
+                    <i class="fa-regular fa-envelope text-xl"></i>
+                </a>
+            </div>
+        </header>
+
+        <!-- SECCIÓN DE ENLACES (Menú) -->
+        <section class="relative z-10 px-6 py-2 flex flex-col gap-4 mb-10 flex-grow">
+            
+            <!-- Botón 1: Servicios -->
+            <a href="#" class="group relative w-full h-[4.5rem] rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-brand-orange transition-all hover:-translate-y-0.5 flex items-center justify-between px-6 border border-brand-mint/30">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center bg-brand-cream text-brand-orange">
+                        <i class="fa-solid fa-layer-group text-lg"></i>
+                    </div>
+                    <span class="font-serif text-[1.1rem] font-medium tracking-wide text-brand-dark group-hover:text-brand-orange transition-colors">Servicios</span>
+                </div>
+                <i class="fa-solid fa-arrow-right text-brand-mint group-hover:text-brand-orange transition-colors text-sm"></i>
+            </a>
+
+            <!-- Botón 2: Trabajos destacados -->
+            <a href="#" class="group relative w-full h-[4.5rem] rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-brand-orange transition-all hover:-translate-y-0.5 flex items-center justify-between px-6 border border-brand-mint/30">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center bg-brand-cream text-brand-orange">
+                        <i class="fa-regular fa-star text-lg"></i>
+                    </div>
+                    <span class="font-serif text-[1.1rem] font-medium tracking-wide text-brand-dark group-hover:text-brand-orange transition-colors">Trabajos destacados</span>
+                </div>
+                <i class="fa-solid fa-arrow-right text-brand-mint group-hover:text-brand-orange transition-colors text-sm"></i>
+            </a>
+
+            <!-- Botón 3: Curso de fotografía -->
+            <a href="#" class="group relative w-full h-[4.5rem] rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-brand-orange transition-all hover:-translate-y-0.5 flex items-center justify-between px-6 border border-brand-mint/30">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center bg-brand-cream text-brand-orange">
+                        <i class="fa-solid fa-mobile-screen-button text-lg"></i>
+                    </div>
+                    <span class="font-serif text-[1.1rem] font-medium tracking-wide text-brand-dark group-hover:text-brand-orange transition-colors leading-tight">Curso de fotografía<br><span class="font-sans text-[10px] text-brand-mint uppercase tracking-widest font-bold">Con el celular</span></span>
+                </div>
+                <i class="fa-solid fa-arrow-right text-brand-mint group-hover:text-brand-orange transition-colors text-sm"></i>
+            </a>
+
+        </section>
+
+        <!-- FOOTER SIMPLE -->
+        <footer class="text-center py-8 border-t border-brand-mint/20 relative z-10">
+            <h4 class="font-serif text-2xl font-medium mb-2 text-brand-dark">Gisella Villarreal</h4>
+            <p class="text-[10px] font-sans font-semibold text-brand-mint uppercase tracking-widest">
+                © 2026 | Todos los derechos reservados
+            </p>
+        </footer>
+
+    </main>
 
 </body>
   </html>
