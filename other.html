@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,11 +16,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'peach': '#F0E0D0',       // Fondo original
-                        'sage': '#A9B7A0',        // Salvia original (acentos sutiles)
-                        'dark-green': '#343B35',  // Texto oscuro original para contraste
+                        'peach': '#F0E0D0',       // Naranja suave/durazno pálido (Fondo original)
+                        'sage': '#A9B7A0',        // Salvia original
+                        'dark-green': '#343B35',  // Verde oscuro original
                         'golden-sand': '#C9AD8A', // Arena dorada original
-                        'terracotta': '#C15C3D',  // NUEVO COLOR para los botones (Terracota)
                     },
                     fontFamily: {
                         'serif': ['"Playfair Display"', 'serif'],
@@ -36,48 +35,61 @@
 
     <main class="max-w-[430px] mx-auto bg-peach min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
         
-        <!-- HEADER / HERO -->
-        <header class="relative w-full h-[500px] md:h-[550px] flex flex-col justify-end text-center pb-8">
+        <!-- HEADER / HERO (Estructura adaptada a la imagen de referencia) -->
+        <header class="relative w-full h-[85vh] min-h-[650px] flex flex-col pb-8 pt-8">
             
-            <!-- Hero Background Image -->
+            <!-- Menú Hamburguesa Superior -->
+            <div class="relative z-20 w-full flex justify-center items-center">
+                <div class="flex flex-col gap-[6px] cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
+                    <div class="w-7 h-[1px] bg-dark-green"></div>
+                    <div class="w-7 h-[1px] bg-dark-green"></div>
+                </div>
+            </div>
+
+            <!-- Imagen de Fondo Principal -->
             <div class="absolute inset-0 z-0 overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
                      alt="Gisella Villarreal" 
-                     class="w-full h-full object-cover object-[center_15%] scale-[1.15]">
+                     class="w-full h-full object-cover object-[center_15%] scale-[1.05]">
             </div>
             
-            <!-- Gradient Blend Overlay (Se funde con el fondo peach) -->
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-peach via-peach/80 to-transparent z-10 h-[55%]"></div>
+            <!-- Difuminado (Gradient Blend Overlay) que se funde con el fondo peach -->
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-peach via-peach/85 to-transparent z-10 h-[65%]"></div>
 
-            <!-- Hero Text Content -->
-            <div class="relative z-20 px-4 mt-auto flex flex-col items-center">
-                <h1 class="font-serif text-4xl md:text-5xl font-medium leading-tight mb-1 text-dark-green tracking-wide drop-shadow-sm">
-                    Gisella Villarreal
+            <!-- Contenido Inferior (Textos y Botones Apilados) -->
+            <div class="relative z-20 px-6 mt-auto flex flex-col items-center text-center w-full">
+                
+                <!-- Nombre en cursiva (italic) dividido en dos líneas como en la imagen -->
+                <h1 class="font-serif text-[3.2rem] md:text-6xl italic font-medium leading-[1.05] mb-5 text-dark-green tracking-wide">
+                    Gisella<br>Villarreal
                 </h1>
                 
-                <p class="font-sans text-[12px] sm:text-[13px] tracking-widest font-bold text-terracotta uppercase mb-3">
-                    Branding Social Media
-                </p>
-                
-                <p class="font-sans text-[13px] md:text-[14px] leading-relaxed text-dark-green/80 font-medium max-w-[90%] mb-6">
+                <!-- Texto descriptivo -->
+                <p class="font-sans text-[12.5px] leading-relaxed text-dark-green/90 font-medium max-w-[280px] mx-auto mb-8">
                     Amo acompañar a marcas personales en la construcción y fortalecimiento de su presencia digital.
                 </p>
 
-                <!-- Botón CTA Principal -->
-                <a href="#" class="inline-flex justify-center items-center gap-2 px-8 py-3.5 rounded-full bg-terracotta hover:bg-[#a64e32] transition-colors text-peach text-sm font-semibold tracking-wide shadow-lg shadow-terracotta/30">
-                    <i class="fa-brands fa-whatsapp text-lg"></i> Hablemos de tu Marca
-                </a>
+                <!-- Botones Apilados -->
+                <div class="w-full max-w-[320px] flex flex-col gap-3.5">
+                    <!-- Botón Oscuro -->
+                    <a href="#" class="w-full py-4 rounded-full bg-dark-green hover:bg-[#232823] transition-colors text-peach text-[13px] font-semibold tracking-wide shadow-lg flex justify-center items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Hablemos de tu Marca
+                    </a>
+                    <!-- Botón Claro -->
+                    <a href="#servicios" class="w-full py-4 rounded-full bg-[#FCF8F2] hover:bg-white transition-colors text-dark-green border border-dark-green/10 text-[13px] font-semibold tracking-wide shadow-md">
+                        Ver Servicios
+                    </a>
+                </div>
             </div>
         </header>
 
-        <!-- SECCIÓN DE BOTONES -->
-        <section class="relative z-10 px-6 py-4 flex flex-col gap-3 flex-grow">
+        <!-- SECCIÓN DE BOTONES DE ENLACE -->
+        <section id="servicios" class="relative z-10 px-6 py-6 flex flex-col gap-3 flex-grow">
             
             <!-- Botón 1: Así puedo ayudarte -->
-            <a href="#" class="group relative w-full min-h-[6.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-terracotta/20">
+            <a href="#" class="group relative w-full min-h-[6.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-dark-green/10">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600')] bg-cover bg-center"></div>
-                <!-- Aquí se aplica el nuevo color Terracota para el fondo del botón -->
-                <div class="absolute inset-0 bg-terracotta/90 group-hover:bg-terracotta/80 transition-colors"></div>
+                <div class="absolute inset-0 bg-dark-green/85 group-hover:bg-dark-green/75 transition-colors"></div>
                 <div class="relative h-full px-5 py-4 flex items-center justify-between text-peach">
                     <div class="flex items-center gap-4">
                         <div class="w-10 h-10 shrink-0 rounded-full flex items-center justify-center bg-peach/10 text-golden-sand backdrop-blur-sm border border-peach/20">
@@ -90,9 +102,9 @@
             </a>
 
             <!-- Botón 2: Portafolio -->
-            <a href="#" class="group relative w-full min-h-[6.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-terracotta/20">
+            <a href="#" class="group relative w-full min-h-[6.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-dark-green/10">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600')] bg-cover bg-center"></div>
-                <div class="absolute inset-0 bg-terracotta/90 group-hover:bg-terracotta/80 transition-colors"></div>
+                <div class="absolute inset-0 bg-dark-green/85 group-hover:bg-dark-green/75 transition-colors"></div>
                 <div class="relative h-full px-5 py-4 flex items-center justify-between text-peach">
                     <div class="flex items-center gap-4">
                         <div class="w-10 h-10 shrink-0 rounded-full flex items-center justify-center bg-peach/10 text-golden-sand backdrop-blur-sm border border-peach/20">
@@ -105,9 +117,9 @@
             </a>
 
             <!-- Botón 3: Curso de fotografía -->
-            <a href="#" class="group relative w-full min-h-[6.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-terracotta/20">
+            <a href="#" class="group relative w-full min-h-[6.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-dark-green/10">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=600')] bg-cover bg-center"></div>
-                <div class="absolute inset-0 bg-terracotta/90 group-hover:bg-terracotta/80 transition-colors"></div>
+                <div class="absolute inset-0 bg-dark-green/85 group-hover:bg-dark-green/75 transition-colors"></div>
                 <div class="relative h-full px-5 py-4 flex items-center justify-between text-peach">
                     <div class="flex items-center gap-4">
                         <div class="w-10 h-10 shrink-0 rounded-full flex items-center justify-center bg-peach/10 text-golden-sand backdrop-blur-sm border border-peach/20">
@@ -115,7 +127,7 @@
                         </div>
                         <div class="flex flex-col">
                             <span class="font-serif text-[1.1rem] leading-tight font-medium tracking-wide">Curso de fotografía</span>
-                            <span class="font-sans text-[10px] font-medium text-peach/70 mt-1 uppercase tracking-widest">Con el celular</span>
+                            <span class="font-sans text-[10px] font-medium text-sage mt-1 uppercase tracking-widest">Con el celular</span>
                         </div>
                     </div>
                     <i class="fa-solid fa-arrow-right text-peach/50 group-hover:text-golden-sand transition-colors text-sm shrink-0"></i>
@@ -124,33 +136,32 @@
         </section>
 
         <!-- SECCIÓN DE CONTACTO Y FOOTER -->
-        <footer class="px-8 pt-8 pb-10 text-center relative z-10 flex flex-col justify-between">
+        <footer class="px-8 pt-4 pb-10 text-center relative z-10 flex flex-col justify-between">
             
             <div class="mb-10 text-center">
-                <!-- Título "Contacto" agregado arriba de los íconos -->
+                <!-- Título Contacto centrado -->
                 <h2 class="font-serif text-3xl text-dark-green mb-6">Contacto</h2>
                 
-                <!-- Íconos de Redes Sociales (Incluyendo Correo) -->
+                <!-- Íconos de Redes Sociales incluyendo Correo -->
                 <div class="flex justify-center gap-4">
-                    <a href="#" aria-label="WhatsApp" class="w-12 h-12 rounded-full border border-dark-green/20 flex items-center justify-center text-dark-green hover:bg-terracotta hover:border-terracotta hover:text-peach transition-all shadow-sm">
+                    <a href="#" aria-label="WhatsApp" class="w-12 h-12 rounded-full border border-dark-green/20 flex items-center justify-center text-dark-green hover:bg-dark-green hover:border-dark-green hover:text-peach transition-all shadow-sm">
                         <i class="fa-brands fa-whatsapp text-xl"></i>
                     </a>
-                    <a href="#" aria-label="Instagram" class="w-12 h-12 rounded-full border border-dark-green/20 flex items-center justify-center text-dark-green hover:bg-terracotta hover:border-terracotta hover:text-peach transition-all shadow-sm">
+                    <a href="#" aria-label="Instagram" class="w-12 h-12 rounded-full border border-dark-green/20 flex items-center justify-center text-dark-green hover:bg-dark-green hover:border-dark-green hover:text-peach transition-all shadow-sm">
                         <i class="fa-brands fa-instagram text-xl"></i>
                     </a>
-                    <a href="#" aria-label="LinkedIn" class="w-12 h-12 rounded-full border border-dark-green/20 flex items-center justify-center text-dark-green hover:bg-terracotta hover:border-terracotta hover:text-peach transition-all shadow-sm">
+                    <a href="#" aria-label="LinkedIn" class="w-12 h-12 rounded-full border border-dark-green/20 flex items-center justify-center text-dark-green hover:bg-dark-green hover:border-dark-green hover:text-peach transition-all shadow-sm">
                         <i class="fa-brands fa-linkedin-in text-xl"></i>
                     </a>
-                    <!-- Nuevo ícono de Correo -->
-                    <a href="#" aria-label="Correo Electrónico" class="w-12 h-12 rounded-full border border-dark-green/20 flex items-center justify-center text-dark-green hover:bg-terracotta hover:border-terracotta hover:text-peach transition-all shadow-sm">
+                    <a href="mailto:correo@tudominio.com" aria-label="Correo Electrónico" class="w-12 h-12 rounded-full border border-dark-green/20 flex items-center justify-center text-dark-green hover:bg-dark-green hover:border-dark-green hover:text-peach transition-all shadow-sm">
                         <i class="fa-regular fa-envelope text-xl"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Footer / Copyright -->
+            <!-- Copyright -->
             <div class="pt-6 relative border-t border-dark-green/10">
-                <h4 class="font-serif text-2xl font-medium mb-2 text-dark-green">Gisella Villarreal</h4>
+                <h4 class="font-serif text-[1.4rem] font-medium mb-1 text-dark-green">Gisella Villarreal</h4>
                 <p class="text-[10px] font-sans font-medium text-dark-green/50 tracking-widest uppercase leading-relaxed">
                     © 2026 | Todos los derechos reservados
                 </p>
@@ -160,4 +171,5 @@
     </main>
 
 </body>
-</html>
+                    </html>
+                
