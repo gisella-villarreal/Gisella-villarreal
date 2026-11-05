@@ -59,7 +59,7 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <!-- Enlaces del Menú (Reordenados) -->
+            <!-- Enlaces del Menú -->
             <nav class="flex flex-col items-center gap-7 mt-8 w-full">
                 <a href="#inicio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Inicio</a>
                 <a href="#comunidad" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Comunidad</a>
@@ -105,7 +105,7 @@
                 </div>
             </div>
 
-            <!-- Imagen de Fondo Principal -->
+            <!-- Imagen de Fondo Principal (Foto elegida) -->
             <div class="absolute inset-0 z-0 overflow-hidden bg-brand-dark">
                 <img src="1792874026013~2.jpg" 
                      alt="Gisella Villarreal" 
@@ -129,18 +129,19 @@
             </div>
         </header>
 
-        <!-- SECCIÓN: BRANDING CON TU CEL (ID: comunidad) - ESTILO EDITORIAL -->
-        <section id="comunidad" class="px-6 py-12 flex flex-col gap-8 relative z-10 border-b border-border-color/50">
+        <!-- SECCIÓN: FOTOS DE LIFESTYLE BRANDING (ID: comunidad) - ESTILO EDITORIAL COMPACTO -->
+        <section id="comunidad" class="px-6 py-12 flex flex-col gap-6 relative z-10 border-b border-border-color/50">
             
-            <!-- Bloque de Imagen fotográfica limpia (Sin bordes redondos, estilo revista) -->
-            <div class="w-full overflow-hidden shadow-lg">
-                <!-- Puedes cambiar el enlace de esta foto si deseas -->
-                <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=600&auto=format&fit=crop" alt="Branding con tu Cel" class="w-full h-auto aspect-[4/5] object-cover">
+            <!-- Bloque de Imagen (Más pequeña y compacta, centrada) -->
+            <div class="w-[85%] mx-auto overflow-hidden shadow-lg border border-border-color/30">
+                <!-- Se utiliza la primera foto que enviaste -->
+                <img src="1792874026013.jpg" alt="Fotos de lifestyle branding" class="w-full h-[220px] object-cover">
             </div>
             
             <!-- Bloque de Texto alineado a la izquierda -->
-            <div class="flex flex-col text-left">
-                <h2 class="font-serif text-[2.5rem] italic text-brand-cream mb-4 leading-tight">Branding con<br>tu cel.</h2>
+            <div class="flex flex-col text-left mt-2">
+                <!-- Título actualizado -->
+                <h2 class="font-serif text-[2.2rem] italic text-brand-cream mb-4 leading-tight">Fotos de lifestyle<br>branding.</h2>
                 
                 <p class="font-sans text-[13px] text-text-light leading-relaxed font-light mb-4">
                     Aprende a crear fotografías de branding con tu celular y construye una identidad visual que refleje la esencia de tu marca. Accede a la comunidad y comienza a desarrollar tus habilidades fotográficas a tu propio ritmo.
@@ -148,7 +149,7 @@
                 
                 <p class="font-sans text-[12px] text-brand-cream mb-2 uppercase tracking-wider">¿Qué encontrarás?</p>
                 
-                <!-- Lista de beneficios limpia -->
+                <!-- Lista de beneficios -->
                 <ul class="flex flex-col gap-2 font-sans text-[12px] text-text-light font-light mb-6 list-disc pl-4">
                     <li>Clases y tutoriales prácticos.</li>
                     <li>Técnicas de fotografía con celular.</li>
@@ -164,7 +165,7 @@
                     <span class="font-sans text-[10px] text-brand-cream uppercase tracking-widest ml-2">COP / mes</span>
                 </div>
                 
-                <!-- Botón minimalista estilo referencia -->
+                <!-- Botón minimalista estilo editorial -->
                 <div class="w-full flex justify-center py-4 border-t border-b border-border-color">
                     <a href="#" class="font-sans text-[10px] uppercase tracking-[0.2em] text-brand-cream hover:text-white transition-colors font-medium text-center">
                         Quiero unirme a la comunidad
@@ -417,12 +418,10 @@
             const btnNext = document.getElementById('btn-next');
 
             if(track && btnPrev && btnNext) {
-                // Al hacer clic en siguiente, desplaza 280px a la derecha
                 btnNext.addEventListener('click', () => {
                     track.scrollBy({ left: 280, behavior: 'smooth' });
                 });
                 
-                // Al hacer clic en anterior, desplaza 280px a la izquierda
                 btnPrev.addEventListener('click', () => {
                     track.scrollBy({ left: -280, behavior: 'smooth' });
                 });
@@ -431,4 +430,4 @@
     </script>
 
 </body>
-</html>
+    </html>
