@@ -16,7 +16,7 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-dark': '#151515',       /* Fondo oscuro original */
+                        'brand-dark': '#151515',       /* Fondo oscuro unificado */
                         'brand-cream': '#c9bb9e',      /* Crema original */
                         'text-main': '#FFFFFF',        /* Textos blancos */
                         'text-light': '#b0b0b0',       /* Textos grises claros */
@@ -35,7 +35,7 @@
         html {
             scroll-behavior: smooth;
         }
-        /* Ocultar barra de scroll en el carrusel */
+        /* Ocultar barra de scroll en los carruseles */
         .hide-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -54,22 +54,20 @@
         <!-- ============================== -->
         <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/95 backdrop-blur-xl z-50 flex flex-col justify-between items-center py-20 px-8 transition-all duration-500 opacity-0 pointer-events-none translate-y-4 max-w-[430px] mx-auto">
             
-            <!-- Botón de Cerrar (X) -->
             <button id="close-menu-btn" class="absolute top-8 right-6 text-brand-cream text-3xl hover:text-white transition-colors">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <!-- Enlaces del Menú -->
+            <!-- Enlaces del Menú (Reordenados según nueva estructura) -->
             <nav class="flex flex-col items-center gap-7 mt-8 w-full">
                 <a href="#inicio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Inicio</a>
                 <a href="#comunidad" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Comunidad</a>
                 <a href="#servicios" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Servicios</a>
-                <a href="#portafolio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Portafolio</a>
                 <a href="#como-trabajo" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">¿Cómo trabajo?</a>
+                <a href="#portafolio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Portafolio</a>
                 <a href="#sobre-mi" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Sobre mí</a>
             </nav>
 
-            <!-- Íconos Sociales en el menú -->
             <div class="flex justify-center gap-5 w-full mt-auto">
                 <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
                     <i class="fa-brands fa-whatsapp text-xl"></i>
@@ -90,7 +88,6 @@
         <!-- HEADER / HERO (ID: inicio) -->
         <header id="inicio" class="relative w-full h-[85vh] min-h-[600px] flex flex-col">
             
-            <!-- Barra Superior -->
             <div class="absolute top-6 left-5 right-5 z-30 flex justify-between items-center">
                 <!-- Botón "Háblame de tu marca" -->
                 <a href="#" class="px-4 py-2 rounded-full border border-black text-black text-[10px] font-bold tracking-wider hover:bg-black hover:text-white transition-all uppercase bg-transparent flex items-center gap-2">
@@ -105,17 +102,15 @@
                 </div>
             </div>
 
-            <!-- Imagen de Fondo Principal (Foto elegida) -->
+            <!-- Imagen Hero -->
             <div class="absolute inset-0 z-0 overflow-hidden bg-brand-dark">
                 <img src="1792874026013~2.jpg" 
                      alt="Gisella Villarreal" 
                      class="w-full h-full object-cover object-[center_15%] scale-[1.05]">
             </div>
             
-            <!-- Difuminado -->
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent z-10 h-[40%]"></div>
 
-            <!-- Contenido Inferior -->
             <div class="relative z-20 px-6 mt-auto flex flex-col items-center text-center w-full pb-8">
                 <h1 class="font-serif text-[3.5rem] md:text-6xl italic font-medium leading-[1.05] mb-2 text-text-main tracking-wide">
                     Gisella<br>Villarreal
@@ -129,57 +124,73 @@
             </div>
         </header>
 
-        <!-- SECCIÓN: FOTOS DE LIFESTYLE BRANDING (ID: comunidad) - ESTILO EDITORIAL COMPACTO -->
-        <section id="comunidad" class="px-6 py-12 flex flex-col gap-6 relative z-10 border-b border-border-color/50">
+        <!-- SECCIÓN: FOTOS DE LIFESTYLE BRANDING (ID: comunidad) -->
+        <!-- NOTA: Se eliminaron los bordes para mantener la continuidad del fondo oscuro -->
+        <section id="comunidad" class="px-6 py-12 flex flex-col gap-6 relative z-10">
             
-            <!-- Bloque de Imagen (Más pequeña y compacta, centrada) -->
-            <div class="w-[85%] mx-auto overflow-hidden shadow-lg border border-border-color/30">
-                <!-- Se utiliza la primera foto que enviaste -->
-                <img src="1792874026013.jpg" alt="Fotos de lifestyle branding" class="w-full h-[220px] object-cover">
+            <!-- Título Centrado -->
+            <div class="text-center">
+                <h2 class="font-serif text-[2.2rem] italic text-brand-cream mb-1 leading-tight">Fotos de lifestyle<br>branding.</h2>
             </div>
             
-            <!-- Bloque de Texto alineado a la izquierda -->
-            <div class="flex flex-col text-left mt-2">
-                <!-- Título actualizado -->
-                <h2 class="font-serif text-[2.2rem] italic text-brand-cream mb-4 leading-tight">Fotos de lifestyle<br>branding.</h2>
+            <!-- Carrusel de Galería -->
+            <div class="relative w-[90%] mx-auto rounded-xl overflow-hidden shadow-lg border border-border-color">
                 
-                <p class="font-sans text-[13px] text-text-light leading-relaxed font-light mb-4">
-                    Aprende a crear fotografías de branding con tu celular y construye una identidad visual que refleje la esencia de tu marca. Accede a la comunidad y comienza a desarrollar tus habilidades fotográficas a tu propio ritmo.
+                <!-- Contenedor del Carrusel (Deslizamiento horizontal) -->
+                <div id="lifestyle-track" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
+                    <!-- Foto 1 -->
+                    <img src="1792874026013.jpg" alt="Lifestyle branding 1" class="w-full h-[260px] object-cover shrink-0 snap-center">
+                    <!-- Foto 2 -->
+                    <img src="1792874026013~2.jpg" alt="Lifestyle branding 2" class="w-full h-[260px] object-cover shrink-0 snap-center object-top">
+                    <!-- Foto 3 (Ejemplo adicional para el carrusel) -->
+                    <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=600&auto=format&fit=crop" alt="Lifestyle branding 3" class="w-full h-[260px] object-cover shrink-0 snap-center">
+                </div>
+
+                <!-- Botones de flecha integrados en la imagen -->
+                <button id="btn-prev-life" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-brand-dark/70 text-brand-cream flex items-center justify-center backdrop-blur-sm border border-brand-cream/30 hover:bg-brand-cream hover:text-brand-dark transition-colors">
+                    <i class="fa-solid fa-angle-left text-sm"></i>
+                </button>
+                <button id="btn-next-life" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-brand-dark/70 text-brand-cream flex items-center justify-center backdrop-blur-sm border border-brand-cream/30 hover:bg-brand-cream hover:text-brand-dark transition-colors">
+                    <i class="fa-solid fa-angle-right text-sm"></i>
+                </button>
+            </div>
+            
+            <!-- Texto y Botón Centrados -->
+            <div class="flex flex-col text-center mt-2">
+                <p class="font-sans text-[13px] text-text-light leading-relaxed font-light mb-5">
+                    Aprende a crear fotografías de branding con tu celular y construye una identidad visual que refleje la esencia de tu marca. Accede a la comunidad y desarrolla tus habilidades fotográficas a tu propio ritmo.
                 </p>
                 
-                <p class="font-sans text-[12px] text-brand-cream mb-2 uppercase tracking-wider">¿Qué encontrarás?</p>
+                <p class="font-sans text-[12px] text-brand-cream mb-4 uppercase tracking-wider">¿Qué encontrarás?</p>
                 
-                <!-- Lista de beneficios -->
-                <ul class="flex flex-col gap-2 font-sans text-[12px] text-text-light font-light mb-6 list-disc pl-4">
-                    <li>Clases y tutoriales prácticos.</li>
-                    <li>Técnicas de fotografía con celular.</li>
-                    <li>Ideas y ejercicios de branding fotográfico.</li>
-                    <li>Recursos y materiales de apoyo.</li>
-                    <li>Acompañamiento y aprendizaje en comunidad.</li>
-                    <li>Nuevas actividades y contenidos periódicos.</li>
-                </ul>
+                <!-- Lista de beneficios (centrada en bloque) -->
+                <div class="flex justify-center w-full mb-6">
+                    <ul class="flex flex-col gap-3 font-sans text-[12px] text-text-light font-light text-left inline-block">
+                        <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Clases y tutoriales prácticos.</li>
+                        <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Técnicas de fotografía con celular.</li>
+                        <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Ideas y ejercicios de branding fotográfico.</li>
+                        <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Acompañamiento y aprendizaje en comunidad.</li>
+                    </ul>
+                </div>
 
                 <!-- Precio -->
-                <div class="mb-8 flex items-baseline">
+                <div class="mb-8 flex justify-center items-baseline">
                     <span class="font-serif text-3xl text-text-main font-medium">$19.900</span>
                     <span class="font-sans text-[10px] text-brand-cream uppercase tracking-widest ml-2">COP / mes</span>
                 </div>
                 
-                <!-- Botón minimalista estilo editorial -->
-                <div class="w-full flex justify-center py-4 border-t border-b border-border-color">
-                    <a href="#" class="font-sans text-[10px] uppercase tracking-[0.2em] text-brand-cream hover:text-white transition-colors font-medium text-center">
-                        Quiero unirme a la comunidad
-                    </a>
-                </div>
+                <!-- Botón estandarizado a la identidad de la página -->
+                <a href="#" class="inline-block w-full py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase">
+                    Quiero unirme a la comunidad
+                </a>
             </div>
         </section>
 
         <!-- SECCIÓN DE SERVICIOS (ID: servicios) -->
-        <section id="servicios" class="relative z-10 px-5 pt-10 pb-6 flex flex-col gap-5">
+        <section id="servicios" class="relative z-10 px-5 pt-8 pb-6 flex flex-col gap-5">
             
             <h2 class="font-serif text-3xl italic text-brand-cream mb-1 text-center">Servicios</h2>
             
-            <!-- Tarjeta 1 -->
             <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color mt-2">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
                 <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
@@ -194,7 +205,6 @@
                 </div>
             </a>
 
-            <!-- Tarjeta 2 -->
             <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
                 <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
@@ -209,7 +219,6 @@
                 </div>
             </a>
 
-            <!-- Tarjeta 3 -->
             <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
                 <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
@@ -224,7 +233,6 @@
                 </div>
             </a>
 
-            <!-- Tarjeta 4 -->
             <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
                 <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
@@ -240,65 +248,12 @@
             </a>
         </section>
 
-        <!-- SECCIÓN: TRABAJOS DESTACADOS (ID: portafolio) -->
-        <section id="portafolio" class="py-10 flex flex-col gap-5 pt-8">
-            <div class="px-5 flex justify-between items-end mb-2">
-                <h2 class="font-serif text-3xl italic text-brand-cream">Trabajos<br>destacados</h2>
-                <!-- Flechas del carrusel -->
-                <div class="flex gap-2">
-                    <button id="btn-prev" class="w-8 h-8 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-colors">
-                        <i class="fa-solid fa-angle-left text-sm"></i>
-                    </button>
-                    <button id="btn-next" class="w-8 h-8 rounded-full border border-brand-cream bg-brand-cream text-brand-dark flex items-center justify-center hover:bg-white transition-colors">
-                        <i class="fa-solid fa-angle-right text-sm"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Carrusel Contenedor -->
-            <div id="carousel-track" class="flex overflow-x-auto snap-x snap-mandatory gap-4 px-5 pb-4 hide-scrollbar scroll-smooth">
-                <!-- Proyecto 1 -->
-                <a href="#" class="relative shrink-0 w-[260px] h-[340px] rounded-3xl overflow-hidden shadow-md border border-border-color snap-center group">
-                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-brand-dark/10"></div>
-                    <div class="relative h-full p-5 flex flex-col justify-end z-10">
-                        <span class="text-[9px] uppercase tracking-wider text-brand-cream mb-2 font-medium border border-brand-cream/30 inline-block w-max px-3 py-1 rounded-full backdrop-blur-sm">Fotografía & Identidad</span>
-                        <h3 class="font-serif text-2xl italic text-text-main leading-tight mb-1">BULKCREAM</h3>
-                        <p class="font-sans text-[11px] text-text-light leading-snug">Estrategia visual y fotográfica para marca de suplementos de arroz.</p>
-                    </div>
-                </a>
-
-                <!-- Proyecto 2 -->
-                <a href="#" class="relative shrink-0 w-[260px] h-[340px] rounded-3xl overflow-hidden shadow-md border border-border-color snap-center group">
-                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-brand-dark/10"></div>
-                    <div class="relative h-full p-5 flex flex-col justify-end z-10">
-                        <span class="text-[9px] uppercase tracking-wider text-brand-cream mb-2 font-medium border border-brand-cream/30 inline-block w-max px-3 py-1 rounded-full backdrop-blur-sm">Marca Personal</span>
-                        <h3 class="font-serif text-2xl italic text-text-main leading-tight mb-1">Juls Salas</h3>
-                        <p class="font-sans text-[11px] text-text-light leading-snug">Desarrollo de caso de estudio y portafolio visual.</p>
-                    </div>
-                </a>
-
-                <!-- Proyecto 3 -->
-                <a href="#" class="relative shrink-0 w-[260px] h-[340px] rounded-3xl overflow-hidden shadow-md border border-border-color snap-center group">
-                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-brand-dark/10"></div>
-                    <div class="relative h-full p-5 flex flex-col justify-end z-10">
-                        <span class="text-[9px] uppercase tracking-wider text-brand-cream mb-2 font-medium border border-brand-cream/30 inline-block w-max px-3 py-1 rounded-full backdrop-blur-sm">Diseño Web</span>
-                        <h3 class="font-serif text-2xl italic text-text-main leading-tight mb-1">Maricela Ávila</h3>
-                        <p class="font-sans text-[11px] text-text-light leading-snug">Presentación digital y layout web profesional.</p>
-                    </div>
-                </a>
-            </div>
-        </section>
-
         <!-- SECCIÓN: CÓMO TRABAJAREMOS JUNTAS (ID: como-trabajo) -->
-        <section id="como-trabajo" class="px-8 py-10 pt-12">
+        <section id="como-trabajo" class="px-8 py-10 pt-6">
             <h2 class="font-serif text-3xl italic text-text-main mb-10 text-center">¿Cómo trabajaremos juntas?</h2>
             
             <div class="flex flex-col gap-8 relative before:absolute before:inset-y-0 before:left-[11px] before:w-[1px] before:bg-border-color">
                 
-                <!-- Pasos 1 a 4 -->
                 <div class="relative pl-10">
                     <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-brand-dark border border-brand-cream flex items-center justify-center z-10">
                         <span class="text-[10px] font-sans text-brand-cream font-medium">1</span>
@@ -330,8 +285,56 @@
             </div>
         </section>
 
+        <!-- SECCIÓN: TRABAJOS DESTACADOS (ID: portafolio) -->
+        <section id="portafolio" class="py-10 flex flex-col gap-5 pt-8">
+            <div class="px-5 flex justify-between items-end mb-2">
+                <h2 class="font-serif text-3xl italic text-brand-cream">Trabajos<br>destacados</h2>
+                <div class="flex gap-2">
+                    <button id="btn-prev-port" class="w-8 h-8 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-colors">
+                        <i class="fa-solid fa-angle-left text-sm"></i>
+                    </button>
+                    <button id="btn-next-port" class="w-8 h-8 rounded-full border border-brand-cream bg-brand-cream text-brand-dark flex items-center justify-center hover:bg-white transition-colors">
+                        <i class="fa-solid fa-angle-right text-sm"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="portfolio-track" class="flex overflow-x-auto snap-x snap-mandatory gap-4 px-5 pb-4 hide-scrollbar scroll-smooth">
+                <a href="#" class="relative shrink-0 w-[260px] h-[340px] rounded-3xl overflow-hidden shadow-md border border-border-color snap-center group">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-brand-dark/10"></div>
+                    <div class="relative h-full p-5 flex flex-col justify-end z-10">
+                        <span class="text-[9px] uppercase tracking-wider text-brand-cream mb-2 font-medium border border-brand-cream/30 inline-block w-max px-3 py-1 rounded-full backdrop-blur-sm">Fotografía & Identidad</span>
+                        <h3 class="font-serif text-2xl italic text-text-main leading-tight mb-1">BULKCREAM</h3>
+                        <p class="font-sans text-[11px] text-text-light leading-snug">Estrategia visual y fotográfica para marca de suplementos de arroz.</p>
+                    </div>
+                </a>
+
+                <a href="#" class="relative shrink-0 w-[260px] h-[340px] rounded-3xl overflow-hidden shadow-md border border-border-color snap-center group">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-brand-dark/10"></div>
+                    <div class="relative h-full p-5 flex flex-col justify-end z-10">
+                        <span class="text-[9px] uppercase tracking-wider text-brand-cream mb-2 font-medium border border-brand-cream/30 inline-block w-max px-3 py-1 rounded-full backdrop-blur-sm">Marca Personal</span>
+                        <h3 class="font-serif text-2xl italic text-text-main leading-tight mb-1">Juls Salas</h3>
+                        <p class="font-sans text-[11px] text-text-light leading-snug">Desarrollo de caso de estudio y portafolio visual.</p>
+                    </div>
+                </a>
+
+                <a href="#" class="relative shrink-0 w-[260px] h-[340px] rounded-3xl overflow-hidden shadow-md border border-border-color snap-center group">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-brand-dark/10"></div>
+                    <div class="relative h-full p-5 flex flex-col justify-end z-10">
+                        <span class="text-[9px] uppercase tracking-wider text-brand-cream mb-2 font-medium border border-brand-cream/30 inline-block w-max px-3 py-1 rounded-full backdrop-blur-sm">Diseño Web</span>
+                        <h3 class="font-serif text-2xl italic text-text-main leading-tight mb-1">Maricela Ávila</h3>
+                        <p class="font-sans text-[11px] text-text-light leading-snug">Presentación digital y layout web profesional.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
         <!-- SECCIÓN: SOBRE MÍ (ID: sobre-mi) -->
-        <section id="sobre-mi" class="px-6 py-12 bg-transparent mx-5 rounded-3xl mb-10 text-center border border-border-color pt-12">
+        <!-- Sin bordes blancos, todo integrado -->
+        <section id="sobre-mi" class="px-6 py-12 bg-transparent text-center pt-10">
             <h2 class="font-serif text-3xl italic text-brand-cream mb-6">Sobre mí</h2>
             
             <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-6 border-[3px] border-brand-cream shadow-sm">
@@ -342,35 +345,33 @@
                 Soy Gisella, estratega en Branding Digital y Marketing de Contenidos. Mi propósito es transformar la esencia de tu marca en una identidad digital auténtica y coherente, mediante la estrategia, la comunicación y el diseño visual, para construir una presencia en redes sociales que conecte con tu audiencia y refleje el valor de lo que haces.
             </p>
             
-            <a href="#" class="inline-block w-full py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase">
+            <a href="#" class="inline-block w-full max-w-[320px] mx-auto py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase">
                 Haz parte de nuestra comunidad
             </a>
         </section>
 
         <!-- SECCIÓN DE CONTACTO Y FOOTER -->
-        <footer class="px-8 pt-2 pb-12 text-center relative z-10 flex flex-col justify-between">
+        <footer class="px-8 pt-4 pb-12 text-center relative z-10 flex flex-col justify-between">
             
             <div class="mb-10 text-center">
                 <h2 class="font-serif text-2xl italic text-brand-cream mb-6">Contacto</h2>
                 
-                <!-- Íconos de Redes Sociales -->
                 <div class="flex justify-center gap-5">
-                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
                         <i class="fa-brands fa-whatsapp text-xl"></i>
                     </a>
-                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
                         <i class="fa-brands fa-instagram text-xl"></i>
                     </a>
-                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
                         <i class="fa-brands fa-linkedin-in text-xl"></i>
                     </a>
-                    <a href="mailto:correo@tudominio.com" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                    <a href="mailto:correo@tudominio.com" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
                         <i class="fa-regular fa-envelope text-xl"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Copyright -->
             <div class="pt-6 relative border-t border-border-color">
                 <h4 class="font-serif text-[1.2rem] italic mb-1 text-text-main">Gisella Villarreal</h4>
                 <p class="text-[9px] font-sans font-medium text-text-light tracking-widest uppercase leading-relaxed">
@@ -381,11 +382,11 @@
 
     </main>
 
-    <!-- SCRIPT PARA EL MENÚ Y EL CARRUSEL -->
+    <!-- SCRIPT PARA EL MENÚ Y LOS CARRUSELES -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            // --- LOGICA DEL MENÚ ---
+            // --- LÓGICA DEL MENÚ DESPLEGABLE ---
             const openMenuBtn = document.getElementById('open-menu-btn');
             const closeMenuBtn = document.getElementById('close-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -412,22 +413,40 @@
                 link.addEventListener('click', closeMenu);
             });
 
-            // --- LOGICA DEL CARRUSEL ---
-            const track = document.getElementById('carousel-track');
-            const btnPrev = document.getElementById('btn-prev');
-            const btnNext = document.getElementById('btn-next');
 
-            if(track && btnPrev && btnNext) {
-                btnNext.addEventListener('click', () => {
-                    track.scrollBy({ left: 280, behavior: 'smooth' });
+            // --- LÓGICA DEL CARRUSEL: FOTOS DE LIFESTYLE ---
+            const trackLife = document.getElementById('lifestyle-track');
+            const btnPrevLife = document.getElementById('btn-prev-life');
+            const btnNextLife = document.getElementById('btn-next-life');
+
+            if(trackLife && btnPrevLife && btnNextLife) {
+                // Desplaza un ancho estándar de tarjeta (~300px)
+                btnNextLife.addEventListener('click', () => {
+                    trackLife.scrollBy({ left: 300, behavior: 'smooth' });
                 });
                 
-                btnPrev.addEventListener('click', () => {
-                    track.scrollBy({ left: -280, behavior: 'smooth' });
+                btnPrevLife.addEventListener('click', () => {
+                    trackLife.scrollBy({ left: -300, behavior: 'smooth' });
+                });
+            }
+
+            // --- LÓGICA DEL CARRUSEL: PORTAFOLIO ---
+            const trackPort = document.getElementById('portfolio-track');
+            const btnPrevPort = document.getElementById('btn-prev-port');
+            const btnNextPort = document.getElementById('btn-next-port');
+
+            if(trackPort && btnPrevPort && btnNextPort) {
+                // Desplaza 280px a la derecha (ancho de tarjeta + gap)
+                btnNextPort.addEventListener('click', () => {
+                    trackPort.scrollBy({ left: 280, behavior: 'smooth' });
+                });
+                
+                btnPrevPort.addEventListener('click', () => {
+                    trackPort.scrollBy({ left: -280, behavior: 'smooth' });
                 });
             }
         });
     </script>
 
 </body>
-    </html>
+</html>
