@@ -31,11 +31,9 @@
         }
     </script>
     <style>
-        /* Desplazamiento suave para los anclajes del menú */
         html {
             scroll-behavior: smooth;
         }
-        /* Ocultar barra de scroll en los carruseles */
         .hide-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -58,7 +56,7 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <!-- Enlaces del Menú (Reordenados según nueva estructura) -->
+            <!-- Enlaces del Menú -->
             <nav class="flex flex-col items-center gap-7 mt-8 w-full">
                 <a href="#inicio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Inicio</a>
                 <a href="#comunidad" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Comunidad</a>
@@ -89,20 +87,16 @@
         <header id="inicio" class="relative w-full h-[85vh] min-h-[600px] flex flex-col">
             
             <div class="absolute top-6 left-5 right-5 z-30 flex justify-between items-center">
-                <!-- Botón "Háblame de tu marca" -->
                 <a href="#" class="px-4 py-2 rounded-full border border-black text-black text-[10px] font-bold tracking-wider hover:bg-black hover:text-white transition-all uppercase bg-transparent flex items-center gap-2">
                     <i class="fa-brands fa-whatsapp text-[14px]"></i>
                     Háblame de tu marca
                 </a>
-                
-                <!-- Ícono de Menú -->
                 <div id="open-menu-btn" class="flex flex-col gap-[6px] cursor-pointer opacity-80 hover:opacity-100 transition-opacity p-1">
                     <div class="w-7 h-[2px] bg-black"></div>
                     <div class="w-7 h-[2px] bg-black"></div>
                 </div>
             </div>
 
-            <!-- Imagen Hero -->
             <div class="absolute inset-0 z-0 overflow-hidden bg-brand-dark">
                 <img src="1792874026013~2.jpg" 
                      alt="Gisella Villarreal" 
@@ -125,8 +119,7 @@
         </header>
 
         <!-- SECCIÓN: FOTOS DE LIFESTYLE BRANDING (ID: comunidad) -->
-        <!-- NOTA: Se eliminaron los bordes para mantener la continuidad del fondo oscuro -->
-        <section id="comunidad" class="px-6 py-12 flex flex-col gap-6 relative z-10">
+        <section id="comunidad" class="px-6 pt-6 pb-8 flex flex-col gap-6 relative z-10">
             
             <!-- Título Centrado -->
             <div class="text-center">
@@ -135,18 +128,11 @@
             
             <!-- Carrusel de Galería -->
             <div class="relative w-[90%] mx-auto rounded-xl overflow-hidden shadow-lg border border-border-color">
-                
-                <!-- Contenedor del Carrusel (Deslizamiento horizontal) -->
                 <div id="lifestyle-track" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
-                    <!-- Foto 1 -->
                     <img src="1792874026013.jpg" alt="Lifestyle branding 1" class="w-full h-[260px] object-cover shrink-0 snap-center">
-                    <!-- Foto 2 -->
                     <img src="1792874026013~2.jpg" alt="Lifestyle branding 2" class="w-full h-[260px] object-cover shrink-0 snap-center object-top">
-                    <!-- Foto 3 (Ejemplo adicional para el carrusel) -->
                     <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=600&auto=format&fit=crop" alt="Lifestyle branding 3" class="w-full h-[260px] object-cover shrink-0 snap-center">
                 </div>
-
-                <!-- Botones de flecha integrados en la imagen -->
                 <button id="btn-prev-life" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-brand-dark/70 text-brand-cream flex items-center justify-center backdrop-blur-sm border border-brand-cream/30 hover:bg-brand-cream hover:text-brand-dark transition-colors">
                     <i class="fa-solid fa-angle-left text-sm"></i>
                 </button>
@@ -155,17 +141,16 @@
                 </button>
             </div>
             
-            <!-- Texto y Botón Centrados -->
-            <div class="flex flex-col text-center mt-2">
+            <!-- Texto y Botón Alineados a la Izquierda -->
+            <div class="flex flex-col text-left mt-2 w-full">
                 <p class="font-sans text-[13px] text-text-light leading-relaxed font-light mb-5">
-                    Aprende a crear fotografías de branding con tu celular y construye una identidad visual que refleje la esencia de tu marca. Accede a la comunidad y desarrolla tus habilidades fotográficas a tu propio ritmo.
+                    Te enseño a crear fotografías de branding con tu celular y construye una identidad visual que refleje la esencia de tu marca. Accede a la comunidad y desarrolla tus habilidades fotográficas a tu propio ritmo.
                 </p>
                 
                 <p class="font-sans text-[12px] text-brand-cream mb-4 uppercase tracking-wider">¿Qué encontrarás?</p>
                 
-                <!-- Lista de beneficios (centrada en bloque) -->
-                <div class="flex justify-center w-full mb-6">
-                    <ul class="flex flex-col gap-3 font-sans text-[12px] text-text-light font-light text-left inline-block">
+                <div class="w-full mb-6">
+                    <ul class="flex flex-col gap-3 font-sans text-[12px] text-text-light font-light text-left">
                         <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Clases y tutoriales prácticos.</li>
                         <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Técnicas de fotografía con celular.</li>
                         <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Ideas y ejercicios de branding fotográfico.</li>
@@ -173,14 +158,12 @@
                     </ul>
                 </div>
 
-                <!-- Precio -->
-                <div class="mb-8 flex justify-center items-baseline">
+                <div class="mb-8 flex items-baseline">
                     <span class="font-serif text-3xl text-text-main font-medium">$19.900</span>
                     <span class="font-sans text-[10px] text-brand-cream uppercase tracking-widest ml-2">COP / mes</span>
                 </div>
                 
-                <!-- Botón estandarizado a la identidad de la página -->
-                <a href="#" class="inline-block w-full py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase">
+                <a href="#" class="inline-block w-full py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase text-center">
                     Quiero unirme a la comunidad
                 </a>
             </div>
@@ -249,8 +232,8 @@
         </section>
 
         <!-- SECCIÓN: CÓMO TRABAJAREMOS JUNTAS (ID: como-trabajo) -->
-        <section id="como-trabajo" class="px-8 py-10 pt-6">
-            <h2 class="font-serif text-3xl italic text-text-main mb-10 text-center">¿Cómo trabajaremos juntas?</h2>
+        <section id="como-trabajo" class="px-8 pt-8 pb-10">
+            <h2 class="font-serif text-3xl italic text-text-main mb-8 text-center">¿Cómo trabajaremos juntas?</h2>
             
             <div class="flex flex-col gap-8 relative before:absolute before:inset-y-0 before:left-[11px] before:w-[1px] before:bg-border-color">
                 
@@ -286,7 +269,7 @@
         </section>
 
         <!-- SECCIÓN: TRABAJOS DESTACADOS (ID: portafolio) -->
-        <section id="portafolio" class="py-10 flex flex-col gap-5 pt-8">
+        <section id="portafolio" class="pt-6 pb-10 flex flex-col gap-5">
             <div class="px-5 flex justify-between items-end mb-2">
                 <h2 class="font-serif text-3xl italic text-brand-cream">Trabajos<br>destacados</h2>
                 <div class="flex gap-2">
@@ -333,8 +316,8 @@
         </section>
 
         <!-- SECCIÓN: SOBRE MÍ (ID: sobre-mi) -->
-        <!-- Sin bordes blancos, todo integrado -->
-        <section id="sobre-mi" class="px-6 py-12 bg-transparent text-center pt-10">
+        <!-- Borde restaurado -->
+        <section id="sobre-mi" class="px-6 py-10 bg-transparent mx-5 rounded-3xl mb-10 text-center border border-border-color">
             <h2 class="font-serif text-3xl italic text-brand-cream mb-6">Sobre mí</h2>
             
             <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-6 border-[3px] border-brand-cream shadow-sm">
@@ -351,9 +334,9 @@
         </section>
 
         <!-- SECCIÓN DE CONTACTO Y FOOTER -->
-        <footer class="px-8 pt-4 pb-12 text-center relative z-10 flex flex-col justify-between">
+        <footer class="px-8 pt-2 pb-12 text-center relative z-10 flex flex-col justify-between">
             
-            <div class="mb-10 text-center">
+            <div class="mb-8 text-center">
                 <h2 class="font-serif text-2xl italic text-brand-cream mb-6">Contacto</h2>
                 
                 <div class="flex justify-center gap-5">
@@ -420,7 +403,6 @@
             const btnNextLife = document.getElementById('btn-next-life');
 
             if(trackLife && btnPrevLife && btnNextLife) {
-                // Desplaza un ancho estándar de tarjeta (~300px)
                 btnNextLife.addEventListener('click', () => {
                     trackLife.scrollBy({ left: 300, behavior: 'smooth' });
                 });
@@ -436,7 +418,6 @@
             const btnNextPort = document.getElementById('btn-next-port');
 
             if(trackPort && btnPrevPort && btnNextPort) {
-                // Desplaza 280px a la derecha (ancho de tarjeta + gap)
                 btnNextPort.addEventListener('click', () => {
                     trackPort.scrollBy({ left: 280, behavior: 'smooth' });
                 });
