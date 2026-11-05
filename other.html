@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,10 +16,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'base-crema': '#F7F5F0',    /* Fondo principal: Avena suave y elegante */
-                        'texto-oscuro': '#2A2724',  /* Textos: Carbón cálido (más elegante que el negro) */
-                        'terracota': '#C05A3C',     /* El acento vibrante y cálido */
-                        'fondo-tarjetas': '#36312D',/* Fondo oscuro para las tarjetas semitransparentes */
+                        'beige-crema': '#EFE7DC',   /* Un beige más cálido, crema y elegante */
+                        'texto-oscuro': '#2A2724',  /* Carbón para textos */
+                        'terracota': '#C05A3C',     /* Terracota para acentos y sección Sobre Mí */
+                        'fondo-tarjetas': '#36312D',/* Fondo para tarjetas semitransparentes */
                         'gris-taupe': '#9C958E',    /* Para textos secundarios */
                     },
                     fontFamily: {
@@ -31,14 +31,14 @@
         }
     </script>
 </head>
-<body class="bg-base-crema antialiased text-texto-oscuro selection:bg-terracota selection:text-white">
+<body class="bg-beige-crema antialiased text-texto-oscuro selection:bg-terracota selection:text-white">
 
-    <main class="max-w-[430px] mx-auto bg-base-crema min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
+    <main class="max-w-[430px] mx-auto bg-beige-crema min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
         
         <!-- HEADER / HERO -->
         <header class="relative w-full h-[85vh] min-h-[600px] flex flex-col">
             
-            <!-- Botón Superior Derecho (Terracota, sin vidrio) -->
+            <!-- Botón Superior Derecho -->
             <div class="absolute top-6 right-5 z-30">
                 <a href="#" class="px-4 py-2 rounded-full border border-terracota text-terracota text-[11px] font-medium tracking-wider hover:bg-terracota hover:text-white transition-all uppercase bg-transparent">
                     Hablemos de tu marca
@@ -46,42 +46,41 @@
             </div>
 
             <!-- Imagen de Fondo Principal -->
-            <div class="absolute inset-0 z-0 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
+            <div class="absolute inset-0 z-0 overflow-hidden bg-[#D9CFC4]">
+                <!-- Se reemplazó por la imagen solicitada -->
+                <img src="1792874026013.jpg" 
                      alt="Gisella Villarreal" 
                      class="w-full h-full object-cover object-[center_15%] scale-[1.05]">
             </div>
             
-            <!-- Difuminado (Gradient Blend Overlay) al fondo Crema -->
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-base-crema via-base-crema/95 to-transparent z-10 h-[75%]"></div>
+            <!-- Difuminado (Gradient Blend Overlay) reducido a solo un 35% de altura -->
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-beige-crema via-beige-crema/80 to-transparent z-10 h-[35%]"></div>
 
-            <!-- Contenido Inferior (Textos oscuros sobre fondo claro) -->
-            <div class="relative z-20 px-6 mt-auto flex flex-col items-center text-center w-full pb-10">
+            <!-- Contenido Inferior -->
+            <div class="relative z-20 px-6 mt-auto flex flex-col items-center text-center w-full pb-8">
                 <h1 class="font-serif text-[3.5rem] md:text-6xl italic font-medium leading-[1.05] mb-2 text-texto-oscuro tracking-wide">
                     Gisella<br>Villarreal
                 </h1>
-                <!-- Subtítulo actualizado -->
                 <p class="font-sans text-[13px] tracking-[0.2em] uppercase text-terracota mb-2 font-medium">
                     Marketing de Contenido
                 </p>
             </div>
         </header>
 
-        <!-- SECCIÓN DE SERVICIOS (Tarjetas con filtro oscuro y botón terracota) -->
+        <!-- SECCIÓN DE SERVICIOS -->
         <section id="servicios" class="relative z-10 px-5 py-6 flex flex-col gap-5">
             
             <!-- Tarjeta 1 -->
             <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-texto-oscuro/5">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <!-- Sombreado oscuro semitransparente para que la foto se vea pero el texto resalte -->
                 <div class="absolute inset-0 bg-fondo-tarjetas/80 group-hover:bg-fondo-tarjetas/70 transition-colors duration-500"></div>
                 <div class="relative h-full p-6 flex flex-col justify-between z-10">
                     <div>
-                        <h3 class="font-serif text-3xl italic text-base-crema leading-tight mb-2">Esencia<br>Digital</h3>
-                        <p class="font-sans text-[12px] text-base-crema/80 max-w-[75%] leading-snug">Identidad y estrategia de marca.</p>
+                        <h3 class="font-serif text-3xl italic text-beige-crema leading-tight mb-2">Esencia<br>Digital</h3>
+                        <p class="font-sans text-[12px] text-beige-crema/80 max-w-[75%] leading-snug">Identidad y estrategia de marca.</p>
                     </div>
                     <div class="mt-5">
-                        <span class="inline-block text-[9px] uppercase tracking-wider border border-terracota px-4 py-1.5 rounded-full text-base-crema bg-terracota/80 backdrop-blur-sm group-hover:bg-terracota transition-colors">Conocer más</span>
+                        <span class="inline-block text-[9px] uppercase tracking-wider border border-terracota px-4 py-1.5 rounded-full text-beige-crema bg-terracota/80 backdrop-blur-sm group-hover:bg-terracota transition-colors">Conocer más</span>
                     </div>
                 </div>
             </a>
@@ -92,11 +91,11 @@
                 <div class="absolute inset-0 bg-fondo-tarjetas/80 group-hover:bg-fondo-tarjetas/70 transition-colors duration-500"></div>
                 <div class="relative h-full p-6 flex flex-col justify-between z-10">
                     <div>
-                        <h3 class="font-serif text-3xl italic text-base-crema leading-tight mb-2">Presencia<br>Estratégica</h3>
-                        <p class="font-sans text-[12px] text-base-crema/80 max-w-[75%] leading-snug">Estrategia y contenido para redes.</p>
+                        <h3 class="font-serif text-3xl italic text-beige-crema leading-tight mb-2">Presencia<br>Estratégica</h3>
+                        <p class="font-sans text-[12px] text-beige-crema/80 max-w-[75%] leading-snug">Estrategia y contenido para redes.</p>
                     </div>
                     <div class="mt-5">
-                        <span class="inline-block text-[9px] uppercase tracking-wider border border-terracota px-4 py-1.5 rounded-full text-base-crema bg-terracota/80 backdrop-blur-sm group-hover:bg-terracota transition-colors">Conocer más</span>
+                        <span class="inline-block text-[9px] uppercase tracking-wider border border-terracota px-4 py-1.5 rounded-full text-beige-crema bg-terracota/80 backdrop-blur-sm group-hover:bg-terracota transition-colors">Conocer más</span>
                     </div>
                 </div>
             </a>
@@ -107,11 +106,11 @@
                 <div class="absolute inset-0 bg-fondo-tarjetas/80 group-hover:bg-fondo-tarjetas/70 transition-colors duration-500"></div>
                 <div class="relative h-full p-6 flex flex-col justify-between z-10">
                     <div>
-                        <h3 class="font-serif text-3xl italic text-base-crema leading-tight mb-2">Marca<br>Integral</h3>
-                        <p class="font-sans text-[12px] text-base-crema/90 max-w-[75%] leading-snug">Un ecosistema digital para tu marca personal.</p>
+                        <h3 class="font-serif text-3xl italic text-beige-crema leading-tight mb-2">Marca<br>Integral</h3>
+                        <p class="font-sans text-[12px] text-beige-crema/90 max-w-[75%] leading-snug">Un ecosistema digital para tu marca personal.</p>
                     </div>
                     <div class="mt-5">
-                        <span class="inline-block text-[9px] uppercase tracking-wider border border-terracota px-4 py-1.5 rounded-full text-base-crema bg-terracota/80 backdrop-blur-sm group-hover:bg-terracota transition-colors">Conocer más</span>
+                        <span class="inline-block text-[9px] uppercase tracking-wider border border-terracota px-4 py-1.5 rounded-full text-beige-crema bg-terracota/80 backdrop-blur-sm group-hover:bg-terracota transition-colors">Conocer más</span>
                     </div>
                 </div>
             </a>
@@ -122,11 +121,11 @@
                 <div class="absolute inset-0 bg-fondo-tarjetas/80 group-hover:bg-fondo-tarjetas/70 transition-colors duration-500"></div>
                 <div class="relative h-full p-6 flex flex-col justify-between z-10">
                     <div>
-                        <h3 class="font-serif text-3xl italic text-base-crema leading-tight mb-2">Fotografía</h3>
-                        <p class="font-sans text-[12px] text-base-crema/80 max-w-[75%] leading-snug">Tu esencia en cada detalle.</p>
+                        <h3 class="font-serif text-3xl italic text-beige-crema leading-tight mb-2">Fotografía</h3>
+                        <p class="font-sans text-[12px] text-beige-crema/80 max-w-[75%] leading-snug">Tu esencia en cada detalle.</p>
                     </div>
                     <div class="mt-5">
-                        <span class="inline-block text-[9px] uppercase tracking-wider border border-terracota px-4 py-1.5 rounded-full text-base-crema bg-terracota/80 backdrop-blur-sm group-hover:bg-terracota transition-colors">Conocer más</span>
+                        <span class="inline-block text-[9px] uppercase tracking-wider border border-terracota px-4 py-1.5 rounded-full text-beige-crema bg-terracota/80 backdrop-blur-sm group-hover:bg-terracota transition-colors">Conocer más</span>
                     </div>
                 </div>
             </a>
@@ -140,7 +139,7 @@
                 
                 <!-- Paso 1 -->
                 <div class="relative pl-10">
-                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-base-crema border border-terracota flex items-center justify-center z-10">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-beige-crema border border-terracota flex items-center justify-center z-10">
                         <span class="text-[10px] font-sans text-terracota font-semibold">1</span>
                     </div>
                     <h4 class="font-serif text-xl text-texto-oscuro mb-1">Conocemos tu marca.</h4>
@@ -149,7 +148,7 @@
                 
                 <!-- Paso 2 -->
                 <div class="relative pl-10">
-                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-base-crema border border-terracota flex items-center justify-center z-10">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-beige-crema border border-terracota flex items-center justify-center z-10">
                         <span class="text-[10px] font-sans text-terracota font-semibold">2</span>
                     </div>
                     <h4 class="font-serif text-xl text-texto-oscuro mb-1">Definimos la estrategia.</h4>
@@ -158,7 +157,7 @@
                 
                 <!-- Paso 3 -->
                 <div class="relative pl-10">
-                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-base-crema border border-terracota flex items-center justify-center z-10">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-beige-crema border border-terracota flex items-center justify-center z-10">
                         <span class="text-[10px] font-sans text-terracota font-semibold">3</span>
                     </div>
                     <h4 class="font-serif text-xl text-texto-oscuro mb-1">Desarrollamos tu proyecto.</h4>
@@ -167,7 +166,7 @@
                 
                 <!-- Paso 4 -->
                 <div class="relative pl-10">
-                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-base-crema border border-terracota flex items-center justify-center z-10">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-beige-crema border border-terracota flex items-center justify-center z-10">
                         <span class="text-[10px] font-sans text-terracota font-semibold">4</span>
                     </div>
                     <h4 class="font-serif text-xl text-texto-oscuro mb-1">Entregamos tu marca.</h4>
@@ -177,16 +176,22 @@
             </div>
         </section>
 
-        <!-- SECCIÓN: SOBRE MÍ -->
-        <section class="px-6 py-12 bg-white mx-5 rounded-3xl mb-10 text-center shadow-sm border border-gris-taupe/10">
-            <h2 class="font-serif text-3xl italic text-texto-oscuro mb-6">Sobre mí</h2>
-            <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-6 border-[3px] border-terracota shadow-sm">
-                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop" alt="Perfil" class="w-full h-full object-cover">
+        <!-- SECCIÓN: SOBRE MÍ (Modificada a fondo Terracota) -->
+        <section class="px-6 py-12 bg-terracota mx-5 rounded-3xl mb-10 text-center shadow-lg border border-terracota/20">
+            <h2 class="font-serif text-3xl italic text-beige-crema mb-6">Sobre mí</h2>
+            
+            <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-6 border-[3px] border-beige-crema shadow-sm">
+                <!-- Se reemplazó por la imagen solicitada -->
+                <img src="1792874026013.jpg" alt="Perfil de Gisella" class="w-full h-full object-cover">
             </div>
-            <p class="font-sans text-[14px] text-texto-oscuro/80 font-light leading-relaxed mb-8 px-2">
+            
+            <!-- Texto en color claro para contrastar sobre el terracota -->
+            <p class="font-sans text-[14px] text-beige-crema/90 font-light leading-relaxed mb-8 px-2">
                 Soy Gisella, estratega y creadora de contenido. Mi propósito es materializar la esencia de tu marca a través del diseño estratégico y la dirección visual, conectando con tu audiencia desde la autenticidad y el profesionalismo.
             </p>
-            <a href="#" class="inline-block w-full py-4 rounded-full bg-terracota hover:bg-[#a64a30] transition-colors text-white text-[13px] font-medium tracking-wide shadow-md uppercase">
+            
+            <!-- Botón invertido (Fondo crema, texto terracota) -->
+            <a href="#" class="inline-block w-full py-4 rounded-full bg-beige-crema hover:bg-white transition-colors text-terracota text-[13px] font-bold tracking-wide shadow-md uppercase">
                 Haz parte de nuestra comunidad
             </a>
         </section>
@@ -226,5 +231,4 @@
     </main>
 
 </body>
-                            </html>
-                            
+</html>
