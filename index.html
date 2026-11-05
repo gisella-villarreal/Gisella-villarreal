@@ -12,10 +12,10 @@
     :root {
       /* NUEVA PALETA DE COLORES */
       --bg-dark: #000000;      
-      --bg-cream: #bc9f84;     
-      --accent-orange: #f14902;
-      --text-main: #ffffff;    
-      --text-light: #b0b0b0;   
+      --bg-cream: #A2c2be;     
+      --accent-orange: #eb4600;
+      --text-main: #ffffeb;    
+      --text-light: rgba(255, 255, 235, 0.7);   
       --border-color: rgba(255, 255, 255, 0.15); 
       --silver-accent: #D3D3D3; 
     }
@@ -55,7 +55,7 @@
     }
     
     .top-bar.scrolled {
-      background-color: rgba(188, 159, 132, 0.95); /* Color #bc9f84 con opacidad */
+      background-color: rgba(162, 194, 190, 0.95); /* Color #A2c2be con opacidad */
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -70,13 +70,13 @@
       text-decoration: none;
     }
     
-    /* Cuando no hay scroll, el texto del logo es blanco para verse en la imagen */
+    /* Cuando no hay scroll, el texto del logo es crema para verse en la imagen */
     .top-bar:not(.scrolled) .brand-name,
     .top-bar:not(.scrolled) .menu-icon {
       color: var(--text-main);
     }
     
-    /* Cuando hay scroll, vuelven al fondo oscuro para contrastar con el beige */
+    /* Cuando hay scroll, vuelven al fondo oscuro para contrastar con el menta */
     .top-bar.scrolled .brand-name,
     .top-bar.scrolled .menu-icon {
       color: var(--bg-dark);
@@ -129,12 +129,12 @@
     .hero h1 i {
       font-weight: 400;
       font-style: italic;
-      color: var(--bg-cream); /* Cambiado al acento beige */
+      color: var(--bg-cream); 
     }
     
     .hero p {
       font-size: 0.9rem;
-      color: #E2DDD5;
+      color: var(--text-light);
       line-height: 1.5;
       margin: 0 0 25px 0;
       max-width: 90%;
@@ -171,8 +171,8 @@
       color: var(--bg-dark);
     }
     .btn-icon {
-      background-color: var(--accent-orange); /* Naranja vibrante para acción */
-      color: var(--text-main);
+      background-color: var(--accent-orange); 
+      color: #ffffff; /* Blanco puro para el icono sobre fondo naranja */
       width: 32px;
       height: 32px;
       border-radius: 50%;
@@ -240,7 +240,7 @@
     .stat-item i {
       font-size: 1.8rem;
       margin-bottom: 8px;
-      color: var(--accent-orange); /* Íconos destacados con naranja */
+      color: var(--accent-orange); 
     }
     .stat-item h4 {
       font-size: 0.65rem;
@@ -250,7 +250,7 @@
     }
     .stat-item p {
       font-size: 0.55rem;
-      color: #999;
+      color: var(--text-light);
       line-height: 1.3;
     }
 
@@ -337,7 +337,7 @@
     }
 
     .srv-feature-icon {
-      color: var(--bg-cream); /* Íconos de lista en beige */
+      color: var(--bg-cream); 
       font-size: 1.4rem;
       margin-top: 2px;
       flex-shrink: 0;
@@ -353,7 +353,7 @@
 
     .srv-feature-text p {
       font-size: 0.75rem;
-      color: #999;
+      color: var(--text-light);
       line-height: 1.5;
     }
 
@@ -404,7 +404,7 @@
 
     .carousel-btn:hover {
       background: var(--accent-orange);
-      color: var(--text-main);
+      color: #ffffff;
       border-color: var(--accent-orange);
     }
 
@@ -778,7 +778,7 @@
       opacity: 1;
       visibility: visible;
     }
-     .close-btn {
+    .close-btn {
       position: absolute;
       top: 20px; right: 20px;
       font-size: 2rem;
@@ -801,7 +801,7 @@
       transition: color 0.3s ease;
     }
     .overlay-content a:hover {
-      color: var(--accent-orange); /* Toque naranja al pasar cursor por menú */
+      color: var(--text-main); 
     }
     
     .overlay-socials {
@@ -816,7 +816,7 @@
       transition: color 0.3s ease;
     }
     .overlay-socials a:hover {
-      color: var(--accent-orange);
+      color: var(--text-main);
     }
 
     /* ====== MEDIA QUERIES PARA PC ====== */
@@ -1062,7 +1062,7 @@
       <div class="carousel-grid" id="workCarousel">
         
         <!-- Tarjeta 01 -->
-                <a href="#" class="work-card">
+        <a href="#" class="work-card">
           <div class="work-info">
             <span class="work-num">01</span>
             <h3 class="work-name">FÍSICOCULTURISTA</h3>
@@ -1117,7 +1117,6 @@
             * Puede contratar Servicios por separado o como una experiencia integral de marca personal.
           </div>
         </a>
-
         <!-- Tarjeta 03 -->
         <a href="#" class="work-card">
           <div class="work-info">
@@ -1334,7 +1333,7 @@
   </div>
 
   <script>
-    // Cambio de transparente a Beige al hacer scroll
+    // Cambio de transparente a Menta al hacer scroll
     window.addEventListener('scroll', function() {
       const header = document.querySelector('.top-bar');
       if (window.scrollY > 50) {
@@ -1373,3 +1372,4 @@
   </script>
 </body>
   </html>
+ 
