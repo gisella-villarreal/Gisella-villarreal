@@ -60,11 +60,12 @@
             </button>
 
             <!-- Enlaces del Menú -->
-            <nav class="flex flex-col items-center gap-8 mt-12 w-full">
+            <nav class="flex flex-col items-center gap-7 mt-8 w-full">
                 <a href="#inicio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Inicio</a>
                 <a href="#servicios" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Servicios</a>
                 <a href="#portafolio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Portafolio</a>
                 <a href="#comunidad" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Comunidad</a>
+                <a href="#como-trabajo" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">¿Cómo trabajo?</a>
                 <a href="#sobre-mi" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Sobre mí</a>
             </nav>
 
@@ -91,21 +92,21 @@
             
             <!-- Barra Superior -->
             <div class="absolute top-6 left-5 right-5 z-30 flex justify-between items-center">
-                <!-- Botón "Háblame de tu marca" -->
-                <a href="#" class="px-4 py-2 rounded-full border border-brand-dark text-brand-dark text-[10px] font-bold tracking-wider hover:bg-brand-dark hover:text-brand-cream hover:border-brand-cream transition-all uppercase bg-brand-cream shadow-md">
+                <!-- Botón "Háblame de tu marca" (Letras y delineado negros, fondo transparente) -->
+                <a href="#" class="px-4 py-2 rounded-full border border-black text-black text-[10px] font-bold tracking-wider hover:bg-black hover:text-white transition-all uppercase bg-transparent">
                     Háblame de tu marca
                 </a>
                 
-                <!-- Ícono de Menú (Con ID para JavaScript) -->
+                <!-- Ícono de Menú (Líneas negras) -->
                 <div id="open-menu-btn" class="flex flex-col gap-[6px] cursor-pointer opacity-80 hover:opacity-100 transition-opacity p-1">
-                    <div class="w-7 h-[2px] bg-brand-cream"></div>
-                    <div class="w-7 h-[2px] bg-brand-cream"></div>
+                    <div class="w-7 h-[2px] bg-black"></div>
+                    <div class="w-7 h-[2px] bg-black"></div>
                 </div>
             </div>
 
             <!-- Imagen de Fondo Principal -->
             <div class="absolute inset-0 z-0 overflow-hidden bg-brand-dark">
-                <img src="1792874026013.jpg" 
+                <img src="1792874026013~2.jpg" 
                      alt="Gisella Villarreal" 
                      class="w-full h-full object-cover object-[center_15%] scale-[1.05]">
             </div>
@@ -128,7 +129,7 @@
         </header>
 
         <!-- SECCIÓN DE SERVICIOS (ID: servicios) -->
-        <section id="servicios" class="relative z-10 px-5 pt-8 pb-6 flex flex-col gap-5 border-b border-border-color/50">
+        <section id="servicios" class="relative z-10 px-5 pt-8 pb-6 flex flex-col gap-5">
             
             <h2 class="font-serif text-3xl italic text-brand-cream mb-1 text-center">Servicios</h2>
             
@@ -194,21 +195,22 @@
         </section>
 
         <!-- SECCIÓN: TRABAJOS DESTACADOS (ID: portafolio) -->
-        <section id="portafolio" class="py-10 flex flex-col gap-5 pt-12">
+        <section id="portafolio" class="py-10 flex flex-col gap-5 pt-8">
             <div class="px-5 flex justify-between items-end mb-2">
                 <h2 class="font-serif text-3xl italic text-brand-cream">Trabajos<br>destacados</h2>
+                <!-- Flechas del carrusel con IDs -->
                 <div class="flex gap-2">
-                    <span class="w-8 h-8 rounded-full border border-border-color flex items-center justify-center text-text-light">
+                    <button id="btn-prev" class="w-8 h-8 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-colors">
                         <i class="fa-solid fa-angle-left text-sm"></i>
-                    </span>
-                    <span class="w-8 h-8 rounded-full border border-brand-cream bg-brand-cream text-brand-dark flex items-center justify-center">
+                    </button>
+                    <button id="btn-next" class="w-8 h-8 rounded-full border border-brand-cream bg-brand-cream text-brand-dark flex items-center justify-center hover:bg-white transition-colors">
                         <i class="fa-solid fa-angle-right text-sm"></i>
-                    </span>
+                    </button>
                 </div>
             </div>
             
-            <!-- Carrusel -->
-            <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 px-5 pb-4 hide-scrollbar">
+            <!-- Carrusel Contenedor (Con ID "carousel-track") -->
+            <div id="carousel-track" class="flex overflow-x-auto snap-x snap-mandatory gap-4 px-5 pb-4 hide-scrollbar scroll-smooth">
                 <!-- Proyecto 1 -->
                 <a href="#" class="relative shrink-0 w-[260px] h-[340px] rounded-3xl overflow-hidden shadow-md border border-border-color snap-center group">
                     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
@@ -245,8 +247,8 @@
         </section>
 
         <!-- SECCIÓN: BRANDING CON TU CEL (ID: comunidad) -->
-        <section id="comunidad" class="px-5 py-10 relative z-10 border-t border-border-color/50 pt-12">
-            <div class="w-full rounded-3xl border border-border-color bg-brand-dark/50 overflow-hidden shadow-lg p-7 relative backdrop-blur-sm mt-4">
+        <section id="comunidad" class="px-5 py-6 relative z-10 pt-8">
+            <div class="w-full rounded-3xl border border-border-color bg-brand-dark/50 overflow-hidden shadow-lg p-7 relative backdrop-blur-sm">
                 <div class="absolute top-0 right-0 w-40 h-40 bg-brand-cream/5 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
                 
                 <div class="relative z-10">
@@ -309,8 +311,8 @@
             </div>
         </section>
 
-        <!-- SECCIÓN: CÓMO TRABAJAREMOS JUNTAS -->
-        <section class="px-8 py-10">
+        <!-- SECCIÓN: CÓMO TRABAJAREMOS JUNTAS (ID: como-trabajo) -->
+        <section id="como-trabajo" class="px-8 py-10 pt-12">
             <h2 class="font-serif text-3xl italic text-text-main mb-10 text-center">¿Cómo trabajaremos juntas?</h2>
             
             <div class="flex flex-col gap-8 relative before:absolute before:inset-y-0 before:left-[11px] before:w-[1px] before:bg-border-color">
@@ -352,7 +354,8 @@
             <h2 class="font-serif text-3xl italic text-brand-cream mb-6">Sobre mí</h2>
             
             <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-6 border-[3px] border-brand-cream shadow-sm">
-                <img src="1792874026013.jpg" alt="Perfil de Gisella" class="w-full h-full object-cover">
+                <!-- Foto miniatura de sobre mí también actualizada -->
+                <img src="1792874026013~2.jpg" alt="Perfil de Gisella" class="w-full h-full object-cover">
             </div>
             
             <p class="font-sans text-[14px] text-text-light font-light leading-relaxed mb-8 px-2">
@@ -398,40 +401,55 @@
 
     </main>
 
-    <!-- SCRIPT PARA EL FUNCIONAMIENTO DEL MENÚ -->
+    <!-- SCRIPT PARA EL MENÚ Y EL CARRUSEL -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- LOGICA DEL MENÚ ---
             const openMenuBtn = document.getElementById('open-menu-btn');
             const closeMenuBtn = document.getElementById('close-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const menuLinks = document.querySelectorAll('.menu-link');
 
-            // Función para abrir el menú
             const openMenu = () => {
                 mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
                 mobileMenu.classList.add('opacity-100', 'translate-y-0');
-                // Evita que el usuario haga scroll en la página de fondo
                 document.body.style.overflow = 'hidden'; 
             };
 
-            // Función para cerrar el menú
             const closeMenu = () => {
                 mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
                 mobileMenu.classList.remove('opacity-100', 'translate-y-0');
-                // Reactiva el scroll en la página
                 document.body.style.overflow = '';
             };
 
-            // Asignar los eventos de click a los botones
-            openMenuBtn.addEventListener('click', openMenu);
-            closeMenuBtn.addEventListener('click', closeMenu);
+            if(openMenuBtn && closeMenuBtn) {
+                openMenuBtn.addEventListener('click', openMenu);
+                closeMenuBtn.addEventListener('click', closeMenu);
+            }
 
-            // Cerrar el menú al hacer click en cualquier enlace (y hacer scroll suave)
             menuLinks.forEach(link => {
                 link.addEventListener('click', closeMenu);
             });
+
+            // --- LOGICA DEL CARRUSEL ---
+            const track = document.getElementById('carousel-track');
+            const btnPrev = document.getElementById('btn-prev');
+            const btnNext = document.getElementById('btn-next');
+
+            if(track && btnPrev && btnNext) {
+                // Al hacer clic en siguiente, desplaza 280px a la derecha (el ancho de una tarjeta aprox + gap)
+                btnNext.addEventListener('click', () => {
+                    track.scrollBy({ left: 280, behavior: 'smooth' });
+                });
+                
+                // Al hacer clic en anterior, desplaza 280px a la izquierda
+                btnPrev.addEventListener('click', () => {
+                    track.scrollBy({ left: -280, behavior: 'smooth' });
+                });
+            }
         });
     </script>
 
 </body>
-</html>
+    </html>
