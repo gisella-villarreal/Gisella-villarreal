@@ -59,12 +59,12 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <!-- Enlaces del Menú -->
+            <!-- Enlaces del Menú (Reordenados según la nueva estructura de la web) -->
             <nav class="flex flex-col items-center gap-7 mt-8 w-full">
                 <a href="#inicio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Inicio</a>
-                <a href="#servicios" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Servicios</a>
                 <a href="#portafolio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Portafolio</a>
                 <a href="#comunidad" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Comunidad</a>
+                <a href="#servicios" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Servicios</a>
                 <a href="#como-trabajo" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">¿Cómo trabajo?</a>
                 <a href="#sobre-mi" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Sobre mí</a>
             </nav>
@@ -92,8 +92,9 @@
             
             <!-- Barra Superior -->
             <div class="absolute top-6 left-5 right-5 z-30 flex justify-between items-center">
-                <!-- Botón "Háblame de tu marca" (Letras y delineado negros, fondo transparente) -->
-                <a href="#" class="px-4 py-2 rounded-full border border-black text-black text-[10px] font-bold tracking-wider hover:bg-black hover:text-white transition-all uppercase bg-transparent">
+                <!-- Botón "Háblame de tu marca" con Ícono de WhatsApp -->
+                <a href="#" class="px-4 py-2 rounded-full border border-black text-black text-[10px] font-bold tracking-wider hover:bg-black hover:text-white transition-all uppercase bg-transparent flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-[14px]"></i>
                     Háblame de tu marca
                 </a>
                 
@@ -128,74 +129,8 @@
             </div>
         </header>
 
-        <!-- SECCIÓN DE SERVICIOS (ID: servicios) -->
-        <section id="servicios" class="relative z-10 px-5 pt-8 pb-6 flex flex-col gap-5">
-            
-            <h2 class="font-serif text-3xl italic text-brand-cream mb-1 text-center">Servicios</h2>
-            
-            <!-- Tarjeta 1 -->
-            <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color mt-2">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
-                <div class="relative h-full p-6 flex flex-col justify-between z-10">
-                    <div>
-                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Esencia<br>Digital</h3>
-                        <p class="font-sans text-[12px] text-text-light max-w-[75%] leading-snug">Identidad y estrategia de marca.</p>
-                    </div>
-                    <div class="mt-5">
-                        <span class="inline-block text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm group-hover:border-brand-cream transition-colors">Conocer más</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Tarjeta 2 -->
-            <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
-                <div class="relative h-full p-6 flex flex-col justify-between z-10">
-                    <div>
-                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Presencia<br>Estratégica</h3>
-                        <p class="font-sans text-[12px] text-text-light max-w-[75%] leading-snug">Estrategia y contenido para redes.</p>
-                    </div>
-                    <div class="mt-5">
-                        <span class="inline-block text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm group-hover:border-brand-cream transition-colors">Conocer más</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Tarjeta 3 -->
-            <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
-                <div class="relative h-full p-6 flex flex-col justify-between z-10">
-                    <div>
-                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Marca<br>Integral</h3>
-                        <p class="font-sans text-[12px] text-text-light max-w-[75%] leading-snug">Un ecosistema digital para tu marca personal.</p>
-                    </div>
-                    <div class="mt-5">
-                        <span class="inline-block text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm group-hover:border-brand-cream transition-colors">Conocer más</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Tarjeta 4 -->
-            <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
-                <div class="relative h-full p-6 flex flex-col justify-between z-10">
-                    <div>
-                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Fotografía</h3>
-                        <p class="font-sans text-[12px] text-text-light max-w-[75%] leading-snug">Tu esencia en cada detalle.</p>
-                    </div>
-                    <div class="mt-5">
-                        <span class="inline-block text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm group-hover:border-brand-cream transition-colors">Conocer más</span>
-                    </div>
-                </div>
-            </a>
-        </section>
-
         <!-- SECCIÓN: TRABAJOS DESTACADOS (ID: portafolio) -->
-        <section id="portafolio" class="py-10 flex flex-col gap-5 pt-8">
+        <section id="portafolio" class="py-10 flex flex-col gap-5 pt-12">
             <div class="px-5 flex justify-between items-end mb-2">
                 <h2 class="font-serif text-3xl italic text-brand-cream">Trabajos<br>destacados</h2>
                 <!-- Flechas del carrusel con IDs -->
@@ -247,11 +182,20 @@
         </section>
 
         <!-- SECCIÓN: BRANDING CON TU CEL (ID: comunidad) -->
-        <section id="comunidad" class="px-5 py-6 relative z-10 pt-8">
-            <div class="w-full rounded-3xl border border-border-color bg-brand-dark/50 overflow-hidden shadow-lg p-7 relative backdrop-blur-sm">
-                <div class="absolute top-0 right-0 w-40 h-40 bg-brand-cream/5 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
+        <section id="comunidad" class="px-5 py-6 relative z-10 pt-4">
+            <div class="w-full rounded-3xl border border-border-color overflow-hidden shadow-lg relative mt-4 group">
                 
-                <div class="relative z-10">
+                <!-- Imagen de fondo agregada a la sección -->
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-1000"></div>
+                
+                <!-- Filtro oscuro encima de la imagen para garantizar legibilidad -->
+                <div class="absolute inset-0 bg-brand-dark/85 backdrop-blur-[2px]"></div>
+
+                <!-- Resplandor sutil decorativo en la esquina superior -->
+                <div class="absolute top-0 right-0 w-40 h-40 bg-brand-cream/5 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none z-10"></div>
+                
+                <!-- Contenido principal -->
+                <div class="relative z-20 p-7">
                     <h2 class="font-serif text-3xl italic text-brand-cream mb-3">Branding con tu Cel</h2>
                     <p class="font-sans text-[13px] text-text-light leading-relaxed mb-6 font-light">
                         Aprende a crear fotografías de branding con tu celular y construye una identidad visual que refleje la esencia de tu marca.
@@ -311,6 +255,72 @@
             </div>
         </section>
 
+        <!-- SECCIÓN DE SERVICIOS (ID: servicios - Movida aquí) -->
+        <section id="servicios" class="relative z-10 px-5 pt-10 pb-6 flex flex-col gap-5">
+            
+            <h2 class="font-serif text-3xl italic text-brand-cream mb-1 text-center">Servicios</h2>
+            
+            <!-- Tarjeta 1 -->
+            <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color mt-2">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
+                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
+                <div class="relative h-full p-6 flex flex-col justify-between z-10">
+                    <div>
+                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Esencia<br>Digital</h3>
+                        <p class="font-sans text-[12px] text-text-light max-w-[75%] leading-snug">Identidad y estrategia de marca.</p>
+                    </div>
+                    <div class="mt-5">
+                        <span class="inline-block text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm group-hover:border-brand-cream transition-colors">Conocer más</span>
+                    </div>
+                </div>
+            </a>
+
+             <!-- Tarjeta 2 -->
+            <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
+                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
+                <div class="relative h-full p-6 flex flex-col justify-between z-10">
+                    <div>
+                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Presencia<br>Estratégica</h3>
+                        <p class="font-sans text-[12px] text-text-light max-w-[75%] leading-snug">Estrategia y contenido para redes.</p>
+                    </div>
+                    <div class="mt-5">
+                        <span class="inline-block text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm group-hover:border-brand-cream transition-colors">Conocer más</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Tarjeta 3 -->
+            <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
+                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
+                <div class="relative h-full p-6 flex flex-col justify-between z-10">
+                    <div>
+                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Marca<br>Integral</h3>
+                        <p class="font-sans text-[12px] text-text-light max-w-[75%] leading-snug">Un ecosistema digital para tu marca personal.</p>
+                    </div>
+                    <div class="mt-5">
+                        <span class="inline-block text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm group-hover:border-brand-cream transition-colors">Conocer más</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Tarjeta 4 -->
+            <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
+                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
+                <div class="relative h-full p-6 flex flex-col justify-between z-10">
+                    <div>
+                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Fotografía</h3>
+                        <p class="font-sans text-[12px] text-text-light max-w-[75%] leading-snug">Tu esencia en cada detalle.</p>
+                    </div>
+                    <div class="mt-5">
+                        <span class="inline-block text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm group-hover:border-brand-cream transition-colors">Conocer más</span>
+                    </div>
+                </div>
+            </a>
+        </section>
+
         <!-- SECCIÓN: CÓMO TRABAJAREMOS JUNTAS (ID: como-trabajo) -->
         <section id="como-trabajo" class="px-8 py-10 pt-12">
             <h2 class="font-serif text-3xl italic text-text-main mb-10 text-center">¿Cómo trabajaremos juntas?</h2>
@@ -363,14 +373,15 @@
             </p>
             
             <a href="#" class="inline-block w-full py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase">
-                Apoya mi camino creativo
+                Haz parte de nuestra comunidad
             </a>
         </section>
 
         <!-- SECCIÓN DE CONTACTO Y FOOTER -->
-        <footer class="px-8 pt-4 pb-12 text-center relative z-10 flex flex-col justify-between border-t border-border-color/50">
+        <!-- NOTA: Se eliminó la clase 'border-t border-border-color' para quitar la línea blanca que dividía esta sección de la anterior -->
+        <footer class="px-8 pt-2 pb-12 text-center relative z-10 flex flex-col justify-between">
             
-            <div class="mb-10 text-center mt-6">
+            <div class="mb-10 text-center">
                 <h2 class="font-serif text-2xl italic text-brand-cream mb-6">Contacto</h2>
                 
                 <!-- Íconos de Redes Sociales -->
@@ -452,4 +463,4 @@
     </script>
 
 </body>
-    </html>
+</html>
