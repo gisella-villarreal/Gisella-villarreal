@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,11 +16,11 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-dark': '#151515',       // Fondo principal oscuro original
-                        'brand-cream': '#c9bb9e',      // Beige/Crema original
-                        'text-main': '#FFFFFF',        // Textos principales
-                        'text-light': '#b0b0b0',       // Textos secundarios
-                        'border-color': 'rgba(255, 255, 255, 0.15)',
+                        'linen': '#F5F1EA',
+                        'khaki': '#D7C9B8',
+                        'camel': '#B2967D',
+                        'cocoa': '#7D5A44',
+                        'espresso': '#4A342A',
                     },
                     fontFamily: {
                         'serif': ['"Playfair Display"', 'serif'],
@@ -31,139 +31,191 @@
         }
     </script>
 </head>
-<body class="bg-brand-dark antialiased text-text-main selection:bg-brand-cream selection:text-brand-dark">
+<body class="bg-espresso antialiased text-linen selection:bg-camel selection:text-espresso">
 
-    <main class="max-w-[430px] mx-auto bg-brand-dark min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
+    <main class="max-w-[430px] mx-auto bg-espresso min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
         
-        <!-- HEADER / HERO (Estructura Pinterest + Colores Originales) -->
-        <header class="relative w-full h-[85vh] min-h-[680px] flex flex-col pb-10 pt-8">
+        <!-- HEADER / HERO -->
+        <header class="relative w-full h-[85vh] min-h-[600px] flex flex-col pb-10">
             
-            <!-- Menú Hamburguesa Superior -->
-            <div class="relative z-20 w-full flex justify-center items-center">
-                <div class="flex flex-col gap-[6px] cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
-                    <div class="w-8 h-[2px] bg-brand-cream"></div>
-                    <div class="w-8 h-[2px] bg-brand-cream"></div>
-                </div>
-            </div>
-
             <!-- Imagen de Fondo Principal -->
             <div class="absolute inset-0 z-0 overflow-hidden">
-                <!-- Puedes cambiar el enlace de la imagen -->
                 <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
                      alt="Gisella Villarreal" 
                      class="w-full h-full object-cover object-[center_15%] scale-[1.05]">
             </div>
             
-            <!-- Difuminado (Gradient Blend Overlay) al fondo oscuro #151515 -->
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent z-10 h-[65%]"></div>
+            <!-- Difuminado (Gradient Blend Overlay) al fondo Espresso -->
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-espresso via-espresso/90 to-transparent z-10 h-[70%]"></div>
 
-            <!-- Contenido Inferior (Textos y Botones Apilados) -->
-            <div class="relative z-20 px-6 mt-auto flex flex-col items-center text-center w-full">
+            <!-- Contenido Inferior -->
+            <div class="relative z-20 px-6 mt-auto flex flex-col items-center text-center w-full pb-4">
                 
-                <!-- Nombre en cursiva (italic) dividido en dos líneas -->
-                <h1 class="font-serif text-[3.5rem] md:text-6xl italic font-medium leading-[1.05] mb-5 text-text-main tracking-wide">
+                <!-- Nombre y Especialidad -->
+                <h1 class="font-serif text-[3.5rem] md:text-6xl italic font-medium leading-[1.05] mb-2 text-linen tracking-wide">
                     Gisella<br>Villarreal
                 </h1>
-                
-                <!-- Texto descriptivo -->
-                <p class="font-sans text-[13.5px] leading-relaxed text-text-light font-medium max-w-[300px] mx-auto mb-8">
-                    Amo acompañar a marcas personales en la construcción y fortalecimiento de su presencia digital.
+                <p class="font-sans text-[13px] tracking-[0.2em] uppercase text-khaki mb-6 font-medium">
+                    Branding Social Media
                 </p>
 
-                <!-- Botones Apilados MÁS GRANDES -->
-                <div class="w-full max-w-[340px] flex flex-col gap-4">
-                    <!-- Botón Principal Relleno -->
-                    <a href="#" class="w-full py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[14.5px] font-bold tracking-wide shadow-lg flex justify-center items-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> Hablemos de tu Marca
-                    </a>
-                    <!-- Botón Secundario Transparente -->
-                    <a href="#servicios" class="w-full py-4 rounded-full bg-transparent hover:bg-brand-cream/10 transition-colors text-brand-cream border-2 border-brand-cream text-[14.5px] font-bold tracking-wide shadow-md">
-                        Ver Servicios
-                    </a>
-                </div>
+                <!-- Botón pequeño transparente delineado -->
+                <a href="#" class="px-6 py-2.5 rounded-full bg-transparent hover:bg-linen hover:text-espresso transition-colors text-linen border border-linen/60 text-[13px] font-light tracking-wide shadow-sm">
+                    Hablemos de tu marca
+                </a>
             </div>
         </header>
 
-        <!-- SECCIÓN DE TARJETAS (MÁS GRANDES) -->
-        <section id="servicios" class="relative z-10 px-6 py-6 flex flex-col gap-4 flex-grow">
+        <!-- SECCIÓN DE SERVICIOS (Estilo Tarjetas Horizontales Elegantes) -->
+        <section id="servicios" class="relative z-10 px-5 py-8 flex flex-col gap-5">
             
-            <!-- Botón 1: Así puedo ayudarte -->
-            <a href="#" class="group relative w-full min-h-[7.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-border-color">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600')] bg-cover bg-center"></div>
-                <div class="absolute inset-0 bg-brand-dark/85 group-hover:bg-brand-dark/70 transition-colors"></div>
-                <div class="relative h-full px-6 py-5 flex items-center justify-between text-text-main">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 shrink-0 rounded-full flex items-center justify-center bg-brand-dark/60 text-brand-cream backdrop-blur-sm border border-brand-cream/30">
-                            <i class="fa-solid fa-layer-group text-xl"></i>
-                        </div>
-                        <span class="font-serif text-[1.3rem] leading-tight font-medium tracking-wide pr-2">Así puedo ayudarte</span>
+            <!-- Tarjeta 1 -->
+            <a href="#" class="group relative w-full h-[140px] rounded-3xl overflow-hidden shadow-md block bg-cocoa hover:bg-[#8A634B] transition-colors">
+                <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-[url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-cocoa via-cocoa/90 to-transparent"></div>
+                <div class="relative h-full px-6 py-5 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-serif text-3xl italic text-linen leading-tight mb-1">Esencia<br>Digital</h3>
+                        <p class="font-sans text-[11px] text-khaki max-w-[70%] leading-snug">Identidad y estrategia de marca.</p>
                     </div>
-                    <i class="fa-solid fa-arrow-right text-text-light group-hover:text-brand-cream transition-colors text-base shrink-0"></i>
+                    <div class="inline-block mt-2">
+                        <span class="text-[9px] uppercase tracking-wider border border-khaki/40 px-3 py-1 rounded-full text-khaki bg-espresso/20 backdrop-blur-sm">Conocer más</span>
+                    </div>
                 </div>
             </a>
 
-            <!-- Botón 2: Portafolio -->
-            <a href="#" class="group relative w-full min-h-[7.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-border-color">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600')] bg-cover bg-center"></div>
-                <div class="absolute inset-0 bg-brand-dark/85 group-hover:bg-brand-dark/70 transition-colors"></div>
-                <div class="relative h-full px-6 py-5 flex items-center justify-between text-text-main">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 shrink-0 rounded-full flex items-center justify-center bg-brand-dark/60 text-brand-cream backdrop-blur-sm border border-brand-cream/30">
-                            <i class="fa-regular fa-star text-xl"></i>
-                        </div>
-                        <span class="font-serif text-[1.3rem] leading-tight font-medium tracking-wide pr-2">Portafolio</span>
+            <!-- Tarjeta 2 -->
+            <a href="#" class="group relative w-full h-[140px] rounded-3xl overflow-hidden shadow-md block bg-[#5C4131] hover:bg-[#6B4B38] transition-colors">
+                <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-[url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#5C4131] via-[#5C4131]/90 to-transparent"></div>
+                <div class="relative h-full px-6 py-5 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-serif text-3xl italic text-linen leading-tight mb-1">Presencia<br>Estratégica</h3>
+                        <p class="font-sans text-[11px] text-khaki max-w-[70%] leading-snug">Estrategia y contenido para redes.</p>
                     </div>
-                    <i class="fa-solid fa-arrow-right text-text-light group-hover:text-brand-cream transition-colors text-base shrink-0"></i>
+                    <div class="inline-block mt-2">
+                        <span class="text-[9px] uppercase tracking-wider border border-khaki/40 px-3 py-1 rounded-full text-khaki bg-espresso/20 backdrop-blur-sm">Conocer más</span>
+                    </div>
                 </div>
             </a>
 
-            <!-- Botón 3: Curso de fotografía -->
-            <a href="#" class="group relative w-full min-h-[7.5rem] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 block border border-border-color">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=600')] bg-cover bg-center"></div>
-                <div class="absolute inset-0 bg-brand-dark/85 group-hover:bg-brand-dark/70 transition-colors"></div>
-                <div class="relative h-full px-6 py-5 flex items-center justify-between text-text-main">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 shrink-0 rounded-full flex items-center justify-center bg-brand-dark/60 text-brand-cream backdrop-blur-sm border border-brand-cream/30">
-                            <i class="fa-solid fa-mobile-screen-button text-xl"></i>
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="font-serif text-[1.2rem] leading-tight font-medium tracking-wide">Curso de fotografía</span>
-                            <span class="font-sans text-[11px] font-medium text-brand-cream mt-1.5 uppercase tracking-widest opacity-80">Con el celular</span>
-                        </div>
+            <!-- Tarjeta 3 -->
+            <a href="#" class="group relative w-full h-[140px] rounded-3xl overflow-hidden shadow-md block bg-camel hover:bg-[#C2A58C] transition-colors">
+                <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-[url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-overlay"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-camel via-camel/90 to-transparent"></div>
+                <div class="relative h-full px-6 py-5 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-serif text-3xl italic text-espresso leading-tight mb-1">Marca<br>Integral</h3>
+                        <p class="font-sans text-[11px] text-espresso/80 max-w-[70%] leading-snug">Un ecosistema digital para tu marca personal.</p>
                     </div>
-                    <i class="fa-solid fa-arrow-right text-text-light group-hover:text-brand-cream transition-colors text-base shrink-0"></i>
+                    <div class="inline-block mt-2">
+                        <span class="text-[9px] uppercase tracking-wider border border-espresso/30 px-3 py-1 rounded-full text-espresso bg-linen/30 backdrop-blur-sm">Conocer más</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Tarjeta 4 -->
+            <a href="#" class="group relative w-full h-[140px] rounded-3xl overflow-hidden shadow-md block bg-[#6A4D3B] hover:bg-[#7D5A44] transition-colors">
+                <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-[url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#6A4D3B] via-[#6A4D3B]/90 to-transparent"></div>
+                <div class="relative h-full px-6 py-5 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-serif text-3xl italic text-linen leading-tight mb-1">Fotografía</h3>
+                        <p class="font-sans text-[11px] text-khaki max-w-[70%] leading-snug">Tu esencia en cada detalle.</p>
+                    </div>
+                    <div class="inline-block mt-2">
+                        <span class="text-[9px] uppercase tracking-wider border border-khaki/40 px-3 py-1 rounded-full text-khaki bg-espresso/20 backdrop-blur-sm">Conocer más</span>
+                    </div>
                 </div>
             </a>
         </section>
 
-        <!-- SECCIÓN DE CONTACTO Y FOOTER -->
-        <footer class="px-8 pt-6 pb-12 text-center relative z-10 flex flex-col justify-between">
+        <!-- SECCIÓN: CÓMO TRABAJAREMOS JUNTAS -->
+        <section class="px-8 py-10">
+            <h2 class="font-serif text-3xl italic text-linen mb-8 text-center">¿Cómo trabajaremos juntas?</h2>
             
-            <div class="mb-12 text-center">
-                <!-- Título Contacto centrado -->
-                <h2 class="font-serif text-3xl text-brand-cream mb-6">Contacto</h2>
+            <div class="flex flex-col gap-6 relative before:absolute before:inset-y-0 before:left-[11px] before:w-[1px] before:bg-khaki/30">
                 
-                <!-- Íconos de Redes Sociales (MÁS GRANDES) -->
-                <div class="flex justify-center gap-5">
-                    <a href="#" aria-label="WhatsApp" class="w-14 h-14 rounded-full border border-border-color flex items-center justify-center text-text-main hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                <!-- Paso 1 -->
+                <div class="relative pl-8">
+                    <div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-espresso border border-camel flex items-center justify-center z-10">
+                        <span class="text-[10px] font-sans text-camel">1</span>
+                    </div>
+                    <h4 class="font-serif text-lg text-linen mb-1">Conocemos tu marca.</h4>
+                    <p class="font-sans text-sm text-khaki/80 font-light">Brief y diagnóstico inicial.</p>
+                </div>
+                
+                <!-- Paso 2 -->
+                <div class="relative pl-8">
+                    <div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-espresso border border-camel flex items-center justify-center z-10">
+                        <span class="text-[10px] font-sans text-camel">2</span>
+                    </div>
+                    <h4 class="font-serif text-lg text-linen mb-1">Definimos la estrategia.</h4>
+                    <p class="font-sans text-sm text-khaki/80 font-light">Identidad, objetivos y dirección.</p>
+                </div>
+                
+                <!-- Paso 3 -->
+                <div class="relative pl-8">
+                    <div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-espresso border border-camel flex items-center justify-center z-10">
+                        <span class="text-[10px] font-sans text-camel">3</span>
+                    </div>
+                    <h4 class="font-serif text-lg text-linen mb-1">Desarrollamos tu proyecto.</h4>
+                    <p class="font-sans text-sm text-khaki/80 font-light">Diseño y creación de entregables.</p>
+                </div>
+                
+                <!-- Paso 4 -->
+                <div class="relative pl-8">
+                    <div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-espresso border border-camel flex items-center justify-center z-10">
+                        <span class="text-[10px] font-sans text-camel">4</span>
+                    </div>
+                    <h4 class="font-serif text-lg text-linen mb-1">Entregamos tu marca.</h4>
+                    <p class="font-sans text-sm text-khaki/80 font-light">Recursos finales y recomendaciones.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN: SOBRE MÍ -->
+        <section class="px-6 py-10 bg-cocoa/20 mx-4 rounded-3xl mb-8 border border-khaki/10 text-center">
+            <h2 class="font-serif text-3xl italic text-linen mb-4">Sobre mí</h2>
+            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-5 border-2 border-camel/50">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop" alt="Perfil" class="w-full h-full object-cover">
+            </div>
+            <p class="font-sans text-[14px] text-khaki font-light leading-relaxed mb-8 px-2">
+                Soy Gisella, estratega y creadora de contenido. Mi propósito es materializar la esencia de tu marca a través del diseño estratégico y la dirección visual, conectando con tu audiencia desde la autenticidad y el profesionalismo.
+            </p>
+            <a href="#" class="inline-block w-full py-3.5 rounded-full bg-camel hover:bg-khaki transition-colors text-espresso text-[14px] font-medium tracking-wide shadow-lg">
+                Haz parte de nuestra comunidad
+            </a>
+        </section>
+
+        <!-- SECCIÓN DE CONTACTO Y FOOTER -->
+        <footer class="px-8 pt-4 pb-10 text-center relative z-10 flex flex-col justify-between">
+            
+            <div class="mb-10 text-center">
+                <h2 class="font-serif text-2xl italic text-linen mb-6">Contacto</h2>
+                
+                <!-- Íconos de Redes Sociales -->
+                <div class="flex justify-center gap-4">
+                    <a href="#" class="w-12 h-12 rounded-full border border-khaki/30 flex items-center justify-center text-khaki hover:bg-camel hover:border-camel hover:text-espresso transition-all shadow-sm">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
                     </a>
-                    <a href="#" aria-label="Instagram" class="w-14 h-14 rounded-full border border-border-color flex items-center justify-center text-text-main hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                        <i class="fa-brands fa-instagram text-2xl"></i>
+                    <a href="#" class="w-12 h-12 rounded-full border border-khaki/30 flex items-center justify-center text-khaki hover:bg-camel hover:border-camel hover:text-espresso transition-all shadow-sm">
+                        <i class="fa-brands fa-instagram text-xl"></i>
                     </a>
-                    <a href="#" aria-label="LinkedIn" class="w-14 h-14 rounded-full border border-border-color flex items-center justify-center text-text-main hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                        <i class="fa-brands fa-linkedin-in text-2xl"></i>
+                    <a href="#" class="w-12 h-12 rounded-full border border-khaki/30 flex items-center justify-center text-khaki hover:bg-camel hover:border-camel hover:text-espresso transition-all shadow-sm">
+                        <i class="fa-brands fa-linkedin-in text-xl"></i>
                     </a>
-                    <a href="mailto:correo@tudominio.com" aria-label="Correo Electrónico" class="w-14 h-14 rounded-full border border-border-color flex items-center justify-center text-text-main hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                        <i class="fa-regular fa-envelope text-2xl"></i>
+                    <a href="mailto:correo@tudominio.com" class="w-12 h-12 rounded-full border border-khaki/30 flex items-center justify-center text-khaki hover:bg-camel hover:border-camel hover:text-espresso transition-all shadow-sm">
+                        <i class="fa-regular fa-envelope text-xl"></i>
                     </a>
                 </div>
             </div>
 
             <!-- Copyright -->
-            <div class="pt-6 relative border-t border-border-color">
-                <h4 class="font-serif text-[1.5rem] font-medium mb-1 text-text-main">Gisella Villarreal</h4>
-                <p class="text-[10px] font-sans font-medium text-text-light tracking-widest uppercase leading-relaxed">
+            <div class="pt-6 relative border-t border-khaki/20">
+                <h4 class="font-serif text-[1.2rem] italic mb-1 text-linen">Gisella Villarreal</h4>
+                <p class="text-[9px] font-sans font-medium text-khaki/60 tracking-widest uppercase leading-relaxed">
                     © 2026 | Todos los derechos reservados
                 </p>
             </div>
@@ -172,5 +224,5 @@
     </main>
 
 </body>
-    </html>
-            
+                    </html>
+                    
