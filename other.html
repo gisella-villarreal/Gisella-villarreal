@@ -118,15 +118,16 @@
             </div>
         </header>
 
-        <!-- SECCIÓN: FOTOS DE LIFESTYLE BRANDING (ID: comunidad) -->
+        <!-- SECCIÓN: SMART-BRANDING (ID: comunidad) -->
         <section id="comunidad" class="px-6 pt-6 pb-8 flex flex-col gap-6 relative z-10">
             
-            <!-- Título Centrado -->
+            <!-- Título y Subtítulo Centrados -->
             <div class="text-center">
-                <h2 class="font-serif text-[2.2rem] italic text-brand-cream mb-1 leading-tight">Fotos de lifestyle<br>branding.</h2>
+                <h2 class="font-serif text-[2.5rem] italic text-brand-cream mb-2 leading-tight">Smart-Branding.</h2>
+                <p class="font-sans text-[11px] tracking-[0.1em] uppercase text-text-light mb-2">Fotos Workstyle con tu Celular</p>
             </div>
             
-            <!-- Carrusel de Galería -->
+            <!-- Carrusel de Galería (Bordes cuadrados y ancho 90%) -->
             <div class="relative w-[90%] mx-auto overflow-hidden shadow-lg border border-border-color">
                 <div id="lifestyle-track" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
                     <img src="1792874026013.jpg" alt="Lifestyle branding 1" class="w-full h-[260px] object-cover shrink-0 snap-center">
@@ -141,10 +142,10 @@
                 </button>
             </div>
             
-            <!-- Texto y Botón Alineados a la Izquierda -->
+            <!-- Texto y Botón Alineados a la Izquierda (Mismo ancho de la foto: 90%) -->
             <div class="flex flex-col text-left mt-2 w-[90%] mx-auto">
                 <p class="font-sans text-[13px] text-text-light leading-relaxed font-light mb-5">
-                    Te enseño a crear fotografías de branding con tu celular y construye una identidad visual que refleje la esencia de tu marca. Accede a la comunidad y desarrolla tus habilidades fotográficas a tu propio ritmo.
+                    Te enseño a crear fotografías de branding con tu celular y construir tu activo digital con una identidad visual que refleje la esencia de tu marca. Accede a la comunidad y desarrolla tus habilidades fotográficas a tu propio ritmo.
                 </p>
                 
                 <p class="font-sans text-[12px] text-brand-cream mb-4 uppercase tracking-wider">¿Qué encontrarás?</p>
@@ -158,11 +159,26 @@
                     </ul>
                 </div>
 
-                <div class="mb-8 flex items-baseline">
-                    <span class="font-serif text-3xl text-text-main font-medium">$19.900</span>
-                    <span class="font-sans text-[10px] text-brand-cream uppercase tracking-widest ml-2">COP / mes</span>
+                <!-- Convertidor de Moneda y Precio -->
+                <div class="w-full flex flex-col items-center mb-8 bg-border-color/10 py-4 rounded-2xl border border-border-color/20">
+                    
+                    <!-- Toggle Switch COP / USD -->
+                    <div class="flex items-center gap-3 mb-3">
+                        <span id="label-cop" class="text-[11px] font-sans text-brand-cream font-medium transition-colors">COP</span>
+                        <button id="currency-toggle" class="w-10 h-5 bg-brand-dark border border-border-color rounded-full relative flex items-center p-1 cursor-pointer transition-colors shadow-inner">
+                            <div id="toggle-circle" class="w-3 h-3 bg-brand-cream rounded-full transform transition-transform duration-300 translate-x-0"></div>
+                        </button>
+                        <span id="label-usd" class="text-[11px] font-sans text-text-light font-medium transition-colors">USD</span>
+                    </div>
+
+                    <!-- Valor del Precio Dinámico -->
+                    <div class="flex items-baseline justify-center">
+                        <span id="price-value" class="font-serif text-3xl text-text-main font-medium transition-all">$19.900</span>
+                        <span id="price-currency" class="font-sans text-[10px] text-brand-cream uppercase tracking-widest ml-2 transition-all">COP / mes</span>
+                    </div>
                 </div>
                 
+                <!-- Botón Principal -->
                 <a href="#" class="inline-block w-full py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase text-center">
                     Quiero unirme a la comunidad
                 </a>
@@ -368,7 +384,7 @@
 
     </main>
 
-    <!-- SCRIPT PARA EL MENÚ Y LOS CARRUSELES -->
+    <!-- SCRIPT PARA EL MENÚ, LOS CARRUSELES Y EL TOGGLE DE MONEDA -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
@@ -398,6 +414,48 @@
             menuLinks.forEach(link => {
                 link.addEventListener('click', closeMenu);
             });
+
+
+            // --- LÓGICA DEL CONVERTIDOR DE MONEDA (COP / USD) ---
+            const currencyToggle = document.getElementById('currency-toggle');
+            const toggleCircle = document.getElementById('toggle-circle');
+            const priceValue = document.getElementById('price-value');
+            const priceCurrency = document.getElementById('price-currency');
+            const labelCop = document.getElementById('label-cop');
+            const labelUsd = document.getElementById('label-usd');
+
+            let isUsd = false;
+
+            if (currencyToggle) {
+                currencyToggle.addEventListener('click', () => {
+                    isUsd = !isUsd;
+                    if (isUsd) {
+                        // Cambiar a USD
+                        toggleCircle.classList.remove('translate-x-0');
+                        toggleCircle.classList.add('translate-x-[18px]');
+                        
+                        priceValue.textContent = '$4.99'; // Precio en dólares
+                        priceCurrency.textContent = 'USD / mes';
+                        
+                        labelCop.classList.remove('text-brand-cream');
+                        labelCop.classList.add('text-text-light');
+                        labelUsd.classList.remove('text-text-light');
+                        labelUsd.classList.add('text-brand-cream');
+                    } else {
+                        // Volver a COP
+                        toggleCircle.classList.remove('translate-x-[18px]');
+                        toggleCircle.classList.add('translate-x-0');
+                        
+                        priceValue.textContent = '$19.900'; // Precio en pesos colombianos
+                        priceCurrency.textContent = 'COP / mes';
+                        
+                        labelUsd.classList.remove('text-brand-cream');
+                        labelUsd.classList.add('text-text-light');
+                        labelCop.classList.remove('text-text-light');
+                        labelCop.classList.add('text-brand-cream');
+                    }
+                });
+            }
 
 
             // --- LÓGICA DEL CARRUSEL: FOTOS DE LIFESTYLE ---
