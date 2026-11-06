@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gisella Villarreal | Branding Social Media</title>
+    <title>Gisella Villarreal | Social Media Branding</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,6 +40,10 @@
         .hide-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
+        }
+        /* Para evitar que el toque en móviles haga un resaltado azul */
+        .no-tap-highlight {
+            -webkit-tap-highlight-color: transparent;
         }
     </style>
 </head>
@@ -110,7 +114,7 @@
                     Gisella<br>Villarreal
                 </h1>
                 <p class="font-sans text-[13px] tracking-[0.2em] uppercase text-brand-cream mb-4 font-medium">
-                    Branding Social Media
+                    Social Media Branding
                 </p>
                 <p class="font-sans text-[13px] leading-relaxed text-text-light font-light max-w-[320px] mx-auto">
                     Amo ayudar a marcas personales que desean mostrarse auténticas, tanto en su vida personal como en su camino profesional.
@@ -182,65 +186,173 @@
             
             <h2 class="font-serif text-3xl italic text-brand-cream mb-1 text-center">Servicios</h2>
             
-            <!-- Tarjeta 1: Branding Social Media (Corregido a minúsculas en el subtítulo) -->
-            <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color mt-2">
+            <!-- Tarjeta 1: Presencia Digital -->
+            <div class="toggle-service no-tap-highlight group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color mt-2 cursor-pointer transition-all">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
+                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/75 transition-colors duration-500"></div>
                 <div class="relative h-full p-6 flex flex-col justify-between z-10">
                     <div>
-                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Branding<br>Social Media</h3>
-                        <p class="font-sans text-[12px] text-text-light max-w-[85%] leading-snug">Construcción de identidad y presencia digital</p>
+                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Presencia<br>Digital</h3>
+                        <p class="font-sans text-[11px] text-text-light uppercase tracking-wide max-w-[85%] leading-snug">Servicios para organizar y fortalecer la presentación y comunicación digital de tu marca personal</p>
                     </div>
+                    
+                    <!-- Contenido Expandible -->
+                    <div class="service-details max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-5 mt-4 border-t border-border-color/30 flex flex-col gap-4">
+                            <p class="font-sans text-[12.5px] text-white font-light leading-relaxed">
+                                Incluye optimización de Instagram, presentación de marca, organización de servicios y One Page.
+                            </p>
+                            <p class="font-sans text-[10px] text-brand-cream/80 italic font-light">
+                                *Puede contratar Servicios por separado o como una experiencia integral de marca personal.
+                            </p>
+                            <a href="https://wa.me/TUNUMERO" target="_blank" class="w-max px-6 py-2.5 rounded-full border border-brand-cream/60 text-brand-cream text-[10px] uppercase tracking-wider hover:bg-brand-cream hover:text-brand-dark transition-colors flex items-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-[12px]"></i> Tomar servicio
+                            </a>
+                        </div>
+                    </div>
+
                     <div class="mt-5">
-                        <span class="inline-block text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm group-hover:border-brand-cream transition-colors">Conocer más</span>
+                        <span class="btn-conocer-mas inline-flex items-center gap-1.5 text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm transition-colors">
+                            Conocer más <i class="fa-solid fa-chevron-down text-[8px] transition-transform duration-300 icon-arrow"></i>
+                        </span>
                     </div>
                 </div>
-            </a>
+            </div>
 
-            <!-- Tarjeta 2: Marketing de Contenidos (Corregido a minúsculas en el subtítulo) -->
-            <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color">
+            <!-- Tarjeta 2: Contenido Estratégico -->
+            <div class="toggle-service no-tap-highlight group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color cursor-pointer transition-all">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
+                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/75 transition-colors duration-500"></div>
                 <div class="relative h-full p-6 flex flex-col justify-between z-10">
                     <div>
-                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Marketing de<br>Contenidos</h3>
-                        <p class="font-sans text-[12px] text-text-light max-w-[85%] leading-snug">Estrategia, comunicación y creación de contenido</p>
+                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Contenido<br>Estratégico</h3>
+                        <p class="font-sans text-[11px] text-text-light uppercase tracking-wide max-w-[85%] leading-snug">Transformamos la esencia de tu marca en contenido que comunica</p>
                     </div>
-                    <div class="mt-5">
-                        <span class="inline-block text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm group-hover:border-brand-cream transition-colors">Conocer más</span>
+                    
+                    <!-- Contenido Expandible -->
+                    <div class="service-details max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-5 mt-4 border-t border-border-color/30 flex flex-col gap-4">
+                            <p class="font-sans text-[12.5px] text-white font-light leading-relaxed">
+                                Incluye diagnóstico, objetivos, pilares, calendario mensual, ideas, guiones y textos.
+                            </p>
+                            <p class="font-sans text-[10px] text-brand-cream/80 italic font-light">
+                                *Puede contratar Servicios por separado o como una experiencia integral de marca personal.
+                            </p>
+                            <a href="https://wa.me/TUNUMERO" target="_blank" class="w-max px-6 py-2.5 rounded-full border border-brand-cream/60 text-brand-cream text-[10px] uppercase tracking-wider hover:bg-brand-cream hover:text-brand-dark transition-colors flex items-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-[12px]"></i> Tomar servicio
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </a>
 
-            <!-- Tarjeta 3: Branding Integral -->
-            <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
-                <div class="relative h-full p-6 flex flex-col justify-between z-10">
-                    <div>
-                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Branding<br>Integral</h3>
-                        <p class="font-sans text-[12px] text-text-light max-w-[85%] leading-snug">Para clientes que necesitan construir su identidad y comenzar a comunicarla.</p>
-                    </div>
                     <div class="mt-5">
-                        <span class="inline-block text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm group-hover:border-brand-cream transition-colors">Conocer más</span>
+                        <span class="btn-conocer-mas inline-flex items-center gap-1.5 text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm transition-colors">
+                            Conocer más <i class="fa-solid fa-chevron-down text-[8px] transition-transform duration-300 icon-arrow"></i>
+                        </span>
                     </div>
                 </div>
-            </a>
+            </div>
+
+            <!-- Tarjeta 3: Contenido Visual -->
+            <div class="toggle-service no-tap-highlight group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color cursor-pointer transition-all">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
+                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/75 transition-colors duration-500"></div>
+                <div class="relative h-full p-6 flex flex-col justify-between z-10">
+                    <div>
+                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Contenido<br>Visual</h3>
+                        <p class="font-sans text-[11px] text-text-light uppercase tracking-wide max-w-[85%] leading-snug">Transmite la esencia y personalidad de tu marca</p>
+                    </div>
+                    
+                    <!-- Contenido Expandible -->
+                    <div class="service-details max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-5 mt-4 border-t border-border-color/30 flex flex-col gap-4">
+                            <p class="font-sans text-[12.5px] text-white font-light leading-relaxed">
+                                Incluye sesión de fotografía de branding personal.<br>
+                                Grabación y edición de Reels.<br>
+                                Creación de contenido para marcas personales y eventos.
+                            </p>
+                            <p class="font-sans text-[10px] text-brand-cream/80 italic font-light">
+                                *Puede contratar Servicios por separado o como una experiencia integral de marca personal.
+                            </p>
+                            <a href="https://wa.me/TUNUMERO" target="_blank" class="w-max px-6 py-2.5 rounded-full border border-brand-cream/60 text-brand-cream text-[10px] uppercase tracking-wider hover:bg-brand-cream hover:text-brand-dark transition-colors flex items-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-[12px]"></i> Tomar servicio
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <span class="btn-conocer-mas inline-flex items-center gap-1.5 text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm transition-colors">
+                            Conocer más <i class="fa-solid fa-chevron-down text-[8px] transition-transform duration-300 icon-arrow"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
 
             <!-- Tarjeta 4: Fotografía -->
-            <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color">
+            <div class="toggle-service no-tap-highlight group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color cursor-pointer transition-all">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
+                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/75 transition-colors duration-500"></div>
                 <div class="relative h-full p-6 flex flex-col justify-between z-10">
                     <div>
                         <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Fotografía</h3>
-                        <p class="font-sans text-[12px] text-text-light max-w-[75%] leading-snug">Tu esencia en cada detalle.</p>
+                        <p class="font-sans text-[11px] text-text-light uppercase tracking-wide max-w-[75%] leading-snug">Guarda memoria de tus momentos más preciados</p>
                     </div>
+                    
+                    <!-- Contenido Expandible -->
+                    <div class="service-details max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-5 mt-4 border-t border-border-color/30 flex flex-col gap-4">
+                            <p class="font-sans text-[12.5px] text-white font-light leading-relaxed">
+                                Incluye Retrato femenino, Fotografía de lifestyle, fotografía de parejas.
+                            </p>
+                            <a href="https://wa.me/TUNUMERO" target="_blank" class="w-max px-6 py-2.5 rounded-full border border-brand-cream/60 text-brand-cream text-[10px] uppercase tracking-wider hover:bg-brand-cream hover:text-brand-dark transition-colors flex items-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-[12px]"></i> Tomar servicio
+                            </a>
+                        </div>
+                    </div>
+
                     <div class="mt-5">
-                        <span class="inline-block text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm group-hover:border-brand-cream transition-colors">Conocer más</span>
+                        <span class="btn-conocer-mas inline-flex items-center gap-1.5 text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm transition-colors">
+                            Conocer más <i class="fa-solid fa-chevron-down text-[8px] transition-transform duration-300 icon-arrow"></i>
+                        </span>
                     </div>
                 </div>
-            </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: CÓMO TRABAJAREMOS JUNTAS (ID: como-trabajo) -->
+        <section id="como-trabajo" class="px-8 pt-8 pb-10">
+            <h2 class="font-serif text-3xl italic text-text-main mb-8 text-center">¿Cómo trabajaremos juntas?</h2>
+            
+            <div class="flex flex-col gap-8 relative before:absolute before:inset-y-0 before:left-[11px] before:w-[1px] before:bg-border-color">
+                
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-brand-dark border border-brand-cream flex items-center justify-center z-10">
+                        <span class="text-[10px] font-sans text-brand-cream font-medium">1</span>
+                    </div>
+                    <h4 class="font-serif text-xl text-text-main mb-1">Conocemos tu marca.</h4>
+                    <p class="font-sans text-sm text-text-light font-light">Brief y diagnóstico inicial.</p>
+                </div>
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-brand-dark border border-brand-cream flex items-center justify-center z-10">
+                        <span class="text-[10px] font-sans text-brand-cream font-medium">2</span>
+                    </div>
+                    <h4 class="font-serif text-xl text-text-main mb-1">Definimos la estrategia.</h4>
+                    <p class="font-sans text-sm text-text-light font-light">Identidad, objetivos y dirección.</p>
+                </div>
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-brand-dark border border-brand-cream flex items-center justify-center z-10">
+                        <span class="text-[10px] font-sans text-brand-cream font-medium">3</span>
+                    </div>
+                    <h4 class="font-serif text-xl text-text-main mb-1">Desarrollamos tu proyecto.</h4>
+                    <p class="font-sans text-sm text-text-light font-light">Diseño y creación de entregables.</p>
+                </div>
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-brand-dark border border-brand-cream flex items-center justify-center z-10">
+                        <span class="text-[10px] font-sans text-brand-cream font-medium">4</span>
+                    </div>
+                    <h4 class="font-serif text-xl text-text-main mb-1">Entregamos tu marca.</h4>
+                    <p class="font-sans text-sm text-text-light font-light">Recursos finales y recomendaciones.</p>
+                </div>
+            </div>
         </section>
 
         <!-- SECCIÓN: TRABAJOS DESTACADOS (ID: portafolio) -->
@@ -299,7 +411,7 @@
             </div>
             
             <p class="font-sans text-[14px] text-text-light font-light leading-relaxed mb-8 px-2">
-                Soy Gisella, estratega en Branding Social Media y Marketing de Contenidos. Mi propósito es transformar la esencia de tu marca en una identidad digital auténtica y coherente, mediante la estrategia, la comunicación y el diseño visual, para construir una presencia en redes sociales que conecte con tu audiencia y refleje el valor de lo que haces.
+                Soy Gisella, estratega en Social Media Branding y Marketing de Contenidos. Mi propósito es transformar la esencia de tu marca en una presencia digital auténtica y coherente, a través de la estrategia, la comunicación y la creación de contenido visual, para fortalecer tu presencia en redes sociales, conectar con tu audiencia y comunicar el valor de lo que haces.
             </p>
             
             <a href="#" class="inline-block w-full max-w-[320px] mx-auto py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase">
@@ -329,7 +441,6 @@
                 </div>
             </div>
 
-            <!-- Footer: Derechos reservados seguidos de enlaces legales -->
             <div class="pt-6 relative border-t border-border-color flex flex-col items-center gap-4">
                 <div class="text-center">
                     <h4 class="font-serif text-[1.2rem] italic mb-1 text-text-main">Gisella Villarreal</h4>
@@ -383,6 +494,34 @@
 
             menuLinks.forEach(link => {
                 link.addEventListener('click', closeMenu);
+            });
+
+
+            // --- LÓGICA DE ACORDEÓN PARA SERVICIOS ---
+            const serviceCards = document.querySelectorAll('.toggle-service');
+            
+            serviceCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Evitar que se active si hacen click en el botón de WhatsApp interno
+                    if(e.target.closest('a')) return;
+                    
+                    const details = this.querySelector('.service-details');
+                    const btnSpan = this.querySelector('.btn-conocer-mas');
+                    const arrow = this.querySelector('.icon-arrow');
+                    
+                    // Si está cerrado (tiene max-h-0)
+                    if (details.classList.contains('max-h-0')) {
+                        // Expandir
+                        details.classList.remove('max-h-0', 'opacity-0');
+                        details.classList.add('max-h-[500px]', 'opacity-100');
+                        btnSpan.innerHTML = 'Menos info <i class="fa-solid fa-chevron-up text-[8px] transition-transform duration-300 icon-arrow"></i>';
+                    } else {
+                        // Contraer
+                        details.classList.add('max-h-0', 'opacity-0');
+                        details.classList.remove('max-h-[500px]', 'opacity-100');
+                        btnSpan.innerHTML = 'Conocer más <i class="fa-solid fa-chevron-down text-[8px] transition-transform duration-300 icon-arrow"></i>';
+                    }
+                });
             });
 
 
@@ -475,4 +614,4 @@
     </script>
 
 </body>
-    </html>
+</html>
