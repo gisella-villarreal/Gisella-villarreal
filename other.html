@@ -156,7 +156,6 @@
                     </ul>
                 </div>
 
-                <!-- Convertidor de Moneda y Precio -->
                 <div class="w-full flex flex-col items-center mb-8 bg-border-color/10 py-4 rounded-2xl border border-border-color/20">
                     <div class="flex items-center gap-3 mb-3">
                         <span id="label-cop" class="text-[11px] font-sans text-brand-cream font-medium transition-colors">COP</span>
@@ -183,14 +182,14 @@
             
             <h2 class="font-serif text-3xl italic text-brand-cream mb-1 text-center">Servicios</h2>
             
-            <!-- Tarjeta 1: Branding Social Media -->
+            <!-- Tarjeta 1: Branding Social Media (Corregido a minúsculas en el subtítulo) -->
             <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color mt-2">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
                 <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
                 <div class="relative h-full p-6 flex flex-col justify-between z-10">
                     <div>
                         <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Branding<br>Social Media</h3>
-                        <p class="font-sans text-[11.5px] text-text-light uppercase tracking-wide max-w-[85%] leading-snug">Construcción de identidad y presencia digital</p>
+                        <p class="font-sans text-[12px] text-text-light max-w-[85%] leading-snug">Construcción de identidad y presencia digital</p>
                     </div>
                     <div class="mt-5">
                         <span class="inline-block text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm group-hover:border-brand-cream transition-colors">Conocer más</span>
@@ -198,14 +197,14 @@
                 </div>
             </a>
 
-            <!-- Tarjeta 2: Marketing de Contenidos -->
+            <!-- Tarjeta 2: Marketing de Contenidos (Corregido a minúsculas en el subtítulo) -->
             <a href="#" class="group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
                 <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
                 <div class="relative h-full p-6 flex flex-col justify-between z-10">
                     <div>
                         <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Marketing de<br>Contenidos</h3>
-                        <p class="font-sans text-[11.5px] text-text-light uppercase tracking-wide max-w-[85%] leading-snug">Estrategia, comunicación y creación de contenido</p>
+                        <p class="font-sans text-[12px] text-text-light max-w-[85%] leading-snug">Estrategia, comunicación y creación de contenido</p>
                     </div>
                     <div class="mt-5">
                         <span class="inline-block text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm group-hover:border-brand-cream transition-colors">Conocer más</span>
@@ -330,24 +329,23 @@
                 </div>
             </div>
 
-            <div class="pt-6 relative border-t border-border-color flex flex-col items-center gap-3">
-                <!-- Enlaces Legales -->
-                <div class="flex gap-4 font-sans text-[10px] text-text-light underline decoration-border-color hover:text-brand-cream transition-colors">
-                    <a href="#">Términos y Condiciones</a>
-                    <a href="#">Políticas de Privacidad</a>
-                </div>
-                
-                <!-- Copyright -->
-                <div class="mt-2 text-center">
+            <!-- Footer: Derechos reservados seguidos de enlaces legales -->
+            <div class="pt-6 relative border-t border-border-color flex flex-col items-center gap-4">
+                <div class="text-center">
                     <h4 class="font-serif text-[1.2rem] italic mb-1 text-text-main">Gisella Villarreal</h4>
                     <p class="text-[9px] font-sans font-medium text-text-light tracking-widest uppercase leading-relaxed">
                         © 2026 | Todos los derechos reservados
                     </p>
                 </div>
+
+                <div class="flex gap-4 font-sans text-[10px] text-text-light underline decoration-border-color hover:text-brand-cream transition-colors">
+                    <a href="terminos.html">Términos y Condiciones</a>
+                    <a href="politicas.html">Políticas de Privacidad</a>
+                </div>
             </div>
         </footer>
 
-        <!-- BOTÓN FLOTANTE "VOLVER ARRIBA" (Aparece con el scroll) -->
+        <!-- BOTÓN FLOTANTE "VOLVER ARRIBA" -->
         <div class="fixed bottom-8 inset-x-0 mx-auto max-w-[430px] px-6 z-40 flex justify-end pointer-events-none">
             <a href="#inicio" id="scroll-top-btn" class="pointer-events-auto w-10 h-10 rounded-full border border-brand-cream/40 bg-brand-dark/80 backdrop-blur-sm flex items-center justify-center text-brand-cream opacity-0 translate-y-4 transition-all duration-500 hover:bg-brand-cream hover:text-brand-dark shadow-lg" aria-label="Volver arriba">
                 <i class="fa-solid fa-angle-up text-sm"></i>
@@ -459,7 +457,6 @@
             const scrollTopBtn = document.getElementById('scroll-top-btn');
             
             window.addEventListener('scroll', () => {
-                // Mostrar el botón después de scrollear 500px hacia abajo
                 if (window.scrollY > 500) {
                     scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
                     scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
@@ -469,7 +466,6 @@
                 }
             });
 
-            // Evitar que el link haga un salto brusco (por si el smooth scroll CSS falla en Safari)
             scrollTopBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -479,4 +475,4 @@
     </script>
 
 </body>
-</html>
+    </html>
