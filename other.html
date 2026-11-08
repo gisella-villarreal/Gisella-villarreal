@@ -16,10 +16,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-dark': '#151515',       /* Fondo oscuro unificado */
-                        'brand-cream': '#c9bb9e',      /* Crema original */
-                        'text-main': '#FFFFFF',        /* Textos blancos */
-                        'text-light': '#b0b0b0',       /* Textos grises claros */
+                        'brand-dark': '#151515',       
+                        'brand-cream': '#c9bb9e',      
+                        'text-main': '#FFFFFF',        
+                        'text-light': '#b0b0b0',       
                         'border-color': 'rgba(255, 255, 255, 0.15)',
                     },
                     fontFamily: {
@@ -41,7 +41,6 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        /* Para evitar que el toque en móviles haga un resaltado azul */
         .no-tap-highlight {
             -webkit-tap-highlight-color: transparent;
         }
@@ -60,7 +59,6 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <!-- Enlaces del Menú -->
             <nav class="flex flex-col items-center gap-7 mt-8 w-full">
                 <a href="#inicio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Inicio</a>
                 <a href="#comunidad" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Comunidad</a>
@@ -184,29 +182,47 @@
         <!-- SECCIÓN DE SERVICIOS (ID: servicios) -->
         <section id="servicios" class="relative z-10 px-5 pt-8 pb-6 flex flex-col gap-5">
             
-            <h2 class="font-serif text-3xl italic text-brand-cream mb-1 text-center">Servicios</h2>
+            <h2 class="font-serif text-3xl italic text-brand-cream mb-2 text-center">Servicios</h2>
             
-            <!-- Tarjeta 1: Presencia Digital -->
-            <div class="toggle-service no-tap-highlight group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color mt-2 cursor-pointer transition-all">
+            <!-- SERVICIO 1: Estrategia y Desarrollo de Presencia Digital -->
+            <div class="toggle-service no-tap-highlight group relative w-full rounded-3xl overflow-hidden shadow-md block border border-border-color mt-2 cursor-pointer transition-all">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/75 transition-colors duration-500"></div>
+                <div class="absolute inset-0 bg-brand-dark/85 group-hover:bg-brand-dark/80 transition-colors duration-500"></div>
                 <div class="relative h-full p-6 flex flex-col justify-between z-10">
-                    <div>
-                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Presencia<br>Digital</h3>
-                        <p class="font-sans text-[11px] text-text-light uppercase tracking-wide max-w-[85%] leading-snug">Servicios para organizar y fortalecer la presentación y comunicación digital de tu marca personal</p>
+                    
+                    <!-- Parte visible siempre -->
+                    <div class="pb-2">
+                        <p class="font-sans text-[10px] text-brand-cream tracking-[0.2em] mb-1">01</p>
+                        <h3 class="font-serif text-2xl italic text-text-main leading-tight mb-2">Estrategia y Desarrollo de Presencia Digital</h3>
+                        <p class="font-sans text-[12px] text-text-light max-w-[90%] leading-snug font-light">Dale estructura, claridad y dirección a tu marca.</p>
                     </div>
                     
                     <!-- Contenido Expandible -->
-                    <div class="service-details max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
+                    <div class="service-details max-h-0 opacity-0 overflow-hidden transition-all duration-700 ease-in-out">
                         <div class="pt-5 mt-4 border-t border-border-color/30 flex flex-col gap-4">
-                            <p class="font-sans text-[12.5px] text-white font-light leading-relaxed">
-                                Todo lo relacionado con estrategia y desarrollo de la presencia digital, diagnóstico, optimización de redes sociales, presentación de marca, estructuración de servicios y desarrollo de páginas web/One Page.
+                            <p class="font-sans text-[12.5px] text-text-main font-light leading-relaxed">
+                                Te acompaño a definir los fundamentos de tu marca personal y a construir una presencia digital que comunique con claridad quién eres, qué haces y el valor que puedes ofrecer.
                             </p>
-                            <p class="font-sans text-[10px] text-brand-cream/80 italic font-light">
-                                *Puede contratar Servicios por separado o como una experiencia integral de marca personal.
+                            <p class="font-sans text-[12.5px] text-text-main font-light leading-relaxed">
+                                Trabajaremos desde la esencia y propuesta de valor de tu marca hasta la manera en que presentas tus servicios en los entornos digitales.
                             </p>
-                            <a href="https://wa.me/TUNUMERO" target="_blank" class="w-max px-6 py-2.5 rounded-full border border-brand-cream/60 text-brand-cream text-[10px] uppercase tracking-wider hover:bg-brand-cream hover:text-brand-dark transition-colors flex items-center gap-2">
-                                <i class="fa-brands fa-whatsapp text-[12px]"></i> Tomar servicio
+                            
+                            <div>
+                                <p class="font-sans text-[11px] text-brand-cream uppercase tracking-wider mb-3">Servicios:</p>
+                                <ul class="flex flex-col gap-2 font-sans text-[12px] text-text-light font-light text-left">
+                                    <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Estrategia de Marca Personal desde Cero.</li>
+                                    <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Optimización Estratégica de Instagram.</li>
+                                    <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Presentación Estratégica de Marca y Servicios.</li>
+                                    <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Desarrollo de Página Web One Page.</li>
+                                </ul>
+                            </div>
+                            
+                            <p class="font-sans text-[11px] text-brand-cream/90 italic font-light bg-brand-cream/10 p-3 rounded-xl border border-brand-cream/20">
+                                <strong class="not-italic text-brand-cream">Ideal para:</strong> emprendedoras y profesionales que desean comenzar a construir su marca personal o fortalecer la manera en que se presentan digitalmente.
+                            </p>
+                            
+                            <a href="https://wa.me/TUNUMERO" target="_blank" class="mt-2 w-max px-6 py-3 rounded-full bg-brand-cream text-brand-dark text-[10px] uppercase font-bold tracking-wider hover:bg-white transition-colors flex items-center gap-2">
+                                Quiero construir mi marca
                             </a>
                         </div>
                     </div>
@@ -219,27 +235,44 @@
                 </div>
             </div>
 
-            <!-- Tarjeta 2: Contenido Estratégico -->
-            <div class="toggle-service no-tap-highlight group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color cursor-pointer transition-all">
+            <!-- SERVICIO 2: Dirección Creativa y Producción Visual -->
+            <div class="toggle-service no-tap-highlight group relative w-full rounded-3xl overflow-hidden shadow-md block border border-border-color cursor-pointer transition-all">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/75 transition-colors duration-500"></div>
+                <div class="absolute inset-0 bg-brand-dark/85 group-hover:bg-brand-dark/80 transition-colors duration-500"></div>
                 <div class="relative h-full p-6 flex flex-col justify-between z-10">
-                    <div>
-                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Contenido<br>Estratégico</h3>
-                        <p class="font-sans text-[11px] text-text-light uppercase tracking-wide max-w-[85%] leading-snug">Transformamos la esencia de tu marca en contenido que comunica</p>
+                    
+                    <!-- Parte visible siempre -->
+                    <div class="pb-2">
+                        <p class="font-sans text-[10px] text-brand-cream tracking-[0.2em] mb-1">02</p>
+                        <h3 class="font-serif text-2xl italic text-text-main leading-tight mb-2">Dirección Creativa y Producción Visual</h3>
+                        <p class="font-sans text-[12px] text-text-light max-w-[90%] leading-snug font-light">Tu marca también tiene una manera propia de expresarse visualmente.</p>
                     </div>
                     
                     <!-- Contenido Expandible -->
-                    <div class="service-details max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
+                    <div class="service-details max-h-0 opacity-0 overflow-hidden transition-all duration-700 ease-in-out">
                         <div class="pt-5 mt-4 border-t border-border-color/30 flex flex-col gap-4">
-                            <p class="font-sans text-[12.5px] text-white font-light leading-relaxed">
-                                Todo lo relacionado con Diagnóstico de comunicación, objetivos, pilares, calendarios editoriales, ideas, guiones y textos para redes sociales.
+                            <p class="font-sans text-[12.5px] text-text-main font-light leading-relaxed">
+                                Te acompaño a desarrollar una propuesta visual que represente la personalidad de tu marca y te permita comunicar quién eres a través de fotografías y contenido audiovisual.
                             </p>
-                            <p class="font-sans text-[10px] text-brand-cream/80 italic font-light">
-                                *Puede contratar Servicios por separado o como una experiencia integral de marca personal.
+                            <p class="font-sans text-[12.5px] text-text-main font-light leading-relaxed">
+                                Desde la conceptualización creativa hasta la producción y edición, construiremos recursos visuales que aporten autenticidad y personalidad a tu presencia digital.
                             </p>
-                            <a href="https://wa.me/TUNUMERO" target="_blank" class="w-max px-6 py-2.5 rounded-full border border-brand-cream/60 text-brand-cream text-[10px] uppercase tracking-wider hover:bg-brand-cream hover:text-brand-dark transition-colors flex items-center gap-2">
-                                <i class="fa-brands fa-whatsapp text-[12px]"></i> Tomar servicio
+                            
+                            <div>
+                                <p class="font-sans text-[11px] text-brand-cream uppercase tracking-wider mb-3">Servicios:</p>
+                                <ul class="flex flex-col gap-2 font-sans text-[12px] text-text-light font-light text-left">
+                                    <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Dirección Creativa de Marca Personal.</li>
+                                    <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Fotografía de Marca Personal.</li>
+                                    <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Producción y Edición de Reels.</li>
+                                </ul>
+                            </div>
+                            
+                            <p class="font-sans text-[11px] text-brand-cream/90 italic font-light bg-brand-cream/10 p-3 rounded-xl border border-brand-cream/20">
+                                <strong class="not-italic text-brand-cream">Ideal para:</strong> emprendedoras y profesionales que desean fortalecer su comunicación visual y contar con contenido propio para presentar su marca.
+                            </p>
+                            
+                            <a href="https://wa.me/TUNUMERO" target="_blank" class="mt-2 w-max px-6 py-3 rounded-full bg-brand-cream text-brand-dark text-[10px] uppercase font-bold tracking-wider hover:bg-white transition-colors flex items-center gap-2">
+                                Quiero darle vida a mi marca
                             </a>
                         </div>
                     </div>
@@ -252,27 +285,44 @@
                 </div>
             </div>
 
-            <!-- Tarjeta 3: Contenido Visual -->
-            <div class="toggle-service no-tap-highlight group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color cursor-pointer transition-all">
+            <!-- SERVICIO 3: Estrategia y Dirección de Contenidos -->
+            <div class="toggle-service no-tap-highlight group relative w-full rounded-3xl overflow-hidden shadow-md block border border-border-color cursor-pointer transition-all">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/75 transition-colors duration-500"></div>
+                <div class="absolute inset-0 bg-brand-dark/85 group-hover:bg-brand-dark/80 transition-colors duration-500"></div>
                 <div class="relative h-full p-6 flex flex-col justify-between z-10">
-                    <div>
-                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Contenido<br>Visual</h3>
-                        <p class="font-sans text-[11px] text-text-light uppercase tracking-wide max-w-[85%] leading-snug">Transmite la esencia y personalidad de tu marca</p>
+                    
+                    <!-- Parte visible siempre -->
+                    <div class="pb-2">
+                        <p class="font-sans text-[10px] text-brand-cream tracking-[0.2em] mb-1">03</p>
+                        <h3 class="font-serif text-2xl italic text-text-main leading-tight mb-2">Estrategia y Dirección de Contenidos</h3>
+                        <p class="font-sans text-[12px] text-text-light max-w-[90%] leading-snug font-light">Comunica con intención, conecta con tu audiencia y dale sentido a cada publicación.</p>
                     </div>
                     
                     <!-- Contenido Expandible -->
-                    <div class="service-details max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
+                    <div class="service-details max-h-0 opacity-0 overflow-hidden transition-all duration-700 ease-in-out">
                         <div class="pt-5 mt-4 border-t border-border-color/30 flex flex-col gap-4">
-                            <p class="font-sans text-[12.5px] text-white font-light leading-relaxed">
-                                Conceptualización creativa, dirección de sesiones, fotografía de marca personal, grabación y edición de Reels. Creación de contenido en eventos.
+                            <p class="font-sans text-[12.5px] text-text-main font-light leading-relaxed">
+                                Te ayudo a desarrollar una estrategia de contenidos alineada con los objetivos de tu marca, tu propuesta de valor y las necesidades de tu audiencia.
                             </p>
-                            <p class="font-sans text-[10px] text-brand-cream/80 italic font-light">
-                                *Puede contratar Servicios por separado o como una experiencia integral de marca personal.
+                            <p class="font-sans text-[12.5px] text-text-main font-light leading-relaxed">
+                                Organizaremos tus ideas, definiremos los temas que necesitas comunicar y desarrollaremos propuestas de contenido que te permitan mantener una comunicación coherente y con propósito.
                             </p>
-                            <a href="https://wa.me/TUNUMERO" target="_blank" class="w-max px-6 py-2.5 rounded-full border border-brand-cream/60 text-brand-cream text-[10px] uppercase tracking-wider hover:bg-brand-cream hover:text-brand-dark transition-colors flex items-center gap-2">
-                                <i class="fa-brands fa-whatsapp text-[12px]"></i> Tomar servicio
+                            
+                            <div>
+                                <p class="font-sans text-[11px] text-brand-cream uppercase tracking-wider mb-3">Servicios:</p>
+                                <ul class="flex flex-col gap-2 font-sans text-[12px] text-text-light font-light text-left">
+                                    <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Diagnóstico Estratégico de Contenidos.</li>
+                                    <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Estrategia de Marketing de Contenidos.</li>
+                                    <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Planificación y Desarrollo de Contenidos.</li>
+                                </ul>
+                            </div>
+                            
+                            <p class="font-sans text-[11px] text-brand-cream/90 italic font-light bg-brand-cream/10 p-3 rounded-xl border border-brand-cream/20">
+                                <strong class="not-italic text-brand-cream">Ideal para:</strong> marcas personales que necesitan organizar su comunicación, encontrar nuevas ideas y crear contenido con una dirección estratégica.
+                            </p>
+                            
+                            <a href="https://wa.me/TUNUMERO" target="_blank" class="mt-2 w-max px-6 py-3 rounded-full bg-brand-cream text-brand-dark text-[10px] uppercase font-bold tracking-wider hover:bg-white transition-colors flex items-center gap-2">
+                                Quiero organizar mi contenido
                             </a>
                         </div>
                     </div>
@@ -285,35 +335,26 @@
                 </div>
             </div>
 
-            <!-- Tarjeta 4: Fotografía -->
-            <div class="toggle-service no-tap-highlight group relative w-full min-h-[170px] rounded-3xl overflow-hidden shadow-md block border border-border-color cursor-pointer transition-all">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/75 transition-colors duration-500"></div>
-                <div class="relative h-full p-6 flex flex-col justify-between z-10">
-                    <div>
-                        <h3 class="font-serif text-3xl italic text-text-main leading-tight mb-2">Fotografía</h3>
-                        <p class="font-sans text-[11px] text-text-light uppercase tracking-wide max-w-[75%] leading-snug">Guarda memoria de tus momentos más preciados</p>
-                    </div>
-                    
-                    <!-- Contenido Expandible -->
-                    <div class="service-details max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
-                        <div class="pt-5 mt-4 border-t border-border-color/30 flex flex-col gap-4">
-                            <p class="font-sans text-[12.5px] text-white font-light leading-relaxed">
-                                Incluye Retrato femenino, Fotografía de lifestyle, fotografía de parejas.
-                            </p>
-                            <a href="https://wa.me/TUNUMERO" target="_blank" class="w-max px-6 py-2.5 rounded-full border border-brand-cream/60 text-brand-cream text-[10px] uppercase tracking-wider hover:bg-brand-cream hover:text-brand-dark transition-colors flex items-center gap-2">
-                                <i class="fa-brands fa-whatsapp text-[12px]"></i> Tomar servicio
-                            </a>
-                        </div>
-                    </div>
+            <!-- BLOQUE FINAL DE SECCIÓN: ¿No sabes por dónde comenzar? -->
+            <div class="mt-4 p-8 rounded-3xl border border-border-color bg-brand-dark/60 text-center relative overflow-hidden backdrop-blur-sm">
+                <!-- Resplandor decorativo -->
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-cream/5 rounded-full blur-2xl pointer-events-none"></div>
+                
+                <h3 class="font-serif text-2xl italic text-brand-cream mb-3">¿No sabes por dónde comenzar?</h3>
+                <p class="font-sans text-[13px] text-text-light leading-relaxed font-light mb-4">
+                    No necesitas tener todas las ideas claras para dar el primer paso.
+                </p>
+                <p class="font-sans text-[13px] text-text-light leading-relaxed font-light mb-6">
+                    Cuéntame sobre tu marca, lo que haces y aquello que deseas construir. Juntas identificaremos qué necesita tu proyecto y cuál de nuestros servicios puede ayudarte a avanzar.
+                </p>
+                
+                <p class="font-serif text-lg text-text-main mb-6 italic">Hablemos de tu marca.</p>
 
-                    <div class="mt-5">
-                        <span class="btn-conocer-mas inline-flex items-center gap-1.5 text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm transition-colors">
-                            Conocer más <i class="fa-solid fa-chevron-down text-[8px] transition-transform duration-300 icon-arrow"></i>
-                        </span>
-                    </div>
-                </div>
+                <a href="https://wa.me/TUNUMERO" target="_blank" class="inline-block w-full py-4 rounded-full border border-brand-cream hover:bg-brand-cream transition-colors text-brand-cream hover:text-brand-dark text-[11px] font-bold tracking-wider uppercase text-center">
+                    Cuéntame sobre tu proyecto
+                </a>
             </div>
+
         </section>
 
         <!-- SECCIÓN: CÓMO TRABAJAREMOS JUNTAS (ID: como-trabajo) -->
@@ -329,7 +370,6 @@
                     <h4 class="font-serif text-xl text-text-main mb-1">Conversamos sobre tu marca.</h4>
                     <p class="font-sans text-sm text-text-light font-light">Tus objetivos, necesidades y lo que deseas conseguir.</p>
                 </div>
-                
                 <div class="relative pl-10">
                     <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-brand-dark border border-brand-cream flex items-center justify-center z-10">
                         <span class="text-[10px] font-sans text-brand-cream font-medium">2</span>
@@ -337,7 +377,6 @@
                     <h4 class="font-serif text-xl text-text-main mb-1">Definimos el camino.</h4>
                     <p class="font-sans text-sm text-text-light font-light">Identificamos el servicio más adecuado y establecemos el alcance del trabajo.</p>
                 </div>
-                
                 <div class="relative pl-10">
                     <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-brand-dark border border-brand-cream flex items-center justify-center z-10">
                         <span class="text-[10px] font-sans text-brand-cream font-medium">3</span>
@@ -345,7 +384,6 @@
                     <h4 class="font-serif text-xl text-text-main mb-1">Desarrollamos la propuesta.</h4>
                     <p class="font-sans text-sm text-text-light font-light">Organizamos la estrategia, dirección creativa o planificación según el servicio contratado.</p>
                 </div>
-                
                 <div class="relative pl-10">
                     <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-brand-dark border border-brand-cream flex items-center justify-center z-10">
                         <span class="text-[10px] font-sans text-brand-cream font-medium">4</span>
@@ -353,7 +391,6 @@
                     <h4 class="font-serif text-xl text-text-main mb-1">Creamos y construimos.</h4>
                     <p class="font-sans text-sm text-text-light font-light">Ejecutamos el proyecto siguiendo una planificación y manteniendo comunicación durante el proceso.</p>
                 </div>
-                
                 <div class="relative pl-10">
                     <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-brand-dark border border-brand-cream flex items-center justify-center z-10">
                         <span class="text-[10px] font-sans text-brand-cream font-medium">5</span>
@@ -410,7 +447,6 @@
                 </a>
             </div>
         </section>
-
         <!-- SECCIÓN: SOBRE MÍ (ID: sobre-mi) -->
         <section id="sobre-mi" class="px-6 py-10 bg-transparent mx-5 rounded-3xl mb-10 text-center border border-border-color pt-10">
             <h2 class="font-serif text-3xl italic text-brand-cream mb-6">Sobre mí</h2>
@@ -420,7 +456,7 @@
             </div>
             
             <p class="font-sans text-[14px] text-text-light font-light leading-relaxed mb-8 px-2">
-                Soy Gisella, estratega en Branding Social Media y Marketing de Contenidos. Mi propósito es transformar la esencia de tu marca en una identidad digital auténtica y coherente, mediante la estrategia, la comunicación y el diseño visual, para construir una presencia en redes sociales que conecte con tu audiencia y refleje el valor de lo que haces.
+                Soy Gisella, estratega en Social Media Branding y Marketing de Contenidos. Mi propósito es transformar la esencia de tu marca en una presencia digital auténtica y coherente, a través de la estrategia, la comunicación y la creación de contenido visual, para fortalecer tu presencia en redes sociales, conectar con tu audiencia y comunicar el valor de lo que haces.
             </p>
             
             <a href="#" class="inline-block w-full max-w-[320px] mx-auto py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase">
@@ -511,23 +547,19 @@
             
             serviceCards.forEach(card => {
                 card.addEventListener('click', function(e) {
-                    // Evitar que se active si hacen click en el botón de WhatsApp interno
                     if(e.target.closest('a')) return;
                     
                     const details = this.querySelector('.service-details');
                     const btnSpan = this.querySelector('.btn-conocer-mas');
-                    const arrow = this.querySelector('.icon-arrow');
                     
-                    // Si está cerrado (tiene max-h-0)
                     if (details.classList.contains('max-h-0')) {
-                        // Expandir
+                        // Cambiado a max-h-[1200px] para asegurar que el texto largo quepa sin cortarse
                         details.classList.remove('max-h-0', 'opacity-0');
-                        details.classList.add('max-h-[500px]', 'opacity-100');
+                        details.classList.add('max-h-[1200px]', 'opacity-100');
                         btnSpan.innerHTML = 'Menos info <i class="fa-solid fa-chevron-up text-[8px] transition-transform duration-300 icon-arrow"></i>';
                     } else {
-                        // Contraer
                         details.classList.add('max-h-0', 'opacity-0');
-                        details.classList.remove('max-h-[500px]', 'opacity-100');
+                        details.classList.remove('max-h-[1200px]', 'opacity-100');
                         btnSpan.innerHTML = 'Conocer más <i class="fa-solid fa-chevron-down text-[8px] transition-transform duration-300 icon-arrow"></i>';
                     }
                 });
