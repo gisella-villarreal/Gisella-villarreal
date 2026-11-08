@@ -59,9 +59,10 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
+            <!-- Enlaces del Menú -->
             <nav class="flex flex-col items-center gap-7 mt-8 w-full">
                 <a href="#inicio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Inicio</a>
-                <a href="#comunidad" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Comunidad</a>
+                <a href="#comunidad" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Aula Virtual</a>
                 <a href="#servicios" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Servicios</a>
                 <a href="#como-trabajo" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">¿Cómo trabajo?</a>
                 <a href="#portafolio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Portafolio</a>
@@ -121,14 +122,23 @@
         </header>
 
         <!-- SECCIÓN: SMART-BRANDING (ID: comunidad) -->
-        <section id="comunidad" class="px-6 pt-6 pb-8 flex flex-col gap-6 relative z-10">
+        <section id="comunidad" class="px-6 pt-10 pb-12 flex flex-col gap-6 relative z-10">
             
+            <!-- Etiqueta Aula Virtual -->
+            <div class="flex justify-center mb-[-10px]">
+                <span class="bg-brand-cream/10 border border-brand-cream/30 text-brand-cream text-[9px] uppercase tracking-[0.2em] px-4 py-1.5 rounded-full backdrop-blur-sm shadow-sm">
+                    Aula Virtual • Inscripciones Abiertas
+                </span>
+            </div>
+
+            <!-- Títulos -->
             <div class="text-center">
-                <h2 class="font-serif text-[2.5rem] italic text-brand-cream mb-2 leading-tight">Smart-Branding</h2>
+                <h2 class="font-serif text-[2.8rem] italic text-brand-cream mb-2 leading-tight">Smart-Branding</h2>
                 <p class="font-sans text-[11px] tracking-[0.1em] uppercase text-text-light mb-2">Fotos Workstyle con tu Celular</p>
             </div>
             
-            <div class="relative w-[90%] mx-auto overflow-hidden shadow-lg border border-border-color">
+            <!-- Carrusel de Galería -->
+            <div class="relative w-[90%] mx-auto overflow-hidden shadow-xl border border-border-color rounded-xl">
                 <div id="lifestyle-track" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
                     <img src="1792874026013.jpg" alt="Lifestyle branding 1" class="w-full h-[260px] object-cover shrink-0 snap-center">
                     <img src="1792874026013~2.jpg" alt="Lifestyle branding 2" class="w-full h-[260px] object-cover shrink-0 snap-center object-top">
@@ -142,23 +152,38 @@
                 </button>
             </div>
             
-            <div class="flex flex-col text-left mt-2 w-[90%] mx-auto">
-                <p class="font-sans text-[13px] text-text-light leading-relaxed font-light mb-5">
-                    Te enseño a crear fotografías de branding con tu celular y construir tu activo digital con una identidad visual que refleje la esencia de tu marca. Accede a la comunidad y desarrolla tus habilidades fotográficas a tu propio ritmo.
+            <!-- Contenido de Ventas (Copywriting) -->
+            <div class="flex flex-col text-left mt-4 w-[90%] mx-auto">
+                <h3 class="font-serif text-xl italic text-text-main mb-3">Tu marca merece verse increíble.</h3>
+                <p class="font-sans text-[13px] text-text-light leading-relaxed font-light mb-6">
+                    Un espacio de aprendizaje diseñado para ti. Te enseño a capturar la esencia de tu marca personal con la herramienta que ya tienes en tus manos: tu celular. Entra a nuestra aula virtual y descubre cómo comunicar tu valor a través de fotografías auténticas y profesionales, a tu propio ritmo.
                 </p>
                 
-                <p class="font-sans text-[12px] text-brand-cream mb-4 uppercase tracking-wider">¿Qué encontrarás?</p>
+                <p class="font-sans text-[12px] text-brand-cream mb-4 uppercase tracking-wider font-medium">¿Qué incluye el aula?</p>
                 
-                <div class="w-full mb-6">
-                    <ul class="flex flex-col gap-3 font-sans text-[12px] text-text-light font-light text-left">
-                        <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Clases y tutoriales prácticos.</li>
-                        <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Técnicas de fotografía con celular.</li>
-                        <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Ideas y ejercicios de branding fotográfico.</li>
-                        <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Acompañamiento y aprendizaje en comunidad.</li>
+                <div class="w-full mb-8">
+                    <ul class="flex flex-col gap-4 font-sans text-[12.5px] text-text-light font-light text-left">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-play text-brand-cream mt-[3px] text-[11px] w-4 text-center"></i>
+                            <span>Módulos de clases en video y tutoriales súper prácticos paso a paso.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-mobile-screen text-brand-cream mt-[3px] text-[11px] w-4 text-center"></i>
+                            <span>Técnicas de dirección, encuadre, iluminación y edición desde tu celular.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-lightbulb text-brand-cream mt-[3px] text-[11px] w-4 text-center"></i>
+                            <span>Retos creativos, poses y ejercicios de branding fotográfico (Workstyle).</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-heart text-brand-cream mt-[3px] text-[11px] w-4 text-center"></i>
+                            <span>Acompañamiento cercano, feedback y acceso a nuestra comunidad exclusiva.</span>
+                        </li>
                     </ul>
                 </div>
 
-                <div class="w-full flex flex-col items-center mb-8 bg-border-color/10 py-4 rounded-2xl border border-border-color/20">
+                <!-- Convertidor de Moneda y Precio -->
+                <div class="w-full flex flex-col items-center mb-6 bg-border-color/10 py-5 rounded-2xl border border-border-color/20">
                     <div class="flex items-center gap-3 mb-3">
                         <span id="label-cop" class="text-[11px] font-sans text-brand-cream font-medium transition-colors">COP</span>
                         <button id="currency-toggle" class="w-10 h-5 bg-brand-dark border border-border-color rounded-full relative flex items-center p-1 cursor-pointer transition-colors shadow-inner">
@@ -173,8 +198,8 @@
                     </div>
                 </div>
                 
-                <a href="#" class="inline-block w-full py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase text-center">
-                    Quiero unirme a la comunidad
+                <a href="#" class="inline-block w-full py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase text-center mt-2">
+                    Quiero entrar al aula
                 </a>
             </div>
         </section>
@@ -182,22 +207,20 @@
         <!-- SECCIÓN DE SERVICIOS (ID: servicios) -->
         <section id="servicios" class="relative z-10 px-5 pt-8 pb-6 flex flex-col gap-5">
             
-            <h2 class="font-serif text-3xl italic text-brand-cream mb-2 text-center">Servicios</h2>
+            <h2 class="font-serif text-3xl italic text-brand-cream mb-1 text-center">Servicios</h2>
             
-            <!-- SERVICIO 1: Estrategia y Desarrollo de Presencia Digital -->
+            <!-- Tarjeta 1: Estrategia y Desarrollo de Presencia Digital -->
             <div class="toggle-service no-tap-highlight group relative w-full rounded-3xl overflow-hidden shadow-md block border border-border-color mt-2 cursor-pointer transition-all">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
                 <div class="absolute inset-0 bg-brand-dark/85 group-hover:bg-brand-dark/80 transition-colors duration-500"></div>
                 <div class="relative h-full p-6 flex flex-col justify-between z-10">
                     
-                    <!-- Parte visible siempre -->
                     <div class="pb-2">
                         <p class="font-sans text-[10px] text-brand-cream tracking-[0.2em] mb-1">01</p>
                         <h3 class="font-serif text-2xl italic text-text-main leading-tight mb-2">Estrategia y Desarrollo de Presencia Digital</h3>
                         <p class="font-sans text-[12px] text-text-light max-w-[90%] leading-snug font-light">Dale estructura, claridad y dirección a tu marca.</p>
                     </div>
                     
-                    <!-- Contenido Expandible -->
                     <div class="service-details max-h-0 opacity-0 overflow-hidden transition-all duration-700 ease-in-out">
                         <div class="pt-5 mt-4 border-t border-border-color/30 flex flex-col gap-4">
                             <p class="font-sans text-[12.5px] text-text-main font-light leading-relaxed">
@@ -235,20 +258,18 @@
                 </div>
             </div>
 
-            <!-- SERVICIO 2: Dirección Creativa y Producción Visual -->
+            <!-- Tarjeta 2: Dirección Creativa y Producción Visual -->
             <div class="toggle-service no-tap-highlight group relative w-full rounded-3xl overflow-hidden shadow-md block border border-border-color cursor-pointer transition-all">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
                 <div class="absolute inset-0 bg-brand-dark/85 group-hover:bg-brand-dark/80 transition-colors duration-500"></div>
                 <div class="relative h-full p-6 flex flex-col justify-between z-10">
                     
-                    <!-- Parte visible siempre -->
                     <div class="pb-2">
                         <p class="font-sans text-[10px] text-brand-cream tracking-[0.2em] mb-1">02</p>
                         <h3 class="font-serif text-2xl italic text-text-main leading-tight mb-2">Dirección Creativa y Producción Visual</h3>
                         <p class="font-sans text-[12px] text-text-light max-w-[90%] leading-snug font-light">Tu marca también tiene una manera propia de expresarse visualmente.</p>
                     </div>
                     
-                    <!-- Contenido Expandible -->
                     <div class="service-details max-h-0 opacity-0 overflow-hidden transition-all duration-700 ease-in-out">
                         <div class="pt-5 mt-4 border-t border-border-color/30 flex flex-col gap-4">
                             <p class="font-sans text-[12.5px] text-text-main font-light leading-relaxed">
@@ -285,20 +306,18 @@
                 </div>
             </div>
 
-            <!-- SERVICIO 3: Estrategia y Dirección de Contenidos -->
+            <!-- Tarjeta 3: Estrategia y Dirección de Contenidos -->
             <div class="toggle-service no-tap-highlight group relative w-full rounded-3xl overflow-hidden shadow-md block border border-border-color cursor-pointer transition-all">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
                 <div class="absolute inset-0 bg-brand-dark/85 group-hover:bg-brand-dark/80 transition-colors duration-500"></div>
                 <div class="relative h-full p-6 flex flex-col justify-between z-10">
                     
-                    <!-- Parte visible siempre -->
                     <div class="pb-2">
                         <p class="font-sans text-[10px] text-brand-cream tracking-[0.2em] mb-1">03</p>
                         <h3 class="font-serif text-2xl italic text-text-main leading-tight mb-2">Estrategia y Dirección de Contenidos</h3>
                         <p class="font-sans text-[12px] text-text-light max-w-[90%] leading-snug font-light">Comunica con intención, conecta con tu audiencia y dale sentido a cada publicación.</p>
                     </div>
                     
-                    <!-- Contenido Expandible -->
                     <div class="service-details max-h-0 opacity-0 overflow-hidden transition-all duration-700 ease-in-out">
                         <div class="pt-5 mt-4 border-t border-border-color/30 flex flex-col gap-4">
                             <p class="font-sans text-[12.5px] text-text-main font-light leading-relaxed">
@@ -335,9 +354,8 @@
                 </div>
             </div>
 
-            <!-- BLOQUE FINAL DE SECCIÓN: ¿No sabes por dónde comenzar? -->
+            <!-- BLOQUE FINAL: ¿No sabes por dónde comenzar? -->
             <div class="mt-4 p-8 rounded-3xl border border-border-color bg-brand-dark/60 text-center relative overflow-hidden backdrop-blur-sm">
-                <!-- Resplandor decorativo -->
                 <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-cream/5 rounded-full blur-2xl pointer-events-none"></div>
                 
                 <h3 class="font-serif text-2xl italic text-brand-cream mb-3">¿No sabes por dónde comenzar?</h3>
@@ -447,6 +465,7 @@
                 </a>
             </div>
         </section>
+
         <!-- SECCIÓN: SOBRE MÍ (ID: sobre-mi) -->
         <section id="sobre-mi" class="px-6 py-10 bg-transparent mx-5 rounded-3xl mb-10 text-center border border-border-color pt-10">
             <h2 class="font-serif text-3xl italic text-brand-cream mb-6">Sobre mí</h2>
@@ -456,7 +475,7 @@
             </div>
             
             <p class="font-sans text-[14px] text-text-light font-light leading-relaxed mb-8 px-2">
-                Soy Gisella, estratega en Social Media Branding y Marketing de Contenidos. Mi propósito es transformar la esencia de tu marca en una presencia digital auténtica y coherente, a través de la estrategia, la comunicación y la creación de contenido visual, para fortalecer tu presencia en redes sociales, conectar con tu audiencia y comunicar el valor de lo que haces.
+                Soy Gisella, estratega en Social Media Branding y Marketing de Contenidos. Mi propósito es transformar la esencia de tu marca en una identidad digital auténtica y coherente, mediante la estrategia, la comunicación y el diseño visual, para construir una presencia en redes sociales que conecte con tu audiencia y refleje el valor de lo que haces.
             </p>
             
             <a href="#" class="inline-block w-full max-w-[320px] mx-auto py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase">
@@ -547,17 +566,18 @@
             
             serviceCards.forEach(card => {
                 card.addEventListener('click', function(e) {
-                    if(e.target.closest('a')) return;
+                    if(e.target.closest('a')) return; // No hacer toggle si clickean el botón de WhatsApp
                     
                     const details = this.querySelector('.service-details');
                     const btnSpan = this.querySelector('.btn-conocer-mas');
                     
                     if (details.classList.contains('max-h-0')) {
-                        // Cambiado a max-h-[1200px] para asegurar que el texto largo quepa sin cortarse
+                        // Expandir (se ajustó a 1200px para que el contenido nuevo quepa perfectamente)
                         details.classList.remove('max-h-0', 'opacity-0');
                         details.classList.add('max-h-[1200px]', 'opacity-100');
                         btnSpan.innerHTML = 'Menos info <i class="fa-solid fa-chevron-up text-[8px] transition-transform duration-300 icon-arrow"></i>';
                     } else {
+                        // Contraer
                         details.classList.add('max-h-0', 'opacity-0');
                         details.classList.remove('max-h-[1200px]', 'opacity-100');
                         btnSpan.innerHTML = 'Conocer más <i class="fa-solid fa-chevron-down text-[8px] transition-transform duration-300 icon-arrow"></i>';
