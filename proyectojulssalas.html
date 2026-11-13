@@ -146,29 +146,29 @@
                     <div class="h-[1px] flex-grow bg-border-color"></div>
                 </div>
 
-                <div class="flex flex-col md:flex-row gap-6 md:gap-10">
+                <div class="flex flex-row gap-3 md:gap-10">
                     <!-- ANTES -->
-                    <div class="w-full md:w-1/2 flex flex-col items-center">
-                        <div class="w-full aspect-[9/16] rounded-3xl border border-border-color bg-brand-dark/50 relative overflow-hidden flex items-center justify-center p-4">
+                    <div class="w-1/2 flex flex-col items-center">
+                        <div class="w-full aspect-[9/16] rounded-2xl md:rounded-3xl border border-border-color bg-brand-dark/50 relative overflow-hidden flex items-center justify-center p-2 md:p-4">
                             <!-- Placeholder del feed viejo -->
-                            <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover rounded-2xl opacity-40 grayscale">
-                            <span class="absolute top-6 left-6 px-4 py-1.5 bg-brand-dark/80 backdrop-blur-md border border-border-color rounded-full text-[10px] uppercase tracking-widest text-text-light font-bold">
+                            <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover rounded-xl md:rounded-2xl opacity-40 grayscale">
+                            <span class="absolute top-3 left-3 md:top-6 md:left-6 px-3 md:px-4 py-1 md:py-1.5 bg-brand-dark/80 backdrop-blur-md border border-border-color rounded-full text-[8px] md:text-[10px] uppercase tracking-widest text-text-light font-bold">
                                 Antes
                             </span>
                         </div>
-                        <p class="font-sans text-[12px] text-text-light mt-4 text-center px-4">Feed sin identidad visual definida, biografía confusa y sin llamado a la acción claro.</p>
+                        <p class="font-sans text-[10px] md:text-[12px] text-text-light mt-3 md:mt-4 text-center px-1 md:px-4 leading-relaxed">Feed sin identidad visual definida y biografía confusa.</p>
                     </div>
 
                     <!-- DESPUÉS -->
-                    <div class="w-full md:w-1/2 flex flex-col items-center">
-                        <div class="w-full aspect-[9/16] rounded-3xl border border-brand-cream bg-brand-dark/50 relative overflow-hidden flex items-center justify-center p-4 shadow-[0_0_30px_rgba(201,187,158,0.15)]">
+                    <div class="w-1/2 flex flex-col items-center">
+                        <div class="w-full aspect-[9/16] rounded-2xl md:rounded-3xl border border-brand-cream bg-brand-dark/50 relative overflow-hidden flex items-center justify-center p-2 md:p-4 shadow-[0_0_30px_rgba(201,187,158,0.15)]">
                             <!-- Placeholder del feed nuevo -->
-                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover rounded-2xl">
-                            <span class="absolute top-6 left-6 px-4 py-1.5 bg-brand-cream text-brand-dark rounded-full text-[10px] uppercase tracking-widest font-bold">
+                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover rounded-xl md:rounded-2xl">
+                            <span class="absolute top-3 left-3 md:top-6 md:left-6 px-3 md:px-4 py-1 md:py-1.5 bg-brand-cream text-brand-dark rounded-full text-[8px] md:text-[10px] uppercase tracking-widest font-bold">
                                 Después
                             </span>
                         </div>
-                        <p class="font-sans text-[12px] text-text-light mt-4 text-center px-4">Perfil optimizado para conversión, portadas curadas, links estructurados y feed editorial.</p>
+                        <p class="font-sans text-[10px] md:text-[12px] text-text-light mt-3 md:mt-4 text-center px-1 md:px-4 leading-relaxed">Perfil optimizado para conversión y feed editorial.</p>
                     </div>
                 </div>
             </div>
@@ -282,7 +282,7 @@
         </section>
 
         <!-- ========================================== -->
-        <!-- CTA FINAL (Igual a portafolio)             -->
+        <!-- CTA FINAL                                  -->
         <!-- ========================================== -->
         <section class="py-16 md:py-24 px-6 border-t border-border-color/30">
             <div class="max-w-[700px] mx-auto bg-brand-dark border border-brand-cream/30 rounded-3xl p-8 md:p-12 text-center shadow-lg relative overflow-hidden">
@@ -300,14 +300,41 @@
         </section>
 
         <!-- ========================================== -->
-        <!-- FOOTER                                     -->
+        <!-- FOOTER IDÉNTICO AL BIOLINK                 -->
         <!-- ========================================== -->
-        <footer class="pt-8 pb-12 text-center relative z-10 flex flex-col justify-between border-t border-border-color/30">
-            <div class="text-center mb-6">
-                <h4 class="font-serif text-[1.2rem] italic mb-1 text-text-main">Gisella Villarreal</h4>
-                <p class="text-[9px] font-sans font-medium text-text-light tracking-widest uppercase leading-relaxed">
-                    © 2026 | Todos los derechos reservados
-                </p>
+        <footer id="contacto" class="px-8 pt-6 pb-12 text-center relative z-10 flex flex-col justify-between border-t border-border-color/30">
+            
+            <div class="mb-10 text-center">
+                <h2 class="font-serif text-2xl italic text-brand-cream mb-6">Contacto</h2>
+                
+                <div class="flex justify-center gap-5">
+                    <a href="https://wa.me/TUNUMERO" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-brands fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="mailto:correo@tudominio.com" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-regular fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 relative border-t border-border-color flex flex-col items-center gap-4">
+                <div class="text-center">
+                    <h4 class="font-serif text-[1.2rem] italic mb-1 text-text-main">Gisella Villarreal</h4>
+                    <p class="text-[9px] font-sans font-medium text-text-light tracking-widest uppercase leading-relaxed">
+                        © 2026 | Todos los derechos reservados
+                    </p>
+                </div>
+
+                <div class="flex gap-4 font-sans text-[10px] text-text-light underline decoration-border-color hover:text-brand-cream transition-colors">
+                    <a href="terminos.html">Términos y Condiciones</a>
+                    <a href="politicas.html">Políticas de Privacidad</a>
+                </div>
             </div>
         </footer>
 
