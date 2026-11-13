@@ -3,134 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gisella Villarreal | Social Media Branding</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Workstyle Content | Domina la Fotografía Móvil</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-dark': '#974315',       /* NUEVO COLOR DE FONDO TERRACOTA */
-                        'brand-cream': '#c9bb9e',      /* Crema original */
-                        'text-main': '#FFFFFF',        /* Textos blancos */
-                        'text-light': 'rgba(255, 255, 255, 0.8)', /* Blanco suavizado para contraste perfecto sobre terracota */
-                        'border-color': 'rgba(255, 255, 255, 0.2)',
-                    },
-                    fontFamily: {
-                        'serif': ['"Playfair Display"', 'serif'],
-                        'sans': ['"Inter"', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .no-tap-highlight {
-            -webkit-tap-highlight-color: transparent;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
     </style>
 </head>
-<body class="bg-brand-dark antialiased text-text-main selection:bg-brand-cream selection:text-brand-dark">
+<body class="bg-[#faf9f6] text-gray-800 antialiased">
 
-    <main class="max-w-[430px] mx-auto bg-brand-dark min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
-        
-        <!-- ============================== -->
-        <!-- MENÚ DESPLEGABLE (OVERLAY)     -->
-        <!-- ============================== -->
-        <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/95 backdrop-blur-xl z-50 flex flex-col justify-between items-center py-20 px-8 transition-all duration-500 opacity-0 pointer-events-none translate-y-4 max-w-[430px] mx-auto">
-            
-            <button id="close-menu-btn" class="absolute top-8 right-6 text-brand-cream text-3xl hover:text-white transition-colors">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
+    <!-- Navegación -->
+    <nav class="max-w-6xl mx-auto px-6 py-8 flex justify-between items-center">
+        <div class="text-xl font-serif font-semibold tracking-wide">Workstyle Content.</div>
+        <a href="#inscripcion" class="text-sm font-medium hover:text-stone-500 transition-colors">Inscríbete</a>
+    </nav>
 
-            <!-- Enlaces del Menú -->
-            <nav class="flex flex-col items-center gap-7 mt-8 w-full">
-                <a href="#inicio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Inicio</a>
-                <a href="#comunidad" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Aula Virtual</a>
-                <a href="#servicios" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Servicios</a>
-                <a href="#como-trabajo" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">¿Cómo trabajo?</a>
-                <a href="#portafolio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Portafolio</a>
-                <a href="#sobre-mi" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Sobre mí</a>
-            </nav>
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-6 py-20 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+            <span class="uppercase tracking-widest text-xs font-semibold text-stone-500">Curso Online / Aula Virtual</span>
+            <h1 class="text-5xl lg:text-6xl font-serif mt-4 mb-6 leading-tight text-stone-900">Eleva el contenido visual de tu marca personal.</h1>
+            <p class="text-lg text-gray-600 mb-8 font-light leading-relaxed">
+                Aprende a dominar la fotografía móvil, la dirección de arte y la creación de videos cortos para proyectar una imagen profesional, estética y auténtica.
+            </p>
+            <a href="#inscripcion" class="inline-block bg-stone-900 text-white px-8 py-4 text-sm font-medium hover:bg-stone-700 transition-colors shadow-lg">
+                Comenzar el curso hoy
+            </a>
+        </div>
+        <div class="relative h-[500px] w-full bg-stone-200 overflow-hidden">
+            <!-- Reemplazar con una foto de estilo de trabajo / workstyle -->
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Creación de contenido móvil" class="object-cover w-full h-full opacity-90">
+        </div>
+    </section>
 
-            <div class="flex justify-center gap-5 w-full mt-auto">
-                <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                    <i class="fa-brands fa-whatsapp text-xl"></i>
-                </a>
-                <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                    <i class="fa-brands fa-instagram text-xl"></i>
-                </a>
-                <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                    <i class="fa-brands fa-linkedin-in text-xl"></i>
-                </a>
-                <a href="mailto:correo@tudominio.com" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                    <i class="fa-regular fa-envelope text-xl"></i>
-                </a>
+    <!-- Lo que aprenderás (Módulos) -->
+    <section class="bg-stone-900 text-white py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-serif text-center mb-16">Plan de Estudio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <!-- Módulo 1 -->
+                <div class="border-t border-stone-700 pt-6">
+                    <span class="text-stone-400 font-mono text-sm">Módulo 01</span>
+                    <h3 class="text-xl font-medium mt-2 mb-3">Fundamentos de la Fotografía Móvil</h3>
+                    <p class="text-stone-400 font-light text-sm">Configuración de cámara, uso de la luz natural, composición y encuadres para retratos de estilo de trabajo.</p>
+                </div>
+
+                <!-- Módulo 2 -->
+                <div class="border-t border-stone-700 pt-6">
+                    <span class="text-stone-400 font-mono text-sm">Módulo 02</span>
+                    <h3 class="text-xl font-medium mt-2 mb-3">Dirección de Arte e Identidad</h3>
+                    <p class="text-stone-400 font-light text-sm">Cómo traducir la esencia de tu marca a imágenes. Paletas de color, props y escenografía para tu feed.</p>
+                </div>
+
+                <!-- Módulo 3 -->
+                <div class="border-t border-stone-700 pt-6">
+                    <span class="text-stone-400 font-mono text-sm">Módulo 03</span>
+                    <h3 class="text-xl font-medium mt-2 mb-3">Formato Corto: Reels y TikToks</h3>
+                    <p class="text-stone-400 font-light text-sm">Estructura visual para video, transiciones sutiles, grabación detrás de escena (BTS) y retención de audiencia.</p>
+                </div>
+
+                <!-- Módulo 4 -->
+                <div class="border-t border-stone-700 pt-6">
+                    <span class="text-stone-400 font-mono text-sm">Módulo 04</span>
+                    <h3 class="text-xl font-medium mt-2 mb-3">Edición y Flujo de Trabajo</h3>
+                    <p class="text-stone-400 font-light text-sm">Edición estética desde el celular. Aplicaciones clave, filtros naturales y organización del contenido.</p>
+                </div>
+
             </div>
         </div>
-        <!-- ============================== -->
+    </section>
 
-        <!-- HEADER / HERO (ID: inicio) -->
-        <header id="inicio" class="relative w-full h-[85vh] min-h-[600px] flex flex-col">
-            
-            <div class="absolute top-6 left-5 right-5 z-30 flex justify-between items-center">
-                <a href="#" class="px-4 py-2 rounded-full border border-black text-black text-[10px] font-bold tracking-wider hover:bg-black hover:text-white transition-all uppercase bg-transparent flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-[14px]"></i>
-                    Háblame de tu marca
-                </a>
-                <div id="open-menu-btn" class="flex flex-col gap-[6px] cursor-pointer opacity-80 hover:opacity-100 transition-opacity p-1">
-                    <div class="w-7 h-[2px] bg-black"></div>
-                    <div class="w-7 h-[2px] bg-black"></div>
-                </div>
+    <!-- Sobre la Instructora -->
+    <section class="max-w-6xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+        <div class="md:col-span-1">
+            <!-- Reemplazar con tu foto de marca personal -->
+            <div class="aspect-[4/5] bg-stone-200 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gisella Villarreal" class="object-cover w-full h-full grayscale hover:grayscale-0 transition duration-500">
             </div>
+        </div>
+        <div class="md:col-span-2 md:pl-12">
+            <h2 class="text-3xl font-serif mb-4">Gisella Villarreal | Marketing de contenido</h2>
+            <p class="text-gray-600 mb-6 font-light leading-relaxed">
+                Fotógrafa comercial y estratega visual. Mi enfoque es ayudar a marcas personales a destacar en el entorno digital a través de imágenes auténticas y una dirección de arte cuidada. En este curso he condensado mi experiencia creando contenido de alto impacto para que aprendas a hacerlo tú mismo, solo con tu dispositivo móvil.
+            </p>
+            <a href="https://gisellavillarreal.pages.dev" target="_blank" class="text-sm font-medium border-b border-stone-900 pb-1 hover:text-stone-500 hover:border-stone-500 transition-colors">
+                Visitar mi portafolio web
+            </a>
+        </div>
+    </section>
 
-            <div class="absolute inset-0 z-0 overflow-hidden bg-brand-dark">
-                <img src="1792874026013~2.jpg" 
-                     alt="Gisella Villarreal" 
-                     class="w-full h-full object-cover object-[center_15%] scale-[1.05]">
-            </div>
-            
-            <!-- Difuminado inferior ahora toma el color #974315 automáticamente -->
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent z-10 h-[45%]"></div>
+    <!-- CTA Final -->
+    <section id="inscripcion" class="bg-[#e9e6df] py-24 text-center">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-4xl font-serif mb-6 text-stone-900">Transforma tu presencia digital</h2>
+            <p class="text-gray-700 mb-10 font-light">Acceso inmediato al aula virtual, lecciones en video paso a paso y recursos descargables.</p>
+            <a href="#" class="inline-block bg-stone-900 text-white px-10 py-4 text-sm font-medium hover:bg-stone-700 transition-colors shadow-lg">
+                Inscribirme al curso - $XX USD
+            </a>
+        </div>
+    </section>
 
-            <div class="relative z-20 px-6 mt-auto flex flex-col items-center text-center w-full pb-8">
-                <h1 class="font-serif text-[3.5rem] md:text-6xl italic font-medium leading-[1.05] mb-2 text-text-main tracking-wide">
-                    Gisella<br>Villarreal
-                </h1>
-                <p class="font-sans text-[13px] tracking-[0.2em] uppercase text-brand-cream mb-4 font-bold">
-                    Social Media Branding
-                </p>
-                <p class="font-sans text-[13px] leading-relaxed text-text-light font-light max-w-[320px] mx-auto">
-                    Amo ayudar a marcas personales que desean mostrarse auténticas, tanto en su vida personal como en su camino profesional.
-                </p>
-            </div>
-        </header>
+    <!-- Footer -->
+    <footer class="max-w-6xl mx-auto px-6 py-8 border-t border-stone-200 mt-12 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+        <p>&copy; 2026 Gisella Villarreal. Todos los derechos reservados.</p>
+        <div class="mt-4 md:mt-0 space-x-4">
+            <a href="#" class="hover:text-stone-600">Instagram</a>
+            <a href="#" class="hover:text-stone-600">WhatsApp</a>
+        </div>
+    </footer>
 
-        <!-- SECCIÓN: SMART-BRANDING (ID: comunidad) -->
-        <section id="comunidad" class="px-6 pt-10 pb-12 flex flex-col gap-6 relative z-10">
-            
-            <div class="flex justify-center mb-[-10px]">
-                <span class="bg-brand-cream/10 border border-brand-cream/30 text-brand-cream text-[9px] uppercase tracking-[0.2em] px-4 py-1.5 rounded-full backdrop-blur-sm shadow-sm">
-                    Aula Virtual • Inscripciones Abiertas
-                </span>
-            </div>
-
-            <div class="text-center">
-                <h2 class="font-serif text-[2.8rem] italic text-brand-cream
-    
+</body>
+</html>
