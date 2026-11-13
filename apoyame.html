@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoya mi camino creativo | Gisella Villarreal</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#151515',       
+                        'brand-cream': '#c9bb9e',      
+                        'text-main': '#FFFFFF',        
+                        'text-light': '#b0b0b0',       
+                        'border-color': 'rgba(255, 255, 255, 0.15)',
+                    },
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'sans': ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .no-tap-highlight { -webkit-tap-highlight-color: transparent; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-brand-dark antialiased text-text-main selection:bg-brand-cream selection:text-brand-dark">
+
+    <main class="w-full max-w-[430px] md:max-w-[950px] lg:max-w-[1050px] mx-auto bg-brand-dark min-h-screen relative shadow-2xl flex flex-col border-x border-border-color/30">
+
+        <!-- ========================================== -->
+        <!-- HEADER & HERO (Propósito)                  -->
+        <!-- ========================================== -->
+        <header class="relative w-full h-[50vh] md:h-[60vh] min-h-[400px] flex flex-col justify-end pb-12 px-6 md:px-16 overflow-hidden">
+            <div class="absolute inset-0 z-0 bg-brand-dark">
+                <!-- Imagen inspiracional de trabajo creativo -->
+                <img src="https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=1200&auto=format&fit=crop" 
+                     alt="Trabajo Creativo" 
+                     class="w-full h-full object-cover object-center opacity-30 scale-[1.02]">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent z-10"></div>
+            
+            <!-- Botón Volver -->
+            <a href="index.html" class="absolute top-6 left-6 md:left-10 z-30 w-10 h-10 rounded-full bg-brand-dark/50 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream hover:bg-brand-cream hover:text-brand-dark transition-all">
+                <i class="fa-solid fa-arrow-left text-sm"></i>
+            </a>
+
+            <div class="relative z-20 w-full max-w-[700px] text-center mx-auto mt-10">
+                <span class="inline-block font-sans text-[10px] md:text-[11px] uppercase tracking-[0.3em] text-brand-cream font-bold mb-3">
+                    Fondo Creativo
+                </span>
+                <h1 class="font-serif text-[3.2rem] md:text-[4.5rem] italic font-medium leading-[1] mb-4 text-text-main tracking-wide">
+                    Apoya mi<br>
+                    <span class="not-italic font-semibold text-brand-cream">Camino Creativo</span>
+                </h1>
+            </div>
+        </header>
+
+        <!-- ========================================== -->
+        <!-- MENSAJE PERSUASIVO                         -->
+        <!-- ========================================== -->
+        <section class="py-10 md:py-16 px-6 md:px-16">
+            <div class="max-w-[700px] mx-auto text-center">
+                <p class="font-sans text-[14px] md:text-[15px] text-text-light font-light leading-relaxed mb-6 text-justify md:text-center">
+                    Detrás de cada fotografía, estrategia visual y contenido gratuito que comparto, hay horas de conceptualización, estudio y dedicación. Mi objetivo siempre será democratizar el branding visual y ayudar a más marcas a proyectar su verdadero valor.
+                </p>
+                <p class="font-sans text-[14px] md:text-[15px] text-white font-medium leading-relaxed mb-10 text-justify md:text-center">
+                    Si mi trabajo te ha inspirado, te ha sido útil o simplemente deseas respaldar el arte y la creación de contenido independiente, tu aporte hace una diferencia inmensa. Me ayuda a invertir en mejores herramientas, tiempo y recursos para seguir creando para ti.
+                </p>
+                <div class="w-16 h-[1px] bg-brand-cream mx-auto"></div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- OPCIONES DE APOYO (Tarjetas)               -->
+        <!-- ========================================== -->
+        <section class="py-10 px-6 md:px-16 pb-20">
+            <div class="max-w-[800px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                
+                <!-- OPCIÓN 1: Aporte Financiero -->
+                <div class="group relative bg-brand-dark/50 border border-border-color rounded-[2rem] p-8 md:p-10 flex flex-col items-center text-center hover:border-brand-cream/60 transition-all shadow-lg overflow-hidden">
+                    <!-- Resplandor sutil -->
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-cream/5 rounded-full blur-2xl pointer-events-none group-hover:bg-brand-cream/10 transition-colors"></div>
+                    
+                    <div class="w-16 h-16 rounded-full bg-brand-cream/10 border border-brand-cream/30 flex items-center justify-center text-brand-cream mb-6">
+                        <i class="fa-solid fa-mug-hot text-2xl"></i>
+                    </div>
+                    
+                    <h3 class="font-serif text-2xl italic text-text-main mb-3">Invítame un café</h3>
+                    <p class="font-sans text-[12px] text-text-light font-light leading-relaxed mb-8 flex-grow">
+                        Un aporte voluntario que funciona como un "gracias" por el contenido de valor. Puedes donar el equivalente a un café (o lo que nazca de tu corazón) de forma rápida y segura.
+                    </p>
+                    
+                    <!-- Botones de pago -->
+                    <div class="flex flex-col gap-3 w-full mt-auto relative z-10">
+                        <!-- Enlace Nequi / Bancolombia / MercadoPago -->
+                        <a href="https://wa.me/TUNUMERO?text=Hola%20Gisella,%20quiero%20hacerte%20un%20aporte%20por%20Nequi" target="_blank" class="w-full py-3.5 px-6 rounded-full bg-brand-cream text-brand-dark text-[11px] uppercase font-bold tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-mobile-screen"></i> Aporte vía Nequi
+                        </a>
+                        <!-- Enlace PayPal (Internacional) -->
+                        <a href="TU_LINK_DE_PAYPAL_AQUI" target="_blank" class="w-full py-3.5 px-6 rounded-full border border-brand-cream text-brand-cream text-[11px] uppercase font-bold tracking-wider hover:bg-brand-cream hover:text-brand-dark transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-paypal"></i> Donar con PayPal
+                        </a>
+                    </div>
+                </div>
+
+                <!-- OPCIÓN 2: Wishlist / Materiales -->
+                <div class="group relative bg-brand-dark/50 border border-border-color rounded-[2rem] p-8 md:p-10 flex flex-col items-center text-center hover:border-brand-cream/60 transition-all shadow-lg overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-cream/5 rounded-full blur-2xl pointer-events-none group-hover:bg-brand-cream/10 transition-colors"></div>
+                    
+                    <div class="w-16 h-16 rounded-full bg-brand-cream/10 border border-brand-cream/30 flex items-center justify-center text-brand-cream mb-6">
+                        <i class="fa-solid fa-box-open text-2xl"></i>
+                    </div>
+                    
+                    <h3 class="font-serif text-2xl italic text-text-main mb-3">Herramientas de Estudio</h3>
+                    <p class="font-sans text-[12px] text-text-light font-light leading-relaxed mb-8 flex-grow">
+                        Para crear contenido de alta calidad se requieren equipos (discos duros, luces, utilería editorial). He creado una lista de Amazon con los materiales que necesito para el estudio.
+                    </p>
+                    
+                    <div class="flex flex-col gap-3 w-full mt-auto relative z-10">
+                        <a href="TU_LINK_DE_AMAZON_WISHLIST" target="_blank" class="w-full py-3.5 px-6 rounded-full bg-[#ff9900] text-brand-dark text-[11px] uppercase font-bold tracking-wider hover:bg-[#ff9900]/90 transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-amazon"></i> Ver Amazon Wishlist
+                        </a>
+                        <p class="font-sans text-[9px] text-text-light uppercase tracking-widest mt-2">
+                            Los productos llegan directo a mi dirección
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- AGRADECIMIENTO FINAL                       -->
+        <!-- ========================================== -->
+        <section class="py-10 px-6 border-t border-border-color/30">
+            <div class="max-w-[600px] mx-auto text-center">
+                <i class="fa-solid fa-heart text-brand-cream mb-4 text-xl"></i>
+                <h2 class="font-serif text-2xl md:text-3xl italic text-text-main mb-3">Infinitas Gracias</h2>
+                <p class="font-sans text-[12px] text-text-light font-light leading-relaxed">
+                    Ya sea que decidas apoyarme económicamente, compartiendo mis publicaciones o simplemente leyendo esto: <strong>Gracias.</strong> Tú haces que este proyecto tenga sentido.
+                </p>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- FOOTER IDÉNTICO AL BIOLINK                 -->
+        <!-- ========================================== -->
+        <footer id="contacto" class="px-8 pt-10 pb-12 text-center relative z-10 flex flex-col justify-between border-t border-border-color/30 mt-auto">
+            
+            <div class="mb-10 text-center">
+                <h2 class="font-serif text-2xl italic text-brand-cream mb-6">Contacto</h2>
+                
+                <div class="flex justify-center gap-5">
+                    <a href="https://wa.me/TUNUMERO" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-brands fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="mailto:correo@tudominio.com" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-regular fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 relative border-t border-border-color flex flex-col items-center gap-4">
+                <div class="text-center">
+                    <h4 class="font-serif text-[1.2rem] italic mb-1 text-text-main">Gisella Villarreal</h4>
+                    <p class="text-[9px] font-sans font-medium text-text-light tracking-widest uppercase leading-relaxed">
+                        © 2026 | Todos los derechos reservados
+                    </p>
+                </div>
+
+                <div class="flex gap-4 font-sans text-[10px] text-text-light underline decoration-border-color hover:text-brand-cream transition-colors">
+                    <a href="terminos.html">Términos y Condiciones</a>
+                    <a href="politicas.html">Políticas de Privacidad</a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- BOTÓN FLOTANTE "VOLVER ARRIBA" -->
+        <div class="fixed bottom-8 right-6 md:right-10 z-40">
+            <button id="scroll-top-btn" class="pointer-events-auto w-10 h-10 rounded-full border border-brand-cream/40 bg-brand-dark/90 backdrop-blur-md flex items-center justify-center text-brand-cream opacity-0 translate-y-4 transition-all duration-500 hover:bg-brand-cream hover:text-brand-dark shadow-xl" aria-label="Volver arriba">
+                <i class="fa-solid fa-angle-up text-sm"></i>
+            </button>
+        </div>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollTopBtn = document.getElementById('scroll-top-btn');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+                } else {
+                    scrollTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                }
+            });
+
+            if(scrollTopBtn) {
+                scrollTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+
+</body>
+  </html>
+  
