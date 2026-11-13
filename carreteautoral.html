@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrete Workstyle Autoral | Gisella Villarreal</title>
+    <title>Carrete de fotos Workstyle Autoral | Gisella Villarreal</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,10 +36,6 @@
         /* Ocultar barra de scroll en el lado derecho en desktop para mayor elegancia */
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* Efecto de masonry/grid suave para las fotos */
-        .photo-hover img { transition: transform 0.7s ease; }
-        .photo-hover:hover img { transform: scale(1.05); }
     </style>
 </head>
 <body class="bg-brand-dark antialiased text-text-main selection:bg-brand-cream selection:text-brand-dark">
@@ -50,7 +46,7 @@
         <!-- ========================================== -->
         <!-- LADO IZQUIERDO: HEADER FIJO EN PC          -->
         <!-- ========================================== -->
-        <header class="relative w-full md:w-[40%] lg:w-[35%] h-[60vh] md:h-screen min-h-[450px] flex flex-col md:sticky md:top-0 md:border-r md:border-border-color">
+        <header class="relative w-full md:w-[45%] lg:w-[40%] h-[75vh] md:h-screen min-h-[550px] flex flex-col md:sticky md:top-0 md:border-r md:border-border-color">
             
             <!-- Foto de Portada -->
             <div class="absolute inset-0 z-0 overflow-hidden bg-brand-dark">
@@ -59,119 +55,122 @@
                      class="w-full h-full object-cover object-[center_15%] md:object-center scale-[1.05]">
             </div>
             
-            <!-- Gradiente oscuro -->
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent z-10 h-[60%]"></div>
+            <!-- Gradiente oscuro más alto para leer bien los botones -->
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark via-brand-dark/95 to-transparent z-10 h-[70%]"></div>
             
-            <!-- Botón Volver (Solo visible en la esquina superior) -->
+            <!-- Botón Volver -->
             <a href="index.html" class="absolute top-6 left-6 z-30 w-10 h-10 rounded-full bg-brand-dark/50 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream hover:bg-brand-cream hover:text-brand-dark transition-all">
                 <i class="fa-solid fa-arrow-left text-sm"></i>
             </a>
 
-            <!-- Textos del Header -->
+            <!-- Textos y Botones del Header -->
             <div class="relative z-20 px-6 mt-auto flex flex-col items-start md:items-center text-left md:text-center w-full pb-8 md:pb-12">
-                <p class="font-sans text-[10px] tracking-[0.3em] uppercase text-brand-cream mb-3 font-semibold w-full">Portafolio Visual</p>
-                <h1 class="font-serif text-[3.2rem] md:text-[3.5rem] lg:text-[4rem] italic font-medium leading-[1] mb-2 text-text-main tracking-wide">
-                    Carrete<br>
+                <h1 class="font-serif text-[3.2rem] md:text-[3.5rem] lg:text-[4rem] italic font-medium leading-[1] mb-3 text-text-main tracking-wide">
+                    Carrete de fotos<br>
                     <span class="not-italic font-semibold text-brand-cream">Workstyle</span><br>
                     Autoral
                 </h1>
-                <p class="font-sans text-[12px] leading-relaxed text-text-light font-light max-w-[280px] md:max-w-full mt-4">
-                    Una mirada íntima, estética y estratégica a la esencia de las marcas personales a través de la fotografía móvil.
+                
+                <p class="font-sans text-[12.5px] leading-relaxed text-text-light font-light max-w-[340px] md:max-w-full">
+                    Contar con un <strong class="text-white font-medium">banco de fotos workstyle autoral</strong> no es un lujo, es una necesidad estratégica. Es la herramienta definitiva para crear contenido en redes sociales de manera fluida, transmitiendo tu esencia, profesionalismo y el valor real de tu marca sin quedarte nunca sin ideas.
                 </p>
                 
-                <div class="mt-6 flex gap-3">
-                    <a href="https://wa.me/TUNUMERO?text=Hola%20Gisella%2C%20me%20encantó%20tu%20carrete%20workstyle.%20Quiero%20información%20para%20una%20sesión." target="_blank" class="px-5 py-2.5 rounded-full bg-brand-cream text-brand-dark text-[10px] uppercase font-bold tracking-wider hover:bg-white transition-colors flex items-center gap-2">
-                        <i class="fa-solid fa-camera-retro"></i> Reservar sesión
+                <!-- Botones Dobles en la misma línea -->
+                <div class="mt-6 flex flex-row gap-2 w-full max-w-[360px] md:max-w-[380px] mx-auto md:mx-0 justify-center">
+                    <a href="#curso" class="flex-1 px-2 py-3 rounded-xl bg-brand-cream text-brand-dark text-[9.5px] md:text-[10px] uppercase font-bold tracking-wider hover:bg-white transition-colors text-center flex items-center justify-center leading-snug shadow-md">
+                        ¡Quiero aprender<br>a hacerlo!
+                    </a>
+                    <a href="https://wa.me/TUNUMERO" target="_blank" class="flex-1 px-2 py-3 rounded-xl border border-brand-cream bg-brand-dark/50 backdrop-blur-sm text-brand-cream text-[9.5px] md:text-[10px] uppercase font-bold tracking-wider hover:bg-brand-cream hover:text-brand-dark transition-colors text-center flex items-center justify-center leading-snug">
+                        Estoy en Barranquilla,<br>resérvame sesión
                     </a>
                 </div>
             </div>
         </header>
 
         <!-- ========================================== -->
-        <!-- LADO DERECHO: CARRETE DE FOTOS (Scrolleable)-->
+        <!-- LADO DERECHO: TARJETAS DE ÁLBUMES          -->
         <!-- ========================================== -->
-        <div class="w-full md:w-[60%] lg:w-[65%] flex flex-col px-5 py-8 lg:px-8">
+        <div class="w-full md:w-[55%] lg:w-[60%] flex flex-col px-5 py-8 lg:px-8">
             
             <div class="mb-8 md:mt-4">
-                <h2 class="font-serif text-2xl italic text-brand-cream mb-2">Historias visuales</h2>
+                <h2 class="font-serif text-2xl italic text-brand-cream mb-2">Tu Banco de Imágenes</h2>
                 <p class="font-sans text-[13px] text-text-light font-light leading-relaxed">
-                    Explora una selección de mis trabajos fotográficos. Imágenes creadas con el propósito de conectar, comunicar y elevar la percepción de marca.
+                    Un carrete de fotos estratégico se compone de distintas narrativas. Explora las tarjetas a continuación para acceder a los álbumes de cada categoría y ver cómo se estructura un banco visual completo.
                 </p>
             </div>
 
-            <!-- GRID / CUADRÍCULA DE FOTOS -->
-            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5 pb-10">
+            <!-- GRID / CUADRÍCULA DE TARJETAS (CARDS) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pb-10">
                 
-                <!-- FOTO 1 (Vertical) -->
-                <div class="photo-hover relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-md group cursor-pointer bg-brand-dark/50">
-                    <img src="1792874026013.jpg" alt="Workstyle 1" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
-                        <p class="font-serif italic text-brand-cream text-lg leading-none">Estética</p>
-                        <p class="font-sans text-[9px] uppercase tracking-widest text-text-light mt-1">Lifestyle</p>
+                <!-- TARJETA 1: Retrato Autoral -->
+                <a href="#" class="group flex flex-col rounded-3xl border border-border-color bg-brand-dark/40 overflow-hidden hover:border-brand-cream transition-all shadow-md">
+                    <div class="aspect-[4/3] w-full relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=600&auto=format&fit=crop" alt="Retrato Autoral" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
-                </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="font-serif text-2xl italic text-text-main mb-1">Retrato Autoral</h3>
+                        <p class="font-sans text-[11px] text-text-light leading-relaxed mb-4 flex-grow">El rostro detrás de la marca. Fotografías que transmiten tu personalidad, liderazgo y cercanía para humanizar tus redes.</p>
+                        <span class="text-[9px] text-brand-cream uppercase tracking-widest font-bold flex items-center gap-2 group-hover:text-white transition-colors">
+                            Ver álbum completo <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
 
-                <!-- FOTO 2 (Cuadrada) -->
-                <div class="photo-hover relative w-full aspect-square rounded-2xl overflow-hidden shadow-md group cursor-pointer bg-brand-dark/50">
-                    <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=600&auto=format&fit=crop" alt="Workstyle 2" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
-                        <p class="font-serif italic text-brand-cream text-lg leading-none">Detalles</p>
-                        <p class="font-sans text-[9px] uppercase tracking-widest text-text-light mt-1">Herramientas</p>
+                <!-- TARJETA 2: Espacios y Herramientas -->
+                <a href="#" class="group flex flex-col rounded-3xl border border-border-color bg-brand-dark/40 overflow-hidden hover:border-brand-cream transition-all shadow-md">
+                    <div class="aspect-[4/3] w-full relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=600&auto=format&fit=crop" alt="Espacios y Herramientas" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
-                </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="font-serif text-2xl italic text-text-main mb-1">Espacios y Herramientas</h3>
+                        <p class="font-sans text-[11px] text-text-light leading-relaxed mb-4 flex-grow">El contexto importa. Fotografías de tu estudio, escritorio o los elementos que usas a diario para dar autoridad a tu contenido.</p>
+                        <span class="text-[9px] text-brand-cream uppercase tracking-widest font-bold flex items-center gap-2 group-hover:text-white transition-colors">
+                            Ver álbum completo <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
 
-                <!-- FOTO 3 (Vertical Alta) -->
-                <div class="photo-hover relative w-full aspect-[3/4] row-span-2 rounded-2xl overflow-hidden shadow-md group cursor-pointer bg-brand-dark/50 hidden lg:block">
-                    <img src="https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=600&auto=format&fit=crop" alt="Workstyle 3" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
-                        <p class="font-serif italic text-brand-cream text-lg leading-none">Esencia</p>
-                        <p class="font-sans text-[9px] uppercase tracking-widest text-text-light mt-1">Retrato Autoral</p>
+                <!-- TARJETA 3: Procesos y Backstage -->
+                <a href="#" class="group flex flex-col rounded-3xl border border-border-color bg-brand-dark/40 overflow-hidden hover:border-brand-cream transition-all shadow-md">
+                    <div class="aspect-[4/3] w-full relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600&auto=format&fit=crop" alt="Procesos y Backstage" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
-                </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="font-serif text-2xl italic text-text-main mb-1">Procesos y Backstage</h3>
+                        <p class="font-sans text-[11px] text-text-light leading-relaxed mb-4 flex-grow">Documentar la acción. Imágenes que muestran cómo trabajas, generando confianza y conexión con tu comunidad.</p>
+                        <span class="text-[9px] text-brand-cream uppercase tracking-widest font-bold flex items-center gap-2 group-hover:text-white transition-colors">
+                            Ver álbum completo <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
 
-                <!-- FOTO 4 (Vertical) -->
-                <div class="photo-hover relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-md group cursor-pointer bg-brand-dark/50">
-                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600&auto=format&fit=crop" alt="Workstyle 4" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
-                        <p class="font-serif italic text-brand-cream text-lg leading-none">Procesos</p>
-                        <p class="font-sans text-[9px] uppercase tracking-widest text-text-light mt-1">Backstage</p>
+                <!-- TARJETA 4: Lifestyle y Detalles -->
+                <a href="#" class="group flex flex-col rounded-3xl border border-border-color bg-brand-dark/40 overflow-hidden hover:border-brand-cream transition-all shadow-md">
+                    <div class="aspect-[4/3] w-full relative overflow-hidden">
+                        <img src="1792874026013.jpg" alt="Lifestyle y Detalles" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
-                </div>
-
-                <!-- FOTO 5 (Vertical) -->
-                <div class="photo-hover relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-md group cursor-pointer bg-brand-dark/50">
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=600&auto=format&fit=crop" alt="Workstyle 5" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
-                        <p class="font-serif italic text-brand-cream text-lg leading-none">Espacios</p>
-                        <p class="font-sans text-[9px] uppercase tracking-widest text-text-light mt-1">Estudio</p>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="font-serif text-2xl italic text-text-main mb-1">Lifestyle y Estética</h3>
+                        <p class="font-sans text-[11px] text-text-light leading-relaxed mb-4 flex-grow">Esos pequeños momentos orgánicos, cafés, lecturas y texturas que componen el estilo de vida que rodea a tu marca.</p>
+                        <span class="text-[9px] text-brand-cream uppercase tracking-widest font-bold flex items-center gap-2 group-hover:text-white transition-colors">
+                            Ver álbum completo <i class="fa-solid fa-arrow-right"></i>
+                        </span>
                     </div>
-                </div>
-                
-                <!-- FOTO 6 (Horizontal apaisada ocupando 2 columnas en mobile) -->
-                <div class="photo-hover relative w-full aspect-[16/9] md:aspect-[3/2] col-span-2 lg:col-span-1 lg:row-span-1 rounded-2xl overflow-hidden shadow-md group cursor-pointer bg-brand-dark/50">
-                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600&auto=format&fit=crop" alt="Workstyle 6" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
-                        <p class="font-serif italic text-brand-cream text-lg leading-none">Dirección</p>
-                        <p class="font-sans text-[9px] uppercase tracking-widest text-text-light mt-1">Visual</p>
-                    </div>
-                </div>
+                </a>
 
             </div>
 
-            <!-- Banner CTA dentro del carrete -->
-            <div class="w-full bg-border-color/10 border border-border-color/20 rounded-3xl p-8 text-center mb-12">
-                <h3 class="font-serif text-2xl italic text-brand-cream mb-3">¿Lista para capturar la esencia de tu marca?</h3>
-                <p class="font-sans text-[12px] text-text-light font-light leading-relaxed mb-6 max-w-[90%] mx-auto">
-                    Si te inspira lo que ves, hablemos. Construyamos juntas un banco de imágenes que eleve tu presencia digital y cuente tu historia real.
+            <!-- CTA FINAL: Invitación al curso (ID: curso) -->
+            <div id="curso" class="w-full bg-border-color/10 border border-border-color/20 rounded-3xl p-8 text-center mb-12 relative overflow-hidden shadow-inner">
+                <!-- Resplandor decorativo -->
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-cream/5 rounded-full blur-2xl pointer-events-none"></div>
+                
+                <h3 class="font-serif text-2xl md:text-3xl italic text-brand-cream mb-3">¿Lista para dominar la fotografía de tu marca?</h3>
+                <p class="font-sans text-[12.5px] text-text-light font-light leading-relaxed mb-6 max-w-[95%] mx-auto">
+                    Aprende a crear tu propio banco de fotos usando únicamente tu celular. Inscríbete en el <strong class="text-white font-medium">Curso de Fotografía Workstyle Autoral</strong> y nunca más te quedes sin contenido estratégico para tus redes sociales.
                 </p>
-                <a href="https://wa.me/TUNUMERO" class="inline-block py-3 px-8 rounded-full border border-brand-cream text-brand-cream text-[10px] uppercase font-bold tracking-wider hover:bg-brand-cream hover:text-brand-dark transition-colors">
-                    Solicitar información
+                <a href="https://wa.me/TUNUMERO?text=Hola%20Gisella%2C%20quiero%20info%20sobre%20el%20Curso%20de%20Fotografía%20Workstyle" target="_blank" class="inline-block py-4 px-8 w-full md:w-auto rounded-full bg-brand-cream text-brand-dark text-[11px] uppercase font-bold tracking-wider hover:bg-white transition-colors shadow-lg">
+                    ¡Quiero tomar el curso!
                 </a>
             </div>
 
@@ -230,5 +229,4 @@
     </script>
 
 </body>
-                  </html>
-                  
+</html>
