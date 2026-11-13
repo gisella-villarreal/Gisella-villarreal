@@ -478,3 +478,202 @@
             <a href="#" class="inline-block w-full max-w-[320px] mx-auto py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase">
                 Apoya mi camino creativo
                     </a>
+                                                                                                                          </section>
+              <!-- SECCIÓN DE CONTACTO Y FOOTER -->
+        <footer class="px-8 pt-2 pb-12 text-center relative z-10 flex flex-col justify-between">
+            
+            <div class="mb-10 text-center">
+                <h2 class="font-serif text-2xl italic text-brand-cream mb-6">Contacto</h2>
+                
+                <div class="flex justify-center gap-5">
+                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-brands fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="mailto:correo@tudominio.com" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-regular fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 relative border-t border-border-color flex flex-col items-center gap-4">
+                <div class="text-center">
+                    <h4 class="font-serif text-[1.2rem] italic mb-1 text-text-main">Gisella Villarreal</h4>
+                    <p class="text-[9px] font-sans font-medium text-text-light tracking-widest uppercase leading-relaxed">
+                        © 2026 | Todos los derechos reservados
+                    </p>
+                </div>
+
+                <div class="flex gap-4 font-sans text-[10px] text-text-light underline decoration-border-color hover:text-brand-cream transition-colors">
+                    <a href="terminos.html">Términos y Condiciones</a>
+                    <a href="politicas.html">Políticas de Privacidad</a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- BOTÓN FLOTANTE "VOLVER ARRIBA" -->
+        <div class="fixed bottom-8 inset-x-0 mx-auto max-w-[430px] px-6 z-40 flex justify-end pointer-events-none">
+            <a href="#inicio" id="scroll-top-btn" class="pointer-events-auto w-10 h-10 rounded-full border border-brand-cream/40 bg-brand-dark/80 backdrop-blur-sm flex items-center justify-center text-brand-cream opacity-0 translate-y-4 transition-all duration-500 hover:bg-brand-cream hover:text-brand-dark shadow-lg" aria-label="Volver arriba">
+                <i class="fa-solid fa-angle-up text-sm"></i>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- SCRIPT PARA INTERACTIVIDAD -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- LÓGICA DEL MENÚ DESPLEGABLE ---
+            const openMenuBtn = document.getElementById('open-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuLinks = document.querySelectorAll('.menu-link');
+
+            const openMenu = () => {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                mobileMenu.classList.add('opacity-100', 'translate-y-0');
+                document.body.style.overflow = 'hidden'; 
+            };
+
+            const closeMenu = () => {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                mobileMenu.classList.remove('opacity-100', 'translate-y-0');
+                document.body.style.overflow = '';
+            };
+
+            if(openMenuBtn && closeMenuBtn) {
+                openMenuBtn.addEventListener('click', openMenu);
+                closeMenuBtn.addEventListener('click', closeMenu);
+            }
+
+            menuLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+
+
+            // --- LÓGICA DE ACORDEÓN PARA SERVICIOS ---
+            const serviceCards = document.querySelectorAll('.toggle-service');
+            
+            serviceCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if(e.target.closest('a')) return; // No hacer toggle si clickean el botón de WhatsApp
+                    
+                    const details = this.querySelector('.service-details');
+                    const btnSpan = this.querySelector('.btn-conocer-mas');
+                    
+                    if (details.classList.contains('max-h-0')) {
+                        details.classList.remove('max-h-0', 'opacity-0');
+                        details.classList.add('max-h-[1200px]', 'opacity-100');
+                        btnSpan.innerHTML = 'Menos info <i class="fa-solid fa-chevron-up text-[8px] transition-transform duration-300 icon-arrow"></i>';
+                    } else {
+                        details.classList.add('max-h-0', 'opacity-0');
+                        details.classList.remove('max-h-[1200px]', 'opacity-100');
+                        btnSpan.innerHTML = 'Conocer más <i class="fa-solid fa-chevron-down text-[8px] transition-transform duration-300 icon-arrow"></i>';
+                    }
+                });
+            });
+
+
+            // --- LÓGICA DEL CONVERTIDOR DE MONEDA (COP / USD) ---
+            const currencyToggle = document.getElementById('currency-toggle');
+            const toggleCircle = document.getElementById('toggle-circle');
+            const priceRegular = document.getElementById('price-regular');
+            const priceValue = document.getElementById('price-value');
+            const priceCurrency = document.getElementById('price-currency');
+            const labelCop = document.getElementById('label-cop');
+            const labelUsd = document.getElementById('label-usd');
+
+            let isUsd = false;
+
+            if (currencyToggle) {
+                currencyToggle.addEventListener('click', () => {
+                    isUsd = !isUsd;
+                    if (isUsd) {
+                        toggleCircle.classList.remove('translate-x-0');
+                        toggleCircle.classList.add('translate-x-[18px]');
+                        
+                        priceRegular.textContent = '$22.00';
+                        priceValue.textContent = '$17.00'; 
+                        priceCurrency.textContent = 'USD';
+                        
+                        labelCop.classList.remove('text-brand-cream');
+                        labelCop.classList.add('text-text-light');
+                        labelUsd.classList.remove('text-text-light');
+                        labelUsd.classList.add('text-brand-cream');
+                    } else {
+                        toggleCircle.classList.remove('translate-x-[18px]');
+                        toggleCircle.classList.add('translate-x-0');
+                        
+                        priceRegular.textContent = '$89.900';
+                        priceValue.textContent = '$69.900'; 
+                        priceCurrency.textContent = 'COP';
+                        
+                        labelUsd.classList.remove('text-brand-cream');
+                        labelUsd.classList.add('text-text-light');
+                        labelCop.classList.remove('text-text-light');
+                        labelCop.classList.add('text-brand-cream');
+                    }
+                });
+            }
+
+
+            // --- LÓGICA DEL CARRUSEL: FOTOS DE LIFESTYLE ---
+            const trackLife = document.getElementById('lifestyle-track');
+            const btnPrevLife = document.getElementById('btn-prev-life');
+            const btnNextLife = document.getElementById('btn-next-life');
+
+            if(trackLife && btnPrevLife && btnNextLife) {
+                btnNextLife.addEventListener('click', () => {
+                    trackLife.scrollBy({ left: 300, behavior: 'smooth' });
+                });
+                
+                btnPrevLife.addEventListener('click', () => {
+                    trackLife.scrollBy({ left: -300, behavior: 'smooth' });
+                });
+            }
+
+            // --- LÓGICA DEL CARRUSEL: PORTAFOLIO ---
+            const trackPort = document.getElementById('portfolio-track');
+            const btnPrevPort = document.getElementById('btn-prev-port');
+            const btnNextPort = document.getElementById('btn-next-port');
+
+            if(trackPort && btnPrevPort && btnNextPort) {
+                btnNextPort.addEventListener('click', () => {
+                    trackPort.scrollBy({ left: 280, behavior: 'smooth' });
+                });
+                
+                btnPrevPort.addEventListener('click', () => {
+                    trackPort.scrollBy({ left: -280, behavior: 'smooth' });
+                });
+            }
+
+
+            // --- LÓGICA DEL BOTÓN FLOTANTE "VOLVER ARRIBA" ---
+            const scrollTopBtn = document.getElementById('scroll-top-btn');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+                } else {
+                    scrollTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+        });
+    </script>
+
+</body>
+                    </html>
