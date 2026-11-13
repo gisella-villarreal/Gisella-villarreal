@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gisella Villarreal | BioLink</title>
+    <title>Gisella Villarreal | Links</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +16,8 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-dark': '#151515',       /* Fondo oscuro original */
-                        'brand-cream': '#c9bb9e',      /* Crema original */
+                        'brand-dark': '#151515',       
+                        'brand-cream': '#c9bb9e',      
                         'text-main': '#FFFFFF',        
                         'text-light': '#b0b0b0',       
                         'border-color': 'rgba(255, 255, 255, 0.15)',
@@ -31,77 +31,26 @@
         }
     </script>
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .no-tap-highlight {
-            -webkit-tap-highlight-color: transparent;
-        }
+        html { scroll-behavior: smooth; }
+        .no-tap-highlight { -webkit-tap-highlight-color: transparent; }
     </style>
 </head>
 <body class="bg-brand-dark antialiased text-text-main selection:bg-brand-cream selection:text-brand-dark">
 
     <main class="max-w-[430px] mx-auto bg-brand-dark min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
-        
-        <!-- ============================== -->
-        <!-- MENÚ DESPLEGABLE (OVERLAY)     -->
-        <!-- ============================== -->
-        <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/95 backdrop-blur-xl z-50 flex flex-col justify-between items-center py-20 px-8 transition-all duration-500 opacity-0 pointer-events-none translate-y-4 max-w-[430px] mx-auto">
+
+        <!-- HEADER / HERO -->
+        <header id="inicio" class="relative w-full h-[70vh] min-h-[500px] flex flex-col">
             
-            <button id="close-menu-btn" class="absolute top-8 right-6 text-brand-cream text-3xl hover:text-white transition-colors">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <!-- Enlaces del Menú Simplificados para BioLink -->
-            <nav class="flex flex-col items-center gap-7 mt-8 w-full">
-                <a href="#inicio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Inicio</a>
-                <a href="#enlaces" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Mis Enlaces</a>
-                <a href="#sobre-mi" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Sobre mí</a>
-                <a href="#contacto" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Contacto</a>
-            </nav>
-
-            <div class="flex justify-center gap-5 w-full mt-auto">
-                <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                    <i class="fa-brands fa-whatsapp text-xl"></i>
-                </a>
-                <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                    <i class="fa-brands fa-instagram text-xl"></i>
-                </a>
-                <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                    <i class="fa-brands fa-linkedin-in text-xl"></i>
-                </a>
-                <a href="mailto:correo@tudominio.com" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                    <i class="fa-regular fa-envelope text-xl"></i>
-                </a>
-            </div>
-        </div>
-        <!-- ============================== -->
-
-        <!-- HEADER / HERO (ID: inicio) -->
-        <header id="inicio" class="relative w-full h-[85vh] min-h-[600px] flex flex-col">
-            
-            <div class="absolute top-6 left-5 right-5 z-30 flex justify-between items-center">
-                <a href="https://wa.me/TUNUMERO" class="px-4 py-2 rounded-full border border-black text-black text-[10px] font-bold tracking-wider hover:bg-black hover:text-white transition-all uppercase bg-transparent flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-[14px]"></i>
-                    Háblame de tu marca
-                </a>
-                <div id="open-menu-btn" class="flex flex-col gap-[6px] cursor-pointer opacity-80 hover:opacity-100 transition-opacity p-1">
-                    <div class="w-7 h-[2px] bg-black"></div>
-                    <div class="w-7 h-[2px] bg-black"></div>
-                </div>
-            </div>
-
-            <!-- Foto Hero -->
             <div class="absolute inset-0 z-0 overflow-hidden bg-brand-dark">
                 <img src="1792874026013~2.jpg" 
                      alt="Gisella Villarreal" 
                      class="w-full h-full object-cover object-[center_15%] scale-[1.05]">
             </div>
             
-            <!-- Difuminado exacto -->
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent z-10 h-[40%]"></div>
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent z-10 h-[50%]"></div>
 
-            <div class="relative z-20 px-6 mt-auto flex flex-col items-center text-center w-full pb-8">
+            <div class="relative z-20 px-6 mt-auto flex flex-col items-center text-center w-full pb-6">
                 <h1 class="font-serif text-[3.5rem] md:text-6xl italic font-medium leading-[1.05] mb-2 text-text-main tracking-wide">
                     Gisella<br>Villarreal
                 </h1>
@@ -114,100 +63,88 @@
             </div>
         </header>
 
-        <!-- SECCIÓN: ENLACES BIOLINK (ID: enlaces) -->
-        <section id="enlaces" class="px-5 pt-8 pb-10 flex flex-col gap-4 relative z-10">
+        <!-- SECCIÓN: ENLACES BIOLINK -->
+        <section id="enlaces" class="px-5 pt-4 pb-12 flex flex-col gap-4 relative z-10">
             
-            <h2 class="font-sans text-[10px] uppercase tracking-widest text-text-light mb-2 text-center">Descubre mi universo</h2>
+            <!-- Botones 1 y 2: Sencillos en la misma línea -->
+            <div class="flex gap-3 w-full mb-2">
+                <a href="https://wa.me/TUNUMERO" target="_blank" class="no-tap-highlight flex-1 py-4 px-3 rounded-2xl border border-border-color bg-brand-dark/50 backdrop-blur-sm text-brand-cream text-[9px] uppercase tracking-wider font-semibold leading-snug text-center flex flex-col items-center justify-center gap-2 hover:border-brand-cream hover:bg-brand-cream hover:text-brand-dark transition-all">
+                    <i class="fa-regular fa-comments text-[14px]"></i>
+                    Hablemos de tu<br>Marca personal
+                </a>
+                <a href="https://wa.me/TUNUMERO" target="_blank" class="no-tap-highlight flex-1 py-4 px-3 rounded-2xl border border-border-color bg-brand-dark/50 backdrop-blur-sm text-brand-cream text-[9px] uppercase tracking-wider font-semibold leading-snug text-center flex flex-col items-center justify-center gap-2 hover:border-brand-cream hover:bg-brand-cream hover:text-brand-dark transition-all">
+                    <i class="fa-solid fa-camera-retro text-[14px]"></i>
+                    Reserva tu sesión<br>Fotográfica
+                </a>
+            </div>
 
-            <!-- Botón 1: Smart Branding (Aula Virtual) -->
-            <a href="https://wa.me/TUNUMERO?text=Hola%20Gisella%2C%20quiero%20info%20sobre%20el%20Aula%20Virtual%20Smart-Branding" target="_blank" class="no-tap-highlight group relative w-full h-[120px] rounded-3xl overflow-hidden shadow-md block border border-border-color transition-all">
-                <div class="absolute inset-0 bg-[url('1792874026013.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/70 transition-colors duration-500"></div>
-                <div class="relative h-full p-5 flex items-center justify-between z-10">
-                    <div class="flex flex-col justify-center max-w-[80%]">
-                        <span class="text-[9px] uppercase tracking-wider text-brand-cream font-medium mb-1">Aula Virtual</span>
-                        <h3 class="font-serif text-[1.4rem] italic text-text-main leading-tight mb-1">Smart-Branding</h3>
-                        <p class="font-sans text-[11px] text-text-light leading-snug">Fotos Workstyle con tu celular.</p>
-                    </div>
-                    <div class="w-8 h-8 rounded-full border border-brand-cream/50 flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all shrink-0">
-                        <i class="fa-solid fa-arrow-right text-[11px]"></i>
+            <!-- Botón 3: Trabajos Destacados -->
+            <a href="#" class="no-tap-highlight group relative w-full h-[140px] rounded-[1.5rem] overflow-hidden shadow-md block border border-border-color transition-transform hover:scale-[1.02]">
+                <div class="absolute inset-y-0 right-0 w-[60%] bg-[url('https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-55% via-brand-dark/90 to-transparent"></div>
+                
+                <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/40 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
+                    <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
+                </div>
+
+                <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[80%]">
+                    <h3 class="font-serif text-[1.6rem] text-brand-cream leading-[1.1] mb-3">
+                        <span class="not-italic font-medium">Conoce mis</span><br>
+                        <span class="italic">trabajos destacados</span>
+                    </h3>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[7.5px] uppercase tracking-[0.2em] text-text-light font-bold">Ver Portafolio</span>
+                        <div class="h-[1px] w-8 bg-border-color"></div>
                     </div>
                 </div>
             </a>
 
-            <!-- Botón 2: Presencia Digital -->
-            <a href="https://wa.me/TUNUMERO?text=Hola%20Gisella%2C%20quiero%20info%20sobre%20el%20servicio%20de%20Presencia%20Digital" target="_blank" class="no-tap-highlight group relative w-full h-[120px] rounded-3xl overflow-hidden shadow-md block border border-border-color transition-all">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/85 group-hover:bg-brand-dark/75 transition-colors duration-500"></div>
-                <div class="relative h-full p-5 flex items-center justify-between z-10">
-                    <div class="flex flex-col justify-center max-w-[80%]">
-                        <span class="text-[9px] uppercase tracking-wider text-brand-cream font-medium mb-1">Servicio</span>
-                        <h3 class="font-serif text-[1.4rem] italic text-text-main leading-tight mb-1">Presencia Digital</h3>
-                        <p class="font-sans text-[11px] text-text-light leading-snug">Dale estructura, claridad y dirección a tu marca.</p>
-                    </div>
-                    <div class="w-8 h-8 rounded-full border border-brand-cream/50 flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all shrink-0">
-                        <i class="fa-solid fa-arrow-right text-[11px]"></i>
+            <!-- Botón 4: Comunidad Workstyle -->
+            <a href="#" class="no-tap-highlight group relative w-full h-[140px] rounded-[1.5rem] overflow-hidden shadow-md block border border-border-color transition-transform hover:scale-[1.02]">
+                <div class="absolute inset-y-0 right-0 w-[60%] bg-[url('1792874026013.jpg')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-55% via-brand-dark/90 to-transparent"></div>
+                
+                <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/40 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
+                    <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
+                </div>
+
+                <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[85%]">
+                    <h3 class="font-serif text-[1.6rem] text-brand-cream leading-[1.1] mb-3">
+                        <span class="not-italic font-medium">Carrete Workstyle</span><br>
+                        <span class="italic">Autoral</span>
+                    </h3>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[7.5px] uppercase tracking-[0.2em] text-text-light font-bold">Únete a la Comunidad</span>
+                        <div class="h-[1px] w-8 bg-border-color"></div>
                     </div>
                 </div>
             </a>
 
-            <!-- Botón 3: Contenido Estratégico -->
-            <a href="https://wa.me/TUNUMERO?text=Hola%20Gisella%2C%20quiero%20info%20sobre%20el%20servicio%20de%20Contenido%20Estratégico" target="_blank" class="no-tap-highlight group relative w-full h-[120px] rounded-3xl overflow-hidden shadow-md block border border-border-color transition-all">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/85 group-hover:bg-brand-dark/75 transition-colors duration-500"></div>
-                <div class="relative h-full p-5 flex items-center justify-between z-10">
-                    <div class="flex flex-col justify-center max-w-[80%]">
-                        <span class="text-[9px] uppercase tracking-wider text-brand-cream font-medium mb-1">Servicio</span>
-                        <h3 class="font-serif text-[1.4rem] italic text-text-main leading-tight mb-1">Contenido Estratégico</h3>
-                        <p class="font-sans text-[11px] text-text-light leading-snug">Transformamos tu esencia en comunicación.</p>
-                    </div>
-                    <div class="w-8 h-8 rounded-full border border-brand-cream/50 flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all shrink-0">
-                        <i class="fa-solid fa-arrow-right text-[11px]"></i>
+            <!-- Botón 5: Curso de Fotografía -->
+            <a href="#" class="no-tap-highlight group relative w-full h-[140px] rounded-[1.5rem] overflow-hidden shadow-md block border border-border-color transition-transform hover:scale-[1.02]">
+                <div class="absolute inset-y-0 right-0 w-[60%] bg-[url('https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-55% via-brand-dark/90 to-transparent"></div>
+                
+                <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/40 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
+                    <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
+                </div>
+
+                <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[80%]">
+                    <h3 class="font-serif text-[1.6rem] text-brand-cream leading-[1.1] mb-3">
+                        <span class="not-italic font-medium">Curso de</span><br>
+                        <span class="italic">Fotografía Workstyle</span>
+                    </h3>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[7.5px] uppercase tracking-[0.2em] text-text-light font-bold">Ver Información</span>
+                        <div class="h-[1px] w-8 bg-border-color"></div>
                     </div>
                 </div>
             </a>
-
-            <!-- Botón 4: Dirección Creativa Visual -->
-            <a href="https://wa.me/TUNUMERO?text=Hola%20Gisella%2C%20quiero%20info%20sobre%20el%20servicio%20de%20Dirección%20Creativa%20Visual" target="_blank" class="no-tap-highlight group relative w-full h-[120px] rounded-3xl overflow-hidden shadow-md block border border-border-color transition-all">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/85 group-hover:bg-brand-dark/75 transition-colors duration-500"></div>
-                <div class="relative h-full p-5 flex items-center justify-between z-10">
-                    <div class="flex flex-col justify-center max-w-[80%]">
-                        <span class="text-[9px] uppercase tracking-wider text-brand-cream font-medium mb-1">Servicio</span>
-                        <h3 class="font-serif text-[1.35rem] italic text-text-main leading-tight mb-1">Dirección Creativa Visual</h3>
-                        <p class="font-sans text-[11px] text-text-light leading-snug">Fotografía, Reels y cobertura de marca.</p>
-                    </div>
-                    <div class="w-8 h-8 rounded-full border border-brand-cream/50 flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all shrink-0">
-                        <i class="fa-solid fa-arrow-right text-[11px]"></i>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Botón 5: Portafolio -->
-            <a href="#" class="no-tap-highlight group relative w-full h-[120px] rounded-3xl overflow-hidden shadow-md block border border-border-color transition-all">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-brand-dark/85 group-hover:bg-brand-dark/75 transition-colors duration-500"></div>
-                <div class="relative h-full p-5 flex items-center justify-between z-10">
-                    <div class="flex flex-col justify-center max-w-[80%]">
-                        <span class="text-[9px] uppercase tracking-wider text-brand-cream font-medium mb-1">Galería</span>
-                        <h3 class="font-serif text-[1.4rem] italic text-text-main leading-tight mb-1">Portafolio de Trabajos</h3>
-                        <p class="font-sans text-[11px] text-text-light leading-snug">Explora mis proyectos destacados.</p>
-                    </div>
-                    <div class="w-8 h-8 rounded-full border border-brand-cream/50 flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all shrink-0">
-                        <i class="fa-solid fa-arrow-right text-[11px]"></i>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Botón CTA Sencillo (WhatsApp Directo) -->
-            <a href="https://wa.me/TUNUMERO" class="mt-4 inline-block w-full py-4 rounded-full border border-brand-cream hover:bg-brand-cream transition-colors text-brand-cream hover:text-brand-dark text-[11px] font-bold tracking-wider uppercase text-center flex justify-center items-center gap-2">
-                <i class="fa-brands fa-whatsapp text-[14px]"></i> Hablemos de tu marca
-            </a>
-
+            
         </section>
 
         <!-- SECCIÓN: SOBRE MÍ (ID: sobre-mi) -->
-        <section id="sobre-mi" class="px-6 py-10 bg-transparent mx-5 rounded-3xl mb-10 text-center border border-border-color pt-10">
+        <section id="sobre-mi" class="px-6 py-10 bg-transparent mx-5 rounded-3xl mb-10 text-center border border-border-color">
             <h2 class="font-serif text-3xl italic text-brand-cream mb-6">Sobre mí</h2>
             
             <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-6 border-[3px] border-brand-cream shadow-sm">
@@ -218,13 +155,13 @@
                 Soy Gisella, estratega en Social Media Branding y Marketing de Contenidos. Mi propósito es transformar la esencia de tu marca en una presencia digital auténtica y coherente, a través de la estrategia, la comunicación y la creación de contenido visual, para fortalecer tu presencia en redes sociales, conectar con tu audiencia y comunicar el valor de lo que haces.
             </p>
             
-            <a href="#" class="inline-block w-full max-w-[320px] mx-auto py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase">
+            <a href="https://wa.me/TUNUMERO" class="inline-block w-full max-w-[320px] mx-auto py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase">
                 Apoya mi camino creativo
             </a>
         </section>
 
-        <!-- SECCIÓN DE CONTACTO Y FOOTER (ID: contacto) -->
-        <footer id="contacto" class="px-8 pt-2 pb-12 text-center relative z-10 flex flex-col justify-between">
+        <!-- SECCIÓN DE CONTACTO Y FOOTER -->
+        <footer class="px-8 pt-2 pb-12 text-center relative z-10 flex flex-col justify-between">
             
             <div class="mb-10 text-center">
                 <h2 class="font-serif text-2xl italic text-brand-cream mb-6">Contacto</h2>
@@ -262,45 +199,16 @@
 
         <!-- BOTÓN FLOTANTE "VOLVER ARRIBA" -->
         <div class="fixed bottom-8 inset-x-0 mx-auto max-w-[430px] px-6 z-40 flex justify-end pointer-events-none">
-            <a href="#inicio" id="scroll-top-btn" class="pointer-events-auto w-10 h-10 rounded-full border border-brand-cream/40 bg-brand-dark/80 backdrop-blur-sm flex items-center justify-center text-brand-cream opacity-0 translate-y-4 transition-all duration-500 hover:bg-brand-cream hover:text-brand-dark shadow-lg" aria-label="Volver arriba">
+            <button id="scroll-top-btn" class="pointer-events-auto w-10 h-10 rounded-full border border-brand-cream/40 bg-brand-dark/80 backdrop-blur-sm flex items-center justify-center text-brand-cream opacity-0 translate-y-4 transition-all duration-500 hover:bg-brand-cream hover:text-brand-dark shadow-lg" aria-label="Volver arriba">
                 <i class="fa-solid fa-angle-up text-sm"></i>
-            </a>
+            </button>
         </div>
 
     </main>
 
-    <!-- SCRIPT PARA INTERACTIVIDAD MENÚ & SCROLL -->
+    <!-- SCRIPT PARA SCROLL FLOTANTE -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
-            // --- LÓGICA DEL MENÚ DESPLEGABLE ---
-            const openMenuBtn = document.getElementById('open-menu-btn');
-            const closeMenuBtn = document.getElementById('close-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuLinks = document.querySelectorAll('.menu-link');
-
-            const openMenu = () => {
-                mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-                mobileMenu.classList.add('opacity-100', 'translate-y-0');
-                document.body.style.overflow = 'hidden'; 
-            };
-
-            const closeMenu = () => {
-                mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-                mobileMenu.classList.remove('opacity-100', 'translate-y-0');
-                document.body.style.overflow = '';
-            };
-
-            if(openMenuBtn && closeMenuBtn) {
-                openMenuBtn.addEventListener('click', openMenu);
-                closeMenuBtn.addEventListener('click', closeMenu);
-            }
-
-            menuLinks.forEach(link => {
-                link.addEventListener('click', closeMenu);
-            });
-
-            // --- LÓGICA DEL BOTÓN FLOTANTE "VOLVER ARRIBA" ---
             const scrollTopBtn = document.getElementById('scroll-top-btn');
             
             window.addEventListener('scroll', () => {
@@ -314,12 +222,10 @@
             });
 
             if(scrollTopBtn) {
-                scrollTopBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
+                scrollTopBtn.addEventListener('click', () => {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             }
-
         });
     </script>
 
