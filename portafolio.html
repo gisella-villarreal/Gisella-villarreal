@@ -35,178 +35,239 @@
         .no-tap-highlight { -webkit-tap-highlight-color: transparent; }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Estilos para el acordeón de FAQs */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .3s ease-in-out; }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-5px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
     </style>
 </head>
 <body class="bg-brand-dark antialiased text-text-main selection:bg-brand-cream selection:text-brand-dark">
 
-    <main class="w-full max-w-[430px] md:max-w-[950px] lg:max-w-[1150px] mx-auto bg-brand-dark min-h-screen relative shadow-2xl flex flex-col border-x border-border-color/30 pb-24">
+    <main class="w-full max-w-[430px] md:max-w-[950px] lg:max-w-[1150px] mx-auto bg-brand-dark min-h-screen relative shadow-2xl flex flex-col border-x border-border-color/30">
 
-        <!-- HEADER SIMPLE -->
-        <header class="w-full px-6 py-8 flex items-center justify-between border-b border-border-color/30">
-            <a href="index.html" class="w-10 h-10 rounded-full bg-brand-dark/50 border border-border-color flex items-center justify-center text-brand-cream hover:bg-brand-cream hover:text-brand-dark transition-all">
+        <!-- HEADER Y TÍTULO PRINCIPAL -->
+        <header class="w-full px-6 pt-8 pb-4 flex flex-col relative">
+            <a href="index.html" class="absolute top-8 left-6 w-10 h-10 rounded-full bg-brand-dark/50 border border-border-color flex items-center justify-center text-brand-cream hover:bg-brand-cream hover:text-brand-dark transition-all z-10">
                 <i class="fa-solid fa-arrow-left text-sm"></i>
             </a>
-            <p class="font-sans text-[11px] tracking-[0.3em] uppercase text-brand-cream font-bold">Portafolio</p>
-            <div class="w-10"></div> <!-- Espaciador para centrar -->
+            
+            <div class="w-full text-center mt-12 mb-4">
+                <p class="font-sans text-[10px] tracking-[0.3em] uppercase text-brand-cream font-bold mb-2">Mis Casos de Éxito</p>
+                <h1 class="font-serif text-[3.5rem] md:text-[4.5rem] italic font-medium leading-[1] text-text-main tracking-wide">
+                    Portafolio
+                </h1>
+            </div>
         </header>
 
-        <!-- SECCIÓN: TRABAJOS DESTACADOS -->
-        <section class="py-10 md:py-16 px-5 md:px-12 flex flex-col gap-6">
+        <!-- SECCIÓN: CARRUSEL DE TRABAJOS COMPACTOS -->
+        <section class="py-6 px-5 md:px-12 flex flex-col gap-4 relative">
             
-            <!-- Encabezado y Controles -->
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                <div class="flex items-center gap-4">
-                    <h2 class="font-serif text-2xl md:text-3xl uppercase tracking-widest text-brand-cream">Trabajos Destacados</h2>
-                    <div class="hidden md:block h-[1px] w-24 bg-border-color"></div>
-                </div>
-                
-                <!-- Flechas de navegación -->
-                <div class="flex gap-3">
-                    <button id="btn-prev" class="w-10 h-10 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark hover:border-brand-cream transition-colors">
-                        <i class="fa-solid fa-angle-left text-sm"></i>
-                    </button>
-                    <button id="btn-next" class="w-10 h-10 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark hover:border-brand-cream transition-colors">
-                        <i class="fa-solid fa-angle-right text-sm"></i>
-                    </button>
-                </div>
+            <!-- Controles del carrusel -->
+            <div class="flex items-center justify-end gap-3 mb-2 px-2">
+                <button id="btn-prev" class="w-9 h-9 rounded-full border border-border-color flex items-center justify-center text-brand-cream hover:bg-brand-cream hover:text-brand-dark transition-colors">
+                    <i class="fa-solid fa-angle-left text-sm"></i>
+                </button>
+                <button id="btn-next" class="w-9 h-9 rounded-full border border-border-color flex items-center justify-center text-brand-cream hover:bg-brand-cream hover:text-brand-dark transition-colors">
+                    <i class="fa-solid fa-angle-right text-sm"></i>
+                </button>
             </div>
 
-            <!-- CARRUSEL DE TARJETAS (CASOS DE ESTUDIO) -->
-            <div id="portfolio-track" class="flex overflow-x-auto snap-x snap-mandatory gap-5 md:gap-8 pb-8 hide-scrollbar scroll-smooth">
+            <!-- CARRUSEL DE TARJETAS COMPACTAS -->
+            <div id="portfolio-track" class="flex overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-6 hide-scrollbar scroll-smooth">
                 
-                <!-- TARJETA 1: Juls Salas -->
-                <article class="shrink-0 w-[320px] md:w-[400px] snap-center rounded-2xl border border-border-color bg-transparent p-6 flex flex-col transition-all hover:border-brand-cream/60">
-                    <span class="font-sans text-text-light text-[13px] tracking-widest mb-3">01</span>
-                    <h3 class="font-serif text-[26px] md:text-[28px] text-brand-cream uppercase leading-none mb-4">Físicoculturista</h3>
+                <!-- TARJETA 1 -->
+                <article class="shrink-0 w-[290px] md:w-[340px] snap-center rounded-[1.5rem] border border-border-color bg-brand-dark/60 p-5 flex flex-col transition-all hover:border-brand-cream/60">
+                    <div class="flex justify-between items-end mb-3">
+                        <h3 class="font-serif text-[22px] text-brand-cream uppercase leading-none">Físicoculturista</h3>
+                        <span class="font-sans text-text-light text-[10px] tracking-widest">01</span>
+                    </div>
                     
-                    <p class="font-sans text-[15px] font-bold text-white mb-1">Caso 1. Juls Salas</p>
-                    <p class="font-sans text-[13px] text-text-light mb-4">Solución: Marca personal profesional</p>
+                    <p class="font-sans text-[13px] font-bold text-white mb-1">Caso 1. Juls Salas</p>
+                    <p class="font-sans text-[11px] text-text-light mb-3">Solución: Marca personal</p>
                     
-                    <ul class="flex flex-col gap-2 font-sans text-[12.5px] text-text-light font-light mb-6 flex-grow">
-                        <li class="flex items-start gap-2">
-                            <span class="text-brand-cream mt-[2px]">•</span> Sesión fotográfica workstyle en el gimnasio.
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-brand-cream mt-[2px]">•</span> Página web profesional con sus servicios y trayectoria.
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-brand-cream mt-[2px]">•</span> Videos educativos de ejercicios, consejos y recomendaciones.
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-brand-cream mt-[2px]">•</span> Clips verticales para sus redes sociales.
-                        </li>
+                    <ul class="flex flex-col gap-1.5 font-sans text-[11px] text-text-light font-light mb-4 flex-grow">
+                        <li class="flex items-start gap-2"><span class="text-brand-cream mt-[1px]">•</span> Sesión fotográfica workstyle en el gimnasio.</li>
+                        <li class="flex items-start gap-2"><span class="text-brand-cream mt-[1px]">•</span> Página web (Smart Branding).</li>
+                        <li class="flex items-start gap-2"><span class="text-brand-cream mt-[1px]">•</span> Videos y clips para redes sociales.</li>
                     </ul>
 
-                    <div class="flex flex-col gap-3 mb-6">
-                        <a href="#" class="font-sans text-[10px] md:text-[11px] font-bold text-brand-cream uppercase tracking-widest hover:text-white transition-colors flex items-center gap-2 w-max">
-                            Ver Web <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
-                        <a href="#" class="font-sans text-[10px] md:text-[11px] font-bold text-brand-cream uppercase tracking-widest hover:text-white transition-colors flex items-center gap-2 w-max">
-                            Ver Proyecto <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
+                    <div class="w-full aspect-[16/9] rounded-lg overflow-hidden mb-4 bg-brand-dark border border-border-color shrink-0">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop" alt="Juls Salas" class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700">
                     </div>
 
-                    <div class="w-full aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-brand-dark border border-border-color">
-                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop" alt="Mockup Juls Salas" class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700">
+                    <div class="flex gap-4">
+                        <a href="#" class="font-sans text-[9px] font-bold text-brand-cream uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1.5">
+                            Ver Web <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#" class="font-sans text-[9px] font-bold text-brand-cream uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1.5">
+                            Ver Proyecto <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </div>
-                    
-                    <p class="font-sans text-[9px] text-text-light/70 leading-relaxed">
-                        * Puede contratar Servicios por separado o como una experiencia integral de marca personal.
-                    </p>
                 </article>
 
-                <!-- TARJETA 2: BULKCREAM -->
-                <article class="shrink-0 w-[320px] md:w-[400px] snap-center rounded-2xl border border-border-color bg-transparent p-6 flex flex-col transition-all hover:border-brand-cream/60">
-                    <span class="font-sans text-text-light text-[13px] tracking-widest mb-3">02</span>
-                    <h3 class="font-serif text-[26px] md:text-[28px] text-brand-cream uppercase leading-none mb-4">Suplementos</h3>
+                <!-- TARJETA 2 -->
+                <article class="shrink-0 w-[290px] md:w-[340px] snap-center rounded-[1.5rem] border border-border-color bg-brand-dark/60 p-5 flex flex-col transition-all hover:border-brand-cream/60">
+                    <div class="flex justify-between items-end mb-3">
+                        <h3 class="font-serif text-[22px] text-brand-cream uppercase leading-none">Suplementos</h3>
+                        <span class="font-sans text-text-light text-[10px] tracking-widest">02</span>
+                    </div>
                     
-                    <p class="font-sans text-[15px] font-bold text-white mb-1">Caso 2. BULKCREAM</p>
-                    <p class="font-sans text-[13px] text-text-light mb-4">Solución: Estrategia visual de producto</p>
+                    <p class="font-sans text-[13px] font-bold text-white mb-1">Caso 2. BULKCREAM</p>
+                    <p class="font-sans text-[11px] text-text-light mb-3">Solución: Estrategia visual</p>
                     
-                    <ul class="flex flex-col gap-2 font-sans text-[12.5px] text-text-light font-light mb-6 flex-grow">
-                        <li class="flex items-start gap-2">
-                            <span class="text-brand-cream mt-[2px]">•</span> Diseño de empaques para crema de arroz natural y coco.
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-brand-cream mt-[2px]">•</span> Configuración y optimización de tienda en Mercado Libre.
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-brand-cream mt-[2px]">•</span> Estrategia fotográfica comercial para e-commerce.
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-brand-cream mt-[2px]">•</span> Creación de contenido estratégico para redes sociales.
-                        </li>
+                    <ul class="flex flex-col gap-1.5 font-sans text-[11px] text-text-light font-light mb-4 flex-grow">
+                        <li class="flex items-start gap-2"><span class="text-brand-cream mt-[1px]">•</span> Diseño de empaques de producto.</li>
+                        <li class="flex items-start gap-2"><span class="text-brand-cream mt-[1px]">•</span> Optimización de tienda en Mercado Libre.</li>
+                        <li class="flex items-start gap-2"><span class="text-brand-cream mt-[1px]">•</span> Fotografía comercial para e-commerce.</li>
                     </ul>
 
-                    <div class="flex flex-col gap-3 mb-6">
-                        <a href="#" class="font-sans text-[10px] md:text-[11px] font-bold text-brand-cream uppercase tracking-widest hover:text-white transition-colors flex items-center gap-2 w-max">
-                            Ver Tienda <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
-                        <a href="#" class="font-sans text-[10px] md:text-[11px] font-bold text-brand-cream uppercase tracking-widest hover:text-white transition-colors flex items-center gap-2 w-max">
-                            Ver Proyecto <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
+                    <div class="w-full aspect-[16/9] rounded-lg overflow-hidden mb-4 bg-brand-dark border border-border-color shrink-0">
+                        <img src="https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=600&auto=format&fit=crop" alt="BULKCREAM" class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700">
                     </div>
 
-                    <div class="w-full aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-brand-dark border border-border-color">
-                        <img src="https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=600&auto=format&fit=crop" alt="Mockup BULKCREAM" class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700">
+                    <div class="flex gap-4">
+                        <a href="#" class="font-sans text-[9px] font-bold text-brand-cream uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1.5">
+                            Ver Tienda <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#" class="font-sans text-[9px] font-bold text-brand-cream uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1.5">
+                            Ver Proyecto <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </div>
-                    
-                    <p class="font-sans text-[9px] text-text-light/70 leading-relaxed">
-                        * Puede contratar Servicios por separado o como una experiencia integral de marca personal.
-                    </p>
                 </article>
 
-                <!-- TARJETA 3: Maricela Ávila -->
-                <article class="shrink-0 w-[320px] md:w-[400px] snap-center rounded-2xl border border-border-color bg-transparent p-6 flex flex-col transition-all hover:border-brand-cream/60">
-                    <span class="font-sans text-text-light text-[13px] tracking-widest mb-3">03</span>
-                    <h3 class="font-serif text-[26px] md:text-[28px] text-brand-cream uppercase leading-none mb-4">Coach / Mentora</h3>
+                <!-- TARJETA 3 -->
+                <article class="shrink-0 w-[290px] md:w-[340px] snap-center rounded-[1.5rem] border border-border-color bg-brand-dark/60 p-5 flex flex-col transition-all hover:border-brand-cream/60">
+                    <div class="flex justify-between items-end mb-3">
+                        <h3 class="font-serif text-[22px] text-brand-cream uppercase leading-none">Mentora</h3>
+                        <span class="font-sans text-text-light text-[10px] tracking-widest">03</span>
+                    </div>
                     
-                    <p class="font-sans text-[15px] font-bold text-white mb-1">Caso 3. Maricela Ávila</p>
-                    <p class="font-sans text-[13px] text-text-light mb-4">Solución: Presencia Digital Profesional</p>
+                    <p class="font-sans text-[13px] font-bold text-white mb-1">Caso 3. Maricela Ávila</p>
+                    <p class="font-sans text-[11px] text-text-light mb-3">Solución: Presencia Digital</p>
                     
-                    <ul class="flex flex-col gap-2 font-sans text-[12.5px] text-text-light font-light mb-6 flex-grow">
-                        <li class="flex items-start gap-2">
-                            <span class="text-brand-cream mt-[2px]">•</span> Desarrollo de Página Web estilo One Page (Smart Branding).
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-brand-cream mt-[2px]">•</span> Estructuración de portafolio y presentación de servicios.
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-brand-cream mt-[2px]">•</span> Curaduría visual y estética para plataformas digitales.
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-brand-cream mt-[2px]">•</span> Optimización de biografía y enlaces estratégicos.
-                        </li>
+                    <ul class="flex flex-col gap-1.5 font-sans text-[11px] text-text-light font-light mb-4 flex-grow">
+                        <li class="flex items-start gap-2"><span class="text-brand-cream mt-[1px]">•</span> Desarrollo web One Page.</li>
+                        <li class="flex items-start gap-2"><span class="text-brand-cream mt-[1px]">•</span> Estructuración de portafolio de servicios.</li>
+                        <li class="flex items-start gap-2"><span class="text-brand-cream mt-[1px]">•</span> Curaduría visual para plataformas.</li>
                     </ul>
 
-                    <div class="flex flex-col gap-3 mb-6">
-                        <a href="#" class="font-sans text-[10px] md:text-[11px] font-bold text-brand-cream uppercase tracking-widest hover:text-white transition-colors flex items-center gap-2 w-max">
-                            Ver Web <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
-                        <a href="#" class="font-sans text-[10px] md:text-[11px] font-bold text-brand-cream uppercase tracking-widest hover:text-white transition-colors flex items-center gap-2 w-max">
-                            Ver Proyecto <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
+                    <div class="w-full aspect-[16/9] rounded-lg overflow-hidden mb-4 bg-brand-dark border border-border-color shrink-0">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" alt="Maricela" class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700">
                     </div>
 
-                    <div class="w-full aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-brand-dark border border-border-color">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" alt="Mockup Maricela" class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700">
+                    <div class="flex gap-4">
+                        <a href="#" class="font-sans text-[9px] font-bold text-brand-cream uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1.5">
+                            Ver Web <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#" class="font-sans text-[9px] font-bold text-brand-cream uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1.5">
+                            Ver Proyecto <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </div>
-                    
-                    <p class="font-sans text-[9px] text-text-light/70 leading-relaxed">
-                        * Puede contratar Servicios por separado o como una experiencia integral de marca personal.
-                    </p>
                 </article>
 
             </div>
         </section>
 
-        <!-- BOTÓN FLOTANTE "CONTÁCTAME" (Idéntico a la imagen) -->
-        <div class="fixed bottom-6 left-0 right-0 z-50 flex justify-center pointer-events-none">
-            <a href="https://wa.me/TUNUMERO" target="_blank" class="pointer-events-auto flex items-center gap-3 bg-brand-cream text-brand-dark px-8 py-3 rounded-full font-sans text-[13px] font-bold tracking-wider hover:bg-white transition-all shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-                CONTÁCTAME 
-                <i class="fa-brands fa-whatsapp text-lg bg-brand-dark text-brand-cream w-7 h-7 rounded-full flex items-center justify-center"></i>
-            </a>
-        </div>
+        <!-- SECCIÓN: PREGUNTAS FRECUENTES (FAQS) -->
+        <section class="py-12 px-6 md:px-16 border-t border-border-color/30">
+            <h2 class="font-serif text-2xl md:text-3xl italic text-brand-cream mb-8 text-center">Preguntas Frecuentes</h2>
+            
+            <div class="max-w-[700px] mx-auto flex flex-col gap-4">
+                
+                <!-- FAQ 1 -->
+                <details class="group bg-brand-dark/50 border border-border-color rounded-2xl cursor-pointer hover:border-brand-cream/50 transition-colors">
+                    <summary class="flex justify-between items-center font-sans text-[13px] text-text-main font-medium p-5 select-none">
+                        ¿Puedo contratar solo un servicio o debe ser el paquete completo?
+                        <i class="fa-solid fa-plus text-brand-cream group-open:rotate-45 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="px-5 pb-5 font-sans text-[12px] text-text-light font-light leading-relaxed">
+                        Puedes hacerlo de ambas formas. Trabajo mediante módulos independientes (Fotografía, Web, Branding) o creando una experiencia integral que cubra todas las necesidades visuales de tu marca.
+                    </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details class="group bg-brand-dark/50 border border-border-color rounded-2xl cursor-pointer hover:border-brand-cream/50 transition-colors">
+                    <summary class="flex justify-between items-center font-sans text-[13px] text-text-main font-medium p-5 select-none">
+                        ¿Cómo funciona la sesión de fotografía Workstyle?
+                        <i class="fa-solid fa-plus text-brand-cream group-open:rotate-45 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="px-5 pb-5 font-sans text-[12px] text-text-light font-light leading-relaxed">
+                        Toda sesión comienza con una entrevista previa para conocer la esencia de tu marca. Luego definimos el concepto, locación (tu lugar de trabajo o estudio) y realizamos la sesión buscando siempre la naturalidad y estética editorial.
+                    </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details class="group bg-brand-dark/50 border border-border-color rounded-2xl cursor-pointer hover:border-brand-cream/50 transition-colors">
+                    <summary class="flex justify-between items-center font-sans text-[13px] text-text-main font-medium p-5 select-none">
+                        ¿Cuánto tiempo toma la entrega de una página web (BioLink / One Page)?
+                        <i class="fa-solid fa-plus text-brand-cream group-open:rotate-45 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="px-5 pb-5 font-sans text-[12px] text-text-light font-light leading-relaxed">
+                        El tiempo estimado de entrega para un BioLink avanzado o una One Page (Smart Branding) es de 7 a 15 días hábiles, dependiendo de si ya tienes listos los textos e imágenes o si los construiremos juntas.
+                    </div>
+                </details>
+
+            </div>
+        </section>
+
+        <!-- CTA ESTÁTICO (INVITACIÓN) -->
+        <section class="py-12 px-6">
+            <div class="max-w-[700px] mx-auto bg-brand-cream/5 border border-brand-cream/30 rounded-3xl p-8 md:p-12 text-center shadow-lg relative overflow-hidden">
+                <!-- Resplandor decorativo -->
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-cream/10 rounded-full blur-2xl pointer-events-none"></div>
+                
+                <h2 class="font-serif text-3xl italic text-brand-cream mb-3">¿Lista para elevar tu marca?</h2>
+                <p class="font-sans text-[13px] text-text-light font-light leading-relaxed mb-8 max-w-[90%] mx-auto">
+                    Si te inspiraron estos proyectos y sientes que es el momento de proyectar el verdadero valor de lo que haces, hablemos. Construyamos una presencia digital de la que te sientas orgullosa.
+                </p>
+                
+                <a href="https://wa.me/TUNUMERO" target="_blank" class="inline-flex items-center justify-center gap-3 bg-brand-cream text-brand-dark px-8 py-4 rounded-full font-sans text-[12px] uppercase font-bold tracking-wider hover:bg-white transition-all shadow-[0_5px_20px_rgba(201,187,158,0.3)] w-full md:w-auto">
+                    CONTÁCTAME <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE CONTACTO Y FOOTER (Igual al Biolink) -->
+        <footer id="contacto" class="px-8 pt-6 pb-12 text-center relative z-10 flex flex-col justify-between border-t border-border-color/30">
+            
+            <div class="mb-10 text-center">
+                <h2 class="font-serif text-2xl italic text-brand-cream mb-6">Contacto</h2>
+                
+                <div class="flex justify-center gap-5">
+                    <a href="https://wa.me/TUNUMERO" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-brands fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="mailto:correo@tudominio.com" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-regular fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 relative border-t border-border-color flex flex-col items-center gap-4">
+                <div class="text-center">
+                    <h4 class="font-serif text-[1.2rem] italic mb-1 text-text-main">Gisella Villarreal</h4>
+                    <p class="text-[9px] font-sans font-medium text-text-light tracking-widest uppercase leading-relaxed">
+                        © 2026 | Todos los derechos reservados
+                    </p>
+                </div>
+
+                <div class="flex gap-4 font-sans text-[10px] text-text-light underline decoration-border-color hover:text-brand-cream transition-colors">
+                    <a href="terminos.html">Términos y Condiciones</a>
+                    <a href="politicas.html">Políticas de Privacidad</a>
+                </div>
+            </div>
+        </footer>
 
     </main>
 
@@ -218,8 +279,8 @@
             const btnNext = document.getElementById('btn-next');
 
             if(track && btnPrev && btnNext) {
-                // Cantidad de scroll (aprox el ancho de una tarjeta + el gap)
-                const scrollAmount = window.innerWidth < 768 ? 340 : 432; 
+                // Cálculo para el desplazamiento suave de las tarjetas compactas
+                const scrollAmount = window.innerWidth < 768 ? 306 : 364; 
 
                 btnNext.addEventListener('click', () => {
                     track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
@@ -233,5 +294,5 @@
     </script>
 
 </body>
-                          </html>
-  
+                            </html>
+                            
