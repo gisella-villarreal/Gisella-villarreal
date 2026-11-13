@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gisella Villarreal | BioLink</title>
+    <title>Gisella Villarreal | Social Media Branding</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,14 +33,12 @@
     <style>
         html { scroll-behavior: smooth; }
         .no-tap-highlight { -webkit-tap-highlight-color: transparent; }
-        /* Ocultar barra de scroll en el lado derecho en desktop para mayor elegancia */
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="bg-brand-dark antialiased text-text-main selection:bg-brand-cream selection:text-brand-dark">
 
-    <!-- CONTENEDOR PRINCIPAL RESPONSIVE (Columna en móvil, 2 columnas en PC) -->
     <main class="w-full max-w-[430px] md:max-w-[950px] lg:max-w-[1050px] mx-auto bg-brand-dark min-h-screen relative shadow-2xl flex flex-col md:flex-row">
 
         <!-- ========================================== -->
@@ -48,14 +46,12 @@
         <!-- ========================================== -->
         <header id="inicio" class="relative w-full md:w-[45%] lg:w-[45%] h-[70vh] md:h-screen min-h-[500px] flex flex-col md:sticky md:top-0 md:border-r md:border-border-color">
             
-            <!-- Foto Hero -->
             <div class="absolute inset-0 z-0 overflow-hidden bg-brand-dark">
                 <img src="1792874026013~2.jpg" 
                      alt="Gisella Villarreal" 
                      class="w-full h-full object-cover object-[center_15%] md:object-center scale-[1.05]">
             </div>
             
-            <!-- Difuminado inferior -->
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent z-10 h-[50%]"></div>
 
             <div class="relative z-20 px-6 mt-auto flex flex-col items-center text-center w-full pb-8 md:pb-12">
@@ -76,12 +72,11 @@
         <!-- ========================================== -->
         <div class="w-full md:w-[55%] lg:w-[55%] flex flex-col md:py-8 lg:px-6">
             
-            <!-- SECCIÓN: ENLACES BIOLINK -->
             <section id="enlaces" class="px-5 pt-4 pb-12 flex flex-col gap-4 relative z-10">
                 
                 <!-- Botones 1 y 2: Sencillos en la misma línea -->
                 <div class="flex gap-3 w-full mb-2">
-                    <a href="https://wa.me/TUNUMERO" target="_blank" class="no-tap-highlight flex-1 py-4 px-3 rounded-2xl border border-border-color bg-brand-dark/50 backdrop-blur-sm text-brand-cream text-[9px] md:text-[10px] uppercase tracking-wider font-semibold leading-snug text-center flex flex-col items-center justify-center gap-2 hover:border-brand-cream hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                    <a href="https://wa.me/TUNUMERO" target="_blank" class="no-tap-highlight flex-1 py-4 px-3 rounded-2xl border border-brand-cream bg-brand-cream text-brand-dark text-[9px] md:text-[10px] uppercase tracking-wider font-semibold leading-snug text-center flex flex-col items-center justify-center gap-2 hover:bg-transparent hover:text-brand-cream hover:border-border-color transition-all shadow-sm">
                         <i class="fa-regular fa-comments text-[16px] md:text-[18px]"></i>
                         Hablemos de tu<br>Marca personal
                     </a>
@@ -93,17 +88,19 @@
 
                 <!-- Botón 3: Trabajos Destacados -->
                 <a href="#" class="no-tap-highlight group relative w-full h-[140px] rounded-[1.5rem] overflow-hidden shadow-md block border border-border-color transition-transform hover:scale-[1.02]">
-                    <div class="absolute inset-y-0 right-0 w-[60%] bg-[url('https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
-                    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-55% via-brand-dark/90 to-transparent"></div>
+                    <!-- Imagen más visible (sin opacidad extra y más ancha) -->
+                    <div class="absolute inset-y-0 right-0 w-[65%] bg-[url('https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700"></div>
+                    <!-- Degradado ajustado para no tapar la foto a la derecha -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-[45%] via-brand-dark/50 to-transparent"></div>
                     
-                    <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/40 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
+                    <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/60 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
                         <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
                     </div>
 
-                    <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[80%] md:w-[85%]">
+                    <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[85%]">
                         <h3 class="font-serif text-[1.6rem] md:text-[1.8rem] text-brand-cream leading-[1.1] mb-3">
                             <span class="not-italic font-medium">Conoce mis</span><br>
-                            <span class="italic">trabajos destacados</span>
+                            <span class="italic text-white">trabajos destacados</span>
                         </h3>
                         <div class="flex items-center gap-2">
                             <span class="text-[7.5px] md:text-[8.5px] uppercase tracking-[0.2em] text-text-light font-bold">Ver Portafolio</span>
@@ -113,21 +110,23 @@
                 </a>
 
                 <!-- Botón 4: Comunidad Workstyle -->
-                <a href="#" class="no-tap-highlight group relative w-full h-[140px] rounded-[1.5rem] overflow-hidden shadow-md block border border-border-color transition-transform hover:scale-[1.02]">
-                    <div class="absolute inset-y-0 right-0 w-[60%] bg-[url('1792874026013.jpg')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
-                    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-55% via-brand-dark/90 to-transparent"></div>
+                <a href="carrete.html" class="no-tap-highlight group relative w-full h-[140px] rounded-[1.5rem] overflow-hidden shadow-md block border border-border-color transition-transform hover:scale-[1.02]">
+                    <!-- Imagen más visible -->
+                    <div class="absolute inset-y-0 right-0 w-[65%] bg-[url('1792874026013.jpg')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700"></div>
+                    <!-- Degradado ajustado -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-[45%] via-brand-dark/50 to-transparent"></div>
                     
-                    <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/40 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
+                    <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/60 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
                         <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
                     </div>
 
                     <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[85%] md:w-[90%]">
                         <h3 class="font-serif text-[1.6rem] md:text-[1.8rem] text-brand-cream leading-[1.1] mb-3">
-                            <span class="not-italic font-medium">Carrete Workstyle</span><br>
+                            <span class="not-italic font-medium text-white">Carrete Workstyle</span><br>
                             <span class="italic">Autoral</span>
                         </h3>
                         <div class="flex items-center gap-2">
-                            <span class="text-[7.5px] md:text-[8.5px] uppercase tracking-[0.2em] text-text-light font-bold">Únete a la Comunidad</span>
+                            <span class="text-[7.5px] md:text-[8.5px] uppercase tracking-[0.2em] text-text-light font-bold">Ver catálogo visual</span>
                             <div class="h-[1px] w-8 bg-border-color"></div>
                         </div>
                     </div>
@@ -135,17 +134,19 @@
 
                 <!-- Botón 5: Curso de Fotografía -->
                 <a href="#" class="no-tap-highlight group relative w-full h-[140px] rounded-[1.5rem] overflow-hidden shadow-md block border border-border-color transition-transform hover:scale-[1.02]">
-                    <div class="absolute inset-y-0 right-0 w-[60%] bg-[url('https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
-                    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-55% via-brand-dark/90 to-transparent"></div>
+                    <!-- Imagen más visible -->
+                    <div class="absolute inset-y-0 right-0 w-[65%] bg-[url('https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700"></div>
+                    <!-- Degradado ajustado -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-[45%] via-brand-dark/50 to-transparent"></div>
                     
-                    <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/40 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
+                    <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/60 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
                         <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
                     </div>
 
-                    <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[80%] md:w-[85%]">
+                    <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[85%]">
                         <h3 class="font-serif text-[1.6rem] md:text-[1.8rem] text-brand-cream leading-[1.1] mb-3">
                             <span class="not-italic font-medium">Curso de</span><br>
-                            <span class="italic">Fotografía Workstyle</span>
+                            <span class="italic text-white">Fotografía Workstyle</span>
                         </h3>
                         <div class="flex items-center gap-2">
                             <span class="text-[7.5px] md:text-[8.5px] uppercase tracking-[0.2em] text-text-light font-bold">Ver Información</span>
@@ -154,54 +155,6 @@
                     </div>
                 </a>
                 
-            </section>
-
-            <!-- SECCIÓN: CÓMO TRABAJAREMOS JUNTAS -->
-            <section id="como-trabajo" class="px-8 pt-4 pb-10">
-                <h2 class="font-serif text-3xl italic text-text-main mb-8 md:text-left">¿Cómo trabajaremos juntas?</h2>
-                
-                <div class="flex flex-col gap-8 relative before:absolute before:inset-y-0 before:left-[11px] before:w-[1px] before:bg-border-color">
-                    
-                    <div class="relative pl-10">
-                        <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-brand-dark border border-brand-cream flex items-center justify-center z-10">
-                            <span class="text-[10px] font-sans text-brand-cream font-medium">1</span>
-                        </div>
-                        <h4 class="font-serif text-xl text-text-main mb-1">Conversamos sobre tu marca.</h4>
-                        <p class="font-sans text-sm text-text-light font-light">Tus objetivos, necesidades y lo que deseas conseguir.</p>
-                    </div>
-                    
-                    <div class="relative pl-10">
-                        <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-brand-dark border border-brand-cream flex items-center justify-center z-10">
-                            <span class="text-[10px] font-sans text-brand-cream font-medium">2</span>
-                        </div>
-                        <h4 class="font-serif text-xl text-text-main mb-1">Definimos el camino.</h4>
-                        <p class="font-sans text-sm text-text-light font-light">Identificamos el servicio más adecuado y establecemos el alcance del trabajo.</p>
-                    </div>
-                    
-                    <div class="relative pl-10">
-                        <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-brand-dark border border-brand-cream flex items-center justify-center z-10">
-                            <span class="text-[10px] font-sans text-brand-cream font-medium">3</span>
-                        </div>
-                        <h4 class="font-serif text-xl text-text-main mb-1">Desarrollamos la propuesta.</h4>
-                        <p class="font-sans text-sm text-text-light font-light">Organizamos la estrategia, dirección creativa o planificación según el servicio contratado.</p>
-                    </div>
-                    
-                    <div class="relative pl-10">
-                        <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-brand-dark border border-brand-cream flex items-center justify-center z-10">
-                            <span class="text-[10px] font-sans text-brand-cream font-medium">4</span>
-                        </div>
-                        <h4 class="font-serif text-xl text-text-main mb-1">Creamos y construimos.</h4>
-                        <p class="font-sans text-sm text-text-light font-light">Ejecutamos el proyecto siguiendo una planificación y manteniendo comunicación durante el proceso.</p>
-                    </div>
-                    
-                    <div class="relative pl-10">
-                        <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-brand-dark border border-brand-cream flex items-center justify-center z-10">
-                            <span class="text-[10px] font-sans text-brand-cream font-medium">5</span>
-                        </div>
-                        <h4 class="font-serif text-xl text-text-main mb-1">Entregamos tu proyecto.</h4>
-                        <p class="font-sans text-sm text-text-light font-light">Recibes los materiales, recursos y entregables correspondientes al servicio contratado.</p>
-                    </div>
-                </div>
             </section>
 
             <!-- SECCIÓN: SOBRE MÍ -->
@@ -213,7 +166,7 @@
                 </div>
                 
                 <p class="font-sans text-[14px] md:text-[14.5px] text-text-light font-light leading-relaxed mb-8 px-2 md:px-6">
-                    Soy Gisella, estratega en Social Media Branding y Marketing de Contenidos. Mi propósito es transformar la esencia de tu marca en una presencia digital auténtica y coherente, a través de la estrategia, la comunicación y la creación de contenido visual, para fortalecer tu presencia en redes sociales, conectar con tu audiencia y comunicar el valor de lo que haces.
+                    Soy Gisella, Gestora de Mercados y diplomada en Dirección de Arte y Fotografía para Plataformas Digitales, con enfoque en Social Media Branding y Marketing de Contenidos. Mi propósito es transformar la esencia de tu marca en una presencia digital auténtica y coherente mediante la estrategia, la comunicación y la creación de contenido visual; para así fortalecer tu presencia en redes sociales, conectar con tu audiencia y comunicar el valor de lo que haces sin pasar desapercibida.
                 </p>
                 
                 <a href="https://wa.me/TUNUMERO" class="inline-block w-full max-w-[320px] mx-auto py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase">
@@ -258,7 +211,7 @@
                 </div>
             </footer>
 
-        </div> <!-- Fin de la columna derecha -->
+        </div>
 
         <!-- BOTÓN FLOTANTE "VOLVER ARRIBA" -->
         <div class="fixed bottom-8 right-6 md:right-10 z-40">
@@ -269,7 +222,6 @@
 
     </main>
 
-    <!-- SCRIPT PARA SCROLL FLOTANTE -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const scrollTopBtn = document.getElementById('scroll-top-btn');
@@ -293,4 +245,5 @@
     </script>
 
 </body>
-</html>
+                        </html>
+    
