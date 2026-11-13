@@ -1,942 +1,233 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fotografía Social | Gisella Villarreal</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
-  
-  <style>
-    :root {
-      --bg-dark: #151515;      
-      --bg-cream: #c9bb9e;     
-      --text-main: #FFFFFF;    
-      --text-light: #b0b0b0;   
-      --border-color: rgba(255, 255, 255, 0.15); 
-      --silver-accent: #D3D3D3; 
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gisella Villarreal | Links</title>
     
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-dark); 
-      color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-    
-    .page-wrapper {
-      width: 100%;
-      max-width: 100vw;
-      margin: 0 auto;
-      overflow-x: hidden;
-    }
-
-    /* ====== ENCABEZADO FIJO ====== */
-    .top-bar {
-      position: fixed; 
-      top: 0; left: 0; right: 0;
-      background-color: transparent;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      border-bottom: 1px solid transparent;
-      z-index: 1000;
-      transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-bottom 0.4s ease;
-    }
-    
-    .top-bar.scrolled {
-      background-color: rgba(201, 187, 158, 0.95); 
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .brand-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-style: italic;
-      font-weight: 500;
-      color: var(--bg-dark); 
-      text-decoration: none;
-    }
-
-    .menu-icon {
-      font-size: 1.8rem;
-      color: var(--bg-dark); 
-      cursor: pointer;
-    }
-
-    /* ====== ENCABEZADO DE LA PÁGINA (HERO BEIGE) ====== */
-    .page-hero {
-      background-color: var(--bg-cream);
-      color: var(--bg-dark);
-      padding: 140px 20px 70px;
-      text-align: center;
-    }
-
-    .page-hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      font-style: italic;
-      font-weight: 500;
-      margin-bottom: 15px;
-      letter-spacing: -1px;
-    }
-
-    .page-hero p {
-      font-size: 0.85rem;
-      color: #444;
-      max-width: 500px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    /* ====== SECCIÓN DE PROYECTOS (CARRUSEL MÓVIL) ====== */
-    .selected-work-section {
-      padding: 50px 0 60px 0; 
-      background-color: var(--bg-dark);
-      position: relative;
-    }
-
-    .work-header-container {
-      padding: 0 20px; 
-    }
-
-    .work-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-    }
-
-    .work-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      color: var(--bg-cream); 
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .work-line {
-      flex-grow: 1;
-      height: 1px;
-      background-color: var(--border-color); 
-      min-width: 50px;
-    }
-
-    .carousel-controls {
-      display: flex;
-      gap: 8px;
-    }
-
-    .carousel-btn {
-      background: transparent;
-      border: 1px solid var(--border-color);
-      color: white;
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .carousel-btn:hover {
-      background: var(--bg-cream);
-      color: var(--bg-dark);
-      border-color: var(--bg-cream);
-    }
-
-    .work-grid {
-      display: flex;
-      gap: 15px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding: 0 20px 20px 20px;
-      scrollbar-width: none; 
-      -ms-overflow-style: none; 
-    }
-    
-    .work-grid::-webkit-scrollbar {
-      display: none; 
-    }
-
-    .work-card {
-      min-width: 85%; 
-      scroll-snap-align: center;
-      border: 1px solid var(--border-color);
-      padding: 20px;
-      border-radius: 4px;
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      flex-shrink: 0;
-      transition: border-color 0.3s ease;
-    }
-
-    .work-card:hover {
-      border-color: var(--bg-cream); 
-    }
-
-    .work-info {
-      margin-bottom: 25px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .work-num {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      color: var(--text-light);
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .work-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
-    }
-
-    .work-category {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
-      color: var(--text-light);
-    }
-    
-    .work-btn {
-      margin-top: 15px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      color: var(--bg-cream);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: color 0.3s ease;
-    }
-
-    .work-card:hover .work-btn {
-      color: white; 
-    }
-
-    .work-img-wrapper {
-      width: 100%;
-      height: 220px;
-      overflow: hidden;
-      border-radius: 4px;
-      margin-top: auto;
-    }
-
-    .work-img {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: top center;
-      background-color: #222;
-      transition: transform 0.5s ease;
-    }
-
-    .work-card:hover .work-img {
-      transform: scale(1.03); 
-    }
-
-    /* ====== PLANES DE PRECIOS ====== */
-    .pricing-section {
-      padding: 20px 20px 60px; 
-      background-color: var(--bg-dark);
-    }
-
-    .pricing-header {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 35px;
-    }
-
-    .pricing-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 500;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      line-height: 1.1;
-      white-space: nowrap; 
-    }
-
-    .pricing-desc {
-      font-size: 0.8rem;
-      color: var(--text-light);
-      line-height: 1.5;
-      max-width: 400px;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px; 
-    }
-
-    .pricing-card {
-      border: 1px solid var(--border-color);
-      padding: 20px 12px; 
-      border-radius: 4px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .plan-name {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
-    }
-
-    .plan-sub {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
-      color: var(--text-light);
-      margin-bottom: 20px;
-      min-height: 30px; 
-    }
-
-    .plan-price-wrapper {
-      display: flex;
-      flex-direction: column; 
-      align-items: flex-start;
-      margin-bottom: 20px;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 20px;
-    }
-
-    .plan-currency {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
-      color: var(--text-light);
-      font-weight: 500;
-      margin-bottom: 2px;
-    }
-
-    .plan-price {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.8rem; 
-      color: white;
-      font-weight: 600;
-      letter-spacing: -1px;
-      line-height: 1;
-    }
-
-    .plan-features {
-      list-style: none;
-      margin-bottom: 15px;
-      flex-grow: 1; 
-    }
-
-    .plan-feature-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 6px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.65rem; 
-      color: var(--text-light);
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
-
-    .plan-feature-item i {
-      color: var(--bg-cream); 
-      font-size: 0.9rem;
-      flex-shrink: 0; 
-      margin-top: 1px;
-    }
-
-    .plan-eta {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.6rem;
-      color: var(--bg-cream);
-      margin-bottom: 20px;
-      font-style: italic;
-    }
-
-    .plan-btn {
-      background-color: var(--bg-cream);
-      color: var(--bg-dark);
-      padding: 6px 6px 6px 12px; 
-      border-radius: 40px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background-color 0.3s ease;
-      white-space: nowrap; 
-    }
-
-    .plan-btn:hover {
-      background-color: white;
-    }
-
-    .btn-icon {
-      background-color: var(--bg-dark);
-      color: var(--bg-cream);
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    
-    .btn-icon i {
-      font-size: 0.9rem;
-    }
-
-    /* ====== PREGUNTAS FRECUENTES (FAQ SIN RELLENO) ====== */
-    .faq-section {
-      padding: 0 20px 60px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px; 
-      background-color: var(--bg-dark);
-    }
-
-    .section-header {
-      margin-bottom: 30px;
-      text-align: center; 
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif; 
-      font-style: italic;
-      font-size: 2.5rem;
-      font-weight: 500;
-      color: var(--bg-cream); 
-      line-height: 1;
-      margin-bottom: 5px;
-      letter-spacing: -0.5px;
-    }
-    
-    .faq-item {
-      background-color: transparent; 
-      border-radius: 12px; 
-      border: 1px solid var(--border-color); 
-      overflow: hidden;
-    }
-    
-    .faq-question {
-      padding: 20px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: white; 
-    }
-    
-    .faq-question i {
-      transition: transform 0.3s ease;
-      color: white; 
-    }
-    
-    .faq-item.active .faq-question i {
-      transform: rotate(180deg);
-    }
-    
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      font-size: 0.85rem;
-      color: var(--text-light); 
-      line-height: 1.6;
-      padding: 0 25px; 
-    }
-    
-    .faq-item.active .faq-answer {
-      max-height: 300px;
-      padding-bottom: 25px;
-    }
-
-    /* ====== FOOTER ====== */
-    footer {
-      padding: 50px 20px 30px;
-      text-align: left; 
-      background-color: var(--bg-dark); 
-    }
-    .footer-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-style: italic;
-      font-weight: 500;
-      color: white; 
-      margin-bottom: 10px;
-    }
-    .footer-desc {
-      font-size: 0.75rem;
-      color: var(--text-light);
-      margin-bottom: 30px;
-      max-width: 300px;
-    }
-    
-    .footer-nav-title {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 15px; 
-      color: white; 
-    }
-    
-    .footer-links-grid {
-      display: grid;
-      grid-template-columns: auto auto; 
-      gap: 12px 20px;
-      margin-bottom: 35px;
-    }
-    .footer-links-grid a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 0.8rem;
-      transition: color 0.2s;
-    }
-    .footer-links-grid a:hover {
-      color: var(--bg-cream);
-    }
-
-    .footer-social {
-      display: flex;
-      justify-content: flex-start;
-      gap: 15px;
-      margin-bottom: 25px; 
-    }
-    .footer-social a {
-      color: white; 
-      font-size: 1.5rem;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-social a:hover {
-      color: var(--bg-cream);
-    }
-    
-    .footer-divider {
-      border: none;
-      border-top: 1px solid var(--border-color);
-      margin-bottom: 20px;
-    }
-    .footer-bottom-text {
-      font-size: 0.7rem;
-      color: var(--text-light);
-      margin-bottom: 10px;
-    }
-    .footer-legal a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 0.7rem;
-      margin-right: 10px;
-    }
-
-    /* ====== OVERLAY MENÚ EMERGENTE ====== */
-    .overlay-menu {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: var(--bg-cream); 
-      z-index: 9999;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
-    .overlay-menu.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    .close-btn {
-      position: absolute;
-      top: 20px; right: 20px;
-      font-size: 2rem;
-      color: var(--bg-dark); 
-      cursor: pointer;
-    }
-    .overlay-content {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      text-align: center;
-    }
-    .overlay-content a {
-      text-decoration: none;
-      color: var(--bg-dark); 
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-style: italic;
-      font-weight: 500;
-      transition: opacity 0.3s ease;
-    }
-    .overlay-content a:hover {
-      opacity: 0.7;
-    }
-
-    /* ====== MEDIA QUERIES PARA PC Y TABLETS ====== */
-    @media (min-width: 768px) {
-      .page-wrapper {
-        max-width: 100%;
-        background-color: var(--bg-dark);
-        box-shadow: none;
-        border: none;
-      }
-      
-      .top-bar { padding: 15px 5%; }
-      .page-hero { padding: 180px 5% 100px; }
-      .page-hero h1 { font-size: 4.5rem; }
-      
-      .selected-work-section { padding: 80px 5%; }
-      .work-header-container { padding: 0; }
-      
-      .work-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-        overflow-x: visible;
-        padding: 0;
-      }
-      .work-card {
-        min-width: auto;
-      }
-      .carousel-controls {
-        display: none;
-      }
-
-      .pricing-section { padding: 40px 5% 60px; }
-      .pricing-header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin-bottom: 60px;
-      }
-      .pricing-title { font-size: 3rem; }
-      .pricing-desc { margin-bottom: 10px; text-align: right; }
-      
-      .pricing-grid {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 40px; 
-      }
-      .pricing-card {
-        padding: 40px 40px; 
-      }
-      .plan-name { font-size: 0.8rem; }
-      .plan-sub { font-size: 0.8rem; min-height: auto; }
-      .plan-price-wrapper {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-        padding-bottom: 30px;
-      }
-      .plan-price { font-size: 3.5rem; }
-      .plan-currency { font-size: 1rem; }
-      .plan-feature-item { font-size: 0.9rem; margin-bottom: 18px; gap: 12px; }
-      .plan-feature-item i { font-size: 1.2rem; }
-      .plan-eta { font-size: 0.8rem; margin-bottom: 30px; }
-      .plan-btn { padding: 10px 10px 10px 25px; font-size: 0.8rem; }
-      .btn-icon { width: 40px; height: 40px; }
-      .btn-icon i { font-size: 1.3rem; }
-
-      .faq-section { 
-        padding: 60px 15% 80px; 
-      } 
-      
-      footer {
-        padding: 80px 5% 40px;
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
-        gap: 40px;
-      }
-      .footer-desc { max-width: 100%; margin-bottom: 0; }
-      .footer-links-grid, .footer-social { margin-bottom: 0; }
-      .footer-divider { grid-column: 1 / -1; margin-top: 30px; }
-      .footer-bottom-text { grid-column: 1 / 2; }
-      .footer-legal { grid-column: 2 / -1; text-align: right; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- MENÚ EMERGENTE -->
-  <div class="overlay-menu" id="overlayMenu">
-    <div class="close-btn" onclick="toggleMenu()">
-      <i class="ph-bold ph-x"></i>
-    </div>
-    <div class="overlay-content">
-      <a href="index.html#inicio">Inicio</a>
-      <a href="index.html#servicios">Servicios</a>
-      <a href="index.html#portafolio">Trabajos</a>
-      <a href="index.html#sobre-mi">Sobre mí</a>
-      <a href="https://wa.me/573001234567" target="_blank">Contacto</a>
-    </div>
-  </div>
-
-  <div class="page-wrapper">
-    
-    <!-- ENCABEZADO FIJO -->
-    <header class="top-bar">
-      <a href="index.html" class="brand-name">Gisella Villarreal</a>
-      <i class="ph-bold ph-list menu-icon" onclick="toggleMenu()"></i>
-    </header>
-
-    <!-- CABECERA DE LA PÁGINA -->
-    <section class="page-hero">
-      <h1>Fotografía Social</h1>
-      <p>Creación de contenido visual de alta calidad para destacar el valor de tu marca, tu perfil profesional o documentar tus momentos más especiales.</p>
-    </section>
-
-    <!-- TRABAJOS DESTACADOS (CARRUSEL MÓVIL) -->
-    <section class="selected-work-section">
-      <div class="work-header-container">
-        <div class="work-header">
-          <h2 class="work-title">Trabajos Destacados</h2>
-          <div class="work-line"></div>
-          <!-- Controles del Carrusel -->
-          <div class="carousel-controls">
-            <button class="carousel-btn" onclick="scrollCarousel(-1)" aria-label="Anterior">
-              <i class="ph-bold ph-caret-left"></i>
-            </button>
-            <button class="carousel-btn" onclick="scrollCarousel(1)" aria-label="Siguiente">
-              <i class="ph-bold ph-caret-right"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contenedor deslizable -->
-      <div class="work-grid" id="workCarousel">
-        
-        <!-- Tarjeta 01 -->
-        <a href="#" class="work-card">
-          <div class="work-info">
-            <span class="work-num">01</span>
-            <h3 class="work-name">Sesión Branding</h3>
-            <span class="work-category">Fotos Workstyle</span>
-            <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
-          </div>
-          <div class="work-img-wrapper">
-            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop');"></div>
-          </div>
-        </a>
-
-        <!-- Tarjeta 02 -->
-        <a href="#" class="work-card">
-          <div class="work-info">
-            <span class="work-num">02</span>
-            <h3 class="work-name">Cumpleaños 30</h3>
-            <span class="work-category">Momentos Especiales</span>
-            <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
-          </div>
-          <div class="work-img-wrapper">
-            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop');"></div>
-          </div>
-        </a>
-
-                <!-- Tarjeta 03 -->
-        <a href="#" class="work-card">
-          <div class="work-info">
-            <span class="work-num">03</span>
-            <h3 class="work-name">Retrato Profesional</h3>
-            <span class="work-category">Fotos Workstyle</span>
-            <span class="work-btn">Ver Proyecto <i class="ph-bold ph-arrow-right"></i></span>
-          </div>
-          <div class="work-img-wrapper">
-            <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop');"></div>
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- PLANES DE PRECIOS -->
-    <section class="pricing-section">
-      <div class="pricing-header">
-        <h2 class="pricing-title">Elige tu Plan</h2>
-        <p class="pricing-desc">Explora los paquetes fotográficos y elige la opción que mejor se adapte a tus necesidades y objetivos.</p>
-      </div>
-
-      <div class="pricing-grid">
-        
-        <!-- Plan Fotos Workstyle -->
-        <div class="pricing-card">
-          <span class="plan-name">Fotos workstyle</span>
-          <span class="plan-sub">Ideal para emprendedores, profesionales.</span>
-          <div class="plan-price-wrapper">
-            <span class="plan-currency">Desde</span>
-            <span class="plan-price">$100.000</span>
-          </div>
-          <ul class="plan-features">
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Hasta 1 hora de sesión.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> 25 fotografías editadas.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Retratos profesionales y escenas de trabajo.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Imágenes para web, LinkedIn e Instagram.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Orientación para seleccionar las imágenes según tus objetivos de comunicación.</li>
-          </ul>
-          <p class="plan-eta">Entrega digital organizada</p>
-          <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
-            Contáctame
-            <span class="btn-icon"><i class="ph-bold ph-arrow-right"></i></span>
-          </a>
-        </div>
-
-        <!-- Plan Momentos Especiales -->
-        <div class="pricing-card">
-          <span class="plan-name">Momentos especiales</span>
-          <span class="plan-sub">Ideal para cumpleaños, aniversarios y reuniones familiares íntimas.</span>
-          <div class="plan-price-wrapper">
-            <span class="plan-currency">Desde</span>
-            <span class="plan-price">$280.000</span>
-          </div>
-          <ul class="plan-features">
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Hasta 2 horas de cobertura.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> 40 fotografías editadas.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Registro de momentos destacados.</li>
-            <li class="plan-feature-item"><i class="ph-bold ph-check"></i> Retratos familiares y fotografías de detalles.</li>
-          </ul>
-          <p class="plan-eta">Entrega digital organizada</p>
-          <a href="https://wa.me/573001234567" target="_blank" class="plan-btn">
-            Contáctame
-            <span class="btn-icon"><i class="ph-bold ph-arrow-right"></i></span>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- PREGUNTAS FRECUENTES (FAQ SIN RELLENO) -->
-    <section class="faq-section" id="faq">
-      <div class="section-header">
-        <h2 class="section-title">Preguntas Frecuentes</h2>
-      </div>
-      
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">¿Necesito pagar hosting y dominio? <i class="ph-bold ph-caret-down"></i></div>
-        <div class="faq-answer">Te ofrezco soluciones que se adaptan a tu presupuesto. Podemos usar opciones de alojamiento gratuito o configurar un dominio propio (.com) según lo que necesite tu marca.</div>
-      </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">¿Qué pasa si no tengo fotos para mi página? <i class="ph-bold ph-caret-down"></i></div>
-        <div class="faq-answer">¡No hay problema! Ofrezco servicios de fotografía comercial para crear imágenes de calidad de tus productos o espacio de trabajo, ideales para fortalecer la imagen de tu marca.<br><br>También podemos explorar otras alternativas creativas, como generar imágenes con IA utilizando tu rostro o trabajar con imágenes de archivo premium, según el estilo y las necesidades de tu proyecto.</div>
-      </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">¿Cómo funciona el servicio de fotografía? <i class="ph-bold ph-caret-down"></i></div>
-        <div class="faq-answer">Nos reunimos para entender la esencia de tu marca, definimos un estilo visual y realizamos la sesión si estás en la ciudad de BAQ-COL. Luego selecciono y edito las mejores tomas para entregarte un paquete de imágenes listas para tu web y redes sociales.</div>
-      </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">¿Incluye tienda virtual, pasarela de pagos o funcionalidades a medida? <i class="ph-bold ph-caret-down"></i></div>
-        <div class="faq-answer">No lo incluye a salvo de una cotización adicional.</div>
-      </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">¿Cuáles son las formas de pago? <i class="ph-bold ph-caret-down"></i></div>
-        <div class="faq-answer">Trabajamos con un anticipo del 50% para separar tu cupo e iniciar el diseño, y el 50% restante al momento de entregarte la página 100% funcional.</div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer-name">Gisella Villarreal</div>
-      <p class="footer-desc">Diseño web y experiencias digitales para profesionales, marcas y momentos especiales.</p>
-      
-      <div class="footer-nav-title">EXPLORA</div>
-      
-      <!-- CUADRÍCULA DE ENLACES -->
-      <div class="footer-links-grid">
-        <a href="index.html#inicio">Inicio</a>
-        <a href="index.html#servicios">Servicios</a>
-        <a href="index.html#portafolio">Portafolio</a>
-        <a href="index.html#sobre-mi">Sobre mí</a>
-        <a href="#faq">Preguntas</a>
-        <a href="https://wa.me/573001234567" target="_blank">Contacto</a>
-      </div>
-
-      <div class="footer-nav-title">SÍGUEME</div>
-      <div class="footer-social">
-        <a href="https://wa.me/573001234567" target="_blank"><i class="ph-fill ph-whatsapp-logo"></i></a>
-        <a href="#" target="_blank"><i class="ph-fill ph-linkedin-logo"></i></a>
-        <a href="#" target="_blank"><i class="ph-fill ph-instagram-logo"></i></a>
-        <a href="mailto:correo@gmail.com"><i class="ph-fill ph-envelope-simple"></i></a>
-      </div>
-
-      <hr class="footer-divider">
-      
-      <div class="footer-bottom-text">© 2026 Gisella Villarreal. Todos los derechos reservados.</div>
-      <div class="footer-legal">
-        <a href="#">Política de privacidad</a>
-        <a href="#">Términos del servicio</a>
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('.top-bar');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-
-    function toggleMenu() {
-      const menu = document.getElementById('overlayMenu');
-      menu.classList.toggle('active');
-    }
-
-    function scrollCarousel(direction) {
-      const carousel = document.getElementById('workCarousel');
-      const scrollAmount = window.innerWidth * 0.85; 
-      carousel.scrollBy({
-        left: direction * scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-
-    function toggleFaq(element) {
-      const allFaqs = document.querySelectorAll('.faq-item');
-      allFaqs.forEach(faq => {
-        if (faq !== element) {
-          faq.classList.remove('active');
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#151515',       
+                        'brand-cream': '#c9bb9e',      
+                        'text-main': '#FFFFFF',        
+                        'text-light': '#b0b0b0',       
+                        'border-color': 'rgba(255, 255, 255, 0.15)',
+                    },
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'sans': ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
         }
-      });
-      element.classList.toggle('active');
-    }
-  </script>
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .no-tap-highlight { -webkit-tap-highlight-color: transparent; }
+    </style>
+</head>
+<body class="bg-brand-dark antialiased text-text-main selection:bg-brand-cream selection:text-brand-dark">
+
+    <main class="max-w-[430px] mx-auto bg-brand-dark min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
+
+        <!-- HEADER / HERO -->
+        <header id="inicio" class="relative w-full h-[70vh] min-h-[500px] flex flex-col">
+            
+            <div class="absolute inset-0 z-0 overflow-hidden bg-brand-dark">
+                <img src="1792874026013~2.jpg" 
+                     alt="Gisella Villarreal" 
+                     class="w-full h-full object-cover object-[center_15%] scale-[1.05]">
+            </div>
+            
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent z-10 h-[50%]"></div>
+
+            <div class="relative z-20 px-6 mt-auto flex flex-col items-center text-center w-full pb-6">
+                <h1 class="font-serif text-[3.5rem] md:text-6xl italic font-medium leading-[1.05] mb-2 text-text-main tracking-wide">
+                    Gisella<br>Villarreal
+                </h1>
+                <p class="font-sans text-[13px] tracking-[0.2em] uppercase text-brand-cream mb-4 font-medium">
+                    Social Media Branding
+                </p>
+                <p class="font-sans text-[13px] leading-relaxed text-text-light font-light max-w-[320px] mx-auto">
+                    Amo ayudar a marcas personales que desean mostrarse auténticas, tanto en su vida personal como en su camino profesional.
+                </p>
+            </div>
+        </header>
+
+        <!-- SECCIÓN: ENLACES BIOLINK -->
+        <section id="enlaces" class="px-5 pt-4 pb-12 flex flex-col gap-4 relative z-10">
+            
+            <!-- Botones 1 y 2: Sencillos en la misma línea -->
+            <div class="flex gap-3 w-full mb-2">
+                <a href="https://wa.me/TUNUMERO" target="_blank" class="no-tap-highlight flex-1 py-4 px-3 rounded-2xl border border-border-color bg-brand-dark/50 backdrop-blur-sm text-brand-cream text-[9px] uppercase tracking-wider font-semibold leading-snug text-center flex flex-col items-center justify-center gap-2 hover:border-brand-cream hover:bg-brand-cream hover:text-brand-dark transition-all">
+                    <i class="fa-regular fa-comments text-[14px]"></i>
+                    Hablemos de tu<br>Marca personal
+                </a>
+                <a href="https://wa.me/TUNUMERO" target="_blank" class="no-tap-highlight flex-1 py-4 px-3 rounded-2xl border border-border-color bg-brand-dark/50 backdrop-blur-sm text-brand-cream text-[9px] uppercase tracking-wider font-semibold leading-snug text-center flex flex-col items-center justify-center gap-2 hover:border-brand-cream hover:bg-brand-cream hover:text-brand-dark transition-all">
+                    <i class="fa-solid fa-camera-retro text-[14px]"></i>
+                    Reserva tu sesión<br>Fotográfica
+                </a>
+            </div>
+
+            <!-- Botón 3: Trabajos Destacados -->
+            <a href="#" class="no-tap-highlight group relative w-full h-[140px] rounded-[1.5rem] overflow-hidden shadow-md block border border-border-color transition-transform hover:scale-[1.02]">
+                <div class="absolute inset-y-0 right-0 w-[60%] bg-[url('https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-55% via-brand-dark/90 to-transparent"></div>
+                
+                <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/40 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
+                    <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
+                </div>
+
+                <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[80%]">
+                    <h3 class="font-serif text-[1.6rem] text-brand-cream leading-[1.1] mb-3">
+                        <span class="not-italic font-medium">Conoce mis</span><br>
+                        <span class="italic">trabajos destacados</span>
+                    </h3>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[7.5px] uppercase tracking-[0.2em] text-text-light font-bold">Ver Portafolio</span>
+                        <div class="h-[1px] w-8 bg-border-color"></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Botón 4: Comunidad Workstyle -->
+            <a href="#" class="no-tap-highlight group relative w-full h-[140px] rounded-[1.5rem] overflow-hidden shadow-md block border border-border-color transition-transform hover:scale-[1.02]">
+                <div class="absolute inset-y-0 right-0 w-[60%] bg-[url('1792874026013.jpg')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-55% via-brand-dark/90 to-transparent"></div>
+                
+                <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/40 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
+                    <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
+                </div>
+
+                <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[85%]">
+                    <h3 class="font-serif text-[1.6rem] text-brand-cream leading-[1.1] mb-3">
+                        <span class="not-italic font-medium">Carrete Workstyle</span><br>
+                        <span class="italic">Autoral</span>
+                    </h3>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[7.5px] uppercase tracking-[0.2em] text-text-light font-bold">Únete a la Comunidad</span>
+                        <div class="h-[1px] w-8 bg-border-color"></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Botón 5: Curso de Fotografía -->
+            <a href="#" class="no-tap-highlight group relative w-full h-[140px] rounded-[1.5rem] overflow-hidden shadow-md block border border-border-color transition-transform hover:scale-[1.02]">
+                <div class="absolute inset-y-0 right-0 w-[60%] bg-[url('https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-55% via-brand-dark/90 to-transparent"></div>
+                
+                <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/40 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
+                    <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
+                </div>
+
+                <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[80%]">
+                    <h3 class="font-serif text-[1.6rem] text-brand-cream leading-[1.1] mb-3">
+                        <span class="not-italic font-medium">Curso de</span><br>
+                        <span class="italic">Fotografía Workstyle</span>
+                    </h3>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[7.5px] uppercase tracking-[0.2em] text-text-light font-bold">Ver Información</span>
+                        <div class="h-[1px] w-8 bg-border-color"></div>
+                    </div>
+                </div>
+            </a>
+            
+        </section>
+
+        <!-- SECCIÓN: SOBRE MÍ (ID: sobre-mi) -->
+        <section id="sobre-mi" class="px-6 py-10 bg-transparent mx-5 rounded-3xl mb-10 text-center border border-border-color">
+            <h2 class="font-serif text-3xl italic text-brand-cream mb-6">Sobre mí</h2>
+            
+            <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-6 border-[3px] border-brand-cream shadow-sm">
+                <img src="1792874026013~2.jpg" alt="Perfil de Gisella" class="w-full h-full object-cover">
+            </div>
+            
+            <p class="font-sans text-[14px] text-text-light font-light leading-relaxed mb-8 px-2">
+                Soy Gisella, estratega en Social Media Branding y Marketing de Contenidos. Mi propósito es transformar la esencia de tu marca en una presencia digital auténtica y coherente, a través de la estrategia, la comunicación y la creación de contenido visual, para fortalecer tu presencia en redes sociales, conectar con tu audiencia y comunicar el valor de lo que haces.
+            </p>
+            
+            <a href="https://wa.me/TUNUMERO" class="inline-block w-full max-w-[320px] mx-auto py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase">
+                Apoya mi camino creativo
+            </a>
+        </section>
+
+        <!-- SECCIÓN DE CONTACTO Y FOOTER -->
+        <footer class="px-8 pt-2 pb-12 text-center relative z-10 flex flex-col justify-between">
+            
+            <div class="mb-10 text-center">
+                <h2 class="font-serif text-2xl italic text-brand-cream mb-6">Contacto</h2>
+                
+                <div class="flex justify-center gap-5">
+                    <a href="https://wa.me/TUNUMERO" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-brands fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="mailto:correo@tudominio.com" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                        <i class="fa-regular fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 relative border-t border-border-color flex flex-col items-center gap-4">
+                <div class="text-center">
+                    <h4 class="font-serif text-[1.2rem] italic mb-1 text-text-main">Gisella Villarreal</h4>
+                    <p class="text-[9px] font-sans font-medium text-text-light tracking-widest uppercase leading-relaxed">
+                        © 2026 | Todos los derechos reservados
+                    </p>
+                </div>
+
+                <div class="flex gap-4 font-sans text-[10px] text-text-light underline decoration-border-color hover:text-brand-cream transition-colors">
+                    <a href="terminos.html">Términos y Condiciones</a>
+                    <a href="politicas.html">Políticas de Privacidad</a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- BOTÓN FLOTANTE "VOLVER ARRIBA" -->
+        <div class="fixed bottom-8 inset-x-0 mx-auto max-w-[430px] px-6 z-40 flex justify-end pointer-events-none">
+            <button id="scroll-top-btn" class="pointer-events-auto w-10 h-10 rounded-full border border-brand-cream/40 bg-brand-dark/80 backdrop-blur-sm flex items-center justify-center text-brand-cream opacity-0 translate-y-4 transition-all duration-500 hover:bg-brand-cream hover:text-brand-dark shadow-lg" aria-label="Volver arriba">
+                <i class="fa-solid fa-angle-up text-sm"></i>
+            </button>
+        </div>
+
+    </main>
+
+    <!-- SCRIPT PARA SCROLL FLOTANTE -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollTopBtn = document.getElementById('scroll-top-btn');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+                } else {
+                    scrollTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                }
+            });
+
+            if(scrollTopBtn) {
+                scrollTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+
 </body>
-          </html>
+</html>
