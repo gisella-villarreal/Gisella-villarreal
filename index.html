@@ -1,34 +1,269 @@
-    <!-- Bono: Banco de Fotos -->
-    <section class="max-w-6xl mx-auto px-6 py-20">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white p-8 md:p-12 shadow-sm border border-stone-100">
-            <!-- Galería de muestra -->
-            <div class="order-2 lg:order-1 grid grid-cols-2 gap-4">
-                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Espacio de trabajo estético" class="object-cover w-full h-48 md:h-64 opacity-90 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 duration-500">
-                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Detalle workstyle" class="object-cover w-full h-48 md:h-64 opacity-90 hover:opacity-100 transition-opacity mt-8 grayscale hover:grayscale-0 duration-500">
-            </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gisella Villarreal | Social Media Branding</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#151515',       
+                        'brand-cream': '#c9bb9e',      
+                        'text-main': '#FFFFFF',        
+                        'text-light': '#b0b0b0',       
+                        'border-color': 'rgba(255, 255, 255, 0.15)',
+                    },
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'sans': ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .no-tap-highlight {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark antialiased text-text-main selection:bg-brand-cream selection:text-brand-dark">
+
+    <main class="max-w-[430px] mx-auto bg-brand-dark min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
+        
+        <!-- ============================== -->
+        <!-- MENÚ DESPLEGABLE (OVERLAY)     -->
+        <!-- ============================== -->
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/95 backdrop-blur-xl z-50 flex flex-col justify-between items-center py-20 px-8 transition-all duration-500 opacity-0 pointer-events-none translate-y-4 max-w-[430px] mx-auto">
             
-            <!-- Textos -->
-            <div class="order-1 lg:order-2">
-                <span class="uppercase tracking-widest text-xs font-semibold text-stone-500">Recurso Exclusivo / Bonus</span>
-                <h2 class="text-3xl lg:text-4xl font-serif mt-4 mb-6 text-stone-900">Banco de Fotos <em>Workstyle</em></h2>
-                <p class="text-lg text-gray-600 mb-6 font-light leading-relaxed">
-                    Sabemos que hay días donde el tiempo no alcanza para crear. Por eso, al unirte al curso recibes acceso a una galería privada con fotografías estéticas y minimalistas (estilo <em>faceless</em> y de escritorio) listas para usar.
-                </p>
-                <ul class="space-y-4 text-sm text-gray-600 font-light">
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 mr-3 text-stone-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        Alta resolución para web y redes sociales.
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 mr-3 text-stone-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        Estética cuidada y paleta de colores neutra.
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 mr-3 text-stone-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        Perfectas para historias, fondos o portadas de Reels.
-                    </li>
-                </ul>
+            <button id="close-menu-btn" class="absolute top-8 right-6 text-brand-cream text-3xl hover:text-white transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Enlaces del Menú -->
+            <nav class="flex flex-col items-center gap-7 mt-8 w-full">
+                <a href="#inicio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Inicio</a>
+                <a href="#comunidad" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Aula Virtual</a>
+                <a href="#servicios" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Servicios</a>
+                <a href="#como-trabajo" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">¿Cómo trabajo?</a>
+                <a href="#portafolio" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Portafolio</a>
+                <a href="#sobre-mi" class="menu-link font-serif text-4xl italic text-brand-cream hover:text-white transition-colors">Sobre mí</a>
+            </nav>
+
+            <div class="flex justify-center gap-5 w-full mt-auto">
+                <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                    <i class="fa-brands fa-instagram text-xl"></i>
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                    <i class="fa-brands fa-linkedin-in text-xl"></i>
+                </a>
+                <a href="mailto:correo@tudominio.com" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:border-brand-cream hover:text-brand-dark transition-all shadow-sm">
+                    <i class="fa-regular fa-envelope text-xl"></i>
+                </a>
             </div>
         </div>
-    </section>
-    
+        <!-- ============================== -->
+
+        <!-- HEADER / HERO (ID: inicio) -->
+        <header id="inicio" class="relative w-full h-[85vh] min-h-[600px] flex flex-col">
+            
+            <div class="absolute top-6 left-5 right-5 z-30 flex justify-between items-center">
+                <a href="#" class="px-4 py-2 rounded-full border border-black text-black text-[10px] font-bold tracking-wider hover:bg-black hover:text-white transition-all uppercase bg-transparent flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-[14px]"></i>
+                    Háblame de tu marca
+                </a>
+                <div id="open-menu-btn" class="flex flex-col gap-[6px] cursor-pointer opacity-80 hover:opacity-100 transition-opacity p-1">
+                    <div class="w-7 h-[2px] bg-black"></div>
+                    <div class="w-7 h-[2px] bg-black"></div>
+                </div>
+            </div>
+
+            <div class="absolute inset-0 z-0 overflow-hidden bg-brand-dark">
+                <img src="1792874026013~2.jpg" 
+                     alt="Gisella Villarreal" 
+                     class="w-full h-full object-cover object-[center_15%] scale-[1.05]">
+            </div>
+            
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent z-10 h-[40%]"></div>
+
+            <div class="relative z-20 px-6 mt-auto flex flex-col items-center text-center w-full pb-8">
+                <h1 class="font-serif text-[3.5rem] md:text-6xl italic font-medium leading-[1.05] mb-2 text-text-main tracking-wide">
+                    Gisella<br>Villarreal
+                </h1>
+                <p class="font-sans text-[13px] tracking-[0.2em] uppercase text-brand-cream mb-4 font-medium">
+                    Social Media Branding
+                </p>
+                <p class="font-sans text-[13px] leading-relaxed text-text-light font-light max-w-[320px] mx-auto">
+                    Amo ayudar a marcas personales que desean mostrarse auténticas, tanto en su vida personal como en su camino profesional.
+                </p>
+            </div>
+        </header>
+
+        <!-- SECCIÓN: WORKSTYLE CONTENT (ID: comunidad) -->
+        <section id="comunidad" class="px-6 pt-10 pb-12 flex flex-col gap-6 relative z-10">
+            
+            <div class="flex justify-center mb-[-10px]">
+                <span class="bg-brand-cream/10 border border-brand-cream/30 text-brand-cream text-[9px] uppercase tracking-[0.2em] px-4 py-1.5 rounded-full backdrop-blur-sm shadow-sm">
+                    Aula Virtual • Inscripciones Abiertas
+                </span>
+            </div>
+
+            <div class="text-center">
+                <h2 class="font-serif text-[2.8rem] italic text-brand-cream mb-2 leading-tight">Workstyle<br>Content</h2>
+                <p class="font-sans text-[11px] tracking-[0.1em] uppercase text-text-light mb-2">Aprende a crear contenido que cuente tu historia</p>
+            </div>
+            
+            <div class="relative w-[90%] mx-auto overflow-hidden shadow-xl border border-border-color rounded-xl">
+                <div id="lifestyle-track" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
+                    <img src="1792874026013.jpg" alt="Workstyle Content 1" class="w-full h-[260px] object-cover shrink-0 snap-center">
+                    <img src="1792874026013~2.jpg" alt="Workstyle Content 2" class="w-full h-[260px] object-cover shrink-0 snap-center object-top">
+                    <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=600&auto=format&fit=crop" alt="Workstyle Content 3" class="w-full h-[260px] object-cover shrink-0 snap-center">
+                </div>
+                <button id="btn-prev-life" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-brand-dark/70 text-brand-cream flex items-center justify-center backdrop-blur-sm border border-brand-cream/30 hover:bg-brand-cream hover:text-brand-dark transition-colors">
+                    <i class="fa-solid fa-angle-left text-sm"></i>
+                </button>
+                <button id="btn-next-life" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-brand-dark/70 text-brand-cream flex items-center justify-center backdrop-blur-sm border border-brand-cream/30 hover:bg-brand-cream hover:text-brand-dark transition-colors">
+                    <i class="fa-solid fa-angle-right text-sm"></i>
+                </button>
+            </div>
+            
+            <div class="flex flex-col text-left mt-4 w-[90%] mx-auto">
+                <p class="font-sans text-[13px] text-text-light leading-relaxed font-light mb-6">
+                    ¿Te pasa que quieres compartir más de tu trabajo en redes, pero no siempre sabes qué publicar o cómo hacer que tu contenido refleje tu esencia? Creamos este espacio pensando en ti. Aprenderás a encontrar inspiración en lo cotidiano y a usar tu celular para mostrar tu marca de manera creativa y estratégica.
+                </p>
+                
+                <p class="font-sans text-[12px] text-brand-cream mb-4 uppercase tracking-wider font-medium">¿Qué incluye el aula?</p>
+                
+                <div class="w-full mb-8">
+                    <ul class="flex flex-col gap-4 font-sans text-[12.5px] text-text-light font-light text-left">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-play text-brand-cream mt-[3px] text-[11px] w-4 text-center"></i>
+                            <span>7 módulos de aprendizaje práctico, clases y reto final.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-mobile-screen text-brand-cream mt-[3px] text-[11px] w-4 text-center"></i>
+                            <span>Técnicas de fotografía móvil (no necesitas cámara profesional).</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-star text-brand-cream mt-[3px] text-[11px] w-4 text-center"></i>
+                            <span><strong>Toolkit:</strong> 3 plantillas Canva y 3 guiones de carruseles.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-heart text-brand-cream mt-[3px] text-[11px] w-4 text-center"></i>
+                            <span>Acceso a nuestra comunidad para feedback continuo.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Convertidor de Moneda y Precios con Descuento -->
+                <div class="w-full flex flex-col items-center mb-6 bg-border-color/10 py-5 rounded-2xl border border-border-color/20">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span id="label-cop" class="text-[11px] font-sans text-brand-cream font-medium transition-colors">COP</span>
+                        <button id="currency-toggle" class="w-10 h-5 bg-brand-dark border border-border-color rounded-full relative flex items-center p-1 cursor-pointer transition-colors shadow-inner">
+                            <div id="toggle-circle" class="w-3 h-3 bg-brand-cream rounded-full transform transition-transform duration-300 translate-x-0"></div>
+                        </button>
+                        <span id="label-usd" class="text-[11px] font-sans text-text-light font-medium transition-colors">USD</span>
+                    </div>
+
+                    <div class="flex flex-col items-center justify-center">
+                        <span id="price-regular" class="font-sans text-[12px] text-text-light line-through mb-1 transition-all">$89.900</span>
+                        <div class="flex items-baseline justify-center">
+                            <span id="price-value" class="font-serif text-[2.5rem] text-text-main font-medium transition-all leading-none">$69.900</span>
+                            <span id="price-currency" class="font-sans text-[10px] text-brand-cream uppercase tracking-widest ml-2 transition-all">COP</span>
+                        </div>
+                        <span class="font-sans text-[9px] text-brand-cream/90 uppercase tracking-widest mt-3 px-4 py-1.5 bg-brand-cream/10 rounded-full border border-brand-cream/20 text-center">
+                            Precio exclusivo uniéndote a WhatsApp
+                        </span>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/TUNUMERO?text=Hola%20Gisella%2C%20quiero%20unirme%20a%20tu%20comunidad%20y%20acceder%20a%20Workstyle%20Content%20con%20el%20precio%20especial." target="_blank" class="inline-block w-full py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[12.5px] font-bold tracking-wide shadow-md uppercase text-center mt-2 flex justify-center items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-[14px]"></i> Unirme y obtener descuento
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE SERVICIOS (ID: servicios) -->
+        <section id="servicios" class="relative z-10 px-5 pt-8 pb-6 flex flex-col gap-5">
+            
+            <h2 class="font-serif text-3xl italic text-brand-cream mb-1 text-center">Servicios</h2>
+            
+            <div class="toggle-service no-tap-highlight group relative w-full rounded-3xl overflow-hidden shadow-md block border border-border-color mt-2 cursor-pointer transition-all">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
+                <div class="absolute inset-0 bg-brand-dark/85 group-hover:bg-brand-dark/80 transition-colors duration-500"></div>
+                <div class="relative h-full p-6 flex flex-col justify-between z-10">
+                    
+                    <div class="pb-2">
+                        <p class="font-sans text-[10px] text-brand-cream tracking-[0.2em] mb-1">01</p>
+                        <h3 class="font-serif text-2xl italic text-text-main leading-tight mb-2">Estrategia y Desarrollo de Presencia Digital</h3>
+                        <p class="font-sans text-[12px] text-text-light max-w-[90%] leading-snug font-light">Dale estructura, claridad y dirección a tu marca.</p>
+                    </div>
+                    
+                    <div class="service-details max-h-0 opacity-0 overflow-hidden transition-all duration-700 ease-in-out">
+                        <div class="pt-5 mt-4 border-t border-border-color/30 flex flex-col gap-4">
+                            <p class="font-sans text-[12.5px] text-text-main font-light leading-relaxed">
+                                Te acompaño a definir los fundamentos de tu marca personal y a construir una presencia digital que comunique con claridad quién eres, qué haces y el valor que puedes ofrecer.
+                            </p>
+                            <p class="font-sans text-[12.5px] text-text-main font-light leading-relaxed">
+                                Trabajaremos desde la esencia y propuesta de valor de tu marca hasta la manera en que presentas tus servicios en los entornos digitales.
+                            </p>
+                            
+                            <div>
+                                <p class="font-sans text-[11px] text-brand-cream uppercase tracking-wider mb-3">Servicios:</p>
+                                <ul class="flex flex-col gap-2 font-sans text-[12px] text-text-light font-light text-left">
+                                    <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Estrategia de Marca Personal desde Cero.</li>
+                                    <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Optimización Estratégica de Instagram.</li>
+                                    <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Presentación Estratégica de Marca y Servicios.</li>
+                                    <li><i class="fa-solid fa-check text-brand-cream mr-2 text-[10px]"></i>Desarrollo de Página Web One Page.</li>
+                                </ul>
+                            </div>
+                            
+                            <p class="font-sans text-[11px] text-brand-cream/90 italic font-light bg-brand-cream/10 p-3 rounded-xl border border-brand-cream/20">
+                                <strong class="not-italic text-brand-cream">Ideal para:</strong> emprendedoras y profesionales que desean comenzar a construir su marca personal o fortalecer la manera en que se presentan digitalmente.
+                            </p>
+                            
+                            <a href="https://wa.me/TUNUMERO" target="_blank" class="mt-2 w-max px-6 py-3 rounded-full bg-brand-cream text-brand-dark text-[10px] uppercase font-bold tracking-wider hover:bg-white transition-colors flex items-center gap-2">
+                                Quiero construir mi marca
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <span class="btn-conocer-mas inline-flex items-center gap-1.5 text-[9px] uppercase tracking-wider border border-brand-cream/60 px-4 py-1.5 rounded-full text-brand-cream bg-brand-dark/50 backdrop-blur-sm transition-colors">
+                            Conocer más <i class="fa-solid fa-chevron-down text-[8px] transition-transform duration-300 icon-arrow"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+             <div class="toggle-service no-tap-highlight group relative w-full rounded-3xl overflow-hidden shadow-md block border border-border-color cursor-pointer transition-all">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
+                <div class="absolute inset-0 bg-brand-dark/85 group-hover:bg-brand-dark/80 transition-colors duration-500"></div>
+                <div class="relative h-full p-6 flex flex-col justify-between z-10">
+                    
+                    <div class="pb-2">
+                        <p class="font-sans text-[10px] text-brand-cream tracking-[0.2em] mb-1">02</p>
+                        <h3 class="font-serif text-2xl italic text-text-main leading-tight mb-2">Dirección Creativa y Producción Visual</h3>
+                        <p class="font-sans text-[12px] text-text-light max-w-[90%] leading-snug font-l
