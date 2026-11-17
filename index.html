@@ -202,8 +202,8 @@
                     </div>
 
                     <div class="flex gap-4 font-sans text-[10px] text-text-light underline decoration-border-color hover:text-brand-cream transition-colors">
-                        <a href="terminos.html">Términos y Condiciones</a>
-                        <a href="politicas.html">Políticas de Privacidad</a>
+                        <a href="terminosycondiciones.html">Términos y Condiciones</a>
+                        <a href="politica-privacidad.html">Política de Privacidad</a>
                     </div>
                 </div>
             </footer>
@@ -219,8 +219,29 @@
 
     </main>
 
+    <!-- BANNER DE COOKIES -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-brand-dark border-t border-brand-cream/50 shadow-lg z-50 transform transition-transform duration-500" style="display: none;">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            
+            <div class="text-[13px] text-text-light text-center sm:text-left">
+                <p>
+                    Utilizo cookies para mejorar tu experiencia en la web y analizar el tráfico. Al continuar navegando, aceptas su uso. 
+                    <a href="politica-privacidad.html" class="text-brand-cream underline hover:text-text-main transition-colors ml-1">
+                        Leer Política de Privacidad
+                    </a>.
+                </p>
+            </div>
+
+            <button id="accept-cookies" class="whitespace-nowrap bg-brand-cream text-brand-dark px-6 py-2 rounded-full font-medium text-[13px] hover:bg-text-main transition-colors">
+                Aceptar
+            </button>
+
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // LÓGICA DEL BOTÓN VOLVER ARRIBA
             const scrollTopBtn = document.getElementById('scroll-top-btn');
             
             window.addEventListener('scroll', () => {
@@ -238,8 +259,25 @@
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             }
+
+            // LÓGICA DEL BANNER DE COOKIES
+            const banner = document.getElementById("cookie-banner");
+            const acceptBtn = document.getElementById("accept-cookies");
+
+            if (!localStorage.getItem("cookies_accepted")) {
+                banner.style.display = "block";
+            }
+
+            acceptBtn.addEventListener("click", function() {
+                localStorage.setItem("cookies_accepted", "true");
+                banner.classList.add("translate-y-full");
+                setTimeout(() => {
+                    banner.style.display = "none";
+                }, 500);
+            });
         });
     </script>
 
 </body>
-</html>
+                        </html>
+                        
