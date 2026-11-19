@@ -1,233 +1,352 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gisella Villarreal | Links</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-dark': '#151515',       
-                        'brand-cream': '#c9bb9e',      
-                        'text-main': '#FFFFFF',        
-                        'text-light': '#b0b0b0',       
-                        'border-color': 'rgba(255, 255, 255, 0.15)',
-                    },
-                    fontFamily: {
-                        'serif': ['"Playfair Display"', 'serif'],
-                        'sans': ['"Inter"', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        .no-tap-highlight { -webkit-tap-highlight-color: transparent; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurora Blush Co. — Luxury Bridal Hair & Makeup</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mahogany: '#462C27',
+            espresso: '#1A1311',
+            cream: '#F2ECE6',
+            blush: '#D8CFC8',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            script: ['"Alex Brush"', 'cursive'],
+            sans: ['"Montserrat"', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      background-color: #1A1311;
+      color: #F2ECE6;
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Fondo floral oscuro del Hero */
+    .hero-bg {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(18, 12, 10, 0.72) 0%,
+          rgba(18, 12, 10, 0.45) 45%,
+          rgba(18, 12, 10, 0.85) 100%
+        ),
+        url('https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=1800&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Fondo de la sección Process */
+    .process-bg {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(26, 22, 18, 0.45) 0%,
+          rgba(26, 22, 18, 0.58) 50%,
+          rgba(20, 16, 13, 0.78) 100%
+        ),
+        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80');
+      background-size: cover;
+      background-position: center top;
+    }
+
+    .nav-link {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      transition: opacity 0.25s ease;
+    }
+    .nav-link:hover {
+      opacity: 0.65;
+    }
+
+    .script-cta {
+      position: relative;
+      display: inline-block;
+    }
+    .script-cta::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 100%;
+      height: 1px;
+      background-color: rgba(242, 236, 230, 0.5);
+      transform: scaleX(0.85);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .script-cta:hover::after {
+      transform: scaleX(1);
+      background-color: rgba(242, 236, 230, 0.95);
+    }
+  </style>
 </head>
-<body class="bg-brand-dark antialiased text-text-main selection:bg-brand-cream selection:text-brand-dark">
+<body class="antialiased selection:bg-mahogany selection:text-cream">
 
-    <main class="max-w-[430px] mx-auto bg-brand-dark min-h-screen relative overflow-hidden shadow-2xl flex flex-col">
+  <!-- ==================== HERO + NAVEGACIÓN ==================== -->
+  <header id="home" class="hero-bg relative min-h-screen flex flex-col justify-between pb-24">
 
-        <!-- HEADER / HERO -->
-        <header id="inicio" class="relative w-full h-[70vh] min-h-[500px] flex flex-col">
-            
-            <div class="absolute inset-0 z-0 overflow-hidden bg-brand-dark">
-                <img src="1792874026013~2.jpg" 
-                     alt="Gisella Villarreal" 
-                     class="w-full h-full object-cover object-[center_15%] scale-[1.05]">
-            </div>
-            
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent z-10 h-[50%]"></div>
-
-            <div class="relative z-20 px-6 mt-auto flex flex-col items-center text-center w-full pb-6">
-                <h1 class="font-serif text-[3.5rem] md:text-6xl italic font-medium leading-[1.05] mb-2 text-text-main tracking-wide">
-                    Gisella<br>Villarreal
-                </h1>
-                <p class="font-sans text-[13px] tracking-[0.2em] uppercase text-brand-cream mb-4 font-medium">
-                    Social Media Branding
-                </p>
-                <p class="font-sans text-[13px] leading-relaxed text-text-light font-light max-w-[320px] mx-auto">
-                    Amo ayudar a marcas personales que desean mostrarse auténticas, tanto en su vida personal como en su camino profesional.
-                </p>
-            </div>
-        </header>
-
-        <!-- SECCIÓN: ENLACES BIOLINK -->
-        <section id="enlaces" class="px-5 pt-4 pb-12 flex flex-col gap-4 relative z-10">
-            
-            <!-- Botones 1 y 2: Sencillos en la misma línea -->
-            <div class="flex gap-3 w-full mb-2">
-                <a href="https://wa.me/TUNUMERO" target="_blank" class="no-tap-highlight flex-1 py-4 px-3 rounded-2xl border border-border-color bg-brand-dark/50 backdrop-blur-sm text-brand-cream text-[9px] uppercase tracking-wider font-semibold leading-snug text-center flex flex-col items-center justify-center gap-2 hover:border-brand-cream hover:bg-brand-cream hover:text-brand-dark transition-all">
-                    <i class="fa-regular fa-comments text-[14px]"></i>
-                    Hablemos de tu<br>Marca personal
-                </a>
-                <a href="https://wa.me/TUNUMERO" target="_blank" class="no-tap-highlight flex-1 py-4 px-3 rounded-2xl border border-border-color bg-brand-dark/50 backdrop-blur-sm text-brand-cream text-[9px] uppercase tracking-wider font-semibold leading-snug text-center flex flex-col items-center justify-center gap-2 hover:border-brand-cream hover:bg-brand-cream hover:text-brand-dark transition-all">
-                    <i class="fa-solid fa-camera-retro text-[14px]"></i>
-                    Reserva tu sesión<br>Fotográfica
-                </a>
-            </div>
-
-            <!-- Botón 3: Trabajos Destacados -->
-            <a href="#" class="no-tap-highlight group relative w-full h-[140px] rounded-[1.5rem] overflow-hidden shadow-md block border border-border-color transition-transform hover:scale-[1.02]">
-                <div class="absolute inset-y-0 right-0 w-[60%] bg-[url('https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-55% via-brand-dark/90 to-transparent"></div>
-                
-                <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/40 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
-                    <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
-                </div>
-
-                <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[80%]">
-                    <h3 class="font-serif text-[1.6rem] text-brand-cream leading-[1.1] mb-3">
-                        <span class="not-italic font-medium">Conoce mis</span><br>
-                        <span class="italic">trabajos destacados</span>
-                    </h3>
-                    <div class="flex items-center gap-2">
-                        <span class="text-[7.5px] uppercase tracking-[0.2em] text-text-light font-bold">Ver Portafolio</span>
-                        <div class="h-[1px] w-8 bg-border-color"></div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Botón 4: Comunidad Workstyle -->
-            <a href="#" class="no-tap-highlight group relative w-full h-[140px] rounded-[1.5rem] overflow-hidden shadow-md block border border-border-color transition-transform hover:scale-[1.02]">
-                <div class="absolute inset-y-0 right-0 w-[60%] bg-[url('1792874026013.jpg')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-55% via-brand-dark/90 to-transparent"></div>
-                
-                <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/40 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
-                    <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
-                </div>
-
-                <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[85%]">
-                    <h3 class="font-serif text-[1.6rem] text-brand-cream leading-[1.1] mb-3">
-                        <span class="not-italic font-medium">Carrete Workstyle</span><br>
-                        <span class="italic">Autoral</span>
-                    </h3>
-                    <div class="flex items-center gap-2">
-                        <span class="text-[7.5px] uppercase tracking-[0.2em] text-text-light font-bold">Únete a la Comunidad</span>
-                        <div class="h-[1px] w-8 bg-border-color"></div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Botón 5: Curso de Fotografía -->
-            <a href="#" class="no-tap-highlight group relative w-full h-[140px] rounded-[1.5rem] overflow-hidden shadow-md block border border-border-color transition-transform hover:scale-[1.02]">
-                <div class="absolute inset-y-0 right-0 w-[60%] bg-[url('https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-55% via-brand-dark/90 to-transparent"></div>
-                
-                <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/40 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
-                    <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
-                </div>
-
-                <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[80%]">
-                    <h3 class="font-serif text-[1.6rem] text-brand-cream leading-[1.1] mb-3">
-                        <span class="not-italic font-medium">Curso de</span><br>
-                        <span class="italic">Fotografía Workstyle</span>
-                    </h3>
-                    <div class="flex items-center gap-2">
-                        <span class="text-[7.5px] uppercase tracking-[0.2em] text-text-light font-bold">Ver Información</span>
-                        <div class="h-[1px] w-8 bg-border-color"></div>
-                    </div>
-                </div>
-            </a>
-            
-        </section>
-
-        <!-- SECCIÓN: SOBRE MÍ (ID: sobre-mi) -->
-        <section id="sobre-mi" class="px-6 py-10 bg-transparent mx-5 rounded-3xl mb-10 text-center border border-border-color">
-            <h2 class="font-serif text-3xl italic text-brand-cream mb-6">Sobre mí</h2>
-            
-            <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-6 border-[3px] border-brand-cream shadow-sm">
-                <img src="1792874026013~2.jpg" alt="Perfil de Gisella" class="w-full h-full object-cover">
-            </div>
-            
-            <p class="font-sans text-[14px] text-text-light font-light leading-relaxed mb-8 px-2">
-                Soy Gisella, estratega en Social Media Branding y Marketing de Contenidos. Mi propósito es transformar la esencia de tu marca en una presencia digital auténtica y coherente, a través de la estrategia, la comunicación y la creación de contenido visual, para fortalecer tu presencia en redes sociales, conectar con tu audiencia y comunicar el valor de lo que haces.
-            </p>
-            
-            <a href="https://wa.me/TUNUMERO" class="inline-block w-full max-w-[320px] mx-auto py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase">
-                Apoya mi camino creativo
-            </a>
-        </section>
-
-        <!-- SECCIÓN DE CONTACTO Y FOOTER -->
-        <footer class="px-8 pt-2 pb-12 text-center relative z-10 flex flex-col justify-between">
-            
-            <div class="mb-10 text-center">
-                <h2 class="font-serif text-2xl italic text-brand-cream mb-6">Contacto</h2>
-                
-                <div class="flex justify-center gap-5">
-                    <a href="https://wa.me/TUNUMERO" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                        <i class="fa-brands fa-whatsapp text-xl"></i>
-                    </a>
-                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                        <i class="fa-brands fa-instagram text-xl"></i>
-                    </a>
-                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                        <i class="fa-brands fa-linkedin-in text-xl"></i>
-                    </a>
-                    <a href="mailto:correo@tudominio.com" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                        <i class="fa-regular fa-envelope text-xl"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="pt-6 relative border-t border-border-color flex flex-col items-center gap-4">
-                <div class="text-center">
-                    <h4 class="font-serif text-[1.2rem] italic mb-1 text-text-main">Gisella Villarreal</h4>
-                    <p class="text-[9px] font-sans font-medium text-text-light tracking-widest uppercase leading-relaxed">
-                        © 2026 | Todos los derechos reservados
-                    </p>
-                </div>
-
-                <div class="flex gap-4 font-sans text-[10px] text-text-light underline decoration-border-color hover:text-brand-cream transition-colors">
-                    <a href="terminos.html">Términos y Condiciones</a>
-                    <a href="politicas.html">Políticas de Privacidad</a>
-                </div>
-            </div>
-        </footer>
-
-        <!-- BOTÓN FLOTANTE "VOLVER ARRIBA" -->
-        <div class="fixed bottom-8 inset-x-0 mx-auto max-w-[430px] px-6 z-40 flex justify-end pointer-events-none">
-            <button id="scroll-top-btn" class="pointer-events-auto w-10 h-10 rounded-full border border-brand-cream/40 bg-brand-dark/80 backdrop-blur-sm flex items-center justify-center text-brand-cream opacity-0 translate-y-4 transition-all duration-500 hover:bg-brand-cream hover:text-brand-dark shadow-lg" aria-label="Volver arriba">
-                <i class="fa-solid fa-angle-up text-sm"></i>
-            </button>
+    <!-- Barra de navegación -->
+    <nav class="w-full max-w-7xl mx-auto px-6 md:px-10 pt-7 pb-4">
+      <div class="flex items-center justify-between">
+        <!-- Enlaces Izquierda (Desktop) -->
+        <div class="hidden lg:flex items-center space-x-8 w-1/3">
+          <a href="#home" class="nav-link text-cream">Home</a>
+          <a href="#welcome" class="nav-link text-cream">Meet the Crew</a>
+          <a href="#process" class="nav-link text-cream">Wedding Pricing</a>
         </div>
 
-    </main>
+        <!-- Logo Central -->
+        <a href="#home" class="flex flex-col items-center text-center mx-auto lg:w-1/3 group">
+          <div class="flex items-baseline leading-none text-cream">
+            <span class="font-script text-4xl md:text-5xl -mr-1.5">A</span>
+            <span class="font-serif text-2xl md:text-3xl tracking-[0.22em] font-light uppercase">urora</span>
+          </div>
+          <span class="text-[0.52rem] tracking-[0.38em] uppercase text-blush mt-1">Blush Co.</span>
+        </a>
 
-    <!-- SCRIPT PARA SCROLL FLOTANTE -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const scrollTopBtn = document.getElementById('scroll-top-btn');
-            
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-                    scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
-                } else {
-                    scrollTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-                    scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
-                }
-            });
+        <!-- Enlaces Derecha (Desktop) -->
+        <div class="hidden lg:flex items-center justify-end space-x-8 w-1/3">
+          <a href="#contact" class="nav-link text-cream">Contact</a>
+          <a href="#join" class="nav-link text-cream">Join the Team</a>
+          <a href="#process" class="nav-link text-cream border-b border-cream/40 pb-0.5">Build Your Crew</a>
+        </div>
 
-            if(scrollTopBtn) {
-                scrollTopBtn.addEventListener('click', () => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
-        });
-    </script>
+        <!-- Botón Menú Móvil -->
+        <button id="menu-btn" aria-label="Abrir menú" class="lg:hidden absolute right-6 top-8 text-cream focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 7.5h16.5M3.75 12h16.5M3.75 16.5h16.5" />
+          </svg>
+        </button>
+      </div>
 
+      <!-- Menú Desplegable Móvil -->
+      <div id="mobile-menu" class="hidden lg:hidden mt-6 py-6 px-4 bg-espresso/95 backdrop-blur-md border border-cream/10 text-center space-y-5">
+        <a href="#home" class="block nav-link text-cream">Home</a>
+        <a href="#welcome" class="block nav-link text-cream">Meet the Crew</a>
+        <a href="#process" class="block nav-link text-cream">Wedding Pricing</a>
+        <a href="#contact" class="block nav-link text-cream">Contact</a>
+        <a href="#join" class="block nav-link text-cream">Join the Team</a>
+        <a href="#process" class="inline-block nav-link text-cream border-b border-cream/50 pb-1">Build Your Crew</a>
+      </div>
+    </nav>
+
+    <!-- Contenido Central del Hero -->
+    <div class="max-w-6xl mx-auto px-6 w-full my-auto pt-8 md:pt-12">
+      <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-8 md:gap-6">
+
+        <!-- Texto Izquierdo -->
+        <div class="md:col-span-4 text-center md:text-right md:pr-6 order-2 md:order-1">
+          <p class="font-serif text-sm md:text-base tracking-[0.28em] uppercase text-cream leading-loose">
+            Curate Your<br />Dream
+          </p>
+        </div>
+
+        <!-- Fotografía Editorial Central -->
+        <div class="md:col-span-4 order-1 md:order-2 flex justify-center">
+          <div class="w-64 sm:w-72 md:w-full max-w-[310px] aspect-[3/4] overflow-hidden shadow-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=800&q=80"
+              alt="Bride portrait"
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+        </div>
+
+        <!-- Texto Derecho -->
+        <div class="md:col-span-4 text-center md:text-left md:pl-6 order-3">
+          <p class="font-serif text-sm md:text-base tracking-[0.28em] uppercase text-cream leading-loose">
+            "I Do"<br />Beauty Crew
+          </p>
+        </div>
+      </div>
+
+      <!-- Párrafo descriptivo inferior + CTA en cursiva -->
+      <div class="max-w-xl mx-auto text-center mt-12 md:mt-16">
+        <p class="text-[0.65rem] md:text-[0.72rem] tracking-[0.24em] uppercase leading-[2.2] text-cream/90 font-light">
+          Luxury hair and makeup for brides who want to feel confident, cared for, and completely themselves.
+          We travel to you, so you can relax and enjoy every moment of your wedding morning.
+        </p>
+
+        <div class="mt-7">
+          <a href="#process" class="script-cta font-script text-3xl md:text-4xl text-cream tracking-wide">
+            build your crew
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== SECCIÓN WELCOME (BURDEOS / CHOCOLATE) ==================== -->
+  <section id="welcome" class="relative bg-mahogany text-cream pt-20 pb-24 md:pt-24 md:pb-28 px-6">
+
+    <!-- Sello / Monograma Ovalado Superpuesto -->
+    <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 z-20">
+      <div class="w-20 h-28 md:w-24 md:h-32 flex items-center justify-center">
+        <svg viewBox="0 0 100 135" class="w-full h-full drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
+          <!-- Fondo ovalado -->
+          <ellipse cx="50" cy="67.5" rx="44" ry="60" fill="#462C27" />
+          <!-- Borde exterior festoneado / punteado -->
+          <ellipse cx="50" cy="67.5" rx="44" ry="60" fill="none" stroke="#D8CFC8" stroke-width="2" stroke-dasharray="3 3" />
+          <!-- Borde interior fino -->
+          <ellipse cx="50" cy="67.5" rx="39" ry="54" fill="none" stroke="#D8CFC8" stroke-width="0.9" opacity="0.85" />
+          <!-- Monograma AB -->
+          <text x="48" y="77" text-anchor="middle" fill="#F2ECE6" font-family="'Alex Brush', cursive" font-size="34">A</text>
+          <text x="60" y="80" text-anchor="middle" fill="#F2ECE6" font-family="'Cormorant Garamond', serif" font-size="28" font-weight="300">B</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <!-- Título -->
+      <div class="text-center mb-12 md:mb-14">
+        <span class="block font-script text-3xl md:text-4xl text-blush -mb-2">welcome to</span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl tracking-[0.2em] uppercase font-light text-cream">
+          Aurora Blush
+        </h2>
+      </div>
+
+      <!-- Texto en Dos Columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 text-xs md:text-[0.8rem] leading-[1.95] text-cream/85 font-light max-w-3xl mx-auto">
+        <div class="space-y-5">
+          <p>
+            At Aurora Blush, we believe your wedding morning should feel calm, joyful, and effortless.
+            That's why we've built a team of talented artists across Iowa who are passionate about
+            creating timeless hair and makeup while delivering an exceptional experience from start to finish.
+          </p>
+          <p>
+            From your first inquiry to your final touch-up, we're here to make sure you feel supported,
+            confident, and absolutely beautiful.
+          </p>
+        </div>
+        <div class="space-y-5">
+          <p>
+            When you book Aurora Blush, you're getting more than a beauty service. You're getting a team
+            that's organized, communicative, and genuinely invested in making your wedding day run smoothly.
+          </p>
+          <p>
+            We arrive on time, work seamlessly with your planner and photographer, and create a relaxed
+            environment where you can simply soak in the moment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECCIÓN PROCESS (EDITORIAL ESCALONADA) ==================== -->
+  <section id="process" class="process-bg relative py-20 md:py-28 px-6 md:px-10">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Encabezado Process + Flecha -->
+      <div class="flex items-center space-x-6 mb-12 md:mb-10">
+        <h2 class="font-serif text-2xl md:text-3xl tracking-[0.12em] font-light text-cream">
+          Process
+        </h2>
+        <div class="flex items-center text-cream/75">
+          <span class="block w-16 md:w-24 h-px bg-cream/60"></span>
+          <span class="text-sm -ml-1">→</span>
+        </div>
+      </div>
+
+      <!-- Grilla Editorial de 4 Pasos Escalonados -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 items-start">
+
+        <!-- Paso 01 -->
+        <article class="lg:col-span-3 lg:mt-16">
+          <div class="aspect-square overflow-hidden shadow-xl bg-espresso/40 mb-5">
+            <img
+              src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80"
+              alt="Build your crew"
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <h3 class="text-[0.65rem] tracking-[0.22em] uppercase text-cream font-medium mb-3">
+            01. Build Your Crew
+          </h3>
+          <p class="text-[0.7rem] leading-[1.85] text-cream/85 font-light">
+            Browse our team of talented hair stylists and makeup artists to see who speaks to your style.
+            Every Aurora Blush artist has been carefully selected not only for their talent, but for the
+            exceptional experience they provide.
+          </p>
+        </article>
+
+        <!-- Paso 02 (Foto más grande y alta, estilo B&N / desaturado) -->
+        <article class="lg:col-span-4 lg:-mt-4">
+          <div class="aspect-[4/5] overflow-hidden shadow-2xl bg-espresso/40 mb-5">
+            <img
+              src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80"
+              alt="Tell us about your day"
+              class="w-full h-full object-cover grayscale contrast-95 hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <h3 class="text-[0.65rem] tracking-[0.22em] uppercase text-cream font-medium">
+            02. Tell Us About Your Day
+          </h3>
+        </article>
+
+        <!-- Paso 03 -->
+        <article class="lg:col-span-3 lg:mt-4">
+          <div class="aspect-[4/4] overflow-hidden shadow-xl bg-espresso/40 mb-5">
+            <img
+              src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=700&q=80"
+              alt="Receive your custom proposal"
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <h3 class="text-[0.65rem] tracking-[0.22em] uppercase text-cream font-medium">
+            03. Receive Your Custom Proposal
+          </h3>
+        </article>
+
+        <!-- Paso 04 -->
+        <article class="lg:col-span-2 lg:mt-20">
+          <div class="aspect-[4/5] overflow-hidden shadow-xl bg-espresso/40 mb-5">
+            <img
+              src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=600&q=80"
+              alt="Relax and enjoy your wedding morning"
+              class="w-full h-full object-cover grayscale hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <h3 class="text-[0.65rem] tracking-[0.22em] uppercase text-cream font-medium leading-relaxed">
+            04. Relax &amp; Enjoy Your Wedding Morning
+          </h3>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Script Menú Móvil -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
 </body>
-  </html>
+</html>
