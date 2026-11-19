@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aurora Blush Co. — Luxury Bridal Hair & Makeup</title>
+  <title>Gisella Villarreal — Diseño e Identidad Visual para Bodas</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,21 +45,21 @@
       background-image: linear-gradient(
           to bottom,
           rgba(18, 12, 10, 0.72) 0%,
-          rgba(18, 12, 10, 0.45) 45%,
-          rgba(18, 12, 10, 0.85) 100%
+          rgba(18, 12, 10, 0.48) 45%,
+          rgba(18, 12, 10, 0.88) 100%
         ),
         url('https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=1800&q=80');
       background-size: cover;
       background-position: center;
     }
 
-    /* Fondo de la sección Process */
+    /* Fondo de la sección Proceso */
     .process-bg {
       background-image: linear-gradient(
           to bottom,
-          rgba(26, 22, 18, 0.45) 0%,
-          rgba(26, 22, 18, 0.58) 50%,
-          rgba(20, 16, 13, 0.78) 100%
+          rgba(22, 16, 14, 0.72) 0%,
+          rgba(22, 16, 14, 0.78) 50%,
+          rgba(18, 13, 11, 0.90) 100%
         ),
         url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80');
       background-size: cover;
@@ -95,55 +95,106 @@
       transform: scaleX(1);
       background-color: rgba(242, 236, 230, 0.95);
     }
+
+    /* Transición menú pantalla completa */
+    #mobile-menu {
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+    #mobile-menu.menu-closed {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    #mobile-menu.menu-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
   </style>
 </head>
 <body class="antialiased selection:bg-mahogany selection:text-cream">
 
+  <!-- ==================== MENÚ PANTALLA COMPLETA (OVERLAY) ==================== -->
+  <div id="mobile-menu" class="menu-closed fixed inset-0 z-50 bg-espresso/98 backdrop-blur-md flex flex-col justify-between px-8 py-10">
+    <!-- Cabecera del overlay -->
+    <div class="flex items-center justify-between w-full max-w-6xl mx-auto">
+      <div class="flex flex-col items-start">
+        <div class="flex items-baseline leading-none text-cream">
+          <span class="font-script text-3xl -mr-1">G</span>
+          <span class="font-serif text-xl tracking-[0.22em] font-light uppercase">isella</span>
+        </div>
+        <span class="text-[0.48rem] tracking-[0.38em] uppercase text-blush mt-1">Villarreal</span>
+      </div>
+
+      <button id="close-menu-btn" aria-label="Cerrar menú" class="text-cream hover:opacity-65 transition-opacity p-2 focus:outline-none">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.25" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Enlaces centrales -->
+    <nav class="flex flex-col items-center justify-center space-y-8 my-auto text-center">
+      <a href="#inicio" class="mobile-nav-link font-serif text-3xl sm:text-4xl tracking-[0.2em] uppercase font-light text-cream hover:text-blush transition-colors">
+        Inicio
+      </a>
+      <a href="#bienvenida" class="mobile-nav-link font-serif text-3xl sm:text-4xl tracking-[0.2em] uppercase font-light text-cream hover:text-blush transition-colors">
+        Bienvenida
+      </a>
+      <a href="#proceso" class="mobile-nav-link font-serif text-3xl sm:text-4xl tracking-[0.2em] uppercase font-light text-cream hover:text-blush transition-colors">
+        Proceso
+      </a>
+      <a href="#contacto" class="mobile-nav-link font-serif text-3xl sm:text-4xl tracking-[0.2em] uppercase font-light text-cream hover:text-blush transition-colors">
+        Contacto
+      </a>
+
+      <div class="pt-4">
+        <a href="#contacto" class="mobile-nav-link script-cta font-script text-4xl text-blush">
+          Diseñemos tu boda
+        </a>
+      </div>
+    </nav>
+
+    <!-- Pie del overlay -->
+    <div class="text-center text-[0.6rem] tracking-[0.25em] uppercase text-blush/70">
+      Barranquilla, Colombia
+    </div>
+  </div>
+
   <!-- ==================== HERO + NAVEGACIÓN ==================== -->
-  <header id="home" class="hero-bg relative min-h-screen flex flex-col justify-between pb-24">
+  <header id="inicio" class="hero-bg relative min-h-screen flex flex-col justify-between pb-24">
 
     <!-- Barra de navegación -->
     <nav class="w-full max-w-7xl mx-auto px-6 md:px-10 pt-7 pb-4">
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between relative">
         <!-- Enlaces Izquierda (Desktop) -->
         <div class="hidden lg:flex items-center space-x-8 w-1/3">
-          <a href="#home" class="nav-link text-cream">Home</a>
-          <a href="#welcome" class="nav-link text-cream">Meet the Crew</a>
-          <a href="#process" class="nav-link text-cream">Wedding Pricing</a>
+          <a href="#inicio" class="nav-link text-cream">Inicio</a>
+          <a href="#bienvenida" class="nav-link text-cream">Sobre mí</a>
+          <a href="#proceso" class="nav-link text-cream">Proceso</a>
         </div>
 
         <!-- Logo Central -->
-        <a href="#home" class="flex flex-col items-center text-center mx-auto lg:w-1/3 group">
+        <a href="#inicio" class="flex flex-col items-center text-center mx-auto lg:w-1/3 group">
           <div class="flex items-baseline leading-none text-cream">
-            <span class="font-script text-4xl md:text-5xl -mr-1.5">A</span>
-            <span class="font-serif text-2xl md:text-3xl tracking-[0.22em] font-light uppercase">urora</span>
+            <span class="font-script text-4xl md:text-5xl -mr-1">G</span>
+            <span class="font-serif text-2xl md:text-3xl tracking-[0.22em] font-light uppercase">isella</span>
           </div>
-          <span class="text-[0.52rem] tracking-[0.38em] uppercase text-blush mt-1">Blush Co.</span>
+          <span class="text-[0.52rem] tracking-[0.38em] uppercase text-blush mt-1">Villarreal</span>
         </a>
 
         <!-- Enlaces Derecha (Desktop) -->
         <div class="hidden lg:flex items-center justify-end space-x-8 w-1/3">
-          <a href="#contact" class="nav-link text-cream">Contact</a>
-          <a href="#join" class="nav-link text-cream">Join the Team</a>
-          <a href="#process" class="nav-link text-cream border-b border-cream/40 pb-0.5">Build Your Crew</a>
+          <a href="#contacto" class="nav-link text-cream">Contacto</a>
+          <a href="#contacto" class="nav-link text-cream border-b border-cream/40 pb-0.5">Diseñemos tu boda</a>
         </div>
 
-        <!-- Botón Menú Móvil -->
-        <button id="menu-btn" aria-label="Abrir menú" class="lg:hidden absolute right-6 top-8 text-cream focus:outline-none">
+        <!-- Botón Menú (abre overlay pantalla completa) -->
+        <button id="menu-btn" aria-label="Abrir menú" class="lg:hidden absolute right-0 top-1/2 -translate-y-1/2 text-cream hover:opacity-70 transition-opacity p-2 focus:outline-none">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 7.5h16.5M3.75 12h16.5M3.75 16.5h16.5" />
           </svg>
         </button>
-      </div>
-
-      <!-- Menú Desplegable Móvil -->
-      <div id="mobile-menu" class="hidden lg:hidden mt-6 py-6 px-4 bg-espresso/95 backdrop-blur-md border border-cream/10 text-center space-y-5">
-        <a href="#home" class="block nav-link text-cream">Home</a>
-        <a href="#welcome" class="block nav-link text-cream">Meet the Crew</a>
-        <a href="#process" class="block nav-link text-cream">Wedding Pricing</a>
-        <a href="#contact" class="block nav-link text-cream">Contact</a>
-        <a href="#join" class="block nav-link text-cream">Join the Team</a>
-        <a href="#process" class="inline-block nav-link text-cream border-b border-cream/50 pb-1">Build Your Crew</a>
       </div>
     </nav>
 
@@ -154,7 +205,7 @@
         <!-- Texto Izquierdo -->
         <div class="md:col-span-4 text-center md:text-right md:pr-6 order-2 md:order-1">
           <p class="font-serif text-sm md:text-base tracking-[0.28em] uppercase text-cream leading-loose">
-            Curate Your<br />Dream
+            Diseña tu<br />Gran día
           </p>
         </div>
 
@@ -163,7 +214,7 @@
           <div class="w-64 sm:w-72 md:w-full max-w-[310px] aspect-[3/4] overflow-hidden shadow-2xl">
             <img
               src="https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=800&q=80"
-              alt="Bride portrait"
+              alt="Identidad visual para bodas"
               class="w-full h-full object-cover object-center"
             />
           </div>
@@ -172,43 +223,42 @@
         <!-- Texto Derecho -->
         <div class="md:col-span-4 text-center md:text-left md:pl-6 order-3">
           <p class="font-serif text-sm md:text-base tracking-[0.28em] uppercase text-cream leading-loose">
-            "I Do"<br />Beauty Crew
+            Identidad Visual<br />Para el «sí, quiero»
           </p>
         </div>
       </div>
 
       <!-- Párrafo descriptivo inferior + CTA en cursiva -->
       <div class="max-w-xl mx-auto text-center mt-12 md:mt-16">
-        <p class="text-[0.65rem] md:text-[0.72rem] tracking-[0.24em] uppercase leading-[2.2] text-cream/90 font-light">
-          Luxury hair and makeup for brides who want to feel confident, cared for, and completely themselves.
-          We travel to you, so you can relax and enjoy every moment of your wedding morning.
+        <p class="text-[0.68rem] md:text-[0.74rem] tracking-[0.2em] uppercase leading-[2.2] text-cream/90 font-light">
+          Creo identidades visuales que reflejan la esencia de cada pareja, cuidando cada detalle para transformar sus ideas en una celebración con personalidad propia.
         </p>
 
-        <div class="mt-7">
-          <a href="#process" class="script-cta font-script text-3xl md:text-4xl text-cream tracking-wide">
-            build your crew
+        <p class="text-[0.62rem] md:text-[0.68rem] tracking-[0.28em] uppercase text-blush mt-5 font-light">
+          Monogramas &middot; Papelería &middot; Invitaciones web
+        </p>
+
+        <div class="mt-8">
+          <a href="#contacto" class="script-cta font-script text-3xl md:text-4xl text-cream tracking-wide">
+            Diseñemos tu boda
           </a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- ==================== SECCIÓN WELCOME (BURDEOS / CHOCOLATE) ==================== -->
-  <section id="welcome" class="relative bg-mahogany text-cream pt-20 pb-24 md:pt-24 md:pb-28 px-6">
+  <!-- ==================== SECCIÓN BIENVENIDA (BURDEOS / CHOCOLATE) ==================== -->
+  <section id="bienvenida" class="relative bg-mahogany text-cream pt-20 pb-24 md:pt-24 md:pb-28 px-6">
 
-    <!-- Sello / Monograma Ovalado Superpuesto -->
+    <!-- Sello / Monograma Ovalado Superpuesto (GV) -->
     <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 z-20">
       <div class="w-20 h-28 md:w-24 md:h-32 flex items-center justify-center">
         <svg viewBox="0 0 100 135" class="w-full h-full drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
-          <!-- Fondo ovalado -->
           <ellipse cx="50" cy="67.5" rx="44" ry="60" fill="#462C27" />
-          <!-- Borde exterior festoneado / punteado -->
           <ellipse cx="50" cy="67.5" rx="44" ry="60" fill="none" stroke="#D8CFC8" stroke-width="2" stroke-dasharray="3 3" />
-          <!-- Borde interior fino -->
           <ellipse cx="50" cy="67.5" rx="39" ry="54" fill="none" stroke="#D8CFC8" stroke-width="0.9" opacity="0.85" />
-          <!-- Monograma AB -->
-          <text x="48" y="77" text-anchor="middle" fill="#F2ECE6" font-family="'Alex Brush', cursive" font-size="34">A</text>
-          <text x="60" y="80" text-anchor="middle" fill="#F2ECE6" font-family="'Cormorant Garamond', serif" font-size="28" font-weight="300">B</text>
+          <text x="44" y="77" text-anchor="middle" fill="#F2ECE6" font-family="'Alex Brush', cursive" font-size="34">G</text>
+          <text x="61" y="80" text-anchor="middle" fill="#F2ECE6" font-family="'Cormorant Garamond', serif" font-size="28" font-weight="300">V</text>
         </svg>
       </div>
     </div>
@@ -216,136 +266,244 @@
     <div class="max-w-4xl mx-auto">
       <!-- Título -->
       <div class="text-center mb-12 md:mb-14">
-        <span class="block font-script text-3xl md:text-4xl text-blush -mb-2">welcome to</span>
+        <span class="block font-script text-3xl md:text-4xl text-blush -mb-2">Bienvenido a</span>
         <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl tracking-[0.2em] uppercase font-light text-cream">
-          Aurora Blush
+          Gisella Villarreal
         </h2>
       </div>
 
       <!-- Texto en Dos Columnas -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 text-xs md:text-[0.8rem] leading-[1.95] text-cream/85 font-light max-w-3xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 text-xs md:text-[0.82rem] leading-[2] text-cream/85 font-light max-w-3xl mx-auto">
         <div class="space-y-5">
           <p>
-            At Aurora Blush, we believe your wedding morning should feel calm, joyful, and effortless.
-            That's why we've built a team of talented artists across Iowa who are passionate about
-            creating timeless hair and makeup while delivering an exceptional experience from start to finish.
+            Creo que cada historia de amor tiene una esencia propia y merece reflejarse en cada detalle de tu celebración.
           </p>
           <p>
-            From your first inquiry to your final touch-up, we're here to make sure you feel supported,
-            confident, and absolutely beautiful.
+            Por eso, acompaño a las parejas en la creación de una identidad visual que represente su historia, sus gustos y la atmósfera que desean para su gran día.
+          </p>
+          <p>
+            Desde el primer encuentro hasta la entrega final, quiero que disfruten un proceso cercano, organizado y lleno de inspiración, donde sus ideas encuentren una dirección creativa y cada decisión tenga un propósito.
           </p>
         </div>
         <div class="space-y-5">
           <p>
-            When you book Aurora Blush, you're getting more than a beauty service. You're getting a team
-            that's organized, communicative, and genuinely invested in making your wedding day run smoothly.
+            Mi trabajo va más allá de diseñar piezas bonitas. Se trata de construir un universo visual coherente, cuidando los detalles que harán que su boda se sienta auténtica y especial.
           </p>
           <p>
-            We arrive on time, work seamlessly with your planner and photographer, and create a relaxed
-            environment where you can simply soak in the moment.
+            Monogramas, papelería, invitaciones web y creación de contenido: cada elemento es una oportunidad para contar su historia de una manera única.
+          </p>
+          <p>
+            Será un gusto formar parte de un día tan especial para ustedes. ♡
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== SECCIÓN PROCESS (EDITORIAL ESCALONADA) ==================== -->
-  <section id="process" class="process-bg relative py-20 md:py-28 px-6 md:px-10">
-    <div class="max-w-7xl mx-auto">
+  <!-- ==================== SECCIÓN PROCESO (SIN FOTOS, ESTILO EDITORIAL) ==================== -->
+  <section id="proceso" class="process-bg relative py-20 md:py-28 px-6 md:px-10">
+    <div class="max-w-6xl mx-auto">
 
-      <!-- Encabezado Process + Flecha -->
-      <div class="flex items-center space-x-6 mb-12 md:mb-10">
-        <h2 class="font-serif text-2xl md:text-3xl tracking-[0.12em] font-light text-cream">
-          Process
-        </h2>
-        <div class="flex items-center text-cream/75">
-          <span class="block w-16 md:w-24 h-px bg-cream/60"></span>
-          <span class="text-sm -ml-1">→</span>
+      <!-- Encabezado Proceso -->
+      <div class="mb-14 md:mb-16 max-w-2xl">
+        <div class="flex items-center space-x-6 mb-4">
+          <h2 class="font-serif text-2xl md:text-4xl tracking-[0.22em] uppercase font-light text-cream">
+            Proceso
+          </h2>
+          <div class="flex items-center text-cream/75">
+            <span class="block w-16 md:w-24 h-px bg-cream/60"></span>
+            <span class="text-sm -ml-1">→</span>
+          </div>
         </div>
+        <p class="font-serif italic text-lg md:text-xl text-blush font-light tracking-wide">
+          De una primera idea a una identidad llena de significado.
+        </p>
       </div>
 
-      <!-- Grilla Editorial de 4 Pasos Escalonados -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 items-start">
+      <!-- 5 Pasos del Proceso -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
 
         <!-- Paso 01 -->
-        <article class="lg:col-span-3 lg:mt-16">
-          <div class="aspect-square overflow-hidden shadow-xl bg-espresso/40 mb-5">
-            <img
-              src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80"
-              alt="Build your crew"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-            />
-          </div>
-          <h3 class="text-[0.65rem] tracking-[0.22em] uppercase text-cream font-medium mb-3">
-            01. Build Your Crew
+        <article class="border-t border-cream/25 pt-6">
+          <span class="block font-serif text-3xl text-blush/90 font-light mb-2">01</span>
+          <h3 class="text-[0.72rem] tracking-[0.22em] uppercase text-cream font-medium mb-4">
+            Nos conocemos
           </h3>
-          <p class="text-[0.7rem] leading-[1.85] text-cream/85 font-light">
-            Browse our team of talented hair stylists and makeup artists to see who speaks to your style.
-            Every Aurora Blush artist has been carefully selected not only for their talent, but for the
-            exceptional experience they provide.
+          <p class="text-xs md:text-[0.78rem] leading-[1.95] text-cream/85 font-light">
+            Todo comienza con una conversación. Quiero conocer su historia, sus ideas, sus gustos y aquello que imaginan para su boda. Este primer acercamiento nos ayudará a descubrir la esencia de lo que construiremos juntas.
           </p>
         </article>
 
-        <!-- Paso 02 (Foto más grande y alta, estilo B&N / desaturado) -->
-        <article class="lg:col-span-4 lg:-mt-4">
-          <div class="aspect-[4/5] overflow-hidden shadow-2xl bg-espresso/40 mb-5">
-            <img
-              src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80"
-              alt="Tell us about your day"
-              class="w-full h-full object-cover grayscale contrast-95 hover:scale-105 transition-transform duration-700"
-            />
-          </div>
-          <h3 class="text-[0.65rem] tracking-[0.22em] uppercase text-cream font-medium">
-            02. Tell Us About Your Day
+        <!-- Paso 02 -->
+        <article class="border-t border-cream/25 pt-6">
+          <span class="block font-serif text-3xl text-blush/90 font-light mb-2">02</span>
+          <h3 class="text-[0.72rem] tracking-[0.22em] uppercase text-cream font-medium mb-4">
+            Definimos el rumbo creativo
           </h3>
+          <p class="text-xs md:text-[0.78rem] leading-[1.95] text-cream/85 font-light">
+            A partir de sus respuestas, preparo una dirección creativa que reúne inspiración, colores, tipografías y referencias visuales. Así comenzamos a darle personalidad y coherencia a su celebración.
+          </p>
         </article>
 
         <!-- Paso 03 -->
-        <article class="lg:col-span-3 lg:mt-4">
-          <div class="aspect-[4/4] overflow-hidden shadow-xl bg-espresso/40 mb-5">
-            <img
-              src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=700&q=80"
-              alt="Receive your custom proposal"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-            />
-          </div>
-          <h3 class="text-[0.65rem] tracking-[0.22em] uppercase text-cream font-medium">
-            03. Receive Your Custom Proposal
+        <article class="border-t border-cream/25 pt-6">
+          <span class="block font-serif text-3xl text-blush/90 font-light mb-2">03</span>
+          <h3 class="text-[0.72rem] tracking-[0.22em] uppercase text-cream font-medium mb-4">
+            Diseñamos su identidad
           </h3>
+          <p class="text-xs md:text-[0.78rem] leading-[1.95] text-cream/85 font-light">
+            Es momento de transformar las ideas en diseño. Desarrollo los elementos visuales de su colección, cuidando cada composición y detalle para que todo refleje la esencia de su historia.
+          </p>
         </article>
 
         <!-- Paso 04 -->
-        <article class="lg:col-span-2 lg:mt-20">
-          <div class="aspect-[4/5] overflow-hidden shadow-xl bg-espresso/40 mb-5">
-            <img
-              src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=600&q=80"
-              alt="Relax and enjoy your wedding morning"
-              class="w-full h-full object-cover grayscale hover:scale-105 transition-transform duration-700"
-            />
-          </div>
-          <h3 class="text-[0.65rem] tracking-[0.22em] uppercase text-cream font-medium leading-relaxed">
-            04. Relax &amp; Enjoy Your Wedding Morning
+        <article class="border-t border-cream/25 pt-6">
+          <span class="block font-serif text-3xl text-blush/90 font-light mb-2">04</span>
+          <h3 class="text-[0.72rem] tracking-[0.22em] uppercase text-cream font-medium mb-4">
+            Damos forma a cada detalle
           </h3>
+          <p class="text-xs md:text-[0.78rem] leading-[1.95] text-cream/85 font-light">
+            Revisamos la propuesta y realizamos los ajustes contemplados en la colección elegida. Cada elemento se prepara cuidadosamente para mantener una identidad visual armoniosa.
+          </p>
+        </article>
+
+        <!-- Paso 05 -->
+        <article class="border-t border-cream/25 pt-6 md:col-span-2 lg:col-span-2">
+          <span class="block font-serif text-3xl text-blush/90 font-light mb-2">05</span>
+          <h3 class="text-[0.72rem] tracking-[0.22em] uppercase text-cream font-medium mb-4">
+            Su historia está lista para compartirse
+          </h3>
+          <p class="text-xs md:text-[0.78rem] leading-[1.95] text-cream/85 font-light max-w-xl">
+            Finalmente, reciben sus archivos y piezas correspondientes a la colección contratada, listos para acompañar y dar personalidad a su gran día.
+          </p>
         </article>
 
       </div>
     </div>
   </section>
 
-  <!-- Script Menú Móvil -->
+  <!-- ==================== SECCIÓN CONTACTO ==================== -->
+  <section id="contacto" class="bg-mahogany text-cream py-20 md:py-24 px-6 border-t border-cream/10">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-3xl md:text-4xl tracking-[0.22em] uppercase font-light text-cream mb-10">
+        Contacto
+      </h2>
+
+      <!-- Íconos sociales y de contacto -->
+      <div class="flex items-center justify-center space-x-8 md:space-x-10">
+        <!-- WhatsApp -->
+        <a
+          href="https://wa.me/573042182321"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+          title="WhatsApp (+57 304 218 2321)"
+          class="w-12 h-12 rounded-full border border-cream/35 flex items-center justify-center text-cream hover:bg-cream hover:text-mahogany transition-all duration-300"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.52 3.48A11.86 11.86 0 0012.07 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.59 5.96L0 24l6.31-1.65a11.87 11.87 0 005.76 1.47h.01c6.57 0 11.91-5.34 11.91-11.91a11.83 11.83 0 00-3.47-8.43zm-8.45 18.33h-.01a9.87 9.87 0 01-5.04-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.84 9.84 0 01-1.51-5.27c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.13 1.03 6.99 2.9a9.82 9.82 0 012.9 7c0 5.45-4.44 9.89-9.89 9.89zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a
+          href="https://instagram.com/gisella.villarreal"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          title="Instagram (@gisella.villarreal)"
+          class="w-12 h-12 rounded-full border border-cream/35 flex items-center justify-center text-cream hover:bg-cream hover:text-mahogany transition-all duration-300"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </a>
+
+        <!-- Correo -->
+        <a
+          href="mailto:gisellasofiavillarreal@gmail.com"
+          aria-label="Correo electrónico"
+          title="gisellasofiavillarreal@gmail.com"
+          class="w-12 h-12 rounded-full border border-cream/35 flex items-center justify-center text-cream hover:bg-cream hover:text-mahogany transition-all duration-300"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+            <rect width="20" height="16" x="2" y="4" rx="2" />
+            <path d="M22 6l-10 7L2 6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PIE DE PÁGINA ==================== -->
+  <footer class="bg-espresso text-cream/85 py-14 px-6 border-t border-cream/10">
+    <div class="max-w-4xl mx-auto text-center space-y-2">
+      <p class="font-serif text-xl tracking-[0.18em] uppercase text-cream font-light">
+        Gisella Villarreal
+      </p>
+      <p class="text-[0.68rem] tracking-[0.22em] uppercase text-blush/80 font-light">
+        Barranquilla, Colombia
+      </p>
+
+      <p class="text-[0.65rem] tracking-[0.16em] text-cream/60 pt-5 font-light">
+        &copy; 2026 | Todos los derechos reservados
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 pt-3 text-[0.62rem] tracking-[0.18em] uppercase text-blush/75">
+        <a
+          href="https://gisella-villarreal.pages.dev/terminosycondiciones"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-cream transition-colors underline underline-offset-4 decoration-cream/30"
+        >
+          Términos y Condiciones
+        </a>
+        <span class="hidden sm:inline text-cream/30">|</span>
+        <a
+          href="https://gisella-villarreal.pages.dev/politicadeprivacidad"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-cream transition-colors underline underline-offset-4 decoration-cream/30"
+        >
+          Política de Privacidad
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Menú Pantalla Completa -->
   <script>
     const menuBtn = document.getElementById('menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    function openMenu() {
+      mobileMenu.classList.remove('menu-closed');
+      mobileMenu.classList.add('menu-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('menu-open');
+      mobileMenu.classList.add('menu-closed');
+      document.body.style.overflow = '';
+    }
+
+    menuBtn.addEventListener('click', openMenu);
+    closeMenuBtn.addEventListener('click', closeMenu);
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
     });
 
-    // Cerrar menú al hacer clic en un enlace
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
+    // Cerrar con tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('menu-open')) {
+        closeMenu();
+      }
     });
   </script>
 </body>
