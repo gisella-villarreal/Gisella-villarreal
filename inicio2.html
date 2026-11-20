@@ -1,510 +1,229 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gisella Villarreal — Diseño e Identidad Visual para Bodas</title>
+  <title>Gisella Villarreal — Hero Editorial</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            mahogany: '#462C27',
-            espresso: '#1A1311',
-            cream: '#F2ECE6',
-            blush: '#D8CFC8',
-          },
-          fontFamily: {
-            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-            script: ['"Alex Brush"', 'cursive'],
-            sans: ['"Montserrat"', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
 
   <style>
+    :root {
+      --paper-bg: #EAE6DF;
+      --ink-color: #2B2825;
+    }
+
     body {
-      background-color: #1A1311;
-      color: #F2ECE6;
-      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background-color: #1A1918;
       overflow-x: hidden;
     }
 
-    /* Fondo floral oscuro del Hero */
-    .hero-bg {
-      background-image: linear-gradient(
-          to bottom,
-          rgba(18, 12, 10, 0.72) 0%,
-          rgba(18, 12, 10, 0.48) 45%,
-          rgba(18, 12, 10, 0.88) 100%
-        ),
-        url('https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=1800&q=80');
+    /* Fondo exterior difuminado en blanco y negro */
+    .hero-backdrop {
+      background-image:
+        linear-gradient(rgba(18, 17, 16, 0.25), rgba(18, 17, 16, 0.38)),
+        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
       background-position: center;
+      filter: grayscale(100%) blur(6px) contrast(1.08);
+      transform: scale(1.08);
     }
 
-    /* Fondo de la sección Proceso */
-    .process-bg {
-      background-image: linear-gradient(
-          to bottom,
-          rgba(22, 16, 14, 0.72) 0%,
-          rgba(22, 16, 14, 0.78) 50%,
-          rgba(18, 13, 11, 0.90) 100%
-        ),
-        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80');
-      background-size: cover;
-      background-position: center top;
+    /* Tarjeta estilo papel algodón */
+    .paper-card {
+      background-color: var(--paper-bg);
+      box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        inset 0 0 60px rgba(196, 188, 176, 0.35);
     }
 
-    .nav-link {
-      font-size: 0.65rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      transition: opacity 0.25s ease;
-    }
-    .nav-link:hover {
-      opacity: 0.65;
+    /* Textura sutil de papel */
+    .paper-grain {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
     }
 
-    .script-cta {
-      position: relative;
-      display: inline-block;
-    }
-    .script-cta::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 2px;
-      width: 100%;
-      height: 1px;
-      background-color: rgba(242, 236, 230, 0.5);
-      transform: scaleX(0.85);
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-    .script-cta:hover::after {
-      transform: scaleX(1);
-      background-color: rgba(242, 236, 230, 0.95);
+    /* Sombra floral suave sobre el papel */
+    .floral-shadow {
+      background:
+        radial-gradient(ellipse at 12% 16%, rgba(120, 112, 102, 0.14) 0%, transparent 52%),
+        radial-gradient(ellipse at 85% 12%, rgba(110, 102, 92, 0.13) 0%, transparent 48%),
+        radial-gradient(ellipse at 88% 84%, rgba(120, 112, 102, 0.08) 0%, transparent 45%);
     }
 
-    /* Transición menú pantalla completa */
-    #mobile-menu {
-      transition: opacity 0.35s ease, visibility 0.35s ease;
+    /* Tipografía editorial */
+    .brand-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      color: var(--ink-color);
     }
-    #mobile-menu.menu-closed {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
+
+    .brand-script {
+      font-family: 'Pinyon Script', cursive;
+      color: var(--ink-color);
     }
-    #mobile-menu.menu-open {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
+
+    /* Fotografía ovalada suave en B&N */
+    .oval-photo-wrapper {
+      border-radius: 50%;
+      box-shadow:
+        inset 0 4px 14px rgba(0, 0, 0, 0.18),
+        0 1px 0 rgba(255, 255, 255, 0.85);
+    }
+
+    .oval-photo {
+      filter: grayscale(100%) contrast(0.92) brightness(1.03);
     }
   </style>
 </head>
-<body class="antialiased selection:bg-mahogany selection:text-cream">
+<body>
 
-  <!-- ==================== MENÚ PANTALLA COMPLETA (OVERLAY) ==================== -->
-  <div id="mobile-menu" class="menu-closed fixed inset-0 z-50 bg-espresso/98 backdrop-blur-md flex flex-col justify-between px-8 py-10">
-    <!-- Cabecera del overlay -->
-    <div class="flex items-center justify-between w-full max-w-6xl mx-auto">
-      <div class="flex flex-col items-start">
-        <div class="flex items-baseline leading-none text-cream">
-          <span class="font-script text-3xl -mr-1">G</span>
-          <span class="font-serif text-xl tracking-[0.22em] font-light uppercase">isella</span>
-        </div>
-        <span class="text-[0.48rem] tracking-[0.38em] uppercase text-blush mt-1">Villarreal</span>
-      </div>
+  <!-- ==================== HERO EDITORIAL ==================== -->
+  <section id="inicio" class="relative min-h-screen w-full flex items-center justify-center px-5 py-8 sm:px-10 sm:py-12 overflow-hidden">
 
-      <button id="close-menu-btn" aria-label="Cerrar menú" class="text-cream hover:opacity-65 transition-opacity p-2 focus:outline-none">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.25" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    <!-- Imagen de fondo difuminada -->
+    <div class="hero-backdrop absolute inset-0 z-0" aria-hidden="true"></div>
+
+    <!-- Tarjeta central de papel -->
+    <div class="paper-card relative z-10 w-full max-w-[540px] min-h-[78vh] sm:min-h-[82vh] flex flex-col items-center justify-center px-6 py-12 sm:px-12 sm:py-14 overflow-hidden">
+
+      <!-- Capas de textura y sombra orgánica -->
+      <div class="paper-grain absolute inset-0 pointer-events-none z-0"></div>
+      <div class="floral-shadow absolute inset-0 pointer-events-none z-0"></div>
+
+      <!-- Encabezado tipográfico: Gisella Villarreal -->
+      <header class="relative z-10 text-center mb-8 sm:mb-10 select-none">
+        <h1 class="relative inline-flex flex-col items-center leading-none">
+          <span class="brand-serif text-3xl sm:text-4xl md:text-[2.65rem] font-normal tracking-[0.06em] uppercase pr-10 sm:pr-14">
+            Gisella
+          </span>
+          <span class="brand-script text-4xl sm:text-5xl md:text-[3.35rem] font-normal -mt-3 sm:-mt-4 pl-14 sm:pl-20">
+            Villarreal
+          </span>
+        </h1>
+      </header>
+
+      <!-- Marco ovalado en relieve + Fotografía -->
+      <div class="relative z-10 w-[76%] max-w-[330px] aspect-[3/3.9] flex items-center justify-center my-2">
+
+        <!-- Marco ornamental SVG con efecto de papel en relieve (letterpress) -->
+        <svg
+          id="embossed-frame"
+          viewBox="0 0 420 530"
+          class="absolute -inset-[17%] w-[134%] h-[134%] pointer-events-none z-20"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <defs>
+            <!-- Filtro que simula relieve blanco sobre papel -->
+            <filter id="paper-emboss" x="-15%" y="-15%" width="130%" height="130%">
+              <feDropShadow dx="-1.2" dy="-1.2" stdDeviation="1" flood-color="#FFFFFF" flood-opacity="0.92" result="light" />
+              <feDropShadow dx="1.6" dy="1.8" stdDeviation="1.6" flood-color="#ACA498" flood-opacity="0.65" result="shadow" />
+              <feMerge>
+                <feMergeNode in="shadow" />
+                <feMergeNode in="light" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+
+          <!-- Grupo donde se dibujan las ondas barrocas en relieve -->
+          <g id="frame-ornaments" filter="url(#paper-emboss)"></g>
+
+          <!-- Aro interior liso en relieve -->
+          <ellipse
+            cx="210"
+            cy="265"
+            rx="156"
+            ry="205"
+            fill="none"
+            stroke="#EFECE6"
+            stroke-width="6"
+            filter="url(#paper-emboss)"
+          />
+          <ellipse
+            cx="210"
+            cy="265"
+            rx="149"
+            ry="198"
+            fill="none"
+            stroke="#DCD6CC"
+            stroke-width="1.2"
+          />
         </svg>
-      </button>
-    </div>
 
-    <!-- Enlaces centrales -->
-    <nav class="flex flex-col items-center justify-center space-y-8 my-auto text-center">
-      <a href="#inicio" class="mobile-nav-link font-serif text-3xl sm:text-4xl tracking-[0.2em] uppercase font-light text-cream hover:text-blush transition-colors">
-        Inicio
-      </a>
-      <a href="#bienvenida" class="mobile-nav-link font-serif text-3xl sm:text-4xl tracking-[0.2em] uppercase font-light text-cream hover:text-blush transition-colors">
-        Bienvenida
-      </a>
-      <a href="#proceso" class="mobile-nav-link font-serif text-3xl sm:text-4xl tracking-[0.2em] uppercase font-light text-cream hover:text-blush transition-colors">
-        Proceso
-      </a>
-      <a href="#contacto" class="mobile-nav-link font-serif text-3xl sm:text-4xl tracking-[0.2em] uppercase font-light text-cream hover:text-blush transition-colors">
-        Contacto
-      </a>
-
-      <div class="pt-4">
-        <a href="#contacto" class="mobile-nav-link script-cta font-script text-4xl text-blush">
-          Diseñemos tu boda
-        </a>
-      </div>
-    </nav>
-
-    <!-- Pie del overlay -->
-    <div class="text-center text-[0.6rem] tracking-[0.25em] uppercase text-blush/70">
-      Barranquilla, Colombia
-    </div>
-  </div>
-
-  <!-- ==================== HERO + NAVEGACIÓN ==================== -->
-  <header id="inicio" class="hero-bg relative min-h-screen flex flex-col justify-between pb-24">
-
-    <!-- Barra de navegación -->
-    <nav class="w-full max-w-7xl mx-auto px-6 md:px-10 pt-7 pb-4">
-      <div class="flex items-center justify-between relative">
-        <!-- Enlaces Izquierda (Desktop) -->
-        <div class="hidden lg:flex items-center space-x-8 w-1/3">
-          <a href="#inicio" class="nav-link text-cream">Inicio</a>
-          <a href="#bienvenida" class="nav-link text-cream">Sobre mí</a>
-          <a href="#proceso" class="nav-link text-cream">Proceso</a>
-        </div>
-
-        <!-- Logo Central -->
-        <a href="#inicio" class="flex flex-col items-center text-center mx-auto lg:w-1/3 group">
-          <div class="flex items-baseline leading-none text-cream">
-            <span class="font-script text-4xl md:text-5xl -mr-1">G</span>
-            <span class="font-serif text-2xl md:text-3xl tracking-[0.22em] font-light uppercase">isella</span>
-          </div>
-          <span class="text-[0.52rem] tracking-[0.38em] uppercase text-blush mt-1">Villarreal</span>
-        </a>
-
-        <!-- Enlaces Derecha (Desktop) -->
-        <div class="hidden lg:flex items-center justify-end space-x-8 w-1/3">
-          <a href="#contacto" class="nav-link text-cream">Contacto</a>
-          <a href="#contacto" class="nav-link text-cream border-b border-cream/40 pb-0.5">Diseñemos tu boda</a>
-        </div>
-
-        <!-- Botón Menú (abre overlay pantalla completa) -->
-        <button id="menu-btn" aria-label="Abrir menú" class="lg:hidden absolute right-0 top-1/2 -translate-y-1/2 text-cream hover:opacity-70 transition-opacity p-2 focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 7.5h16.5M3.75 12h16.5M3.75 16.5h16.5" />
-          </svg>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Contenido Central del Hero -->
-    <div class="max-w-6xl mx-auto px-6 w-full my-auto pt-8 md:pt-12">
-      <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-8 md:gap-6">
-
-        <!-- Texto Izquierdo -->
-        <div class="md:col-span-4 text-center md:text-right md:pr-6 order-2 md:order-1">
-          <p class="font-serif text-sm md:text-base tracking-[0.28em] uppercase text-cream leading-loose">
-            Diseña tu<br />Gran día
-          </p>
-        </div>
-
-        <!-- Fotografía Editorial Central -->
-        <div class="md:col-span-4 order-1 md:order-2 flex justify-center">
-          <div class="w-64 sm:w-72 md:w-full max-w-[310px] aspect-[3/4] overflow-hidden shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=800&q=80"
-              alt="Identidad visual para bodas"
-              class="w-full h-full object-cover object-center"
-            />
-          </div>
-        </div>
-
-        <!-- Texto Derecho -->
-        <div class="md:col-span-4 text-center md:text-left md:pl-6 order-3">
-          <p class="font-serif text-sm md:text-base tracking-[0.28em] uppercase text-cream leading-loose">
-            Identidad Visual<br />Para el «sí, quiero»
-          </p>
+        <!-- Retrato recortado en óvalo -->
+        <div class="oval-photo-wrapper relative z-10 w-full h-full overflow-hidden bg-[#D5CFC6]">
+          <img
+            src="https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=900&q=80"
+            alt="Gisella Villarreal — Identidad visual para bodas"
+            class="oval-photo w-full h-full object-cover object-center"
+          />
         </div>
       </div>
 
-      <!-- Párrafo descriptivo inferior + CTA en cursiva -->
-      <div class="max-w-xl mx-auto text-center mt-12 md:mt-16">
-        <p class="text-[0.68rem] md:text-[0.74rem] tracking-[0.2em] uppercase leading-[2.2] text-cream/90 font-light">
-          Creo identidades visuales que reflejan la esencia de cada pareja, cuidando cada detalle para transformar sus ideas en una celebración con personalidad propia.
-        </p>
-
-        <p class="text-[0.62rem] md:text-[0.68rem] tracking-[0.28em] uppercase text-blush mt-5 font-light">
-          Monogramas &middot; Papelería &middot; Invitaciones web
-        </p>
-
-        <div class="mt-8">
-          <a href="#contacto" class="script-cta font-script text-3xl md:text-4xl text-cream tracking-wide">
-            Diseñemos tu boda
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- ==================== SECCIÓN BIENVENIDA (BURDEOS / CHOCOLATE) ==================== -->
-  <section id="bienvenida" class="relative bg-mahogany text-cream pt-20 pb-24 md:pt-24 md:pb-28 px-6">
-
-    <!-- Sello / Monograma Ovalado Superpuesto (GV) -->
-    <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 z-20">
-      <div class="w-20 h-28 md:w-24 md:h-32 flex items-center justify-center">
-        <svg viewBox="0 0 100 135" class="w-full h-full drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="50" cy="67.5" rx="44" ry="60" fill="#462C27" />
-          <ellipse cx="50" cy="67.5" rx="44" ry="60" fill="none" stroke="#D8CFC8" stroke-width="2" stroke-dasharray="3 3" />
-          <ellipse cx="50" cy="67.5" rx="39" ry="54" fill="none" stroke="#D8CFC8" stroke-width="0.9" opacity="0.85" />
-          <text x="44" y="77" text-anchor="middle" fill="#F2ECE6" font-family="'Alex Brush', cursive" font-size="34">G</text>
-          <text x="61" y="80" text-anchor="middle" fill="#F2ECE6" font-family="'Cormorant Garamond', serif" font-size="28" font-weight="300">V</text>
-        </svg>
-      </div>
-    </div>
-
-    <div class="max-w-4xl mx-auto">
-      <!-- Título -->
-      <div class="text-center mb-12 md:mb-14">
-        <span class="block font-script text-3xl md:text-4xl text-blush -mb-2">Bienvenido a</span>
-        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl tracking-[0.2em] uppercase font-light text-cream">
-          Gisella Villarreal
-        </h2>
-      </div>
-
-      <!-- Texto en Dos Columnas -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 text-xs md:text-[0.82rem] leading-[2] text-cream/85 font-light max-w-3xl mx-auto">
-        <div class="space-y-5">
-          <p>
-            Creo que cada historia de amor tiene una esencia propia y merece reflejarse en cada detalle de tu celebración.
-          </p>
-          <p>
-            Por eso, acompaño a las parejas en la creación de una identidad visual que represente su historia, sus gustos y la atmósfera que desean para su gran día.
-          </p>
-          <p>
-            Desde el primer encuentro hasta la entrega final, quiero que disfruten un proceso cercano, organizado y lleno de inspiración, donde sus ideas encuentren una dirección creativa y cada decisión tenga un propósito.
-          </p>
-        </div>
-        <div class="space-y-5">
-          <p>
-            Mi trabajo va más allá de diseñar piezas bonitas. Se trata de construir un universo visual coherente, cuidando los detalles que harán que su boda se sienta auténtica y especial.
-          </p>
-          <p>
-            Monogramas, papelería, invitaciones web y creación de contenido: cada elemento es una oportunidad para contar su historia de una manera única.
-          </p>
-          <p>
-            Será un gusto formar parte de un día tan especial para ustedes. ♡
-          </p>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- ==================== SECCIÓN PROCESO (SIN FOTOS, ESTILO EDITORIAL) ==================== -->
-  <section id="proceso" class="process-bg relative py-20 md:py-28 px-6 md:px-10">
-    <div class="max-w-6xl mx-auto">
-
-      <!-- Encabezado Proceso -->
-      <div class="mb-14 md:mb-16 max-w-2xl">
-        <div class="flex items-center space-x-6 mb-4">
-          <h2 class="font-serif text-2xl md:text-4xl tracking-[0.22em] uppercase font-light text-cream">
-            Proceso
-          </h2>
-          <div class="flex items-center text-cream/75">
-            <span class="block w-16 md:w-24 h-px bg-cream/60"></span>
-            <span class="text-sm -ml-1">→</span>
-          </div>
-        </div>
-        <p class="font-serif italic text-lg md:text-xl text-blush font-light tracking-wide">
-          De una primera idea a una identidad llena de significado.
-        </p>
-      </div>
-
-      <!-- 5 Pasos del Proceso -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
-
-        <!-- Paso 01 -->
-        <article class="border-t border-cream/25 pt-6">
-          <span class="block font-serif text-3xl text-blush/90 font-light mb-2">01</span>
-          <h3 class="text-[0.72rem] tracking-[0.22em] uppercase text-cream font-medium mb-4">
-            Nos conocemos
-          </h3>
-          <p class="text-xs md:text-[0.78rem] leading-[1.95] text-cream/85 font-light">
-            Todo comienza con una conversación. Quiero conocer su historia, sus ideas, sus gustos y aquello que imaginan para su boda. Este primer acercamiento nos ayudará a descubrir la esencia de lo que construiremos juntas.
-          </p>
-        </article>
-
-        <!-- Paso 02 -->
-        <article class="border-t border-cream/25 pt-6">
-          <span class="block font-serif text-3xl text-blush/90 font-light mb-2">02</span>
-          <h3 class="text-[0.72rem] tracking-[0.22em] uppercase text-cream font-medium mb-4">
-            Definimos el rumbo creativo
-          </h3>
-          <p class="text-xs md:text-[0.78rem] leading-[1.95] text-cream/85 font-light">
-            A partir de sus respuestas, preparo una dirección creativa que reúne inspiración, colores, tipografías y referencias visuales. Así comenzamos a darle personalidad y coherencia a su celebración.
-          </p>
-        </article>
-
-        <!-- Paso 03 -->
-        <article class="border-t border-cream/25 pt-6">
-          <span class="block font-serif text-3xl text-blush/90 font-light mb-2">03</span>
-          <h3 class="text-[0.72rem] tracking-[0.22em] uppercase text-cream font-medium mb-4">
-            Diseñamos su identidad
-          </h3>
-          <p class="text-xs md:text-[0.78rem] leading-[1.95] text-cream/85 font-light">
-            Es momento de transformar las ideas en diseño. Desarrollo los elementos visuales de su colección, cuidando cada composición y detalle para que todo refleje la esencia de su historia.
-          </p>
-        </article>
-
-        <!-- Paso 04 -->
-        <article class="border-t border-cream/25 pt-6">
-          <span class="block font-serif text-3xl text-blush/90 font-light mb-2">04</span>
-          <h3 class="text-[0.72rem] tracking-[0.22em] uppercase text-cream font-medium mb-4">
-            Damos forma a cada detalle
-          </h3>
-          <p class="text-xs md:text-[0.78rem] leading-[1.95] text-cream/85 font-light">
-            Revisamos la propuesta y realizamos los ajustes contemplados en la colección elegida. Cada elemento se prepara cuidadosamente para mantener una identidad visual armoniosa.
-          </p>
-        </article>
-
-        <!-- Paso 05 -->
-        <article class="border-t border-cream/25 pt-6 md:col-span-2 lg:col-span-2">
-          <span class="block font-serif text-3xl text-blush/90 font-light mb-2">05</span>
-          <h3 class="text-[0.72rem] tracking-[0.22em] uppercase text-cream font-medium mb-4">
-            Su historia está lista para compartirse
-          </h3>
-          <p class="text-xs md:text-[0.78rem] leading-[1.95] text-cream/85 font-light max-w-xl">
-            Finalmente, reciben sus archivos y piezas correspondientes a la colección contratada, listos para acompañar y dar personalidad a su gran día.
-          </p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== SECCIÓN CONTACTO ==================== -->
-  <section id="contacto" class="bg-mahogany text-cream py-20 md:py-24 px-6 border-t border-cream/10">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="font-serif text-3xl md:text-4xl tracking-[0.22em] uppercase font-light text-cream mb-10">
-        Contacto
-      </h2>
-
-      <!-- Íconos sociales y de contacto -->
-      <div class="flex items-center justify-center space-x-8 md:space-x-10">
-        <!-- WhatsApp -->
-        <a
-          href="https://wa.me/573042182321"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="WhatsApp"
-          title="WhatsApp (+57 304 218 2321)"
-          class="w-12 h-12 rounded-full border border-cream/35 flex items-center justify-center text-cream hover:bg-cream hover:text-mahogany transition-all duration-300"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M20.52 3.48A11.86 11.86 0 0012.07 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.59 5.96L0 24l6.31-1.65a11.87 11.87 0 005.76 1.47h.01c6.57 0 11.91-5.34 11.91-11.91a11.83 11.83 0 00-3.47-8.43zm-8.45 18.33h-.01a9.87 9.87 0 01-5.04-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.84 9.84 0 01-1.51-5.27c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.13 1.03 6.99 2.9a9.82 9.82 0 012.9 7c0 5.45-4.44 9.89-9.89 9.89zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/>
-          </svg>
-        </a>
-
-        <!-- Instagram -->
-        <a
-          href="https://instagram.com/gisella.villarreal"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-          title="Instagram (@gisella.villarreal)"
-          class="w-12 h-12 rounded-full border border-cream/35 flex items-center justify-center text-cream hover:bg-cream hover:text-mahogany transition-all duration-300"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
-            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2" stroke-linecap="round" />
-          </svg>
-        </a>
-
-        <!-- Correo -->
-        <a
-          href="mailto:gisellasofiavillarreal@gmail.com"
-          aria-label="Correo electrónico"
-          title="gisellasofiavillarreal@gmail.com"
-          class="w-12 h-12 rounded-full border border-cream/35 flex items-center justify-center text-cream hover:bg-cream hover:text-mahogany transition-all duration-300"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
-            <rect width="20" height="16" x="2" y="4" rx="2" />
-            <path d="M22 6l-10 7L2 6" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== PIE DE PÁGINA ==================== -->
-  <footer class="bg-espresso text-cream/85 py-14 px-6 border-t border-cream/10">
-    <div class="max-w-4xl mx-auto text-center space-y-2">
-      <p class="font-serif text-xl tracking-[0.18em] uppercase text-cream font-light">
-        Gisella Villarreal
-      </p>
-      <p class="text-[0.68rem] tracking-[0.22em] uppercase text-blush/80 font-light">
-        Barranquilla, Colombia
-      </p>
-
-      <p class="text-[0.65rem] tracking-[0.16em] text-cream/60 pt-5 font-light">
-        &copy; 2026 | Todos los derechos reservados
-      </p>
-
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 pt-3 text-[0.62rem] tracking-[0.18em] uppercase text-blush/75">
-        <a
-          href="https://gisella-villarreal.pages.dev/terminosycondiciones"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-cream transition-colors underline underline-offset-4 decoration-cream/30"
-        >
-          Términos y Condiciones
-        </a>
-        <span class="hidden sm:inline text-cream/30">|</span>
-        <a
-          href="https://gisella-villarreal.pages.dev/politicadeprivacidad"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-cream transition-colors underline underline-offset-4 decoration-cream/30"
-        >
-          Política de Privacidad
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Script Menú Pantalla Completa -->
+  <!-- Script que genera el borde ornamental simétrico en relieve -->
   <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const closeMenuBtn = document.getElementById('close-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    (function buildEmbossedOval() {
+      const container = document.getElementById('frame-ornaments');
+      const ns = 'http://www.w3.org/2000/svg';
+      const cx = 210;
+      const cy = 265;
+      const rx = 176;
+      const ry = 225;
+      const count = 28; // Número de motivos florales alrededor del óvalo
 
-    function openMenu() {
-      mobileMenu.classList.remove('menu-closed');
-      mobileMenu.classList.add('menu-open');
-      document.body.style.overflow = 'hidden';
-    }
+      for (let i = 0; i < count; i++) {
+        const angle = (i / count) * Math.PI * 2;
+        const x = cx + rx * Math.cos(angle);
+        const y = cy + ry * Math.sin(angle);
+        const deg = (angle * 180) / Math.PI + 90;
 
-    function closeMenu() {
-      mobileMenu.classList.remove('menu-open');
-      mobileMenu.classList.add('menu-closed');
-      document.body.style.overflow = '';
-    }
+        const g = document.createElementNS(ns, 'g');
+        g.setAttribute('transform', `translate(${x.toFixed(1)}, ${y.toFixed(1)}) rotate(${deg.toFixed(1)})`);
 
-    menuBtn.addEventListener('click', openMenu);
-    closeMenuBtn.addEventListener('click', closeMenu);
+        // Motivo de concha/pétalo estilo rococó en relieve
+        const petal = document.createElementNS(ns, 'path');
+        petal.setAttribute(
+          'd',
+          'M -18,6 C -20,-8 -10,-16 0,-18 C 10,-16 20,-8 18,6 C 12,12 -12,12 -18,6 Z'
+        );
+        petal.setAttribute('fill', '#ECE8E1');
+        petal.setAttribute('stroke', '#F7F5F0');
+        petal.setAttribute('stroke-width', '1.4');
 
-    mobileNavLinks.forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
+        // Detalle interior del relieve
+        const innerCurl = document.createElementNS(ns, 'path');
+        innerCurl.setAttribute(
+          'd',
+          'M -9,3 C -9,-5 -4,-10 0,-11 C 4,-10 9,-5 9,3'
+        );
+        innerCurl.setAttribute('fill', 'none');
+        innerCurl.setAttribute('stroke', '#DCD6CC');
+        innerCurl.setAttribute('stroke-width', '1.3');
+        innerCurl.setAttribute('stroke-linecap', 'round');
 
-    // Cerrar con tecla Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileMenu.classList.contains('menu-open')) {
-        closeMenu();
+        // Perla pequeña en relieve entre motivos
+        const dot = document.createElementNS(ns, 'circle');
+        dot.setAttribute('cx', '0');
+        dot.setAttribute('cy', '-2');
+        dot.setAttribute('r', '2.3');
+        dot.setAttribute('fill', '#F4F1EC');
+
+        g.appendChild(petal);
+        g.appendChild(innerCurl);
+        g.appendChild(dot);
+        container.appendChild(g);
       }
-    });
+    })();
   </script>
 </body>
 </html>
