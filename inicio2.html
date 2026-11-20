@@ -1,36 +1,360 @@
-<section id="inicio" class="paper-hero relative min-h-screen w-full flex flex-col items-center justify-start pt-5 sm:pt-7 pb-14 px-6 overflow-hidden">
-
-  <!-- Encabezado: Gisella Villarreal -->
-  <header class="relative z-10 text-center mb-8 sm:mb-10 select-none">
-    <h1 class="relative inline-flex flex-col items-center leading-none">
-      <span class="brand-serif text-3xl sm:text-4xl md:text-[2.85rem] font-normal tracking-[0.07em] uppercase pr-10 sm:pr-14">
-        Gisella
-      </span>
-      <span class="brand-script text-4xl sm:text-5xl md:text-[3.55rem] font-normal -mt-3 sm:-mt-4 pl-14 sm:pl-20">
-        Villarreal
-      </span>
-    </h1>
-  </header>
-
-  <!-- Contenedor de Foto + Marco PNG exacto -->
-  <div class="relative z-10 w-[78vw] max-w-[360px] aspect-[3/3.9] flex items-center justify-center my-auto">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gisella Villarreal | Branding Visual & Fotografía Editorial</title>
     
-    <!-- 1. Tu fotografía recortada en óvalo -->
-    <div class="w-[82%] h-[82%] rounded-[50%] overflow-hidden bg-[#D5CFC6] shadow-inner">
-      <img
-        src="tu-foto.jpg"
-        alt="Gisella Villarreal"
-        class="w-full h-full object-cover object-center grayscale contrast-95"
-      />
+    <!-- ====== INICIO ETIQUETAS SEO ====== -->
+    <meta name="description" content="Gisella Villarreal | Branding Visual Creativo y Fotografía para Marca Personal y Eventos. Construyo presencias digitales auténticas, delicadas y con personalidad.">
+    <meta name="keywords" content="branding visual creativo, fotografía marca personal, fotografía de eventos, fotografía workstyle, diseño visual Instagram, fotógrafa Barranquilla">
+    <meta property="og:title" content="Gisella Villarreal | Branding Visual & Fotografía">
+    <meta property="og:description" content="Descubre cómo transformar la esencia de tu marca o evento en una narrativa visual auténtica y memorable.">
+    <meta property="og:image" content="https://gisellavillarreal.pages.dev/1792874026013~2.jpg">
+    <meta property="og:url" content="https://gisellavillarreal.pages.dev">
+    <!-- ====== FIN ETIQUETAS SEO ====== -->
+    
+    <link rel="icon" type="image/png" href="Favicon_20261114_110929_0000.png">
+    <link rel="apple-touch-icon" href="Favicon_20261114_105928_0000.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ivory': '#F8F4EE',
+                        'sand': '#EFE9E0',
+                        'espresso': '#221D1A',
+                        'taupe': '#6C625B',
+                        'terracotta': '#A85D44',
+                        'terracotta-dark': '#8E4B35',
+                        'sage': '#7C8472',
+                        'hairline': '#E2D9CE',
+                    },
+                    fontFamily: {
+                        'serif': ['"Cormorant Garamond"', 'serif'],
+                        'sans': ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .no-tap-highlight { -webkit-tap-highlight-color: transparent; }
+        
+        /* Animación editorial sutil al cargar */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up {
+            animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; opacity: 0; }
+        .delay-200 { animation-delay: 0.2s; opacity: 0; }
+    </style>
+</head>
+<body class="bg-sand/60 antialiased text-espresso selection:bg-terracotta selection:text-ivory">
+
+    <!-- CONTENEDOR PRINCIPAL: Mobile-First (430px) -> Editorial Split en Desktop (1120px) -->
+    <main class="w-full max-w-[440px] md:max-w-[1040px] lg:max-w-[1140px] mx-auto bg-ivory min-h-screen relative shadow-[0_20px_60px_-15px_rgba(34,29,26,0.12)] flex flex-col md:flex-row">
+
+        <!-- ========================================================== -->
+        <!-- COLUMNA IZQUIERDA: PORTADA EDITORIAL (Fija en computador)  -->
+        <!-- ========================================================== -->
+        <header id="inicio" class="relative w-full md:w-[44%] lg:w-[43%] h-[74vh] md:h-screen min-h-[540px] flex flex-col md:sticky md:top-0 overflow-hidden bg-espresso">
+            
+            <!-- Fotografía de Portada -->
+            <div class="absolute inset-0 z-0">
+                <img src="1792874026013~2.jpg" 
+                     alt="Gisella Villarreal - Branding Visual y Fotografía" 
+                     class="w-full h-full object-cover object-[center_18%] md:object-center scale-[1.02]">
+            </div>
+            
+            <!-- Degradado editorial cálido para legibilidad impecable -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1D1714] via-[#1D1714]/45 to-black/15 z-10"></div>
+
+            <!-- Etiqueta superior minimalista -->
+            <div class="relative z-20 pt-7 px-6 flex items-center justify-between text-ivory/85">
+                <span class="text-[10px] uppercase tracking-[0.25em] font-medium">Barranquilla · CO</span>
+                <span class="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] bg-ivory/10 backdrop-blur-md border border-ivory/20 px-3 py-1 rounded-full">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#D89A84]"></span>
+                    Agenda abierta
+                </span>
+            </div>
+
+            <!-- Bloque de Título y Propuesta de Valor -->
+            <div class="relative z-20 px-7 mt-auto pb-10 md:pb-12 text-center flex flex-col items-center animate-fade-up">
+                <p class="font-sans text-[10px] md:text-[11px] tracking-[0.26em] uppercase text-[#E5C9B6] mb-3 font-medium">
+                    Branding Visual Creativo
+                </p>
+                <h1 class="font-serif text-[3.4rem] md:text-[3.6rem] lg:text-[4.1rem] italic font-normal leading-[0.95] mb-3 text-ivory tracking-tight">
+                    Gisella<br>Villarreal
+                </h1>
+                <div class="w-10 h-[1px] bg-ivory/40 my-3"></div>
+                <p class="font-sans text-[11px] tracking-[0.18em] uppercase text-ivory/90 mb-4 font-light">
+                    Fotografía de Marca Personal &amp; Eventos
+                </p>
+                <p class="font-sans text-[13px] leading-relaxed text-ivory/80 font-light max-w-[300px] mx-auto">
+                    Transformo la esencia de marcas personales y momentos irrepetibles en una narrativa visual delicada, coherente y auténtica.
+                </p>
+            </div>
+        </header>
+
+        <!-- ========================================================== -->
+        <!-- COLUMNA DERECHA: ENLACES, PORTAFOLIO, BIO Y CONTACTO       -->
+        <!-- ========================================================== -->
+        <div class="w-full md:w-[56%] lg:w-[57%] flex flex-col px-5 sm:px-7 md:px-10 lg:px-12 py-8 md:py-12">
+
+            <!-- Micro-navegación interna (ideal en escritorio y móvil) -->
+            <nav aria-label="Navegación rápida" class="flex items-center justify-between border-b border-hairline pb-4 mb-7 text-[10px] uppercase tracking-[0.2em] text-taupe font-medium">
+                <span>Estudio Creativo</span>
+                <div class="flex gap-5">
+                    <a href="#enlaces" class="hover:text-terracotta transition-colors">Servicios</a>
+                    <a href="#sobre-mi" class="hover:text-terracotta transition-colors">Sobre mí</a>
+                    <a href="#contacto" class="hover:text-terracotta transition-colors">Contacto</a>
+                </div>
+            </nav>
+            
+            <!-- SECCIÓN DE ACCIONES Y TARJETAS EDITORIALES -->
+            <section id="enlaces" class="flex flex-col gap-4 animate-fade-up delay-100">
+                
+                <!-- CTA PRINCIPAL: Reserva tu sesión fotográfica -->
+                <a href="https://wa.me/573042182321" target="_blank" class="no-tap-highlight group w-full py-4 px-5 rounded-full bg-terracotta text-ivory text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-between hover:bg-terracotta-dark transition-all shadow-sm hover:shadow-md">
+                    <span class="flex items-center gap-3">
+                        <i class="fa-solid fa-camera-retro text-[15px] opacity-90"></i>
+                        Reserva tu sesión fotográfica
+                    </span>
+                    <span class="w-7 h-7 rounded-full bg-ivory/15 flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
+                        <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                    </span>
+                </a>
+
+                <!-- DOS BOTONES SECUNDARIOS EN PARALELO -->
+                <div class="grid grid-cols-2 gap-3 mb-2">
+                    <a href="https://wa.me/573042182321" target="_blank" class="no-tap-highlight group p-4 rounded-2xl bg-white border border-hairline text-espresso hover:border-terracotta/50 hover:bg-sand/40 transition-all flex flex-col items-center justify-center text-center gap-2.5 shadow-[0_2px_10px_rgba(34,29,26,0.03)]">
+                        <span class="w-9 h-9 rounded-full bg-sand flex items-center justify-center text-terracotta group-hover:bg-terracotta group-hover:text-ivory transition-colors">
+                            <i class="fa-regular fa-comments text-[15px]"></i>
+                        </span>
+                        <span class="text-[10px] uppercase tracking-[0.14em] font-semibold leading-snug">
+                            Hablemos de tu<br>Marca Personal
+                        </span>
+                    </a>
+
+                    <a href="https://wa.me/573042182321" target="_blank" class="no-tap-highlight group p-4 rounded-2xl bg-white border border-hairline text-espresso hover:border-terracotta/50 hover:bg-sand/40 transition-all flex flex-col items-center justify-center text-center gap-2.5 shadow-[0_2px_10px_rgba(34,29,26,0.03)]">
+                        <span class="w-9 h-9 rounded-full bg-sand flex items-center justify-center text-sage group-hover:bg-sage group-hover:text-ivory transition-colors">
+                            <i class="fa-solid fa-ring text-[15px]"></i>
+                        </span>
+                        <span class="text-[10px] uppercase tracking-[0.14em] font-semibold leading-snug">
+                            Identidad visual<br>para tu boda o evento
+                        </span>
+                    </a>
+                </div>
+
+                <!-- SEPARADOR EDITORIAL -->
+                <div class="flex items-center gap-3 my-2">
+                    <span class="text-[10px] uppercase tracking-[0.22em] text-taupe font-medium">Explora mi universo</span>
+                    <div class="h-[1px] flex-1 bg-hairline"></div>
+                </div>
+
+                <!-- TARJETA 1: Trabajos Destacados -->
+                <a href="https://gisella-villarreal.pages.dev/portafolio.html" class="no-tap-highlight group relative w-full h-[148px] rounded-[1.4rem] overflow-hidden bg-espresso border border-hairline/80 shadow-sm hover:shadow-md transition-all">
+                    <div class="absolute inset-y-0 right-0 w-[68%] bg-[url('https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#221D1A] from-[42%] via-[#221D1A]/75 to-transparent"></div>
+                    
+                    <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-ivory/90 backdrop-blur-sm flex items-center justify-center text-espresso group-hover:bg-terracotta group-hover:text-ivory transition-colors z-20">
+                        <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
+                    </div>
+
+                    <div class="relative h-full p-6 flex flex-col justify-between z-10 w-[82%]">
+                        <span class="text-[9px] uppercase tracking-[0.24em] text-[#E5C9B6] font-medium">01 · Portafolio</span>
+                        <div>
+                            <h3 class="font-serif text-[1.75rem] md:text-[1.95rem] text-ivory leading-[1.02] mb-2">
+                                Conoce mis <span class="italic text-[#E5C9B6]">trabajos destacados</span>
+                            </h3>
+                            <div class="flex items-center gap-2 text-ivory/75">
+                                <span class="text-[9px] uppercase tracking-[0.2em] font-medium">Ver selección</span>
+                                <span class="h-[1px] w-7 bg-ivory/40 group-hover:w-12 transition-all"></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- TARJETA 2: Banco Visual Autoral -->
+                <a href="https://gisella-villarreal.pages.dev/bancovisualautoral" class="no-tap-highlight group relative w-full h-[148px] rounded-[1.4rem] overflow-hidden bg-[#2C2623] border border-hairline/80 shadow-sm hover:shadow-md transition-all">
+                    <div class="absolute inset-y-0 right-0 w-[68%] bg-[url('1792874026013.jpg')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#2C2623] from-[42%] via-[#2C2623]/75 to-transparent"></div>
+                    
+                    <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-ivory/90 backdrop-blur-sm flex items-center justify-center text-espresso group-hover:bg-terracotta group-hover:text-ivory transition-colors z-20">
+                        <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
+                    </div>
+
+                    <div class="relative h-full p-6 flex flex-col justify-between z-10 w-[82%]">
+                        <span class="text-[9px] uppercase tracking-[0.24em] text-[#E5C9B6] font-medium">02 · Comunidad</span>
+                        <div>
+                            <h3 class="font-serif text-[1.75rem] md:text-[1.95rem] text-ivory leading-[1.02] mb-2">
+                                Banco Visual <span class="italic text-[#E5C9B6]">Autoral</span>
+                            </h3>
+                            <div class="flex items-center gap-2 text-ivory/75">
+                                <span class="text-[9px] uppercase tracking-[0.2em] font-medium">Únete a mi comunidad</span>
+                                <span class="h-[1px] w-7 bg-ivory/40 group-hover:w-12 transition-all"></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- TARJETA 3: Curso de Fotografía Workstyle -->
+                <a href="https://gisella-villarreal.pages.dev/cursoworkstyleautoral" class="no-tap-highlight group relative w-full h-[148px] rounded-[1.4rem] overflow-hidden bg-[#262320] border border-hairline/80 shadow-sm hover:shadow-md transition-all">
+                    <div class="absolute inset-y-0 right-0 w-[68%] bg-[url('https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#262320] from-[42%] via-[#262320]/75 to-transparent"></div>
+                    
+                    <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-ivory/90 backdrop-blur-sm flex items-center justify-center text-espresso group-hover:bg-terracotta group-hover:text-ivory transition-colors z-20">
+                        <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
+                    </div>
+
+                    <div class="relative h-full p-6 flex flex-col justify-between z-10 w-[85%]">
+                        <span class="text-[9px] uppercase tracking-[0.24em] text-[#E5C9B6] font-medium">03 · Formación</span>
+                        <div>
+                            <h3 class="font-serif text-[1.75rem] md:text-[1.95rem] text-ivory leading-[1.02] mb-2">
+                                Curso de <span class="italic text-[#E5C9B6]">Fotografía Workstyle</span>
+                            </h3>
+                            <div class="flex items-center gap-2 text-ivory/75">
+                                <span class="text-[9px] uppercase tracking-[0.2em] font-medium">Ver información</span>
+                                <span class="h-[1px] w-7 bg-ivory/40 group-hover:w-12 transition-all"></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+            </section>
+
+            <!-- SECCIÓN: SOBRE MÍ (Estilo Editorial) -->
+            <section id="sobre-mi" class="mt-10 mb-10 p-7 sm:p-9 bg-white rounded-[1.75rem] border border-hairline shadow-[0_6px_24px_rgba(34,29,26,0.03)] text-center animate-fade-up delay-200">
+                <p class="text-[10px] uppercase tracking-[0.26em] text-terracotta font-medium mb-2">La mirada detrás de la cámara</p>
+                <h2 class="font-serif text-[2.3rem] italic font-normal text-espresso leading-none mb-6">Sobre mí</h2>
+                
+                <!-- Retrato con doble marco delicado -->
+                <div class="w-24 h-24 mx-auto rounded-full p-1 border border-terracotta/40 mb-6">
+                    <div class="w-full h-full rounded-full overflow-hidden">
+                        <img src="1792874026013~2.jpg" alt="Perfil de Gisella Villarreal" class="w-full h-full object-cover object-top">
+                    </div>
+                </div>
+                
+                <p class="font-sans text-[13.5px] md:text-[14px] text-taupe font-light leading-[1.8] mb-7 max-w-[460px] mx-auto">
+                    Soy <strong class="font-medium text-espresso">Gisella</strong>, Gestora de Mercados con enfoque en Dirección de Arte, Branding Visual y Fotografía para plataformas digitales y eventos. Mi propósito es transformar la esencia de tu marca personal en una presencia auténtica, estética y coherente mediante estrategia y contenido visual que conecte sin pasar desapercibida.
+                </p>
+                
+                <a href="https://wa.me/573042182321" target="_blank" class="inline-flex items-center justify-center gap-2 w-full max-w-[290px] py-3.5 px-6 rounded-full border border-espresso bg-espresso text-ivory hover:bg-transparent hover:text-espresso transition-colors text-[11px] font-medium tracking-[0.18em] uppercase">
+                    Apoya mi camino creativo
+                </a>
+            </section>
+
+            <!-- SECCIÓN DE CONTACTO Y FOOTER -->
+            <footer id="contacto" class="pt-4 pb-8 text-center flex flex-col items-center">
+                
+                <p class="text-[10px] uppercase tracking-[0.24em] text-taupe mb-2">Conversemos</p>
+                <h2 class="font-serif text-3xl italic text-espresso mb-6">Contacto</h2>
+                
+                <div class="flex justify-center gap-4 mb-10">
+                    <a href="https://wa.me/573042182321" target="_blank" aria-label="WhatsApp" class="w-11 h-11 rounded-full bg-white border border-hairline flex items-center justify-center text-espresso hover:bg-terracotta hover:border-terracotta hover:text-ivory transition-all shadow-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </a>
+                    <a href="https://www.instagram.com/gisella.villarreal?cplk=MWhzcHY3ZHNsdHRoMw==" target="_blank" aria-label="Instagram" class="w-11 h-11 rounded-full bg-white border border-hairline flex items-center justify-center text-espresso hover:bg-terracotta hover:border-terracotta hover:text-ivory transition-all shadow-sm">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gisellavillarreal?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn" class="w-11 h-11 rounded-full bg-white border border-hairline flex items-center justify-center text-espresso hover:bg-terracotta hover:border-terracotta hover:text-ivory transition-all shadow-sm">
+                        <i class="fa-brands fa-linkedin-in text-lg"></i>
+                    </a>
+                    <a href="mailto:gisellasofiavillarreal@gmail.com" aria-label="Correo electrónico" class="w-11 h-11 rounded-full bg-white border border-hairline flex items-center justify-center text-espresso hover:bg-terracotta hover:border-terracotta hover:text-ivory transition-all shadow-sm">
+                        <i class="fa-regular fa-envelope text-lg"></i>
+                    </a>
+                </div>
+
+                <div class="w-full pt-6 border-t border-hairline flex flex-col items-center gap-3">
+                    <div>
+                        <h4 class="font-serif text-[1.35rem] italic text-espresso leading-tight">Gisella Villarreal</h4>
+                        <p class="text-[11px] font-sans text-terracotta tracking-wide mt-0.5">Barranquilla, Colombia</p>
+                    </div>
+                    <p class="text-[9.5px] font-sans text-taupe tracking-[0.2em] uppercase">
+                        © 2026 · Todos los derechos reservados
+                    </p>
+                    <div class="flex gap-5 font-sans text-[10.5px] text-taupe mt-1">
+                        <a href="terminosycondiciones.html" class="underline decoration-hairline underline-offset-4 hover:text-terracotta transition-colors">Términos y Condiciones</a>
+                        <a href="politicadeprivacidad.html" class="underline decoration-hairline underline-offset-4 hover:text-terracotta transition-colors">Política de Privacidad</a>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+        <!-- BOTÓN FLOTANTE "VOLVER ARRIBA" -->
+        <div class="fixed bottom-7 right-5 md:right-8 z-40">
+            <button id="scroll-top-btn" class="pointer-events-none w-10 h-10 rounded-full border border-hairline bg-white/95 backdrop-blur-md flex items-center justify-center text-espresso opacity-0 translate-y-4 transition-all duration-500 hover:bg-terracotta hover:text-ivory hover:border-terracotta shadow-lg" aria-label="Volver arriba">
+                <i class="fa-solid fa-angle-up text-sm"></i>
+            </button>
+        </div>
+
+    </main>
+
+    <!-- BANNER DE COOKIES -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-espresso text-ivory border-t border-ivory/15 shadow-2xl z-50 transform transition-transform duration-500" style="display: none;">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-[12.5px] text-ivory/80 text-center sm:text-left font-light">
+                Utilizo cookies para mejorar tu experiencia en la web y analizar el tráfico. Al continuar navegando, aceptas su uso. 
+                <a href="politicadeprivacidad.html" class="text-[#E5C9B6] underline underline-offset-2 hover:text-ivory transition-colors ml-1">
+                    Leer Política de Privacidad
+                </a>.
+            </p>
+            <button id="accept-cookies" class="whitespace-nowrap bg-terracotta text-ivory px-6 py-2 rounded-full font-medium text-[12px] tracking-wider uppercase hover:bg-terracotta-dark transition-colors">
+                Aceptar
+            </button>
+        </div>
     </div>
 
-    <!-- 2. Imagen del marco barroco en relieve superpuesta -->
-    <img
-      src="marco-relieve.png"
-      alt=""
-      aria-hidden="true"
-      class="absolute inset-0 w-full h-full object-contain pointer-events-none z-20"
-    />
-  </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Botón volver arriba
+            const scrollTopBtn = document.getElementById('scroll-top-btn');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    scrollTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                } else {
+                    scrollTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    scrollTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                }
+            });
 
-</section>
+            if (scrollTopBtn) {
+                scrollTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // Banner de cookies
+            const banner = document.getElementById("cookie-banner");
+            const acceptBtn = document.getElementById("accept-cookies");
+
+            if (!localStorage.getItem("cookies_accepted")) {
+                banner.style.display = "block";
+            }
+
+            acceptBtn.addEventListener("click", () => {
+                localStorage.setItem("cookies_accepted", "true");
+                banner.classList.add("translate-y-full");
+                setTimeout(() => {
+                    banner.style.display = "none";
+                }, 500);
+            });
+        });
+    </script>
+
+</body>
+</html>
