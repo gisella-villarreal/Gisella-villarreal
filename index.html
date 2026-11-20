@@ -303,58 +303,58 @@
     </section>
 
     <!-- ================================================================= -->
-    <!-- 6. SECCIÓN TESTIMONIOS • CLIENTES GV + CARRUSEL DE 5 FOTOS        -->
+    <!-- 6. SECCIÓN TESTIMONIOS • CLIENTES GV (Tarjeta con flechas)        -->
     <!-- ================================================================= -->
-    <section id="testimonios" class="w-full bg-terracotta text-ivory py-14 md:py-20 overflow-hidden">
-        <div class="max-w-2xl mx-auto px-6 sm:px-10 text-center mb-9">
-            <p class="text-[11px] sm:text-[12px] tracking-[0.18em] uppercase text-ivory/75 font-semibold mb-3">
-                Testimonios &bull; Clientes GV
-            </p>
-            <h2 class="font-serif text-[1.6rem] sm:text-[1.95rem] md:text-[2.2rem] text-ivory leading-[1.2] font-normal">
-                Nada habla mejor de nuestro trabajo que la experiencia de <span class="italic text-ivory/90">quienes lo han vivido.</span>
-            </h2>
-        </div>
-
-        <!-- Carrusel rodante de 5 fotos de testimonios -->
-        <div class="marquee-track flex gap-3 sm:gap-4 px-2">
+    <section id="testimonios" class="w-full bg-terracotta text-ivory py-14 md:py-20 px-5 sm:px-10">
+        <div class="max-w-xl mx-auto">
             
-            <!-- ===== GRUPO 1 (Reemplaza estas 5 imágenes con tus testimonios) ===== -->
-            <div class="w-[220px] sm:w-[260px] md:w-[290px] aspect-[4/5] overflow-hidden bg-ivory-soft border border-ivory/20 shrink-0">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop" alt="Testimonio 1" class="w-full h-full object-cover block">
-            </div>
-            <div class="w-[220px] sm:w-[260px] md:w-[290px] aspect-[4/5] overflow-hidden bg-ivory-soft border border-ivory/20 shrink-0">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop" alt="Testimonio 2" class="w-full h-full object-cover block">
-            </div>
-            <div class="w-[220px] sm:w-[260px] md:w-[290px] aspect-[4/5] overflow-hidden bg-ivory-soft border border-ivory/20 shrink-0">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop" alt="Testimonio 3" class="w-full h-full object-cover block">
-            </div>
-            <div class="w-[220px] sm:w-[260px] md:w-[290px] aspect-[4/5] overflow-hidden bg-ivory-soft border border-ivory/20 shrink-0">
-                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600&auto=format&fit=crop" alt="Testimonio 4" class="w-full h-full object-cover block">
-            </div>
-            <div class="w-[220px] sm:w-[260px] md:w-[290px] aspect-[4/5] overflow-hidden bg-ivory-soft border border-ivory/20 shrink-0">
-                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=600&auto=format&fit=crop" alt="Testimonio 5" class="w-full h-full object-cover block">
+            <!-- Encabezado -->
+            <div class="text-center mb-9">
+                <p class="text-[11px] sm:text-[12px] tracking-[0.18em] uppercase text-ivory/80 font-medium mb-3">
+                    Testimonios &bull; Clientes GV
+                </p>
+                <h2 class="font-serif text-[1.65rem] sm:text-[2rem] md:text-[2.3rem] text-ivory leading-[1.18] font-normal">
+                    Nada habla mejor de nuestro trabajo que la experiencia de <span class="italic text-[#E8D5C4]">quienes lo han vivido.</span>
+                </h2>
             </div>
 
-            <!-- ===== GRUPO 2 (Duplicado exacto para loop continuo sin cortes) ===== -->
-            <div class="w-[220px] sm:w-[260px] md:w-[290px] aspect-[4/5] overflow-hidden bg-ivory-soft border border-ivory/20 shrink-0" aria-hidden="true">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop" alt="" class="w-full h-full object-cover block">
+            <!-- Tarjeta blanca estilo editorial con flechas laterales -->
+            <div class="relative bg-white rounded-xl shadow-lg px-9 sm:px-12 py-8 sm:py-10 flex items-center justify-center min-h-[260px] sm:min-h-[300px]">
+                
+                <!-- Flecha Izquierda -->
+                <button id="prev-testimonio" aria-label="Testimonio anterior" class="no-tap-highlight absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-muted/60 hover:text-terracotta transition-colors">
+                    <i class="fa-solid fa-chevron-left text-sm"></i>
+                </button>
+
+                <!-- Contenedor de las 5 imágenes de testimonios -->
+                <div id="testimonios-slides" class="w-full flex items-center justify-center">
+                    <!-- Reemplaza estas 5 rutas con tus imágenes reales de testimonios -->
+                    <img src="testimonio1.jpg" alt="Testimonio 1" class="testimonio-slide w-full max-h-[320px] object-contain transition-opacity duration-500">
+                    <img src="testimonio2.jpg" alt="Testimonio 2" class="testimonio-slide hidden w-full max-h-[320px] object-contain transition-opacity duration-500">
+                    <img src="testimonio3.jpg" alt="Testimonio 3" class="testimonio-slide hidden w-full max-h-[320px] object-contain transition-opacity duration-500">
+                    <img src="testimonio4.jpg" alt="Testimonio 4" class="testimonio-slide hidden w-full max-h-[320px] object-contain transition-opacity duration-500">
+                    <img src="testimonio5.jpg" alt="Testimonio 5" class="testimonio-slide hidden w-full max-h-[320px] object-contain transition-opacity duration-500">
+                </div>
+
+                <!-- Flecha Derecha -->
+                <button id="next-testimonio" aria-label="Siguiente testimonio" class="no-tap-highlight absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-muted/60 hover:text-terracotta transition-colors">
+                    <i class="fa-solid fa-chevron-right text-sm"></i>
+                </button>
+
             </div>
-            <div class="w-[220px] sm:w-[260px] md:w-[290px] aspect-[4/5] overflow-hidden bg-ivory-soft border border-ivory/20 shrink-0" aria-hidden="true">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop" alt="" class="w-full h-full object-cover block">
-            </div>
-            <div class="w-[220px] sm:w-[260px] md:w-[290px] aspect-[4/5] overflow-hidden bg-ivory-soft border border-ivory/20 shrink-0" aria-hidden="true">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop" alt="" class="w-full h-full object-cover block">
-            </div>
-            <div class="w-[220px] sm:w-[260px] md:w-[290px] aspect-[4/5] overflow-hidden bg-ivory-soft border border-ivory/20 shrink-0" aria-hidden="true">
-                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600&auto=format&fit=crop" alt="" class="w-full h-full object-cover block">
-            </div>
-            <div class="w-[220px] sm:w-[260px] md:w-[290px] aspect-[4/5] overflow-hidden bg-ivory-soft border border-ivory/20 shrink-0" aria-hidden="true">
-                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=600&auto=format&fit=crop" alt="" class="w-full h-full object-cover block">
+
+            <!-- Indicadores discretos (puntos) -->
+            <div id="testimonios-dots" class="flex items-center justify-center gap-2 mt-5">
+                <button class="testimonio-dot w-2 h-2 rounded-full bg-ivory transition-all" aria-label="Ir al testimonio 1"></button>
+                <button class="testimonio-dot w-1.5 h-1.5 rounded-full bg-ivory/40 transition-all" aria-label="Ir al testimonio 2"></button>
+                <button class="testimonio-dot w-1.5 h-1.5 rounded-full bg-ivory/40 transition-all" aria-label="Ir al testimonio 3"></button>
+                <button class="testimonio-dot w-1.5 h-1.5 rounded-full bg-ivory/40 transition-all" aria-label="Ir al testimonio 4"></button>
+                <button class="testimonio-dot w-1.5 h-1.5 rounded-full bg-ivory/40 transition-all" aria-label="Ir al testimonio 5"></button>
             </div>
 
         </div>
     </section>
-    
+
     <!-- ================================================================= -->
     <!-- 7. SECCIÓN SOBRE MÍ / TU ESTRATEGA CREATIVA + FOTO RECTA + CTA    -->
     <!-- ================================================================= -->
