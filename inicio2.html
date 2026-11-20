@@ -40,8 +40,8 @@
     /* Sombras orgánicas suaves sobre el papel */
     .floral-shadow {
       background:
-        radial-gradient(ellipse at 14% 14%, rgba(120, 112, 102, 0.12) 0%, transparent 48%),
-        radial-gradient(ellipse at 86% 12%, rgba(110, 102, 92, 0.11) 0%, transparent 45%),
+        radial-gradient(ellipse at 14% 14%, rgba(120, 112, 102, 0.11) 0%, transparent 48%),
+        radial-gradient(ellipse at 86% 12%, rgba(110, 102, 92, 0.10) 0%, transparent 45%),
         radial-gradient(ellipse at 85% 86%, rgba(120, 112, 102, 0.08) 0%, transparent 45%);
     }
 
@@ -61,7 +61,7 @@
       border-radius: 50%;
       box-shadow:
         inset 0 4px 16px rgba(0, 0, 0, 0.16),
-        0 2px 12px rgba(95, 86, 75, 0.12);
+        0 2px 14px rgba(95, 86, 75, 0.12);
     }
 
     .oval-photo {
@@ -72,13 +72,13 @@
 <body>
 
   <!-- ==================== HERO EDITORIAL A PANTALLA COMPLETA ==================== -->
-  <section id="inicio" class="paper-hero relative min-h-screen w-full flex flex-col items-center justify-center px-6 py-12 sm:py-16 overflow-hidden">
+  <section id="inicio" class="paper-hero relative min-h-screen w-full flex flex-col items-center justify-start pt-5 sm:pt-7 pb-14 px-6 overflow-hidden">
 
     <!-- Capas de textura y luz suave -->
     <div class="paper-grain absolute inset-0 pointer-events-none z-0"></div>
     <div class="floral-shadow absolute inset-0 pointer-events-none z-0"></div>
 
-    <!-- Encabezado tipográfico: Gisella Villarreal -->
+    <!-- Encabezado tipográfico pegado a la parte superior: Gisella Villarreal -->
     <header class="relative z-10 text-center mb-10 sm:mb-12 select-none">
       <h1 class="relative inline-flex flex-col items-center leading-none">
         <span class="brand-serif text-3xl sm:text-4xl md:text-[2.85rem] font-normal tracking-[0.07em] uppercase pr-10 sm:pr-14">
@@ -90,68 +90,83 @@
       </h1>
     </header>
 
-    <!-- Marco ovalado con corona de flores blancas + Fotografía -->
-    <div class="relative z-10 w-[72vw] max-w-[330px] sm:max-w-[350px] aspect-[3/3.9] flex items-center justify-center my-2">
+    <!-- Marco ovalado de rosas blancas delicadas + Fotografía -->
+    <div class="relative z-10 w-[72vw] max-w-[330px] sm:max-w-[355px] aspect-[3/3.9] flex items-center justify-center my-auto">
 
-      <!-- Corona floral blanca en SVG -->
+      <!-- Marco de rosas blancas en SVG -->
       <svg
-        id="floral-frame"
-        viewBox="0 0 460 570"
-        class="absolute -inset-[19%] w-[138%] h-[138%] pointer-events-none z-20 overflow-visible"
+        id="roses-frame"
+        viewBox="0 0 480 590"
+        class="absolute -inset-[20%] w-[140%] h-[140%] pointer-events-none z-20 overflow-visible"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
         <defs>
-          <!-- Sombra suave y delicada para dar volumen real a los pétalos blancos -->
-          <filter id="soft-petal-shadow" x="-25%" y="-25%" width="150%" height="150%">
-            <feDropShadow dx="0.8" dy="2.2" stdDeviation="2.4" flood-color="#8C8275" flood-opacity="0.28" />
+          <!-- Sombra suave para dar volumen real a cada rosa -->
+          <filter id="rose-shadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0.8" dy="2.4" stdDeviation="2.6" flood-color="#877D70" flood-opacity="0.30" />
           </filter>
 
-          <!-- Degradado de pétalo blanco marfil -->
-          <radialGradient id="white-petal-grad" cx="50%" cy="28%" r="72%">
-            <stop offset="0%" stop-color="#FFFFFF" />
-            <stop offset="68%" stop-color="#FAF8F4" />
-            <stop offset="100%" stop-color="#E8E2D9" />
-          </radialGradient>
+          <!-- Sombra muy sutil interna para pétalos -->
+          <filter id="petal-soft" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="1" stdDeviation="1.1" flood-color="#9A9083" flood-opacity="0.22" />
+          </filter>
 
-          <!-- Degradado de pétalo interior más luminoso -->
-          <radialGradient id="inner-petal-grad" cx="50%" cy="35%" r="70%">
+          <!-- Degradado de pétalo exterior de rosa blanca -->
+          <radialGradient id="rose-outer-petal" cx="45%" cy="25%" r="78%">
             <stop offset="0%" stop-color="#FFFFFF" />
-            <stop offset="100%" stop-color="#EFECE6" />
-          </radialGradient>
-
-          <!-- Degradado para hojas blancas/marfil suaves -->
-          <linearGradient id="ivory-leaf-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#FFFFFF" />
+            <stop offset="65%" stop-color="#FAF8F4" />
             <stop offset="100%" stop-color="#E4DDD3" />
+          </radialGradient>
+
+          <!-- Degradado de pétalo intermedio -->
+          <radialGradient id="rose-mid-petal" cx="50%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#FFFFFF" />
+            <stop offset="72%" stop-color="#F6F3ED" />
+            <stop offset="100%" stop-color="#DDD5CA" />
+          </radialGradient>
+
+          <!-- Degradado del corazón de la rosa (blanco cremoso) -->
+          <radialGradient id="rose-core" cx="50%" cy="45%" r="65%">
+            <stop offset="0%" stop-color="#ECE5DA" />
+            <stop offset="55%" stop-color="#F7F4EE" />
+            <stop offset="100%" stop-color="#FFFFFF" />
+          </radialGradient>
+
+          <!-- Degradado para hojas delicadas en tono marfil perla -->
+          <linearGradient id="rose-leaf-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FBF9F6" />
+            <stop offset="60%" stop-color="#EAE4DB" />
+            <stop offset="100%" stop-color="#D8D0C4" />
           </linearGradient>
         </defs>
 
-        <!-- Aro delicado base detrás de las flores -->
+        <!-- Doble línea ovalada fina de soporte -->
         <ellipse
-          cx="230"
-          cy="285"
-          rx="168"
-          ry="218"
+          cx="240"
+          cy="295"
+          rx="174"
+          ry="226"
           fill="none"
           stroke="#FFFFFF"
-          stroke-width="2"
+          stroke-width="1.8"
           opacity="0.85"
         />
         <ellipse
-          cx="230"
-          cy="285"
-          rx="163"
-          ry="213"
+          cx="240"
+          cy="295"
+          rx="168"
+          ry="220"
           fill="none"
-          stroke="#D6CFC4"
+          stroke="#D3CBBF"
           stroke-width="0.9"
-          opacity="0.7"
+          opacity="0.75"
         />
 
-        <!-- Capas donde se dibujan hojas, flores medianas y flores principales -->
-        <g id="wreath-leaves" filter="url(#soft-petal-shadow)"></g>
-        <g id="wreath-flowers" filter="url(#soft-petal-shadow)"></g>
+        <!-- Capas de hojas, capullos y rosas -->
+        <g id="roses-leaves" filter="url(#rose-shadow)"></g>
+        <g id="roses-buds" filter="url(#rose-shadow)"></g>
+        <g id="roses-blooms" filter="url(#rose-shadow)"></g>
       </svg>
 
       <!-- Retrato recortado en óvalo -->
@@ -166,19 +181,19 @@
 
   </section>
 
-  <!-- Script que dibuja la corona estética de flores blancas alrededor del óvalo -->
+  <!-- Script que dibuja el marco de rosas blancas delicadas -->
   <script>
-    (function buildWhiteFloralWreath() {
+    (function buildWhiteRosesFrame() {
       const ns = 'http://www.w3.org/2000/svg';
-      const leavesGroup = document.getElementById('wreath-leaves');
-      const flowersGroup = document.getElementById('wreath-flowers');
+      const leavesLayer = document.getElementById('roses-leaves');
+      const budsLayer = document.getElementById('roses-buds');
+      const bloomsLayer = document.getElementById('roses-blooms');
 
-      const cx = 230;
-      const cy = 285;
-      const rx = 174;
-      const ry = 224;
+      const cx = 240;
+      const cy = 295;
+      const rx = 176;
+      const ry = 228;
 
-      // Helper para crear elementos SVG
       function el(tag, attrs = {}) {
         const node = document.createElementNS(ns, tag);
         for (const [k, v] of Object.entries(attrs)) {
@@ -187,127 +202,161 @@
         return node;
       }
 
-      // Dibuja una hoja botánica blanca/marfil
-      function createLeaf(x, y, angleDeg, scale = 1) {
+      // Hoja delicada de rosal
+      function createRoseLeaf(x, y, angleDeg, scale = 1) {
         const g = el('g', {
           transform: `translate(${x.toFixed(1)}, ${y.toFixed(1)}) rotate(${angleDeg.toFixed(1)}) scale(${scale.toFixed(2)})`
         });
         g.appendChild(el('path', {
-          d: 'M 0,0 C -6,-8 -5,-21 0,-29 C 5,-21 6,-8 0,0 Z',
-          fill: 'url(#ivory-leaf-grad)',
+          d: 'M 0,0 C -7,-7 -8,-19 0,-28 C 8,-19 7,-7 0,0 Z',
+          fill: 'url(#rose-leaf-grad)',
           stroke: '#FFFFFF',
           'stroke-width': '0.6'
         }));
         g.appendChild(el('path', {
-          d: 'M 0,-2 L 0,-23',
-          stroke: '#DCD5CA',
-          'stroke-width': '0.7',
+          d: 'M 0,-2 L 0,-22',
+          stroke: '#CFC6B8',
+          'stroke-width': '0.65',
           'stroke-linecap': 'round'
         }));
         return g;
       }
 
-      // Dibuja una flor blanca editorial de doble capa (tipo anémona / rosa de jardín)
-      function createWhiteFlower(x, y, scale = 1, rotOffset = 0, isLarge = true) {
+      // Capullo delicado de rosa blanca
+      function createRoseBud(x, y, angleDeg, scale = 1) {
         const g = el('g', {
-          transform: `translate(${x.toFixed(1)}, ${y.toFixed(1)}) rotate(${rotOffset.toFixed(1)}) scale(${scale.toFixed(2)})`
+          transform: `translate(${x.toFixed(1)}, ${y.toFixed(1)}) rotate(${angleDeg.toFixed(1)}) scale(${scale.toFixed(2)})`
+        });
+        // Pétalos laterales envolventes
+        g.appendChild(el('path', {
+          d: 'M -5,4 C -10,-3 -8,-13 -1,-16 C 3,-10 2,0 -5,4 Z',
+          fill: 'url(#rose-outer-petal)',
+          stroke: '#DDD6CB',
+          'stroke-width': '0.5'
+        }));
+        g.appendChild(el('path', {
+          d: 'M 5,4 C 10,-3 8,-13 1,-16 C -3,-10 -2,0 5,4 Z',
+          fill: 'url(#rose-outer-petal)',
+          stroke: '#DDD6CB',
+          'stroke-width': '0.5'
+        }));
+        // Pétalo central cerrado
+        g.appendChild(el('path', {
+          d: 'M 0,5 C -6,2 -6,-10 0,-15 C 6,-10 6,2 0,5 Z',
+          fill: 'url(#rose-mid-petal)',
+          stroke: '#FFFFFF',
+          'stroke-width': '0.6'
+        }));
+        // Base del cáliz
+        g.appendChild(el('path', {
+          d: 'M -4,4 Q 0,8 4,4',
+          fill: 'none',
+          stroke: '#D2C9BC',
+          'stroke-width': '1.2',
+          'stroke-linecap': 'round'
+        }));
+        return g;
+      }
+
+      // Rosa blanca de jardín con capas de pétalos suaves en espiral
+      function createWhiteRose(x, y, scale = 1, rotDeg = 0) {
+        const g = el('g', {
+          transform: `translate(${x.toFixed(1)}, ${y.toFixed(1)}) rotate(${rotDeg.toFixed(1)}) scale(${scale.toFixed(2)})`
         });
 
-        const petals = 5;
-        // Capa exterior de pétalos
-        for (let i = 0; i < petals; i++) {
-          const deg = (360 / petals) * i;
+        // 1. Capa exterior: 5 pétalos anchos y redondeados
+        for (let i = 0; i < 5; i++) {
+          const a = i * 72;
           g.appendChild(el('path', {
-            d: 'M 0,0 C -9,-5 -12,-18 0,-23 C 12,-18 9,-5 0,0 Z',
-            fill: 'url(#white-petal-grad)',
-            stroke: '#E6E0D6',
-            'stroke-width': '0.5',
-            transform: `rotate(${deg})`
+            d: 'M -12,-3 C -16,-14 -7,-22 0,-21 C 7,-22 16,-14 12,-3 C 8,3 -8,3 -12,-3 Z',
+            fill: 'url(#rose-outer-petal)',
+            stroke: '#DFD8CE',
+            'stroke-width': '0.55',
+            transform: `rotate(${a})`
           }));
         }
 
-        // Segunda capa de pétalos más pequeños (para flores principales)
-        if (isLarge) {
-          for (let i = 0; i < petals; i++) {
-            const deg = (360 / petals) * i + 36;
-            g.appendChild(el('path', {
-              d: 'M 0,0 C -6,-3 -8,-12 0,-15 C 8,-12 6,-3 0,0 Z',
-              fill: 'url(#inner-petal-grad)',
-              stroke: '#ECE7DF',
-              'stroke-width': '0.45',
-              transform: `rotate(${deg})`
-            }));
-          }
+        // 2. Segunda capa: 5 pétalos ligeramente más cerrados y rotados
+        for (let i = 0; i < 5; i++) {
+          const a = i * 72 + 34;
+          g.appendChild(el('path', {
+            d: 'M -9,-2 C -12,-10 -5,-16 0,-15.5 C 5,-16 12,-10 9,-2 C 5,2 -5,2 -9,-2 Z',
+            fill: 'url(#rose-mid-petal)',
+            stroke: '#E4DDD3',
+            'stroke-width': '0.5',
+            filter: 'url(#petal-soft)',
+            transform: `rotate(${a})`
+          }));
         }
 
-        // Centro sutil en tono champagne pálido / marfil
+        // 3. Tercera capa: 4 pétalos en copa abrazando el centro
+        for (let i = 0; i < 4; i++) {
+          const a = i * 90 + 18;
+          g.appendChild(el('path', {
+            d: 'M -6.5,-1 C -8,-7 -3,-11.5 0,-11 C 3,-11.5 8,-7 6.5,-1 C 3.5,2 -3.5,2 -6.5,-1 Z',
+            fill: 'url(#rose-outer-petal)',
+            stroke: '#DDD5C9',
+            'stroke-width': '0.5',
+            transform: `rotate(${a})`
+          }));
+        }
+
+        // 4. Centro de la rosa con espiral delicada
         g.appendChild(el('circle', {
           cx: '0',
           cy: '0',
-          r: isLarge ? '3.3' : '2.3',
-          fill: '#DDD4C6'
+          r: '6.2',
+          fill: 'url(#rose-core)',
+          stroke: '#E5DFD6',
+          'stroke-width': '0.5'
         }));
-        g.appendChild(el('circle', {
-          cx: '0',
-          cy: '0',
-          r: isLarge ? '1.6' : '1.1',
-          fill: '#F7F3EC'
+
+        // Curvas internas que forman el remolino de pétalos
+        g.appendChild(el('path', {
+          d: 'M -3.5,-1.5 C -4,-4.5 1,-5.5 3.5,-2.5 C 5,0.5 2.5,4.2 -1,3.8 C -3.2,3.5 -3.8,0.5 -1.8,-0.8 C -0.4,-1.8 1.6,-1.2 1.5,0.5 C 1.4,1.6 0,2 -0.8,1.2',
+          fill: 'none',
+          stroke: '#CFC6B8',
+          'stroke-width': '0.85',
+          'stroke-linecap': 'round'
         }));
 
         return g;
       }
 
-      // 1. Hojas delicadas siguiendo la curva del óvalo
-      const leafCount = 34;
+      // 1. Hojas delicadas siguiendo el óvalo
+      const leafCount = 32;
       for (let i = 0; i < leafCount; i++) {
         const t = (i / leafCount) * Math.PI * 2;
-        const offset = (i % 2 === 0 ? 5 : -3);
-        const x = cx + (rx + offset) * Math.cos(t);
-        const y = cy + (ry + offset) * Math.sin(t);
-        const tangentDeg = (t * 180) / Math.PI + 90 + (i % 2 === 0 ? 28 : -28);
-        const scale = 0.72 + (i % 3) * 0.14;
-        leavesGroup.appendChild(createLeaf(x, y, tangentDeg, scale));
+        const radialOffset = i % 2 === 0 ? 7 : -5;
+        const x = cx + (rx + radialOffset) * Math.cos(t);
+        const y = cy + (ry + radialOffset) * Math.sin(t);
+        const angle = (t * 180) / Math.PI + 90 + (i % 2 === 0 ? 32 : -32);
+        const scale = 0.72 + (i % 3) * 0.12;
+        leavesLayer.appendChild(createRoseLeaf(x, y, angle, scale));
       }
 
-      // 2. Flores blancas alternando tamaños y ángulos orgánicos
-      const flowerCount = 22;
-      for (let i = 0; i < flowerCount; i++) {
-        const t = (i / flowerCount) * Math.PI * 2;
-        const isLarge = i % 2 === 0;
-        const radialShift = isLarge ? 2 : -4;
-        const x = cx + (rx + radialShift) * Math.cos(t);
-        const y = cy + (ry + radialShift) * Math.sin(t);
-        const scale = isLarge ? (0.86 + (i % 3) * 0.08) : (0.58 + (i % 2) * 0.1);
-        const rot = (i * 37) % 360;
-
-        flowersGroup.appendChild(createWhiteFlower(x, y, scale, rot, isLarge));
-      }
-
-      // 3. Pequeños capullos blancos intercalados para dar acabado delicado
-      const budCount = 16;
+      // 2. Capullos intercalados suavemente en el borde exterior
+      const budCount = 18;
       for (let i = 0; i < budCount; i++) {
         const t = ((i + 0.5) / budCount) * Math.PI * 2;
-        const radialShift = i % 2 === 0 ? 11 : -9;
-        const x = cx + (rx + radialShift) * Math.cos(t);
-        const y = cy + (ry + radialShift) * Math.sin(t);
+        const radialOffset = i % 2 === 0 ? 11 : -7;
+        const x = cx + (rx + radialOffset) * Math.cos(t);
+        const y = cy + (ry + radialOffset) * Math.sin(t);
+        const angle = (t * 180) / Math.PI + 90 + (i % 2 === 0 ? 18 : -18);
+        budsLayer.appendChild(createRoseBud(x, y, angle, 0.85));
+      }
 
-        const bud = el('g', {
-          transform: `translate(${x.toFixed(1)}, ${y.toFixed(1)}) rotate(${((i * 53) % 360)})`
-        });
-        for (let p = 0; p < 4; p++) {
-          bud.appendChild(el('ellipse', {
-            cx: '0',
-            cy: '-3.5',
-            rx: '2.6',
-            ry: '4.2',
-            fill: '#FFFFFF',
-            stroke: '#E9E3DA',
-            'stroke-width': '0.4',
-            transform: `rotate(${p * 90})`
-          }));
-        }
-        bud.appendChild(el('circle', { cx: '0', cy: '0', r: '1.3', fill: '#DFD6C8' }));
-        flowersGroup.appendChild(bud);
+      // 3. Rosas blancas principales y medianas alrededor de todo el marco
+      const roseCount = 24;
+      for (let i = 0; i < roseCount; i++) {
+        const t = (i / roseCount) * Math.PI * 2;
+        const isMain = i % 2 === 0;
+        const radialOffset = isMain ? 1 : -3;
+        const x = cx + (rx + radialOffset) * Math.cos(t);
+        const y = cy + (ry + radialOffset) * Math.sin(t);
+        const scale = isMain ? (0.88 + (i % 3) * 0.08) : (0.64 + (i % 2) * 0.08);
+        const rot = (i * 41) % 360;
+        bloomsLayer.appendChild(createWhiteRose(x, y, scale, rot));
       }
     })();
   </script>
