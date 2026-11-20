@@ -3,39 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gisella Villarreal | Social Media Branding</title>
-    
-    <!-- ====== INICIO ETIQUETAS SEO ====== -->
-    <meta name="description" content="Gisella Villarreal | Estratega de Social Media Branding y fotografía workstyle. Ayudo a emprendedoras y profesionales a construir una presencia digital auténtica y con personalidad.">
-    <meta name="keywords" content="branding para redes sociales, fotografía workstyle, marca personal, creador digital, diseño visual Instagram, fotógrafa Barranquilla">
-    <meta property="og:title" content="Gisella Villarreal | Branding para Redes Sociales">
-    <meta property="og:description" content="Descubre cómo transformar la esencia de tu marca en una presencia digital auténtica.">
+    <title>Gisella Villarreal | Branding Visual & Fotografía</title>
+
+    <!-- ====== ETIQUETAS SEO ====== -->
+    <meta name="description" content="Gisella Villarreal | Branding Visual Creativo y Fotografía para Marca Personal y Eventos en Barranquilla, Colombia.">
+    <meta name="keywords" content="branding visual creativo, fotografía workstyle, marca personal, fotografía de eventos, diseño visual Instagram, fotógrafa Barranquilla">
+    <meta property="og:title" content="Gisella Villarreal | Branding Visual & Fotografía">
+    <meta property="og:description" content="Transformo la esencia de tu marca personal o evento en una presencia digital auténtica y memorable.">
     <meta property="og:image" content="https://gisellavillarreal.pages.dev/1792874026013~2.jpg">
     <meta property="og:url" content="https://gisellavillarreal.pages.dev">
-    <!-- ====== FIN ETIQUETAS SEO ====== -->
-    
+
     <link rel="icon" type="image/png" href="Favicon_20261114_110929_0000.png">
     <link rel="apple-touch-icon" href="Favicon_20261114_105928_0000.png">
-    
+
+    <!-- Tipografías editoriales -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'brand-dark': '#151515',       
-                        'brand-cream': '#c9bb9e',      
-                        'text-main': '#FFFFFF',        
-                        'text-light': '#b0b0b0',       
-                        'border-color': 'rgba(255, 255, 255, 0.15)',
+                        'ivory': '#F7F2E8',           /* Marfil pasteloso */
+                        'ivory-soft': '#EFE8DC',      /* Marfil cálido */
+                        'terracotta': '#6E2C20',      /* Terracota editorial */
+                        'terracotta-hover': '#572117',
+                        'ink': '#1F1B18',
+                        'muted': '#6B625C',
+                        'line': '#E2D8C8',
                     },
                     fontFamily: {
-                        'serif': ['"Playfair Display"', 'serif'],
+                        'serif': ['"Cormorant Garamond"', 'serif'],
                         'sans': ['"Inter"', 'sans-serif'],
                     }
                 }
@@ -45,254 +47,430 @@
     <style>
         html { scroll-behavior: smooth; }
         .no-tap-highlight { -webkit-tap-highlight-color: transparent; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Carrusel infinito automático (velocidad normal) */
+        @keyframes marqueeLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marqueeLeft 30s linear infinite;
+        }
+        .marquee-track:hover,
+        .marquee-track:active {
+            animation-play-state: paused;
+        }
     </style>
 </head>
-<body class="bg-brand-dark antialiased text-text-main selection:bg-brand-cream selection:text-brand-dark">
+<body class="bg-ivory text-ink font-sans antialiased selection:bg-terracotta selection:text-ivory overflow-x-hidden">
 
-    <main class="w-full max-w-[430px] md:max-w-[950px] lg:max-w-[1050px] mx-auto bg-brand-dark min-h-screen relative shadow-2xl flex flex-col md:flex-row">
-
-        <!-- ========================================== -->
-        <!-- LADO IZQUIERDO: HEADER / HERO (Fijo en PC) -->
-        <!-- ========================================== -->
-        <header id="inicio" class="relative w-full md:w-[45%] lg:w-[45%] h-[70vh] md:h-screen min-h-[500px] flex flex-col md:sticky md:top-0 md:border-r md:border-border-color">
-            
-            <div class="absolute inset-0 z-0 overflow-hidden bg-brand-dark">
-                <img src="1792874026013~2.jpg" 
-                     alt="Gisella Villarreal" 
-                     class="w-full h-full object-cover object-[center_15%] md:object-center scale-[1.05]">
-            </div>
-            
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent z-10 h-[50%]"></div>
-
-            <div class="relative z-20 px-6 mt-auto flex flex-col items-center text-center w-full pb-8 md:pb-12">
-                <h1 class="font-serif text-[3.5rem] md:text-5xl lg:text-6xl italic font-medium leading-[1.05] mb-2 text-text-main tracking-wide">
-                    Gisella<br>Villarreal
-                </h1>
-                <p class="font-sans text-[13px] md:text-[12px] lg:text-[13px] tracking-[0.2em] uppercase text-brand-cream mb-4 font-medium">
-                    Social Media Branding
-                </p>
-                <p class="font-sans text-[13px] md:text-[12px] lg:text-[13px] leading-relaxed text-text-light font-light max-w-[320px] md:max-w-[280px] lg:max-w-[320px] mx-auto">
-                    Amo ayudar a marcas personales que desean mostrarse auténticas, tanto en su vida personal como en su camino profesional.
-                </p>
-            </div>
-        </header>
-
-        <!-- ========================================== -->
-        <!-- LADO DERECHO: CONTENIDO (Scrolleable en PC)-->
-        <!-- ========================================== -->
-        <div class="w-full md:w-[55%] lg:w-[55%] flex flex-col md:py-8 lg:px-6">
-            
-            <section id="enlaces" class="px-5 pt-4 pb-12 flex flex-col gap-4 relative z-10">
-                
-                <!-- BOTÓN NUEVO: Reserva tu sesión fotográfica (Largo) -->
-                <a href="https://wa.me/573042182321" target="_blank" class="no-tap-highlight w-full py-4 px-4 rounded-2xl border border-brand-cream bg-transparent text-brand-cream text-[10.5px] md:text-[11px] uppercase tracking-widest font-semibold flex items-center justify-center gap-3 hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                    <i class="fa-solid fa-camera-retro text-[18px]"></i>
-                    <span>Reserva tu sesión Fotográfica</span>
-                </a>
-
-                <!-- Botones 1 y 2: Sencillos en la misma línea -->
-                <div class="flex gap-3 w-full mb-2">
-                    <a href="https://wa.me/573042182321" target="_blank" class="no-tap-highlight flex-1 py-4 px-2 rounded-2xl border border-brand-cream bg-brand-cream text-brand-dark text-[9px] md:text-[10px] uppercase tracking-wider font-semibold leading-snug text-center flex flex-col items-center justify-center gap-2 hover:bg-transparent hover:text-brand-cream hover:border-border-color transition-all shadow-sm">
-                        <i class="fa-regular fa-comments text-[16px] md:text-[18px]"></i>
-                        Hablemos de tu<br>Marca personal
-                    </a>
-                    <a href="https://wa.me/573042182321" target="_blank" class="no-tap-highlight flex-1 py-4 px-2 rounded-2xl border border-border-color bg-brand-dark/50 backdrop-blur-sm text-brand-cream text-[9px] md:text-[10px] uppercase tracking-wider font-semibold leading-snug text-center flex flex-col items-center justify-center gap-2 hover:border-brand-cream hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                        <i class="fa-solid fa-ring text-[16px] md:text-[18px]"></i>
-                        Diseñemos la identidad<br>visual de tu boda
-                    </a>
-                </div>
-
-                <!-- Botón 3 (Tarjeta 1): Trabajos Destacados -->
-                <a href="https://gisella-villarreal.pages.dev/portafolio.html" class="no-tap-highlight group relative w-full h-[140px] rounded-[1.5rem] overflow-hidden shadow-md block border border-border-color transition-transform hover:scale-[1.02]">
-                    <div class="absolute inset-y-0 right-0 w-[65%] bg-[url('https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700"></div>
-                    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-[45%] via-brand-dark/50 to-transparent"></div>
-                    
-                    <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/60 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
-                        <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
-                    </div>
-
-                    <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[85%]">
-                        <h3 class="font-serif text-[1.6rem] md:text-[1.8rem] text-brand-cream leading-[1.1] mb-3">
-                            <span class="not-italic font-medium">Conoce mis</span><br>
-                            <span class="italic text-white">trabajos destacados</span>
-                        </h3>
-                        <div class="flex items-center gap-2">
-                            <span class="text-[7.5px] md:text-[8.5px] uppercase tracking-[0.2em] text-text-light font-bold">Ver Portafolio</span>
-                            <div class="h-[1px] w-8 bg-border-color"></div>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Botón 4 (Tarjeta 2): Banco Visual Autoral -->
-                <a href="https://gisella-villarreal.pages.dev/bancovisualautoral" class="no-tap-highlight group relative w-full h-[140px] rounded-[1.5rem] overflow-hidden shadow-md block border border-border-color transition-transform hover:scale-[1.02]">
-                    <div class="absolute inset-y-0 right-0 w-[65%] bg-[url('1792874026013.jpg')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700"></div>
-                    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-[45%] via-brand-dark/50 to-transparent"></div>
-                    
-                    <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/60 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
-                        <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
-                    </div>
-
-                    <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[85%] md:w-[90%]">
-                        <h3 class="font-serif text-[1.6rem] md:text-[1.8rem] text-brand-cream leading-[1.1] mb-3">
-                            <span class="not-italic font-medium text-white">Banco Visual</span><br>
-                            <span class="italic">Autoral</span>
-                        </h3>
-                        <div class="flex items-center gap-2">
-                            <span class="text-[7.5px] md:text-[8.5px] uppercase tracking-[0.2em] text-text-light font-bold">Únete a mi comunidad</span>
-                            <div class="h-[1px] w-8 bg-border-color"></div>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Botón 5 (Tarjeta 3): Curso de Fotografía -->
-                <a href="https://gisella-villarreal.pages.dev/cursoworkstyleautoral" class="no-tap-highlight group relative w-full h-[140px] rounded-[1.5rem] overflow-hidden shadow-md block border border-border-color transition-transform hover:scale-[1.02]">
-                    <div class="absolute inset-y-0 right-0 w-[65%] bg-[url('https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700"></div>
-                    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark from-[45%] via-brand-dark/50 to-transparent"></div>
-                    
-                    <div class="absolute top-4 right-4 w-7 h-7 rounded-full bg-brand-dark/60 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream group-hover:bg-brand-cream group-hover:text-brand-dark transition-all z-20">
-                        <i class="fa-solid fa-arrow-up-right text-[11px]"></i>
-                    </div>
-
-                    <div class="relative h-full p-6 flex flex-col justify-center z-10 w-[85%]">
-                        <h3 class="font-serif text-[1.6rem] md:text-[1.8rem] text-brand-cream leading-[1.1] mb-3">
-                            <span class="not-italic font-medium">Curso de</span><br>
-                            <span class="italic text-white">Fotografía Workstyle</span>
-                        </h3>
-                        <div class="flex items-center gap-2">
-                            <span class="text-[7.5px] md:text-[8.5px] uppercase tracking-[0.2em] text-text-light font-bold">Ver Información</span>
-                            <div class="h-[1px] w-8 bg-border-color"></div>
-                        </div>
-                    </div>
-                </a>
-                
-            </section>
-
-            <!-- SECCIÓN: SOBRE MÍ -->
-            <section id="sobre-mi" class="px-6 py-10 bg-transparent mx-5 rounded-3xl mb-10 text-center border border-border-color pt-10">
-                <h2 class="font-serif text-3xl italic text-brand-cream mb-6">Sobre mí</h2>
-                
-                <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-6 border-[3px] border-brand-cream shadow-sm">
-                    <img src="1792874026013~2.jpg" alt="Perfil de Gisella" class="w-full h-full object-cover">
-                </div>
-                
-                <p class="font-sans text-[14px] md:text-[14.5px] text-text-light font-light leading-relaxed mb-8 px-2 md:px-6 text-justify">
-                    Soy Gisella, Gestora de Mercados y diplomada en Dirección de Arte y Fotografía para Plataformas Digitales, con enfoque en Social Media Branding y Marketing de Contenidos. Mi propósito es transformar la esencia de tu marca en una presencia digital auténtica y coherente mediante la estrategia, la comunicación y la creación de contenido visual; para así fortalecer tu presencia en redes sociales, conectar con tu audiencia y comunicar el valor de lo que haces sin pasar desapercibida.
-                </p>
-                
-                <a href="https://wa.me/573042182321" target="_blank" class="inline-block w-full max-w-[320px] mx-auto py-4 rounded-full bg-brand-cream hover:bg-white transition-colors text-brand-dark text-[13px] font-bold tracking-wide shadow-md uppercase">
-                    Apoya mi camino creativo
-                </a>
-            </section>
-
-            <!-- SECCIÓN DE CONTACTO Y FOOTER -->
-            <footer id="contacto" class="px-8 pt-2 pb-12 text-center relative z-10 flex flex-col justify-between">
-                
-                <div class="mb-10 text-center">
-                    <h2 class="font-serif text-2xl italic text-brand-cream mb-6">Contacto</h2>
-                    
-                    <div class="flex justify-center gap-5">
-                        <a href="https://wa.me/573042182321" target="_blank" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                            <i class="fa-brands fa-whatsapp text-xl"></i>
-                        </a>
-                        <a href="https://www.instagram.com/gisella.villarreal?cplk=MWhzcHY3ZHNsdHRoMw==" target="_blank" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                            <i class="fa-brands fa-instagram text-xl"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/gisellavillarreal?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                            <i class="fa-brands fa-linkedin-in text-xl"></i>
-                        </a>
-                        <a href="mailto:gisellasofiavillarreal@gmail.com" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                            <i class="fa-regular fa-envelope text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="pt-6 relative border-t border-border-color flex flex-col items-center gap-4">
-                    <div class="text-center">
-                        <h4 class="font-serif text-[1.2rem] italic mb-1 text-text-main">Gisella Villarreal</h4>
-                        <p class="text-[10.5px] font-sans text-brand-cream mb-1.5">Barranquilla, Colombia</p>
-                        <p class="text-[9px] font-sans font-medium text-text-light tracking-widest uppercase leading-relaxed">
-                            © 2026 | Todos los derechos reservados
-                        </p>
-                    </div>
-
-                    <div class="flex gap-4 font-sans text-[10px] text-text-light underline decoration-border-color hover:text-brand-cream transition-colors">
-                        <a href="terminosycondiciones.html">Términos y Condiciones</a>
-                        <a href="politicadeprivacidad.html">Política de Privacidad</a>
-                    </div>
-                </div>
-            </footer>
-
-        </div>
-
-        <!-- BOTÓN FLOTANTE "VOLVER ARRIBA" -->
-        <div class="fixed bottom-8 right-6 md:right-10 z-40">
-            <button id="scroll-top-btn" class="pointer-events-auto w-10 h-10 rounded-full border border-brand-cream/40 bg-brand-dark/90 backdrop-blur-md flex items-center justify-center text-brand-cream opacity-0 translate-y-4 transition-all duration-500 hover:bg-brand-cream hover:text-brand-dark shadow-xl" aria-label="Volver arriba">
-                <i class="fa-solid fa-angle-up text-sm"></i>
+    <!-- ================================================================= -->
+    <!-- MENÚ POPUP PANTALLA COMPLETA                                      -->
+    <!-- ================================================================= -->
+    <div id="fullscreen-menu" class="fixed inset-0 z-50 bg-terracotta text-ivory flex flex-col justify-between p-6 sm:p-10 opacity-0 pointer-events-none transition-all duration-300" aria-hidden="true">
+        
+        <div class="flex items-center justify-end w-full max-w-6xl mx-auto">
+            <button id="close-menu-btn" aria-label="Cerrar menú" class="no-tap-highlight w-10 h-10 rounded-full border border-ivory/30 flex items-center justify-center text-ivory hover:bg-ivory hover:text-terracotta transition-colors">
+                <i class="fa-solid fa-xmark text-base"></i>
             </button>
         </div>
 
-    </main>
+        <nav class="flex flex-col items-center justify-center gap-3.5 sm:gap-4 text-center my-auto">
+            <a href="#inicio" class="menu-link font-serif text-2xl sm:text-4xl hover:italic text-ivory/95 hover:text-white transition-all">Inicio</a>
+            <a href="#esencia" class="menu-link font-serif text-2xl sm:text-4xl hover:italic text-ivory/95 hover:text-white transition-all">Esencia</a>
+            <a href="#servicios" class="menu-link font-serif text-2xl sm:text-4xl hover:italic text-ivory/95 hover:text-white transition-all">Mis Servicios</a>
+            <a href="#proceso" class="menu-link font-serif text-2xl sm:text-4xl hover:italic text-ivory/95 hover:text-white transition-all">Proceso</a>
+            <a href="#galeria" class="menu-link font-serif text-2xl sm:text-4xl hover:italic text-ivory/95 hover:text-white transition-all">Galería</a>
+            <a href="#testimonios" class="menu-link font-serif text-2xl sm:text-4xl hover:italic text-ivory/95 hover:text-white transition-all">Testimonios</a>
+            <a href="#estratega" class="menu-link font-serif text-2xl sm:text-4xl hover:italic text-ivory/95 hover:text-white transition-all">Tu Estratega Creativa</a>
+            <a href="#contacto" class="menu-link font-serif text-2xl sm:text-4xl hover:italic text-ivory/95 hover:text-white transition-all">Contacto</a>
+        </nav>
+
+        <div class="flex flex-col items-center gap-3 pb-2">
+            <div class="flex items-center justify-center gap-4">
+                <a href="https://wa.me/573042182321" target="_blank" aria-label="WhatsApp" class="w-10 h-10 rounded-full border border-ivory/30 flex items-center justify-center text-ivory hover:bg-ivory hover:text-terracotta transition-all">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                </a>
+                <a href="https://www.instagram.com/gisella.villarreal?cplk=MWhzcHY3ZHNsdHRoMw==" target="_blank" aria-label="Instagram" class="w-10 h-10 rounded-full border border-ivory/30 flex items-center justify-center text-ivory hover:bg-ivory hover:text-terracotta transition-all">
+                    <i class="fa-brands fa-instagram text-base"></i>
+                </a>
+                <a href="mailto:gisellasofiavillarreal@gmail.com" aria-label="Correo electrónico" class="w-10 h-10 rounded-full border border-ivory/30 flex items-center justify-center text-ivory hover:bg-ivory hover:text-terracotta transition-all">
+                    <i class="fa-regular fa-envelope text-base"></i>
+                </a>
+            </div>
+            <p class="text-[9.5px] tracking-[0.22em] uppercase text-ivory/65">Barranquilla, Colombia</p>
+        </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 1. HERO EDITORIAL + CURVA ORGÁNICA INFERIOR                       -->
+    <!-- ================================================================= -->
+    <header id="inicio" class="relative w-full min-h-[90vh] md:min-h-screen flex flex-col justify-between overflow-hidden bg-ink">
+        
+        <!-- Imagen de fondo -->
+        <div class="absolute inset-0 z-0">
+            <img src="1792874026013~2.jpg" 
+                 alt="Gisella Villarreal - Branding Visual y Fotografía" 
+                 class="w-full h-full object-cover object-[center_18%] md:object-center">
+            <div class="absolute inset-0 bg-black/25"></div>
+            <!-- Difuminado inferior -->
+            <div class="absolute inset-x-0 bottom-0 h-[62%] bg-gradient-to-t from-[#1A1512] via-[#1A1512]/75 to-transparent"></div>
+        </div>
+
+        <!-- Encabezado (solo icono de menú derecho) -->
+        <div class="relative z-20 w-full max-w-6xl mx-auto px-5 md:px-10 pt-6 pb-4 flex items-center justify-end">
+            <button id="open-menu-btn" aria-label="Abrir menú" class="no-tap-highlight w-10 h-10 rounded-full bg-black/25 backdrop-blur-md border border-ivory/35 flex items-center justify-center text-ivory hover:bg-terracotta hover:border-terracotta transition-all">
+                <i class="fa-solid fa-bars text-sm"></i>
+            </button>
+        </div>
+
+        <!-- Contenido del Hero -->
+        <div class="relative z-20 w-full max-w-6xl mx-auto px-5 md:px-10 mt-auto pb-20 md:pb-24">
+            <div class="max-w-3xl">
+                <p class="text-[8.5px] sm:text-[9px] tracking-[0.26em] uppercase text-ivory/85 mb-2.5 font-medium">
+                    Branding Visual &nbsp;/&nbsp; Fotografía &nbsp;/&nbsp; Eventos
+                </p>
+
+                <h1 class="font-serif text-[3.4rem] sm:text-[4.6rem] md:text-[5.8rem] text-ivory leading-[0.88] font-normal tracking-tight mb-4">
+                    <span class="block">Gisella</span>
+                    <span class="block italic pl-7 sm:pl-14 md:pl-24">Villarreal</span>
+                </h1>
+
+                <p class="text-[12px] sm:text-[13px] text-ivory/85 leading-relaxed max-w-sm font-light mb-6">
+                    Ideas que construyen marcas personales auténticas y capturan eventos con estética, sensibilidad y propósito.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 max-w-sm sm:max-w-none">
+                    <a href="https://wa.me/573042182321?text=Hola%20Gisella%2C%20quiero%20hablarte%20de%20mi%20marca" target="_blank" class="no-tap-highlight inline-flex items-center justify-center gap-2.5 bg-terracotta hover:bg-terracotta-hover text-ivory text-[9.5px] md:text-[10px] tracking-[0.2em] uppercase font-medium px-6 py-3 rounded-full transition-colors shadow-md">
+                        <span>Háblame de tu marca</span>
+                        <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                    </a>
+                    <a href="https://wa.me/573042182321?text=Hola%20Gisella%2C%20quiero%20contarte%20sobre%20mi%20evento" target="_blank" class="no-tap-highlight inline-flex items-center justify-center gap-2.5 bg-transparent hover:bg-ivory/15 text-ivory border border-ivory/70 text-[9.5px] md:text-[10px] tracking-[0.2em] uppercase font-medium px-6 py-3 rounded-full backdrop-blur-sm transition-all">
+                        <span>Cuéntame sobre tu evento</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CURVA ORGÁNICA DE TRANSICIÓN HACIA LA SIGUIENTE SECCIÓN -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20 -mb-px pointer-events-none">
+            <svg class="relative block w-full h-[38px] sm:h-[54px] md:h-[72px]" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,40 C360,105 1080,-15 1440,55 L1440,100 L0,100 Z" fill="#F7F2E8"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- ================================================================= -->
+    <!-- 2. SECCIÓN ESENCIA (Compacta + párrafo justificado)               -->
+    <!-- ================================================================= -->
+    <section id="esencia" class="w-full bg-ivory pt-10 pb-14 md:pt-14 md:pb-20 px-6 sm:px-10">
+        <div class="max-w-2xl mx-auto flex flex-col items-center">
+            <h2 class="font-serif text-[1.75rem] sm:text-[2.15rem] md:text-[2.45rem] leading-[1.15] text-ink font-normal text-center mb-5">
+                Este es nuestro espacio para crear con libertad, encontrar tu esencia y darle forma a algo <span class="italic text-terracotta">verdaderamente tuyo.</span>
+            </h2>
+            <p class="text-[13px] md:text-[13.5px] text-muted leading-[1.8] font-light text-justify mb-7">
+                Creo en el valor de conocer cada historia antes de darle forma. Por eso, cada proyecto comienza con una conversación: escuchamos lo que quieres comunicar, descubrimos aquello que te hace diferente y lo traducimos en una dirección estratégica y visual coherente, auténtica y memorable.
+            </p>
+            <a href="https://wa.me/573042182321?text=Hola%20Gisella%2C%20me%20gustar%C3%ADa%20reservar%20una%20sesi%C3%B3n" target="_blank" class="no-tap-highlight inline-flex items-center gap-2.5 border border-terracotta bg-terracotta hover:bg-terracotta-hover text-ivory text-[10px] tracking-[0.2em] uppercase font-medium px-7 py-3 rounded-full transition-all shadow-sm">
+                <span>Reserva tu sesión</span>
+                <i class="fa-solid fa-arrow-right text-[9px]"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 3. SECCIÓN MIS SERVICIOS (Fondo Terracota + textos actualizados)  -->
+    <!-- ================================================================= -->
+    <section id="servicios" class="relative w-full bg-terracotta text-ivory py-14 md:py-18 px-6 sm:px-10">
+        <div class="max-w-5xl mx-auto">
+            <!-- Subtítulo -->
+            <p class="text-[10px] tracking-[0.26em] uppercase text-ivory/75 font-medium text-center md:text-left mb-8 pb-3 border-b border-ivory/20">
+                Mis servicios
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-7">
+                
+                <div class="flex flex-col gap-2">
+                    <span class="text-[10px] font-medium text-ivory/60 tracking-widest">01</span>
+                    <h3 class="font-serif text-[1.45rem] md:text-[1.55rem] text-ivory font-normal leading-tight">Marca Personal</h3>
+                    <p class="text-[12.5px] md:text-[13px] text-ivory/85 leading-[1.7] font-light text-justify">
+                        Estrategia de marca, dirección de arte y narrativa visual para destacar en redes sociales, optimización de Instagram, web one-pages/BioLink.
+                    </p>
+                </div>
+
+                <div class="flex flex-col gap-2 pt-6 md:pt-0 border-t md:border-t-0 md:border-l border-ivory/20 md:pl-7">
+                    <span class="text-[10px] font-medium text-ivory/60 tracking-widest">02</span>
+                    <h3 class="font-serif text-[1.45rem] md:text-[1.55rem] text-ivory font-normal leading-tight">Fotografía</h3>
+                    <p class="text-[12.5px] md:text-[13px] text-ivory/85 leading-[1.7] font-light text-justify">
+                        Retratos, fotos Workstyle y sesiones estratégicas que muestran tu lado humano y profesional.
+                    </p>
+                </div>
+
+                <div class="flex flex-col gap-2 pt-6 md:pt-0 border-t md:border-t-0 md:border-l border-ivory/20 md:pl-7">
+                    <span class="text-[10px] font-medium text-ivory/60 tracking-widest">03</span>
+                    <h3 class="font-serif text-[1.45rem] md:text-[1.55rem] text-ivory font-normal leading-tight">Bodas &amp; Eventos</h3>
+                    <p class="text-[12.5px] md:text-[13px] text-ivory/85 leading-[1.7] font-light text-justify">
+                        Identidad visual, monogramas, papelería, pág web del evento, creación de contenido en Barranquilla.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 4. PROCESO: ASÍ DAMOS FORMA A TUS PROYECTOS (Enumeración natural) -->
+    <!-- ================================================================= -->
+    <section id="proceso" class="w-full bg-ivory py-14 md:py-20 px-6 sm:px-10">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="font-serif text-[1.85rem] sm:text-[2.2rem] md:text-[2.5rem] text-ink leading-[1.1] font-normal text-center mb-9">
+                Así damos forma a tus <span class="italic text-terracotta">proyectos</span>
+            </h2>
+
+            <!-- Enumeración natural sin encasillar -->
+            <ol class="space-y-6 md:space-y-7 max-w-2xl mx-auto">
+                <li class="flex items-baseline gap-3.5">
+                    <span class="font-serif text-lg italic text-terracotta font-medium shrink-0">1.</span>
+                    <p class="text-[13px] md:text-[13.5px] text-muted leading-[1.75] font-light text-justify">
+                        <strong class="font-medium text-ink">Nos conocemos:</strong> conversamos sobre tu proyecto, tus ideas, necesidades y expectativas.
+                    </p>
+                </li>
+
+                <li class="flex items-baseline gap-3.5">
+                    <span class="font-serif text-lg italic text-terracotta font-medium shrink-0">2.</span>
+                    <p class="text-[13px] md:text-[13.5px] text-muted leading-[1.75] font-light text-justify">
+                        <strong class="font-medium text-ink">Descubrimos la esencia:</strong> exploramos el concepto, la personalidad y aquello que queremos comunicar.
+                    </p>
+                </li>
+
+                <li class="flex items-baseline gap-3.5">
+                    <span class="font-serif text-lg italic text-terracotta font-medium shrink-0">3.</span>
+                    <p class="text-[13px] md:text-[13.5px] text-muted leading-[1.75] font-light text-justify">
+                        <strong class="font-medium text-ink">Damos forma a las ideas:</strong> desarrollamos la propuesta estratégica y visual de acuerdo con el servicio contratado.
+                    </p>
+                </li>
+
+                <li class="flex items-baseline gap-3.5">
+                    <span class="font-serif text-lg italic text-terracotta font-medium shrink-0">4.</span>
+                    <p class="text-[13px] md:text-[13.5px] text-muted leading-[1.75] font-light text-justify">
+                        <strong class="font-medium text-ink">Hacemos realidad el proyecto:</strong> entregamos las piezas y recursos acordados para dar vida a la identidad.
+                    </p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 5. GALERÍA RODANTE ESTILO EDITORIAL COMPACTO (5 Imágenes)         -->
+    <!-- ================================================================= -->
+    <section id="galeria" class="w-full bg-ivory overflow-hidden">
+        <div class="marquee-track flex gap-1">
+            
+            <!-- ===== GRUPO 1 (Reemplaza estas 5 imágenes con tus fotos) ===== -->
+            <div class="w-[240px] sm:w-[290px] md:w-[340px] aspect-[4/5] overflow-hidden bg-ivory-soft shrink-0">
+                <img src="1792874026013.jpg" alt="Proyecto Gisella Villarreal 1" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[240px] sm:w-[290px] md:w-[340px] aspect-[4/5] overflow-hidden bg-ivory-soft shrink-0">
+                <img src="https://images.unsplash.com/photo-1542319630-f38b0fde83ea?q=80&w=600&auto=format&fit=crop" alt="Proyecto Gisella Villarreal 2" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[240px] sm:w-[290px] md:w-[340px] aspect-[4/5] overflow-hidden bg-ivory-soft shrink-0">
+                <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=600&auto=format&fit=crop" alt="Proyecto Gisella Villarreal 3" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[240px] sm:w-[290px] md:w-[340px] aspect-[4/5] overflow-hidden bg-ivory-soft shrink-0">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop" alt="Proyecto Gisella Villarreal 4" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[240px] sm:w-[290px] md:w-[340px] aspect-[4/5] overflow-hidden bg-ivory-soft shrink-0">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600&auto=format&fit=crop" alt="Proyecto Gisella Villarreal 5" class="w-full h-full object-cover">
+            </div>
+
+            <!-- ===== GRUPO 2 (Duplicado exacto para loop continuo sin cortes) ===== -->
+            <div class="w-[220px] sm:w-[260px] md:w-[290px] aspect-[4/5] rounded-xl overflow-hidden bg-ivory-soft border border-line shrink-0" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop" alt="" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[220px] sm:w-[260px] md:w-[290px] aspect-[4/5] rounded-xl overflow-hidden bg-ivory-soft border border-line shrink-0" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop" alt="" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[220px] sm:w-[260px] md:w-[290px] aspect-[4/5] rounded-xl overflow-hidden bg-ivory-soft border border-line shrink-0" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop" alt="" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[220px] sm:w-[260px] md:w-[290px] aspect-[4/5] rounded-xl overflow-hidden bg-ivory-soft border border-line shrink-0" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600&auto=format&fit=crop" alt="" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[220px] sm:w-[260px] md:w-[290px] aspect-[4/5] rounded-xl overflow-hidden bg-ivory-soft border border-line shrink-0" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=600&auto=format&fit=crop" alt="" class="w-full h-full object-cover">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 7. SECCIÓN TU ESTRATEGA CREATIVA + FOTO + CTA FINAL               -->
+    <!-- ================================================================= -->
+    <section id="estratega" class="w-full bg-ivory-soft/60 border-t border-line py-14 md:py-20 px-6 sm:px-10">
+        <div class="max-w-2xl mx-auto flex flex-col items-center">
+            
+            <h2 class="font-serif text-[1.9rem] sm:text-[2.3rem] md:text-[2.6rem] text-ink leading-[1.1] font-normal text-center mb-6">
+                Tu estratega <span class="italic text-terracotta">creativa.</span>
+            </h2>
+
+            <div class="space-y-4 text-[13px] md:text-[13.5px] text-muted leading-[1.8] font-light text-justify mb-9">
+                <p>
+                    Hace un poco más de 5 años que me dedico al marketing digital, trabajando en el desarrollo de marcas, comercio electrónico y comunicación digital.
+                </p>
+                <p>
+                    Soy Gestora de Marketing, con formación en dirección de arte y fotografía para marcas personales en redes sociales.
+                </p>
+                <p>
+                    A lo largo de mi trayectoria he comprendido que construir una marca va mucho más allá de crear una imagen bonita. Se trata de entender su esencia, reconocer lo que la hace diferente y encontrar la manera adecuada de comunicarlo.
+                </p>
+                <p>
+                    Trabajo con marcas que buscan construir una presencia auténtica y con personas que desean darle una identidad especial a sus celebraciones y eventos. Cada proyecto parte de una escucha atenta, una visión estratégica y un proceso creativo pensado para responder a sus necesidades.
+                </p>
+                <p>
+                    Creo en hacer las cosas con intención, cuidar los detalles y construir propuestas que realmente representen aquello que hay detrás de cada historia.
+                </p>
+                <p class="text-ink font-normal">
+                    Me encantará conocer tu proyecto y descubrir juntas todo lo que podemos crear.
+                </p>
+            </div>
+
+            <!-- Foto debajo del texto -->
+            <div class="w-full max-w-[300px] sm:max-w-[340px] aspect-[4/5] rounded-2xl overflow-hidden shadow-md border border-line mb-10">
+                <img src="1792874026013~2.jpg" 
+                     alt="Gisella Villarreal - Tu estratega creativa" 
+                     class="w-full h-full object-cover object-top">
+            </div>
+
+            <!-- CTA debajo de la foto -->
+            <div class="flex flex-col items-center text-center gap-5">
+                <h3 class="font-serif text-[1.7rem] sm:text-[2.1rem] text-ink leading-tight font-normal max-w-sm">
+                    ¿Y si el próximo proyecto lo <span class="italic text-terracotta">creamos juntas?</span>
+                </h3>
+                <a href="https://wa.me/573042182321" target="_blank" class="no-tap-highlight inline-flex items-center justify-center gap-2.5 bg-terracotta hover:bg-terracotta-hover text-ivory text-[10px] tracking-[0.22em] uppercase font-medium px-8 py-3.5 rounded-full transition-colors shadow-md">
+                    <span>Contáctame</span>
+                    <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 8. PIE DE PÁGINA                                                  -->
+    <!-- ================================================================= -->
+    <footer id="contacto" class="w-full bg-ivory border-t border-line py-10 px-6 text-center">
+        <div class="max-w-4xl mx-auto flex flex-col items-center gap-5">
+            
+            <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-muted font-medium mb-4">Contacto</p>
+                <div class="flex items-center justify-center gap-4">
+                    <a href="https://wa.me/573042182321" target="_blank" aria-label="WhatsApp" class="w-10 h-10 rounded-full border border-line bg-ivory-soft/50 flex items-center justify-center text-ink hover:bg-terracotta hover:border-terracotta hover:text-ivory transition-all">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                    </a>
+                    <a href="https://www.instagram.com/gisella.villarreal?cplk=MWhzcHY3ZHNsdHRoMw==" target="_blank" aria-label="Instagram" class="w-10 h-10 rounded-full border border-line bg-ivory-soft/50 flex items-center justify-center text-ink hover:bg-terracotta hover:border-terracotta hover:text-ivory transition-all">
+                        <i class="fa-brands fa-instagram text-base"></i>
+                    </a>
+                    <a href="mailto:gisellasofiavillarreal@gmail.com" aria-label="Correo electrónico" class="w-10 h-10 rounded-full border border-line bg-ivory-soft/50 flex items-center justify-center text-ink hover:bg-terracotta hover:border-terracotta hover:text-ivory transition-all">
+                        <i class="fa-regular fa-envelope text-base"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="w-full max-w-[200px] h-[1px] bg-line"></div>
+
+            <div class="flex flex-col items-center gap-1">
+                <h4 class="font-serif text-xl italic text-ink">Gisella Villarreal</h4>
+                <p class="text-[11px] text-terracotta font-medium tracking-wide">Barranquilla, Colombia</p>
+                <p class="text-[9.5px] tracking-[0.18em] uppercase text-muted mt-1">
+                    © 2026 | Todos los derechos reservados
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-5 text-[10.5px] text-muted underline decoration-line underline-offset-4">
+                <a href="terminosycondiciones.html" class="hover:text-terracotta transition-colors">Términos y Condiciones</a>
+                <a href="politicadeprivacidad.html" class="hover:text-terracotta transition-colors">Políticas de Privacidad</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE VOLVER ARRIBA -->
+    <button id="scroll-top-btn" aria-label="Volver arriba" class="fixed bottom-6 right-5 md:right-8 z-40 pointer-events-none opacity-0 translate-y-4 w-9 h-9 rounded-full bg-terracotta text-ivory flex items-center justify-center shadow-lg hover:bg-terracotta-hover transition-all duration-300">
+        <i class="fa-solid fa-angle-up text-xs"></i>
+    </button>
 
     <!-- BANNER DE COOKIES -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-brand-dark border-t border-brand-cream/50 shadow-lg z-50 transform transition-transform duration-500" style="display: none;">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            
-            <div class="text-[13px] text-text-light text-center sm:text-left">
-                <p>
-                    Utilizo cookies para mejorar tu experiencia en la web y analizar el tráfico. Al continuar navegando, aceptas su uso. 
-                    <a href="politicadeprivacidad.html" class="text-brand-cream underline hover:text-text-main transition-colors ml-1">
-                        Leer Política de Privacidad
-                    </a>.
-                </p>
-            </div>
-
-            <button id="accept-cookies" class="whitespace-nowrap bg-brand-cream text-brand-dark px-6 py-2 rounded-full font-medium text-[13px] hover:bg-text-main transition-colors">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-ink text-ivory border-t border-ivory/15 shadow-2xl z-50 transition-transform duration-500" style="display: none;">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-[11.5px] text-ivory/80 text-center sm:text-left font-light">
+                Utilizo cookies para mejorar tu experiencia en la web y analizar el tráfico. Al continuar navegando, aceptas su uso.
+                <a href="politicadeprivacidad.html" class="text-[#E5D5C3] underline underline-offset-2 hover:text-white ml-1">Leer Política de Privacidad</a>.
+            </p>
+            <button id="accept-cookies" class="whitespace-nowrap bg-terracotta hover:bg-terracotta-hover text-ivory px-5 py-2 rounded-full text-[10.5px] tracking-widest uppercase font-medium transition-colors">
                 Aceptar
             </button>
-
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // LÓGICA DEL BOTÓN VOLVER ARRIBA
+            // === MENÚ POPUP PANTALLA COMPLETA ===
+            const openMenuBtn = document.getElementById('open-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const fullscreenMenu = document.getElementById('fullscreen-menu');
+            const menuLinks = document.querySelectorAll('.menu-link');
+
+            function openMenu() {
+                fullscreenMenu.classList.remove('opacity-0', 'pointer-events-none');
+                fullscreenMenu.classList.add('opacity-100', 'pointer-events-auto');
+                fullscreenMenu.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                fullscreenMenu.classList.add('opacity-0', 'pointer-events-none');
+                fullscreenMenu.classList.remove('opacity-100', 'pointer-events-auto');
+                fullscreenMenu.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            openMenuBtn.addEventListener('click', openMenu);
+            closeMenuBtn.addEventListener('click', closeMenu);
+            menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+            // === BOTÓN VOLVER ARRIBA ===
             const scrollTopBtn = document.getElementById('scroll-top-btn');
-            
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
+                if (window.scrollY > 350) {
                     scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-                    scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+                    scrollTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
                 } else {
                     scrollTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-                    scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                    scrollTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
                 }
             });
 
-            if(scrollTopBtn) {
-                scrollTopBtn.addEventListener('click', () => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // === BANNER DE COOKIES ===
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+
+            if (!localStorage.getItem('cookies_accepted')) {
+                banner.style.display = 'block';
             }
 
-            // LÓGICA DEL BANNER DE COOKIES
-            const banner = document.getElementById("cookie-banner");
-            const acceptBtn = document.getElementById("accept-cookies");
-
-            if (!localStorage.getItem("cookies_accepted")) {
-                banner.style.display = "block";
-            }
-
-            acceptBtn.addEventListener("click", function() {
-                localStorage.setItem("cookies_accepted", "true");
-                banner.classList.add("translate-y-full");
-                setTimeout(() => {
-                    banner.style.display = "none";
-                }, 500);
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('cookies_accepted', 'true');
+                banner.classList.add('translate-y-full');
+                setTimeout(() => { banner.style.display = 'none'; }, 500);
             });
         });
     </script>
 
 </body>
-</html>
+</html> 
