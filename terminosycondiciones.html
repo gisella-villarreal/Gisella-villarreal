@@ -4,86 +4,193 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Términos y Condiciones | Gisella Villarreal</title>
+
+    <link rel="icon" type="image/png" href="Favicon_20261114_110929_0000.png">
+    <link rel="apple-touch-icon" href="Favicon_20261114_105928_0000.png">
+
+    <!-- Tipografías editoriales -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ivory': '#F7F2E8',           /* Marfil pasteloso */
+                        'ivory-soft': '#EFE8DC',      /* Marfil cálido */
+                        'terracotta': '#6E2C20',      /* Terracota editorial */
+                        'terracotta-hover': '#572117',
+                        'ink': '#1F1B18',
+                        'muted': '#6B625C',
+                        'line': '#E2D8C8',
+                    },
+                    fontFamily: {
+                        'serif': ['"Cormorant Garamond"', 'serif'],
+                        'sans': ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .no-tap-highlight { -webkit-tap-highlight-color: transparent; }
+    </style>
 </head>
-<body class="bg-[#151515] text-[#FFFFFF] font-sans antialiased selection:bg-[#c9bb9e] selection:text-[#151515]">
+<body class="bg-ivory text-ink font-sans antialiased selection:bg-terracotta selection:text-ivory min-h-screen flex flex-col">
 
-    <div class="max-w-3xl mx-auto px-6 py-16">
-        <header class="mb-12 border-b border-[#c9bb9e] pb-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-light mb-4 text-[#c9bb9e]">Términos y Condiciones</h1>
-            <p class="text-lg text-[#b0b0b0]">Las reglas claras para trabajar juntas y crear algo increíble.</p>
+    <!-- Barra superior minimalista con botón de regreso -->
+    <div class="w-full max-w-3xl mx-auto px-6 pt-8 flex items-center justify-between">
+        <a href="index.html" class="no-tap-highlight inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-muted hover:text-terracotta transition-colors font-medium">
+            <i class="fa-solid fa-arrow-left text-[10px]"></i>
+            <span>Volver al inicio</span>
+        </a>
+        <span class="text-[9.5px] tracking-[0.22em] uppercase text-muted/80">Legal</span>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="w-full max-w-3xl mx-auto px-6 pt-10 pb-16 flex-grow">
+        
+        <header class="mb-12 border-b border-line pb-8 text-center">
+            <p class="text-[10px] tracking-[0.26em] uppercase text-terracotta font-medium mb-3">
+                Información Legal
+            </p>
+            <h1 class="font-serif text-[2.4rem] sm:text-[3rem] md:text-[3.4rem] font-normal leading-[1.05] mb-4 text-ink">
+                Términos y <span class="italic text-terracotta">Condiciones</span>
+            </h1>
+            <p class="text-[13.5px] md:text-[14px] text-muted font-light max-w-md mx-auto leading-relaxed">
+                Las reglas claras para trabajar juntas y crear algo increíble.
+            </p>
         </header>
 
-        <main class="space-y-10 text-lg leading-relaxed">
+        <main class="space-y-9 text-[13.5px] md:text-[14px] leading-[1.8] font-light text-muted">
             
             <section>
-                <h2 class="text-2xl font-semibold mb-3 text-[#c9bb9e]">1. Bienvenida</h2>
-                <p class="text-[#b0b0b0]">¡Hola! Qué emoción tenerte por aquí. Al navegar por mi página web (<a href="https://gisellavillarreal.pages.dev" class="text-[#c9bb9e] underline hover:text-[#FFFFFF] transition-colors">gisellavillarreal.pages.dev</a>), contratar mis servicios de fotografía o branding, o adquirir alguna de mis formaciones, aceptas estos términos y condiciones. Están pensados para proteger el tiempo y el trabajo de ambas.</p>
+                <h2 class="font-serif text-[1.5rem] sm:text-[1.65rem] font-medium mb-2.5 text-ink">
+                    <span class="italic text-terracotta mr-1.5">1.</span> Bienvenida
+                </h2>
+                <p class="text-justify">
+                    ¡Hola! Qué emoción tenerte por aquí. Al navegar por mi página web (<a href="https://gisellavillarreal.pages.dev" class="text-terracotta underline decoration-terracotta/40 underline-offset-4 hover:text-terracotta-hover transition-colors font-normal">gisellavillarreal.pages.dev</a>), contratar mis servicios de fotografía o branding, o adquirir alguna de mis formaciones, aceptas estos términos y condiciones. Están pensados para proteger el tiempo y el trabajo de ambas.
+                </p>
             </section>
 
             <section>
-                <h2 class="text-2xl font-semibold mb-3 text-[#c9bb9e]">2. Mis Servicios</h2>
-                <p class="text-[#b0b0b0]">A través de esta plataforma ofrezco servicios dedicados a potenciar tu marca personal y comercial:</p>
-                <ul class="list-disc pl-6 mt-3 space-y-2 text-[#b0b0b0]">
-                    <li>Sesiones de fotografía de marca personal (estilo <em class="text-[#FFFFFF]">workstyle</em>).</li>
+                <h2 class="font-serif text-[1.5rem] sm:text-[1.65rem] font-medium mb-2.5 text-ink">
+                    <span class="italic text-terracotta mr-1.5">2.</span> Mis Servicios
+                </h2>
+                <p class="text-justify">A través de esta plataforma ofrezco servicios dedicados a potenciar tu marca personal y comercial:</p>
+                <ul class="list-disc pl-5 mt-3 space-y-2 marker:text-terracotta text-justify">
+                    <li>Sesiones de fotografía de marca personal (estilo <em class="text-ink font-normal">workstyle</em>).</li>
                     <li>Asesoría y diseño de branding para redes sociales (enfocado en Instagram).</li>
-                    <li>Acceso a infoproductos y formaciones digitales, como el minicurso <em class="text-[#FFFFFF]">Workstyle Content</em>.</li>
+                    <li>Acceso a infoproductos y formaciones digitales, como el minicurso <em class="text-ink font-normal">Workstyle Content</em>.</li>
                 </ul>
             </section>
 
             <section>
-                <h2 class="text-2xl font-semibold mb-3 text-[#c9bb9e]">3. Pagos, Reservas y Cancelaciones</h2>
-                <p class="text-[#b0b0b0]">Para agendar un servicio o sesión fotográfica, el proceso es el siguiente:</p>
-                <ul class="list-disc pl-6 mt-3 space-y-2 text-[#b0b0b0]">
-                    <li><strong>Reserva:</strong> Tu cupo o fecha de sesión queda agendado formalmente con el pago del 50% del valor total del servicio. El 50% restante debe cancelarse antes de la entrega final del proyecto o galería.</li>
-                    <li><strong>Reprogramación:</strong> Entiendo que surgen imprevistos. Si necesitas reprogramar tu sesión de fotos, por favor avísame con al menos 48 horas de anticipación para reagendar sin costo adicional (sujeto a mi disponibilidad).</li>
-                    <li><strong>Cancelaciones:</strong> Si decides cancelar el proyecto o sesión una vez realizado el pago inicial, este abono del 50% no es reembolsable, ya que cubre el tiempo de reserva y la planificación previa que ya he invertido en tu marca.</li>
+                <h2 class="font-serif text-[1.5rem] sm:text-[1.65rem] font-medium mb-2.5 text-ink">
+                    <span class="italic text-terracotta mr-1.5">3.</span> Pagos, Reservas y Cancelaciones
+                </h2>
+                <p class="text-justify">Para agendar un servicio o sesión fotográfica, el proceso es el siguiente:</p>
+                <ul class="list-disc pl-5 mt-3 space-y-2.5 marker:text-terracotta text-justify">
+                    <li><strong class="font-medium text-ink">Reserva:</strong> Tu cupo o fecha de sesión queda agendado formalmente con el pago del 50% del valor total del servicio. El 50% restante debe cancelarse antes de la entrega final del proyecto o galería.</li>
+                    <li><strong class="font-medium text-ink">Reprogramación:</strong> Entiendo que surgen imprevistos. Si necesitas reprogramar tu sesión de fotos, por favor avísame con al menos 48 horas de anticipación para reagendar sin costo adicional (sujeto a mi disponibilidad).</li>
+                    <li><strong class="font-medium text-ink">Cancelaciones:</strong> Si decides cancelar el proyecto o sesión una vez realizado el pago inicial, este abono del 50% no es reembolsable, ya que cubre el tiempo de reserva y la planificación previa que ya he invertido en tu marca.</li>
                 </ul>
             </section>
 
             <section>
-                <h2 class="text-2xl font-semibold mb-3 text-[#c9bb9e]">4. Derechos de Autor y Uso de Imágenes</h2>
-                <p class="text-[#b0b0b0]">Como creadora visual, el respeto por el arte y el diseño es fundamental:</p>
-                <ul class="list-disc pl-6 mt-3 space-y-2 text-[#b0b0b0]">
-                    <li><strong>Autoría:</strong> Gisella Villarreal conserva los derechos de autor morales sobre todas las fotografías, diseños y materiales creados.</li>
-                    <li><strong>Uso para tu marca:</strong> Tienes todo el derecho de usar los diseños y fotografías entregadas para promocionar tu marca en redes sociales, web, publicidad digital o impresa.</li>
-                    <li><strong>Restricciones:</strong> No está permitido vender mis fotografías a bancos de imágenes ni hacerte pasar por la autora de los diseños.</li>
-                    <li><strong>Mi portafolio:</strong> A menos que acordemos lo contrario por escrito (acuerdo de confidencialidad), me reservo el derecho de mostrar el hermoso trabajo que hagamos juntas en mi portafolio web y en mis redes sociales para promocionar mis servicios.</li>
+                <h2 class="font-serif text-[1.5rem] sm:text-[1.65rem] font-medium mb-2.5 text-ink">
+                    <span class="italic text-terracotta mr-1.5">4.</span> Derechos de Autor y Uso de Imágenes
+                </h2>
+                <p class="text-justify">Como creadora visual, el respeto por el arte y el diseño es fundamental:</p>
+                <ul class="list-disc pl-5 mt-3 space-y-2.5 marker:text-terracotta text-justify">
+                    <li><strong class="font-medium text-ink">Autoría:</strong> Gisella Villarreal conserva los derechos de autor morales sobre todas las fotografías, diseños y materiales creados.</li>
+                    <li><strong class="font-medium text-ink">Uso para tu marca:</strong> Tienes todo el derecho de usar los diseños y fotografías entregadas para promocionar tu marca en redes sociales, web, publicidad digital o impresa.</li>
+                    <li><strong class="font-medium text-ink">Restricciones:</strong> No está permitido vender mis fotografías a bancos de imágenes ni hacerte pasar por la autora de los diseños.</li>
+                    <li><strong class="font-medium text-ink">Mi portafolio:</strong> A menos que acordemos lo contrario por escrito (acuerdo de confidencialidad), me reservo el derecho de mostrar el hermoso trabajo que hagamos juntas en mi portafolio web y en mis redes sociales para promocionar mis servicios.</li>
                 </ul>
             </section>
 
             <section>
-                <h2 class="text-2xl font-semibold mb-3 text-[#c9bb9e]">5. Minicurso y Zona Privada</h2>
-                <p class="text-[#b0b0b0]">Al adquirir el minicurso <em class="text-[#FFFFFF]">Workstyle Content</em> u otras formaciones:</p>
-                <ul class="list-disc pl-6 mt-3 space-y-2 text-[#b0b0b0]">
+                <h2 class="font-serif text-[1.5rem] sm:text-[1.65rem] font-medium mb-2.5 text-ink">
+                    <span class="italic text-terracotta mr-1.5">5.</span> Minicurso y Zona Privada
+                </h2>
+                <p class="text-justify">Al adquirir el minicurso <em class="text-ink font-normal">Workstyle Content</em> u otras formaciones:</p>
+                <ul class="list-disc pl-5 mt-3 space-y-2.5 marker:text-terracotta text-justify">
                     <li>Tu usuario, contraseña y enlace de acceso son personales e intransferibles.</li>
                     <li>Todo el material en video, manuales y plantillas están protegidos por derechos de autor. Queda prohibida su descarga no autorizada, distribución, reventa o piratería.</li>
                 </ul>
             </section>
 
             <section>
-                <h2 class="text-2xl font-semibold mb-3 text-[#c9bb9e]">6. Tiempos de Entrega</h2>
-                <p class="text-[#b0b0b0]">Los tiempos de entrega de galerías fotográficas o manuales de marca serán acordados previamente contigo y especificados en tu cotización inicial. Estos tiempos empiezan a correr a partir del momento en que seleccionas las fotos (en caso de sesiones) o me entregas toda la información requerida para iniciar tu diseño.</p>
+                <h2 class="font-serif text-[1.5rem] sm:text-[1.65rem] font-medium mb-2.5 text-ink">
+                    <span class="italic text-terracotta mr-1.5">6.</span> Tiempos de Entrega
+                </h2>
+                <p class="text-justify">
+                    Los tiempos de entrega de galerías fotográficas o manuales de marca serán acordados previamente contigo y especificados en tu cotización inicial. Estos tiempos empiezan a correr a partir del momento en que seleccionas las fotos (en caso de sesiones) o me entregas toda la información requerida para iniciar tu diseño.
+                </p>
             </section>
 
-            <!-- NUEVA SECCIÓN AGREGADA -->
             <section>
-                <h2 class="text-2xl font-semibold mb-3 text-[#c9bb9e]">7. Derecho de Retracto y Devoluciones</h2>
-                <p class="text-[#b0b0b0]">De acuerdo con el Estatuto del Consumidor en Colombia, te informo sobre las excepciones al derecho de retracto aplicables a mis servicios:</p>
-                <ul class="list-disc pl-6 mt-3 space-y-2 text-[#b0b0b0]">
-                    <li><strong>Servicios de Branding y Diseño:</strong> Al ser bienes confeccionados conforme a tus especificaciones y claramente personalizados para tu marca, la ley establece que no aplica el derecho de retracto ni devoluciones una vez el servicio ha comenzado.</li>
-                    <li><strong>Minicurso Workstyle Content y Productos Digitales:</strong> Por tratarse de contenido digital de acceso o descarga inmediata, no se realizarán devoluciones ni aplicará el derecho de retracto una vez hayas ingresado a la plataforma, descargado o visualizado el material.</li>
+                <h2 class="font-serif text-[1.5rem] sm:text-[1.65rem] font-medium mb-2.5 text-ink">
+                    <span class="italic text-terracotta mr-1.5">7.</span> Derecho de Retracto y Devoluciones
+                </h2>
+                <p class="text-justify">De acuerdo con el Estatuto del Consumidor en Colombia, te informo sobre las excepciones al derecho de retracto aplicables a mis servicios:</p>
+                <ul class="list-disc pl-5 mt-3 space-y-2.5 marker:text-terracotta text-justify">
+                    <li><strong class="font-medium text-ink">Servicios de Branding y Diseño:</strong> Al ser bienes confeccionados conforme a tus especificaciones y claramente personalizados para tu marca, la ley establece que no aplica el derecho de retracto ni devoluciones una vez el servicio ha comenzado.</li>
+                    <li><strong class="font-medium text-ink">Minicurso Workstyle Content y Productos Digitales:</strong> Por tratarse de contenido digital de acceso o descarga inmediata, no se realizarán devoluciones ni aplicará el derecho de retracto una vez hayas ingresado a la plataforma, descargado o visualizado el material.</li>
                 </ul>
             </section>
 
-            <footer class="mt-16 pt-8 border-t border-[#c9bb9e]/30 text-sm text-[#b0b0b0] text-center">
+            <div class="pt-6 border-t border-line text-center text-[11.5px] text-muted">
                 <p>Última actualización: Noviembre de 2026</p>
-                <p class="mt-1">Gisella Villarreal | Branding para Redes Sociales</p>
-            </footer>
+            </div>
 
         </main>
     </div>
 
+    <!-- Pie de Página (Identidad Terracota GV) -->
+    <footer class="w-full bg-terracotta text-ivory py-12 px-6 text-center mt-auto">
+        <div class="max-w-4xl mx-auto flex flex-col items-center gap-5">
+            
+            <div>
+                <p class="text-[10px] tracking-[0.26em] uppercase text-ivory/80 font-medium mb-4">Contacto</p>
+                <div class="flex items-center justify-center gap-4">
+                    <a href="https://wa.me/573042182321" target="_blank" aria-label="WhatsApp" class="w-10 h-10 rounded-full border border-ivory/35 flex items-center justify-center text-ivory hover:bg-ivory hover:text-terracotta transition-all">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                    </a>
+                    <a href="https://www.instagram.com/gisella.villarreal?cplk=MWhzcHY3ZHNsdHRoMw==" target="_blank" aria-label="Instagram" class="w-10 h-10 rounded-full border border-ivory/35 flex items-center justify-center text-ivory hover:bg-ivory hover:text-terracotta transition-all">
+                        <i class="fa-brands fa-instagram text-base"></i>
+                    </a>
+                    <a href="mailto:gisellasofiavillarreal@gmail.com" aria-label="Correo electrónico" class="w-10 h-10 rounded-full border border-ivory/35 flex items-center justify-center text-ivory hover:bg-ivory hover:text-terracotta transition-all">
+                        <i class="fa-regular fa-envelope text-base"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="w-full max-w-[200px] h-[1px] bg-ivory/20"></div>
+
+            <div class="flex flex-col items-center gap-1">
+                <h4 class="font-serif text-xl italic text-ivory">Gisella Villarreal</h4>
+                <p class="text-[11px] text-ivory/85 font-light tracking-wide">Barranquilla, Colombia</p>
+                <p class="text-[9.5px] tracking-[0.18em] uppercase text-ivory/70 mt-1">
+                    © 2026 | Todos los derechos reservados
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-5 text-[10.5px] text-ivory/80 underline decoration-ivory/35 underline-offset-4">
+                <a href="terminosycondiciones.html" class="hover:text-white transition-colors">Términos y Condiciones</a>
+                <a href="politicadeprivacidad.html" class="hover:text-white transition-colors">Políticas de Privacidad</a>
+            </div>
+
+        </div>
+    </footer>
+
 </body>
-</html>
+            </html>
+            
