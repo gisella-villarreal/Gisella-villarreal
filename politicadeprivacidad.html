@@ -4,28 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidad | Gisella Villarreal</title>
+
+    <link rel="icon" type="image/png" href="Favicon_20261114_110929_0000.png">
+    <link rel="apple-touch-icon" href="Favicon_20261114_105928_0000.png">
+
+    <!-- Tipografías editoriales -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ivory': '#F7F2E8',           /* Marfil pasteloso */
+                        'ivory-soft': '#EFE8DC',      /* Marfil cálido */
+                        'terracotta': '#6E2C20',      /* Terracota editorial */
+                        'terracotta-hover': '#572117',
+                        'ink': '#1F1B18',
+                        'muted': '#6B625C',
+                        'line': '#E2D8C8',
+                    },
+                    fontFamily: {
+                        'serif': ['"Cormorant Garamond"', 'serif'],
+                        'sans': ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .no-tap-highlight { -webkit-tap-highlight-color: transparent; }
+    </style>
 </head>
-<body class="bg-[#151515] text-[#FFFFFF] font-sans antialiased selection:bg-[#c9bb9e] selection:text-[#151515]">
+<body class="bg-ivory text-ink font-sans antialiased selection:bg-terracotta selection:text-ivory min-h-screen flex flex-col">
 
-    <div class="max-w-3xl mx-auto px-6 py-16">
-        <header class="mb-12 border-b border-[#c9bb9e] pb-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-light mb-4 text-[#c9bb9e]">Política de Privacidad</h1>
-            <p class="text-lg text-[#b0b0b0]">Porque tu tranquilidad y tus datos son importantes para mí.</p>
+    <!-- Barra superior minimalista con botón de regreso -->
+    <div class="w-full max-w-3xl mx-auto px-6 pt-8 flex items-center justify-between">
+        <a href="index.html" class="no-tap-highlight inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-muted hover:text-terracotta transition-colors font-medium">
+            <i class="fa-solid fa-arrow-left text-[10px]"></i>
+            <span>Volver al inicio</span>
+        </a>
+        <span class="text-[9.5px] tracking-[0.22em] uppercase text-muted/80">Legal</span>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="w-full max-w-3xl mx-auto px-6 pt-10 pb-16 flex-grow">
+        
+        <header class="mb-12 border-b border-line pb-8 text-center">
+            <p class="text-[10px] tracking-[0.26em] uppercase text-terracotta font-medium mb-3">
+                Información Legal
+            </p>
+            <h1 class="font-serif text-[2.4rem] sm:text-[3rem] md:text-[3.4rem] font-normal leading-[1.05] mb-4 text-ink">
+                Política de <span class="italic text-terracotta">Privacidad</span>
+            </h1>
+            <p class="text-[13.5px] md:text-[14px] text-muted font-light max-w-md mx-auto leading-relaxed">
+                Porque tu tranquilidad y tus datos son importantes para mí.
+            </p>
         </header>
 
-        <main class="space-y-10 text-lg leading-relaxed">
+        <main class="space-y-9 text-[13.5px] md:text-[14px] leading-[1.8] font-light text-muted">
             
             <section>
-                <h2 class="text-2xl font-semibold mb-3 text-[#c9bb9e]">1. ¿Quién cuida tus datos?</h2>
-                <p class="text-[#b0b0b0]">Hola, soy <strong class="text-[#FFFFFF] font-medium">Gisella Villarreal</strong>, responsable del tratamiento de los datos personales que compartes en esta página web (<a href="https://gisellavillarreal.pages.dev" class="text-[#c9bb9e] underline hover:text-[#FFFFFF] transition-colors">gisellavillarreal.pages.dev</a>). Mi compromiso es cuidar tu información con el mismo detalle y cariño con el que trabajo en tu marca.</p>
+                <h2 class="font-serif text-[1.5rem] sm:text-[1.65rem] font-medium mb-2.5 text-ink">
+                    <span class="italic text-terracotta mr-1.5">1.</span> ¿Quién cuida tus datos?
+                </h2>
+                <p class="text-justify">
+                    Hola, soy <strong class="font-medium text-ink">Gisella Villarreal</strong>, responsable del tratamiento de los datos personales que compartes en esta página web (<a href="https://gisellavillarreal.pages.dev" class="text-terracotta underline decoration-terracotta/40 underline-offset-4 hover:text-terracotta-hover transition-colors font-normal">gisellavillarreal.pages.dev</a>). Mi compromiso es cuidar tu información con el mismo detalle y cariño con el que trabajo en tu marca.
+                </p>
             </section>
 
             <section>
-                <h2 class="text-2xl font-semibold mb-3 text-[#c9bb9e]">2. ¿Qué información te pido?</h2>
-                <p class="text-[#b0b0b0]">Para poder trabajar juntas, ya sea en una sesión de fotografía workstyle, el diseño de tu branding, o cuando adquieres acceso a formaciones como el minicurso <em class="text-[#FFFFFF]">Workstyle Content</em>, podré solicitarte:</p>
-                <ul class="list-disc pl-6 mt-3 space-y-2 text-[#b0b0b0]">
+                <h2 class="font-serif text-[1.5rem] sm:text-[1.65rem] font-medium mb-2.5 text-ink">
+                    <span class="italic text-terracotta mr-1.5">2.</span> ¿Qué información te pido?
+                </h2>
+                <p class="text-justify">
+                    Para poder trabajar juntas, ya sea en una sesión de fotografía workstyle, el diseño de tu branding, o cuando adquieres acceso a formaciones como el minicurso <em class="text-ink font-normal">Workstyle Content</em>, podré solicitarte:
+                </p>
+                <ul class="list-disc pl-5 mt-3 space-y-2 marker:text-terracotta text-justify">
                     <li>Nombre completo.</li>
                     <li>Correo electrónico.</li>
                     <li>Número de teléfono (WhatsApp).</li>
@@ -35,9 +96,13 @@
             </section>
 
             <section>
-                <h2 class="text-2xl font-semibold mb-3 text-[#c9bb9e]">3. ¿Para qué uso esta información?</h2>
-                <p class="text-[#b0b0b0]">No me gustan los correos no deseados (spam), así que solo usaré tus datos para lo estrictamente necesario:</p>
-                <ul class="list-disc pl-6 mt-3 space-y-2 text-[#b0b0b0]">
+                <h2 class="font-serif text-[1.5rem] sm:text-[1.65rem] font-medium mb-2.5 text-ink">
+                    <span class="italic text-terracotta mr-1.5">3.</span> ¿Para qué uso esta información?
+                </h2>
+                <p class="text-justify">
+                    No me gustan los correos no deseados (spam), así que solo usaré tus datos para lo estrictamente necesario:
+                </p>
+                <ul class="list-disc pl-5 mt-3 space-y-2.5 marker:text-terracotta text-justify">
                     <li>Comunicarme contigo sobre los avances de tu proyecto o enviarte tus galerías de fotos.</li>
                     <li>Darte acceso a la zona privada de cursos y enviarte tu usuario o contraseña.</li>
                     <li>Enviarte cotizaciones, facturas o comprobantes de pago.</li>
@@ -46,34 +111,84 @@
             </section>
 
             <section>
-                <h2 class="text-2xl font-semibold mb-3 text-[#c9bb9e]">4. ¿Cómo protejo tu información?</h2>
-                <p class="text-[#b0b0b0]">Tu información está segura. Utilizo herramientas y plataformas confiables que cuentan con altos estándares de seguridad (incluyendo encriptación y los sistemas de seguridad de Cloudflare) para asegurar que tus datos personales, métodos de contacto y accesos a los cursos estén protegidos y no queden expuestos a terceros.</p>
+                <h2 class="font-serif text-[1.5rem] sm:text-[1.65rem] font-medium mb-2.5 text-ink">
+                    <span class="italic text-terracotta mr-1.5">4.</span> ¿Cómo protejo tu información?
+                </h2>
+                <p class="text-justify">
+                    Tu información está segura. Utilizo herramientas y plataformas confiables que cuentan con altos estándares de seguridad (incluyendo encriptación y los sistemas de seguridad de Cloudflare) para asegurar que tus datos personales, métodos de contacto y accesos a los cursos estén protegidos y no queden expuestos a terceros.
+                </p>
             </section>
 
             <section>
-                <h2 class="text-2xl font-semibold mb-3 text-[#c9bb9e]">5. Tus derechos (Ley de Habeas Data)</h2>
-                <p class="text-[#b0b0b0]">De acuerdo con la normativa colombiana de protección de datos, tú eres la dueña de tu información. Estás en todo tu derecho de escribirme en cualquier momento para pedirme que:</p>
-                <ul class="list-disc pl-6 mt-3 space-y-2 text-[#b0b0b0]">
+                <h2 class="font-serif text-[1.5rem] sm:text-[1.65rem] font-medium mb-2.5 text-ink">
+                    <span class="italic text-terracotta mr-1.5">5.</span> Tus derechos (Ley de Habeas Data)
+                </h2>
+                <p class="text-justify">
+                    De acuerdo con la normativa colombiana de protección de datos, tú eres la dueña de tu información. Estás en todo tu derecho de escribirme en cualquier momento para pedirme que:
+                </p>
+                <ul class="list-disc pl-5 mt-3 space-y-2 marker:text-terracotta text-justify">
                     <li>Conozca, actualice o rectifique algún dato tuyo que haya cambiado.</li>
                     <li>Elimine tu correo de mis listas de contactos.</li>
                     <li>Revoque cualquier autorización previa que me hayas dado.</li>
                 </ul>
-                <p class="mt-3 text-[#b0b0b0]">Para cualquiera de estas solicitudes, solo tienes que enviarme un mensaje directo o un correo y lo gestionaré de inmediato.</p>
+                <p class="mt-4 text-justify">
+                    Para cualquiera de estas solicitudes, solo tienes que enviarme un mensaje directo o un correo y lo gestionaré de inmediato.
+                </p>
             </section>
 
             <section>
-                <h2 class="text-2xl font-semibold mb-3 text-[#c9bb9e]">6. Uso de Cookies</h2>
-                <p class="text-[#b0b0b0]">Mi página web puede utilizar <em class="text-[#FFFFFF]">cookies</em> básicas. Son pequeños archivos que me ayudan a entender cómo navegas por la web para mejorar tu experiencia (por ejemplo, para que la página cargue más rápido o saber qué secciones te gustan más). No se utilizan para rastrearte de forma invasiva.</p>
+                <h2 class="font-serif text-[1.5rem] sm:text-[1.65rem] font-medium mb-2.5 text-ink">
+                    <span class="italic text-terracotta mr-1.5">6.</span> Uso de Cookies
+                </h2>
+                <p class="text-justify">
+                    Mi página web puede utilizar <em class="text-ink font-normal">cookies</em> básicas. Son pequeños archivos que me ayudan a entender cómo navegas por la web para mejorar tu experiencia (por ejemplo, para que la página cargue más rápido o saber qué secciones te gustan más). No se utilizan para rastrearte de forma invasiva.
+                </p>
             </section>
 
-            <footer class="mt-16 pt-8 border-t border-[#c9bb9e]/30 text-sm text-[#b0b0b0] text-center">
+            <div class="pt-6 border-t border-line text-center text-[11.5px] text-muted">
                 <p>Última actualización: Noviembre de 2026</p>
-                <p class="mt-1">Gisella Villarreal | Branding para Redes Sociales</p>
-            </footer>
+            </div>
 
         </main>
     </div>
 
+    <!-- Pie de Página (Identidad Terracota GV) -->
+    <footer class="w-full bg-terracotta text-ivory py-12 px-6 text-center mt-auto">
+        <div class="max-w-4xl mx-auto flex flex-col items-center gap-5">
+            
+            <div>
+                <p class="text-[10px] tracking-[0.26em] uppercase text-ivory/80 font-medium mb-4">Contacto</p>
+                <div class="flex items-center justify-center gap-4">
+                    <a href="https://wa.me/573042182321" target="_blank" aria-label="WhatsApp" class="w-10 h-10 rounded-full border border-ivory/35 flex items-center justify-center text-ivory hover:bg-ivory hover:text-terracotta transition-all">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                    </a>
+                    <a href="https://www.instagram.com/gisella.villarreal?cplk=MWhzcHY3ZHNsdHRoMw==" target="_blank" aria-label="Instagram" class="w-10 h-10 rounded-full border border-ivory/35 flex items-center justify-center text-ivory hover:bg-ivory hover:text-terracotta transition-all">
+                        <i class="fa-brands fa-instagram text-base"></i>
+                    </a>
+                    <a href="mailto:gisellasofiavillarreal@gmail.com" aria-label="Correo electrónico" class="w-10 h-10 rounded-full border border-ivory/35 flex items-center justify-center text-ivory hover:bg-ivory hover:text-terracotta transition-all">
+                        <i class="fa-regular fa-envelope text-base"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="w-full max-w-[200px] h-[1px] bg-ivory/20"></div>
+
+            <div class="flex flex-col items-center gap-1">
+                <h4 class="font-serif text-xl italic text-ivory">Gisella Villarreal</h4>
+                <p class="text-[11px] text-ivory/85 font-light tracking-wide">Barranquilla, Colombia</p>
+                <p class="text-[9.5px] tracking-[0.18em] uppercase text-ivory/70 mt-1">
+                    © 2026 | Todos los derechos reservados
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-5 text-[10.5px] text-ivory/80 underline decoration-ivory/35 underline-offset-4">
+                <a href="terminosycondiciones.html" class="hover:text-white transition-colors">Términos y Condiciones</a>
+                <a href="politicadeprivacidad.html" class="hover:text-white transition-colors">Políticas de Privacidad</a>
+            </div>
+
+        </div>
+    </footer>
+
 </body>
-  </html>
-  
+                    </html>
+                    
