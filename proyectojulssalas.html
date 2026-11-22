@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caso de Estudio | Gisella Villarreal</title>
+    <title>Caso de Estudio: Juls Salas | Gisella Villarreal</title>
     
+    <link rel="icon" type="image/png" href="Favicon_20261114_110929_0000.png">
+    <link rel="apple-touch-icon" href="Favicon_20261114_105928_0000.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,14 +19,16 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-dark': '#151515',       
-                        'brand-cream': '#c9bb9e',      
-                        'text-main': '#FFFFFF',        
-                        'text-light': '#b0b0b0',       
-                        'border-color': 'rgba(255, 255, 255, 0.15)',
+                        'ivory': '#F7F2E8',           /* Marfil pasteloso */
+                        'ivory-soft': '#EFE8DC',      /* Marfil cálido */
+                        'terracotta': '#6E2C20',      /* Terracota editorial */
+                        'terracotta-hover': '#572117',
+                        'ink': '#1F1B18',
+                        'muted': '#6B625C',
+                        'line': '#E2D8C8',
                     },
                     fontFamily: {
-                        'serif': ['"Playfair Display"', 'serif'],
+                        'serif': ['"Cormorant Garamond"', 'serif'],
                         'sans': ['"Inter"', 'sans-serif'],
                     }
                 }
@@ -36,336 +41,344 @@
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .photo-hover img { transition: transform 0.7s ease; }
-        .photo-hover:hover img { transform: scale(1.05); }
+        .photo-hover:hover img { transform: scale(1.04); }
     </style>
 </head>
-<body class="bg-brand-dark antialiased text-text-main selection:bg-brand-cream selection:text-brand-dark">
+<body class="bg-ivory text-ink font-sans antialiased selection:bg-terracotta selection:text-ivory overflow-x-hidden">
 
-    <main class="w-full max-w-[430px] md:max-w-[950px] lg:max-w-[1150px] mx-auto bg-brand-dark min-h-screen relative shadow-2xl flex flex-col border-x border-border-color/30">
+    <main class="w-full min-h-screen flex flex-col">
 
-        <!-- ========================================== -->
-        <!-- HEADER & HERO DEL PROYECTO                 -->
-        <!-- ========================================== -->
-        <header class="relative w-full h-[60vh] md:h-[75vh] min-h-[450px] flex flex-col justify-end pb-12 px-6 md:px-16 overflow-hidden">
-            <div class="absolute inset-0 z-0 bg-brand-dark">
-                <!-- Imagen de portada del proyecto -->
+        <!-- ========================================================== -->
+        <!-- HEADER & HERO DEL PROYECTO (Con onda orgánica inferior)    -->
+        <!-- ========================================================== -->
+        <header class="relative w-full h-[68vh] md:h-[78vh] min-h-[480px] flex flex-col justify-end pb-20 md:pb-24 px-6 md:px-12 overflow-hidden bg-ink">
+            <div class="absolute inset-0 z-0">
                 <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1200&auto=format&fit=crop" 
-                     alt="Portada Proyecto" 
-                     class="w-full h-full object-cover object-[center_30%] opacity-40 scale-[1.02]">
+                     alt="Portada Proyecto Juls Salas" 
+                     class="w-full h-full object-cover object-[center_30%] opacity-55 scale-[1.02]">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#1A1512] via-[#1A1512]/70 to-black/25"></div>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent z-10"></div>
             
             <!-- Botón Volver al Portafolio -->
-            <a href="portafolio.html" class="absolute top-6 left-6 md:left-10 z-30 w-10 h-10 rounded-full bg-brand-dark/50 backdrop-blur-sm border border-border-color flex items-center justify-center text-brand-cream hover:bg-brand-cream hover:text-brand-dark transition-all">
+            <a href="portafolio.html" aria-label="Volver al portafolio" class="no-tap-highlight absolute top-6 left-5 md:left-10 z-30 w-10 h-10 rounded-full bg-black/25 backdrop-blur-md border border-ivory/35 flex items-center justify-center text-ivory hover:bg-terracotta hover:border-terracotta transition-all">
                 <i class="fa-solid fa-arrow-left text-sm"></i>
             </a>
 
-            <div class="relative z-20 w-full max-w-[800px] text-left">
-                <span class="inline-block font-sans text-[10px] md:text-[11px] uppercase tracking-[0.3em] text-brand-cream font-bold mb-3">
+            <div class="relative z-20 w-full max-w-5xl mx-auto text-left">
+                <span class="inline-block font-sans text-[9.5px] md:text-[10px] uppercase tracking-[0.26em] text-[#E8D5C4] font-medium mb-3">
                     Caso de Estudio 01
                 </span>
-                <h1 class="font-serif text-[3.2rem] md:text-[4.5rem] italic font-medium leading-[1] mb-4 text-text-main tracking-wide">
+                <h1 class="font-serif text-[3.1rem] sm:text-[4rem] md:text-[5rem] italic font-normal leading-[0.92] mb-4 text-ivory tracking-tight">
                     Físicoculturista<br>
-                    <span class="not-italic font-semibold text-brand-cream">Juls Salas</span>
+                    <span class="not-italic font-medium text-[#E8D5C4]">Juls Salas</span>
                 </h1>
-                <p class="font-sans text-[13px] md:text-[15px] leading-relaxed text-text-light font-light max-w-[500px]">
+                <p class="font-sans text-[12.5px] md:text-[13.5px] leading-relaxed text-ivory/85 font-light max-w-[480px]">
                     Desarrollo integral de marca personal: desde la concepción estratégica y visual, hasta la creación de su plataforma digital y ecosistema de contenido.
                 </p>
             </div>
+
+            <!-- Onda orgánica de transición -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20 -mb-px pointer-events-none">
+                <svg class="relative block w-full h-[36px] sm:h-[50px] md:h-[68px]" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,40 C360,105 1080,-15 1440,55 L1440,100 L0,100 Z" fill="#F7F2E8"></path>
+                </svg>
+            </div>
         </header>
 
-        <!-- ========================================== -->
-        <!-- 1. ESTRATEGIA Y DESARROLLO DE MARCA        -->
-        <!-- ========================================== -->
-        <section class="py-16 md:py-24 px-6 md:px-16">
-            <div class="max-w-[800px] mx-auto">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="font-serif italic text-brand-cream text-xl">01</span>
-                    <h2 class="font-sans text-[14px] uppercase tracking-widest text-text-main font-bold">Estrategia de Marca Personal</h2>
-                    <div class="h-[1px] flex-grow bg-border-color"></div>
+        <!-- ========================================================== -->
+        <!-- 1. ESTRATEGIA Y DESARROLLO DE MARCA                        -->
+        <!-- ========================================================== -->
+        <section class="py-14 md:py-20 px-6 md:px-12 bg-ivory">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center gap-3.5 mb-6">
+                    <span class="font-serif italic text-terracotta text-lg">01</span>
+                    <h2 class="font-sans text-[10.5px] uppercase tracking-[0.24em] text-ink font-semibold">Estrategia de Marca Personal</h2>
+                    <div class="h-[1px] flex-grow bg-line"></div>
                 </div>
                 
-                <h3 class="font-serif text-3xl md:text-4xl italic text-text-main mb-6 leading-tight">Proyectando autoridad y profesionalismo en la industria del fitness.</h3>
+                <h3 class="font-serif text-[1.85rem] sm:text-[2.2rem] md:text-[2.6rem] italic text-ink mb-6 leading-[1.12] font-normal">
+                    Proyectando autoridad y profesionalismo en la industria del fitness.
+                </h3>
                 
-                <div class="flex flex-col md:flex-row gap-6 md:gap-12">
-                    <div class="w-full md:w-1/2">
-                        <p class="font-sans text-[13px] text-text-light font-light leading-relaxed mb-4 text-justify">
-                            El reto principal con Juls Salas era elevar su percepción de marca. Pasar de ser vista únicamente como atleta, a posicionarse como una mentora y profesional de alto rendimiento capaz de transformar la vida de sus clientes.
-                        </p>
-                    </div>
-                    <div class="w-full md:w-1/2">
-                        <p class="font-sans text-[13px] text-text-light font-light leading-relaxed text-justify">
-                            Definimos un tono de voz motivacional pero disciplinado, una paleta de colores agresiva y elegante (negros, dorados y grises oscuros), y una estética cruda que muestra el trabajo real detrás de los resultados.
-                        </p>
-                    </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
+                    <p class="font-sans text-[13px] md:text-[13.5px] text-muted font-light leading-[1.8] text-justify">
+                        El reto principal con Juls Salas era elevar su percepción de marca. Pasar de ser vista únicamente como atleta, a posicionarse como una mentora y profesional de alto rendimiento capaz de transformar la vida de sus clientes.
+                    </p>
+                    <p class="font-sans text-[13px] md:text-[13.5px] text-muted font-light leading-[1.8] text-justify">
+                        Definimos un tono de voz motivacional pero disciplinado, una paleta de colores agresiva y elegante (negros, dorados y grises oscuros), y una estética cruda que muestra el trabajo real detrás de los resultados.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 2. DIRECCIÓN DE ARTE Y FOTOGRAFÍA          -->
-        <!-- ========================================== -->
-        <section class="py-16 px-6 md:px-16 bg-brand-cream/5 border-y border-border-color/30">
-            <div class="max-w-[1000px] mx-auto">
-                <div class="flex items-center gap-4 mb-10">
-                    <span class="font-serif italic text-brand-cream text-xl">02</span>
-                    <h2 class="font-sans text-[14px] uppercase tracking-widest text-text-main font-bold">Dirección Visual & Fotografía</h2>
-                    <div class="h-[1px] flex-grow bg-border-color"></div>
+        <!-- ========================================================== -->
+        <!-- 2. DIRECCIÓN DE ARTE Y FOTOGRAFÍA                          -->
+        <!-- ========================================================== -->
+        <section class="py-14 md:py-20 px-6 md:px-12 bg-ivory-soft/60 border-y border-line">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex items-center gap-3.5 mb-9">
+                    <span class="font-serif italic text-terracotta text-lg">02</span>
+                    <h2 class="font-sans text-[10.5px] uppercase tracking-[0.24em] text-ink font-semibold">Dirección Visual &amp; Fotografía</h2>
+                    <div class="h-[1px] flex-grow bg-line"></div>
                 </div>
 
-                <!-- Galería Elegante -->
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
+                <!-- Galería Editorial -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                     <!-- Foto 1 (Vertical grande) -->
-                    <div class="photo-hover col-span-2 md:col-span-1 md:row-span-2 aspect-square md:aspect-[3/4] rounded-2xl overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover">
+                    <div class="photo-hover col-span-2 md:col-span-1 md:row-span-2 aspect-square md:aspect-[3/4] overflow-hidden relative border border-line bg-ivory">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600&auto=format&fit=crop" alt="Fotografía editorial 1" class="w-full h-full object-cover">
                     </div>
                     <!-- Foto 2 -->
-                    <div class="photo-hover aspect-square rounded-2xl overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover">
+                    <div class="photo-hover aspect-square overflow-hidden relative border border-line bg-ivory">
+                        <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=600&auto=format&fit=crop" alt="Fotografía editorial 2" class="w-full h-full object-cover">
                     </div>
                     <!-- Foto 3 -->
-                    <div class="photo-hover aspect-square rounded-2xl overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover">
+                    <div class="photo-hover aspect-square overflow-hidden relative border border-line bg-ivory">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop" alt="Fotografía editorial 3" class="w-full h-full object-cover">
                     </div>
                     <!-- Foto 4 (Horizontal ancha) -->
-                    <div class="photo-hover col-span-2 aspect-[21/9] md:aspect-[16/9] rounded-2xl overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover">
+                    <div class="photo-hover col-span-2 aspect-[21/9] md:aspect-[16/9] overflow-hidden relative border border-line bg-ivory">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop" alt="Fotografía editorial 4" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 3. ANTES Y DESPUÉS (OPTIMIZACIÓN IG)       -->
-        <!-- ========================================== -->
-        <section class="py-16 md:py-24 px-6 md:px-16">
-            <div class="max-w-[800px] mx-auto">
-                <div class="flex items-center gap-4 mb-10">
-                    <span class="font-serif italic text-brand-cream text-xl">03</span>
-                    <h2 class="font-sans text-[14px] uppercase tracking-widest text-text-main font-bold">Optimización de Instagram</h2>
-                    <div class="h-[1px] flex-grow bg-border-color"></div>
+        <!-- ========================================================== -->
+        <!-- 3. ANTES Y DESPUÉS (OPTIMIZACIÓN IG)                       -->
+        <!-- ========================================================== -->
+        <section class="py-14 md:py-20 px-6 md:px-12 bg-ivory">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center gap-3.5 mb-9">
+                    <span class="font-serif italic text-terracotta text-lg">03</span>
+                    <h2 class="font-sans text-[10.5px] uppercase tracking-[0.24em] text-ink font-semibold">Optimización de Instagram</h2>
+                    <div class="h-[1px] flex-grow bg-line"></div>
                 </div>
 
-                <div class="flex flex-row gap-3 md:gap-10">
+                <div class="grid grid-cols-2 gap-3 sm:gap-6 md:gap-10">
                     <!-- ANTES -->
-                    <div class="w-1/2 flex flex-col items-center">
-                        <div class="w-full aspect-[9/16] rounded-2xl md:rounded-3xl border border-border-color bg-brand-dark/50 relative overflow-hidden flex items-center justify-center p-2 md:p-4">
-                            <!-- Placeholder del feed viejo -->
-                            <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover rounded-xl md:rounded-2xl opacity-40 grayscale">
-                            <span class="absolute top-3 left-3 md:top-6 md:left-6 px-3 md:px-4 py-1 md:py-1.5 bg-brand-dark/80 backdrop-blur-md border border-border-color rounded-full text-[8px] md:text-[10px] uppercase tracking-widest text-text-light font-bold">
+                    <div class="flex flex-col items-center">
+                        <div class="w-full aspect-[9/16] rounded-2xl border border-line bg-ivory-soft/70 relative overflow-hidden flex items-center justify-center p-2 md:p-3">
+                            <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=400&auto=format&fit=crop" alt="Feed anterior" class="w-full h-full object-cover rounded-xl opacity-55 grayscale">
+                            <span class="absolute top-3 left-3 md:top-5 md:left-5 px-3 py-1 bg-ivory/90 backdrop-blur-sm border border-line rounded-full text-[8.5px] md:text-[9.5px] uppercase tracking-[0.2em] text-muted font-semibold">
                                 Antes
                             </span>
                         </div>
-                        <p class="font-sans text-[10px] md:text-[12px] text-text-light mt-3 md:mt-4 text-center px-1 md:px-4 leading-relaxed">Feed sin identidad visual definida y biografía confusa.</p>
+                        <p class="font-sans text-[11px] md:text-[12px] text-muted mt-3 text-center px-1 leading-relaxed font-light">
+                            Feed sin identidad visual definida y biografía confusa.
+                        </p>
                     </div>
 
                     <!-- DESPUÉS -->
-                    <div class="w-1/2 flex flex-col items-center">
-                        <div class="w-full aspect-[9/16] rounded-2xl md:rounded-3xl border border-brand-cream bg-brand-dark/50 relative overflow-hidden flex items-center justify-center p-2 md:p-4 shadow-[0_0_30px_rgba(201,187,158,0.15)]">
-                            <!-- Placeholder del feed nuevo -->
-                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover rounded-xl md:rounded-2xl">
-                            <span class="absolute top-3 left-3 md:top-6 md:left-6 px-3 md:px-4 py-1 md:py-1.5 bg-brand-cream text-brand-dark rounded-full text-[8px] md:text-[10px] uppercase tracking-widest font-bold">
+                    <div class="flex flex-col items-center">
+                        <div class="w-full aspect-[9/16] rounded-2xl border border-terracotta/50 bg-white relative overflow-hidden flex items-center justify-center p-2 md:p-3 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop" alt="Feed optimizado" class="w-full h-full object-cover rounded-xl">
+                            <span class="absolute top-3 left-3 md:top-5 md:left-5 px-3 py-1 bg-terracotta text-ivory rounded-full text-[8.5px] md:text-[9.5px] uppercase tracking-[0.2em] font-semibold">
                                 Después
                             </span>
                         </div>
-                        <p class="font-sans text-[10px] md:text-[12px] text-text-light mt-3 md:mt-4 text-center px-1 md:px-4 leading-relaxed">Perfil optimizado para conversión y feed editorial.</p>
+                        <p class="font-sans text-[11px] md:text-[12px] text-ink mt-3 text-center px-1 leading-relaxed font-normal">
+                            Perfil optimizado para conversión y feed editorial.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 4 Y 5. PILARES & PROGRAMACIÓN              -->
-        <!-- ========================================== -->
-        <section class="py-16 md:py-24 px-6 md:px-16 bg-brand-cream/5 border-y border-border-color/30">
-            <div class="max-w-[1000px] mx-auto">
-                <div class="flex items-center gap-4 mb-10">
-                    <span class="font-serif italic text-brand-cream text-xl">04</span>
-                    <h2 class="font-sans text-[14px] uppercase tracking-widest text-text-main font-bold">Estrategia de Contenidos</h2>
-                    <div class="h-[1px] flex-grow bg-border-color"></div>
+        <!-- ========================================================== -->
+        <!-- 4. ESTRATEGIA DE CONTENIDOS (Fondo Terracota)              -->
+        <!-- ========================================================== -->
+        <section class="py-14 md:py-20 px-6 md:px-12 bg-terracotta text-ivory">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex items-center gap-3.5 mb-9">
+                    <span class="font-serif italic text-[#E8D5C4] text-lg">04</span>
+                    <h2 class="font-sans text-[10.5px] uppercase tracking-[0.24em] text-ivory font-semibold">Estrategia de Contenidos</h2>
+                    <div class="h-[1px] flex-grow bg-ivory/25"></div>
                 </div>
 
                 <!-- Pilares -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
-                    <div class="p-6 rounded-2xl border border-border-color bg-brand-dark">
-                        <h4 class="font-serif text-xl italic text-brand-cream mb-2">Educativo</h4>
-                        <p class="font-sans text-[12px] text-text-light font-light leading-relaxed">Demostración de autoridad mediante consejos de entrenamiento, rutinas y biomecánica.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7 mb-14">
+                    <div class="p-6 rounded-xl border border-ivory/20 bg-ivory/5">
+                        <h4 class="font-serif text-[1.45rem] italic text-[#E8D5C4] mb-2">Educativo</h4>
+                        <p class="font-sans text-[12.5px] text-ivory/85 font-light leading-[1.7] text-justify">
+                            Demostración de autoridad mediante consejos de entrenamiento, rutinas y biomecánica.
+                        </p>
                     </div>
-                    <div class="p-6 rounded-2xl border border-border-color bg-brand-dark">
-                        <h4 class="font-serif text-xl italic text-brand-cream mb-2">Inspiracional</h4>
-                        <p class="font-sans text-[12px] text-text-light font-light leading-relaxed">Conexión emocional mostrando el estilo de vida, disciplina, dieta y mentalidad del atleta.</p>
+                    <div class="p-6 rounded-xl border border-ivory/20 bg-ivory/5">
+                        <h4 class="font-serif text-[1.45rem] italic text-[#E8D5C4] mb-2">Inspiracional</h4>
+                        <p class="font-sans text-[12.5px] text-ivory/85 font-light leading-[1.7] text-justify">
+                            Conexión emocional mostrando el estilo de vida, disciplina, dieta y mentalidad del atleta.
+                        </p>
                     </div>
-                    <div class="p-6 rounded-2xl border border-border-color bg-brand-dark">
-                        <h4 class="font-serif text-xl italic text-brand-cream mb-2">Venta Directa</h4>
-                        <p class="font-sans text-[12px] text-text-light font-light leading-relaxed">Testimonios, casos de éxito de alumnos y apertura de plazas para asesorías personalizadas.</p>
+                    <div class="p-6 rounded-xl border border-ivory/20 bg-ivory/5">
+                        <h4 class="font-serif text-[1.45rem] italic text-[#E8D5C4] mb-2">Venta Directa</h4>
+                        <p class="font-sans text-[12.5px] text-ivory/85 font-light leading-[1.7] text-justify">
+                            Testimonios, casos de éxito de alumnos y apertura de plazas para asesorías personalizadas.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Programación / Grid -->
-                <h3 class="font-serif text-2xl md:text-3xl italic text-text-main mb-6 text-center">Programación de Parrilla</h3>
-                <p class="font-sans text-[13px] text-text-light font-light leading-relaxed text-center max-w-[600px] mx-auto mb-10">
-                    Estructuramos un calendario mensual distribuyendo los formatos (Reels, Carruseles y Stories) estratégicamente para mantener a la audiencia educada, motivada y lista para comprar.
-                </p>
-                <div class="w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden border border-border-color">
-                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover opacity-60">
+                <!-- Programación de Parrilla -->
+                <div class="max-w-3xl mx-auto text-center">
+                    <h3 class="font-serif text-[1.8rem] md:text-[2.2rem] italic text-ivory mb-4 font-normal">Programación de Parrilla</h3>
+                    <p class="font-sans text-[13px] text-ivory/85 font-light leading-[1.8] mb-8 text-justify sm:text-center">
+                        Estructuramos un calendario mensual distribuyendo los formatos (Reels, Carruseles y Stories) estratégicamente para mantener a la audiencia educada, motivada y lista para comprar.
+                    </p>
+                </div>
+                <div class="w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden border border-ivory/25 bg-ink">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=1000&auto=format&fit=crop" alt="Calendario de contenidos" class="w-full h-full object-cover opacity-85">
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 6. VIDEOS Y REELS ELEGANTES                -->
-        <!-- ========================================== -->
-        <section class="py-16 md:py-24 px-6 md:px-16">
-            <div class="max-w-[1000px] mx-auto">
-                <div class="flex items-center gap-4 mb-10">
-                    <span class="font-serif italic text-brand-cream text-xl">05</span>
-                    <h2 class="font-sans text-[14px] uppercase tracking-widest text-text-main font-bold">Formato Corto (Reels)</h2>
-                    <div class="h-[1px] flex-grow bg-border-color"></div>
+        <!-- ========================================================== -->
+        <!-- 5. FORMATO CORTO (REELS)                                   -->
+        <!-- ========================================================== -->
+        <section class="py-14 md:py-20 px-6 md:px-12 bg-ivory">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex items-center gap-3.5 mb-9">
+                    <span class="font-serif italic text-terracotta text-lg">05</span>
+                    <h2 class="font-sans text-[10.5px] uppercase tracking-[0.24em] text-ink font-semibold">Formato Corto (Reels)</h2>
+                    <div class="h-[1px] flex-grow bg-line"></div>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                     <!-- Reel 1 -->
-                    <div class="photo-hover w-full aspect-[9/16] rounded-2xl overflow-hidden relative cursor-pointer group border border-border-color">
-                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover opacity-80">
-                        <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-transparent transition-colors"></div>
-                        <i class="fa-solid fa-play absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-3xl opacity-80 group-hover:scale-110 transition-transform"></i>
+                    <div class="photo-hover w-full aspect-[9/16] overflow-hidden relative cursor-pointer group border border-line bg-ink">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=400&auto=format&fit=crop" alt="Reel 1" class="w-full h-full object-cover opacity-85">
+                        <div class="absolute inset-0 bg-ink/30 group-hover:bg-ink/10 transition-colors"></div>
+                        <span class="w-11 h-11 rounded-full bg-ivory/90 text-terracotta flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-play text-xs ml-0.5"></i>
+                        </span>
                     </div>
                     <!-- Reel 2 -->
-                    <div class="photo-hover w-full aspect-[9/16] rounded-2xl overflow-hidden relative cursor-pointer group border border-border-color">
-                        <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover opacity-80">
-                        <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-transparent transition-colors"></div>
-                        <i class="fa-solid fa-play absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-3xl opacity-80 group-hover:scale-110 transition-transform"></i>
+                    <div class="photo-hover w-full aspect-[9/16] overflow-hidden relative cursor-pointer group border border-line bg-ink">
+                        <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=400&auto=format&fit=crop" alt="Reel 2" class="w-full h-full object-cover opacity-85">
+                        <div class="absolute inset-0 bg-ink/30 group-hover:bg-ink/10 transition-colors"></div>
+                        <span class="w-11 h-11 rounded-full bg-ivory/90 text-terracotta flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-play text-xs ml-0.5"></i>
+                        </span>
                     </div>
                     <!-- Reel 3 -->
-                    <div class="photo-hover w-full aspect-[9/16] rounded-2xl overflow-hidden relative cursor-pointer group border border-border-color">
-                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover opacity-80">
-                        <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-transparent transition-colors"></div>
-                        <i class="fa-solid fa-play absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-3xl opacity-80 group-hover:scale-110 transition-transform"></i>
+                    <div class="photo-hover w-full aspect-[9/16] overflow-hidden relative cursor-pointer group border border-line bg-ink">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=400&auto=format&fit=crop" alt="Reel 3" class="w-full h-full object-cover opacity-85">
+                        <div class="absolute inset-0 bg-ink/30 group-hover:bg-ink/10 transition-colors"></div>
+                        <span class="w-11 h-11 rounded-full bg-ivory/90 text-terracotta flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-play text-xs ml-0.5"></i>
+                        </span>
                     </div>
-                    <!-- Reel 4 (Oculto en móvil pequeño, visible en iPad/Desktop) -->
-                    <div class="photo-hover hidden md:block w-full aspect-[9/16] rounded-2xl overflow-hidden relative cursor-pointer group border border-border-color">
-                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover opacity-80">
-                        <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-transparent transition-colors"></div>
-                        <i class="fa-solid fa-play absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-3xl opacity-80 group-hover:scale-110 transition-transform"></i>
+                    <!-- Reel 4 -->
+                    <div class="photo-hover hidden md:block w-full aspect-[9/16] overflow-hidden relative cursor-pointer group border border-line bg-ink">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=400&auto=format&fit=crop" alt="Reel 4" class="w-full h-full object-cover opacity-85">
+                        <div class="absolute inset-0 bg-ink/30 group-hover:bg-ink/10 transition-colors"></div>
+                        <span class="w-11 h-11 rounded-full bg-ivory/90 text-terracotta flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-play text-xs ml-0.5"></i>
+                        </span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 7. VER PÁGINA WEB                          -->
-        <!-- ========================================== -->
-        <section class="py-16 md:py-24 px-6 md:px-16 bg-brand-cream/5 border-t border-border-color/30">
-            <div class="max-w-[800px] mx-auto text-center">
-                <div class="flex items-center justify-center gap-4 mb-6">
-                    <span class="font-serif italic text-brand-cream text-xl">06</span>
-                    <h2 class="font-sans text-[14px] uppercase tracking-widest text-text-main font-bold">Desarrollo Web</h2>
+        <!-- ========================================================== -->
+        <!-- 6. DESARROLLO WEB                                          -->
+        <!-- ========================================================== -->
+        <section class="py-14 md:py-20 px-6 md:px-12 bg-ivory-soft/60 border-t border-line">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <span class="font-serif italic text-terracotta text-lg">06</span>
+                    <h2 class="font-sans text-[10.5px] uppercase tracking-[0.24em] text-ink font-semibold">Desarrollo Web</h2>
                 </div>
                 
-                <h3 class="font-serif text-3xl md:text-4xl italic text-text-main mb-6">El hogar digital de la marca</h3>
-                <p class="font-sans text-[13px] text-text-light font-light leading-relaxed mb-10 max-w-[600px] mx-auto">
+                <h3 class="font-serif text-[1.9rem] sm:text-[2.3rem] md:text-[2.6rem] italic text-ink mb-4 font-normal">
+                    El hogar digital de la marca
+                </h3>
+                <p class="font-sans text-[13px] md:text-[13.5px] text-muted font-light leading-[1.8] mb-9 max-w-[580px] mx-auto text-justify sm:text-center">
                     Consolidamos todo el trabajo estratégico y visual en una plataforma web (One Page) diseñada para captar prospectos, mostrar autoridad y automatizar las ventas de sus asesorías.
                 </p>
 
                 <!-- Mockup de la web -->
-                <div class="w-full aspect-[16/9] bg-brand-dark rounded-2xl border border-border-color p-4 md:p-8 flex items-end justify-center overflow-hidden mb-10 relative shadow-2xl">
-                    <div class="w-[80%] md:w-[70%] h-[90%] bg-border-color/20 rounded-t-xl overflow-hidden relative border-t border-x border-border-color shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+                <div class="w-full aspect-[16/9] bg-ivory rounded-2xl border border-line p-4 md:p-8 flex items-end justify-center overflow-hidden mb-9 relative shadow-sm">
+                    <div class="w-[85%] md:w-[75%] h-[90%] bg-white rounded-t-xl overflow-hidden relative border-t border-x border-line shadow-lg">
                         <!-- Reemplazar con captura real de la web del cliente -->
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover object-top opacity-80">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Mockup página web Juls Salas" class="w-full h-full object-cover">
                     </div>
                 </div>
 
-                <a href="#" target="_blank" class="inline-flex items-center justify-center gap-3 bg-brand-cream text-brand-dark px-10 py-4 rounded-full font-sans text-[12px] uppercase font-bold tracking-wider hover:bg-white transition-all shadow-[0_5px_20px_rgba(201,187,158,0.3)]">
-                    Visitar Sitio Web <i class="fa-solid fa-arrow-up-right"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- ========================================== -->
-        <!-- CTA FINAL                                  -->
-        <!-- ========================================== -->
-        <section class="py-16 md:py-24 px-6 border-t border-border-color/30">
-            <div class="max-w-[700px] mx-auto bg-brand-dark border border-brand-cream/30 rounded-3xl p-8 md:p-12 text-center shadow-lg relative overflow-hidden">
-                <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-cream/10 rounded-full blur-2xl pointer-events-none"></div>
-                
-                <h2 class="font-serif text-3xl italic text-brand-cream mb-3">¿Creamos tu Caso de Éxito?</h2>
-                <p class="font-sans text-[13px] text-text-light font-light leading-relaxed mb-8 max-w-[90%] mx-auto">
-                    Si estás lista para estructurar tu presencia digital y proyectar el verdadero nivel de tu trabajo, conversemos sobre tu proyecto.
-                </p>
-                
-                <a href="https://wa.me/TUNUMERO" target="_blank" class="inline-flex items-center justify-center gap-3 bg-brand-cream text-brand-dark px-8 py-4 rounded-full font-sans text-[12px] uppercase font-bold tracking-wider hover:bg-white transition-all">
-                    Iniciar mi proyecto <i class="fa-brands fa-whatsapp text-lg"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- ========================================== -->
-        <!-- FOOTER IDÉNTICO AL BIOLINK                 -->
-        <!-- ========================================== -->
-        <footer id="contacto" class="px-8 pt-6 pb-12 text-center relative z-10 flex flex-col justify-between border-t border-border-color/30">
-            
-            <div class="mb-10 text-center">
-                <h2 class="font-serif text-2xl italic text-brand-cream mb-6">Contacto</h2>
-                
-                <div class="flex justify-center gap-5">
-                    <a href="https://wa.me/TUNUMERO" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                <!-- Botón Ver Web / CTA -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="#" target="_blank" class="no-tap-highlight inline-flex items-center justify-center gap-2.5 bg-terracotta hover:bg-terracotta-hover text-ivory text-[10px] tracking-[0.22em] uppercase font-medium px-8 py-3.5 rounded-full transition-colors shadow-md">
+                        <span>Visitar página web</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
                     </a>
-                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                        <i class="fa-brands fa-instagram text-xl"></i>
-                    </a>
-                    <a href="#" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                        <i class="fa-brands fa-linkedin-in text-xl"></i>
-                    </a>
-                    <a href="mailto:correo@tudominio.com" class="w-12 h-12 rounded-full border border-border-color flex items-center justify-center text-text-light hover:bg-brand-cream hover:text-brand-dark transition-all shadow-sm">
-                        <i class="fa-regular fa-envelope text-xl"></i>
+                    <a href="portafolio.html" class="no-tap-highlight inline-flex items-center justify-center gap-2.5 border border-ink/30 hover:border-terracotta hover:text-terracotta text-ink text-[10px] tracking-[0.22em] uppercase font-medium px-7 py-3.5 rounded-full transition-colors">
+                        <span>Volver al portafolio</span>
                     </a>
                 </div>
             </div>
+        </section>
 
-            <div class="pt-6 relative border-t border-border-color flex flex-col items-center gap-4">
-                <div class="text-center">
-                    <h4 class="font-serif text-[1.2rem] italic mb-1 text-text-main">Gisella Villarreal</h4>
-                    <p class="text-[9px] font-sans font-medium text-text-light tracking-widest uppercase leading-relaxed">
+        <!-- ========================================================== -->
+        <!-- PIE DE PÁGINA (Fondo Terracota - Identidad GV)             -->
+        <!-- ========================================================== -->
+        <footer id="contacto" class="w-full bg-terracotta text-ivory py-12 px-6 text-center mt-auto">
+            <div class="max-w-4xl mx-auto flex flex-col items-center gap-5">
+                
+                <div>
+                    <p class="text-[10px] tracking-[0.26em] uppercase text-ivory/80 font-medium mb-4">Contacto</p>
+                    <div class="flex items-center justify-center gap-4">
+                        <a href="https://wa.me/573042182321" target="_blank" aria-label="WhatsApp" class="w-10 h-10 rounded-full border border-ivory/35 flex items-center justify-center text-ivory hover:bg-ivory hover:text-terracotta transition-all">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                        </a>
+                        <a href="https://www.instagram.com/gisella.villarreal?cplk=MWhzcHY3ZHNsdHRoMw==" target="_blank" aria-label="Instagram" class="w-10 h-10 rounded-full border border-ivory/35 flex items-center justify-center text-ivory hover:bg-ivory hover:text-terracotta transition-all">
+                            <i class="fa-brands fa-instagram text-base"></i>
+                        </a>
+                        <a href="mailto:gisellasofiavillarreal@gmail.com" aria-label="Correo electrónico" class="w-10 h-10 rounded-full border border-ivory/35 flex items-center justify-center text-ivory hover:bg-ivory hover:text-terracotta transition-all">
+                            <i class="fa-regular fa-envelope text-base"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="w-full max-w-[200px] h-[1px] bg-ivory/20"></div>
+
+                <div class="flex flex-col items-center gap-1">
+                    <h4 class="font-serif text-xl italic text-ivory">Gisella Villarreal</h4>
+                    <p class="text-[11px] text-ivory/85 font-light tracking-wide">Barranquilla, Colombia</p>
+                    <p class="text-[9.5px] tracking-[0.18em] uppercase text-ivory/70 mt-1">
                         © 2026 | Todos los derechos reservados
                     </p>
                 </div>
 
-                <div class="flex gap-4 font-sans text-[10px] text-text-light underline decoration-border-color hover:text-brand-cream transition-colors">
-                    <a href="terminos.html">Términos y Condiciones</a>
-                    <a href="politicas.html">Políticas de Privacidad</a>
+                <div class="flex flex-wrap justify-center gap-5 text-[10.5px] text-ivory/80 underline decoration-ivory/35 underline-offset-4">
+                    <a href="terminosycondiciones.html" class="hover:text-white transition-colors">Términos y Condiciones</a>
+                    <a href="politicadeprivacidad.html" class="hover:text-white transition-colors">Políticas de Privacidad</a>
                 </div>
+
             </div>
         </footer>
 
-        <!-- BOTÓN FLOTANTE "VOLVER ARRIBA" -->
-        <div class="fixed bottom-8 right-6 md:right-10 z-40">
-            <button id="scroll-top-btn" class="pointer-events-auto w-10 h-10 rounded-full border border-brand-cream/40 bg-brand-dark/90 backdrop-blur-md flex items-center justify-center text-brand-cream opacity-0 translate-y-4 transition-all duration-500 hover:bg-brand-cream hover:text-brand-dark shadow-xl" aria-label="Volver arriba">
-                <i class="fa-solid fa-angle-up text-sm"></i>
-            </button>
-        </div>
-
     </main>
+
+    <!-- BOTÓN FLOTANTE VOLVER ARRIBA -->
+    <button id="scroll-top-btn" aria-label="Volver arriba" class="fixed bottom-6 right-5 md:right-8 z-40 pointer-events-none opacity-0 translate-y-4 w-9 h-9 rounded-full bg-terracotta border border-ivory/30 text-ivory flex items-center justify-center shadow-lg hover:bg-terracotta-hover transition-all duration-300">
+        <i class="fa-solid fa-angle-up text-xs"></i>
+    </button>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const scrollTopBtn = document.getElementById('scroll-top-btn');
-            
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
+                if (window.scrollY > 350) {
                     scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-                    scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+                    scrollTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
                 } else {
                     scrollTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-                    scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                    scrollTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
                 }
             });
 
-            if(scrollTopBtn) {
-                scrollTopBtn.addEventListener('click', () => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
         });
     </script>
 
